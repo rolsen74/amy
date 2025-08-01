@@ -28,7 +28,9 @@
  #endif
 
  #ifdef __USE_INLINE__
+ #ifndef __INLINE4_AMYBLANKER_H__
  #include <inline4/AmyBlanker.h>
+ #endif
  #endif
 
  #ifndef __NOLIBBASE__

@@ -5,8 +5,8 @@
 ** Target OS: AmigaOS
 */
 
-#ifndef __PROTO_AMYINPUT_H__
-#define __PROTO_AMYINPUT_H__
+#ifndef __PROTO_AMYSYSLOG_H__
+#define __PROTO_AMYSYSLOG_H__
 
 // --
 
@@ -19,26 +19,26 @@
 
 #ifdef __amigaos4__
 
- #ifndef __LIBRARIES_AMYINPUT_H__
- #include <libraries/AmyInput.h>
+ #ifndef __LIBRARIES_AMYSYSLOG_H__
+ #include <libraries/AmySysLog.h>
  #endif
 
- #ifndef __INTERFACES_AMYINPUT_H__
- #include <interfaces/AmyInput.h>
+ #ifndef __INTERFACES_AMYSYSLOG_H__
+ #include <interfaces/AmySysLog.h>
  #endif
 
  #ifdef __USE_INLINE__
- #ifndef __INLINE4_AMYINPUT_H__
- #include <inline4/AmyInput.h>
+ #ifndef __INLINE4_AMYSYSLOG_H__
+ #include <inline4/AmySysLog.h>
  #endif
  #endif
 
  #ifndef __NOLIBBASE__
- extern struct Library *AmyInputBase;
+ extern struct Library *AmySysLogBase;
  #endif
 
  #ifndef __NOGLOBALIFACE__
- extern struct AmyInputIFace *IAmyInput;
+ extern struct AmySysLogIFace *IAmySysLog;
  #endif
 
 #else // Other platforms

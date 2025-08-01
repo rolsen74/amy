@@ -20,23 +20,25 @@
 #ifdef __amigaos4__
 
  #ifndef __LIBRARIES_AMYSDL_H__
- #include <libraries/AmyInput.h>
+ #include <libraries/AmySDL.h>
  #endif
 
  #ifndef __INTERFACES_AMYSDL_H__
- #include <interfaces/AmyInput.h>
+ #include <interfaces/AmySDL.h>
  #endif
 
  #ifdef __USE_INLINE__
- #include <inline4/AmyInput.h>
+ #ifndef __INLINE4_AMYSDL_H__
+ #include <inline4/AmySDL.h>
+ #endif
  #endif
 
  #ifndef __NOLIBBASE__
- extern struct Library *AmyInputBase;
+ extern struct Library *AmySDLBase;
  #endif
 
  #ifndef __NOGLOBALIFACE__
- extern struct AmyInputIFace *IAmyInput;
+ extern struct AmySDLIFace *IAmySDL;
  #endif
 
 #else // Other platforms

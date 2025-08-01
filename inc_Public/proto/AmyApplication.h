@@ -28,7 +28,9 @@
  #endif
 
  #ifdef __USE_INLINE__
+ #ifndef __INLINE4_AMYAPPLICATION_H__
  #include <inline4/AmyApplication.h>
+ #endif
  #endif
 
  #ifndef __NOLIBBASE__
