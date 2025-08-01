@@ -25,6 +25,7 @@ Some subprojects use other permissive licenses, including:
 
 - **BSD-3-Clause** – used in `libs/AmyCLib`, which is derived in part from clib2 by Olaf Barthel.
 - **LGPL v2.1** – used in `libs/AmySDL`, a refactored SDL v1 library.
+- **zlib License** – used in `libs/AmyZLib`, a minimal zlib interface layer.
 
 These may appear within shared directories (e.g., `inc_Public/`, `libs/`).
 Each source file includes a license header indicating its specific license.
