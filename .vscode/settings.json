@@ -35,10 +35,7 @@
 		"*.s": "plaintext",
 		"*.i": "plaintext",
 		"*.h": "c",
-		"*.c": "c",
-		"compare": "c",
-		"type_traits": "c",
-		"typeinfo": "c"
+		"*.c": "c"
 	},
 	"editor.quickSuggestions": {
 	  "comments": false,

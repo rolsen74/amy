@@ -21,8 +21,8 @@
 #define REVISION	1
 #define DATE		"1.1.2025"
 #define VERS		"AmyBlanker.library 1.1"
-#define VSTRING		"AmyBlanker.library 1.1 (1.1.2025)\r\n"
-#define VERSTAG		"\0$VER: AmyBlanker.library 1.1 (1.1.2025)"
+#define VSTRING		"AmyBlanker.library 1.1 (1.8.2025)\r\n"
+#define VERSTAG		"\0$VER: AmyBlanker.library 1.1 (1.8.2025)"
 
 // --
 

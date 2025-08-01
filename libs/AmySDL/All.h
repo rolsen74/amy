@@ -1,6 +1,6 @@
 
 /*
-** SPDX-License-Identifier: BSD-2-Clause
+** SPDX-License-Identifier: LGPL-2.1-or-later
 ** Copyright (c) 2025 Rene W. Olsen
 ** Target OS: AmigaOS
 */
@@ -12,17 +12,17 @@
 
 #include <proto/dos.h>
 #include <proto/exec.h>
-#include <proto/AmyApplication.h>
+#include <proto/AmySDL.h>
 
 // --
 
-#define LIBNAME		"AmyApplication.library"
+#define LIBNAME		"AmySDL.library"
 #define VERSION		1
 #define REVISION	1
 #define DATE		"1.1.2025"
-#define VERS		"AmyApplication.library 1.1"
-#define VSTRING		"AmyApplication.library 1.1 (1.8.2025)\r\n"
-#define VERSTAG		"\0$VER: AmyApplication.library 1.1 (1.8.2025)"
+#define VERS		"AmySDL.library 1.1"
+#define VSTRING		"AmySDL.library 1.1 (1.8.2025)\r\n"
+#define VERSTAG		"\0$VER: AmySDL.library 1.1 (1.8.2025)"
 
 // --
 
@@ -43,8 +43,8 @@ PTR _manager_Open( struct LibraryManagerInterface *Self, U32 version );
 PTR _manager_Close( struct LibraryManagerInterface *Self );
 PTR _manager_Expunge( struct LibraryManagerInterface *Self );
 
-U32 _main_Obtain( struct AmyApplicationIFace *Self );
-U32 _main_Release( struct AmyApplicationIFace *Self );
+U32 _main_Obtain( struct AmySDLIFace *Self );
+U32 _main_Release( struct AmySDLIFace *Self );
 
 // --
 
