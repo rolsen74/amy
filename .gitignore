@@ -1,3 +1,5 @@
 runrsync.sh
 *.o
+*.d
 *.map
+*.library
