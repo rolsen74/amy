@@ -1,7 +1,8 @@
 
 /*
 ** SPDX-License-Identifier: BSD-2-Clause
-** Copyright (c) 2025 Rene W. Olsen <renewolsen@gmail.com>
+** Copyright (c) 2025 Rene W. Olsen
+** Target OS: AmigaOS
 */
 
 // --
@@ -15,7 +16,7 @@ PTR _manager_Open( struct LibraryManagerInterface *Self, U32 version UNUSED )
 struct libBase *libBase;
 struct libBase *retval;
 
-    libBase = (PTR) Self->Data.LibBase;
+	libBase = (PTR) Self->Data.LibBase;
 
 	/* Add up the open count */
 	libBase->lib_Base.lib_OpenCnt++;

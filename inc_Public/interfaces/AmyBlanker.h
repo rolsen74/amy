@@ -1,7 +1,8 @@
 
 /*
 ** SPDX-License-Identifier: BSD-2-Clause
-** Copyright (c) 2025 Rene W. Olsen <renewolsen@gmail.com>
+** Copyright (c) 2025 Rene W. Olsen
+** Target OS: AmigaOS
 */
 
 #ifndef __INTERFACES_AMYBLANKER_H__
