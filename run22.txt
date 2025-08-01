@@ -1,0 +1,19 @@
+rsync \
+	-av \
+	--exclude='.svn/' \
+	--include='*/' \
+	--include='*.c' \
+	--include='*.h' \
+	--include='*.inc' \
+    --include='CPU_*/' \
+    --include='Loader_*/' \
+    --include='System_*/' \
+    --include='Resourcer/' \
+	--include="AUTHORS" \
+	--include='ChangeLog' \
+	--include='LICENSE' \
+	--include='Makefile' \
+	--include='README.md' \
+	--exclude='*' \
+	~/source/ReSrc4/ \
+	~/git/resrc4/
