@@ -102,26 +102,26 @@ endif
 SRCS		+= src/Library.c
 
 # Manager Interface
-SRCS		+= _Manager/Close.c
-SRCS		+= _Manager/Expunge.c
-SRCS		+= _Manager/Obtain.c
-SRCS		+= _Manager/Open.c
-SRCS		+= _Manager/Release.c
+SRCS		+= src/_Manager/Close.c
+SRCS		+= src/_Manager/Expunge.c
+SRCS		+= src/_Manager/Obtain.c
+SRCS		+= src/_Manager/Open.c
+SRCS		+= src/_Manager/Release.c
 
 # Main Interface
-SRCS		+= _Main/CreateContext.c
-SRCS		+= _Main/DeleteContext.c
-SRCS		+= _Main/EnumDevices.c
-SRCS		+= _Main/FreeEvent.c
-SRCS		+= _Main/FreeRequest.c
-SRCS		+= _Main/GetError.c
-SRCS		+= _Main/GetErrorString.c
-SRCS		+= _Main/GetEvent.c
-SRCS		+= _Main/Obtain.c
-SRCS		+= _Main/ReadDevice.c
-SRCS		+= _Main/Release.c
-SRCS		+= _Main/ReleaseDevice.c
-SRCS		+= _Main/RequestDevice.c
+SRCS		+= src/_Main/CreateContext.c
+SRCS		+= src/_Main/DeleteContext.c
+SRCS		+= src/_Main/EnumDevices.c
+SRCS		+= src/_Main/FreeEvent.c
+SRCS		+= src/_Main/FreeRequest.c
+SRCS		+= src/_Main/GetError.c
+SRCS		+= src/_Main/GetErrorString.c
+SRCS		+= src/_Main/GetEvent.c
+SRCS		+= src/_Main/Obtain.c
+SRCS		+= src/_Main/ReadDevice.c
+SRCS		+= src/_Main/Release.c
+SRCS		+= src/_Main/ReleaseDevice.c
+SRCS		+= src/_Main/RequestDevice.c
 
 ###########################################################################
 

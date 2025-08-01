@@ -102,11 +102,11 @@ endif
 SRCS		+= src/Library.c
 
 # Manager Interface
-SRCS		+= _Manager/Close.c
-SRCS		+= _Manager/Expunge.c
-SRCS		+= _Manager/Obtain.c
-SRCS		+= _Manager/Open.c
-SRCS		+= _Manager/Release.c
+SRCS		+= src/_Manager/Close.c
+SRCS		+= src/_Manager/Expunge.c
+SRCS		+= src/_Manager/Obtain.c
+SRCS		+= src/_Manager/Open.c
+SRCS		+= src/_Manager/Release.c
 
 # Main Interface
 

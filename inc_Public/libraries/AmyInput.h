@@ -16,6 +16,9 @@
 
 // --
 
+typedef U32 DeviceID;
+typedef PTR DeviceHandle;
+typedef PTR InputEvent;
 
 // --
 
