@@ -8,16 +8,24 @@ This repository contains several projects primarily targeting **AmigaOS 4**, all
 
 ## Contents
 
-- `libs/AmyApplication` – BSD-licensed library  
-- `libs/AmyBlanker` – BSD-licensed library  
-- `libs/AmyInput` – BSD-licensed library  
-- `libs/AmySDL` – Refactored SDL v1 code (LGPL-2.1)  
+- `libs/AmyApplication` – BSD-licensed library
+- `libs/AmyBlanker` – BSD-licensed library
+- `libs/AmyCLib` – C runtime library (BSD-3-Clause)
+- `libs/AmyInput` – BSD-licensed library
+- `libs/AmySDL` – Refactored SDL v1 code (LGPL-2.1)
+- `libs/AmySysLog` – BSD-licensed library
+- `libs/AmyZLib` – zlib-licensed library
 
 ## Licensing
 
 All original code in this repository is licensed under the **BSD-2-Clause** license.  
 See the `LICENSE` file at the root of this repository for full terms.
 
-Some third-party code under other licenses (such as **LGPL v2.1**) may be included within shared directories  
-(e.g., `inc_Public/` or `libs/`). Each such file includes its own license notice in the source header.  
-Refer to individual file headers and associated `LICENSE` files for details.
+Some subprojects use other permissive licenses, including:
+
+- **BSD-3-Clause** – used in `libs/AmyCLib`, which is derived in part from clib2 by Olaf Barthel.
+- **LGPL v2.1** – used in `libs/AmySDL`, a refactored SDL v1 library.
+
+These may appear within shared directories (e.g., `inc_Public/`, `libs/`).
+Each source file includes a license header indicating its specific license.
+Refer to individual file headers and associated `LICENSE` and `MODIFICATIONS.md` files for full details.
