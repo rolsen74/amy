@@ -12,17 +12,17 @@
 
 #include <proto/dos.h>
 #include <proto/exec.h>
-#include <proto/AmySDL.h>
+#include <proto/AmyCLib.h>
 
 // --
 
-#define LIBNAME		"AmySDL.library"
+#define LIBNAME		"AmyCLib.library"
 #define VERSION		1
 #define REVISION	1
 #define DATE		"1.1.2025"
-#define VERS		"AmySDL.library 1.1"
-#define VSTRING		"AmySDL.library 1.1 (1.8.2025)\r\n"
-#define VERSTAG		"\0$VER: AmySDL.library 1.1 (1.8.2025)"
+#define VERS		"AmyCLib.library 1.1"
+#define VSTRING		"AmyCLib.library 1.1 (1.8.2025)\r\n"
+#define VERSTAG		"\0$VER: AmyCLib.library 1.1 (1.8.2025)"
 
 // --
 
@@ -43,8 +43,8 @@ PTR _manager_Open( struct LibraryManagerInterface *Self, U32 version );
 PTR _manager_Close( struct LibraryManagerInterface *Self );
 PTR _manager_Expunge( struct LibraryManagerInterface *Self );
 
-U32 _main_Obtain( struct AmySDLIFace *Self );
-U32 _main_Release( struct AmySDLIFace *Self );
+U32 _main_Obtain( struct AmyCLibIFace *Self );
+U32 _main_Release( struct AmyCLibIFace *Self );
 
 // --
 

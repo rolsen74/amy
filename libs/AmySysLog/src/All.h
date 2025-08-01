@@ -12,17 +12,17 @@
 
 #include <proto/dos.h>
 #include <proto/exec.h>
-#include <proto/AmySDL.h>
+#include <proto/AmySysLog.h>
 
 // --
 
-#define LIBNAME		"AmySDL.library"
+#define LIBNAME		"AmySysLog.library"
 #define VERSION		1
 #define REVISION	1
 #define DATE		"1.1.2025"
-#define VERS		"AmySDL.library 1.1"
-#define VSTRING		"AmySDL.library 1.1 (1.8.2025)\r\n"
-#define VERSTAG		"\0$VER: AmySDL.library 1.1 (1.8.2025)"
+#define VERS		"AmySysLog.library 1.1"
+#define VSTRING		"AmySysLog.library 1.1 (1.8.2025)\r\n"
+#define VERSTAG		"\0$VER: AmySysLog.library 1.1 (1.8.2025)"
 
 // --
 
@@ -43,8 +43,8 @@ PTR _manager_Open( struct LibraryManagerInterface *Self, U32 version );
 PTR _manager_Close( struct LibraryManagerInterface *Self );
 PTR _manager_Expunge( struct LibraryManagerInterface *Self );
 
-U32 _main_Obtain( struct AmySDLIFace *Self );
-U32 _main_Release( struct AmySDLIFace *Self );
+U32 _main_Obtain( struct AmySysLogIFace *Self );
+U32 _main_Release( struct AmySysLogIFace *Self );
 
 // --
 
