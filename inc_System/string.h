@@ -15,6 +15,7 @@
 
 /****************************************************************************/
 
+#include <Amy_Defines.h>	// Need AMYFUNC
 #include <stddef.h>
 #include <locale.h>
 
