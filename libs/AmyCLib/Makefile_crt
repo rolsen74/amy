@@ -1,0 +1,85 @@
+.PHONY: all clean install strip makedirs
+
+###########################################################################
+# Directories
+
+ROOTDIR		:= ../..
+BINDIR		:= bin
+SRCDIR		:= src_crt
+INCLUDES	:= -I.
+INCLUDES	+= -I$(ROOTDIR)/inc_System
+INCLUDES	+= -I$(ROOTDIR)/inc_Public
+INCLUDES	+= -I$(ROOTDIR)/inc_Private
+CFLAGS		:= -O2
+CFLAGS		+= -Wall
+CFLAGS		+= -W
+CFLAGS		+= -mcrt=clib2
+CFLAGS		+= $(INCLUDES)
+ASFLAGS		:= $(CFLAGS)
+
+# Host SYS we compile on
+HOSTOS		:= $(shell uname)
+
+###########################################################################
+# Set Compiler
+
+ifeq ($(HOSTOS),AmigaOS)
+
+LS			:= list
+RM			:= delete
+CC			:= gcc
+STRIP		:= strip
+MKDIR		:= makedir FORCE
+COPY		:= copy
+SDK			:= sdk:clib2
+
+# --
+
+else ifeq ($(HOSTOS),Linux)
+
+LS			:= ls -lort
+RM			:= rm -rf
+CC			:= ppc-amigaos-gcc
+STRIP		:= ppc-amigaos-strip
+MKDIR		:= mkdir -p
+COPY		:= cp
+SDK			:= /SDK/clib2
+
+else
+
+$(error Unknown Host SYS type: $(HOSTOS).)
+
+endif
+
+###########################################################################
+# Object Files
+
+CRT_OBJS := \
+	$(BINDIR)/crtbegin.o \
+	$(BINDIR)/crtend.o \
+	$(BINDIR)/crt0.o
+
+###########################################################################
+# Targets
+
+all: $(CRT_OBJS)
+
+$(BINDIR)/crtbegin.o: $(SRCDIR)/crtbegin.c
+	$(CC) $(CFLAGS) -c $< -o $@
+
+$(BINDIR)/crtend.o: $(SRCDIR)/crtend.c
+	$(CC) $(CFLAGS) -c $< -o $@
+
+$(BINDIR)/crt0.o: $(SRCDIR)/crt0.s
+	$(CC) $(ASFLAGS) -c $< -o $@
+
+clean:
+	$(RM) $(CRT_OBJS)
+
+strip:
+	$(STRIP) $(CRT_OBJS)
+
+install:
+	$(COPY) $(CRT_OBJS) $(SDK)/lib/
+
+###########################################################################

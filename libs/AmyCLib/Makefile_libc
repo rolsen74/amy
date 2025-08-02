@@ -55,8 +55,7 @@ CC			:= gcc
 STRIP		:= strip
 MKDIR		:= makedir FORCE
 COPY		:= copy
-SDK			:= sdk:
-INSTALLDIR	:=
+SDK			:= sdk:clib2
 
 # --
 
@@ -69,8 +68,7 @@ CC			:= ppc-amigaos-gcc
 STRIP		:= ppc-amigaos-strip
 MKDIR		:= mkdir -p
 COPY		:= cp
-SDK			:= /SDK/
-INSTALLDIR	:= /SDK/clib2/lib/
+SDK			:= /SDK/clib2
 
 else
 
@@ -82,7 +80,7 @@ endif
 # All stubs for libc
 
 # string.h
-SRCS		+= stubs_libc/string_strlen.c
+SRCS		+= src_libc/string_strlen.c
 
 ###########################################################################
 
@@ -104,12 +102,12 @@ $(BINDIR)/$(TARGET): $(OBJS)
 ###########################################################################
 
 clean:
-	$(RM) $(OBJS) $(DEPS) bin/$(TARGET)
+	$(RM) $(OBJS) $(DEPS) $(BIN)/$(TARGET)
 
 ###########################################################################
 
 install:
-	$(COPY) $(BINDIR)/$(TARGET) $(INSTALLDIR)
+	$(COPY) $(BINDIR)/$(TARGET) $(SDK)/lib/
 
 ###########################################################################
 
