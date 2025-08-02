@@ -7,32 +7,23 @@
 ** Licensed under the zlib license. See the LICENSE file for details.
 */
 
-#ifndef __PROTO_AMYZLIB_H__
-#define __PROTO_AMYZLIB_H__
+#ifndef AMYLIB_PROTO_AMYZLIB_H
+#define AMYLIB_PROTO_AMYZLIB_H
 
 // --
 
-#ifndef __AMY_STANDARD_H__
-#include "Amy_Standard.h"
-#endif
+#include "Amy_Defines.h"
 
 // --
 // AmigaOS4
 
 #ifdef __amigaos4__
 
- #ifndef __LIBRARIES_AMYZLIB_H__
  #include <libraries/AmyZLib.h>
- #endif
-
- #ifndef __INTERFACES_AMYZLIB_H__
  #include <interfaces/AmyZLib.h>
- #endif
 
  #ifdef __USE_INLINE__
- #ifndef __INLINE4_AMYZLIB_H__
  #include <inline4/AmyZLib.h>
- #endif
  #endif
 
  #ifndef __NOLIBBASE__

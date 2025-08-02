@@ -20,8 +20,9 @@ TARGET		:= AmyBlanker.library
 # Compiler Flags
 CFLAGS		:= -O2
 CFLAGS		+= -I.
-CFLAGS		+= -I $(ROOTDIR)/inc_Private
+CFLAGS		+= -I $(ROOTDIR)/inc_System
 CFLAGS		+= -I $(ROOTDIR)/inc_Public
+CFLAGS		+= -I $(ROOTDIR)/inc_Private
 CFLAGS		+= -DDEBUG
 CFLAGS		+= -gstabs
 CFLAGS		+= -W

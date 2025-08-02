@@ -5,14 +5,12 @@
 ** Target OS: AmigaOS
 */
 
-#ifndef __LIBRARIES_AMYAPPLICATION_H__
-#define __LIBRARIES_AMYAPPLICATION_H__
+#ifndef AMYLIB_LIBRARIES_AMYAPPLICATION_H
+#define AMYLIB_LIBRARIES_AMYAPPLICATION_H
 
 // --
 
-#ifndef __AMY_STANDARD_H__
-#include "Amy_Standard.h"
-#endif
+#include "Amy_Defines.h"
 
 // --
 

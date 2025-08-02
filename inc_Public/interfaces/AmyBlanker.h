@@ -5,24 +5,22 @@
 ** Target OS: AmigaOS
 */
 
-#ifndef __INTERFACES_AMYBLANKER_H__
-#define __INTERFACES_AMYBLANKER_H__
+#ifndef AMYLIB_INTERFACES_AMYBLANKER_H
+#define AMYLIB_INTERFACES_AMYBLANKER_H
 
 // --
 
-#ifndef __AMY_STANDARD_H__
-#include "Amy_Standard.h"
-#endif
+#include "Amy_Defines.h"
 
 // --
 
 struct AmyBlankerIFace
 {
 	struct InterfaceData Data;
-	U32								APICALL (*Obtain)(struct AmyBlankerIFace *Self);
-	U32								APICALL (*Release)(struct AmyBlankerIFace *Self);
-	void							APICALL (*Expunge)(struct AmyBlankerIFace *Self);
-	struct Interface *				APICALL (*Clone)(struct AmyBlankerIFace *Self);
+	U32								AMYFUNC (*Obtain)(struct AmyBlankerIFace *Self);
+	U32								AMYFUNC (*Release)(struct AmyBlankerIFace *Self);
+	void							AMYFUNC (*Expunge)(struct AmyBlankerIFace *Self);
+	struct Interface *				AMYFUNC (*Clone)(struct AmyBlankerIFace *Self);
 };
 
 // --

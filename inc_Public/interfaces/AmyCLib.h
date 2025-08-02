@@ -6,24 +6,22 @@
 ** Target OS: AmigaOS
 */
 
-#ifndef __INTERFACES_AMYCLIB_H__
-#define __INTERFACES_AMYCLIB_H__
+#ifndef AMYLIB_INTERFACES_AMYCLIB_H
+#define AMYLIB_INTERFACES_AMYCLIB_H
 
 // --
 
-#ifndef __AMY_STANDARD_H__
-#include "Amy_Standard.h"
-#endif
+#include "Amy_Defines.h"
 
 // --
 
 struct AmyCLibIFace
 {
 	struct InterfaceData Data;
-	U32								APICALL (*Obtain)(struct AmyCLibIFace *Self);
-	U32								APICALL (*Release)(struct AmyCLibIFace *Self);
-	void							APICALL (*Expunge)(struct AmyCLibIFace *Self);
-	struct Interface *				APICALL (*Clone)(struct AmyCLibIFace *Self);
+	U32								AMYFUNC (*Obtain)(struct AmyCLibIFace *Self);
+	U32								AMYFUNC (*Release)(struct AmyCLibIFace *Self);
+	void							AMYFUNC (*Expunge)(struct AmyCLibIFace *Self);
+	struct Interface *				AMYFUNC (*Clone)(struct AmyCLibIFace *Self);
 };
 
 // --

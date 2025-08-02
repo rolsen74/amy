@@ -5,32 +5,23 @@
 ** Target OS: AmigaOS
 */
 
-#ifndef __PROTO_AMYAPPLICATION_H__
-#define __PROTO_AMYAPPLICATION_H__
+#ifndef AMYLIB_PROTO_AMYAPPLICATION_H
+#define AMYLIB_PROTO_AMYAPPLICATION_H
 
 // --
 
-#ifndef __AMY_STANDARD_H__
-#include "Amy_Standard.h"
-#endif
+#include "Amy_Defines.h"
 
 // --
 // AmigaOS4
 
 #ifdef __amigaos4__
 
- #ifndef __LIBRARIES_AMYAPPLICATION_H__
  #include <libraries/AmyApplication.h>
- #endif
-
- #ifndef __INTERFACES_AMYAPPLICATION_H__
  #include <interfaces/AmyApplication.h>
- #endif
 
  #ifdef __USE_INLINE__
- #ifndef __INLINE4_AMYAPPLICATION_H__
  #include <inline4/AmyApplication.h>
- #endif
  #endif
 
  #ifndef __NOLIBBASE__

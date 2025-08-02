@@ -7,14 +7,12 @@
 ** Licensed under the zlib license. See the LICENSE file for details.
 */
 
-#ifndef __LIBRARIES_AMYZLIB_H__
-#define __LIBRARIES_AMYZLIB_H__
+#ifndef AMYLIB_LIBRARIES_AMYZLIB_H
+#define AMYLIB_LIBRARIES_AMYZLIB_H
 
 // --
 
-#ifndef __AMY_STANDARD_H__
-#include "Amy_Standard.h"
-#endif
+#include "Amy_Defines.h"
 
 // --
 

@@ -7,24 +7,22 @@
 ** Licensed under the zlib license. See the LICENSE file for details.
 */
 
-#ifndef __INTERFACES_AMYZLIB_H__
-#define __INTERFACES_AMYZLIB_H__
+#ifndef AMYLIB_INTERFACES_AMYZLIB_H
+#define AMYLIB_INTERFACES_AMYZLIB_H
 
 // --
 
-#ifndef __AMY_STANDARD_H__
-#include "Amy_Standard.h"
-#endif
+#include "Amy_Defines.h"
 
 // --
 
 struct AmyZLibIFace
 {
 	struct InterfaceData Data;
-	U32								APICALL (*Obtain)(struct AmyZLibIFace *Self);
-	U32								APICALL (*Release)(struct AmyZLibIFace *Self);
-	void							APICALL (*Expunge)(struct AmyZLibIFace *Self);
-	struct Interface *				APICALL (*Clone)(struct AmyZLibIFace *Self);
+	U32								AMYFUNC (*Obtain)(struct AmyZLibIFace *Self);
+	U32								AMYFUNC (*Release)(struct AmyZLibIFace *Self);
+	void							AMYFUNC (*Expunge)(struct AmyZLibIFace *Self);
+	struct Interface *				AMYFUNC (*Clone)(struct AmyZLibIFace *Self);
 };
 
 // --

@@ -5,14 +5,12 @@
 ** Target OS: AmigaOS
 */
 
-#ifndef __INLINE4_AMYINPUT_H__
-#define __INLINE4_AMYINPUT_H__
+#ifndef AMYLIB_INLINE4_AMYINPUT_H
+#define AMYLIB_INLINE4_AMYINPUT_H
 
 // --
 
-#ifndef __AMY_STANDARD_H__
-#include "Amy_Standard.h"
-#endif
+#include "Amy_Defines.h"
 
 // --
 

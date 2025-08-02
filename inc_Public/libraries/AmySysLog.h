@@ -5,14 +5,12 @@
 ** Target OS: AmigaOS
 */
 
-#ifndef __LIBRARIES_AMYSYSLOG_H__
-#define __LIBRARIES_AMYSYSLOG_H__
+#ifndef AMYLIB_LIBRARIES_AMYSYSLOG_H
+#define AMYLIB_LIBRARIES_AMYSYSLOG_H
 
 // --
 
-#ifndef __AMY_STANDARD_H__
-#include "Amy_Standard.h"
-#endif
+#include "Amy_Defines.h"
 
 // --
 

@@ -5,32 +5,23 @@
 ** Target OS: AmigaOS
 */
 
-#ifndef __PROTO_AMYSYSLOG_H__
-#define __PROTO_AMYSYSLOG_H__
+#ifndef AMYLIB_PROTO_AMYSYSLOG_H
+#define AMYLIB_PROTO_AMYSYSLOG_H
 
 // --
 
-#ifndef __AMY_STANDARD_H__
-#include "Amy_Standard.h"
-#endif
+#include "Amy_Defines.h"
 
 // --
 // AmigaOS4
 
 #ifdef __amigaos4__
 
- #ifndef __LIBRARIES_AMYSYSLOG_H__
  #include <libraries/AmySysLog.h>
- #endif
-
- #ifndef __INTERFACES_AMYSYSLOG_H__
  #include <interfaces/AmySysLog.h>
- #endif
 
  #ifdef __USE_INLINE__
- #ifndef __INLINE4_AMYSYSLOG_H__
  #include <inline4/AmySysLog.h>
- #endif
  #endif
 
  #ifndef __NOLIBBASE__

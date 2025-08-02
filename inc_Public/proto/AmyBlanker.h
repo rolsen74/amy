@@ -5,32 +5,23 @@
 ** Target OS: AmigaOS
 */
 
-#ifndef __PROTO_AMYBLANKER_H__
-#define __PROTO_AMYBLANKER_H__
+#ifndef AMYLIB_PROTO_AMYBLANKER_H
+#define AMYLIB_PROTO_AMYBLANKER_H
 
 // --
 
-#ifndef __AMY_STANDARD_H__
-#include "Amy_Standard.h"
-#endif
+#include "Amy_Defines.h"
 
 // --
 // AmigaOS4
 
 #ifdef __amigaos4__
 
- #ifndef __LIBRARIES_AMYBLANKER_H__
  #include <libraries/AmyBlanker.h>
- #endif
-
- #ifndef __INTERFACES_AMYBLANKER_H__
  #include <interfaces/AmyBlanker.h>
- #endif
 
  #ifdef __USE_INLINE__
- #ifndef __INLINE4_AMYBLANKER_H__
  #include <inline4/AmyBlanker.h>
- #endif
  #endif
 
  #ifndef __NOLIBBASE__

@@ -6,32 +6,23 @@
 ** Target OS: AmigaOS
 */
 
-#ifndef __PROTO_AMYCLIB_H__
-#define __PROTO_AMYCLIB_H__
+#ifndef AMYLIB_PROTO_AMYCLIB_H
+#define AMYLIB_PROTO_AMYCLIB_H
 
 // --
 
-#ifndef __AMY_STANDARD_H__
-#include "Amy_Standard.h"
-#endif
+#include "Amy_Defines.h"
 
 // --
 // AmigaOS4
 
 #ifdef __amigaos4__
 
- #ifndef __LIBRARIES_AMYCLIB_H__
  #include <libraries/AmyCLib.h>
- #endif
-
- #ifndef __INTERFACES_AMYCLIB_H__
  #include <interfaces/AmyCLib.h>
- #endif
 
  #ifdef __USE_INLINE__
- #ifndef __INLINE4_AMYCLIB_H__
  #include <inline4/AmyCLib.h>
- #endif
  #endif
 
  #ifndef __NOLIBBASE__

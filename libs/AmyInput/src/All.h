@@ -5,8 +5,8 @@
 ** Target OS: AmigaOS
 */
 
-#ifndef __ALL_H__
-#define __ALL_H__
+#ifndef AMYLIB_ALL_H
+#define AMYLIB_ALL_H
 
 // --
 
