@@ -29,6 +29,7 @@ CFLAGS		+= -W
 CFLAGS		+= -Wall
 CFLAGS		+= -MMD
 CFLAGS		+= -MP
+CFLAGS		+= -mcrt=clib2
 
 # Linker Flags
 LDFLAGS		:=
@@ -55,6 +56,7 @@ STRIP		:= strip
 MKDIR		:= makedir FORCE
 COPY		:= copy
 SDK			:= sdk:
+INSTALLDIR	:=
 
 # --
 
@@ -68,6 +70,7 @@ STRIP		:= ppc-amigaos-strip
 MKDIR		:= mkdir -p
 COPY		:= cp
 SDK			:= /SDK/
+INSTALLDIR	:= /SDK/clib2/lib/
 
 else
 

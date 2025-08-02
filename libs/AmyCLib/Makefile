@@ -29,9 +29,11 @@ CFLAGS		+= -W
 CFLAGS		+= -Wall
 CFLAGS		+= -MMD
 CFLAGS		+= -MP
+CFLAGS		+= -mcrt=clib2
 
 # Linker Flags
-LDFLAGS		:= -nostartfiles
+LDFLAGS		:= -mcrt=clib2 
+LDFLAGS		+= -nostartfiles
 
 # Link Libraries
 LIBS		:=
@@ -53,7 +55,7 @@ CC			:= gcc
 STRIP		:= strip
 MKDIR		:= makedir FORCE
 COPY		:= copy
-SDK			:= sdk:
+SDK			:= sdk:clib2/
 
 # --
 
@@ -112,7 +114,7 @@ clean:
 ###########################################################################
 
 install:
-	copy $(BINDIR)/$(TARGET) $(INSTALLDIR)
+	$(COPY) $(BINDIR)/$(TARGET) $(INSTALLDIR)
 
 ###########################################################################
 
