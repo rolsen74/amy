@@ -16,9 +16,7 @@
 
 /****************************************************************************/
 
-#ifdef __cplusplus
-extern "C" {
-#endif
+#include <Amy_Defines.h>
 
 /****************************************************************************/
 
@@ -160,12 +158,6 @@ extern "C" {
 #define ENOMEDIUM		1135	/* No medium (in tape drive) */
 #define ENOSHARE		1136	/* No such host or network path */
 #define ECASECLASH		1137	/* Filename exists with different case */
-
-/****************************************************************************/
-
-#ifdef __cplusplus
-}
-#endif
 
 /****************************************************************************/
 

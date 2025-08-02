@@ -23,12 +23,6 @@
 
 /****************************************************************************/
 
-#ifdef __cplusplus
-extern "C" {
-#endif
-
-/****************************************************************************/
-
 #define BUFSIZ			8192
 
 #define L_ctermid		0
@@ -71,6 +65,8 @@ typedef struct
 } FILE;
 
 /****************************************************************************/
+
+AMY_EXTERN_C_BEGIN
 
 void	AMYFUNC clearerr( FILE * );
 char *	AMYFUNC ctermid( char * );
@@ -142,17 +138,17 @@ int		AMYFUNC vsnprintf( char *, size_t, const char *, va_list );
 int		AMYFUNC vsprintf( char *, const char *, va_list );
 int		AMYFUNC vsscanf( const char *, const char *, va_list );
 
+AMY_EXTERN_C_END
+
 /****************************************************************************/
 // BSD
+
+AMY_EXTERN_C_BEGIN
 
 int		AMYFUNC asprintf( char **, const char *, ... );
 int		AMYFUNC vasprintf( char **, const char *, va_list );
 
-/****************************************************************************/
-
-#ifdef __cplusplus
-}
-#endif
+AMY_EXTERN_C_END
 
 /****************************************************************************/
 

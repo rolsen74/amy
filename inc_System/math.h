@@ -20,12 +20,6 @@
 
 /****************************************************************************/
 
-#ifdef __cplusplus
-extern "C" {
-#endif
-
-/****************************************************************************/
-
 #define FLT_EVAL_METHOD	0
 
 /****************************************************************************/
@@ -256,6 +250,8 @@ typedef double			double_t;
 #endif
 
 /****************************************************************************/
+
+AMY_EXTERN_C_BEGIN
 
 double		AMYFUNC acos(			double );
 float		AMYFUNC acosf(			float );
@@ -493,8 +489,12 @@ double		AMYFUNC y0(				double );
 double		AMYFUNC y1(				double );
 double		AMYFUNC yn(				int, double );
 
+AMY_EXTERN_C_END
+
 /****************************************************************************/
 // Internal function not part of the specs
+
+AMY_EXTERN_C_BEGIN
 
 int			AMYFUNC __isnan(		double );
 int			AMYFUNC __isnanf(		float );
@@ -503,11 +503,7 @@ int			AMYFUNC __signbit(		double );
 int			AMYFUNC __signbitf(		float );
 int			AMYFUNC __signbitl(		long double );
 
-/****************************************************************************/
-
-#ifdef __cplusplus
-}
-#endif
+AMY_EXTERN_C_END
 
 /****************************************************************************/
 

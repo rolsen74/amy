@@ -11,7 +11,12 @@
 
 // --
 
+#include <proto/exec.h>
+
 #include "Amy_Defines.h"
+
+#include <stddef.h>
+#include <string.h>
 
 // --
 
@@ -22,6 +27,7 @@ struct AmyCLibIFace
 	U32								AMYFUNC (*Release)(struct AmyCLibIFace *Self);
 	void							AMYFUNC (*Expunge)(struct AmyCLibIFace *Self);
 	struct Interface *				AMYFUNC (*Clone)(struct AmyCLibIFace *Self);
+	size_t							AMYFUNC (*string_strlen)(struct AmyCLibIFace *Self,const char *);
 };
 
 // --

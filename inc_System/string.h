@@ -18,14 +18,11 @@
 #include <Amy_Defines.h>	// Need AMYFUNC
 #include <stddef.h>
 #include <locale.h>
+#include <sys/types.h>		// for mode_t
 
 /****************************************************************************/
 
-#ifdef __cplusplus
-extern "C" {
-#endif
-
-/****************************************************************************/
+AMY_EXTERN_C_BEGIN
 
 int		AMYFUNC ffsl( long int );
 int		AMYFUNC ffsll( long long int );
@@ -65,8 +62,12 @@ size_t	AMYFUNC strxfrm( char *, const char *, size_t );
 size_t	AMYFUNC strxfrm_l( char *, const char *, size_t, locale_t );
 int		AMYFUNC timingsafe_memcmp( const void *, const void *, size_t );
 
+AMY_EXTERN_C_END
+
 /****************************************************************************/
 // BSD
+
+AMY_EXTERN_C_BEGIN
 
 char *	AMYFUNC strsep( char **, const char * );
 size_t	AMYFUNC strlcpy( char *, const char *, size_t );
@@ -74,11 +75,7 @@ size_t	AMYFUNC strlcat( char *, const char *, size_t );
 void	AMYFUNC strmode( mode_t mode, char *p );
 void *	AMYFUNC memmem( const void *, size_t, const void *, size_t );
 
-/****************************************************************************/
-
-#ifdef __cplusplus
-}
-#endif
+AMY_EXTERN_C_END
 
 /****************************************************************************/
 

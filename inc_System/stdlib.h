@@ -22,12 +22,6 @@
 
 /****************************************************************************/
 
-#ifdef __cplusplus
-extern "C" {
-#endif
-
-/****************************************************************************/
-
 #define EXIT_FAILURE	20
 #define EXIT_SUCCESS	0
 
@@ -59,6 +53,8 @@ typedef struct
 } lldiv_t;
 
 /****************************************************************************/
+
+AMY_EXTERN_C_BEGIN
 
 void		AMYFUNC _Exit( int );
 long		AMYFUNC a641( const char * );
@@ -131,8 +127,12 @@ int			AMYFUNC unsetenv( const char * );
 size_t		AMYFUNC wcstombs( char *, const wchar_t *, size_t );
 int			AMYFUNC wctomb( char *, wchar_t );
 
+AMY_EXTERN_C_END
+
 /****************************************************************************/
 // BSD
+
+AMY_EXTERN_C_BEGIN
 
 const char *	AMYFUNC getprogname( void );
 void			AMYFUNC setprogname( const char * );
@@ -141,11 +141,7 @@ void *			AMYFUNC reallocarray( void *, size_t, size_t );
 void *			AMYFUNC recallocarray( void *, size_t, size_t, size_t );
 quad_t			AMYFUNC strtoq( const char *, char **, int );
 
-/****************************************************************************/
-
-#ifdef __cplusplus
-}
-#endif
+AMY_EXTERN_C_END
 
 /****************************************************************************/
 

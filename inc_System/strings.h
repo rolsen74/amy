@@ -20,11 +20,7 @@
 
 /****************************************************************************/
 
-#ifdef __cplusplus
-extern "C" {
-#endif
-
-/****************************************************************************/
+AMY_EXTERN_C_BEGIN
 
 int		AMYFUNC bcmp( const void *, const void *, size_t );
 void	AMYFUNC bcopy( const void *, void *, size_t );
@@ -36,6 +32,8 @@ char *	AMYFUNC rindex( const char *, int );
 int		AMYFUNC strcasecmp( const char *, const char *);
 int		AMYFUNC strncasecmp( const char *, const char *, size_t );
 int		AMYFUNC timingsafe_bcmp( const void *, const void *, size_t );
+
+AMY_EXTERN_C_END
 
 /****************************************************************************/
 
@@ -53,12 +51,6 @@ int		AMYFUNC timingsafe_bcmp( const void *, const void *, size_t );
 
 #ifndef strnicmp
 #define strnicmp strncasecmp
-#endif
-
-/****************************************************************************/
-
-#ifdef __cplusplus
-}
 #endif
 
 /****************************************************************************/

@@ -20,11 +20,7 @@
 
 /****************************************************************************/
 
-#ifdef __cplusplus
-extern "C" {
-#endif
-
-/****************************************************************************/
+AMY_EXTERN_C_BEGIN
 
 int		AMYFUNC isalnum( int );
 int		AMYFUNC isalnum_l( int, locale_t );
@@ -57,16 +53,16 @@ int		AMYFUNC tolower_l( int, locale_t );
 int		AMYFUNC toupper( int );
 int		AMYFUNC toupper_l( int, locale_t );
 
+AMY_EXTERN_C_END
+
 /****************************************************************************/
+
+AMY_EXTERN_C_BEGIN
 
 int		AMYFUNC _toupper( int );
 int		AMYFUNC _tolower( int );
 
-/****************************************************************************/
-
-#ifdef __cplusplus
-}
-#endif
+AMY_EXTERN_C_END
 
 /****************************************************************************/
 

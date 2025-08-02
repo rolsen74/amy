@@ -20,12 +20,6 @@
 
 /****************************************************************************/
 
-#ifdef __cplusplus
-extern "C" {
-#endif
-
-/****************************************************************************/
-
 #define LC_ALL			0
 #define LC_COLLATE		1
 #define LC_CTYPE		2
@@ -90,6 +84,8 @@ struct lconv
 
 /****************************************************************************/
 
+AMY_EXTERN_C_BEGIN
+
 locale_t		AMYFUNC duplocale( locale_t );
 void			AMYFUNC freelocale( locale_t );
 struct lconv *	AMYFUNC localeconv( void );
@@ -97,11 +93,7 @@ locale_t		AMYFUNC newlocale( int, const char *, locale_t );
 char *			AMYFUNC setlocale( int, const char * );
 locale_t		AMYFUNC uselocale( locale_t );
 
-/****************************************************************************/
-
-#ifdef __cplusplus
-}
-#endif
+AMY_EXTERN_C_END
 
 /****************************************************************************/
 

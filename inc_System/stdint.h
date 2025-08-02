@@ -10,6 +10,8 @@
 ** This file is part of Amy C Lib
 */
 
+#include <Amy_Defines.h>
+
 #ifndef AMYSYS_STDINT_H
 #define AMYSYS_STDINT_H
 

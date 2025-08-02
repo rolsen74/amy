@@ -20,12 +20,6 @@
 
 /****************************************************************************/
 
-#ifdef __cplusplus
-extern "C" {
-#endif
-
-/****************************************************************************/
-
 struct __jmp_buf
 {
 	// Offset 0
@@ -54,6 +48,8 @@ typedef uint8_t jmp_buf[ 512 ];
 
 /****************************************************************************/
 
+AMY_EXTERN_C_BEGIN
+
 void	AMYFUNC _longjmp( jmp_buf, int );
 void	AMYFUNC longjmp( jmp_buf, int );
 void	AMYFUNC siglongjmp( jmp_buf, int );
@@ -62,11 +58,7 @@ int		AMYFUNC _setjmp( jmp_buf );
 int		AMYFUNC setjmp( jmp_buf );
 int		AMYFUNC sigsetjmp( jmp_buf );
 
-/****************************************************************************/
-
-#ifdef __cplusplus
-}
-#endif
+AMY_EXTERN_C_END
 
 /****************************************************************************/
 

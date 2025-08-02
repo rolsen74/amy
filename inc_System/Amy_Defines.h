@@ -65,37 +65,45 @@ typedef char* STR;
 #define LE_SWAP16(x)	( (( (x) & 0x00ff ) << 8 ) | (( (x) & 0xff00 ) >> 8 ) )
 #endif
 
+#ifdef __cplusplus
+#define AMY_EXTERN_C_BEGIN	extern "C" {
+#define AMY_EXTERN_C_END	}
+#else
+#define AMY_EXTERN_C_BEGIN
+#define AMY_EXTERN_C_END
+#endif
+
 // --
 // GCC Compiler
 
 #if defined(__GNUC__)
 
 #ifndef MIN
-#define MIN(a,b) ({ __typeof__(a) _a = (a); __typeof__(b) _b = (b); _a < _b ? _a : _b; })
+#define MIN(a,b)	({ __typeof__(a) _a = (a); __typeof__(b) _b = (b); _a < _b ? _a : _b; })
 #endif
 
 #ifndef MAX
-#define MAX(a,b) ({ __typeof__(a) _a = (a); __typeof__(b) _b = (b); _a > _b ? _a : _b; })
+#define MAX(a,b)	({ __typeof__(a) _a = (a); __typeof__(b) _b = (b); _a > _b ? _a : _b; })
 #endif
 
 #ifndef ABS
-#define ABS(x) ({ __typeof__(x) _x = (x); _x < 0 ? -_x : _x; })
+#define ABS(x)		({ __typeof__(x) _x = (x); _x < 0 ? -_x : _x; })
 #endif
 
 #ifndef USED
-#define USED __attribute__((used))
+#define USED		__attribute__((used))
 #endif
 
 #ifndef UNUSED
-#define UNUSED __attribute__((unused))
+#define UNUSED		__attribute__((unused))
 #endif
 
-#ifndef AMYFUNC	// Library Call and we want Stack only args
-#define AMYFUNC __attribute__((libcall, linearvarargs))
+#ifndef AMYFUNC		// Library Call and we want Stack only args
+#define AMYFUNC		__attribute__((libcall, linearvarargs))
 #endif
 
 #ifndef VARARGS68K
-#define VARARGS68K __attribute__((linearvarargs))
+#define VARARGS68K	__attribute__((linearvarargs))
 #endif
 
 // --
@@ -104,15 +112,15 @@ typedef char* STR;
 #else
 
 #ifndef MIN
-#define MIN(a,b) ((a) < (b) ? (a) : (b))
+#define MIN(a,b)	((a) < (b) ? (a) : (b))
 #endif
 
 #ifndef MAX
-#define MAX(a,b) ((a) > (b) ? (a) : (b))
+#define MAX(a,b)	((a) > (b) ? (a) : (b))
 #endif
 
 #ifndef ABS
-#define ABS(x)   ((x) < 0 ? -(x) : (x))
+#define ABS(x) 		((x) < 0 ? -(x) : (x))
 #endif
 #ifndef USED
 #define USED
