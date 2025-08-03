@@ -77,7 +77,7 @@ clean:
 	$(RM) $(CRT_OBJS)
 
 strip:
-	$(STRIP) $(CRT_OBJS)
+	$(STRIP) -R.comment $(CRT_OBJS)
 
 install:
 	$(COPY) $(CRT_OBJS) $(SDK)/lib/

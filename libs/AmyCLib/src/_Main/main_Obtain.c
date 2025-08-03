@@ -11,9 +11,11 @@
 
 // --
 
-U32 _manager_Release( struct LibraryManagerInterface *Self )
+U32 _main_Obtain( struct AmyCLibIFace *Self )
 {
-	Self->Data.RefCount--;
+	IExec->DebugPrintF( "_main_Obtain\n" );
+
+	Self->Data.RefCount++;
 
 	return( Self->Data.RefCount );
 }

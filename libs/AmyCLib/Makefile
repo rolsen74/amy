@@ -39,6 +39,7 @@ LDFLAGS		+= -nostartfiles
 LIBS		:=
 
 # Empty Source File List (Will grow)
+ASMSRCS		:=
 SRCS		:=
 
 # Host SYS we compile on
@@ -55,7 +56,7 @@ CC			:= gcc
 STRIP		:= strip
 MKDIR		:= makedir FORCE
 COPY		:= copy
-SDK			:= sdk:clib2/
+INSTALLDIR	:= libs:
 
 # --
 
@@ -67,7 +68,7 @@ CC			:= ppc-amigaos-gcc
 STRIP		:= ppc-amigaos-strip
 MKDIR		:= mkdir -p
 COPY		:= cp
-SDK			:= /SDK/
+INSTALLDIR	:= 
 
 else
 
@@ -87,19 +88,38 @@ SRCS		+= src/_Manager/Obtain.c
 SRCS		+= src/_Manager/Open.c
 SRCS		+= src/_Manager/Release.c
 
-# Main Interface
+# Main (Private) Interface functions
+SRCS		+= src/_Main/main_Obtain.c
+SRCS		+= src/_Main/main_Release.c
+SRCS		+= src/_Main/main_Expunge.c
+SRCS		+= src/_Main/main_Clone.c
+SRCS		+= src/_Main/Startup_Init.c
+SRCS		+= src/_Main/Startup_Main.c
+SRCS		+= src/_Main/Startup_Free.c
+
+# Main .. setjmp
+ASMSRCS		+= src/_Main_SetJmp/longjmp.s
+ASMSRCS		+= src/_Main_SetJmp/setjmp.s
+
+# Main .. string
+SRCS		+= src/_Main_String/memset.c
+
+# Main .. strings
+SRCS		+= src/_Main_Strings/bzero.c
 
 ###########################################################################
 
 OBJS		:= $(patsubst %.c,$(OBJDIR)/%.o,$(SRCS))
+ASMOBJS		:= $(patsubst %.s,$(OBJDIR)/%.o,$(ASMSRCS))
 DEPS		:= $(patsubst %.c,$(OBJDIR)/%.d,$(SRCS))
+ALL_OBJS	:= $(OBJS) $(ASMOBJS)
 
-all: $(BINDIR)/$(TARGET)
+all: $(BINDIR)/$(TARGET) 
 
 ###########################################################################
 
-$(BINDIR)/$(TARGET): $(OBJS)
-	$(CC) $(LDFLAGS) -o $(BINDIR)/$(TARGET) $(OBJS) $(LIBS) -Wl,--cref,-M,-Map=AmyCLib.map
+$(BINDIR)/$(TARGET): $(ALL_OBJS)
+	$(CC) $(LDFLAGS) -o $(BINDIR)/$(TARGET) $(ALL_OBJS) $(LIBS) -Wl,--cref,-M,-Map=AmyCLib.map
 
 ###########################################################################
 
@@ -109,7 +129,7 @@ $(BINDIR)/$(TARGET): $(OBJS)
 ###########################################################################
 
 clean:
-	$(RM) $(OBJS) $(DEPS) bin/$(TARGET) AmyCLib.map
+	$(RM) $(ALL_OBJS) $(DEPS) bin/$(TARGET) AmyCLib.map
 
 ###########################################################################
 
@@ -125,7 +145,14 @@ strip:
 
 ###########################################################################
 
+# Pattern rule for C source files
 $(OBJDIR)/%.o: %.c
+	@mkdir -p $(dir $@)
 	$(CC) $(CFLAGS) -c $< -o $@
+
+# Pattern rule for ASM (.s) source files
+$(OBJDIR)/%.o: %.s
+	@mkdir -p $(dir $@)
+	$(CC) -c -mregnames $< -o $@
 
 ###########################################################################

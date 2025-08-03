@@ -34,11 +34,47 @@
 **
 */
 
-/****************************************************************************/
+// --
 
-static void (*__CTOR_LIST__[1]) (void) __attribute__(( used, section(".ctors"), aligned(sizeof(void (*)(void))) ));
-static void (*__DTOR_LIST__[1]) (void) __attribute__(( used, section(".dtors"), aligned(sizeof(void (*)(void))) ));
-//static void (*__CTOR_LIST__[1]) (void) __attribute__(( used, section(".init_array"), aligned(sizeof(void (*)(void))) ));
-//static void (*__DTOR_LIST__[1]) (void) __attribute__(( used, section(".fini_array"), aligned(sizeof(void (*)(void))) ));
+#include "src/All.h"
 
-/****************************************************************************/
+// --
+// GCC Optimized it .. when compiling with -O2
+// but the optimized code DSI ... so thats why I force -Os
+//
+// gcc proberly see the loop and changes it to a 
+// Newlib->memset() and that will not work.
+//
+
+#pragma GCC push_options
+#pragma GCC optimize ("Os")
+
+void *_main_string_memset( struct AmyCLibIFace *Self UNUSED, void *s, int c, size_t n )
+{
+//struct libData *data;
+size_t cnt;
+U8 *mem;
+
+	IExec->DebugPrintF( "_main_string_memset\n" );
+
+	if ( ! s )
+	{
+//		data = (PTR)( (U32) Self - Self->Data.NegativeSize );
+//		data->buf_PublicData->ra_ErrNo = EFAULT;
+	}
+	else
+	{
+		mem = s;
+
+		for( cnt=0 ; cnt<n ; cnt++ )
+		{
+			mem[cnt] = c;
+		}
+	}
+
+	return( s );
+}
+
+#pragma GCC pop_options
+
+// --

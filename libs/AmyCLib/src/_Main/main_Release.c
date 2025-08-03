@@ -11,9 +11,16 @@
 
 // --
 
-U32 _manager_Release( struct LibraryManagerInterface *Self )
+U32 _main_Release( struct AmyCLibIFace *Self )
 {
+	IExec->DebugPrintF( "_main_Release\n" );
+
 	Self->Data.RefCount--;
+
+	if (( ! Self->Data.RefCount ) && ( Self->Data.Flags & IFLF_CLONED ))
+	{
+		_main_Expunge( Self );
+	}
 
 	return( Self->Data.RefCount );
 }

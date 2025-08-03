@@ -1,6 +1,6 @@
 
 /*
-** SPDX-License-Identifier: BSD-2-Clause
+** SPDX-License-Identifier: BSD-3-Clause
 ** Copyright (c) 2025 Rene W. Olsen
 ** Target OS: AmigaOS
 */
@@ -41,35 +41,50 @@ static const struct TagItem Manager_Tags[] =
 
 // -- Main Interface
 
-#if 0
+void _main_Obtain(void);
+void _main_Release(void);
+U32  _main_Expunge( struct AmyCLibIFace *Self );
+void _main_Clone(void);
+void _main__Priv_Startup_Init(void);
+void _main__Priv_Startup_Main(void);
+void _main__Priv_Startup_Free(void);
+void _main_setjmp_longjmp(void);
+void _main_setjmp_setjmp(void);
+void _main_string_memset(void);
+void _main_strings_bzero(void);
+
 static const PTR Main_Vectors[] =
 {
 	(PTR) _main_Obtain,
 	(PTR) _main_Release,
-	(PTR) NULL,
-	(PTR) NULL,
-//	(PTR) _main_GetAttrsA,
-//	(PTR) _main_GetAttrs,
-//	(PTR) _main_RunFunction,
-//	(PTR) _main_RunInterface,
+	(PTR) _main_Expunge,
+	(PTR) _main_Clone,
+	(PTR) _main__Priv_Startup_Init,
+	(PTR) _main__Priv_Startup_Main,
+	(PTR) _main__Priv_Startup_Free,
+	(PTR) _main_setjmp_longjmp,
+	(PTR) _main_setjmp_setjmp,
+	(PTR) _main_string_memset,
+	(PTR) _main_strings_bzero,
 	(PTR) -1
 };
 
-static const struct TagItem Main_Tags[] =
+const struct TagItem Main_Tags[] =
 {
 	{ MIT_Name,				(U32) "main"		},
 	{ MIT_VectorTable,		(U32) Main_Vectors	},
+	{ MIT_DataSize,			(U32) sizeof( struct libData ) },
+	{ MIT_Flags,			(U32) IFLF_PRIVATE	},
 	{ MIT_Version,			(U32) 1				},
 	{ TAG_END,				(U32) 0				}
 };
-#endif
 
 // --
 
 static const PTR libInterfaces[] =
 {
 	(PTR) Manager_Tags,
-//	(PTR) Main_Tags,
+	(PTR) Main_Tags,
 	(PTR) NULL
 };
 
@@ -117,21 +132,21 @@ S32 error;
 
 	IExec->DebugPrintF( "AmyCLib : ROMInit 1\n" );
 
-	NewlibBase = IExec->OpenLibrary( "newlib.library", 53 );
+	// NewlibBase = IExec->OpenLibrary( "newlib.library", 53 );
 
-	if ( ! NewlibBase )
-	{
-		IExec->DebugPrintF( "AmyCLib : Error opening newlib v53" );
-		goto bailout;
-	}
+	// if ( ! NewlibBase )
+	// {
+	// 	IExec->DebugPrintF( "AmyCLib : Error opening newlib v53" );
+	// 	goto bailout;
+	// }
 
-	INewlib = IExec->GetInterface( NewlibBase, "main", 1, NULL );
+	// INewlib = IExec->GetInterface( NewlibBase, "main", 1, NULL );
 
-	if ( ! INewlib )
-	{
-		IExec->DebugPrintF( "AmyCLib : Error opening newlib interface" );
-		goto bailout;
-	}
+	// if ( ! INewlib )
+	// {
+	// 	IExec->DebugPrintF( "AmyCLib : Error opening newlib interface" );
+	// 	goto bailout;
+	// }
 
 	IExec->DebugPrintF( "AmyCLib : ROMInit 2\n" );
 

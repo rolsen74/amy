@@ -1,9 +1,15 @@
 
+	#
+	# SPDX-License-Identifier: BSD-3-Clause
+	# Copyright (c) 2025 Rene W. Olsen
+	# Target OS: AmigaOS
+	#
+
 	.text
 
-	.globl  main	/* This enforces linkage against the main() function */
-	.globl  _main
-	.globl  _start
+	.globl		main
+	.globl		_main
+	.globl		_start
 
 _start2:
 
