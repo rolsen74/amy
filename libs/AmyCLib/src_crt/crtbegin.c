@@ -1,7 +1,8 @@
 
 /*
+** SPDX-License-Identifier: BSD-3-Clause
 ** Modifications (c) 2025 Rene W. Olsen
-** Part of Amy C Lib – SPDX-License-Identifier: BSD-3-Clause
+** Part of Amy C Lib
 **
 ** Based on:
 **
@@ -55,9 +56,9 @@ struct Library *		AmyCBase	USED = NULL;	// D
 struct DOSIFace *		IDOS		USED = NULL;	// E
 struct ExecIFace *		IExec		USED = NULL;	// F
 struct UtilityIFace *	IUtility	USED = NULL;	// G
-struct AmyCLibIFace *	IAmyC		USED = NULL;	// H
+struct AmyCLibIFace *	IAmyCLib	USED = NULL;	// H
 
-//struct RACLibStruct *	__RAPublicData	= NULL;
+struct _AmyCLibPublic *	__AmyCLibPublic	= NULL;
 
 /****************************************************************************/
 
@@ -177,7 +178,7 @@ U32						i;				// 14
 	IDOS			= (PTR) myIDOS;				// E
 	IExec			= (PTR) myIExec;			// F
 	IUtility		= (PTR) myIUtility;			// G
-	IAmyC			= (PTR) myIAmyC;			// H
+	IAmyCLib		= (PTR) myIAmyC;			// H
 
 	// --
 
@@ -226,7 +227,7 @@ myIExec->DebugPrintF( "crt  8\n" );
 			arg_string,
 			arg_length,
 			wb_msg,
-			NULL // & __RAPublicData
+			& __AmyCLibPublic
 		);
 
 myIExec->DebugPrintF( "crt  9\n" );

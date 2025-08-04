@@ -11,7 +11,8 @@
 
 // --
 
-#include "Startup_Cleanup_PublicData.c"
+#include "Startup_Free_Memory.c"
+#include "Startup_Free_PublicData.c"
 
 // --
 
@@ -25,8 +26,15 @@ struct libData *data;
 
 	// --
 
-	myCleanup_PublicData( Self, data );
+	IExec->DebugPrintF( "_main__Priv_Startup_Free : PublicData\n" );
 
+	myFree_PublicData( Self, data );
+
+	// --
+
+	IExec->DebugPrintF( "_main__Priv_Startup_Free : Memory\n" );
+
+	myFree_Memory( Self, data );
 
 	return;
 }

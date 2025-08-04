@@ -15,6 +15,31 @@
 
 // --
 
+struct _AmyCLibPublic
+{
+	// Version v1.1
+
+	int			ra_ErrNo;		// Errno.h
+
+
+//	FILE *	    ra_stderr;	    // Stdio.h
+//	FILE *	    ra_stdin;	    // Stdio.h
+//	FILE *	    ra_stdout;	    // Stdio.h
+
+//	int		    ra_h_ErrNo;		// Netdb.h
+//
+//	fenv_t		ra_fenv;		// fenv.h - Default float envirement
+//
+// --	 int		 ra_daylight;	 // Time.h
+// --	 long int	 ra_timezone;	 // Time.h
+// --	 char **	 ra_tzname;		 // Time.h
+//
+//
+// --	 int		 ra_signgam;	 // Math.h
+};
+
+extern struct _AmyCLibPublic * __AmyCPublicData;
+#define AmyCLibPublic __AmyCPublicData
 
 // --
 

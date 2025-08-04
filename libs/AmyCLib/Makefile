@@ -93,6 +93,14 @@ SRCS		+= src/_Main/main_Obtain.c
 SRCS		+= src/_Main/main_Release.c
 SRCS		+= src/_Main/main_Expunge.c
 SRCS		+= src/_Main/main_Clone.c
+SRCS		+= src/_Main/Memory_Mem_Alloc.c
+SRCS		+= src/_Main/Memory_Mem_Free.c
+SRCS		+= src/_Main/Memory_Mem_Realloc.c
+SRCS		+= src/_Main/Memory_Pool_Alloc.c
+SRCS		+= src/_Main/Memory_Pool_Create.c
+SRCS		+= src/_Main/Memory_Pool_Delete.c
+SRCS		+= src/_Main/Memory_Pool_Flush.c
+SRCS		+= src/_Main/Memory_Pool_Free.c
 SRCS		+= src/_Main/Startup_Init.c
 SRCS		+= src/_Main/Startup_Main.c
 SRCS		+= src/_Main/Startup_Free.c
@@ -101,7 +109,14 @@ SRCS		+= src/_Main/Startup_Free.c
 ASMSRCS		+= src/_Main_SetJmp/longjmp.s
 ASMSRCS		+= src/_Main_SetJmp/setjmp.s
 
+# Main .. stdlib
+SRCS		+= src/_Main_Stdlib/calloc.c
+SRCS		+= src/_Main_Stdlib/free.c
+SRCS		+= src/_Main_Stdlib/malloc.c
+SRCS		+= src/_Main_Stdlib/realloc.c
+
 # Main .. string
+SRCS		+= src/_Main_String/memcpy.c
 SRCS		+= src/_Main_String/memset.c
 
 # Main .. strings
@@ -110,8 +125,8 @@ SRCS		+= src/_Main_Strings/bzero.c
 ###########################################################################
 
 OBJS		:= $(patsubst %.c,$(OBJDIR)/%.o,$(SRCS))
-ASMOBJS		:= $(patsubst %.s,$(OBJDIR)/%.o,$(ASMSRCS))
 DEPS		:= $(patsubst %.c,$(OBJDIR)/%.d,$(SRCS))
+ASMOBJS		:= $(patsubst %.s,$(OBJDIR)/%.o,$(ASMSRCS))
 ALL_OBJS	:= $(OBJS) $(ASMOBJS)
 
 all: $(BINDIR)/$(TARGET) 

@@ -14,7 +14,10 @@
 #include <proto/exec.h>
 #include <proto/AmyCLib.h>
 
+#include <workbench/startup.h>
+
 #include <setjmp.h>
+#include <errno.h>
 
 // --
 
@@ -65,8 +68,8 @@ struct libData
 	// struct Locale *			    LocaleTable[ NUM_LOCALES ];
 	// struct Locale *			    LocaleDefault;
 
-	// STRPTR					    ProgramName;
-	// STRPTR					    ProgramNameBuffer;
+	STR							ProgramName;
+	STR							ProgramNameBuffer;
 
 	// char *					    Strtok_Last;
 
@@ -77,13 +80,13 @@ struct libData
 	// struct SignalSemaphore		FileSemaphore;
 
 	// struct List 			    ExitHeader;
-	// int							ExitReturnCode;
+	int							ExitReturnCode;
 	jmp_buf						ExitJumpBuffer;
-	// BOOL						ExitSet;
+	S32							ExitSet;
 
-	// uint32					    Signals_BreakMask;
-	// uint32						Signals_Blocked;
-	// uint32						Signals_LocalBlocked;
+	// U32					    Signals_BreakMask;
+	// U32						Signals_Blocked;
+	// U32						Signals_LocalBlocked;
 
 	// struct Task *				SelectServerTask;
 	// struct MsgPort *			SelectServerMsgPort;
@@ -100,9 +103,8 @@ struct libData
 
 	// struct SignalSemaphore		PThread_Semaphore;
 
-	// int32						MemGuard;
-	// struct List					MemPools;
-	// struct SignalSemaphore		MemSemaphore;
+	struct List					MemPools;
+	struct SignalSemaphore		MemSemaphore;
 
 	// // -- Function Flags
 
@@ -125,7 +127,7 @@ struct libData
 	// char *						buf_Tmpnam;					// stdio / tmpnam
 	// char *						buf_error_message;			// string / strerror_r
 	// char *						buf_gai_strerror;			// netdb / gai_strerror
-	// struct RACLibStruct	*		buf_PublicData;				//
+	struct _AmyCLibPublic *		buf_PublicData;				//
 	// char *						buf_progname;				// stdlib / [set/get]progname
 	// char *                      buf_EnvBuffer;				// getenv
 	// struct PT_ThreadInfo **		buf_PThreads;				// pthreads
@@ -133,6 +135,51 @@ struct libData
 	// uint64 *					buf_FuncLogs;				// 
 	
 	// --
+};
+
+// --
+
+#define MEMID	(('M'<<24)|('E'<<16)|('M'<<8)|(0))
+#define MEMID2	(('M'<<24)|('E'<<16)|('M'<<8)|(2))
+#define POOLID	(('P'<<24)|('O'<<16)|('L'<<8)|(0))
+
+struct MemStruct
+{
+	U32							ID;
+	U32							Size;		// Memory size plus MemStruct (8)
+};
+
+struct MemPoolHeader
+{
+	struct Node					ph_Node;
+	U32							ph_ID;
+	U32							ph_Headers;
+	U32							ph_UsedBytes;
+	U32							ph_TotalBytes;
+	U32							ph_PoolSize;
+	struct List					ph_Pools;
+	struct SignalSemaphore 		ph_Semaphore;
+	S32							ph_Global;
+};
+
+struct PoolNode
+{
+	struct Node					pn_Node;
+	PTR							pn_Memory;
+	U32							pn_Size;
+	struct PoolBlock *			pn_Blocks;
+};
+
+struct PoolBlock
+{
+	PTR							pb_Next;
+	U32							pb_Free;
+};
+
+struct PoolMem
+{
+	U32							pm_ID;
+	U32							pm_Size;
 };
 
 // --

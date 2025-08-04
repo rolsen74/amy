@@ -17,66 +17,62 @@ S32 _main__Priv_Startup_Main(
 	char *args,
 	int arglen,
 	PTR msg,
-	struct RACLibStruct **pd )
+	struct _AmyCLibPublic **pd )
 {
+struct WBStartup *wbmsg;
+struct libData *data;
+struct Process *me;
 S32 prg_rc;		// (User) Program Return Code
 
-// struct WBStartup *wbmsg;
 // struct ExitNode *enode;
-// struct libData *data;
-// struct Process *me;
 // STRPTR *argv;
 // int32 argc;
 
-// 	ENTER( 8 );
-
-// 	wbmsg = msg;
-
-// 	data = (APTR)( (uint32) Self - Self->Data.NegativeSize );
-
-// 	*pd = data->buf_PublicData;
-
-	IExec->DebugPrintF( "_main__Priv_Startup_Main\n" );
+	IExec->DebugPrintF( "_main__Priv_Startup_Main : pd %p\n", pd );
 
 	prg_rc = 20;	// DOS return error code
 
-// 	// - Get WB Message
+	data = (PTR)( (U32) Self - Self->Data.NegativeSize );
 
-// 	me = (APTR) IExec->FindTask( NULL );
+	*pd = data->buf_PublicData;
 
-// 	SHOWMSG( 3, "Main 11" );
+	// --
 
-// 	if ( me->pr_CLI == 0 )
-// 	{
-// 		data->ProgramName = wbmsg->sm_ArgList[0].wa_Name;
-// 	}
-// 	else
-// 	{
-// 		wbmsg = NULL;
+	me = (PTR) IExec->FindTask( NULL );
 
-// 		data->ProgramNameBuffer = Self->_Priv_Mem_Alloc( 256 );
+	if ( ! me->pr_CLI )
+	{
+	 	wbmsg = msg;
 
-// 	    if ( data->ProgramNameBuffer == NULL )
-// 	    {
-// 		    goto bailout;
-// 	    }
+		data->ProgramName = wbmsg->sm_ArgList[0].wa_Name;
+	}
+	else
+	{
+		wbmsg = NULL;
 
-// 	    IDOS->GetCliProgramName( data->ProgramNameBuffer, 255 );
+		data->ProgramNameBuffer = Self->Priv_Mem_Alloc( 256 );
 
-// 	    data->ProgramName = data->ProgramNameBuffer;
-// 	}
+		if ( ! data->ProgramNameBuffer )
+		{
+			goto bailout;
+		}
 
-// 	// --
+		IDOS->GetCliProgramName( data->ProgramNameBuffer, 255 );
 
-// 	data->ExitSet = TRUE;
+		data->ProgramName = data->ProgramNameBuffer;
+	}
 
-// 	if ( Self->setjmp_setjmp( data->ExitJumpBuffer ))
-//     {
-// 		prg_rc = data->ExitReturnCode;
-// 	    goto bailout;
-//     }
+	// --
 
-// 	// --
+	data->ExitSet = TRUE;
+
+	if ( Self->setjmp_setjmp( data->ExitJumpBuffer ))
+	{
+		prg_rc = data->ExitReturnCode;
+		goto bailout;
+	}
+
+	// --
 
 // 	argc = 0;
 // 	argv = NULL;
@@ -98,8 +94,7 @@ S32 prg_rc;		// (User) Program Return Code
 // 		}
 // 	}
 
-// bailout:
+bailout:
 
-// 	RETURN( 8,	prg_rc );
  	return(	prg_rc );
 }

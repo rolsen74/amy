@@ -11,7 +11,8 @@
 
 // --
 
-#include "Startup_Setup_PublicData.c"
+#include "Startup_Init_Memory.c"
+#include "Startup_Init_PublicData.c"
 
 // --
 
@@ -28,9 +29,19 @@ S32 retval;
 
 	// --
 
-//	IExec->DebugPrintF( "_main__Priv_Startup_Init : 2\n" );
+	IExec->DebugPrintF( "_main__Priv_Startup_Init : 2\n" );
 
-	if ( mySetup_PublicData( Self, data ))
+	if ( myInit_Memory( Self, data ))
+	{
+		IExec->DebugPrintF( "mySetup_Memory failed\n" );
+		goto bailout;
+	}
+
+	// --
+
+	IExec->DebugPrintF( "_main__Priv_Startup_Init : 3\n" );
+
+	if ( myInit_PublicData( Self, data ))
 	{
 		IExec->DebugPrintF( "mySetup_PublicData failed\n" );
 		goto bailout;

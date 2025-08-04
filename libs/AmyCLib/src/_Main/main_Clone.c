@@ -50,10 +50,10 @@ S32 error;
 //	IExec->InitSemaphore( & data->netdb_Semaphore );
 //	IExec->InitSemaphore( & data->FileSemaphore );
 //	IExec->InitSemaphore( & data->LocaleSemaphore );
-//	IExec->InitSemaphore( & data->MemSemaphore );
+	IExec->InitSemaphore( & data->MemSemaphore );
 //	IDOS->DateStamp( & data->TimeClock_StartTime );
 //	IExec->NewList( & data->ExitHeader );
-//	IExec->NewList( & data->MemPools );
+	IExec->NewList( & data->MemPools );
 
 //	data->SignalAllocated = -1;
 //	data->IAmyC = IFace;

@@ -35,11 +35,47 @@
 **
 */
 
-/****************************************************************************/
+// --
 
-static void (*__CTOR_LIST__[1]) (void) __attribute__(( used, section(".ctors"), aligned(sizeof(void (*)(void))) ));
-static void (*__DTOR_LIST__[1]) (void) __attribute__(( used, section(".dtors"), aligned(sizeof(void (*)(void))) ));
-//static void (*__CTOR_LIST__[1]) (void) __attribute__(( used, section(".init_array"), aligned(sizeof(void (*)(void))) ));
-//static void (*__DTOR_LIST__[1]) (void) __attribute__(( used, section(".fini_array"), aligned(sizeof(void (*)(void))) ));
+#include "src/All.h"
 
-/****************************************************************************/
+// --
+
+void *_main_string_memcpy( struct AmyCLibIFace *Self UNUSED, void *dst, const void *src, size_t len )
+{
+struct libData *data;
+void *retval;
+char *s;
+char *d;
+
+	IExec->DebugPrintF( "_main_string_memcpy\n" );
+
+	retval = dst;
+
+	if (( ! src ) || ( ! dst ))
+	{
+		data = (PTR)( (U32) Self - Self->Data.NegativeSize );
+		data->buf_PublicData->ra_ErrNo = EFAULT;
+		goto bailout;
+	}
+
+	if ( src != dst )
+	{
+		// No Error
+		goto bailout;
+	}
+
+	s = (PTR) src;
+	d = dst;
+
+	while( len-- > 0 )
+	{
+		*d++ = *s++;
+	}
+
+bailout:
+
+	return(	retval );
+}
+
+// --

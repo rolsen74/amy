@@ -48,10 +48,23 @@ void _main_Clone(void);
 void _main__Priv_Startup_Init(void);
 void _main__Priv_Startup_Main(void);
 void _main__Priv_Startup_Free(void);
+void _main__Priv_Mem_Alloc(void);
+void _main__Priv_Mem_Free(void);
+void _main__Priv_Mem_Realloc(void);
+void _main__Priv_Mem_CreatePool(void);
+void _main__Priv_Mem_DeletePool(void);
+void _main__Priv_Mem_FlushPool(void);
+void _main__Priv_Mem_AllocPooled(void);
+void _main__Priv_Mem_FreePooled(void);
 void _main_setjmp_longjmp(void);
 void _main_setjmp_setjmp(void);
+void _main_string_memcpy(void);
 void _main_string_memset(void);
 void _main_strings_bzero(void);
+void _main_stdlib_calloc(void);
+void _main_stdlib_malloc(void);
+void _main_stdlib_realloc(void);
+void _main_stdlib_free(void);
 
 static const PTR Main_Vectors[] =
 {
@@ -62,10 +75,23 @@ static const PTR Main_Vectors[] =
 	(PTR) _main__Priv_Startup_Init,
 	(PTR) _main__Priv_Startup_Main,
 	(PTR) _main__Priv_Startup_Free,
+	(PTR) _main__Priv_Mem_Alloc,
+	(PTR) _main__Priv_Mem_Free,
+	(PTR) _main__Priv_Mem_Realloc,
+	(PTR) _main__Priv_Mem_CreatePool,
+	(PTR) _main__Priv_Mem_DeletePool,
+	(PTR) _main__Priv_Mem_FlushPool,
+	(PTR) _main__Priv_Mem_AllocPooled,
+	(PTR) _main__Priv_Mem_FreePooled,
 	(PTR) _main_setjmp_longjmp,
 	(PTR) _main_setjmp_setjmp,
+	(PTR) _main_string_memcpy,
 	(PTR) _main_string_memset,
 	(PTR) _main_strings_bzero,
+	(PTR) _main_stdlib_calloc,
+	(PTR) _main_stdlib_malloc,
+	(PTR) _main_stdlib_realloc,
+	(PTR) _main_stdlib_free,
 	(PTR) -1
 };
 
@@ -109,14 +135,17 @@ static USED const struct Resident lib_res =
 // --
 
 static const char USED	verstag[]		= VERSTAG;
-struct Library *		NewlibBase		= NULL;
-struct Interface *		INewlib			= NULL;
+//struct Library *		NewlibBase		= NULL;
+//struct Interface *	INewlib			= NULL;
 struct ExecIFace *		IExec			= NULL;
+struct Library *		DOSBase			= NULL;
+struct DOSIFace *		IDOS			= NULL;
 
 // --
 
 void ROMFree( struct libBase *libBase UNUSED )
 {
+	IExec->DebugPrintF( "AmyCLib : Library ROMFree :\n" );
 }
 
 // --
@@ -130,13 +159,16 @@ S32 error;
 	error	= TRUE;
 	libBase	= NULL;
 
-	IExec->DebugPrintF( "AmyCLib : ROMInit 1\n" );
+	IExec->DebugPrintF( "AmyCLib : Library ROMInit :\n" );
 
-	// NewlibBase = IExec->OpenLibrary( "newlib.library", 53 );
+	// --
+	#if 0
+
+	// NewlibBase = IExec->OpenLibrary( "newlib.library", 50 );
 
 	// if ( ! NewlibBase )
 	// {
-	// 	IExec->DebugPrintF( "AmyCLib : Error opening newlib v53" );
+	// 	IExec->DebugPrintF( "AmyCLib : Error opening newlib v50" );
 	// 	goto bailout;
 	// }
 
@@ -148,7 +180,26 @@ S32 error;
 	// 	goto bailout;
 	// }
 
-	IExec->DebugPrintF( "AmyCLib : ROMInit 2\n" );
+	#endif
+	// --
+
+	DOSBase = IExec->OpenLibrary( "dos.library", 50 );
+
+	if ( ! DOSBase )
+	{
+		IExec->DebugPrintF( "AmyCLib : Error opening dos v50" );
+		goto bailout;
+	}
+
+	IDOS = (PTR) IExec->GetInterface( DOSBase, "main", 1, NULL );
+
+	if ( ! IDOS )
+	{
+		IExec->DebugPrintF( "AmyCLib : Error opening dos interface" );
+		goto bailout;
+	}
+
+	// --
 
 	libBase = (PTR) IExec->CreateLibraryTags(
 		CLT_DataSize, sizeof( struct libBase ),
@@ -159,11 +210,8 @@ S32 error;
 
 	if ( ! libBase )
 	{
-		IExec->DebugPrintF( "AmyCLib : Error creating Device" );
 		goto bailout;
 	}
-
-	IExec->DebugPrintF( "AmyCLib : ROMInit 3\n" );
 
 	libBase->lib_Base.lib_Node.ln_Type	= NT_LIBRARY;
 	libBase->lib_Base.lib_Node.ln_Pri	= 0;

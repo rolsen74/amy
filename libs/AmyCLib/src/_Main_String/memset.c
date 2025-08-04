@@ -1,7 +1,8 @@
 
 /*
+** SPDX-License-Identifier: BSD-3-Clause
 ** Modifications (c) 2025 Rene W. Olsen
-** Part of Amy C Lib – SPDX-License-Identifier: BSD-3-Clause
+** Part of Amy C Lib
 **
 ** Based on:
 **
@@ -51,7 +52,7 @@
 
 void *_main_string_memset( struct AmyCLibIFace *Self UNUSED, void *s, int c, size_t n )
 {
-//struct libData *data;
+struct libData *data;
 size_t cnt;
 U8 *mem;
 
@@ -59,8 +60,8 @@ U8 *mem;
 
 	if ( ! s )
 	{
-//		data = (PTR)( (U32) Self - Self->Data.NegativeSize );
-//		data->buf_PublicData->ra_ErrNo = EFAULT;
+		data = (PTR)( (U32) Self - Self->Data.NegativeSize );
+		data->buf_PublicData->ra_ErrNo = EFAULT;
 	}
 	else
 	{

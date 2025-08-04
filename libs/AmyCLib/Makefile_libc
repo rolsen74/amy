@@ -5,6 +5,10 @@
 
 ###########################################################################
 
+STUB_REGISTRY		:= src_libc/reg_stubs.txt
+STUB_GEN_DIR		:= src_libc/stubs
+STUB_GEN_SCRIPT		:= src_libc/gen_stubs.py
+
 # Root Dir
 ROOTDIR		:= ../..
 
@@ -19,7 +23,7 @@ TARGET		:= libc.a
 
 # Compiler Flags
 CFLAGS		:= -O2
-CFLAGS		+= -I.
+CFLAGS		+= -I src_libc
 CFLAGS		+= -I $(ROOTDIR)/inc_System
 CFLAGS		+= -I $(ROOTDIR)/inc_Public
 CFLAGS		+= -I $(ROOTDIR)/inc_Private
@@ -80,18 +84,25 @@ endif
 # All stubs for libc
 
 # string.h
-SRCS		+= src_libc/string_strlen.c
+#SRCS		+= src_libc/stubs.c
 
 ###########################################################################
 
+SRCS		:= $(wildcard $(STUB_GEN_DIR)/*.c)
 OBJS		:= $(patsubst %.c,$(OBJDIR)/%.o,$(SRCS))
 DEPS		:= $(patsubst %.c,$(OBJDIR)/%.d,$(SRCS))
 
-all: $(BINDIR)/$(TARGET)
+all: stubs $(BINDIR)/$(TARGET)
+
+.PHONY: stubs
+stubs:
+	@echo "Generating stub files from registry..."
+	python3 $(STUB_GEN_SCRIPT)
 
 ###########################################################################
 
 $(BINDIR)/$(TARGET): $(OBJS)
+	$(RM) $@
 	$(AR) rcs $@ $(OBJS)
 
 ###########################################################################
@@ -102,7 +113,7 @@ $(BINDIR)/$(TARGET): $(OBJS)
 ###########################################################################
 
 clean:
-	$(RM) $(OBJS) $(DEPS) $(BIN)/$(TARGET)
+	$(RM) $(OBJS) $(DEPS) $(BINDIR)/$(TARGET) $(STUB_GEN_DIR)/*
 
 ###########################################################################
 

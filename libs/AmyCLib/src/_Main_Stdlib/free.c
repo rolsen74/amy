@@ -1,0 +1,22 @@
+
+/*
+** SPDX-License-Identifier: BSD-3-Clause
+** Copyright (c) 2025 Rene W. Olsen
+** Target OS: AmigaOS
+*/
+
+// --
+
+#include "src/All.h"
+
+// --
+
+void _main_stdlib_free( struct AmyCLibIFace *Self, void *mem )
+{
+	IExec->DebugPrintF( "_main_stdlib_free : Mem %p\n", mem );
+
+	// Memory is set to to 0xAC
+	Self->Priv_Mem_Free( mem );
+}
+
+// --
