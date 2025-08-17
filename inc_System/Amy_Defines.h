@@ -73,11 +73,25 @@ typedef char* STR;
 #define AMY_EXTERN_C_END
 #endif
 
+#ifndef MIN
+#define MIN(a,b)	((a) < (b) ? (a) : (b))
+#endif
+
+#ifndef MAX
+#define MAX(a,b)	((a) > (b) ? (a) : (b))
+#endif
+
+#ifndef ABS
+#define ABS(x) 		((x) < 0 ? -(x) : (x))
+#endif
+
 // --
 // GCC Compiler
 
 #if defined(__GNUC__)
 
+#if 0
+// check this
 #ifndef MIN
 #define MIN(a,b)	({ __typeof__(a) _a = (a); __typeof__(b) _b = (b); _a < _b ? _a : _b; })
 #endif
@@ -88,6 +102,7 @@ typedef char* STR;
 
 #ifndef ABS
 #define ABS(x)		({ __typeof__(x) _x = (x); _x < 0 ? -_x : _x; })
+#endif
 #endif
 
 #ifndef USED
@@ -100,6 +115,7 @@ typedef char* STR;
 
 #ifndef AMYFUNC		// Library Call and we want Stack only args
 #define AMYFUNC		__attribute__((libcall, linearvarargs))
+//#define AMYFUNC		__attribute__((libcall))
 #endif
 
 #ifndef VARARGS68K
@@ -110,18 +126,7 @@ typedef char* STR;
 // Unknown Compiler
 
 #else
-
-#ifndef MIN
-#define MIN(a,b)	((a) < (b) ? (a) : (b))
-#endif
-
-#ifndef MAX
-#define MAX(a,b)	((a) > (b) ? (a) : (b))
-#endif
-
-#ifndef ABS
-#define ABS(x) 		((x) < 0 ? -(x) : (x))
-#endif
+svn com
 #ifndef USED
 #define USED
 #endif

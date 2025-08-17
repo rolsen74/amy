@@ -15,23 +15,23 @@
 
 /****************************************************************************/
 
-#include <Amy_Defines.h>	// Need AMYFUNC
+#include <Amy_Defines.h>	// Need AMY_EXTERN_C_BEGIN
 #include <stddef.h>
 
 /****************************************************************************/
 
 AMY_EXTERN_C_BEGIN
 
-int		AMYFUNC bcmp( const void *, const void *, size_t );
-void	AMYFUNC bcopy( const void *, void *, size_t );
-void	AMYFUNC bzero( void *, size_t );
-void	AMYFUNC explicit_bzero( void *, size_t );
-int		AMYFUNC ffs( int );
-char *	AMYFUNC index( const char *, int );
-char *	AMYFUNC rindex( const char *, int );
-int		AMYFUNC strcasecmp( const char *, const char *);
-int		AMYFUNC strncasecmp( const char *, const char *, size_t );
-int		AMYFUNC timingsafe_bcmp( const void *, const void *, size_t );
+int		bcmp( const void *, const void *, size_t );
+void	bcopy( const void *, void *, size_t );
+void	bzero( void *, size_t );
+void	explicit_bzero( void *, size_t );
+int		ffs( int );
+char *	index( const char *, int );
+char *	rindex( const char *, int );
+int		strcasecmp( const char *, const char *);
+int		strncasecmp( const char *, const char *, size_t );
+int		timingsafe_bcmp( const void *, const void *, size_t );
 
 AMY_EXTERN_C_END
 
@@ -56,4 +56,3 @@ AMY_EXTERN_C_END
 /****************************************************************************/
 
 #endif
-

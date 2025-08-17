@@ -11,13 +11,13 @@
 
 // --
 
-struct Interface *_main_Clone( struct AmyCLibIFace *Self )
+struct Interface * AMYFUNC _Main_Clone( struct AmyCLibIFace *Self )
 {
 struct AmyCLibIFace *IFace;
 struct libData *data;
 S32 error;
 
-	IExec->DebugPrintF( "_main_Clone\n" );
+	IExec->DebugPrintF( "AmyCLib : _Main_Clone\n" );
 
 	error = TRUE;
 
@@ -36,10 +36,13 @@ S32 error;
 
 	data = (PTR)( (U32) IFace - IFace->Data.NegativeSize );
 
-//	IExec->DebugPrintF( "_main_Clone 2 : Neg %ld, data %p, IFace %p, Self %p, bzerp %p\n", 
+	IExec->DebugPrintF( "_Main_Clone : IFace %p, Data %p\n", IFace, data );
+
+//	IExec->DebugPrintF( "_Main_Clone 2 : Neg %ld, data %p, IFace %p, Self %p, bzerp %p\n", 
 //		IFace->Data.NegativeSize, data, IFace, Self, IFace->strings_bzero );
 
-	IFace->strings_bzero( data, sizeof( struct libData ));
+//	IFace->strings_bzero( data, sizeof( struct libData ));
+	_generic_string_memset( IFace, data, 0, sizeof( struct libData ));
 
 	// --
 	// This Init code is so simple and do not alloc anything
@@ -48,11 +51,11 @@ S32 error;
 
 //	IExec->InitSemaphore( & data->PThread_Semaphore );
 //	IExec->InitSemaphore( & data->netdb_Semaphore );
-//	IExec->InitSemaphore( & data->FileSemaphore );
-//	IExec->InitSemaphore( & data->LocaleSemaphore );
+	IExec->InitSemaphore( & data->FD_Semaphore );
+	IExec->InitSemaphore( & data->LocaleSemaphore );
 	IExec->InitSemaphore( & data->MemSemaphore );
 //	IDOS->DateStamp( & data->TimeClock_StartTime );
-//	IExec->NewList( & data->ExitHeader );
+	IExec->NewList( & data->ExitHeader );
 	IExec->NewList( & data->MemPools );
 
 //	data->SignalAllocated = -1;
@@ -77,7 +80,7 @@ S32 error;
 
 	// --
 
-//	IExec->DebugPrintF( "_main_Clone 3\n" );
+//	IExec->DebugPrintF( "_Main_Clone 3\n" );
 
 	error = FALSE;
 
@@ -89,7 +92,7 @@ bailout:
 		IFace = NULL;
 	}
 
-//	IExec->DebugPrintF( "_main_Clone 99 : %p\n", IFace );
+//	IExec->DebugPrintF( "_Main_Clone 99 : %p\n", IFace );
 
 	return(	(PTR) IFace );
 }

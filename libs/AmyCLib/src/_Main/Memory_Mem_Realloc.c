@@ -11,7 +11,7 @@
 
 // --
 
-PTR _main__Priv_Mem_Realloc( struct AmyCLibIFace *Self, PTR oldmem, U32 Size )
+PTR AMYFUNC _generic__Priv_Mem_Realloc( struct AmyCLibIFace *Self, PTR oldmem, U32 Size )
 {
 struct MemStruct *realmem;
 //struct libData *data;
@@ -19,7 +19,7 @@ U32 realsize;
 U32 len;
 PTR newmem;
 
-	IExec->DebugPrintF( "_main__Priv_Mem_Realloc\n" );
+	IExec->DebugPrintF( "_generic__Priv_Mem_Realloc\n" );
 
 //	data = (PTR)( (U32) Self - Self->Data.NegativeSize );
 
@@ -46,7 +46,7 @@ PTR newmem;
 
 		realmem = (PTR) (((U32)oldmem) - 8 );
 
-		if ( realmem->ID != MEMID )
+		if ( realmem->ID != ID_MEM )
 		{
 			IExec->DebugPrintF( "RA Panic : Invlid Memory ID\n" );
 			newmem = NULL;

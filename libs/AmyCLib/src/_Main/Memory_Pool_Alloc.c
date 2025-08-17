@@ -11,7 +11,7 @@
 
 // --
 
-PTR _main__Priv_Mem_AllocPooled( struct AmyCLibIFace *Self, struct MemPoolHeader *handle, U32 Size )
+PTR AMYFUNC _generic__Priv_Mem_AllocPooled( struct AmyCLibIFace *Self, struct MemPoolHeader *handle, U32 Size )
 {
 //struct libData *data;
 struct PoolBlock *new;
@@ -21,7 +21,7 @@ struct PoolNode *pn;
 //struct libBase *libBase;
 U32 chunksize;
 U32 datasize;
-//BOOL Notify;
+//S32 Notify;
 U32 *m;
 S32 move;
 PTR mem;
@@ -38,7 +38,7 @@ PTR mem;
 
 	if ( ! Size )
 	{
-		IExec->DebugPrintF( "_main__Priv_Mem_AllocPooled : Size is zero\n" );
+		IExec->DebugPrintF( "_generic__Priv_Mem_AllocPooled : Size is zero\n" );
 		goto bailout;
 	}
 
@@ -57,13 +57,13 @@ PTR mem;
 
 	if ( ! handle )
 	{
-		IExec->DebugPrintF( "_main__Priv_Mem_AllocPooled : Handle is NULL\n" );
+		IExec->DebugPrintF( "_generic__Priv_Mem_AllocPooled : Handle is NULL\n" );
 		goto bailout;
 	}
 
-	if ( handle->ph_ID != POOLID )
+	if ( handle->ph_ID != ID_POOL )
 	{
-		IExec->DebugPrintF( "_main__Priv_Mem_AllocPooled : Invalid Pool ID\n" );
+		IExec->DebugPrintF( "_generic__Priv_Mem_AllocPooled : Invalid Pool ID\n" );
 		goto bailout;
 	}
 
@@ -179,7 +179,7 @@ PTR mem;
 
 			if ( pb->pb_Free == chunksize )
 			{
-				if ( old == NULL )
+				if ( ! old )
 				{
 					pn->pn_Blocks = pb->pb_Next;
 				}
@@ -197,7 +197,7 @@ PTR mem;
 				new->pb_Next = pb->pb_Next;
 				new->pb_Free = pb->pb_Free - cs;
 
-				if ( old == NULL )
+				if ( ! old )
 				{
 					pn->pn_Blocks = new;
 				}
@@ -254,7 +254,7 @@ PTR mem;
 		// --
 
 		m		= (PTR) pb;
-		m[0]	= MEMID;
+		m[0]	= ID_MEM;
 		m[1]	= datasize;
 		mem		= (PTR) & m[2];
 
@@ -269,7 +269,7 @@ PTR mem;
 
 	// --
 
-	IExec->DebugPrintF( "_main__Priv_Mem_AllocPooled : mem %p, Size %lu\n", mem, Size );
+	IExec->DebugPrintF( "_generic__Priv_Mem_AllocPooled : mem %p, Size %lu\n", mem, Size );
 
 bailout:
 

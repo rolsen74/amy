@@ -1,7 +1,13 @@
-import os
-import shlex  # This handles quoted tokens
+##
+## SPDX-License-Identifier: BSD-3-Clause
+## Copyright (c) 2025 Rene W. Olsen
+## Target OS: AmigaOS
+##
 
-STUBS_DIR = 'src_libc/stubs'
+import os
+import shlex  # Handles quoted strings properly
+
+STUBS_DIR = 'src_libc/gen-stubs'
 REGISTRY = 'src_libc/reg_stubs.txt'
 
 os.makedirs(STUBS_DIR, exist_ok=True)
@@ -19,27 +25,50 @@ HEADER = '''\
 #include "Stub.h"
 '''
 
-# Mapping: 'string_memcpy' -> <string.h>, etc.
+# Map interface function prefixes to standard headers
 INCLUDE_MAP = {
-    'stdlib_': 'stdlib.h',
-    'string_': 'string.h',
+    "assert_":  'assert.h',
+    'fcntl_':   'fcntl.h',
+    'ctype_':   'ctype.h',
+    'stdlib_':  'stdlib.h',
+    'stdio_':   'stdio.h',
+    'string_':  'string.h',
     'strings_': 'strings.h',
-    'setjmp_': 'setjmp.h',
+    'setjmp_':  'setjmp.h',
+    'unistd_':  'unistd.h',
+    'math_d_':  'math.h',
 }
 
-def deduce_header(iface_func):
+def deduce_header(iface_func: str):
     for prefix, header in INCLUDE_MAP.items():
         if iface_func.startswith(prefix):
             return f'#include <{header}>'
     return None
 
+def sanitize_args_call(args_call: str) -> str:
+    """
+    Remove any accidental leading Self/IAmyCLib from args_call,
+    since the LIBC_STUB macro injects IAmyCLib itself.
+    """
+    parts = [p.strip() for p in args_call.split(',') if p.strip()]
+    if parts and parts[0] in ('Self', 'IAmyCLib'):
+        parts = parts[1:]
+    return ', '.join(parts)
+
+def format_args_decl(args_decl: str) -> str:
+    """
+    For empty declarations, emit (void) to avoid old-style prototypes.
+    Otherwise wrap as (args_decl).
+    """
+    args_decl = args_decl.strip()
+    return '(void)' if not args_decl else f'({args_decl})'
+
 with open(REGISTRY) as f:
-    for line in f:
-        line = line.strip()
+    for raw_line in f:
+        line = raw_line.strip()
         if not line or line.startswith("#"):
             continue
 
-        # Parse respecting quotes
         try:
             parts = shlex.split(line)
         except ValueError:
@@ -50,10 +79,10 @@ with open(REGISTRY) as f:
             print(f"Skipping invalid line: {line}")
             continue
 
-        # Properly indented lines here:
-        ret, name, iface_func = parts[0:3]
-        args_decl = parts[3]
-        args_call = ' '.join(parts[4:])
+        ret, name, iface_func, args_call, args_decl = parts[:5]
+
+        args_call = sanitize_args_call(args_call.strip())
+        decl_text = format_args_decl(args_decl)
 
         filename = os.path.join(STUBS_DIR, f"{name}.c")
         header_include = deduce_header(iface_func)
@@ -63,6 +92,38 @@ with open(REGISTRY) as f:
             if header_include:
                 out.write(f"{header_include}\n")
             out.write("\n")
-            out.write(f"LIBC_STUB({ret}, {name}, {iface_func}, ({args_decl}), {args_call});\n")
+
+            # Variadic: must use the VARARGS macro (fixed args go in call_fixed)
+            if "..." in args_decl:
+                # call_fixed must not include __VA_ARGS__. Just the named fixed args before '...'.
+                call_fixed = args_call  # already sanitized
+                if call_fixed:
+                    out.write(
+                        f"LIBC_STUB_VARARGS({ret}, {name}, {iface_func},\n"
+                        f"    {decl_text},\n"
+                        f"    {call_fixed});\n"
+                    )
+                else:
+                    # Unusual: no fixed args before '...'
+                    out.write(
+                        f"LIBC_STUB_VARARGS({ret}, {name}, {iface_func},\n"
+                        f"    {decl_text},\n"
+                        f"    );\n"
+                    )
+            else:
+                # Non-variadic: if there are no call args, do not emit the extra comma
+                if args_call:
+                    out.write(
+                        f"LIBC_STUB({ret}, {name}, {iface_func},\n"
+                        f"    {decl_text},\n"
+                        f"    {args_call});\n"
+                    )
+                else:
+                    # No-arg function: invoke macro without the variadic argument position
+                    out.write(
+                        f"LIBC_STUB({ret}, {name}, {iface_func},\n"
+                        f"    {decl_text}\n"
+                        f");\n"
+                    )
 
         print(f"Generated: {filename}")

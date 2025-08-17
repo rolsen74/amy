@@ -11,13 +11,13 @@
 
 // --
 
-PTR _main__Priv_Mem_Alloc( struct AmyCLibIFace *Self, U32 Size )
+PTR AMYFUNC _generic__Priv_Mem_Alloc( struct AmyCLibIFace *Self, U32 Size )
 {
 struct MemPoolHeader *pool;
 struct libData *data;
 PTR mem;
 
-//	IExec->DebugPrintF( "_main__Priv_Mem_Alloc - Size: %lu\n", Size );
+//	IExec->DebugPrintF( "_generic__Priv_Mem_Alloc - Size: %lu\n", Size );
 
 	data = (PTR)( (U32) Self - Self->Data.NegativeSize );
 
@@ -27,7 +27,7 @@ PTR mem;
 
 	if ( ! Size )
 	{
-		IExec->DebugPrintF( "_main__Priv_Mem_Alloc : Zero size\n" );
+		IExec->DebugPrintF( "_generic__Priv_Mem_Alloc : Zero size\n" );
 		goto bailout;
 	}
 
@@ -40,13 +40,13 @@ PTR mem;
 
 	if ( ! pool )
 	{
-		IExec->DebugPrintF( "_main__Priv_Mem_Alloc : No Memory Pool\n" );
+		IExec->DebugPrintF( "_generic__Priv_Mem_Alloc : No Memory Pool\n" );
 		goto bailout;
 	}
 
 	mem = Self->Priv_Mem_AllocPooled( pool, Size );
 
-	IExec->DebugPrintF( "_main__Priv_Mem_Alloc : mem %p, size %lu\n", mem, Size );
+	IExec->DebugPrintF( "_generic__Priv_Mem_Alloc : mem %p, size %lu\n", mem, Size );
 
 bailout:
 

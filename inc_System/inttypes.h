@@ -15,7 +15,7 @@
 
 /****************************************************************************/
 
-#include <Amy_Defines.h>	// Need AMYFUNC
+#include <Amy_Defines.h>	// Need AMY_EXTERN_C_BEGIN
 #include <stdint.h>
 #include <stddef.h>
 #include <wchar.h>
@@ -233,12 +233,12 @@ typedef struct
 
 AMY_EXTERN_C_BEGIN
 
-intmax_t	AMYFUNC imaxabs( intmax_t );
-imaxdiv_t	AMYFUNC imaxdiv( intmax_t, intmax_t );
-intmax_t	AMYFUNC strtoimax( const char *, char **, int );
-uintmax_t	AMYFUNC strtoumax( const char *, char **, int );
-intmax_t	AMYFUNC wcstoimax( const wchar_t *, wchar_t **, int );
-uintmax_t	AMYFUNC wcstoumax( const wchar_t *, wchar_t **, int );
+intmax_t	imaxabs( intmax_t );
+imaxdiv_t	imaxdiv( intmax_t, intmax_t );
+intmax_t	strtoimax( const char *, char **, int );
+uintmax_t	strtoumax( const char *, char **, int );
+intmax_t	wcstoimax( const wchar_t *, wchar_t **, int );
+uintmax_t	wcstoumax( const wchar_t *, wchar_t **, int );
 
 AMY_EXTERN_C_END
 

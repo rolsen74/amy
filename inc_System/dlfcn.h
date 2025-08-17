@@ -15,7 +15,7 @@
 
 /****************************************************************************/
 
-#include <Amy_Defines.h>	// Need AMYFUNC
+#include <Amy_Defines.h>	// Need AMY_EXTERN_C_BEGIN
 
 /****************************************************************************/
 
@@ -28,10 +28,10 @@
 
 AMY_EXTERN_C_BEGIN
 
-int		AMYFUNC dlclose( void * );
-char *	AMYFUNC dlerror( void );
-void *	AMYFUNC dlopen( const char *, int );
-void *	AMYFUNC dlsym( void *, const char * );
+int		dlclose( void * );
+char *	dlerror( void );
+void *	dlopen( const char *, int );
+void *	dlsym( void *, const char * );
 
 AMY_EXTERN_C_END
 

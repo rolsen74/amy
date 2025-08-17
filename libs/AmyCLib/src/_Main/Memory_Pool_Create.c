@@ -11,12 +11,12 @@
 
 // --
 
-struct MemPoolHeader *_main__Priv_Mem_CreatePool( struct AmyCLibIFace *Self, U32 size )
+struct MemPoolHeader * AMYFUNC _generic__Priv_Mem_CreatePool( struct AmyCLibIFace *Self, U32 size )
 {
 struct MemPoolHeader *handle;
 struct libData *data;
 
-	IExec->DebugPrintF( "_main__Priv_Mem_CreatePool\n" );
+	IExec->DebugPrintF( "_generic__Priv_Mem_CreatePool\n" );
 
 	data = (PTR)( (U32) Self - Self->Data.NegativeSize );
 
@@ -40,7 +40,7 @@ struct libData *data;
 	IExec->NewList(			& handle->ph_Pools );
 	IExec->InitSemaphore(	& handle->ph_Semaphore );
 
-	handle->ph_ID		= POOLID;
+	handle->ph_ID		= ID_POOL;
 	handle->ph_PoolSize	= (( size + 7 ) & 0xfffffff8 );
 
 	// -- Done

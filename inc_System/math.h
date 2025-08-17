@@ -15,7 +15,7 @@
 
 /****************************************************************************/
 
-#include <Amy_Defines.h>	// Need AMYFUNC
+#include <Amy_Defines.h>	// Need AMY_EXTERN_C_BEGIN
 #include <limits.h>			// For INT_MAX
 
 /****************************************************************************/
@@ -28,7 +28,7 @@ typedef float			float_t;
 typedef double			double_t;
 
 // fix me for AmyCLib
-// #define signgam			RACLibPublic->ra_signgam
+// #define signgam			AmyCLibPublic->ra_signgam
 
 #define HUGE_VAL			__builtin_huge_val()
 #define HUGE_VALF			__builtin_huge_valf()
@@ -102,9 +102,9 @@ typedef double			double_t;
 #define __isnan(x)			__builtin_isnan(x)
 #endif
 
-#ifndef __isnanf
-#define __isnanf(x)			__builtin_isnan((float)(x))
-#endif
+//#ifndef __isnanf
+//#define __isnanf(x)			__builtin_isnan((float)(x))
+//#endif
 
 #ifndef __isnanl
 #define __isnanl(x)			__builtin_isnan((long double)(x))
@@ -126,13 +126,13 @@ typedef double			double_t;
 #define __signbit(x)		__builtin_signbit(x)
 #endif
 
-#ifndef __signbitf
-#define __signbitf(x)		__builtin_signbit((float)(x))
-#endif
+//#ifndef __signbitf
+//#define __signbitf(x)		__builtin_signbit((float)(x))
+//#endif
 
-#ifndef __signbitl
-#define __signbitl(x)		__builtin_signbit((long double)(x))
-#endif
+//#ifndef __signbitl
+//#define __signbitl(x)		__builtin_signbit((long double)(x))
+//#endif
 
 #define fpclassify(x) \
 	((sizeof (x) == sizeof (float)) ? \
@@ -253,241 +253,241 @@ typedef double			double_t;
 
 AMY_EXTERN_C_BEGIN
 
-double		AMYFUNC acos(			double );
-float		AMYFUNC acosf(			float );
-long double	AMYFUNC acosl(			long double );
+double		acos(			double );
+float		acosf(			float );
+long double	acosl(			long double );
 
-double		AMYFUNC acosh(			double );
-float		AMYFUNC acoshf(			float );
-long double	AMYFUNC acoshl( 		long double );
+double		acosh(			double );
+float		acoshf(			float );
+long double	acoshl( 		long double );
 
-double		AMYFUNC asin(			double );
-float		AMYFUNC asinf(			float );
-long double	AMYFUNC asinl(			long double );
+double		asin(			double );
+float		asinf(			float );
+long double	asinl(			long double );
 
-double		AMYFUNC asinh(			double );
-float		AMYFUNC asinhf(			float );
-long double	AMYFUNC asinhl(			long double );
+double		asinh(			double );
+float		asinhf(			float );
+long double	asinhl(			long double );
 
-double		AMYFUNC atan2(			double, double );
-float		AMYFUNC atan2f(			float, float );
-long double	AMYFUNC atan2l(			long double, long double );
+double		atan2(			double, double );
+float		atan2f(			float, float );
+long double	atan2l(			long double, long double );
 
-double		AMYFUNC atan(			double );
-float		AMYFUNC atanf(			float );
-long double	AMYFUNC atanl(			long double );
+double		atan(			double );
+float		atanf(			float );
+long double	atanl(			long double );
 
-double		AMYFUNC atanh(			double );
-float		AMYFUNC atanhf(			float );
-long double	AMYFUNC atanhl(			long double );
+double		atanh(			double );
+float		atanhf(			float );
+long double	atanhl(			long double );
 
-double		AMYFUNC cbrt(			double );
-float		AMYFUNC cbrtf(			float );
-long double	AMYFUNC cbrtl(			long double );
+double		cbrt(			double );
+float		cbrtf(			float );
+long double	cbrtl(			long double );
 
-double		AMYFUNC ceil(			double );
-float		AMYFUNC ceilf(			float );
-long double	AMYFUNC ceill(			long double );
+double		ceil(			double );
+float		ceilf(			float );
+long double	ceill(			long double );
 
-double		AMYFUNC copysign(		double, double );
-float		AMYFUNC copysignf(		float, float );
-long double	AMYFUNC copysignl(		long double, long double );
+double		copysign(		double, double );
+float		copysignf(		float, float );
+long double	copysignl(		long double, long double );
 
-double		AMYFUNC cos(			double );
-float		AMYFUNC cosf(			float );
-long double	AMYFUNC cosl(			long double );
+double		cos(			double );
+float		cosf(			float );
+long double	cosl(			long double );
 
-double		AMYFUNC cosh(			double );
-float		AMYFUNC coshf(			float );
-long double	AMYFUNC coshl(			long double );
+double		cosh(			double );
+float		coshf(			float );
+long double	coshl(			long double );
 
-double		AMYFUNC erf(			double );
-float		AMYFUNC erff(			float );
-long double	AMYFUNC erfl(			long double );
+double		erf(			double );
+float		erff(			float );
+long double	erfl(			long double );
 
-double		AMYFUNC erfc(			double );
-float		AMYFUNC erfcf(			float );
-long double	AMYFUNC erfcl(			long double );
+double		erfc(			double );
+float		erfcf(			float );
+long double	erfcl(			long double );
 
-double		AMYFUNC exp(			double );
-float		AMYFUNC expf(			float );
-long double	AMYFUNC expl(			long double );
+double		exp(			double );
+float		expf(			float );
+long double	expl(			long double );
 
-double		AMYFUNC exp2(			double );
-float		AMYFUNC exp2f(			float );
-long double	AMYFUNC exp2l(			long double );
+double		exp2(			double );
+float		exp2f(			float );
+long double	exp2l(			long double );
 
-double		AMYFUNC expm1(			double );
-float		AMYFUNC expm1f(			float );
-long double	AMYFUNC expm1l(			long double );
+double		expm1(			double );
+float		expm1f(			float );
+long double	expm1l(			long double );
 
-double		AMYFUNC fabs(			double );
-float		AMYFUNC fabsf(			float );
-long double	AMYFUNC fabsl(			long double );
+double		fabs(			double );
+float		fabsf(			float );
+long double	fabsl(			long double );
 
-double		AMYFUNC fdim(			double, double );
-float		AMYFUNC fdimf(			float, float );
-long double	AMYFUNC fdiml(			long double, long double );
+double		fdim(			double, double );
+float		fdimf(			float, float );
+long double	fdiml(			long double, long double );
 
-double		AMYFUNC floor(			double );
-float		AMYFUNC floorf(			float );
-long double	AMYFUNC floorl(			long double );
+double		floor(			double );
+float		floorf(			float );
+long double	floorl(			long double );
 
-double		AMYFUNC fma(			double, double, double );
-float		AMYFUNC fmaf(			float, float, float );
-long double	AMYFUNC fmal(			long double, long double, long double );
+double		fma(			double, double, double );
+float		fmaf(			float, float, float );
+long double	fmal(			long double, long double, long double );
 
-double		AMYFUNC fmax(			double, double );
-float		AMYFUNC fmaxf(			float, float );
-long double	AMYFUNC fmaxl(			long double, long double );
+double		fmax(			double, double );
+float		fmaxf(			float, float );
+long double	fmaxl(			long double, long double );
 
-double		AMYFUNC fmin(			double, double );
-float		AMYFUNC fminf(			float, float );
-long double	AMYFUNC fminl(			long double, long double );
+double		fmin(			double, double );
+float		fminf(			float, float );
+long double	fminl(			long double, long double );
 
-double		AMYFUNC fmod(			double, double );
-float		AMYFUNC fmodf(			float, float );
-long double	AMYFUNC fmodl(			long double, long double );
+double		fmod(			double, double );
+float		fmodf(			float, float );
+long double	fmodl(			long double, long double );
 
-double		AMYFUNC frexp(			double, int * );
-float		AMYFUNC frexpf(			float, int * );
-long double	AMYFUNC frexpl(			long double, int * );
+double		frexp(			double, int * );
+float		frexpf(			float, int * );
+long double	frexpl(			long double, int * );
 
-double		AMYFUNC hypot(			double, double );
-float		AMYFUNC hypotf(			float, float );
-long double	AMYFUNC hypotl(			long double, long double );
+double		hypot(			double, double );
+float		hypotf(			float, float );
+long double	hypotl(			long double, long double );
 
-int			AMYFUNC ilogb(			double );
-int			AMYFUNC ilogbf(			float );
-int			AMYFUNC ilogbl(			long double );
+int			ilogb(			double );
+int			ilogbf(			float );
+int			ilogbl(			long double );
 
-double		AMYFUNC j0(				double );
-double		AMYFUNC j1(				double );
-double		AMYFUNC jn(				int, double );
+double		j0(				double );
+double		j1(				double );
+double		jn(				int, double );
 
-double		AMYFUNC ldexp(			double, int );
-float		AMYFUNC ldexpf(			float, int );
-long double	AMYFUNC ldexpl(			long double, int );
+double		ldexp(			double, int );
+float		ldexpf(			float, int );
+long double	ldexpl(			long double, int );
 
-double		AMYFUNC lgamma(			double );
-float		AMYFUNC lgammaf(		float );
-long double	AMYFUNC lgammal(		long double );
+double		lgamma(			double );
+float		lgammaf(		float );
+long double	lgammal(		long double );
 
-long long	AMYFUNC llrint(			double );
-long long	AMYFUNC llrintf(		float );
-long long	AMYFUNC llrintl(		long double );
+long long	llrint(			double );
+long long	llrintf(		float );
+long long	llrintl(		long double );
 
-long long	AMYFUNC llround(		double );
-long long	AMYFUNC llroundf(		float );
-long long	AMYFUNC llroundl(		long double );
+long long	llround(		double );
+long long	llroundf(		float );
+long long	llroundl(		long double );
 
-double		AMYFUNC log(			double );
-float		AMYFUNC logf(			float );
-long double	AMYFUNC logl(			long double );
+double		log(			double );
+float		logf(			float );
+long double	logl(			long double );
 
-double		AMYFUNC log1p(			double );
-float		AMYFUNC log1pf(			float );
-long double	AMYFUNC log1pl(			long double );
+double		log1p(			double );
+float		log1pf(			float );
+long double	log1pl(			long double );
 
-double		AMYFUNC log2(			double );
-float		AMYFUNC log2f(			float );
-long double	AMYFUNC log2l(			long double );
+double		log2(			double );
+float		log2f(			float );
+long double	log2l(			long double );
 
-double		AMYFUNC log10(			double );
-float		AMYFUNC log10f(			float );
-long double	AMYFUNC log10l(			long double );
+double		log10(			double );
+float		log10f(			float );
+long double	log10l(			long double );
 
-double		AMYFUNC logb(			double );
-float		AMYFUNC logbf(			float );
-long double	AMYFUNC logbl(			long double );
+double		logb(			double );
+float		logbf(			float );
+long double	logbl(			long double );
 
-long		AMYFUNC lrint(			double );
-long		AMYFUNC lrintf(			float );
-long		AMYFUNC lrintl(			long double );
+long		lrint(			double );
+long		lrintf(			float );
+long		lrintl(			long double );
 
-long		AMYFUNC lround(			double );
-long		AMYFUNC lroundf(		float );
-long		AMYFUNC lroundl(		long double );
+long		lround(			double );
+long		lroundf(		float );
+long		lroundl(		long double );
 
-double		AMYFUNC modf(			double, double * );
-float		AMYFUNC modff(			float, float * );
-long double	AMYFUNC modfl(			long double, long double * );
+double		modf(			double, double * );
+float		modff(			float, float * );
+long double	modfl(			long double, long double * );
 
-double		AMYFUNC nan(			const char * );
-float		AMYFUNC nanf(			const char * );
-long double	AMYFUNC nanl(			const char * );
+double		nan(			const char * );
+float		nanf(			const char * );
+long double	nanl(			const char * );
 
-double		AMYFUNC nearbyint(		double );
-float		AMYFUNC nearbyintf(		float );
-long double	AMYFUNC nearbyintl(		long double );
+double		nearbyint(		double );
+float		nearbyintf(		float );
+long double	nearbyintl(		long double );
 
-double		AMYFUNC nextafter( 		double, double );
-float		AMYFUNC nextafterf(		float, float );
-long double	AMYFUNC nextafterl(		long double, long double );
+double		nextafter( 		double, double );
+float		nextafterf(		float, float );
+long double	nextafterl(		long double, long double );
 
-double		AMYFUNC nexttoward(		double, long double );
-float		AMYFUNC nexttowardf(	float, long double );
-long double	AMYFUNC nexttowardl(	long double, long double );
+double		nexttoward(		double, long double );
+float		nexttowardf(	float, long double );
+long double	nexttowardl(	long double, long double );
 
-double		AMYFUNC pow(			double, double );
-float		AMYFUNC powf(			float, float );
-long double	AMYFUNC powl(			long double, long double );
+double		pow(			double, double );
+float		powf(			float, float );
+long double	powl(			long double, long double );
 
-double		AMYFUNC remainder(		double, double );
-float		AMYFUNC remainderf(		float, float );
-long double	AMYFUNC remainderl(		long double, long double );
+double		remainder(		double, double );
+float		remainderf(		float, float );
+long double	remainderl(		long double, long double );
 
-double		AMYFUNC remquo(			double, double, int * );
-float		AMYFUNC remquof(		float, float, int * );
-long double	AMYFUNC remquol(		long double, long double, int * );
+double		remquo(			double, double, int * );
+float		remquof(		float, float, int * );
+long double	remquol(		long double, long double, int * );
 
-double		AMYFUNC rint(			double );
-float		AMYFUNC rintf(			float );
-long double	AMYFUNC rintl(			long double );
+double		rint(			double );
+float		rintf(			float );
+long double	rintl(			long double );
 
-double		AMYFUNC round(			double );
-float		AMYFUNC roundf(			float );
-long double	AMYFUNC roundl(			long double );
+double		round(			double );
+float		roundf(			float );
+long double	roundl(			long double );
 
-double		AMYFUNC scalbln(		double, long );
-float		AMYFUNC scalblnf(		float, long );
-long double	AMYFUNC scalblnl(		long double, long );
+double		scalbln(		double, long );
+float		scalblnf(		float, long );
+long double	scalblnl(		long double, long );
 
-double		AMYFUNC scalbn(			double, int );
-float		AMYFUNC scalbnf(		float, int );
-long double	AMYFUNC scalbnl(		long double, int );
+double		scalbn(			double, int );
+float		scalbnf(		float, int );
+long double	scalbnl(		long double, int );
 
-double		AMYFUNC sin(			double );
-float		AMYFUNC sinf(			float );
-long double	AMYFUNC sinl(			long double );
+double		sin(			double );
+float		sinf(			float );
+long double	sinl(			long double );
 
-double		AMYFUNC sinh(			double );
-float		AMYFUNC sinhf(			float );
-long double	AMYFUNC sinhl(			long double );
+double		sinh(			double );
+float		sinhf(			float );
+long double	sinhl(			long double );
 
-double		AMYFUNC sqrt(			double );
-float		AMYFUNC sqrtf(			float );
-long double	AMYFUNC sqrtl(			long double );
+double		sqrt(			double );
+float		sqrtf(			float );
+long double	sqrtl(			long double );
 
-double		AMYFUNC tan(			double );
-float		AMYFUNC tanf(			float );
-long double	AMYFUNC tanl(			long double );
+double		tan(			double );
+float		tanf(			float );
+long double	tanl(			long double );
 
-double		AMYFUNC tanh(			double );
-float		AMYFUNC tanhf(			float );
-long double	AMYFUNC tanhl(			long double );
+double		tanh(			double );
+float		tanhf(			float );
+long double	tanhl(			long double );
 
-double		AMYFUNC tgamma(			double );
-float		AMYFUNC tgammaf(		float );
-long double	AMYFUNC tgammal(		long double );
+double		tgamma(			double );
+float		tgammaf(		float );
+long double	tgammal(		long double );
 
-double		AMYFUNC trunc(			double );
-float		AMYFUNC truncf(			float );
-long double	AMYFUNC truncl(			long double );
+double		trunc(			double );
+float		truncf(			float );
+long double	truncl(			long double );
 
-double		AMYFUNC y0(				double );
-double		AMYFUNC y1(				double );
-double		AMYFUNC yn(				int, double );
+double		y0(				double );
+double		y1(				double );
+double		yn(				int, double );
 
 AMY_EXTERN_C_END
 
@@ -496,12 +496,12 @@ AMY_EXTERN_C_END
 
 AMY_EXTERN_C_BEGIN
 
-int			AMYFUNC __isnan(		double );
-int			AMYFUNC __isnanf(		float );
+int			__isnan(		double );
+int			__isnanf(		float );
 
-int			AMYFUNC __signbit(		double );
-int			AMYFUNC __signbitf(		float );
-int			AMYFUNC __signbitl(		long double );
+int			__signbit(		double );
+int			__signbitf(		float );
+int			__signbitl(		long double );
 
 AMY_EXTERN_C_END
 

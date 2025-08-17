@@ -11,9 +11,9 @@
 
 // --
 
-void _main_stdlib_free( struct AmyCLibIFace *Self, void *mem )
+void AMYFUNC _generic_stdlib_free( struct AmyCLibIFace *Self, void *mem )
 {
-	IExec->DebugPrintF( "_main_stdlib_free : Mem %p\n", mem );
+	IExec->DebugPrintF( "_generic_stdlib_free : Mem %p\n", mem );
 
 	// Memory is set to to 0xAC
 	Self->Priv_Mem_Free( mem );

@@ -15,7 +15,7 @@
 
 /****************************************************************************/
 
-#include <Amy_Defines.h>	// Need AMYFUNC
+#include <Amy_Defines.h>	// Need AMY_EXTERN_C_BEGIN
 #include <stdint.h>
 
 /****************************************************************************/
@@ -23,24 +23,24 @@
 struct __jmp_buf
 {
 	// Offset 0
-	void *			ReturnAddress;
+	PTR				ReturnAddress;
 
 	// Offset 4
-	uint32_t		CondCode;
+	U32				CondCode;
 
 	// Offset 8
-	void *   		StackPointer;
+	PTR		 		StackPointer;
 
 	// Offset 12
-	uint32_t		GPR[19];
+	U32				GPR[19];
 
 	// Offset 88
 	// Floating Points must be 8 byte alligned
-	double			FPR[18];
+	U64				FPR[18];
 
 	// Adding 8 bytes for Alignment
 	// Handled internaly in setjmp/longjmp
-	uint8_t			Padding[8];
+	U8				Padding[8];
 };
 
 // jmp_buf set to the same size as Newlib's
@@ -50,13 +50,13 @@ typedef uint8_t jmp_buf[ 512 ];
 
 AMY_EXTERN_C_BEGIN
 
-void	AMYFUNC _longjmp( jmp_buf, int );
-void	AMYFUNC longjmp( jmp_buf, int );
-void	AMYFUNC siglongjmp( jmp_buf, int );
+void	_longjmp( jmp_buf, int );
+void	longjmp( jmp_buf, int );
+void	siglongjmp( jmp_buf, int );
 
-int		AMYFUNC _setjmp( jmp_buf );
-int		AMYFUNC setjmp( jmp_buf );
-int		AMYFUNC sigsetjmp( jmp_buf );
+int		_setjmp( jmp_buf );
+int		setjmp( jmp_buf );
+int		sigsetjmp( jmp_buf );
 
 AMY_EXTERN_C_END
 

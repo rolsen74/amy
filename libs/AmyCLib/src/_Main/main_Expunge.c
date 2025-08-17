@@ -11,12 +11,12 @@
 
 // --
 
-U32 _main_Expunge( struct AmyCLibIFace *Self )
+U32 AMYFUNC _Main_Expunge( struct AmyCLibIFace *Self )
 {
 struct libData *data;
 U32 retval;
 
-	IExec->DebugPrintF( "_main_Expunge\n" );
+	IExec->DebugPrintF( "AmyCLib : _Main_Expunge\n" );
 
 	retval = FALSE;
 
@@ -27,7 +27,8 @@ U32 retval;
 
 	data = (PTR)( (U32) Self - Self->Data.NegativeSize );
 
-	// Freeing of Data has moved into Shutdown() in main/Startup.c
+	// Freeing of Data has moved into _generic__Priv_Startup_Free
+	Self->Priv_Startup_Free();
 
 	Self->string_memset( data, 0xac, sizeof( struct libData ));
 

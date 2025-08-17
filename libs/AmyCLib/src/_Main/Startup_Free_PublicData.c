@@ -16,7 +16,7 @@ static void myFree_PublicData( struct AmyCLibIFace *Self UNUSED, struct libData 
 	// ENTER( 8 );
 
 	// // Close FD's and free mem
-	// Self->_Priv_FDExpunge();
+	// Self->Priv_FDExpunge();
 
 	// LEAVE( 8 );
 }

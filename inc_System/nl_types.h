@@ -15,7 +15,7 @@
 
 /****************************************************************************/
 
-#include <Amy_Defines.h>	// Need AMYFUNC
+#include <Amy_Defines.h>	// Need AMY_EXTERN_C_BEGIN
 
 /****************************************************************************/
 
@@ -33,9 +33,9 @@ typedef struct _nl_catd
 
 AMY_EXTERN_C_BEGIN
 
-int		AMYFUNC catclose( nl_catd );
-char *	AMYFUNC catgets( nl_catd, int, int, const char * );
-nl_catd	AMYFUNC catopen( const char *, int );
+int		catclose( nl_catd );
+char *	catgets( nl_catd, int, int, const char * );
+nl_catd	catopen( const char *, int );
 
 AMY_EXTERN_C_END
 

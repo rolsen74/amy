@@ -50,15 +50,15 @@ extern int main( int argc, char **argv );
 
 struct Library *		DOSBase		USED = NULL;	// A
 struct Library *		SysBase		USED = NULL;	// B
-struct Library *		UtilityBase	USED = NULL;	// C
+//struct Library *		UtilityBase	USED = NULL;	// C
 struct Library *		AmyCBase	USED = NULL;	// D
 
 struct DOSIFace *		IDOS		USED = NULL;	// E
 struct ExecIFace *		IExec		USED = NULL;	// F
-struct UtilityIFace *	IUtility	USED = NULL;	// G
+//struct UtilityIFace *	IUtility	USED = NULL;	// G
 struct AmyCLibIFace *	IAmyCLib	USED = NULL;	// H
 
-struct _AmyCLibPublic *	__AmyCLibPublic	= NULL;
+struct _AmyCLibPublic *	__AmyCPublicData = NULL;
 
 /****************************************************************************/
 
@@ -81,8 +81,8 @@ int _start( STR arg_string, S32 arg_length, struct ExecBase *mySysBase )
 struct ExecIFace *		myIExec;		// 0
 struct Process *		self;			// 1  - Own Program Task/Process adr
 struct MsgPort *		wb_mp;			// 2  - Workbench MsgPort
-struct Library *		myUtilityBase;	// 3
-struct UtilityIFace *	myIUtility;		// 4
+//struct Library *		myUtilityBase;	// 3
+//struct UtilityIFace *	myIUtility;		// 4
 struct Library *		myAmyCBase;		// 5
 struct Library *		myDOSBase;		// 6
 struct AmyCLibIFace *	myIAmyC;		// 7
@@ -99,8 +99,8 @@ U32						i;				// 14
 	myIExec			= (PTR) mySysBase->MainInterface;	// 0
 	self			= (PTR) myIExec->FindTask( NULL );	// 1
 	wb_mp			= (PTR) & self->pr_MsgPort;			// 2 - Only valid for Processes
-	myUtilityBase	= NULL;				// 3
-	myIUtility		= NULL;				// 4
+//	myUtilityBase	= NULL;				// 3
+//	myIUtility		= NULL;				// 4
 	myAmyCBase		= NULL;				// 5
 	myDOSBase		= NULL;				// 6
 	myIAmyC			= NULL;				// 7
@@ -158,31 +158,18 @@ U32						i;				// 14
 		goto bailout;
 	}
 
-	// --
-
-	myUtilityBase	= (PTR) myIExec->OpenLibrary( "utility.library", 50 );
-	myIUtility		= (PTR) myIExec->GetInterface( myUtilityBase, "main", 1, NULL );
-
-	if ( ! myIUtility )
-	{
-		errtxt = "Error: Opening Utility Library\n";
-		goto bailout;
-	}
-
 	// -- Init Global Pointers
 
 	DOSBase 		= (PTR) myDOSBase;			// A
 	SysBase			= (PTR) mySysBase;			// B
-	UtilityBase		= (PTR) myUtilityBase;		// C
 	AmyCBase		= (PTR) myAmyCBase;			// D
 	IDOS			= (PTR) myIDOS;				// E
 	IExec			= (PTR) myIExec;			// F
-	IUtility		= (PTR) myIUtility;			// G
 	IAmyCLib		= (PTR) myIAmyC;			// H
 
 	// --
 
-	if ( ! myIAmyC -> Priv_Startup_Init() )
+	if ( ! myIAmyC->Priv_Startup_Init( arg_string, -1 ))	// Enable everything
 	{
 		errtxt = "Error: Initialization of the AmyCLib library failed.\n";
 		goto bailout;
@@ -192,13 +179,9 @@ U32						i;				// 14
 
 	data = (PTR)( (U32) myIAmyC - myIAmyC->Data.NegativeSize );
 
-myIExec->DebugPrintF( "crt  5\n" );
-
-	if ( ! myIAmyC -> setjmp_setjmp( data->ExitJumpBuffer ))
+	if ( ! myIAmyC->setjmp_setjmp( data->ExitJumpBuffer ))
 	{
 		// -- Count Constructors
-
-myIExec->DebugPrintF( "crt  6\n" );
 
 		i = 0;
 
@@ -211,7 +194,7 @@ myIExec->DebugPrintF( "crt  6\n" );
 
 		while( i )
 		{
-myIExec->DebugPrintF( "crt  7\n" );
+// myIExec->DebugPrintF( "Calling CTOR( %p #%ld )\n", __CTOR_LIST__[ i ], i );
 
 			__CTOR_LIST__[ i ]();
 
@@ -220,17 +203,17 @@ myIExec->DebugPrintF( "crt  7\n" );
 
  		// -- Start
 
-myIExec->DebugPrintF( "crt  8\n" );
+// myIExec->DebugPrintF( "Calling Main()\n" );
 
-		prg_rc = myIAmyC -> Priv_Startup_Main(
+		prg_rc = myIAmyC->Priv_Startup_Main(
 			& main,
 			arg_string,
 			arg_length,
 			wb_msg,
-			& __AmyCLibPublic
+			& __AmyCPublicData
 		);
 
-myIExec->DebugPrintF( "crt  9\n" );
+// myIExec->DebugPrintF( "Returned Main( rc #%ld )\n", prg_rc );
 
 	}
 
@@ -238,23 +221,17 @@ myIExec->DebugPrintF( "crt  9\n" );
 
 	i = 1;
 
-myIExec->DebugPrintF( "crt  10\n" );
-
 	while( __DTOR_LIST__[i] )
 	{
-myIExec->DebugPrintF( "crt  11\n" );
-
-		if ( ! myIAmyC -> setjmp_setjmp( data->ExitJumpBuffer ))
+		if ( ! myIAmyC->setjmp_setjmp( data->ExitJumpBuffer ))
 		{
-myIExec->DebugPrintF( "crt  12\n" );
+// myIExec->DebugPrintF( "Calling DTOR( %p #%ld )\n", __DTOR_LIST__[ i ], i );
 
 			__DTOR_LIST__[ i ]();
 		}
 
 		i++;
 	}
-
-myIExec->DebugPrintF( "crt  13\n" );
 
 	// -- Exit
 
@@ -270,21 +247,10 @@ bailout:
 
 	// --
 
-	if ( myIUtility )
-	{
-		myIExec->DropInterface( (PTR) myIUtility );
-	}
-
-	if ( myUtilityBase )
-	{
-		myIExec->CloseLibrary( myUtilityBase );
-	}
-
-	// --
-
 	if ( myIAmyC )
 	{
-		myIAmyC -> Priv_Startup_Free();
+//		Moved into Expunge Infterface
+//		myIAmyC->Priv_Startup_Free();	
 
 		myIExec->DropInterface( (PTR) myIAmyC );
 	}

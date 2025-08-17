@@ -15,7 +15,7 @@
 
 /****************************************************************************/
 
-#include <Amy_Defines.h>	// Need AMYFUNC
+#include <Amy_Defines.h>	// Need AMY_EXTERN_C_BEGIN
 #include <sys/types.h>
 
 /****************************************************************************/
@@ -90,12 +90,12 @@ struct flock
 
 AMY_EXTERN_C_BEGIN
 
-int	AMYFUNC creat( const char *, mode_t );
-int	AMYFUNC fcntl( int, int, ... );
-int	AMYFUNC open( const char *, int, ... );
-int	AMYFUNC openat( int, const char *, int, ... );
-int	AMYFUNC posix_fadvice( int, off_t, off_t, int );
-int	AMYFUNC posix_fallocate( int, off_t, off_t );
+int	creat( const char *, mode_t );
+int	fcntl( int, int, ... );
+int	open( const char *, int, ... );
+int	openat( int, const char *, int, ... );
+int	posix_fadvice( int, off_t, off_t, int );
+int	posix_fallocate( int, off_t, off_t );
 
 AMY_EXTERN_C_END
 

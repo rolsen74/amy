@@ -43,14 +43,14 @@ static const struct TagItem Manager_Tags[] =
 
 static const PTR Main_Vectors[] =
 {
-	(PTR) _main_Obtain,
-	(PTR) _main_Release,
+	(PTR) _Main_Obtain,
+	(PTR) _Main_Release,
 	(PTR) NULL,
 	(PTR) NULL,
-//	(PTR) _main_GetAttrsA,
-//	(PTR) _main_GetAttrs,
-//	(PTR) _main_RunFunction,
-//	(PTR) _main_RunInterface,
+//	(PTR) _generic_GetAttrsA,
+//	(PTR) _generic_GetAttrs,
+//	(PTR) _generic_RunFunction,
+//	(PTR) _generic_RunInterface,
 	(PTR) -1
 };
 

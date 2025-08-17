@@ -15,7 +15,7 @@
 
 /****************************************************************************/
 
-#include <Amy_Defines.h>	// Need AMYFUNC
+#include <Amy_Defines.h>	// Need AMY_EXTERN_C_BEGIN
 #include <inttypes.h>
 #include <netinet/in.h>
 #include <sys/socket.h>
@@ -23,7 +23,7 @@
 /****************************************************************************/
 
 // fix me for AmyCLib
-//#define h_errno		RACLibPublic->ra_h_ErrNo
+//#define h_errno		AmyCLibPublic->ra_h_ErrNo
 
 /****************************************************************************/
 
@@ -121,30 +121,30 @@ struct addrinfo
 
 AMY_EXTERN_C_BEGIN
 
-void				AMYFUNC endhostent( void );
-void				AMYFUNC endnetent( void );
-void				AMYFUNC endprotoent( void );
-void				AMYFUNC endservent( void );
-void				AMYFUNC freeaddrinfo( struct addrinfo * );
-const char *		AMYFUNC gai_strerror( int );
-int					AMYFUNC getaddrinfo( const char *, const char *,const struct addrinfo *, struct addrinfo ** );
-struct hostent *	AMYFUNC gethostbyaddr( const void *, socklen_t, int );
-struct hostent *	AMYFUNC gethostbyname( const char * );
-struct hostent *	AMYFUNC gethostent( void );
-int					AMYFUNC getnameinfo( const struct sockaddr *, socklen_t, char *, socklen_t, char *, socklen_t, int );
-struct netent *		AMYFUNC getnetbyaddr( uint32_t, int );
-struct netent *		AMYFUNC getnetbyname( const char * );
-struct netent *		AMYFUNC getnetent( void );
-struct protoent *	AMYFUNC getprotobyname( const char * );
-struct protoent *	AMYFUNC getprotobynumber( int );
-struct protoent *	AMYFUNC getprotoent( void );
-struct servent *	AMYFUNC getservbyname( const char *, const char * );
-struct servent *	AMYFUNC getservbyport( int, const char * );
-struct servent *	AMYFUNC getservent( void );
-void				AMYFUNC sethostent( int );
-void				AMYFUNC setnetent( int );
-void				AMYFUNC setprotoent( int );
-void				AMYFUNC setservent( int );
+void				endhostent( void );
+void				endnetent( void );
+void				endprotoent( void );
+void				endservent( void );
+void				freeaddrinfo( struct addrinfo * );
+const char *		gai_strerror( int );
+int					getaddrinfo( const char *, const char *,const struct addrinfo *, struct addrinfo ** );
+struct hostent *	gethostbyaddr( const void *, socklen_t, int );
+struct hostent *	gethostbyname( const char * );
+struct hostent *	gethostent( void );
+int					getnameinfo( const struct sockaddr *, socklen_t, char *, socklen_t, char *, socklen_t, int );
+struct netent *		getnetbyaddr( uint32_t, int );
+struct netent *		getnetbyname( const char * );
+struct netent *		getnetent( void );
+struct protoent *	getprotobyname( const char * );
+struct protoent *	getprotobynumber( int );
+struct protoent *	getprotoent( void );
+struct servent *	getservbyname( const char *, const char * );
+struct servent *	getservbyport( int, const char * );
+struct servent *	getservent( void );
+void				sethostent( int );
+void				setnetent( int );
+void				setprotoent( int );
+void				setservent( int );
 
 AMY_EXTERN_C_END
 

@@ -15,7 +15,7 @@
 
 /****************************************************************************/
 
-#include <Amy_Defines.h>	// Need AMYFUNC
+#include <Amy_Defines.h>	// Need AMY_EXTERN_C_BEGIN
 #include <sys/types.h>
 
 /****************************************************************************/
@@ -34,17 +34,17 @@ struct dirent
 
 AMY_EXTERN_C_BEGIN
 
-int				AMYFUNC alphasort( const struct dirent **, const struct dirent ** );
-int				AMYFUNC closedir( DIR * );
-int				AMYFUNC dirfd( DIR * );
-DIR *			AMYFUNC fdopendir( int fildes );
-DIR *			AMYFUNC opendir( const char * );
-struct dirent *	AMYFUNC readdir( DIR * );
-int				AMYFUNC readdir_r( DIR *, struct dirent *, struct dirent ** );
-void			AMYFUNC rewinddir( DIR * );
-int				AMYFUNC scandir( const char *, struct dirent ***, int (*)( const struct dirent *), int (*)(const struct dirent **, const struct dirent **));
-void			AMYFUNC seekdir( DIR *, long );
-long			AMYFUNC telldir( DIR * );
+int				alphasort( const struct dirent **, const struct dirent ** );
+int				closedir( DIR * );
+int				dirfd( DIR * );
+DIR *			fdopendir( int fildes );
+DIR *			opendir( const char * );
+struct dirent *	readdir( DIR * );
+int				readdir_r( DIR *, struct dirent *, struct dirent ** );
+void			rewinddir( DIR * );
+int				scandir( const char *, struct dirent ***, int (*)( const struct dirent *), int (*)(const struct dirent **, const struct dirent **));
+void			seekdir( DIR *, long );
+long			telldir( DIR * );
 
 AMY_EXTERN_C_END
 

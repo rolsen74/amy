@@ -48,28 +48,38 @@
 //
 
 #pragma GCC push_options
-#pragma GCC optimize ("Os")
+#pragma GCC optimize ("Os,no-tree-loop-distribute-patterns")
 
-void *_main_string_memset( struct AmyCLibIFace *Self UNUSED, void *s, int c, size_t n )
+void * AMYFUNC _generic_string_memset( struct AmyCLibIFace *Self, void *s, int c, size_t len )
 {
-struct libData *data;
-size_t cnt;
-U8 *mem;
+	IExec->DebugPrintF( "_generic_string_memset : Mem %p, Val %ld, Len %lu\n", s, c, len );
 
-	IExec->DebugPrintF( "_main_string_memset\n" );
-
-	if ( ! s )
+	if ( len )
 	{
-		data = (PTR)( (U32) Self - Self->Data.NegativeSize );
-		data->buf_PublicData->ra_ErrNo = EFAULT;
-	}
-	else
-	{
-		mem = s;
-
-		for( cnt=0 ; cnt<n ; cnt++ )
+		if ( ! s )
 		{
-			mem[cnt] = c;
+			// Only an error if len is none zero
+			struct libData *data = (PTR)( (U32) Self - Self->Data.NegativeSize );
+			data->buf_PublicData->ra_ErrNo = EFAULT;
+		}
+		else
+		{
+			#if 1
+
+			U8 v = c;
+			U8 *mem = s;
+
+			for( size_t cnt=0 ; cnt<len ; cnt++ )
+			{
+				mem[cnt] = v;
+			}
+
+			#else
+
+			// hmm maybe we should just call Utility  
+			IUtility->SetMem( s, c, len );
+
+			#endif
 		}
 	}
 

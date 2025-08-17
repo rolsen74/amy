@@ -11,7 +11,7 @@
 
 // --
 
-U32 _main__Priv_Mem_FreePooled( struct AmyCLibIFace *Self, struct MemPoolHeader *handle, PTR mem )
+U32 AMYFUNC _generic__Priv_Mem_FreePooled( struct AmyCLibIFace *Self, struct MemPoolHeader *handle, PTR mem )
 {
 //struct libData *idata;
 struct PoolBlock *old;
@@ -23,12 +23,12 @@ U32 *m;
 U32 retval;
 U32 size;
 //U8 *d;
-//BOOL Notify;
+//S32 Notify;
 //U32 cnt;
 
-	IExec->DebugPrintF( "_main__Priv_Mem_FreePooled\n" );
+	IExec->DebugPrintF( "_generic__Priv_Mem_FreePooled\n" );
 
-//IExec->DebugPrintF( "ReaciveMemory.c | _main__Priv_Mem_FreePooled - mem: %p\n", mem );
+//IExec->DebugPrintF( "ReaciveMemory.c | AMYFUNC _generic__Priv_Mem_FreePooled - mem: %p\n", mem );
 
 //	idata = (PTR)( (U32) Self - Self->Data.NegativeSize );
 
@@ -46,7 +46,7 @@ U32 size;
 		goto bailout;
 	}
 
-	if ( handle->ph_ID != POOLID )
+	if ( handle->ph_ID != ID_POOL )
 	{
 		goto bailout;
 	}

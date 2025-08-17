@@ -15,14 +15,14 @@
 
 /****************************************************************************/
 
-#include <Amy_Defines.h>	// Need AMYFUNC
+#include <Amy_Defines.h>	// Need AMY_EXTERN_C_BEGIN
 
 /****************************************************************************/
 
 AMY_EXTERN_C_BEGIN
 
-char *	AMYFUNC basename( char * );
-char *	AMYFUNC dirname( char * );
+char *	basename( char * );
+char *	dirname( char * );
 
 AMY_EXTERN_C_END
 

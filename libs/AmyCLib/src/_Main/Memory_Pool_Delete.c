@@ -11,13 +11,13 @@
 
 // --
 
-U32 _main__Priv_Mem_DeletePool( struct AmyCLibIFace *Self, struct MemPoolHeader *handle )
+U32 AMYFUNC _generic__Priv_Mem_DeletePool( struct AmyCLibIFace *Self, struct MemPoolHeader *handle )
 {
 struct libData *data;
 struct PoolNode *pn;
 U32 retval;
 
-	IExec->DebugPrintF( "_main__Priv_Mem_DeletePool\n" );
+	IExec->DebugPrintF( "_generic__Priv_Mem_DeletePool\n" );
 
 	data = (PTR)( (U32) Self - Self->Data.NegativeSize );
 
@@ -28,7 +28,7 @@ U32 retval;
 		goto bailout;
 	}
 
-	if ( handle->ph_ID != POOLID )
+	if ( handle->ph_ID != ID_POOL )
 	{
 		goto bailout;
 	}

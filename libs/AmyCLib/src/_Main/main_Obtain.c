@@ -11,9 +11,9 @@
 
 // --
 
-U32 _main_Obtain( struct AmyCLibIFace *Self )
+U32 AMYFUNC _Main_Obtain( struct AmyCLibIFace *Self )
 {
-	IExec->DebugPrintF( "_main_Obtain\n" );
+	IExec->DebugPrintF( "AmyCLib : _Main_Obtain\n" );
 
 	Self->Data.RefCount++;
 

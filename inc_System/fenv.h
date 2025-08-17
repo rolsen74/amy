@@ -9,11 +9,11 @@
 */
 
 #ifndef AMYSYS_FENV_H
-#define AMYSYS_FENV_H 1
+#define AMYSYS_FENV_H
 
 /****************************************************************************/
 
-#include <Amy_Defines.h>	// Need AMYFUNC
+#include <Amy_Defines.h>	// Need AMY_EXTERN_C_BEGIN
 
 /****************************************************************************/
 
@@ -44,23 +44,23 @@ enum
 };
 
 // fix me for AmyCLib
-// #define FE_DFL_ENV		& RACLibPublic->ra_fenv;  
+// #define FE_DFL_ENV		& AmyCLibPublic->ra_fenv;  
 
 /****************************************************************************/
 
 AMY_EXTERN_C_BEGIN
 
-int	AMYFUNC feclearexcept( int );
-int	AMYFUNC fegetenv( fenv_t * );
-int	AMYFUNC fegetexceptflag( fexcept_t *, int );
-int	AMYFUNC fegetround( void );
-int	AMYFUNC feholdexcept( fenv_t * );
-int	AMYFUNC feraiseexcept( int );
-int	AMYFUNC fesetenv( const fenv_t * );
-int	AMYFUNC fesetexceptflag( const fexcept_t *, int );
-int	AMYFUNC fesetround( int );
-int	AMYFUNC fetestexcept( int );
-int	AMYFUNC feupdateenv( const fenv_t * );
+int	feclearexcept( int );
+int	fegetenv( fenv_t * );
+int	fegetexceptflag( fexcept_t *, int );
+int	fegetround( void );
+int	feholdexcept( fenv_t * );
+int	feraiseexcept( int );
+int	fesetenv( const fenv_t * );
+int	fesetexceptflag( const fexcept_t *, int );
+int	fesetround( int );
+int	fetestexcept( int );
+int	feupdateenv( const fenv_t * );
 
 AMY_EXTERN_C_END
 

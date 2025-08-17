@@ -13,7 +13,7 @@
 
 /****************************************************************************/
 
-#include <Amy_Defines.h>	// Need AMYFUNC
+#include <Amy_Defines.h>	// Need AMY_EXTERN_C_BEGIN
 #include <stdarg.h>
 
 /****************************************************************************/
@@ -21,18 +21,18 @@
 
 AMY_EXTERN_C_BEGIN
 
-void		AMYFUNC err(	int, const char *, ... );
-void		AMYFUNC verr(	int, const char *, va_list );
-void		AMYFUNC errc(	int, int, const char *, ... );
-void		AMYFUNC verrc(	int, int, const char *, va_list );
-void		AMYFUNC errx(	int, const char *, ... );
-void		AMYFUNC verrx(	int, const char *, va_list );
-void		AMYFUNC warn(	const char *, ... );
-void		AMYFUNC vwarn(	const char *, va_list );
-void		AMYFUNC warnc(	int, const char *, ... );
-void		AMYFUNC vwarnc(	int, const char *, va_list );
-void		AMYFUNC warnx(	const char *, ... );
-void		AMYFUNC vwarnx(	const char *, va_list );
+void		err(	int, const char *, ... );
+void		verr(	int, const char *, va_list );
+void		errc(	int, int, const char *, ... );
+void		verrc(	int, int, const char *, va_list );
+void		errx(	int, const char *, ... );
+void		verrx(	int, const char *, va_list );
+void		warn(	const char *, ... );
+void		vwarn(	const char *, va_list );
+void		warnc(	int, const char *, ... );
+void		vwarnc(	int, const char *, va_list );
+void		warnx(	const char *, ... );
+void		vwarnx(	const char *, va_list );
 
 AMY_EXTERN_C_END
 

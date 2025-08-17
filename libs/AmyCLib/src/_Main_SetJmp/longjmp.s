@@ -8,9 +8,9 @@
 	.section	".text"
 	.align		2
 
-	.globl		_main_setjmp_longjmp
+	.globl		_generic_setjmp_longjmp
 
-_main_setjmp_longjmp:
+_generic_setjmp_longjmp:
 
 	# r1 - Stack Pointer
 	# r3 - ( Parm 1 ) struct AmyCLibIFace *
@@ -21,39 +21,12 @@ _main_setjmp_longjmp:
 	addi		r4,r4,7			# Add Immediate
 	rlwinm		r4,r4,0,0,28		# Rotate Left Word Immediate, Then AND with Mask
 
-	# Restore Return Address from Offset 0
-	lwz		r10,0(r4)		# Load Word
-	mtlr		r10			# Move to Link Register
-
-	# Restore Codition Coditionode from Offset 4
-	lwz		r10,4(r4)		# Load Word
-	mtcr		r10
-
-	# Restore Stack Pointer from Offset 8
-	lwz		r10,8(r4)		# Load Word
-	mr		r1,r10			# Move to Register
-
-	# Restore Integers from Offset 12
-	lmw		r13,12(r4)		# Load Multiple Word
-	lmw		r14,16(r4)		# Load Multiple Word
-	lmw		r15,20(r4)		# Load Multiple Word
-	lmw		r16,24(r4)		# Load Multiple Word
-	lmw		r17,28(r4)		# Load Multiple Word
-	lmw		r18,32(r4)		# Load Multiple Word
-	lmw		r19,36(r4)		# Load Multiple Word
-	lmw		r20,40(r4)		# Load Multiple Word
-	lmw		r21,44(r4)		# Load Multiple Word
-	lmw		r22,48(r4)		# Load Multiple Word
-	lmw		r23,52(r4)		# Load Multiple Word
-	lmw		r24,56(r4)		# Load Multiple Word
-	lmw		r25,60(r4)		# Load Multiple Word
-	lmw		r26,64(r4)		# Load Multiple Word
-	lmw		r27,68(r4)		# Load Multiple Word
-	lmw		r28,72(r4)		# Load Multiple Word
-	lmw		r29,76(r4)		# Load Multiple Word
-	lmw		r30,80(r4)		# Load Multiple Word
-	lmw		r31,84(r4)		# Load Multiple Word
-
+	# Compute return value BEFORE restoring CR (cmpwi modifies CR0)
+	cmpwi		r5, 0
+	li		r3, 1
+	beq		lab
+	mr		r3, r5
+lab:
 	# Restore Floating Points from Offset 88
 	# Floating Points must be 8 byte alligned
 	lfd		f14,88(r4)		# Load Floating Point Double
@@ -75,16 +48,19 @@ _main_setjmp_longjmp:
 	lfd		f30,216(r4)		# Load Floating Point Double
 	lfd		f31,224(r4)		# Load Floating Point Double
 
-	# Check Parm 3 for Zero Value
-	cmpwi		r5,0			# Compare Word Immediate
-	bne		lab			# Brance if not equal
+	# Restore Integers (r13-r31) from Offset 12
+	lmw		r13,12(r4)		# Load Multiple Word
 
-	# Set Return Value in r3
-	li		r3,1			# Load Immediate
-	blr					# Brance on Link Register
+	# Restore Stack Pointer from Offset 8
+	lwz		r1,8(r4)		# 
 
-lab:
-	# Set Return Value in r3
-	mr		r3, r5			# Move to Register
+	# Restore Codition Coditionode from Offset 4 (All fields)
+	lwz		r10,4(r4)		# 
+	mtcrf		0xFF,r10		# restore entire CR
+
+	# Restore Return Address from Offset 0
+	lwz		r10,0(r4)		# 
+	mtlr		r10			# Move to Link Register
+
 	blr					# Brance on Link Register
 

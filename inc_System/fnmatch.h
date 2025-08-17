@@ -15,7 +15,7 @@
 
 /****************************************************************************/
 
-#include <Amy_Defines.h>	// Need AMYFUNC
+#include <Amy_Defines.h>	// Need AMY_EXTERN_C_BEGIN
 
 /****************************************************************************/
 
@@ -31,7 +31,7 @@
 
 AMY_EXTERN_C_BEGIN
 
-int	AMYFUNC fnmatch( const char *, const char *, int );
+int	fnmatch( const char *, const char *, int );
 
 AMY_EXTERN_C_END
 

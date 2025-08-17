@@ -1,121 +1,128 @@
-
 ###########################################################################
 
-.PHONY: all clean strip install
+.PHONY: all clean strip install stubs build
 
 ###########################################################################
 
 STUB_REGISTRY		:= src_libc/reg_stubs.txt
-STUB_GEN_DIR		:= src_libc/stubs
+GEN_STUB_DIR		:= src_libc/gen-stubs
+CUSTOM_STUB_DIR		:= src_libc/custom-stubs
+STUB_DIRS			:= $(GEN_STUB_DIR) $(CUSTOM_STUB_DIR)
 STUB_GEN_SCRIPT		:= src_libc/gen_stubs.py
 
 # Root Dir
-ROOTDIR		:= ../..
+ROOTDIR				:= ../..
 
 # Object Dir
-OBJDIR		:= obj
+OBJDIR				:= obj
 
 # Binary Dir
-BINDIR		:= bin
+BINDIR				:= bin
 
 # Target Name
-TARGET		:= libc.a
+TARGET				:= libc.a
 
 # Compiler Flags
-CFLAGS		:= -O2
-CFLAGS		+= -I src_libc
-CFLAGS		+= -I $(ROOTDIR)/inc_System
-CFLAGS		+= -I $(ROOTDIR)/inc_Public
-CFLAGS		+= -I $(ROOTDIR)/inc_Private
-#CFLAGS		+= -DDEBUG
-#CFLAGS		+= -gstabs
-CFLAGS		+= -W
-CFLAGS		+= -Wall
-CFLAGS		+= -MMD
-CFLAGS		+= -MP
-CFLAGS		+= -mcrt=clib2
+CFLAGS				:= -O2
+CFLAGS				+= -I src_libc
+CFLAGS				+= -I $(ROOTDIR)/inc_System
+CFLAGS				+= -I $(ROOTDIR)/inc_Public
+CFLAGS				+= -I $(ROOTDIR)/inc_Private
+#CFLAGS				+= -DDEBUG
+#CFLAGS				+= -gstabs
+CFLAGS				+= -W
+CFLAGS				+= -Wall
+CFLAGS				+= -MMD
+CFLAGS				+= -MP
+CFLAGS				+= -mcrt=clib2
 
 # Linker Flags
-LDFLAGS		:=
+LDFLAGS				:=
 
 # Link Libraries
-LIBS		:=
-
-# Empty Source File List (Will grow)
-SRCS		:=
+LIBS				:=
 
 # Host SYS we compile on
-HOSTOS		:= $(shell uname)
+HOSTOS				:= $(shell uname)
 
 ###########################################################################
 # Set Compiler
 
 ifeq ($(HOSTOS),AmigaOS)
 
-LS			:= list
-RM			:= delete
-AR			:= ar
-CC			:= gcc
-STRIP		:= strip
-MKDIR		:= makedir FORCE
-COPY		:= copy
-SDK			:= sdk:clib2
-
-# --
+LS					:= list
+RM					:= delete
+AR					:= ar
+CC					:= gcc
+STRIP				:= strip
+MKDIR				:= makedir FORCE
+COPY				:= copy
+SDK					:= sdk:clib2
 
 else ifeq ($(HOSTOS),Linux)
 
-LS			:= ls -lort
-RM			:= rm -rf
-AR			:= ppc-amigaos-ar
-CC			:= ppc-amigaos-gcc
-STRIP		:= ppc-amigaos-strip
-MKDIR		:= mkdir -p
-COPY		:= cp
-SDK			:= /SDK/clib2
+LS					:= ls -lort
+RM					:= rm -rf
+AR					:= ppc-amigaos-ar
+CC					:= ppc-amigaos-gcc
+STRIP				:= ppc-amigaos-strip
+MKDIR				:= mkdir -p
+COPY				:= cp
+SDK					:= /SDK/clib2
 
 else
-
 $(error Unknown Host SYS type: $(HOSTOS).)
-
 endif
 
 ###########################################################################
-# All stubs for libc
+# Sources/Objects — use deferred evaluation so wildcards are re-scanned
+# after "stubs" runs and generates files in $(GEN_STUB_DIR).
 
-# string.h
-#SRCS		+= src_libc/stubs.c
+STUB_SRCS	= $(foreach d,$(STUB_DIRS),$(wildcard $(d)/*.c))
+OBJS		= $(patsubst %.c,$(OBJDIR)/%.o,$(STUB_SRCS))
+DEPS		= $(patsubst %.c,$(OBJDIR)/%.d,$(STUB_SRCS))
 
 ###########################################################################
-
-SRCS		:= $(wildcard $(STUB_GEN_DIR)/*.c)
-OBJS		:= $(patsubst %.c,$(OBJDIR)/%.o,$(SRCS))
-DEPS		:= $(patsubst %.c,$(OBJDIR)/%.d,$(SRCS))
 
 all: stubs $(BINDIR)/$(TARGET)
 
-.PHONY: stubs
+# Generate stubs BEFORE compiling anything
 stubs:
-	@echo "Generating stub files from registry..."
-	python3 $(STUB_GEN_SCRIPT)
+	@echo "Generating stub files from registry into $(GEN_STUB_DIR)..."
+	@$(MKDIR) $(GEN_STUB_DIR)
+	@python3 $(STUB_GEN_SCRIPT)
 
-###########################################################################
-
+# Build the archive
 $(BINDIR)/$(TARGET): $(OBJS)
+	@$(MKDIR) $(dir $@)
 	$(RM) $@
 	$(AR) rcs $@ $(OBJS)
 
 ###########################################################################
+# Pattern rules
 
-# Include dependency files
+# C sources
+$(OBJDIR)/%.o: %.c
+	@mkdir -p $(dir $@)
+	$(CC) $(CFLAGS) -c $< -o $@
+
+# ASM sources
+$(OBJDIR)/%.o: %.s
+	@mkdir -p $(dir $@)
+	$(CC) -c -mregnames $< -o $@
+
+###########################################################################
+# Includes
+ifneq ($(DEPS),)
 -include $(DEPS)
+endif
 
 ###########################################################################
 
 clean:
-	$(RM) $(OBJS) $(DEPS) $(BINDIR)/$(TARGET) $(STUB_GEN_DIR)/*
-
-###########################################################################
+	$(RM) $(OBJS) $(DEPS)
+	# Only remove generated stubs, keep your custom ones
+	$(RM) $(GEN_STUB_DIR)/*.c
 
 install:
 	$(COPY) $(BINDIR)/libc.a $(SDK)/lib/
@@ -123,23 +130,9 @@ install:
 	$(COPY) $(BINDIR)/libsocket.a $(SDK)/lib/
 	$(COPY) $(BINDIR)/libpthread.a $(SDK)/lib/
 
-###########################################################################
-
 strip:
 	@$(LS)		$(BINDIR)/$(TARGET)
 	@$(STRIP)	$(BINDIR)/$(TARGET)
 	@$(LS)		$(BINDIR)/$(TARGET)
-
-###########################################################################
-
-# Pattern rule for C source files
-$(OBJDIR)/%.o: %.c
-	@mkdir -p $(dir $@)
-	$(CC) $(CFLAGS) -c $< -o $@
-
-# Pattern rule for ASM (.s) source files
-$(OBJDIR)/%.o: %.s
-	@mkdir -p $(dir $@)
-	$(CC) -c -mregnames $< -o $@
 
 ###########################################################################

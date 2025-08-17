@@ -11,9 +11,11 @@
 
 // --
 
-void _main_strings_bzero( struct AmyCLibIFace *Self, void *mem, size_t len )
+void AMYFUNC _generic_strings_bzero( struct AmyCLibIFace *Self, void *mem, size_t len )
 {
-	IExec->DebugPrintF( "_main_strings_bzero\n" );
+	IExec->DebugPrintF( "_generic_strings_bzero\n" );
+
+	// memset checks EnableMask
 
 	Self->string_memset( mem, 0, len );
 }

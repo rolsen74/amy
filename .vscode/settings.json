@@ -35,7 +35,10 @@
 		"*.s": "plaintext",
 		"*.i": "plaintext",
 		"*.h": "c",
-		"*.c": "c"
+		"*.c": "c",
+		"typeinfo": "c",
+		"cstdarg": "c",
+		"cstdio": "c"
 	},
 	"editor.quickSuggestions": {
 	  "comments": false,

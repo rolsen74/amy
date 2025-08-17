@@ -17,10 +17,10 @@
 struct AmySysLogIFace
 {
 	struct InterfaceData Data;
-	U32								AMYFUNC (*Obtain)(struct AmySysLogIFace *Self);
-	U32								AMYFUNC (*Release)(struct AmySysLogIFace *Self);
-	void							AMYFUNC (*Expunge)(struct AmySysLogIFace *Self);
-	struct Interface *				AMYFUNC (*Clone)(struct AmySysLogIFace *Self);
+	U32							AMYFUNC (*Obtain)(struct AmySysLogIFace *Self);
+	U32							AMYFUNC (*Release)(struct AmySysLogIFace *Self);
+	void						AMYFUNC (*Expunge)(struct AmySysLogIFace *Self);
+	struct Interface *			AMYFUNC (*Clone)(struct AmySysLogIFace *Self);
 };
 
 // --

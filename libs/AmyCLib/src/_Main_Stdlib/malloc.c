@@ -11,12 +11,12 @@
 
 // --
 
-void *_main_stdlib_malloc( struct AmyCLibIFace *Self, size_t size )
+void * AMYFUNC _generic_stdlib_malloc( struct AmyCLibIFace *Self, size_t size )
 {
 struct libData *data;
 void *retval;
 
-	IExec->DebugPrintF( "_main_stdlib_malloc : Size %lu\n", size );
+	IExec->DebugPrintF( "_generic_stdlib_malloc : Size %lu\n", size );
 
 	data = (PTR)( (U32) Self - Self->Data.NegativeSize );
 
@@ -26,7 +26,7 @@ void *retval;
 
 	if ( ! retval )
 	{
-		IExec->DebugPrintF( "_main_stdlib_malloc : Error Allocating Memory : Size %lu\n", size );
+		IExec->DebugPrintF( "_generic_stdlib_malloc : Error Allocating Memory : Size %lu\n", size );
 		data->buf_PublicData->ra_ErrNo = ENOMEM;
 	}
 

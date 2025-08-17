@@ -15,7 +15,7 @@
 
 /****************************************************************************/
 
-#include <Amy_Defines.h>	// Need AMYFUNC
+#include <Amy_Defines.h>	// Need AMY_EXTERN_C_BEGIN
 
 /****************************************************************************/
 
@@ -27,72 +27,72 @@
 
 AMY_EXTERN_C_BEGIN
 
-double					AMYFUNC cabs( double complex );
-float					AMYFUNC cabsf( float complex );
-long double				AMYFUNC cabsl( long double complex );
-double complex			AMYFUNC cacos( double complex );
-float complex			AMYFUNC cacosf( float complex );
-double complex			AMYFUNC cacosh( double complex );
-float complex			AMYFUNC cacoshf( float complex );
-long double complex		AMYFUNC cacoshl( long double complex );
-long double complex		AMYFUNC cacosl( long double complex );
-double					AMYFUNC carg( double complex );
-float					AMYFUNC cargf( float complex );
-long double				AMYFUNC cargl( long double complex );
-double complex			AMYFUNC casin( double complex );
-float complex			AMYFUNC casinf( float complex );
-double complex			AMYFUNC casinh( double complex );
-float complex			AMYFUNC casinhf( float complex );
-long double complex		AMYFUNC casinhl( long double complex );
-long double complex		AMYFUNC casinl( long double complex );
-double complex			AMYFUNC catan( double complex );
-float complex			AMYFUNC catanf( float complex );
-double complex			AMYFUNC catanh( double complex );
-float complex			AMYFUNC catanhf( float complex );
-long double complex		AMYFUNC catanhl( long double complex );
-long double complex		AMYFUNC catanl( long double complex );
-double complex			AMYFUNC ccos( double complex );
-float complex			AMYFUNC ccosf( float complex );
-double complex			AMYFUNC ccosh( double complex );
-float complex			AMYFUNC ccoshf( float complex );
-long double complex		AMYFUNC ccoshl( long double complex );
-long double complex		AMYFUNC ccosl( long double complex );
-double complex			AMYFUNC cexp( double complex );
-float complex			AMYFUNC cexpf( float complex );
-long double complex		AMYFUNC cexpl( long double complex );
-double					AMYFUNC cimag( double complex );
-float					AMYFUNC cimagf( float complex );
-long double				AMYFUNC cimagl( long double complex );
-double complex			AMYFUNC clog( double complex );
-float complex			AMYFUNC clogf( float complex );
-long double complex		AMYFUNC clogl( long double complex );
-double complex			AMYFUNC conj( double complex );
-float complex			AMYFUNC conjf( float complex );
-long double complex		AMYFUNC conjl( long double complex );
-double complex			AMYFUNC cpow( double complex, double complex );
-float complex			AMYFUNC cpowf( float complex, float complex );
-long double complex		AMYFUNC cpowl( long double complex, long double complex );
-double complex			AMYFUNC cproj( double complex );
-float complex			AMYFUNC cprojf( float complex );
-long double complex		AMYFUNC cprojl( long double complex );
-double					AMYFUNC creal( double complex );
-float					AMYFUNC crealf( float complex );
-long double				AMYFUNC creall( long double complex );
-double complex			AMYFUNC csin( double complex );
-float complex			AMYFUNC csinf( float complex );
-double complex			AMYFUNC csinh( double complex );
-float complex			AMYFUNC csinhf( float complex );
-long double complex		AMYFUNC csinhl( long double complex );
-long double complex		AMYFUNC csinl( long double complex );
-double complex			AMYFUNC csqrt( double complex );
-float complex			AMYFUNC csqrtf( float complex );
-long double complex		AMYFUNC csqrtl( long double complex );
-double complex			AMYFUNC ctan( double complex );
-float complex			AMYFUNC ctanf( float complex );
-long double complex		AMYFUNC ctanl( long double complex );
-double complex			AMYFUNC ctanh( double complex );
-float complex			AMYFUNC ctanhf( float complex );
-long double complex		AMYFUNC ctanhl( long double complex );
+double					cabs( double complex );
+float					cabsf( float complex );
+long double				cabsl( long double complex );
+double complex			cacos( double complex );
+float complex			cacosf( float complex );
+double complex			cacosh( double complex );
+float complex			cacoshf( float complex );
+long double complex		cacoshl( long double complex );
+long double complex		cacosl( long double complex );
+double					carg( double complex );
+float					cargf( float complex );
+long double				cargl( long double complex );
+double complex			casin( double complex );
+float complex			casinf( float complex );
+double complex			casinh( double complex );
+float complex			casinhf( float complex );
+long double complex		casinhl( long double complex );
+long double complex		casinl( long double complex );
+double complex			catan( double complex );
+float complex			catanf( float complex );
+double complex			catanh( double complex );
+float complex			catanhf( float complex );
+long double complex		catanhl( long double complex );
+long double complex		catanl( long double complex );
+double complex			ccos( double complex );
+float complex			ccosf( float complex );
+double complex			ccosh( double complex );
+float complex			ccoshf( float complex );
+long double complex		ccoshl( long double complex );
+long double complex		ccosl( long double complex );
+double complex			cexp( double complex );
+float complex			cexpf( float complex );
+long double complex		cexpl( long double complex );
+double					cimag( double complex );
+float					cimagf( float complex );
+long double				cimagl( long double complex );
+double complex			clog( double complex );
+float complex			clogf( float complex );
+long double complex		clogl( long double complex );
+double complex			conj( double complex );
+float complex			conjf( float complex );
+long double complex		conjl( long double complex );
+double complex			cpow( double complex, double complex );
+float complex			cpowf( float complex, float complex );
+long double complex		cpowl( long double complex, long double complex );
+double complex			cproj( double complex );
+float complex			cprojf( float complex );
+long double complex		cprojl( long double complex );
+double					creal( double complex );
+float					crealf( float complex );
+long double				creall( long double complex );
+double complex			csin( double complex );
+float complex			csinf( float complex );
+double complex			csinh( double complex );
+float complex			csinhf( float complex );
+long double complex		csinhl( long double complex );
+long double complex		csinl( long double complex );
+double complex			csqrt( double complex );
+float complex			csqrtf( float complex );
+long double complex		csqrtl( long double complex );
+double complex			ctan( double complex );
+float complex			ctanf( float complex );
+long double complex		ctanl( long double complex );
+double complex			ctanh( double complex );
+float complex			ctanhf( float complex );
+long double complex		ctanhl( long double complex );
 
 AMY_EXTERN_C_END
 

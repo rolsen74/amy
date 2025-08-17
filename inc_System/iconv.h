@@ -15,7 +15,7 @@
 
 /****************************************************************************/
 
-#include <Amy_Defines.h>	// Need AMYFUNC
+#include <Amy_Defines.h>	// Need AMY_EXTERN_C_BEGIN
 #include <sys/types.h>
 
 /****************************************************************************/
@@ -26,9 +26,9 @@ typedef void *	iconv_t;
 
 AMY_EXTERN_C_BEGIN
 
-size_t	AMYFUNC iconv( iconv_t, char **, size_t *, char **, size_t * );
-int		AMYFUNC iconv_close( iconv_t );
-iconv_t	AMYFUNC iconv_open( const char *, const char * );
+size_t	iconv( iconv_t, char **, size_t *, char **, size_t * );
+int		iconv_close( iconv_t );
+iconv_t	iconv_open( const char *, const char * );
 
 AMY_EXTERN_C_END
 

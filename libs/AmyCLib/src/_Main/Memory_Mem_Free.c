@@ -11,13 +11,13 @@
 
 // --
 
-U32 _main__Priv_Mem_Free( struct AmyCLibIFace *Self, PTR mem )
+U32 AMYFUNC _generic__Priv_Mem_Free( struct AmyCLibIFace *Self, PTR mem )
 {
 struct MemPoolHeader *pool;
 struct libData *data;
 U32 retval;
 
-	IExec->DebugPrintF( "_main__Priv_Mem_Free : mem %p\n", mem );
+	IExec->DebugPrintF( "_generic__Priv_Mem_Free : mem %p\n", mem );
 
 	data = (PTR)( (U32) Self - Self->Data.NegativeSize );
 
@@ -39,7 +39,7 @@ U32 retval;
 
 	if ( ! pool )
 	{
-		IExec->DebugPrintF( "_main__Priv_Mem_Free : No Memory Pool\n" );
+		IExec->DebugPrintF( "_generic__Priv_Mem_Free : No Memory Pool\n" );
 		goto bailout;
 	}
 

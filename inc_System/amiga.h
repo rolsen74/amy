@@ -21,8 +21,8 @@
 
 AMY_EXTERN_C_BEGIN
 
-void AMYFUNC NewList( struct List * );
-void AMYFUNC NewMinList( struct MinList * );
+void NewList( struct List * );
+void NewMinList( struct MinList * );
 
 AMY_EXTERN_C_END
 

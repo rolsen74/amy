@@ -15,7 +15,7 @@
 
 /****************************************************************************/
 
-#include <Amy_Defines.h>	// Need AMYFUNC
+#include <Amy_Defines.h>	// Need AMY_EXTERN_C_BEGIN
 
 /****************************************************************************/
 
@@ -35,7 +35,7 @@
 
 AMY_EXTERN_C_BEGIN
 
-void AMYFUNC __assert( const char *, int, const char *, const char * );
+void __assert( const char *, int, const char *, const char * );
 
 AMY_EXTERN_C_END
 

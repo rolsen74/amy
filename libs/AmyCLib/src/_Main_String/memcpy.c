@@ -41,41 +41,45 @@
 
 // --
 
-void *_main_string_memcpy( struct AmyCLibIFace *Self UNUSED, void *dst, const void *src, size_t len )
+#pragma GCC push_options
+#pragma GCC optimize ("Os,no-tree-loop-distribute-patterns")
+
+void * AMYFUNC _generic_string_memcpy( struct AmyCLibIFace *Self, void *dst, const void *src, size_t len )
 {
-struct libData *data;
-void *retval;
-char *s;
-char *d;
+	IExec->DebugPrintF( "_generic_string_memcpy : Src %p, Dst %p, Len %lu\n", src, dst, len );
 
-	IExec->DebugPrintF( "_main_string_memcpy\n" );
-
-	retval = dst;
-
-	if (( ! src ) || ( ! dst ))
+	if ( len )
 	{
-		data = (PTR)( (U32) Self - Self->Data.NegativeSize );
-		data->buf_PublicData->ra_ErrNo = EFAULT;
-		goto bailout;
+		if (( ! src ) || ( ! dst ))
+		{
+			// Only an error if len is none zero
+			struct libData *data = (PTR)( (U32) Self - Self->Data.NegativeSize );
+			data->buf_PublicData->ra_ErrNo = EFAULT;
+		}
+		else if ( src != dst )
+		{
+			#if 1
+
+			U8 *s = (U8 *) src ;
+			U8 *d = (U8 *) dst ;
+
+			while( len-- > 0 )
+			{
+				*d++ = *s++;
+			}
+
+			#else
+
+			// hmm maybe we should just call Exec  
+			IExec->CopyMem( src, dst, len );
+
+			#endif
+		}
 	}
 
-	if ( src != dst )
-	{
-		// No Error
-		goto bailout;
-	}
-
-	s = (PTR) src;
-	d = dst;
-
-	while( len-- > 0 )
-	{
-		*d++ = *s++;
-	}
-
-bailout:
-
-	return(	retval );
+	return(	dst );
 }
+
+#pragma GCC pop_options
 
 // --

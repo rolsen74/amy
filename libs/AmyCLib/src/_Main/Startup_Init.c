@@ -11,17 +11,20 @@
 
 // --
 
+#include "Startup_Init_Signal.c"
+#include "Startup_Init_Locale.c"
 #include "Startup_Init_Memory.c"
 #include "Startup_Init_PublicData.c"
+#include "Startup_Init_Enable.c"
 
 // --
 
-S32 _main__Priv_Startup_Init( struct AmyCLibIFace *Self )
+S32 AMYFUNC _generic__Priv_Startup_Init( struct AmyCLibIFace *Self, STR args, U32 mask )
 {
 struct libData *data;
 S32 retval;
 
-	IExec->DebugPrintF( "_main__Priv_Startup_Init\n" );
+	IExec->DebugPrintF( "_generic__Priv_Startup_Init : Mask $%08lx : Args '%s'\n", mask, (args)?args:"" );
 
 	data = (PTR)( (U32) Self - Self->Data.NegativeSize );
 
@@ -29,17 +32,52 @@ S32 retval;
 
 	// --
 
-	IExec->DebugPrintF( "_main__Priv_Startup_Init : 2\n" );
-
-	if ( myInit_Memory( Self, data ))
+	if ( mask & EM_FILE )
 	{
-		IExec->DebugPrintF( "mySetup_Memory failed\n" );
-		goto bailout;
+		// Can't open a File without allocating memory
+		mask |= EM_MEMORY;
 	}
 
 	// --
 
-	IExec->DebugPrintF( "_main__Priv_Startup_Init : 3\n" );
+	if ( mask & EM_STRING )
+	{
+		IExec->DebugPrintF( "_generic__Priv_Startup_Init : Enabling Strings\n" );
+
+		data->Enable_Strings = TRUE;
+		myInit_Enable( Self, data, EM_STRING );
+	}
+
+	// --
+
+	if ( mask & EM_MEMORY )
+	{
+		IExec->DebugPrintF( "_generic__Priv_Startup_Init : Enabling Memory\n" );
+
+		data->Enable_Memory = TRUE;
+		myInit_Enable( Self, data, EM_MEMORY );
+
+		if ( myInit_Memory( Self, data ))
+		{
+			IExec->DebugPrintF( "mySetup_Memory failed\n" );
+			goto bailout;
+		}
+	}
+
+	// --
+
+	if ( mask & EM_FILE )
+	{
+		IExec->DebugPrintF( "_generic__Priv_Startup_Init : Enabling File\n" );
+
+		data->Enable_File = TRUE;
+		myInit_Enable( Self, data, EM_FILE );
+	}
+
+	// --
+	// todo : get buffer, if Mem is off
+
+	IExec->DebugPrintF( "_generic__Priv_Startup_Init : 3\n" );
 
 	if ( myInit_PublicData( Self, data ))
 	{
@@ -49,11 +87,32 @@ S32 retval;
 
 	// --
 
+	IExec->DebugPrintF( "_generic__Priv_Startup_Init : 4\n" );
+
+	if ( myInit_Locale( Self, data ))
+	{
+		IExec->DebugPrintF( "mySetup_Locale failed\n" );
+		goto bailout;
+	}
+
+	// --
+	// todo : get buffer, if Mem is off
+
+	IExec->DebugPrintF( "_generic__Priv_Startup_Init : 5\n" );
+
+	if ( myInit_Signal( Self, data ))
+	{
+		IExec->DebugPrintF( "myInit_Signal failed\n" );
+		goto bailout;
+	}
+
+	// --
+
 	retval = TRUE;
 
 bailout:
 
-//	IExec->DebugPrintF( "_main__Priv_Startup_Init : 99\n" );
+	IExec->DebugPrintF( "_generic__Priv_Startup_Init : 99 : Retval %ld\n", retval );
 
 	return( retval );
 }

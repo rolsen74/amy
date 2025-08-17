@@ -15,7 +15,7 @@
 
 /****************************************************************************/
 
-#include <Amy_Defines.h>	// Need AMYFUNC
+#include <Amy_Defines.h>	// Need AMY_EXTERN_C_BEGIN
 #include <sys/types.h>
 
 /****************************************************************************/
@@ -31,13 +31,13 @@ struct group
 
 AMY_EXTERN_C_BEGIN
 
-void			AMYFUNC endgrent( void );
-struct group *	AMYFUNC getgrent( void );
-struct group *	AMYFUNC getgrgid( gid_t );
-int				AMYFUNC getgrgid_r(  gid_t, struct group *, char *, size_t, struct group ** );
-struct group *	AMYFUNC getgrnam( const char * );
-int				AMYFUNC getgrnam_r( const char *, struct group *, char *, size_t, struct group ** );
-void			AMYFUNC setgrent( void );
+void			endgrent( void );
+struct group *	getgrent( void );
+struct group *	getgrgid( gid_t );
+int				getgrgid_r(  gid_t, struct group *, char *, size_t, struct group ** );
+struct group *	getgrnam( const char * );
+int				getgrnam_r( const char *, struct group *, char *, size_t, struct group ** );
+void			setgrent( void );
 
 AMY_EXTERN_C_END
 

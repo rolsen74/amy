@@ -15,7 +15,7 @@
 
 /****************************************************************************/
 
-#include <Amy_Defines.h>	// Need AMYFUNC
+#include <Amy_Defines.h>	// Need AMY_EXTERN_C_BEGIN
 #include <sys/types.h>
 #include <sys/stat.h>
 
@@ -45,8 +45,8 @@ struct FTW
 
 AMY_EXTERN_C_BEGIN
 
-int	AMYFUNC ftw( const char *, int (*)(const char *, const struct stat *, int), int );
-int	AMYFUNC nftw( const char *, int (*)(const char *, const struct stat *, int, struct FTW *), int, int );
+int	ftw( const char *, int (*)(const char *, const struct stat *, int), int );
+int	nftw( const char *, int (*)(const char *, const struct stat *, int, struct FTW *), int, int );
 
 AMY_EXTERN_C_END
 

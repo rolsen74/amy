@@ -11,7 +11,7 @@
 
 // --
 
-U32 _main__Priv_Mem_FlushPool( struct AmyCLibIFace *Self, struct MemPoolHeader *handle )
+U32 AMYFUNC _generic__Priv_Mem_FlushPool( struct AmyCLibIFace *Self, struct MemPoolHeader *handle )
 {
 //struct libData *data;
 struct PoolBlock *pb;
@@ -19,9 +19,9 @@ struct PoolNode *def;
 struct PoolNode *pn;
 //struct libBase *libBase;
 U32 retval;
-//BOOL Notify;
+//S32 Notify;
 
-	IExec->DebugPrintF( "_main__Priv_Mem_FlushPool\n" );
+	IExec->DebugPrintF( "_generic__Priv_Mem_FlushPool\n" );
 
 //	  IExec->DebugPrintF( "FlushPool( %p )\n", handle );
 
@@ -36,7 +36,7 @@ U32 retval;
 		goto bailout;
 	}
 
-	if ( handle->ph_ID != POOLID )
+	if ( handle->ph_ID != ID_POOL )
 	{
 		goto bailout;
 	}

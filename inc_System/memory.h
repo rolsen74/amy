@@ -9,7 +9,7 @@
 */
 
 #ifndef AMYSYS_MEMORY_H
-#define AMYSYS_MEMORY_H 1
+#define AMYSYS_MEMORY_H
 
 #include <string.h>
 

@@ -80,6 +80,8 @@ strip:
 	$(STRIP) -R.comment $(CRT_OBJS)
 
 install:
-	$(COPY) $(CRT_OBJS) $(SDK)/lib/
+	$(COPY) $(BINDIR)/crtbegin.o $(SDK)/lib/
+	$(COPY) $(BINDIR)/crtend.o $(SDK)/lib/
+	$(COPY) $(BINDIR)/crt0.o $(SDK)/lib/
 
 ###########################################################################

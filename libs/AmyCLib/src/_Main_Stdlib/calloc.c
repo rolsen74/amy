@@ -11,12 +11,12 @@
 
 // --
 
-void *_main_stdlib_calloc( struct AmyCLibIFace *Self, size_t num, size_t size )
+void * AMYFUNC _generic_stdlib_calloc( struct AmyCLibIFace *Self, size_t num, size_t size )
 {
 struct libData *data;
 void *retval;
 
-	IExec->DebugPrintF( "_main_stdlib_calloc : Num %lu, Size %lu\n", num, size );
+	IExec->DebugPrintF( "_generic_stdlib_calloc : Num %lu, Size %lu\n", num, size );
 
 	data = (PTR)( (U32) Self - Self->Data.NegativeSize );
 
@@ -26,7 +26,7 @@ void *retval;
 
 	if ( ! retval )
 	{
-		IExec->DebugPrintF( "_main_stdlib_calloc : Error Allocating Memory : Size %lu\n", num * size );
+		IExec->DebugPrintF( "_generic_stdlib_calloc : Error Allocating Memory : Size %lu\n", num * size );
 		data->buf_PublicData->ra_ErrNo = ENOMEM;
 	}
 

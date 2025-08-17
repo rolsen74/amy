@@ -11,15 +11,15 @@
 
 // --
 
-U32 _main_Release( struct AmyCLibIFace *Self )
+U32 AMYFUNC _Main_Release( struct AmyCLibIFace *Self )
 {
-	IExec->DebugPrintF( "_main_Release\n" );
+	IExec->DebugPrintF( "AmyCLib : _Main_Release\n" );
 
 	Self->Data.RefCount--;
 
 	if (( ! Self->Data.RefCount ) && ( Self->Data.Flags & IFLF_CLONED ))
 	{
-		_main_Expunge( Self );
+		_Main_Expunge( Self );
 	}
 
 	return( Self->Data.RefCount );

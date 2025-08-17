@@ -15,7 +15,7 @@
 
 /****************************************************************************/
 
-#include <Amy_Defines.h>	// Need AMYFUNC
+#include <Amy_Defines.h>	// Need AMY_EXTERN_C_BEGIN
 #include <stddef.h>
 
 /****************************************************************************/
@@ -86,12 +86,12 @@ struct lconv
 
 AMY_EXTERN_C_BEGIN
 
-locale_t		AMYFUNC duplocale( locale_t );
-void			AMYFUNC freelocale( locale_t );
-struct lconv *	AMYFUNC localeconv( void );
-locale_t		AMYFUNC newlocale( int, const char *, locale_t );
-char *			AMYFUNC setlocale( int, const char * );
-locale_t		AMYFUNC uselocale( locale_t );
+locale_t		duplocale( locale_t );
+void			freelocale( locale_t );
+struct lconv *	localeconv( void );
+locale_t		newlocale( int, const char *, locale_t );
+char *			setlocale( int, const char * );
+locale_t		uselocale( locale_t );
 
 AMY_EXTERN_C_END
 

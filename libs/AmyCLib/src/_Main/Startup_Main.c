@@ -11,24 +11,27 @@
 
 // --
 
-S32 _main__Priv_Startup_Main(
+#include "Startup_Main_Args.c"
+
+// --
+
+S32 AMYFUNC _generic__Priv_Startup_Main(
 	struct AmyCLibIFace *Self,
 	int main( int, char ** ),
-	char *args,
-	int arglen,
+	char *args UNUSED,
+	int arglen UNUSED,
 	PTR msg,
 	struct _AmyCLibPublic **pd )
 {
 struct WBStartup *wbmsg;
+struct ExitNode *enode;
 struct libData *data;
 struct Process *me;
+STR *argv;
 S32 prg_rc;		// (User) Program Return Code
+S32 argc;
 
-// struct ExitNode *enode;
-// STRPTR *argv;
-// int32 argc;
-
-	IExec->DebugPrintF( "_main__Priv_Startup_Main : pd %p\n", pd );
+	IExec->DebugPrintF( "_generic__Priv_Startup_Main : pd %p, args '%s'\n", pd, (args)?args:"<NULL>" );
 
 	prg_rc = 20;	// DOS return error code
 
@@ -74,25 +77,24 @@ S32 prg_rc;		// (User) Program Return Code
 
 	// --
 
-// 	argc = 0;
-// 	argv = NULL;
+	argc = 0;
+	argv = NULL;
 
-// 	if ( InitArgs( Self, data, wbmsg, args, arglen, & argv, & argc ))
-// 	{
-// 		SHOWMSG( 3, "Running main()" );
+	if ( InitArgs( Self, data, wbmsg, & argv, & argc ))
+	{
+		IExec->DebugPrintF( "Calling Main( argc %ld, argv %p )\n", argc, argv );
+		prg_rc = main( argc, argv );
 
-// 		prg_rc = main( argc, argv );
+		// --
 
-// 		// --
-
-// 		// Should only run on normal exit. ie. with exit().
-// 		// not when abort() is called.
-// 		// Run in reverse order.
-// 		while(( enode = (APTR) IExec->RemTail( & data->ExitHeader ) ))
-// 		{
-// 			(*enode->Function)();
-// 		}
-// 	}
+		// Should only run on normal exit. ie. with exit().
+		// not when abort() is called.
+		// Run in reverse order.
+		while(( enode = (PTR) IExec->RemTail( & data->ExitHeader ) ))
+		{
+			(*enode->Function)();
+		}
+	}
 
 bailout:
 

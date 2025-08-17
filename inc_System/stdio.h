@@ -15,7 +15,7 @@
 
 /****************************************************************************/
 
-#include <Amy_Defines.h>	// Need AMYFUNC
+#include <Amy_Defines.h>	// Need AMY_EXTERN_C_BEGIN
 #include <locale.h>
 #include <stddef.h>
 #include <stdarg.h>
@@ -44,10 +44,9 @@
 
 #define P_tmpdir		""
 
-// fix me for AmyCLib
-//#define stderr			RACLibPublic->ra_stderr
-//#define stdin				RACLibPublic->ra_stdin
-//#define stdout			RACLibPublic->ra_stdout
+#define stderr			AmyCLibPublic->ra_stderr
+#define stdin			AmyCLibPublic->ra_stdin
+#define stdout			AmyCLibPublic->ra_stdout
 
 //--#define L_cuserid		0
 
@@ -68,75 +67,75 @@ typedef struct
 
 AMY_EXTERN_C_BEGIN
 
-void	AMYFUNC clearerr( FILE * );
-char *	AMYFUNC ctermid( char * );
-int		AMYFUNC dprintf( int, const char *, ... );
-int		AMYFUNC fclose( FILE * );
-FILE *	AMYFUNC fdopen( int, const char * );
-int		AMYFUNC feof( FILE * );
-int		AMYFUNC ferror( FILE * );
-int		AMYFUNC fflush( FILE * );
-int		AMYFUNC fgetc( FILE * );
-int		AMYFUNC fgetpos( FILE *, fpos_t * );
-char *	AMYFUNC fgets( char *, int, FILE * );
-int		AMYFUNC fileno( FILE * );
-void	AMYFUNC flockfile( FILE * );
-FILE *	AMYFUNC fmemopen( void *, size_t, const char * );
-FILE *	AMYFUNC fopen( const char *, const char * );
-int		AMYFUNC fprintf( FILE *, const char *, ... );
-int		AMYFUNC fputc( int, FILE * );
-int		AMYFUNC fputs( const char *, FILE * );
-size_t	AMYFUNC fread( void *, size_t, size_t, FILE * );
-FILE *	AMYFUNC freopen( const char *, const char *, FILE * );
-int		AMYFUNC fscanf( FILE *, const char *, ... );
-int		AMYFUNC fseek( FILE *, long int, int );
-int		AMYFUNC fseeko( FILE *, off_t, int  );
-int		AMYFUNC fsetpos( FILE *, const fpos_t * );
-long	AMYFUNC ftell( FILE * );
-off_t	AMYFUNC ftello( FILE * );
-int		AMYFUNC ftrylockfile( FILE * );
-void	AMYFUNC funlockfile( FILE * );
-size_t	AMYFUNC fwrite( const void *, size_t, size_t, FILE * );
-int		AMYFUNC getc( FILE * );
-int		AMYFUNC getchar( void );
-int		AMYFUNC getc_unlocked( FILE * );
-int		AMYFUNC getchar_unlocked( void );
-ssize_t	AMYFUNC getdelim( char **, size_t, int, FILE * );
-ssize_t	AMYFUNC getline( char **, size_t, FILE * );
-char *	AMYFUNC gets( char * );
-FILE *	AMYFUNC open_memstream( char **, size_t * );
-int		AMYFUNC pclose( FILE * );
-void	AMYFUNC perror( const char * );
-FILE *	AMYFUNC popen( const char *, const char * );
-int		AMYFUNC printf( const char *, ... );
-int		AMYFUNC putc( int, FILE * );
-int		AMYFUNC putchar( int );
-int		AMYFUNC putc_unlocked( int, FILE * );
-int		AMYFUNC putchar_unlocked( int );
-int     AMYFUNC puts( const char * );
-int		AMYFUNC remove( const char * );
-int		AMYFUNC rename( const char *, const char * );
-int		AMYFUNC renameat( int, const char *, int, const char * );
-void	AMYFUNC rewind( FILE * );
-int		AMYFUNC scanf( const char *, ... );
-void	AMYFUNC setbuf( FILE *, char * );
-int		AMYFUNC setvbuf( FILE *, char *, int, size_t );
-int		AMYFUNC snprintf( char *, size_t, const char *, ... );
-int		AMYFUNC sprintf( char *, const char *, ... );
-int		AMYFUNC sscanf( const char *, const char *, ... );
-char *	AMYFUNC tempnam( const char *, const char * );
-FILE *	AMYFUNC tmpfile( void );
-char *	AMYFUNC tmpnam( char * );
-char *	AMYFUNC tmpnam_r( char * );
-int		AMYFUNC ungetc( int, FILE * );
-int		AMYFUNC vdprintf( int, const char *, va_list );
-int		AMYFUNC vfprintf( FILE *, const char *, va_list );
-int		AMYFUNC vfscanf( FILE *, const char *, va_list );
-int		AMYFUNC vprintf( const char *, va_list );
-int		AMYFUNC vscanf( const char *, va_list );
-int		AMYFUNC vsnprintf( char *, size_t, const char *, va_list );
-int		AMYFUNC vsprintf( char *, const char *, va_list );
-int		AMYFUNC vsscanf( const char *, const char *, va_list );
+void	clearerr( FILE * );
+char *	ctermid( char * );
+int		dprintf( int, const char *, ... );
+int		fclose( FILE * );
+FILE *	fdopen( int, const char * );
+int		feof( FILE * );
+int		ferror( FILE * );
+int		fflush( FILE * );
+int		fgetc( FILE * );
+int		fgetpos( FILE *, fpos_t * );
+char *	fgets( char *, int, FILE * );
+int		fileno( FILE * );
+void	flockfile( FILE * );
+FILE *	fmemopen( void *, size_t, const char * );
+FILE *	fopen( const char *, const char * );
+int		fprintf( FILE *, const char *, ... );
+int		fputc( int, FILE * );
+int		fputs( const char *, FILE * );
+size_t	fread( void *, size_t, size_t, FILE * );
+FILE *	freopen( const char *, const char *, FILE * );
+int		fscanf( FILE *, const char *, ... );
+int		fseek( FILE *, long int, int );
+int		fseeko( FILE *, off_t, int  );
+int		fsetpos( FILE *, const fpos_t * );
+long	ftell( FILE * );
+off_t	ftello( FILE * );
+int		ftrylockfile( FILE * );
+void	funlockfile( FILE * );
+size_t	fwrite( const void *, size_t, size_t, FILE * );
+int		getc( FILE * );
+int		getchar( void );
+int		getc_unlocked( FILE * );
+int		getchar_unlocked( void );
+ssize_t	getdelim( char **, size_t, int, FILE * );
+ssize_t	getline( char **, size_t, FILE * );
+char *	gets( char * );
+FILE *	open_memstream( char **, size_t * );
+int		pclose( FILE * );
+void	perror( const char * );
+FILE *	popen( const char *, const char * );
+int		printf( const char *, ... );
+int		putc( int, FILE * );
+int		putchar( int );
+int		putc_unlocked( int, FILE * );
+int		putchar_unlocked( int );
+int		puts( const char * );
+int		remove( const char * );
+int		rename( const char *, const char * );
+int		renameat( int, const char *, int, const char * );
+void	rewind( FILE * );
+int		scanf( const char *, ... );
+void	setbuf( FILE *, char * );
+int		setvbuf( FILE *, char *, int, size_t );
+int		snprintf( char *, size_t, const char *, ... );
+int		sprintf( char *, const char *, ... );
+int		sscanf( const char *, const char *, ... );
+char *	tempnam( const char *, const char * );
+FILE *	tmpfile( void );
+char *	tmpnam( char * );
+char *	tmpnam_r( char * );
+int		ungetc( int, FILE * );
+int		vdprintf( int, const char *, va_list );
+int		vfprintf( FILE *, const char *, va_list );
+int		vfscanf( FILE *, const char *, va_list );
+int		vprintf( const char *, va_list );
+int		vscanf( const char *, va_list );
+int		vsnprintf( char *, size_t, const char *, va_list );
+int		vsprintf( char *, const char *, va_list );
+int		vsscanf( const char *, const char *, va_list );
 
 AMY_EXTERN_C_END
 
@@ -145,8 +144,8 @@ AMY_EXTERN_C_END
 
 AMY_EXTERN_C_BEGIN
 
-int		AMYFUNC asprintf( char **, const char *, ... );
-int		AMYFUNC vasprintf( char **, const char *, va_list );
+int		asprintf( char **, const char *, ... );
+int		vasprintf( char **, const char *, va_list );
 
 AMY_EXTERN_C_END
 

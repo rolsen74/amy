@@ -8,9 +8,9 @@
 	.section	".text"
 	.align		2
 
-	.globl		_main_setjmp_setjmp
+	.globl		_generic_setjmp_setjmp
 
-_main_setjmp_setjmp:
+_generic_setjmp_setjmp:
 
 	# r1 - Stack Pointer
 	# r3 - ( Parm 1 ) struct AmyCLibIFace *
@@ -22,35 +22,17 @@ _main_setjmp_setjmp:
 
 	# Store Return Address at Offset 0
 	mflr		r10			# Move from Link Register
-	stw		r10,0(r4)		# Store Word
+	stw		r10,0(r4)		# 
 
 	# Store Condition Code at Offset 4
 	mfcr		r10			# Move from Condition Register
-	stw		r10,4(r4)		# Store Word
+	stw		r10,4(r4)		# 
 
 	# Store Stack Pointer at Offset 8
-	stw		r1,8(r4)		# Store Word
+	stw		r1,8(r4)		# 
 
-	# Store Integers at Offset 12
+	# Store Integers (r13-r31) at Offset 12
 	stmw		r13,12(r4)		# Store Multiple Word
-	stmw		r14,16(r4)		# Store Multiple Word
-	stmw		r15,20(r4)		# Store Multiple Word
-	stmw		r16,24(r4)		# Store Multiple Word
-	stmw		r17,28(r4)		# Store Multiple Word
-	stmw		r18,32(r4)		# Store Multiple Word
-	stmw		r19,36(r4)		# Store Multiple Word
-	stmw		r20,40(r4)		# Store Multiple Word
-	stmw		r21,44(r4)		# Store Multiple Word
-	stmw		r22,48(r4)		# Store Multiple Word
-	stmw		r23,52(r4)		# Store Multiple Word
-	stmw		r24,56(r4)		# Store Multiple Word
-	stmw		r25,60(r4)		# Store Multiple Word
-	stmw		r26,64(r4)		# Store Multiple Word
-	stmw		r27,68(r4)		# Store Multiple Word
-	stmw		r28,72(r4)		# Store Multiple Word
-	stmw		r29,76(r4)		# Store Multiple Word
-	stmw		r30,80(r4)		# Store Multiple Word
-	stmw		r31,84(r4)		# Store Multiple Word
 
 	# Store Floating Pointer at Offset 88
 	stfd		f14,88(r4)		# Store Floating Point Double ( D-form )

@@ -12,6 +12,16 @@
 // --
 
 #include "Amy_Defines.h"
+#include <stdio.h>
+
+// --
+// Emable Mask .. should proberly rename
+
+#define EM_ALWAYS 			-1U
+#define EM_FILE				1
+#define EM_STRING			2
+#define EM_MEMORY			4
+#define EM_LOCALE			8
 
 // --
 
@@ -21,13 +31,12 @@ struct _AmyCLibPublic
 
 	int			ra_ErrNo;		// Errno.h
 
+	FILE *		ra_stderr;		// Stdio.h
+	FILE *		ra_stdin;		// Stdio.h
+	FILE *		ra_stdout;		// Stdio.h
 
-//	FILE *	    ra_stderr;	    // Stdio.h
-//	FILE *	    ra_stdin;	    // Stdio.h
-//	FILE *	    ra_stdout;	    // Stdio.h
+	int			ra_h_ErrNo;		// Netdb.h
 
-//	int		    ra_h_ErrNo;		// Netdb.h
-//
 //	fenv_t		ra_fenv;		// fenv.h - Default float envirement
 //
 // --	 int		 ra_daylight;	 // Time.h

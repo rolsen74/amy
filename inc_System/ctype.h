@@ -15,43 +15,43 @@
 
 /****************************************************************************/
 
-#include <Amy_Defines.h>	// Need AMYFUNC
+#include <Amy_Defines.h>	// Need AMY_EXTERN_C_BEGIN
 #include <locale.h>
 
 /****************************************************************************/
 
 AMY_EXTERN_C_BEGIN
 
-int		AMYFUNC isalnum( int );
-int		AMYFUNC isalnum_l( int, locale_t );
-int		AMYFUNC isalpha( int );
-int		AMYFUNC isalpha_l( int, locale_t );
-int		AMYFUNC isascii( int );
-int		AMYFUNC isblank( int );
-int		AMYFUNC isblank_l( int, locale_t );
-int		AMYFUNC iscntrl( int );
-int		AMYFUNC iscntrl_l( int, locale_t );
-int		AMYFUNC isdigit( int );
-int		AMYFUNC isdigit_l( int, locale_t );
-int		AMYFUNC isgraph( int );
-int		AMYFUNC isgraph_l( int, locale_t );
-int		AMYFUNC islower( int );
-int		AMYFUNC islower_l( int, locale_t );
-int		AMYFUNC isprint( int );
-int		AMYFUNC isprint_l( int, locale_t );
-int		AMYFUNC ispunct( int );
-int		AMYFUNC ispunct_l( int, locale_t );
-int		AMYFUNC isspace( int );
-int		AMYFUNC isspace_l( int, locale_t );
-int		AMYFUNC isupper( int );
-int		AMYFUNC isupper_l( int, locale_t );
-int		AMYFUNC isxdigit( int );
-int		AMYFUNC isxdigit_l( int, locale_t );
-int		AMYFUNC toascii( int );
-int		AMYFUNC tolower( int );
-int		AMYFUNC tolower_l( int, locale_t );
-int		AMYFUNC toupper( int );
-int		AMYFUNC toupper_l( int, locale_t );
+int		isalnum( int );
+int		isalnum_l( int, locale_t );
+int		isalpha( int );
+int		isalpha_l( int, locale_t );
+int		isascii( int );
+int		isblank( int );
+int		isblank_l( int, locale_t );
+int		iscntrl( int );
+int		iscntrl_l( int, locale_t );
+int		isdigit( int );
+int		isdigit_l( int, locale_t );
+int		isgraph( int );
+int		isgraph_l( int, locale_t );
+int		islower( int );
+int		islower_l( int, locale_t );
+int		isprint( int );
+int		isprint_l( int, locale_t );
+int		ispunct( int );
+int		ispunct_l( int, locale_t );
+int		isspace( int );
+int		isspace_l( int, locale_t );
+int		isupper( int );
+int		isupper_l( int, locale_t );
+int		isxdigit( int );
+int		isxdigit_l( int, locale_t );
+int		toascii( int );
+int		tolower( int );
+int		tolower_l( int, locale_t );
+int		toupper( int );
+int		toupper_l( int, locale_t );
 
 AMY_EXTERN_C_END
 
@@ -59,8 +59,8 @@ AMY_EXTERN_C_END
 
 AMY_EXTERN_C_BEGIN
 
-int		AMYFUNC _toupper( int );
-int		AMYFUNC _tolower( int );
+int		_toupper( int );
+int		_tolower( int );
 
 AMY_EXTERN_C_END
 

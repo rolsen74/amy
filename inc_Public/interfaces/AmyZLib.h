@@ -19,10 +19,10 @@
 struct AmyZLibIFace
 {
 	struct InterfaceData Data;
-	U32								AMYFUNC (*Obtain)(struct AmyZLibIFace *Self);
-	U32								AMYFUNC (*Release)(struct AmyZLibIFace *Self);
-	void							AMYFUNC (*Expunge)(struct AmyZLibIFace *Self);
-	struct Interface *				AMYFUNC (*Clone)(struct AmyZLibIFace *Self);
+	U32							AMYFUNC (*Obtain)(struct AmyZLibIFace *Self);
+	U32							AMYFUNC (*Release)(struct AmyZLibIFace *Self);
+	void						AMYFUNC (*Expunge)(struct AmyZLibIFace *Self);
+	struct Interface *			AMYFUNC (*Clone)(struct AmyZLibIFace *Self);
 };
 
 // --

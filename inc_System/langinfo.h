@@ -15,7 +15,7 @@
 
 /****************************************************************************/
 
-#include <Amy_Defines.h>	// Need AMYFUNC
+#include <Amy_Defines.h>	// Need AMY_EXTERN_C_BEGIN
 #include <locale.h>
 #include <nl_types.h>
 
@@ -95,8 +95,8 @@ enum
 
 AMY_EXTERN_C_BEGIN
 
-char *	AMYFUNC nl_langinfo( nl_item );
-char *	AMYFUNC nl_langinfol( nl_item, locale_t );
+char *	nl_langinfo( nl_item );
+char *	nl_langinfol( nl_item, locale_t );
 
 AMY_EXTERN_C_END
 
