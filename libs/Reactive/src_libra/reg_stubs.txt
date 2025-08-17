@@ -1,0 +1,65 @@
+
+##
+## SPDX-License-Identifier: BSD-2-Clause
+## Copyright (c) 2011-2025 Rene W. Olsen
+## Target OS: AmigaOS
+##
+
+
+# RA Attr		func-name			iface-name			args-call			args-decl
+"U32"			RA_Attr_Get			RA_Attr_Get			"obj, id, dst"			"struct RA_Object *obj, U32 id, PTR dst"
+"U32"			RA_Attr_GetTags			RA_Attr_GetTags			"obj"				"struct RA_Object *obj, ..."
+"U32"			RA_Attr_GetList			RA_Attr_GetList			"obj, list"			"struct RA_Object *obj, struct TagItem *list"
+"U32"			RA_Attr_GetSuper		RA_Attr_GetSuper		"obj, id, dst"			"struct RA_Object *obj, U32 id, PTR dst"
+"U32"			RA_Attr_GetSuperTags		RA_Attr_GetSuperTags		"obj"				"struct RA_Object *obj, ..."
+"U32"			RA_Attr_GetSuperList		RA_Attr_GetSuperList		"obj, list"			"struct RA_Object *obj, struct TagItem *list"
+"U32"			RA_Attr_GetParent		RA_Attr_GetParent		"obj, id, dst"			"struct RA_Object *obj, U32 id, PTR dst"
+"U32"			RA_Attr_GetParentTags		RA_Attr_GetParentTags		"obj"				"struct RA_Object *obj, ..."
+"U32"			RA_Attr_GetParentList		RA_Attr_GetParentList		"obj, list"			"struct RA_Object *obj, struct TagItem *list"
+"U32"			RA_Attr_Set			RA_Attr_Set			"obj, id, val"			"struct RA_Object *obj, U32 id, U32 val"
+"U32"			RA_Attr_SetTags			RA_Attr_SetTags			"obj"				"struct RA_Object *obj, ..."
+"U32"			RA_Attr_SetList			RA_Attr_SetList			"obj, list"			"struct RA_Object *obj, struct TagItem *list"
+"U32"			RA_Attr_SetSuper		RA_Attr_SetSuper		"obj, id, val"			"struct RA_Object *obj, U32 id, U32 val"
+"U32"			RA_Attr_SetSuperTags		RA_Attr_SetSuperTags		"obj"				"struct RA_Object *obj, ..."
+"U32"			RA_Attr_SetSuperList		RA_Attr_SetSuperList		"obj, list"			"struct RA_Object *obj, struct TagItem *list"
+"U32"			RA_Attr_SetParent		RA_Attr_SetParent		"obj, id, val"			"struct RA_Object *obj, U32 id, U32 val"
+"U32"			RA_Attr_SetParentTags		RA_Attr_SetParentTags		"obj"				"struct RA_Object *obj, ..."
+"U32"			RA_Attr_SetParentList		RA_Attr_SetParentList		"obj, list"			"struct RA_Object *obj, struct TagItem *list"
+
+
+# RA Class		func-name			iface-name			args-call			args-decl
+"U32"			RA_Class_Add			RA_Class_Add			"cl, name"			"struct RA_Class *cl, STR name"
+"struct RA_Class *"	RA_Class_CreateTags		RA_Class_CreateTags		"cl, name, size, dis"		"struct RA_Class *cl, STR name, U32 size, PTR dis, ..."
+"struct RA_Class *"	RA_Class_CreateList		RA_Class_CreateList		"cl, name, size, dis, list"	"struct RA_Class *cl, STR name, U32 size, PTR dis, struct TagItem *list"
+"U32"			RA_Class_Delete			RA_Class_Delete			"cl"				"struct RA_Class *cl"
+"struct RA_Class *"	RA_Class_FindTags		RA_Class_FindTags		"name"				"STR name, ..."
+"struct RA_Class *"	RA_Class_FindList		RA_Class_FindList		"name, list"			"STR name, struct TagItem *list"
+"U32"			RA_Class_Lock			RA_Class_Lock			"cl"				"struct RA_Class *cl"
+"U32"			RA_Class_Unlock			RA_Class_Unlock			"cl"				"struct RA_Class *cl"
+
+# RA Object		func-name			iface-name			args-call			args-decl
+"struct RA_Object *"	RA_Object_CreateTags		RA_Object_CreateTags		"cl, name"			"struct RA_Class *cl, STR name, ..."
+"struct RA_Object *"	RA_Object_CreateList		RA_Object_CreateList		"cl, name, list"		"struct RA_Class *cl, STR name, struct TagItem *list"
+"U32"			RA_Object_Delete		RA_Object_Delete		"obj"				"struct RA_Object *obj"
+
+# RA Method		func-name			iface-name			args-call			args-decl
+"U32"			RA_Method_DoTags		RA_Method_DoTags		"obj"				"struct RA_Object *obj, ..."
+"U32"			RA_Method_DoList		RA_Method_DoList		"obj, method"			"struct RA_Object *obj, struct RA_Method *method"
+"U32"			RA_Method_DoParentTags		RA_Method_DoParentTags		"obj"				"struct RA_Object *obj, ..."
+"U32"			RA_Method_DoParentList		RA_Method_DoParentList		"obj, method"			"struct RA_Object *obj, struct RA_Method *method"
+"U32"			RA_Method_DoSuperNew		RA_Method_DoSuperNew		"cl, obj"			"struct RA_Class *cl, struct RA_Object *obj, ..."
+"U32"			RA_Method_DoSuperTags		RA_Method_DoSuperTags		"cl, obj"			"struct RA_Class *cl, struct RA_Object *obj, ..."
+"U32"			RA_Method_DoSuperList		RA_Method_DoSuperList		"cl, obj, method"		"struct RA_Class *cl, struct RA_Object *obj, struct RA_Method *method"
+"U32"			RA_Method_RunFunc		RA_Method_RunFunc		"cl, obj, method"		"struct RA_Class *cl, struct RA_Object *obj, struct RA_Method *method"
+
+# RA Misc		func-name			iface-name			args-call			args-decl
+"PTR"			RA_Misc_GetTagData		RA_Misc_GetTagData		"tag, id, data"			"struct TagItem *tag, U32 id, PTR data"
+"U32"			RA_Misc_GetTagValue		RA_Misc_GetTagValue		"tag, id, val"			"struct TagItem *tag, U32 id, U32 val"
+"struct RA_Class *"	RA_Misc_Plugin_Open		RA_Misc_Plugin_Open		"name"				"STR name"
+"S32"			RA_Misc_Plugin_Free		RA_Misc_Plugin_Free		"rap"				"struct RA_Plugin *rap"
+"S32"			RA_Misc_Valid_Base_Name		RA_Misc_Valid_Base_Name		"name"				"STR name"
+"S32"			RA_Misc_Valid_Class_Name	RA_Misc_Valid_Class_Name	"name"				"STR name"
+"struct TagItem *"	RA_Misc_NextTag			RA_Misc_NextTag			"tag"				"struct TagItem *tag"
+"U32"			RA_Misc_XGet			RA_Misc_XGet			"obj, AttrID"			"struct RA_Object *obj, U32 AttrID"
+"PTR"			RA_Misc_LoadFile_32		RA_Misc_LoadFile_32		"name, size"			"STR name, U32 *size"
+"PTR"			RA_Misc_LoadFile_64		RA_Misc_LoadFile_64		"name, size"			"STR name, U64 *size"
