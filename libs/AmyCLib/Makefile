@@ -31,6 +31,7 @@ CFLAGS		+= -MMD
 CFLAGS		+= -MP
 CFLAGS		+= -mcrt=clib2
 CFLAGS		+= -fno-builtin
+CFLAGS		+= -D__DO_FUNCTION_LOG__
 
 # Linker Flags
 LDFLAGS		:= -mcrt=clib2 
@@ -111,6 +112,7 @@ SRCS		+= src/_Main/FD_Node_Free.c
 SRCS		+= src/_Main/FD_Lock_Nr.c
 SRCS		+= src/_Main/FD_Lock_Stream.c
 SRCS		+= src/_Main/FD_Lock_Unlock.c
+SRCS		+= src/_Main/Func_Log.c
 SRCS		+= src/_Main/main_Obtain.c
 SRCS		+= src/_Main/main_Release.c
 SRCS		+= src/_Main/main_Expunge.c
@@ -192,12 +194,13 @@ SRCS		+= src/_Main_Stdio/fseek.c
 SRCS		+= src/_Main_Stdio/fseeko.c
 SRCS		+= src/_Main_Stdio/ftell.c
 SRCS		+= src/_Main_Stdio/funlockfile.c
-SRCS		+= src/_Main_Stdio/printf.c
+SRCS		+= src/_Main_Stdio/ferror.c
+#SRCS		+= src/_Main_Stdio/printf.c
 SRCS		+= src/_Main_Stdio/putchar.c
 SRCS		+= src/_Main_Stdio/puts.c
 SRCS		+= src/_Main_Stdio/setvbuf.c
-SRCS		+= src/_Main_Stdio/snprintf.c
-SRCS		+= src/_Main_Stdio/sprintf.c
+#SRCS		+= src/_Main_Stdio/snprintf.c
+#SRCS		+= src/_Main_Stdio/sprintf.c
 SRCS		+= src/_Main_Stdio/ungetc.c
 SRCS		+= src/_Main_Stdio/vasprintf.c
 SRCS		+= src/_Main_Stdio/vprintf.c

@@ -51,6 +51,8 @@ int retval;
 
 	IExec->DebugPrintF( "_generic_stdio_vsnprintf : Enter : Buf %p, Size %ld, Fmt %s\n", buf, size, fmt );
 
+	DOFUNCTIONLOG( LOG_FUNC_vsnprintf );
+
 	retval = EOF;
 
 	data = (PTR)( (U32) Self - Self->Data.NegativeSize );

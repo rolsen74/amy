@@ -48,6 +48,8 @@ struct libData *data;
 
 	IExec->DebugPrintF( "_generic_stdlib_exit\n" );
 
+	DOFUNCTIONLOG( LOG_FUNC_exit );
+
 	data = (PTR)( (U32) Self - Self->Data.NegativeSize );
 
 	if ( ! data->ExitBlocked )

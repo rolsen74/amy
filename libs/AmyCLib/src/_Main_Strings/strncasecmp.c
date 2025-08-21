@@ -55,6 +55,8 @@ int c2;
 
 	IExec->DebugPrintF( "_generic_strings_strncasecmp\n" );
 
+	DOFUNCTIONLOG( LOG_FUNC_strncasecmp );
+
 	retval = 0;
 
 	data = (PTR)( (U32) Self - Self->Data.NegativeSize );

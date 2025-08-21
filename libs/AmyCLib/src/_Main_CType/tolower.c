@@ -36,6 +36,8 @@ int AMYFUNC _generic_ctype_tolower( struct AmyCLibPrivIFace *Self UNUSED, int c 
 {
 //	IExec->DebugPrintF( "_generic_ctype_tolower : c %ld\n", c );
 
+	DOFUNCTIONLOG( LOG_FUNC_tolower );
+
 	if ( c == EOF )
 	{
 		return( c );

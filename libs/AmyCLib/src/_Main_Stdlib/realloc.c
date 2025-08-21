@@ -18,6 +18,8 @@ void *retval;
 
 	IExec->DebugPrintF( "_generic_stdlib_realloc : Mem %p, Size %lu\n", mem, size );
 
+	DOFUNCTIONLOG( LOG_FUNC_realloc );
+
 	data = (PTR)( (U32) Self - Self->Data.NegativeSize );
 
 	retval = Self->Priv_Mem_Realloc( mem, size );

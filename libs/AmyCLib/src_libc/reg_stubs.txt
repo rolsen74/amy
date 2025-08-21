@@ -29,16 +29,16 @@
 
 
 # math		func-name	iface-name		args-call			args-decl					
-"double"	d__get_huge_val	math_d__get_huge_val	""				""
-"double"	d__inf		math_d__inf		""				""
-"int"		d__isinf	math_d__isinf		"x"				"double x"
-"int"		d__isnan	math_d__isnan		"x"				"double x"
-"double"	d_nan		math_d_nan		"x"				"const char *x"
-"double"	d_pow		math_d_pow		"x, y"				"double x, double y"
-"double"	d_fabs		math_d_fabs		"x"				"double x"
-"double"	d_scalbn	math_d_scalbn		"x, n"				"double x, int n"
-"double"	d_sqrt		math_d_sqrt		"x"				"double x"
-"double"	d_copysign	math_d_copysign		"x, y"				"double x, double y"
+"double"	_get_huge_val	math_d__get_huge_val	""				""
+"double"	__inf		math_d__inf		""				""
+"int"		_isinf		math_d__isinf		"x"				"double x"
+"int"		_isnan		math_d__isnan		"x"				"double x"
+"double"	nan		math_d_nan		"x"				"const char *x"
+"double"	pow		math_d_pow		"x, y"				"double x, double y"
+"double"	fabs		math_d_fabs		"x"				"double x"
+"double"	scalbn		math_d_scalbn		"x, n"				"double x, int n"
+"double"	sqrt		math_d_sqrt		"x"				"double x"
+"double"	copysign	math_d_copysign		"x, y"				"double x, double y"
 
 
 # setjmp	func-name	iface-name		args-call			args-decl					
@@ -66,6 +66,7 @@
 "int"		fseeko		stdio_fseeko		"stream, offset, from"		"FILE *stream, off_t offset, int from"
 "long"		ftell		stdio_ftell		"stream"			"FILE *stream"
 "void"		funlockfile	stdio_funlockfile	"stream"			"FILE *stream"
+"int"		ferror		stdio_ferror		"stream"			"FILE *stream"
 "int"		putchar		stdio_putchar		"c"				"int c"
 "int"		puts		stdio_puts		"str"				"const char *str"
 "int"		setvbuf		stdio_setvbuf		"stream, buf, mode, size"	"FILE *stream, char *buf, int mode, size_t size"

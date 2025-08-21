@@ -54,6 +54,8 @@ int c2;
 
 	IExec->DebugPrintF( "_generic_strings_strcasecmp\n" );
 
+	DOFUNCTIONLOG( LOG_FUNC_strcasecmp );
+
 	retval = 0;
 
 	data = (PTR)( (U32) Self - Self->Data.NegativeSize );

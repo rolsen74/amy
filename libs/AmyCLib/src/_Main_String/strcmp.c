@@ -54,6 +54,8 @@ U8 *m2;
 
 	retval = 0;
 
+	DOFUNCTIONLOG( LOG_FUNC_strcmp );
+
 	/**/ if (( ! s1 ) || ( ! s2 ))
 	{
 		struct libData *data = (PTR)( (U32) Self - Self->Data.NegativeSize );

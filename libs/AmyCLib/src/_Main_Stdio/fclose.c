@@ -51,6 +51,8 @@ int retval;
 
 	IExec->DebugPrintF( "_generic_stdio_fclose : Stream %p\n", stream );
 
+	DOFUNCTIONLOG( LOG_FUNC_fclose );
+
 	retval = EOF;
 
 	data = (PTR)( (U32) Self - Self->Data.NegativeSize );

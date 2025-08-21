@@ -49,6 +49,8 @@ int retval;
 
 	IExec->DebugPrintF( "_generic_stdio_fgetc : File %p\n", stream );
 
+	DOFUNCTIONLOG( LOG_FUNC_fgetc );
+
 	data = (PTR)( (U32) Self - Self->Data.NegativeSize );
 
 	retval = EOF;

@@ -50,6 +50,8 @@ int retval;
 
 	IExec->DebugPrintF( "_generic_fcntl_open\n" );
 
+	DOFUNCTIONLOG( LOG_FUNC_open );
+
 	// -- Check About
 
 	Self->Priv_Check_Abort();

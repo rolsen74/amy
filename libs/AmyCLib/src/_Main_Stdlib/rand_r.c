@@ -50,6 +50,8 @@ int AMYFUNC _generic_stdlib_rand_r( struct AmyCLibPrivIFace *Self UNUSED, unsign
 {
 int X;
 
+	DOFUNCTIONLOG( LOG_FUNC_rand_r );
+
 	X = (int)(*seed) & 0x7fffffff;
 
 	if ( X == 0 )

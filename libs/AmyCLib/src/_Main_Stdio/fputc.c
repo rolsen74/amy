@@ -51,6 +51,8 @@ S32 retval;
 
 	IExec->DebugPrintF( "_generic_stdio_fputc : c %ld, File %p\n", c, stream );
 
+	DOFUNCTIONLOG( LOG_FUNC_fputc );
+
 	file = NULL;
 	retval = EOF;
 

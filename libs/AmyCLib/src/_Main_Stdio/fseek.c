@@ -51,6 +51,8 @@ off_t off;
 
 	IExec->DebugPrintF( "_generic_stdio_fseek : Stream %p\n", stream );
 
+	DOFUNCTIONLOG( LOG_FUNC_fseek );
+
 	retval = EOF;
 
 //	data = (PTR)( (U32) Self - Self->Data.NegativeSize );

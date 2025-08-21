@@ -48,6 +48,8 @@ char * AMYFUNC _generic_string_strncpy( struct AmyCLibPrivIFace *Self, char *dst
 {
 	IExec->DebugPrintF( "_generic_string_strncpy : Src %p, Dst %p, Max %lu\n", src, dst, max );
 
+	DOFUNCTIONLOG( LOG_FUNC_strncpy );
+
 	if ( max )
 	{
 		/**/ if (( ! dst ) || ( ! src ))

@@ -11,6 +11,7 @@
 
 // --
 
+#include "Startup_Init_Check_Args.c"
 #include "Startup_Init_Signal.c"
 #include "Startup_Init_Locale.c"
 #include "Startup_Init_Memory.c"
@@ -27,9 +28,17 @@ S32 retval;
 
 	IExec->DebugPrintF( "_generic__Priv_Startup_Init : Mask $%08lx : Args '%s'\n", mask, (args)?args:"" );
 
+	retval = FALSE;
+
 	data = (PTR)( (U32) Self - Self->Data.NegativeSize );
 
-	retval = FALSE;
+	// --
+
+	if ( myInit_Check_Args( Self, data, args ))
+	{
+		IExec->DebugPrintF( "_generic__Priv_Startup_Init : Arg Check failed\n" );
+		goto bailout;		
+	}
 
 	// --
 

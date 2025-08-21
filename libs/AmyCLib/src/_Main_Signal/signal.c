@@ -47,6 +47,8 @@ struct libData *data;
 
 	IExec->DebugPrintF( "_generic_signal_signal\n" );
 
+	DOFUNCTIONLOG( LOG_FUNC_signal );
+
 	data = (PTR)( (U32) Self - Self->Data.NegativeSize );
 
 	if (( sig > SIGTERM ) || ( handler == SIG_ERR ))

@@ -46,6 +46,8 @@ int AMYFUNC _generic_stdlib_rand( struct AmyCLibPrivIFace *Self )
 struct libData *data;
 int retval;
 
+	DOFUNCTIONLOG( LOG_FUNC_rand );
+
 	data = (PTR)( (U32) Self - Self->Data.NegativeSize );
 
 	retval = Self->stdlib_rand_r( & data->Rand_Seed );

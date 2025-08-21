@@ -52,6 +52,8 @@ int is_negative;
 
 	IExec->DebugPrintF( "_generic_stdlib_strtod\n" );
 
+	DOFUNCTIONLOG( LOG_FUNC_strtod );
+
 	// --
 
 	data = (PTR)( (U32) Self - Self->Data.NegativeSize );

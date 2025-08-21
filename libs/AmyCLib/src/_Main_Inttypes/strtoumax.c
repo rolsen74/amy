@@ -64,6 +64,8 @@ int c;
 
 	IExec->DebugPrintF( "_generic_inttypes_strtoumax :\n" );
 
+	DOFUNCTIONLOG( LOG_FUNC_strtoumax );
+
 	data = (PTR)( (U32) Self - Self->Data.NegativeSize );
 
 	/*

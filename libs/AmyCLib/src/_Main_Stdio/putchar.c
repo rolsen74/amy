@@ -51,6 +51,8 @@ S32 retval;
 
 	IExec->DebugPrintF( "_generic_stdio_putchar : c %ld\n", c );
 
+	DOFUNCTIONLOG( LOG_FUNC_putchar );
+
 	retval = EOF;
 
 	data = (PTR)( (U32) Self - Self->Data.NegativeSize );

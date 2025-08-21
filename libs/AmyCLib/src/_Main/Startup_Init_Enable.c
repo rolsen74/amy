@@ -110,6 +110,7 @@ void _generic_stdio_fgetpos( void );
 void _generic_stdio_flockfile( void );
 void _generic_stdio_funlockfile( void );
 void _generic_stdio_fflush( void );
+void _generic_stdio_ferror( void );
 void _generic_stdio_puts( void );
 void _generic_stdio_putchar( void );
 void _generic_stdio_fputc( void );
@@ -277,6 +278,8 @@ struct EnableFunc  __stdlib__Exit[] =			{{ CPUType_Any, _generic_stdlib__Exit }}
 struct EnableFunc  __stdio_vasprintf[] =		{{ CPUType_Any, _generic_stdio_vasprintf }};
 struct EnableFunc  __assert_assert[] =			{{ CPUType_Any, _generic_assert_assert }};
 struct EnableFunc  __stdlib_exit[] =			{{ CPUType_Any, _generic_stdlib_exit }};
+struct EnableFunc  __stdio_ferror[] =			{{ CPUType_Any, _generic_stdio_ferror }};
+
 
 // --
 
@@ -333,6 +336,7 @@ struct EnableFunc  __stdlib_exit[] =			{{ CPUType_Any, _generic_stdlib_exit }};
 		stdio_fread
 		stdio_clearerr
 		fcntl_open
+		stdio_ferror
 
 	EM_LOCALE:
 		__ctype_tolower
@@ -496,6 +500,9 @@ struct EnableStruct funcs[] =
 /*  117 */ { offsetof( struct AmyCLibPrivIFace, stdlib_exit ), EM_ALWAYS, __stdlib_exit },
 /*  118 */ // { offsetof( struct AmyCLibPrivIFace, ctype_islower ), EM_LOCALE, __ctype_islower },
 /*  119 */ { offsetof( struct AmyCLibPrivIFace, stdio_fgetc ), EM_FILE, __fgetc },
+/*  120 */	// time_gmtime
+/*  121 */	// time_gmtime_r
+/*  122 */ { offsetof( struct AmyCLibPrivIFace, stdio_ferror ), EM_FILE, __stdio_ferror },
 
 
 

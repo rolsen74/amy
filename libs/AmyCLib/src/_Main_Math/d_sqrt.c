@@ -115,6 +115,8 @@ int32 m;
 int32 t;
 int32 i;
 
+	DOFUNCTIONLOG( LOG_FUNC_D_sqrt );
+
 	// Extract Words
 
 	val.value = x;

@@ -48,6 +48,10 @@ struct libData *data;
 
 	// --
 
+	Self->Priv_Print_Log();
+
+	// --
+
 	IExec->DebugPrintF( "_generic__Priv_Startup_Free : PublicData\n" );
 
 	myFree_PublicData( Self, data );

@@ -36,6 +36,8 @@ int AMYFUNC _generic_ctype_isxdigit( struct AmyCLibPrivIFace *Self UNUSED, int c
 {
 	IExec->DebugPrintF( "_generic_ctype_isxdigit : c %ld\n", c );
 
+	DOFUNCTIONLOG( LOG_FUNC_isxdigit );
+
 	if ( c == EOF )
 	{
 		return( FALSE );

@@ -48,6 +48,8 @@ void * AMYFUNC _generic_string_memcpy( struct AmyCLibPrivIFace *Self, void *dst,
 {
 //	IExec->DebugPrintF( "_generic_string_memcpy : Src %p, Dst %p, Len %lu\n", src, dst, len );
 
+	DOFUNCTIONLOG( LOG_FUNC_memcpy );
+
 	if ( len )
 	{
 		if (( ! src ) || ( ! dst ))

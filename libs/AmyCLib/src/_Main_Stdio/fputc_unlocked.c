@@ -49,6 +49,8 @@ S32 retval;
 
 	IExec->DebugPrintF( "_generic_stdio_fputc_unlocked : c %ld, File %p\n", c, stream );
 
+	DOFUNCTIONLOG( LOG_FUNC_fputc_unlocked );
+
 	retval = EOF;
 
 	// Find, Lock and Validate Stream

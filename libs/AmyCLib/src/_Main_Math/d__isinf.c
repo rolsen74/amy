@@ -44,6 +44,8 @@ int AMYFUNC _generic_math_d__isinf( struct AmyCLibPrivIFace *Self UNUSED, double
 {
 union DoubleBits xx;
 
+	DOFUNCTIONLOG( LOG_FUNC_D_isinf );
+
 	xx.value = x;
 
 	return(( xx.bits.exp == 2047 ) && ( xx.bits.man == 0 ));

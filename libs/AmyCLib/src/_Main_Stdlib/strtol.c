@@ -62,6 +62,8 @@ int neg;
 int any;
 int c;
 
+	DOFUNCTIONLOG( LOG_FUNC_strtol );
+
 	data = (PTR)( (U32) Self - Self->Data.NegativeSize );
 
 	/*

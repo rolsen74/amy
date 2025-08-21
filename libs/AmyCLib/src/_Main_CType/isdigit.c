@@ -36,6 +36,8 @@ int AMYFUNC _generic_ctype_isdigit( struct AmyCLibPrivIFace *Self UNUSED, int c 
 {
 	IExec->DebugPrintF( "_generic_ctype_isdigit : c %ld\n", c );
 
+	DOFUNCTIONLOG( LOG_FUNC_isdigit );
+
 	if ( c == EOF )
 	{
 		return( FALSE );

@@ -51,6 +51,8 @@ time_t *t;
 
 	IExec->DebugPrintF( "_generic_time_gmtime_r : Time %p\n", time );
 
+	DOFUNCTIONLOG( LOG_FUNC_gmtime_r );
+
 	data = (PTR)( (U32) Self - Self->Data.NegativeSize );
 
 	if (( ! time ) || ( ! tm ))

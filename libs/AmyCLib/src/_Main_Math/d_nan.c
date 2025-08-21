@@ -46,6 +46,8 @@ double AMYFUNC _generic_math_d_nan( struct AmyCLibPrivIFace *Self UNUSED, const 
 {
 union DoubleBits x;
 
+	DOFUNCTIONLOG( LOG_FUNC_D_nan );
+
 	/* Exponent = 2047 and fraction != 0.0; this must be a quiet nan. */
 	x.raw = 0x7ff8000000000001ULL;
 

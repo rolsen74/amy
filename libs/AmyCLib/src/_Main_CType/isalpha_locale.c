@@ -48,6 +48,8 @@ int retval;
 
 	IExec->DebugPrintF( "_locale_ctype_isalpha\n" );
 
+	DOFUNCTIONLOG( LOG_FUNC_isalpha );
+
 	data = (PTR)( (U32) Self - Self->Data.NegativeSize );
 
 	IExec->ObtainSemaphore( & data->LocaleSemaphore );

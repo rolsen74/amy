@@ -52,6 +52,8 @@ U32 cnt;
 
 	IExec->DebugPrintF( "_generic_stdio_fflush : Stream %p\n", stream );
 
+	DOFUNCTIONLOG( LOG_FUNC_fflush );
+
 	retval = EOF;
 
 	data = (PTR)( (U32) Self - Self->Data.NegativeSize );

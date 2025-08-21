@@ -52,6 +52,8 @@ U32 Mode;
 
 	IExec->DebugPrintF( "_generic_stdio_fopen, Filename %s, Mode: %s\n", filename, mode );
 
+	DOFUNCTIONLOG( LOG_FUNC_fopen );
+
 	file = NULL;
 
 	data = (PTR)( (U32) Self - Self->Data.NegativeSize );

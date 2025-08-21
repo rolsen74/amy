@@ -27,6 +27,7 @@
 // --
 struct PrintStruct;
 struct ScanStruct;
+struct PrivFile;
 
 struct AmyCLibPrivIFace
 {
@@ -137,9 +138,7 @@ struct AmyCLibPrivIFace
 /*   85 */	int							AMYFUNC (*stdio_vsprintf)( struct AmyCLibPrivIFace *Self, char *buf, const char *fmt, va_list ap );
 /*   86 */	int							AMYFUNC (*stdio_fputc_unlocked)( struct AmyCLibPrivIFace *Self, int c, struct PrivFile *stream );
 /*   87 */	int							AMYFUNC (*stdio_vsnprintf)( struct AmyCLibPrivIFace *Self, char *buf, size_t size, const char *fmt, va_list ap );
-
 /*   88 */	int							AMYFUNC (*fcntl_open)( struct AmyCLibPrivIFace *Self, const char *path, int oflag, ... );
-
 /*   89 */	int							AMYFUNC (*unistd_close)( struct AmyCLibPrivIFace *Self, int fildes );
 	// --
 /*   90 */	int							AMYFUNC (*stdio_ungetc)( struct AmyCLibPrivIFace *Self, int c, struct PrivFile *stream );
@@ -174,8 +173,11 @@ struct AmyCLibPrivIFace
 /*  119 */	int							AMYFUNC (*stdio_fgetc)(struct AmyCLibPrivIFace *, struct PrivFile *stream);
 /*  120 */	struct tm *					AMYFUNC (*time_gmtime)(struct AmyCLibPrivIFace *, const time_t *time );
 /*  121 */	struct tm *					AMYFUNC (*time_gmtime_r)(struct AmyCLibPrivIFace *, const time_t *time, struct tm *tm );
+/*  122 */	int							AMYFUNC	(*stdio_ferror)( struct AmyCLibPrivIFace *Self, struct PrivFile *stream );
+/*  123 */	void						AMYFUNC (*Priv_Print_Log)( struct AmyCLibPrivIFace *Self );
+/*  124 */	void						AMYFUNC (*Priv_Func_Log)( struct AmyCLibPrivIFace *Self, S32 xx );
 
-// brug /*   86 */ // delete_me_stdio_snprintf
+
 
 };
 

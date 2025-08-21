@@ -44,6 +44,8 @@ double AMYFUNC _generic_math_d_fabs( struct AmyCLibPrivIFace *Self, double x )
 {
 union DoubleBits xx;
 
+	DOFUNCTIONLOG( LOG_FUNC_D_fabs );
+
 	if ( Self->math_d__isnan( x ))
 	{
 		return( x );

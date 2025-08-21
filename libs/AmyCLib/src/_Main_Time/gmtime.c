@@ -52,6 +52,8 @@ struct tm *retval;
 
 	IExec->DebugPrintF( "_generic_time_gmtime : Time %p\n", time );
 
+	DOFUNCTIONLOG( LOG_FUNC_gmtime );
+
 	data = (PTR)( (U32) Self - Self->Data.NegativeSize );
 
 	if ( ! data->buf_gmtime )

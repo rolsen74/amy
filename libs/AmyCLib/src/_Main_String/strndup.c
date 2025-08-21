@@ -21,6 +21,8 @@ char *str;
 
 	IExec->DebugPrintF( "_generic_string_strndup\n" );
 
+	DOFUNCTIONLOG( LOG_FUNC_strndup );
+
 	str = NULL;
 
 	data = (PTR)( (U32) Self - Self->Data.NegativeSize );

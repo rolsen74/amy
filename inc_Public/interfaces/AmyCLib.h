@@ -169,8 +169,9 @@ struct AmyCLibIFace
 /*  119 */	int							AMYFUNC (*stdio_fgetc)(struct AmyCLibIFace *, FILE *stream);
 /*  120 */	struct tm *					AMYFUNC (*time_gmtime)(struct AmyCLibIFace *, const time_t *time );
 /*  121 */	struct tm *					AMYFUNC (*time_gmtime_r)(struct AmyCLibIFace *, const time_t *time, struct tm *tm );
-
-// brug /*   86 */ // delete_me_stdio_snprintf
+/*  122 */	int							AMYFUNC (*stdio_ferror)( struct AmyCLibIFace *Self, FILE *stream );
+/*  123 */	void						AMYFUNC (*Priv_Print_Log)( struct AmyCLibIFace *Self );
+/*  124 */	void						AMYFUNC (*Priv_Func_Log)( struct AmyCLibIFace *Self, S32 xx );
 
 
 };

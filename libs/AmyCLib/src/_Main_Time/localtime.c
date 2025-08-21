@@ -56,6 +56,8 @@ int rc;
 
 	IExec->DebugPrintF( "_generic_time_localtime : Time %p\n", time );
 
+	DOFUNCTIONLOG( LOG_FUNC_localtime );
+
 	data = (PTR)( (U32) Self - Self->Data.NegativeSize );
 
 	if ( ! time )

@@ -45,6 +45,8 @@ void AMYFUNC _generic_stdlib_srand( struct AmyCLibPrivIFace *Self UNUSED, unsign
 {
 struct libData *data;
 
+	DOFUNCTIONLOG( LOG_FUNC_srand );
+
 	data = (PTR)( (U32) Self - Self->Data.NegativeSize );
 	data->Rand_Seed = seed;
 }

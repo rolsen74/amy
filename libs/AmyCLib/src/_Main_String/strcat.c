@@ -51,6 +51,8 @@ U8 c;
 
 	IExec->DebugPrintF( "_generic_string_strcat\n" );
 
+	DOFUNCTIONLOG( LOG_FUNC_strcat );
+
 	retval = NULL;
 
 	data = (PTR)( (U32) Self - Self->Data.NegativeSize );

@@ -52,6 +52,8 @@ int retval;
 
 	IExec->DebugPrintF( "_generic_stdio_setvbuf, File %p, Buf %p, Mode %ld, Size %ld\n", stream, buf, mode, size );
 
+	DOFUNCTIONLOG( LOG_FUNC_setvbuf );
+
 	retval = EOF;
 
 	data = (PTR)( (U32) Self - Self->Data.NegativeSize );

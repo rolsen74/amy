@@ -51,6 +51,8 @@ time_t t;
 
 	IExec->DebugPrintF( "_generic_time_time\n" );
 
+	DOFUNCTIONLOG( LOG_FUNC_time );
+
 	IDOS->DateStamp( & ds );
 
 	if ( ! Self->Priv_Convert_DS_to_Time( & ds, & t ))

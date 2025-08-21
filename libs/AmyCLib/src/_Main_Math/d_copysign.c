@@ -47,6 +47,8 @@ double AMYFUNC _generic_math_d_copysign( struct AmyCLibPrivIFace *Self UNUSED, d
 union DoubleBits xx;
 union DoubleBits yy;
 
+	DOFUNCTIONLOG( LOG_FUNC_D_copysign );
+
 	xx.value = x;
 	yy.value = y;
 

@@ -51,6 +51,8 @@ int retval;
 
 	IExec->DebugPrintF( "_generic_stdio_ungetc, C %ld, File %p\n", c, stream );
 
+	DOFUNCTIONLOG( LOG_FUNC_ungetc );
+
 	file = NULL;
 	retval = EOF;
 

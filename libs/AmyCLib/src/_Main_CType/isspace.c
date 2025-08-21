@@ -36,6 +36,8 @@ int AMYFUNC _generic_ctype_isspace( struct AmyCLibPrivIFace *Self UNUSED, int c 
 {
 	IExec->DebugPrintF( "_generic_ctype_isspace : c %ld\n", c );
 
+	DOFUNCTIONLOG( LOG_FUNC_isspace );
+
 	if ( c == EOF )
 	{
 		return( FALSE );

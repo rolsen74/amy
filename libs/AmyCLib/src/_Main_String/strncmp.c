@@ -53,6 +53,8 @@ S32 c2;
 U8 *m1;
 U8 *m2;
 
+	DOFUNCTIONLOG( LOG_FUNC_strncmp );
+
 	pos = 0;
 	retval = 0;
 

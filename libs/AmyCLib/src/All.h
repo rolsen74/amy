@@ -8,6 +8,8 @@
 #ifndef AMYLIB_ALL_H
 #define AMYLIB_ALL_H
 
+#define ANYLIB_CLIB_PRIV_H
+
 // --
 
 #include <setjmp.h>
@@ -30,6 +32,19 @@
 #include <dos/obsolete.h>
 //#include <intuition/intuition.h>
 #include <workbench/startup.h>
+
+// --
+
+#ifdef __DO_FUNCTION_LOG__
+
+#include "_Main/Func_Log.h"
+#define DOFUNCTIONLOG(x)		Self->Priv_Func_Log( x );
+
+#else
+
+#define DOFUNCTIONLOG(x)
+
+#endif
 
 // --
 
@@ -173,7 +188,7 @@ struct libData
 	U8							ExitBlocked;
 	// // --	 uint8						 ATExitBlocked;
 	// // --	 uint8						 UnixFileMode;
-	// uint8						TrackFuncUsage;
+	U8							TrackFuncUsage;
 	// uint8						Pad[2];
 
 	U8							Enable_Strings;
@@ -191,11 +206,11 @@ struct libData
 	// char *						buf_error_message;			// string / strerror_r
 	// char *						buf_gai_strerror;			// netdb / gai_strerror
 	struct _AmyCLibPublic *		buf_PublicData;				//
-	// char *						buf_progname;				// stdlib / [set/get]progname
+	STR							buf_progname;				// stdlib / [set/get]progname
 	// char *                      buf_EnvBuffer;				// getenv
 	// struct PT_ThreadInfo **		buf_PThreads;				// pthreads
 	// struct random_struct *		buf_Random;					// stdlib / random,srandom,initstate
-	// uint64 *					buf_FuncLogs;				// 
+	U64 *						buf_FuncLogs;				// 
 
 	// --
 };

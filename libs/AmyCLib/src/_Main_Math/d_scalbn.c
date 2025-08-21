@@ -45,6 +45,8 @@ int32 hx;
 int32 lx;
 int32 k;
 
+	DOFUNCTIONLOG( LOG_FUNC_D_scalbn );
+
 	// Extract Words
 	val.value = x;
 	hx = ( val.raw >> 32 );

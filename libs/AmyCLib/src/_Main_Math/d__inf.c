@@ -46,6 +46,8 @@ double AMYFUNC _generic_math_d__inf( struct AmyCLibPrivIFace *Self UNUSED )
 {
 union DoubleBits xx;
 
+	DOFUNCTIONLOG( LOG_FUNC_D__inf );
+
 	/* Exponent = 2047 and fraction = 0.0 -> infinity */
 	xx.raw = 0x7ff0000000000000;
 

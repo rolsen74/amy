@@ -36,6 +36,8 @@ int AMYFUNC _generic_ctype_toupper( struct AmyCLibPrivIFace *Self UNUSED, int c 
 {
 //	IExec->DebugPrintF( "_generic_ctype_toupper : c %ld\n", c );
 
+	DOFUNCTIONLOG( LOG_FUNC_toupper );
+
 	if ( c == EOF )
 	{
 		return( c );

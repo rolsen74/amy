@@ -53,6 +53,8 @@ int c;
 
 	IExec->DebugPrintF( "_generic_stdio_puts : str '%s'\n", str );
 
+	DOFUNCTIONLOG( LOG_FUNC_puts );
+
 	file = NULL;
 	retval = EOF;
 

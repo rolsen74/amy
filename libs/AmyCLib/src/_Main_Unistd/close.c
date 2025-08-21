@@ -49,7 +49,7 @@ int retval;
 
 	IExec->DebugPrintF( "_generic_unistd_close : Fildes %ld\n", (S32) fildes );
 
-	data = (PTR)( (U32) Self - Self->Data.NegativeSize );
+	DOFUNCTIONLOG( LOG_FUNC_close );
 
 	retval = EOF;
 

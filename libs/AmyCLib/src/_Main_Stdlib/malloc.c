@@ -18,6 +18,8 @@ void *retval;
 
 	IExec->DebugPrintF( "_generic_stdlib_malloc : Size %lu\n", size );
 
+	DOFUNCTIONLOG( LOG_FUNC_malloc );
+
 	data = (PTR)( (U32) Self - Self->Data.NegativeSize );
 
 	retval = Self->Priv_Mem_Alloc( size );

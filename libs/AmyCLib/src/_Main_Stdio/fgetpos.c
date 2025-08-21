@@ -52,6 +52,8 @@ int retval;
 
 	IExec->DebugPrintF( "_generic_stdio_fgetpos, Stream %p, Pos Ptr %p\n", stream, pos );
 
+	DOFUNCTIONLOG( LOG_FUNC_fgetpos );
+
 	fpos = -1LL;
 	file = NULL;
 	retval = EOF;

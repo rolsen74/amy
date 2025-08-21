@@ -1,0 +1,59 @@
+
+/*
+** SPDX-License-Identifier: BSD-3-Clause
+** Copyright (c) 2025 Rene W. Olsen
+** Target OS: AmigaOS
+*/
+
+// --
+
+#include <proto/exec.h>
+#include <math.h>
+#include <stdio.h>
+
+struct data
+{
+	double	 xx;
+	double	 yy;
+	double	 zz;
+	char *	name;
+};
+
+struct data mydata[] =
+{
+{ 7.0,		3.0,	343.0,	"Test 1" },
+{ 4.0,		0.5,	2.0,	"Test 2" },
+
+{ 0,		0, 		0,		NULL },
+};
+
+int main( int argc, char **argv )
+{
+double val;
+int error;
+int pos;
+
+	error = 10;
+
+	pos = 0;
+
+	while( mydata[pos].name )
+	{
+		val = pow( mydata[pos].xx, mydata[pos].yy );
+
+		if ( val != mydata[pos].zz )
+		{
+			IExec->DebugPrintF( "math f pow test 1 '%s' - Failed\n", mydata[pos].name );
+			goto bailout;
+		}
+
+		pos++;
+	}
+
+	error = 0;
+
+bailout:
+
+	return( error );
+}
+

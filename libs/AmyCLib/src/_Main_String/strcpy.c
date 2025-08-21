@@ -48,6 +48,8 @@ char * AMYFUNC _generic_string_strcpy( struct AmyCLibPrivIFace *Self, char *dst,
 {
 	IExec->DebugPrintF( "_generic_string_strcpy : Src %p : Dst %p :\n", src, dst );
 
+	DOFUNCTIONLOG( LOG_FUNC_strcpy );
+
 	/**/ if (( ! dst ) || ( ! src ))
 	{
 		struct libData *data = (PTR)( (U32) Self - Self->Data.NegativeSize );

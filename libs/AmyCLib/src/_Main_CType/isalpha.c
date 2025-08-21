@@ -36,6 +36,8 @@ int AMYFUNC _generic_ctype_isalpha( struct AmyCLibPrivIFace *Self UNUSED, int c 
 {
 	IExec->DebugPrintF( "_generic_ctype_isalpha : c %ld\n", c );
 
+	DOFUNCTIONLOG( LOG_FUNC_isalpha );
+
 	if ( c == EOF )
 	{
 		return( FALSE );

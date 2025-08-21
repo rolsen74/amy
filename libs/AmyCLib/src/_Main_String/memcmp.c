@@ -58,6 +58,8 @@ U8 *m2;
 
 //	IExec->DebugPrintF( "_generic_string_memcmp : Mem %p, Mem %p, Len %lu\n", s1, s2, len );
 
+	DOFUNCTIONLOG( LOG_FUNC_memcmp );
+
 	// --
 
 	if ( len )

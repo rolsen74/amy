@@ -18,6 +18,8 @@ void *retval;
 
 	IExec->DebugPrintF( "_generic_stdlib_calloc : Num %lu, Size %lu\n", num, size );
 
+	DOFUNCTIONLOG( LOG_FUNC_calloc );
+
 	data = (PTR)( (U32) Self - Self->Data.NegativeSize );
 
 	retval = Self->Priv_Mem_Alloc( num * size );

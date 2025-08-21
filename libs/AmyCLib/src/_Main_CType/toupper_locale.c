@@ -50,6 +50,8 @@ int retval;
 
 	data = (PTR)( (U32) Self - Self->Data.NegativeSize );
 
+	DOFUNCTIONLOG( LOG_FUNC_toupper );
+
 	IExec->ObtainSemaphore( & data->LocaleSemaphore );
 
 	if ( data->LocaleTable[ LC_CTYPE ] )

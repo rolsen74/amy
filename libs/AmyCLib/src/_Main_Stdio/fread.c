@@ -51,6 +51,8 @@ size_t retval;
 
 	IExec->DebugPrintF( "_generic_stdio_fread : Buf %p, Size %ld, Count %ld, File %p\n", ptr, size, count, stream );
 
+	DOFUNCTIONLOG( LOG_FUNC_fread );
+
 	file = NULL;
 	retval = 0;
 

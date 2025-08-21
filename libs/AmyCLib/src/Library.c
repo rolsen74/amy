@@ -162,6 +162,9 @@ void _generic_time_gmtime_r(void);
 // void _generic_signal_raise(void);
 // void _generic_stdlib_abort(void);
 // void _generic_stdlib__Exit(void);
+void _generic__Priv_Print_Log(void);
+void _generic__Priv_Func_Log(void);
+
 
 struct EnableFunc
 {
@@ -305,6 +308,10 @@ static const PTR Main_Vectors[] =
 /*  119 */	(PTR) _NotEnabled,	// _generic_stdio_fgetc
 /*  120 */	(PTR) _generic_time_gmtime,
 /*  121 */	(PTR) _generic_time_gmtime_r,
+/*  122 */	(PTR) _NotEnabled,	// _generic_stdio_ferror
+/*  123 */	(PTR) _generic__Priv_Print_Log,
+/*  124 */	(PTR) _generic__Priv_Func_Log,
+
 
 	(PTR) -1
 };

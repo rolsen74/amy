@@ -586,6 +586,8 @@ double AMYFUNC _generic_math_d_pow( struct AmyCLibPrivIFace *Self, double x, dou
 {
 double retval;
 
+	DOFUNCTIONLOG( LOG_FUNC_D_pow );
+
 	retval = __pow( Self, x, y );
 
 	return( retval );

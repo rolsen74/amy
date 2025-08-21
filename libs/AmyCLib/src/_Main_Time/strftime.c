@@ -538,6 +538,8 @@ size_t retval;
 
 	IExec->DebugPrintF( "_generic_time_strftime : Buf %p, Size %ld, Fmt '%s', TM %p\n", s, size, format, timeptr );
 
+	DOFUNCTIONLOG( LOG_FUNC_strftime );
+
 	if ( size > 0 )
 	{
 		Self->string_memset( & in, 0, sizeof( in ));

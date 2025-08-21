@@ -56,6 +56,8 @@ STR fmt;
 
 	IExec->DebugPrintF( "_generic_assert_assert\n" );
 
+	DOFUNCTIONLOG( LOG_FUNC_assert );
+
 	data = (PTR)( (U32) Self - Self->Data.NegativeSize );
 
 	if ( ! IntuitionBase )

@@ -50,6 +50,8 @@ struct libData *data;
 
 	IExec->DebugPrintF( "_generic_stdio_funlockfile : Stream %p\n", stream );
 
+	DOFUNCTIONLOG( LOG_FUNC_funlockfile );
+
 	data = (PTR)( (U32) Self - Self->Data.NegativeSize );
 
 	// --

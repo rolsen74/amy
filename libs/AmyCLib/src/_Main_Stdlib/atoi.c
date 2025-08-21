@@ -48,6 +48,8 @@ int retval;
 
 	IExec->DebugPrintF( "_generic_stdlib_atoi\n" );
 
+	DOFUNCTIONLOG( LOG_FUNC_atoi );
+
 	if ( ! str )
 	{
 		retval = 0;

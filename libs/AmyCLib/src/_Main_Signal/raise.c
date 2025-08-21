@@ -49,6 +49,8 @@ int retval;
 
 	IExec->DebugPrintF( "_generic_signal_raise\n" );
 
+	DOFUNCTIONLOG( LOG_FUNC_raise );
+
 	data = (PTR)( (U32) Self - Self->Data.NegativeSize );
 
 	#if 0

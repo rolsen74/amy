@@ -47,6 +47,8 @@ struct libData *data;
 
 	IExec->DebugPrintF( "_generic_stdlib_abort\n" );
 
+	DOFUNCTIONLOG( LOG_FUNC_abort );
+
 	data = (PTR)( (U32) Self - Self->Data.NegativeSize );
 
 	/* Try to call the signal handler that might be in charge of
