@@ -41,26 +41,20 @@
 
 // --
 
-int AMYFUNC _generic_stdio_fseeko( struct AmyCLibIFace *Self, FILE *stream, off_t offset, int wherefrom )
+int AMYFUNC _generic_stdio_fseeko( struct AmyCLibPrivIFace *Self, struct PrivFile *stream, off_t offset, int wherefrom )
 {
 struct PrivFile *file;
 struct libData *data;
 int retval;
 
-	// -- Enable Check
+	// --
 
-	IExec->DebugPrintF( "_generic_stdio_fseeko : FILE %p, off %ld, from %ld\n", stream, offset, wherefrom );
+	IExec->DebugPrintF( "_generic_stdio_fseeko : Stream %p, off %ld, from %ld\n", stream, offset, wherefrom );
 
 	file = NULL;
-	retval = -1;
+	retval = EOF;
 
 	data = (PTR)( (U32) Self - Self->Data.NegativeSize );
-
-//	if ( ! ( data->EnableMask & EM_FILE ))
-//	{
-//		IExec->DebugPrintF( "%s:%04lu: Function Not Enabled\n", __FILE__, __LINE__ );
-//		goto bailout;
-//	}
 
 	// --
 
@@ -68,6 +62,7 @@ int retval;
 
 	// --
 
+	// Find, Lock and Validate Stream
 	file = Self->Priv_FDLockStream( stream );
 
 	if ( ! file )

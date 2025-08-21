@@ -10,14 +10,11 @@
 #include <proto/AmyCLib.h>
 
 // --
-#if 0
 
 int sprintf( char *buf, const char *fmt, ... )
 {
 va_list ap;
 int retval;
-
-	IExec->DebugPrintF( "stub : snprintf\n" );
 
 	va_start( ap, fmt );
 
@@ -28,5 +25,4 @@ int retval;
 	return(	retval );
 }
 
-#endif
 // --

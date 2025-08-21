@@ -41,57 +41,77 @@
 
 // --
 
-int AMYFUNC _generic_stdio_vsnprintf( struct AmyCLibIFace *Self, char *buf, size_t size, const char *fmt, va_list ap )
+int AMYFUNC _generic_stdio_vsnprintf( struct AmyCLibPrivIFace *Self, char *buf, size_t size, const char *fmt, va_list ap )
 {
 struct PrintStruct ps;
 struct libData *data;
 int retval;
 
-	// -- Enable Check
+	// --
 
-	IExec->DebugPrintF( "_generic_stdio_vsnprintf\n" );
+	IExec->DebugPrintF( "_generic_stdio_vsnprintf : Enter : Buf %p, Size %ld, Fmt %s\n", buf, size, fmt );
 
-	retval = -1;
+	retval = EOF;
 
 	data = (PTR)( (U32) Self - Self->Data.NegativeSize );
-
-//	if ( ! ( data->EnableMask & EM_FILE ))
-//	{
-//		IExec->DebugPrintF( "%s:%04lu: Function Not Enabled\n", __FILE__, __LINE__ );
-//		goto bailout;
-//	}
 
 	// --
 
 	Self->Priv_Check_Abort();
 
 	// --
+	// size == 0, special case where we count bytes and buf is ignored
 
-	if (( ! fmt ) || ( ! buf ) || ( size < 1 ))
+	if (( ! fmt ) || (( size ) && ( ! buf )))
 	{
+		#ifdef DEBUG
+		IExec->DebugPrintF( "_generic_stdio_vsnprintf : NULL Pointer\n" );
+		#endif
 		data->buf_PublicData->ra_ErrNo = EFAULT;
-		IExec->DebugPrintF( "_generic_stdio_vsnprintf : err 1\n" );
 		goto bailout;
+	}
+
+	/**/ if ( ! size )
+	{
+		// We need to count bytes, we do
+		// that by setting buf to NULL
+		buf = NULL;
+		size = INT_MAX;
+//		IExec->DebugPrintF( "-->> Size == %ld\n", size );
+	}
+	else if ( size >= INT_MAX )
+	{
+		// ps_Size is Signed S32, so clamp
+		size = INT_MAX;
+//		IExec->DebugPrintF( "-->> Size >= %ld\n", size );
+	}
+	else if ( size < INT_MAX )	// max S32
+	{
+		// Make space for NUL terminator
+		size++;
+//		IExec->DebugPrintF( "-->> Size < %ld\n", size );
 	}
 
 	ps.ps_Format	= fmt;
 	ps.ps_Stream	= NULL;
 	ps.ps_Buffer	= buf;
 	ps.ps_Size		= size;
-	ps.ps_Result	= 0;
-//	ps.ps_Args		= & ap;
+	ps.ps_Written	= 0;
 
 	va_copy( ps.ps_Args, ap );
 
-	Self-> Priv_Print( & ps );
+	Self->Priv_Print( & ps );
 
-	if ( ps.ps_Result < 0 )
+	IExec->DebugPrintF( "_generic_stdio_vsnprintf : Leave : '%s'\n", buf );
+
+	if ( ps.ps_Written < 0 )
 	{
-		IExec->DebugPrintF( "_generic_stdio_vsnprintf : err 2, stat %ld\n", ps.ps_Result );
+		IExec->DebugPrintF( "_generic_stdio_vsnprintf : err 2, stat %ld\n", ps.ps_Written );
 		goto bailout;
 	}
 
-	retval = ps.ps_Result;
+	// NUL should not be counted
+	retval = ps.ps_Written - 1;
 
 bailout:
 

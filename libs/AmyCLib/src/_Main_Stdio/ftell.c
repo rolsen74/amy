@@ -41,31 +41,25 @@
 
 // --
 
-long AMYFUNC _generic_stdio_ftell( struct AmyCLibIFace *Self, FILE *stream )
+long AMYFUNC _generic_stdio_ftell( struct AmyCLibPrivIFace *Self, struct PrivFile *stream )
 {
 //struct libData *data;
 long retval;
 fpos_t pos;
 
-	// -- Enable Check
+	// --
 
-	IExec->DebugPrintF( "_generic_stdio_ftell : FILE %p\n", stream );
+	IExec->DebugPrintF( "_generic_stdio_ftell : Stream %p\n", stream );
 
-	retval = -1;
+	retval = EOF;
 
 //	data = (PTR)( (U32) Self - Self->Data.NegativeSize );
-
-//	if ( ! ( data->EnableMask & EM_FILE ))
-//	{
-//		IExec->DebugPrintF( "%s:%04lu: Function Not Enabled\n", __FILE__, __LINE__ );
-//		goto bailout;
-//	}
 
 	// --
 
 	if ( Self->stdio_fgetpos( stream, & pos ) < 0 )
 	{
-		retval = -1;
+		retval = EOF;
 	}
 	else
 	{

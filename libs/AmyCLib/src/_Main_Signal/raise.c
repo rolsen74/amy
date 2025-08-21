@@ -41,7 +41,7 @@
 
 // --
 
-int AMYFUNC _generic_signal_raise( struct AmyCLibIFace *Self, int sig )
+int AMYFUNC _generic_signal_raise( struct AmyCLibPrivIFace *Self, int sig )
 {
 signal_handler_t handler;
 struct libData *data;

@@ -41,12 +41,12 @@
 
 // --
 
-#pragma GCC push_options
-#pragma GCC optimize ("Os,no-tree-loop-distribute-patterns")
+// #pragma GCC push_options
+// #pragma GCC optimize ("Os,no-tree-loop-distribute-patterns")
 
-void * AMYFUNC _generic_string_memcpy( struct AmyCLibIFace *Self, void *dst, const void *src, size_t len )
+void * AMYFUNC _generic_string_memcpy( struct AmyCLibPrivIFace *Self, void *dst, const void *src, size_t len )
 {
-	IExec->DebugPrintF( "_generic_string_memcpy : Src %p, Dst %p, Len %lu\n", src, dst, len );
+//	IExec->DebugPrintF( "_generic_string_memcpy : Src %p, Dst %p, Len %lu\n", src, dst, len );
 
 	if ( len )
 	{
@@ -58,7 +58,7 @@ void * AMYFUNC _generic_string_memcpy( struct AmyCLibIFace *Self, void *dst, con
 		}
 		else if ( src != dst )
 		{
-			#if 1
+			#if 0
 
 			U8 *s = (U8 *) src ;
 			U8 *d = (U8 *) dst ;
@@ -80,6 +80,6 @@ void * AMYFUNC _generic_string_memcpy( struct AmyCLibIFace *Self, void *dst, con
 	return(	dst );
 }
 
-#pragma GCC pop_options
+// #pragma GCC pop_options
 
 // --

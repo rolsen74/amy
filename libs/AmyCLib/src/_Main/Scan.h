@@ -10,6 +10,12 @@
 
 // --
 
+enum myReadStat
+{
+	MRS_Okay,	// Read okay
+	MRS_Error,	// Read failed
+};
+
 #define FLOATING_POINT
 
 #define	BUF			513	/* Maximum length of numeric string. */
@@ -59,6 +65,26 @@
 
 #define u_char unsigned char
 #define u_long unsigned long
+
+// --
+
+struct Intern
+{
+	S32			c;
+	STR			fmt;
+	S32			nread;
+	S32			width;
+	S32			suppress;		// Ignore arg
+	S32			nassigned;		// Number of args handled
+	S32			input_fail;
+	va_list		args;
+
+	STR			buffer;
+	U32			bufferPos;
+
+	struct PrivFile *stream;
+	struct AmyCLibPrivIFace *Self;
+};
 
 // --
 

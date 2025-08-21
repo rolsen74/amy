@@ -41,28 +41,22 @@
 
 // --
 
-int AMYFUNC _generic_stdio_fgetpos( struct AmyCLibIFace *Self, FILE *stream, fpos_t *pos )
+int AMYFUNC _generic_stdio_fgetpos( struct AmyCLibPrivIFace *Self, struct PrivFile *stream, fpos_t *pos )
 {
 struct PrivFile *file;
 struct libData *data;
 S64 fpos;
 int retval;
 
-	// -- Enable Check
+	// --
 
-	IExec->DebugPrintF( "_generic_stdio_fgetpos, FILE %p, Pos Ptr %p\n", stream, pos );
+	IExec->DebugPrintF( "_generic_stdio_fgetpos, Stream %p, Pos Ptr %p\n", stream, pos );
 
 	fpos = -1LL;
 	file = NULL;
-	retval = -1;
+	retval = EOF;
 
 	data = (PTR)( (U32) Self - Self->Data.NegativeSize );
-
-//	if ( ! ( data->EnableMask & EM_FILE ))
-//	{
-//		IExec->DebugPrintF( "%s:%04lu: Function Not Enabled\n", __FILE__, __LINE__ );
-//		goto bailout;
-//	}
 
 	// --
 
@@ -77,7 +71,7 @@ int retval;
 		goto bailout;
 	}
 
-	// Find and Lock Stream
+	// Find, Lock and Validate Stream
 	file = Self->Priv_FDLockStream( stream );
 
 	if ( ! file )

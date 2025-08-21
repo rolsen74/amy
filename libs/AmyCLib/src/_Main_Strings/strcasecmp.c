@@ -41,7 +41,7 @@
 
 // --
 
-int AMYFUNC _generic_strings_strcasecmp( struct AmyCLibIFace *Self, const char *s1, const char *s2 )
+int AMYFUNC _generic_strings_strcasecmp( struct AmyCLibPrivIFace *Self, const char *s1, const char *s2 )
 {
 struct libData *data;
 uint8 *str1;
@@ -50,19 +50,13 @@ int retval;
 int c1;
 int c2;
 
-	// -- Enable Check
+	// --
 
 	IExec->DebugPrintF( "_generic_strings_strcasecmp\n" );
 
 	retval = 0;
 
 	data = (PTR)( (U32) Self - Self->Data.NegativeSize );
-
-//	if ( ! ( data->EnableMask & EM_STRING ))
-//	{
-//		IExec->DebugPrintF( "%s:%04lu: Function Not Enabled\n", __FILE__, __LINE__ );
-//		goto bailout;
-//	}
 
 	// --
 

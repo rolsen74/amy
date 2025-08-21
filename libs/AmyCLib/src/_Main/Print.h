@@ -10,6 +10,13 @@
 
 // --
 
+enum myWriteStat
+{
+	MWS_Okay,	// Write okay
+	MWS_Full,	// Write okay, but buffer is now full
+	MWS_Error,	// Write failed
+};
+
 enum Parameter_Size_t
 {
 	Parameter_Size_Byte,
@@ -25,7 +32,7 @@ enum Parameter_Size_t
 
 struct Intern
 {
-	struct AmyCLibIFace *Self;
+	struct AmyCLibPrivIFace *Self;
 	const char *prefix;
 	enum Parameter_Size_t Parameter_Size;
 	char *output_buffer;
@@ -51,8 +58,6 @@ struct Intern
 	int output_len;
 	int precision;
 };
-
-#define ps_Written ps_Result
 
 // --
 

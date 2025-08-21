@@ -49,6 +49,10 @@ S32 retval;
 
 	retval = FALSE;
 
+	#ifdef DEBUG
+	IExec->DebugPrintF( "my_Option_s\n" );
+	#endif
+
 	if ( ! ps->ps_Args )
 	{
 //		  data->PublicData.ra_ErrNo = (EFAULT);

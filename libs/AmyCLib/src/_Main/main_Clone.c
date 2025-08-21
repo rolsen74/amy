@@ -11,9 +11,9 @@
 
 // --
 
-struct Interface * AMYFUNC _Main_Clone( struct AmyCLibIFace *Self )
+struct Interface * AMYFUNC _Main_Clone( struct AmyCLibPrivIFace *Self )
 {
-struct AmyCLibIFace *IFace;
+struct AmyCLibPrivIFace *IFace;
 struct libData *data;
 S32 error;
 
@@ -42,7 +42,7 @@ S32 error;
 //		IFace->Data.NegativeSize, data, IFace, Self, IFace->strings_bzero );
 
 //	IFace->strings_bzero( data, sizeof( struct libData ));
-	_generic_string_memset( IFace, data, 0, sizeof( struct libData ));
+	IFace->string_memset( data, 0, sizeof( struct libData ));
 
 	// --
 	// This Init code is so simple and do not alloc anything

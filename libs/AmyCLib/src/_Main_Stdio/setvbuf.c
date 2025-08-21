@@ -41,26 +41,20 @@
 
 // --
 
-int AMYFUNC _generic_stdio_setvbuf( struct AmyCLibIFace *Self, FILE *stream, char *buf, int mode, size_t size )
+int AMYFUNC _generic_stdio_setvbuf( struct AmyCLibPrivIFace *Self, struct PrivFile *stream, char *buf, int mode, size_t size )
 {
 struct PrivFile *file;
 struct libData *data;
 char *newbuf;
 int retval;
 
-	// -- Enable Check
+	// --
 
 	IExec->DebugPrintF( "_generic_stdio_setvbuf, File %p, Buf %p, Mode %ld, Size %ld\n", stream, buf, mode, size );
 
 	retval = EOF;
 
 	data = (PTR)( (U32) Self - Self->Data.NegativeSize );
-
-//	if ( ! ( data->EnableMask & EM_FILE ))
-//	{
-//		IExec->DebugPrintF( "%s:%04lu: Function Not Enabled\n", __FILE__, __LINE__ );
-//		goto bailout;
-//	}
 
 	// --
 

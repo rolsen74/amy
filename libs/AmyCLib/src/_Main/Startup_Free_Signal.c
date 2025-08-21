@@ -11,7 +11,7 @@
 
 // --
 
-static void myFree_Signal( struct AmyCLibIFace *Self, struct libData *data )
+static void myFree_Signal( struct AmyCLibPrivIFace *Self, struct libData *data )
 {
 	if ( data->buf_SignalHandlers )
 	{

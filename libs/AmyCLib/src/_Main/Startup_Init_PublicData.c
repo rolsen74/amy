@@ -12,7 +12,7 @@
 // --
 
 static S32 myInit_PublicData(
-	struct AmyCLibIFace *Self,
+	struct AmyCLibPrivIFace *Self,
 	struct libData *data )
 {
 struct _AmyCLibPublic *pd;	// Public Data
@@ -22,19 +22,11 @@ S32 stat;
 
 	error = TRUE;
 
+	pd = data->buf_PublicData;
+
 	// Only if Memory functions is Enabled
 	if ( data->Enable_Memory )
 	{
-		pd = Self->Priv_Mem_Alloc( sizeof( struct _AmyCLibPublic ));
-
-		if ( ! pd )
-		{
-			IExec->DebugPrintF( "myInit_PublicData : Error allocating memory\n" );
-			goto bailout;
-		}
-		
-		data->buf_PublicData = pd;
-
 		// Only if File handling is Enabled
 		if ( data->Enable_File )
 		{
@@ -102,11 +94,11 @@ S32 stat;
 
 	error = FALSE;
 
-	IExec->DebugPrintF( "myInit_PublicData : OK\n" );
+//	IExec->DebugPrintF( "myInit_PublicData : OK\n" );
 
 bailout:
 
-	IExec->DebugPrintF( "myInit_PublicData : error %ld\n", error );
+//	IExec->DebugPrintF( "myInit_PublicData : error %ld\n", error );
 
  	return( error );
 }

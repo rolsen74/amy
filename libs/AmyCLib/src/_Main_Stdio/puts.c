@@ -41,7 +41,7 @@
 
 // --
 
-int AMYFUNC _generic_stdio_puts( struct AmyCLibIFace *Self, const char *str )
+int AMYFUNC _generic_stdio_puts( struct AmyCLibPrivIFace *Self, const char *str )
 {
 struct PrivFile *file;
 struct libData *data;
@@ -49,20 +49,14 @@ int retval;
 int mode;
 int c;
 
-	// -- Enable Check
+	// --
 
-	IExec->DebugPrintF( "_generic_stdio_fseek : str '%s'\n", str );
+	IExec->DebugPrintF( "_generic_stdio_puts : str '%s'\n", str );
 
 	file = NULL;
 	retval = EOF;
 
 	data = (PTR)( (U32) Self - Self->Data.NegativeSize );
-
-//	if ( ! ( data->EnableMask & EM_FILE ))
-//	{
-//		IExec->DebugPrintF( "%s:%04lu: Function Not Enabled\n", __FILE__, __LINE__ );
-//		goto bailout;
-//	}
 
 	// --
 
@@ -85,9 +79,11 @@ int c;
 
 	// __fputc_check start
 
-	if ( file->pf_Write == FALSE )
+	if ( ! file->pf_Write )
 	{
-		IExec->DebugPrintF( "_generic_stdio_puts : Error File Descriptor is not Write enabled\n" );
+		#ifdef DEBUG
+		IExec->DebugPrintF( "%s:%04d: Stream not writeable\n", __FILE__, __LINE__ );
+		#endif
 		data->buf_PublicData->ra_ErrNo = EBADF;
 		file->pf_Error = TRUE;
 		goto bailout;

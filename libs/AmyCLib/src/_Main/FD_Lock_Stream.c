@@ -42,7 +42,7 @@
 // --
 // File Descriptor
 
-PTR AMYFUNC _generic__Priv_FDLockStream( struct AmyCLibIFace *Self, PTR file_ptr )
+PTR AMYFUNC _generic__Priv_FDLockStream( struct AmyCLibPrivIFace *Self, PTR file_ptr )
 {
 struct PrivFile *retval;
 struct PrivFile *file;

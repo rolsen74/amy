@@ -18,7 +18,7 @@
 
 // --
 
-void AMYFUNC _generic__Priv_Startup_Free( struct AmyCLibIFace *Self )
+void AMYFUNC _generic__Priv_Startup_Free( struct AmyCLibPrivIFace *Self )
 {
 struct libData *data;
 

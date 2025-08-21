@@ -41,13 +41,13 @@
 
 // --
 
-int AMYFUNC _generic_stdio_fputc( struct AmyCLibIFace *Self, int c, FILE *stream )
+int AMYFUNC _generic_stdio_fputc( struct AmyCLibPrivIFace *Self, int c, struct PrivFile *stream )
 {
 struct PrivFile *file;
 struct libData *data;
 S32 retval;
 
-	// -- Enable Check
+	// --
 
 	IExec->DebugPrintF( "_generic_stdio_fputc : c %ld, File %p\n", c, stream );
 
@@ -56,19 +56,13 @@ S32 retval;
 
 	data = (PTR)( (U32) Self - Self->Data.NegativeSize );
 
-//	if ( ! ( data->EnableMask & EM_FILE ))
-//	{
-//		IExec->DebugPrintF( "%s:%04lu: Function Not Enabled\n", __FILE__, __LINE__ );
-//		goto bailout;
-//	}
-
 	// --
 
 	Self->Priv_Check_Abort();
 
 	// --
 
-	// Find and Lock Stream
+	// Find, Lock and Validate Stream
 	file = Self->Priv_FDLockStream( stream );
 
 	if (( ! file ) || ( file->pf_StructID != ID_PRIVFILE ))
@@ -84,13 +78,15 @@ S32 retval;
 	// Check Write Enabled
 	if ( ! file->pf_Write )
 	{
-		IExec->DebugPrintF( "_generic_stdio_fputc : Read only\n" );
+		#ifdef DEBUG
+		IExec->DebugPrintF( "%s:%04d: Stream not writeable\n", __FILE__, __LINE__ );
+		#endif
 		data->buf_PublicData->ra_ErrNo = EBADF;
 		file->pf_Error = TRUE;
 		goto bailout;
 	}
 
-	// Flusg Read Buffer if any
+	// Flush Read Buffer if any
 	if ( file->pf_BufferReadBytes > 0 )
 	{
 		if ( ! Self->Priv_FB_Read_Drop_Buffer( file ))

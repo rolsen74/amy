@@ -41,16 +41,22 @@
 
 // --
 
-#pragma GCC push_options
-#pragma GCC optimize ("Os,no-tree-loop-distribute-patterns")
+// #pragma GCC push_options
+// #pragma GCC optimize ("Os,no-tree-loop-distribute-patterns")
 
-int AMYFUNC _generic_string_memcmp( struct AmyCLibIFace *Self, const void *s1, const void *s2, size_t len )
+int AMYFUNC _generic_string_memcmp( struct AmyCLibPrivIFace *Self, const void *s1, const void *s2, size_t len )
 {
 int retval;
+U32 pos;
+S32 c1;
+S32 c2;
+U8 *m1;
+U8 *m2;
 
-	IExec->DebugPrintF( "_generic_string_memcmp : Mem1 %p, Mem2 %p, Len %lu\n", s1, s2, len );
-
+	pos = 0;
 	retval = 0;
+
+//	IExec->DebugPrintF( "_generic_string_memcmp : Mem %p, Mem %p, Len %lu\n", s1, s2, len );
 
 	// --
 
@@ -64,32 +70,28 @@ int retval;
 		}
 		else if ( s1 != s2 )
 		{
-			U8 *m1 = (PTR) s1 ;
-			U8 *m2 = (PTR) s2 ;
+			m1 = (PTR) s1 ;
+			m2 = (PTR) s2 ;
 
-			while( len-- )
+			while( len > pos++ )
 			{
-				if ( *m1 != *m2 )
+				c1 = *m1++;
+				c2 = *m2++;
+
+				if ( c1 != c2 )
 				{
+					retval = c1 - c2;
 					break;
 				}
-				else
-				{
-					m1++;
-					m2++;
-				}
 			}
-
-			S32 c1 = *m1;
-			S32 c2 = *m2;
-
-			retval = c1 - c2;
 		}
 	}
+
+	IExec->DebugPrintF( "_generic_string_memcmp : Mem %p : Mem %p : Len %lu : Pos %ld : Retval %ld :\n", s1, s2, len, pos-1, retval );
 
 	return( retval );
 }
 
-#pragma GCC pop_options
+// #pragma GCC pop_options
 
 // --

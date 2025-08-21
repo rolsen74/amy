@@ -41,22 +41,16 @@
 
 // --
 
-void AMYFUNC _generic_stdio_funlockfile( struct AmyCLibIFace *Self, FILE *stream )
+void AMYFUNC _generic_stdio_funlockfile( struct AmyCLibPrivIFace *Self, struct PrivFile *stream )
 {
 struct PrivFile *file;
 struct libData *data;
 
-	// -- Enable Check
+	// --
 
-	IExec->DebugPrintF( "_generic_stdio_funlockfile : FILE %p\n", stream );
+	IExec->DebugPrintF( "_generic_stdio_funlockfile : Stream %p\n", stream );
 
 	data = (PTR)( (U32) Self - Self->Data.NegativeSize );
-
-//	if ( ! ( data->EnableMask & EM_FILE ))
-//	{
-//		IExec->DebugPrintF( "%s:%04lu: Function Not Enabled\n", __FILE__, __LINE__ );
-//		goto bailout;
-//	}
 
 	// --
 

@@ -11,7 +11,7 @@
 
 // --
 
-void * AMYFUNC _generic_stdlib_malloc( struct AmyCLibIFace *Self, size_t size )
+void * AMYFUNC _generic_stdlib_malloc( struct AmyCLibPrivIFace *Self, size_t size )
 {
 struct libData *data;
 void *retval;

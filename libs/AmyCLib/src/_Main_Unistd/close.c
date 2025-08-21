@@ -41,7 +41,7 @@
 
 // --
 
-int AMYFUNC _generic_unistd_close( struct AmyCLibIFace *Self, int fildes )
+int AMYFUNC _generic_unistd_close( struct AmyCLibPrivIFace *Self, int fildes )
 {
 struct PrivFile *file;
 struct libData *data;
@@ -55,21 +55,15 @@ int retval;
 
 	data = (PTR)( (U32) Self - Self->Data.NegativeSize );
 
-//	if ( ! ( data->EnableMask & EM_FILE ))
-//	{
-//		IExec->DebugPrintF( "%s:%04lu: Function Not Enabled\n", __FILE__, __LINE__ );
-//		goto bailout;
-//	}
-
 	// -- Check About
 
-IExec->DebugPrintF( "close 1\n" );
+// IExec->DebugPrintF( "close 1\n" );
 
 	Self->Priv_Check_Abort();
 
 	// --
 
-IExec->DebugPrintF( "close 2\n" );
+// IExec->DebugPrintF( "close 2\n" );
 
 	file = Self->Priv_FDLockNr( fildes );
 
@@ -79,7 +73,7 @@ IExec->DebugPrintF( "close 2\n" );
 		goto bailout;
 	}
 
-IExec->DebugPrintF( "close 3 - %ld\n", file->pf_Locks );
+// IExec->DebugPrintF( "close 3 - %ld\n", file->pf_Locks );
 
     // Get Semaphore lock
 	Self->stdio_flockfile( (PTR) file );

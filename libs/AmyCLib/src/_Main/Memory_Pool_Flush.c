@@ -11,7 +11,7 @@
 
 // --
 
-U32 AMYFUNC _generic__Priv_Mem_FlushPool( struct AmyCLibIFace *Self, struct MemPoolHeader *handle )
+U32 AMYFUNC _generic__Priv_Mem_FlushPool( struct AmyCLibPrivIFace *Self, struct MemPoolHeader *handle )
 {
 //struct libData *data;
 struct PoolBlock *pb;

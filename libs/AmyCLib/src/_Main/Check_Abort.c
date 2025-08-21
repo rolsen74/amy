@@ -41,7 +41,7 @@
 
 // --
 
-void AMYFUNC _generic__Priv_Check_Abort( struct AmyCLibIFace *Self )
+void AMYFUNC _generic__Priv_Check_Abort( struct AmyCLibPrivIFace *Self )
 {
 struct libData *data;
 

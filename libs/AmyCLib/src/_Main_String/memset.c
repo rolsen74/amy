@@ -47,12 +47,12 @@
 // Newlib->memset() and that will not work.
 //
 
-#pragma GCC push_options
-#pragma GCC optimize ("Os,no-tree-loop-distribute-patterns")
+// #pragma GCC push_options
+// #pragma GCC optimize ("Os,no-tree-loop-distribute-patterns")
 
-void * AMYFUNC _generic_string_memset( struct AmyCLibIFace *Self, void *s, int c, size_t len )
+void * AMYFUNC _generic_string_memset( struct AmyCLibPrivIFace *Self, void *s, int c, size_t len )
 {
-	IExec->DebugPrintF( "_generic_string_memset : Mem %p, Val %ld, Len %lu\n", s, c, len );
+	IExec->DebugPrintF( "_generic_string_memset : Mem %p : Val %ld : Len %lu :\n", s, c, len );
 
 	if ( len )
 	{
@@ -64,7 +64,7 @@ void * AMYFUNC _generic_string_memset( struct AmyCLibIFace *Self, void *s, int c
 		}
 		else
 		{
-			#if 1
+			#if 0
 
 			U8 v = c;
 			U8 *mem = s;
@@ -86,6 +86,6 @@ void * AMYFUNC _generic_string_memset( struct AmyCLibIFace *Self, void *s, int c
 	return( s );
 }
 
-#pragma GCC pop_options
+// #pragma GCC pop_options
 
 // --

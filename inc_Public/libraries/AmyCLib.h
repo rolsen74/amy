@@ -15,7 +15,7 @@
 #include <stdio.h>
 
 // --
-// Emable Mask .. should proberly rename
+// Enable Mask .. should proberly rename
 
 #define EM_ALWAYS 			-1U
 #define EM_FILE				1

@@ -42,17 +42,17 @@
 
 // --
 
-static S32 AMYFUNC my_writefill( struct PrintStruct *ps, struct Intern *in, char chr, S32 size )
+static enum myWriteStat AMYFUNC my_writefill( struct PrintStruct *ps, struct Intern *in, char chr, S32 size )
 {
-S32 stat;
+enum myWriteStat stat;
 
-	stat = 0;
+	stat = MWS_Okay;
 
 	while( size > 0 )
 	{
 		stat = my_writechar( ps, in, chr );
 
-		if ( stat )
+		if ( stat != MWS_Okay )
 		{
 			break;
 		}

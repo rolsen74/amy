@@ -44,7 +44,7 @@
 
 // Same as _drop_iob_read_buffer
 
-S32 AMYFUNC _generic__Priv_FB_Read_Drop_Buffer( struct AmyCLibIFace *Self, struct PrivFile *file )
+S32 AMYFUNC _generic__Priv_FB_Read_Drop_Buffer( struct AmyCLibPrivIFace *Self, struct PrivFile *file )
 {
 struct libData *data;
 S64 bytes;

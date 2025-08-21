@@ -241,7 +241,7 @@ U8 c;
 
 	args = cnt + 1;
 
-bailout:
+// bailout:
 
 	return( args );
 }
@@ -491,7 +491,7 @@ bailout:
 // --
 
 static S32 InitArgs(
-	struct AmyCLibIFace *Self UNUSED,
+	struct AmyCLibPrivIFace *Self UNUSED,
 	struct libData *data,
 	struct WBStartup *wbmsg,
 	STR **argv,

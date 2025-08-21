@@ -41,25 +41,19 @@
 
 // --
 
-int AMYFUNC _generic_stdio_fseek( struct AmyCLibIFace *Self, FILE *stream, long offset, int wherefrom )
+int AMYFUNC _generic_stdio_fseek( struct AmyCLibPrivIFace *Self, struct PrivFile *stream, long offset, int wherefrom )
 {
 //struct libData *data;
 int retval;
 off_t off;
 
-	// -- Enable Check
+	// --
 
-	IExec->DebugPrintF( "_generic_stdio_fseek : FILE %p\n", stream );
+	IExec->DebugPrintF( "_generic_stdio_fseek : Stream %p\n", stream );
 
-	retval = -1;
+	retval = EOF;
 
 //	data = (PTR)( (U32) Self - Self->Data.NegativeSize );
-
-//	if ( ! ( data->EnableMask & EM_FILE ))
-//	{
-//		IExec->DebugPrintF( "%s:%04lu: Function Not Enabled\n", __FILE__, __LINE__ );
-//		goto bailout;
-//	}
 
 	// --
 

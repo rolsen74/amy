@@ -38,8 +38,320 @@
 // --
 
 #include "src/All.h"
+#include "Scan.h"
 
 // --
+
+#include "Scan_Fmt_Get.c"
+#include "Scan_Fmt_Peek.c"
+#include "Scan_Fmt_Skip.c"
+#include "Scan_Char_Get.c"
+#include "Scan_Char_Peek.c"
+#include "Scan_Char_Unget.c"
+#include "Scan_Skip_Char.c"
+#include "Scan_Skip_Spaces.c"
+#include "Scan_Arg_Integer.c"
+
+// --
+
+void AMYFUNC _generic__Priv_Scan( struct AmyCLibPrivIFace *Self, struct ScanStruct *ss )
+{
+struct Intern in;
+S32 c;
+// S32 d;
+S32 v;
+
+	IExec->DebugPrintF( "_generic__Priv_Scan\n" );
+
+	// --
+
+	Self->Priv_Check_Abort();
+
+	Self->string_memset( & in, 0, sizeof( in ));
+
+	// -- Validate Input
+
+	if ( ! ss )
+	{
+		#ifdef DEBUG
+		IExec->DebugPrintF( "%s:%04d: NULL Pointer\n", __FILE__, __LINE__ );
+		#endif
+		goto bailout;
+	}
+
+	if ( ss->ss_Stream )
+	{
+		// todo :: check and make sure we use unlocked functions from now on
+		Self->stdio_flockfile( ss->ss_Stream );
+
+		if ( ! ss->ss_Stream->pf_Read )
+		{
+			#ifdef DEBUG
+			IExec->DebugPrintF( "%s:%04d: Stream not readable\n", __FILE__, __LINE__ );
+			#endif
+			goto bailout;
+		}
+
+		in.stream = ss->ss_Stream;
+		IExec->DebugPrintF( "Input Stream : %p\n", ss->ss_Stream );
+	}
+	else
+	{
+		in.buffer = (PTR) ss->ss_Buffer;
+		IExec->DebugPrintF( "Input String : %s\n", ss->ss_Buffer );
+	}
+
+	if ( ! ss->ss_Format )
+	{
+		#ifdef DEBUG
+		IExec->DebugPrintF( "%s:%04d: NULL Pointer\n", __FILE__, __LINE__ );
+		#endif
+		goto bailout;
+	}
+
+	in.fmt = (PTR) ss->ss_Format;
+	in.Self = Self;
+
+	IExec->DebugPrintF( "Input Format : %s\n", ss->ss_Format );
+
+	va_copy( in.args, ss->ss_Args );
+
+	// --
+
+	while( TRUE )
+	{
+		c = my_Scan_Fmt_Get( & in );
+
+		IExec->DebugPrintF( "Fmt: $%02lx %ld\n", c, c );
+
+		if ( ! c )
+		{
+			// Done
+			break;
+		}
+
+		if ( Self->ctype_isspace( c ))
+		{
+			my_Scan_Skip_Spaces( & in );
+			continue;
+		}
+
+		/**/ if ( c != '%' )
+		{
+			// Handle normal char
+			v = my_Scan_Char_Peek( & in );
+
+			if ( v < 0 )
+			{
+				in.input_fail = TRUE;
+				IExec->DebugPrintF( "_generic__Priv_Scan : peek_char() failed (%ld)\n", v );
+				goto bailout;
+			}
+
+			if ( v != c )
+			{
+				IExec->DebugPrintF( "_generic__Priv_Scan : char mismatch %ld != %ld\n", c, v );
+				goto bailout;
+			}
+
+			v = my_Scan_Skip_Char( & in );
+
+			if ( v < 0 )
+			{
+				in.input_fail = TRUE;
+				IExec->DebugPrintF( "_generic__Priv_Scan : skip_one() failed (%ld)\n", v );
+				goto bailout;
+			}
+
+			in.nread++;
+			continue;
+		}
+		else
+		{
+			// c = '%'
+
+			// Get next
+			c = my_Scan_Fmt_Get( & in );
+
+
+
+		}
+
+
+		#if 0
+		else if ( my_Scan_Fmt_Peek( & in ) == '%' )
+		{
+			// Handle %%
+			my_Scan_Fmt_Skip( & in );
+
+			v = my_Scan_Char_Peek( & in );
+
+			if ( v < 0 )
+			{
+				in.input_fail = TRUE;
+				IExec->DebugPrintF( "_generic__Priv_Scan : peek_char() failed (%ld)\n", v );
+				goto bailout;
+			}
+
+			if ( v != '%' )
+			{
+				IExec->DebugPrintF( "_generic__Priv_Scan : char mismatch %ld != %ld\n", '%', v );
+				goto bailout;
+			}
+
+			v = my_Scan_Skip_Char( & in );
+
+			if ( v < 0 )
+			{
+				in.input_fail = TRUE;
+				IExec->DebugPrintF( "_generic__Priv_Scan : skip_one() failed (%ld)\n", v );
+				goto bailout;
+			}
+
+			in.nread++;
+			continue;
+		}
+		#endif
+
+		// -- 
+		// Check for Suppress
+
+		in.suppress = FALSE;
+		if ( c == '*' )
+		{
+			in.suppress = TRUE;
+			c = my_Scan_Fmt_Get( & in );
+		}
+
+		// -- 
+		// Get max width
+
+		in.width = 0;
+		if ( Self->ctype_isdigit( c ))
+		{
+			while( TRUE )
+			{
+				c = my_Scan_Fmt_Peek( & in );
+
+				if ( ! Self->ctype_isdigit( c ))
+				{
+					break;
+				}
+
+				my_Scan_Fmt_Skip( & in );
+				in.width = ( in.width * 10 ) + c - '0';
+			}
+
+			c = my_Scan_Fmt_Peek( & in );
+		}
+
+		// --
+
+		if ( ! c )
+		{
+			// Done
+			break;
+		}
+
+		switch( c )
+		{
+			case 'd':
+			case 'D':	/* compat */
+			{
+				if ( ! my_Scan_Arg_Integer( & in ))
+				{
+					IExec->DebugPrintF( "my_Scan_Arg_Integer failed\n" );
+				}
+				break;
+			}
+
+			default:
+			{
+				IExec->DebugPrintF( "%s:%04d: Unknown %ld\n", __FILE__, __LINE__, (S32) c );
+				break;
+			}
+		}
+	}
+
+bailout:
+
+	IExec->DebugPrintF( "input_fail ... : %ld\n", in.input_fail );
+	IExec->DebugPrintF( "nassigned .... : %ld\n", in.nassigned );
+
+	if ( ss )
+	{
+
+		ss->ss_Error	= in.input_fail;
+		ss->ss_Handled	= in.nassigned;
+
+		if ( ss->ss_Stream )
+		{
+			Self->stdio_funlockfile( (PTR) ss->ss_Stream );
+		}
+	}
+
+	return;
+}
+
+// --
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+#if 0
 
 #define FLOATING_POINT
 
@@ -95,7 +407,7 @@
 
 /// Protos
 
-static u_char *__sccl( struct AmyCLibIFace *Self, char *, u_char *);
+static u_char *__sccl( struct AmyCLibPrivIFace *Self, char *, u_char *);
 
 ///
 
@@ -137,7 +449,7 @@ bailout:
 ** Returns 'TRUE' if buffer is empty and we can't fill it
 */
 
-static S32 __Priv_Is_Buffer_Empty( struct AmyCLibIFace *Self, struct PrivFile *file )
+static S32 __Priv_Is_Buffer_Empty( struct AmyCLibPrivIFace *Self, struct PrivFile *file )
 {
 S32 retval;
 
@@ -178,7 +490,7 @@ int retval;
 ///
 /// __Priv_Skip_Bytes
 
-static S32 __Priv_Skip_Bytes( struct AmyCLibIFace *Self, struct PrivFile *file, int bytes )
+static S32 __Priv_Skip_Bytes( struct AmyCLibPrivIFace *Self, struct PrivFile *file, int bytes )
 {
 S32 retval;
 
@@ -210,7 +522,7 @@ done:
 ///
 /// __Priv_Next_Pos_With_Refill
 
-static int __Priv_Next_Pos_With_Refill( struct AmyCLibIFace *Self, struct PrivFile *file )
+static int __Priv_Next_Pos_With_Refill( struct AmyCLibPrivIFace *Self, struct PrivFile *file )
 {
 int retval;
 int val;
@@ -225,7 +537,7 @@ int val;
 ///
 /// __Priv_Get_Char
 
-static int __Priv_Get_Char( struct AmyCLibIFace *Self, struct PrivFile *file )
+static int __Priv_Get_Char( struct AmyCLibPrivIFace *Self, struct PrivFile *file )
 {
 int retval;
 
@@ -255,12 +567,12 @@ int retval;
 /*
  * Internal, unlocked version of vfscanf
  */
-// static int __svfscanf( struct AmyCLibIFace *Self, FILE *fp, const char *fmt0, va_list ap )
-void AMYFUNC _generic__Priv_Scan( struct AmyCLibIFace *Self, struct ScanStruct *ss )
+// static int __svfscanf( struct AmyCLibPrivIFace *Self, struct PrivFile *fp, const char *fmt0, va_list ap )
+void AMYFUNC _generic__Priv_Scan( struct AmyCLibPrivIFace *Self, struct ScanStruct *ss )
 {
 //	struct PrivFile *file = (PTR) fp;
 struct PrivFile *file;
-FILE *fp;
+struct PrivFile *fp;
 
 	u_char *fmt;	// = (u_char *)fmt0;
 	int c;				/* character from format, or conversion */
@@ -1329,7 +1641,7 @@ bailout:
  * closing `]'.  The table has a 1 wherever characters should be
  * considered part of the scanset.
  */
-static u_char * __sccl( struct AmyCLibIFace *Self, char *tab, u_char *fmt )
+static u_char * __sccl( struct AmyCLibPrivIFace *Self, char *tab, u_char *fmt )
 {
 	int c, n, v;
 
@@ -1439,3 +1751,5 @@ doswitch:
 ///
 
 #pragma GCC pop_options
+
+#endif

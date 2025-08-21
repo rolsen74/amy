@@ -43,7 +43,7 @@ static const struct TagItem Manager_Tags[] =
 
 void AMYFUNC _Main_Obtain(void);
 void AMYFUNC _Main_Release(void);
-U32  AMYFUNC _Main_Expunge( struct AmyCLibIFace *Self );
+U32  AMYFUNC _Main_Expunge( struct AmyCLibPrivIFace *Self );
 void AMYFUNC _Main_Clone(void);
 void AMYFUNC _generic__Priv_Startup_Init(void);
 void AMYFUNC _generic__Priv_Startup_Main(void);
@@ -155,7 +155,9 @@ void _generic_ctype_islower(void);
 // void _generic_math_d_sqrt(void);
 // void _generic_math_d_copysign(void);
 // void _generic_stdio_vsscanf(void);
-// void _generic_time_strftime(void);
+void _generic_time_strftime(void);
+void _generic_time_gmtime(void);
+void _generic_time_gmtime_r(void);
 // void _generic_signal_signal(void);
 // void _generic_signal_raise(void);
 // void _generic_stdlib_abort(void);
@@ -181,128 +183,128 @@ static U32 _NotEnabled( void )
 
 static const PTR Main_Vectors[] =
 {
-/*    0 */ (PTR) _Main_Obtain,
-/*    1 */ (PTR) _Main_Release,
-/*    2 */ (PTR) _Main_Expunge,
-/*    3 */ (PTR) _Main_Clone,
-/*    4 */ (PTR) _generic__Priv_Startup_Init,
-/*    5 */ (PTR) _generic__Priv_Startup_Main,
-/*    6 */ (PTR) _generic__Priv_Startup_Free,
-/*    7 */ (PTR) _NotEnabled,	// _generic__Priv_Mem_Alloc,
-/*    8 */ (PTR) _NotEnabled,	// _generic__Priv_Mem_Free,
-/*    9 */ (PTR) _NotEnabled,	// _generic__Priv_Mem_Realloc,
-/*   10 */ (PTR) _NotEnabled,	// _generic__Priv_Mem_CreatePool,
-/*   11 */ (PTR) _NotEnabled,	// _generic__Priv_Mem_DeletePool,
-/*   12 */ (PTR) _NotEnabled,	// _generic__Priv_Mem_FlushPool,
-/*   13 */ (PTR) _NotEnabled,	// _generic__Priv_Mem_AllocPooled,
-/*   14 */ (PTR) _NotEnabled,	// _generic__Priv_Mem_FreePooled,
-/*   15 */ (PTR) _NotEnabled,	// _generic__Priv_Check_Abort,
-/*   16 */ (PTR) _NotEnabled,	// _generic__Priv_Convert_Time_to_TM,
-/*   17 */ (PTR) _NotEnabled,	// _generic__Priv_Convert_ED_to_Stat,
-/*   18 */ (PTR) _NotEnabled,	// _generic__Priv_Convert_DS_to_Time,
-/*   19 */ (PTR) _NotEnabled,	// _generic__Priv_Convert_IOErr_to_ErrNo,
-/*   20 */ (PTR) _NotEnabled,	// _generic__Priv_FB_Read,
-/*   21 */ (PTR) _NotEnabled,	// _generic__Priv_FB_Read_Fill_Buffer,
-/*   22 */ (PTR) _NotEnabled,	// _generic__Priv_FB_Read_Drop_Buffer,
-/*   23 */ (PTR) _NotEnabled,	// _generic__Priv_FB_Write,
-/*   24 */ (PTR) _NotEnabled,	// _generic__Priv_FB_Write_Flush_Buffer,
-/*   25 */ (PTR) _NotEnabled,	// _generic__Priv_FB_Write_Flush_Buffer2,
-/*   26 */ (PTR) _NotEnabled,	// _generic__Priv_FD_Alloc,
-/*   27 */ (PTR) _NotEnabled,	// _generic__Priv_FD_Free,
-/*   28 */ (PTR) _NotEnabled,	// _generic__Priv_FD_Init,
-/*   29 */ (PTR) _NotEnabled,	// _generic__Priv_FD_Init_Struct,
-/*   30 */ (PTR) _NotEnabled,	// _generic__Priv_FD_Array_Insert,
-/*   31 */ (PTR) _NotEnabled,	// _generic__Priv_FD_Array_Remove,
-/*   32 */ (PTR) _NotEnabled,	// _generic__Priv_FDLockNr,
-/*   33 */ (PTR) _NotEnabled,	// _generic__Priv_FDLockStream,
-/*   34 */ (PTR) _NotEnabled,	// _generic__Priv_FDUnlock,
-/*   35 */ (PTR) _NotEnabled,	// _generic__Priv_Print,
-/*   36 */ (PTR) _NotEnabled,	// _generic__Priv_Scan,
-/*   37 */ (PTR) _NotEnabled,	// _generic_setjmp_longjmp,
-/*   38 */ (PTR) _NotEnabled,	// _generic_setjmp_setjmp,
-/*   39 */ (PTR) _NotEnabled,	// _generic_stdlib_calloc,
-/*   40 */ (PTR) _NotEnabled,	// _generic_stdlib_malloc,
-/*   41 */ (PTR) _NotEnabled,	// _generic_stdlib_realloc,
-/*   42 */ (PTR) _NotEnabled,	// _generic_stdlib_free,
-/*   43 */ (PTR) _NotEnabled,	// _generic_stdlib_rand,
-/*   44 */ (PTR) _NotEnabled,	// _generic_stdlib_rand_r,
-/*   45 */ (PTR) _NotEnabled,	// _generic_stdlib_srand,
-/*   46 */ (PTR) _NotEnabled,	// _generic_stdlib_atoi,
-/*   47 */ (PTR) _NotEnabled,	// _generic_stdlib_strtol,
-/*   48 */ (PTR) _generic_string_strlen,
-/*   49 */ (PTR) _generic_string_strnlen,
-/*   50 */ (PTR) _NotEnabled,	// _generic_string_strdup,
-/*   51 */ (PTR) _NotEnabled,	// _generic_string_strndup,
-/*   52 */ (PTR) _generic_string_strcpy,
-/*   53 */ (PTR) _generic_string_strncpy,
-/*   54 */ (PTR) _generic_string_strcmp,
-/*   55 */ (PTR) _generic_string_strncmp,
-/*   56 */ (PTR) _generic_string_memcmp,
-/*   57 */ (PTR) _generic_string_memmove,
-/*   58 */ (PTR) _generic_string_memcpy,
-/*   59 */ (PTR) _generic_string_memset,
-/*   60 */ (PTR) _NotEnabled,	// _generic_string_strcat,
-/*   61 */ (PTR) _generic_strings_bzero,
-/*   62 */ (PTR) _generic_ctype_isalpha,
-/*   63 */ (PTR) _generic_ctype_isdigit,
-/*   64 */ (PTR) _generic_ctype_isspace,
-/*   65 */ (PTR) _generic_ctype_isupper,
-/*   66 */ (PTR) _generic_ctype_isxdigit,
-/*   67 */ (PTR) _generic_ctype_tolower,
-/*   68 */ (PTR) _generic_ctype_toupper,
-/*   69 */ (PTR) _NotEnabled,	// _generic_time_localtime,
-/*   70 */ (PTR) _NotEnabled,	// _generic_time_time,
-/*   71 */ (PTR) _NotEnabled,	// _generic_stdio_fopen,
-/*   72 */ (PTR) _NotEnabled,	// _generic_stdio_ftell,
-/*   73 */ (PTR) _NotEnabled,	// _generic_stdio_fgetpos,
-/*   74 */ (PTR) _NotEnabled,	// _generic_stdio_flockfile,
-/*   75 */ (PTR) _NotEnabled,	// _generic_stdio_funlockfile,
-/*   76 */ (PTR) _NotEnabled,	// _generic_stdio_fflush,
-/*   77 */ (PTR) _NotEnabled,	// _generic_stdio_puts,
-/*   78 */ (PTR) _NotEnabled,	// _generic_stdio_putchar,
-/*   79 */ (PTR) _NotEnabled,	// _generic_stdio_fputc,
-/*   80 */ (PTR) _NotEnabled,	// _generic_stdio_setvbuf,
-/*   81 */ (PTR) _NotEnabled,	// _generic_stdio_fclose,
-/*   82 */ (PTR) _NotEnabled,	// _generic_stdio_fseek,
-/*   83 */ (PTR) _NotEnabled,	// _generic_stdio_fseeko,
-//			(PTR) _generic_stdio_printf,
-/*   84 */ (PTR) _NotEnabled,	// _generic_stdio_vprintf,
-/*   85 */ (PTR) _NotEnabled,	// _generic_stdio_sprintf,
-/*   86 */ (PTR) _NotEnabled,	// _generic_stdio_vsprintf,
-/*   87 */ (PTR) _NotEnabled,	// _generic_stdio_vsnprintf,
-/*   88 */ (PTR) _NotEnabled,	// _generic_fcntl_open,
-/*   89 */ (PTR) _NotEnabled,	// _generic_unistd_close,
-/*   90 */ (PTR) _NotEnabled,	// _generic_stdio_ungetc,
-/*   91 */ (PTR) _NotEnabled,	// _generic_stdio_fread,
-/*   92 */ (PTR) _NotEnabled,	// _generic_stdlib_strtof,
-/*   93 */ (PTR) _NotEnabled,	// _generic_stdlib_strtod,
-/*   94 */ (PTR) _NotEnabled,	// _generic_inttypes_strtoumax,
-/*   95 */ (PTR) _NotEnabled,	// _generic_inttypes_strtoimax,
-/*   96 */ (PTR) _NotEnabled,	// _generic_stdio_clearerr,
-/*   97 */ (PTR) _NotEnabled,	// _generic_strings_strcasecmp,
-/*   98 */ (PTR) _NotEnabled,	// _generic_strings_strncasecmp,
-/*   99 */ (PTR) _NotEnabled,	// _generic_math_d__get_huge_val,
-/*  100 */ (PTR) _NotEnabled,	// _generic_math_d__inf,
-/*  101 */ (PTR) _NotEnabled,	// _generic_math_d__isinf,
-/*  102 */ (PTR) _NotEnabled,	// _generic_math_d__isnan,
-/*  103 */ (PTR) _NotEnabled,	// _generic_math_d_nan,
-/*  104 */ (PTR) _NotEnabled,	// _generic_math_d_pow,
-/*  105 */ (PTR) _NotEnabled,	// _generic_math_d_fabs,
-/*  106 */ (PTR) _NotEnabled,	// _generic_math_d_scalbn,
-/*  107 */ (PTR) _NotEnabled,	// _generic_math_d_sqrt,
-/*  108 */ (PTR) _NotEnabled,	// _generic_math_d_copysign,
-/*  109 */ (PTR) _NotEnabled,	// _generic_stdio_vsscanf,
-/*  110 */ (PTR) _NotEnabled,	// _generic_time_strftime,
-/*  111 */ (PTR) _NotEnabled,	// _generic_signal_signal,
-/*  112 */ (PTR) _NotEnabled,	// _generic_signal_raise,
-/*  113 */ (PTR) _NotEnabled,	// _generic_stdlib_abort,
-/*  114 */ (PTR) _NotEnabled,	// _generic_stdlib__Exit,
-/*  115 */ (PTR) _NotEnabled,	// _generic_stdio_vasprintf
-/*  116 */ (PTR) _NotEnabled,	// _generic_assert_assert
-/*  117 */ (PTR) _NotEnabled,	// _generic_stdlib_exit
-/*  118 */ (PTR) _generic_ctype_islower,
-
-
+/*    0 */	(PTR) _Main_Obtain,
+/*    1 */	(PTR) _Main_Release,
+/*    2 */	(PTR) _Main_Expunge,
+/*    3 */	(PTR) _Main_Clone,
+/*    4 */	(PTR) _generic__Priv_Startup_Init,
+/*    5 */	(PTR) _generic__Priv_Startup_Main,
+/*    6 */	(PTR) _generic__Priv_Startup_Free,
+/*    7 */	(PTR) _NotEnabled,	// _generic__Priv_Mem_Alloc,
+/*    8 */	(PTR) _NotEnabled,	// _generic__Priv_Mem_Free,
+/*    9 */	(PTR) _NotEnabled,	// _generic__Priv_Mem_Realloc,
+/*   10 */	(PTR) _NotEnabled,	// _generic__Priv_Mem_CreatePool,
+/*   11 */	(PTR) _NotEnabled,	// _generic__Priv_Mem_DeletePool,
+/*   12 */	(PTR) _NotEnabled,	// _generic__Priv_Mem_FlushPool,
+/*   13 */	(PTR) _NotEnabled,	// _generic__Priv_Mem_AllocPooled,
+/*   14 */	(PTR) _NotEnabled,	// _generic__Priv_Mem_FreePooled,
+/*   15 */	(PTR) _NotEnabled,	// _generic__Priv_Check_Abort,
+/*   16 */	(PTR) _NotEnabled,	// _generic__Priv_Convert_Time_to_TM,
+/*   17 */	(PTR) _NotEnabled,	// _generic__Priv_Convert_ED_to_Stat,
+/*   18 */	(PTR) _NotEnabled,	// _generic__Priv_Convert_DS_to_Time,
+/*   19 */	(PTR) _NotEnabled,	// _generic__Priv_Convert_IOErr_to_ErrNo,
+/*   20 */	(PTR) _NotEnabled,	// _generic__Priv_FB_Read,
+/*   21 */	(PTR) _NotEnabled,	// _generic__Priv_FB_Read_Fill_Buffer,
+/*   22 */	(PTR) _NotEnabled,	// _generic__Priv_FB_Read_Drop_Buffer,
+/*   23 */	(PTR) _NotEnabled,	// _generic__Priv_FB_Write,
+/*   24 */	(PTR) _NotEnabled,	// _generic__Priv_FB_Write_Flush_Buffer,
+/*   25 */	(PTR) _NotEnabled,	// _generic__Priv_FB_Write_Flush_Buffer2,
+/*   26 */	(PTR) _NotEnabled,	// _generic__Priv_FD_Alloc,
+/*   27 */	(PTR) _NotEnabled,	// _generic__Priv_FD_Free,
+/*   28 */	(PTR) _NotEnabled,	// _generic__Priv_FD_Init,
+/*   29 */	(PTR) _NotEnabled,	// _generic__Priv_FD_Init_Struct,
+/*   30 */	(PTR) _NotEnabled,	// _generic__Priv_FD_Array_Insert,
+/*   31 */	(PTR) _NotEnabled,	// _generic__Priv_FD_Array_Remove,
+/*   32 */	(PTR) _NotEnabled,	// _generic__Priv_FDLockNr,
+/*   33 */	(PTR) _NotEnabled,	// _generic__Priv_FDLockStream,
+/*   34 */	(PTR) _NotEnabled,	// _generic__Priv_FDUnlock,
+/*   35 */	(PTR) _NotEnabled,	// _generic__Priv_Print,
+/*   36 */	(PTR) _NotEnabled,	// _generic__Priv_Scan,
+/*   37 */	(PTR) _NotEnabled,	// _generic_setjmp_longjmp,
+/*   38 */	(PTR) _NotEnabled,	// _generic_setjmp_setjmp,
+/*   39 */	(PTR) _NotEnabled,	// _generic_stdlib_calloc,
+/*   40 */	(PTR) _NotEnabled,	// _generic_stdlib_malloc,
+/*   41 */	(PTR) _NotEnabled,	// _generic_stdlib_realloc,
+/*   42 */	(PTR) _NotEnabled,	// _generic_stdlib_free,
+/*   43 */	(PTR) _NotEnabled,	// _generic_stdlib_rand,
+/*   44 */	(PTR) _NotEnabled,	// _generic_stdlib_rand_r,
+/*   45 */	(PTR) _NotEnabled,	// _generic_stdlib_srand,
+/*   46 */	(PTR) _NotEnabled,	// _generic_stdlib_atoi,
+/*   47 */	(PTR) _NotEnabled,	// _generic_stdlib_strtol,
+/*   48 */	(PTR) _generic_string_strlen,
+/*   49 */	(PTR) _generic_string_strnlen,
+/*   50 */	(PTR) _NotEnabled,	// _generic_string_strdup,
+/*   51 */	(PTR) _NotEnabled,	// _generic_string_strndup,
+/*   52 */	(PTR) _generic_string_strcpy,
+/*   53 */	(PTR) _generic_string_strncpy,
+/*   54 */	(PTR) _generic_string_strcmp,
+/*   55 */	(PTR) _generic_string_strncmp,
+/*   56 */	(PTR) _generic_string_memcmp,
+/*   57 */	(PTR) _generic_string_memmove,
+/*   58 */	(PTR) _generic_string_memcpy,
+/*   59 */	(PTR) _generic_string_memset,
+/*   60 */	(PTR) _NotEnabled,	// _generic_string_strcat,
+/*   61 */	(PTR) _generic_strings_bzero,
+/*   62 */	(PTR) _generic_ctype_isalpha,
+/*   63 */	(PTR) _generic_ctype_isdigit,
+/*   64 */	(PTR) _generic_ctype_isspace,
+/*   65 */	(PTR) _generic_ctype_isupper,
+/*   66 */	(PTR) _generic_ctype_isxdigit,
+/*   67 */	(PTR) _generic_ctype_tolower,
+/*   68 */	(PTR) _generic_ctype_toupper,
+/*   69 */	(PTR) _NotEnabled,	// _generic_time_localtime,
+/*   70 */	(PTR) _NotEnabled,	// _generic_time_time,
+/*   71 */	(PTR) _NotEnabled,	// _generic_stdio_fopen,
+/*   72 */	(PTR) _NotEnabled,	// _generic_stdio_ftell,
+/*   73 */	(PTR) _NotEnabled,	// _generic_stdio_fgetpos,
+/*   74 */	(PTR) _NotEnabled,	// _generic_stdio_flockfile,
+/*   75 */	(PTR) _NotEnabled,	// _generic_stdio_funlockfile,
+/*   76 */	(PTR) _NotEnabled,	// _generic_stdio_fflush,
+/*   77 */	(PTR) _NotEnabled,	// _generic_stdio_puts,
+/*   78 */	(PTR) _NotEnabled,	// _generic_stdio_putchar,
+/*   79 */	(PTR) _NotEnabled,	// _generic_stdio_fputc,
+/*   80 */	(PTR) _NotEnabled,	// _generic_stdio_setvbuf,
+/*   81 */	(PTR) _NotEnabled,	// _generic_stdio_fclose,
+/*   82 */	(PTR) _NotEnabled,	// _generic_stdio_fseek,
+/*   83 */	(PTR) _NotEnabled,	// _generic_stdio_fseeko,
+/*   84 */	(PTR) _NotEnabled,	// _generic_stdio_vprintf,
+/*   85 */	(PTR) _NotEnabled,	// _generic_stdio_vsprintf,
+/*   86 */	(PTR) _NotEnabled,	// _generic_stdio_fputc_unlocked,
+/*   87 */	(PTR) _NotEnabled,	// _generic_stdio_vsnprintf,
+/*   88 */	(PTR) _NotEnabled,	// _generic_fcntl_open,
+/*   89 */	(PTR) _NotEnabled,	// _generic_unistd_close,
+/*   90 */	(PTR) _NotEnabled,	// _generic_stdio_ungetc,
+/*   91 */	(PTR) _NotEnabled,	// _generic_stdio_fread,
+/*   92 */	(PTR) _NotEnabled,	// _generic_stdlib_strtof,
+/*   93 */	(PTR) _NotEnabled,	// _generic_stdlib_strtod,
+/*   94 */	(PTR) _NotEnabled,	// _generic_inttypes_strtoumax,
+/*   95 */	(PTR) _NotEnabled,	// _generic_inttypes_strtoimax,
+/*   96 */	(PTR) _NotEnabled,	// _generic_stdio_clearerr,
+/*   97 */	(PTR) _NotEnabled,	// _generic_strings_strcasecmp,
+/*   98 */	(PTR) _NotEnabled,	// _generic_strings_strncasecmp,
+/*   99 */	(PTR) _NotEnabled,	// _generic_math_d__get_huge_val,
+/*  100 */	(PTR) _NotEnabled,	// _generic_math_d__inf,
+/*  101 */	(PTR) _NotEnabled,	// _generic_math_d__isinf,
+/*  102 */	(PTR) _NotEnabled,	// _generic_math_d__isnan,
+/*  103 */	(PTR) _NotEnabled,	// _generic_math_d_nan,
+/*  104 */	(PTR) _NotEnabled,	// _generic_math_d_pow,
+/*  105 */	(PTR) _NotEnabled,	// _generic_math_d_fabs,
+/*  106 */	(PTR) _NotEnabled,	// _generic_math_d_scalbn,
+/*  107 */	(PTR) _NotEnabled,	// _generic_math_d_sqrt,
+/*  108 */	(PTR) _NotEnabled,	// _generic_math_d_copysign,
+/*  109 */	(PTR) _NotEnabled,	// _generic_stdio_vsscanf,
+/*  110 */	(PTR) _generic_time_strftime,
+/*  111 */	(PTR) _NotEnabled,	// _generic_signal_signal,
+/*  112 */	(PTR) _NotEnabled,	// _generic_signal_raise,
+/*  113 */	(PTR) _NotEnabled,	// _generic_stdlib_abort,
+/*  114 */	(PTR) _NotEnabled,	// _generic_stdlib__Exit,
+/*  115 */	(PTR) _NotEnabled,	// _generic_stdio_vasprintf
+/*  116 */	(PTR) _NotEnabled,	// _generic_assert_assert
+/*  117 */	(PTR) _NotEnabled,	// _generic_stdlib_exit
+/*  118 */	(PTR) _generic_ctype_islower,
+/*  119 */	(PTR) _NotEnabled,	// _generic_stdio_fgetc
+/*  120 */	(PTR) _generic_time_gmtime,
+/*  121 */	(PTR) _generic_time_gmtime_r,
 
 	(PTR) -1
 };
@@ -356,6 +358,8 @@ struct Library *		LocaleBase		= NULL;
 struct LocaleIFace *	ILocale			= NULL;
 struct Library *		IntuitionBase	= NULL;
 struct IntuitionIFace *	IIntuition		= NULL;
+struct Library *		UtilityBase		= NULL;
+struct UtilityIFace *	IUtility		= NULL;
 
 // --
 
@@ -416,6 +420,7 @@ S32 error;
 	}
 
 	/* --  -- */
+	// uhh should I only open locale if EM_LOCALE is set
 
 	LocaleBase = IExec->OpenLibrary( "locale.library", 50 );
 
@@ -430,6 +435,24 @@ S32 error;
 	if ( ! ILocale )
 	{
 		IExec->DebugPrintF( "AmyCLib : Error opening Locale interface\n" );
+		goto bailout;
+	}
+
+	/* --  -- */
+
+	UtilityBase = IExec->OpenLibrary( "utility.library", 50 );
+
+	if ( ! UtilityBase )
+	{
+		IExec->DebugPrintF( "AmyCLib : Error opening utility.lib v50" );
+		goto bailout;
+	}
+
+	IUtility = (PTR) IExec->GetInterface( UtilityBase, "main", 1, NULL );
+
+	if ( ! IUtility )
+	{
+		IExec->DebugPrintF( "AmyCLib : Error opening utility interface" );
 		goto bailout;
 	}
 

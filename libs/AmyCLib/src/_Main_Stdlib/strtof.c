@@ -41,7 +41,7 @@
 
 // --
 
-float AMYFUNC _generic_stdlib_strtof( struct AmyCLibIFace *Self, const char *str, char **ptr )
+float AMYFUNC _generic_stdlib_strtof( struct AmyCLibPrivIFace *Self, const char *str, char **ptr )
 {
 struct libData *data;
 const char *stop;

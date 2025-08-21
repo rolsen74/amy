@@ -44,7 +44,7 @@
 
 // Function moved into stub .. so va_args work
 
-int AMYFUNC _generic_stdio_printf( struct AmyCLibIFace *Self, const char *fmt, ... )
+int AMYFUNC _generic_stdio_printf( struct AmyCLibPrivIFace *Self, const char *fmt, ... )
 {
 va_list ap;
 int retval;
@@ -57,12 +57,6 @@ int retval;
 	IExec->DebugPrintF( "_generic_stdio_printf\n" );
 
 	data = (PTR)( (U32) Self - Self->Data.NegativeSize );
-
-//	if ( ! ( data->EnableMask & EM_FILE ))
-//	{
-//		IExec->DebugPrintF( "%s:%04lu: Function Not Enabled\n", __FILE__, __LINE__ );
-//		goto bailout;
-//	}
 
 	va_start( ap, fmt );
 

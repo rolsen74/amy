@@ -41,25 +41,19 @@
 
 // --
 
-int AMYFUNC _generic_stdio_putchar( struct AmyCLibIFace *Self, int c )
+int AMYFUNC _generic_stdio_putchar( struct AmyCLibPrivIFace *Self, int c )
 {
 struct libData *data;
-FILE *stream;
+struct PrivFile *stream;
 S32 retval;
 
-	// -- Enable Check
+	// --
 
 	IExec->DebugPrintF( "_generic_stdio_putchar : c %ld\n", c );
 
-	retval = -1;
+	retval = EOF;
 
 	data = (PTR)( (U32) Self - Self->Data.NegativeSize );
-
-//	if ( ! ( data->EnableMask & EM_FILE ))
-//	{
-//		IExec->DebugPrintF( "%s:%04lu: Function Not Enabled\n", __FILE__, __LINE__ );
-//		goto bailout;
-//	}
 
 	// --
 

@@ -60,6 +60,7 @@
 "void"		flockfile	stdio_flockfile		"stream"			"FILE *stream"
 "FILE *"	fopen		stdio_fopen		"filename, mode"		"const char *filename, const char *mode"
 "int"		fputc		stdio_fputc		"c, stream"			"int c, FILE *stream"
+"int"		fputc_unlocked	stdio_fputc_unlocked	"c, stream"			"int c, FILE *stream"
 "size_t"	fread		stdio_fread		"ptr, size, count, stream"	"void *ptr, size_t size, size_t count, FILE *stream"
 "int"		fseek		stdio_fseek		"stream, offset, from"		"FILE *stream, long offset, int from"
 "int"		fseeko		stdio_fseeko		"stream, offset, from"		"FILE *stream, off_t offset, int from"
@@ -124,7 +125,8 @@
 "struct tm *"	localtime	time_localtime		"time"				"const time_t *time"
 "size_t"	strftime	time_strftime		"s, max, fmt, timptr"		"char *s, size_t max, const char *fmt, const struct tm *timptr"
 "time_t"	time		time_time		"ptr"				"time_t *ptr"
-
+"struct tm *"	gmtime		time_gmtime		"time"				"const time_t *time"
+"struct tm *"	gmtime_r	time_gmtime_r		"time, tm"			"const time_t *time, struct tm *tm"
 
 # unistd	func-name	iface-name		args-call			args-decl
 "int"		close		unistd_close		"fildes"			"int fildes"

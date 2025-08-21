@@ -32,7 +32,7 @@ static const U8 table[256] =
 	1, 1, 1, 1, 1, 1, 1, 0, 1, 1, 1, 1, 1, 1, 1, 1,		// F
 };
 
-int AMYFUNC _generic_ctype_isalpha( struct AmyCLibIFace *Self UNUSED, int c )
+int AMYFUNC _generic_ctype_isalpha( struct AmyCLibPrivIFace *Self UNUSED, int c )
 {
 	IExec->DebugPrintF( "_generic_ctype_isalpha : c %ld\n", c );
 

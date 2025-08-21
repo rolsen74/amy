@@ -41,13 +41,13 @@
 
 // --
 
-int AMYFUNC _generic_stdio_ungetc( struct AmyCLibIFace *Self, int c, FILE *stream )
+int AMYFUNC _generic_stdio_ungetc( struct AmyCLibPrivIFace *Self, int c, struct PrivFile *stream )
 {
 struct PrivFile *file;
 struct libData *data;
 int retval;
 
-	// -- Enable Check
+	// --
 
 	IExec->DebugPrintF( "_generic_stdio_ungetc, C %ld, File %p\n", c, stream );
 
@@ -56,18 +56,13 @@ int retval;
 
 	data = (PTR)( (U32) Self - Self->Data.NegativeSize );
 
-//	if ( ! ( data->EnableMask & EM_FILE ))
-//	{
-//		IExec->DebugPrintF( "%s:%04lu: Function Not Enabled\n", __FILE__, __LINE__ );
-//		goto bailout;
-//	}
-
 	// --
 
 	Self->Priv_Check_Abort();
 
 	// --
 
+	// Find, Lock and Validate Stream
 	file = Self->Priv_FDLockStream( stream );
 
 	if ( ! file )
@@ -81,7 +76,9 @@ int retval;
 	// Only works for Read Descriptors
 	if ( ! file->pf_Read )
 	{
-//		IExec->DebugPrintF( "Error File Descriptor is not Read enabled" );
+		#ifdef DEBUG
+		IExec->DebugPrintF( "%s:%04d: Stream not readable\n", __FILE__, __LINE__ );
+		#endif
 		data->buf_PublicData->ra_ErrNo = EACCES;
 		file->pf_Error = TRUE;
 		goto bailout;

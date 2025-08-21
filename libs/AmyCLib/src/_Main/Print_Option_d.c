@@ -51,6 +51,10 @@ S32 radix;
 S64 sv;
 U64 v;
 
+	#ifdef DEBUG
+	IExec->DebugPrintF( "my_Option_d\n" );
+	#endif
+
 	retval = FALSE;
 
 	if ( ! ps->ps_Args )

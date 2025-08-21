@@ -44,7 +44,7 @@
 
 // was AMYFUNC _generic__Priv_FDInit
 
-S32 AMYFUNC _generic__Priv_FD_Free( struct AmyCLibIFace *Self, PTR file_ptr )
+S32 AMYFUNC _generic__Priv_FD_Free( struct AmyCLibPrivIFace *Self, PTR file_ptr )
 {
 struct PrivFile *file;
 struct libData *data;

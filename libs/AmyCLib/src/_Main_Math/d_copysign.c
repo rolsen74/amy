@@ -42,7 +42,7 @@
 
 // --
 
-double AMYFUNC _generic_math_d_copysign( struct AmyCLibIFace *Self UNUSED, double x, double y )
+double AMYFUNC _generic_math_d_copysign( struct AmyCLibPrivIFace *Self UNUSED, double x, double y )
 {
 union DoubleBits xx;
 union DoubleBits yy;

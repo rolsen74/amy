@@ -49,6 +49,9 @@ S32 retval;
 
 	retval = FALSE;
 
+	#ifdef DEBUG
+	IExec->DebugPrintF( "my_Option_n\n" );
+	#endif
 
 	if ( ! ps->ps_Args )
 	{

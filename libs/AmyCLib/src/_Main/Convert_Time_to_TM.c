@@ -45,7 +45,7 @@ static const int	NormalMonths[]	= { 31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 
 static const int	LeapMonths[]	= { 31, 29, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31 };
 #define				IS_LEAP(xx)		(((( xx % 4 ) == 0 ) && (( xx % 100 ) != 0 )) || (( xx % 400 ) == 0 ))
 
-S32 AMYFUNC _generic__Priv_Convert_Time_to_TM( struct AmyCLibIFace *Self UNUSED, const time_t *time, struct tm *tm )
+S32 AMYFUNC _generic__Priv_Convert_Time_to_TM( struct AmyCLibPrivIFace *Self UNUSED, const time_t *time, struct tm *tm )
 {
 const int *ptr;
 time_t t;
@@ -89,7 +89,7 @@ S32 d;
 
 	while( TRUE )
 	{
-		d = IS_LEAP( tm->tm_year ) ? 366 : 365 ;
+		d = IS_LEAP( year ) ? 366 : 365 ;
 
 		if ( days < d )
 		{
@@ -105,11 +105,11 @@ S32 d;
 
 	// --
 
-	ptr = IS_LEAP( tm->tm_year ) ? LeapMonths : NormalMonths ;
+	ptr = IS_LEAP( year ) ? LeapMonths : NormalMonths ;
 
 	while( days >= ptr[ tm->tm_mon ] )
 	{
-		days -= ptr[ tm->tm_mon++ ];
+		days -= ptr[ tm->tm_mon ];
 		tm->tm_mon++;
 	}
 
@@ -118,6 +118,28 @@ S32 d;
 	tm->tm_mday		= days + 1;
 	tm->tm_year		= year - 1900;
 	tm->tm_isdst	= -1;
+
+
+	#ifdef DEBUG
+
+	S32 valid = tm
+	&& tm->tm_mon  >= 0 && tm->tm_mon  <= 11
+	&& tm->tm_mday >= 1 && tm->tm_mday <= 31
+	&& tm->tm_hour >= 0 && tm->tm_hour <= 23
+	&& tm->tm_min  >= 0 && tm->tm_min  <= 59
+	&& tm->tm_sec  >= 0 && tm->tm_sec  <= 60;
+
+	if ( ! valid )
+	{
+		IExec->DebugPrintF( "_generic__Priv_Convert_Time_to_TM : Invalid output\n" );
+		IExec->DebugPrintF( "tm_mon ... : %ld\n", tm->tm_mon );
+		IExec->DebugPrintF( "tm_mday .. : %ld\n", tm->tm_mday );
+		IExec->DebugPrintF( "tm_hour .. : %ld\n", tm->tm_hour );
+		IExec->DebugPrintF( "tm_min ... : %ld\n", tm->tm_min );
+		IExec->DebugPrintF( "tm_sec ... : %ld\n", tm->tm_sec );
+	}
+
+	#endif
 
 	retval = TRUE;
 

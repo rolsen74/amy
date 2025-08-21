@@ -130,16 +130,13 @@ struct AmyCLibIFace
 /*   81 */ 	int							AMYFUNC (*stdio_fclose)( struct AmyCLibIFace *Self, FILE *stream );
 /*   82 */ 	int							AMYFUNC (*stdio_fseek)( struct AmyCLibIFace *Self, FILE *stream, long offset, int wherefrom );
 /*   83 */ 	int							AMYFUNC (*stdio_fseeko)( struct AmyCLibIFace *Self, FILE *stream, off_t offset, int wherefrom );
-//		 	int							AMYFUNC (*stdio_printf)( struct AmyCLibIFace *Self, const char *fmt, ... );
 /*   84 */ 	int							AMYFUNC (*stdio_vprintf)( struct AmyCLibIFace *Self, const char *fmt, va_list ap );
 /*   85 */ 	int							AMYFUNC (*stdio_vsprintf)( struct AmyCLibIFace *Self, char *buf, const char *fmt, va_list ap );
-/*   86 */ 	int							AMYFUNC (*delete_me_stdio_snprintf)( struct AmyCLibIFace *Self, char *buf, size_t size, const char *fmt, ... );
+/*   86 */ 	int							AMYFUNC (*stdio_fputc_unlocked)( struct AmyCLibIFace *Self, int c, FILE *stream );
 /*   87 */ 	int							AMYFUNC (*stdio_vsnprintf)( struct AmyCLibIFace *Self, char *buf, size_t size, const char *fmt, va_list ap );
-
 /*   88 */ 	int							AMYFUNC (*fcntl_open)( struct AmyCLibIFace *Self, const char *path, int oflag, ... );
-
 /*   89 */ 	int							AMYFUNC (*unistd_close)( struct AmyCLibIFace *Self, int fildes );
-	// --
+// --
 /*   90 */ 	int							AMYFUNC (*stdio_ungetc)( struct AmyCLibIFace *Self, int c, FILE *stream );
 /*   91 */ 	size_t						AMYFUNC (*stdio_fread)( struct AmyCLibIFace *Self, void *ptr, size_t size, size_t count, FILE *stream );
 /*   92 */ 	float						AMYFUNC (*stdlib_strtof)( struct AmyCLibIFace *Self, const char *str, char **ptr );
@@ -169,6 +166,11 @@ struct AmyCLibIFace
 /*  116 */	void						AMYFUNC (*assert_assert)( struct AmyCLibIFace *Self, const char *filename, int linenumber, const char *function, const char *expression );
 /*  117 */	void						AMYFUNC (*stdlib_exit)( struct AmyCLibIFace *Self, int rc );
 /*  118 */ 	int							AMYFUNC (*ctype_islower)( struct AmyCLibIFace *Self, int c );
+/*  119 */	int							AMYFUNC (*stdio_fgetc)(struct AmyCLibIFace *, FILE *stream);
+/*  120 */	struct tm *					AMYFUNC (*time_gmtime)(struct AmyCLibIFace *, const time_t *time );
+/*  121 */	struct tm *					AMYFUNC (*time_gmtime_r)(struct AmyCLibIFace *, const time_t *time, struct tm *tm );
+
+// brug /*   86 */ // delete_me_stdio_snprintf
 
 
 };

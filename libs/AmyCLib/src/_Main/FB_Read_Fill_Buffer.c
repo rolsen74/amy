@@ -43,7 +43,7 @@
 // File Buffer
 
 // Same as __filL_iob_read_buffer
-S32 AMYFUNC _generic__Priv_FB_Read_Fill_Buffer( struct AmyCLibIFace *Self, struct PrivFile *file )
+S32 AMYFUNC _generic__Priv_FB_Read_Fill_Buffer( struct AmyCLibPrivIFace *Self, struct PrivFile *file )
 {
 S64 bytes;
 S32 retval;

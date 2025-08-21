@@ -11,7 +11,7 @@
 
 // --
 
-static S32 myInit_Signal( struct AmyCLibIFace *Self UNUSED, struct libData *data )
+static S32 myInit_Signal( struct AmyCLibPrivIFace *Self UNUSED, struct libData *data )
 {
 int error;
 //U32 cnt;

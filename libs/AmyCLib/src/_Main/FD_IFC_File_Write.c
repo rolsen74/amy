@@ -42,7 +42,7 @@
 // --
 // File Descriptor
 
-static S64 myWrite( struct AmyCLibIFace *Self, struct PrivFile *file, PTR buf, S32 size )
+static S64 myWrite( struct AmyCLibPrivIFace *Self, struct PrivFile *file, PTR buf, S32 size )
 {
 struct libData *data;
 S64 retval;

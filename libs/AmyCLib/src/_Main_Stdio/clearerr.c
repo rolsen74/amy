@@ -41,24 +41,18 @@
 
 // --
 
-void AMYFUNC _generic_stdio_clearerr( struct AmyCLibIFace *Self, FILE *stream )
+void AMYFUNC _generic_stdio_clearerr( struct AmyCLibPrivIFace *Self, struct PrivFile *stream )
 {
 struct PrivFile *file;
 struct libData *data;
 
-	// -- Enable Check
+	// --
 
-	IExec->DebugPrintF( "_generic_stdio_clearerr : FILE %p\n", stream );
+	IExec->DebugPrintF( "_generic_stdio_clearerr : Stream %p\n", stream );
 
 	file = NULL;
 
 	data = (PTR)( (U32) Self - Self->Data.NegativeSize );
-
-//	if ( ! ( data->EnableMask & EM_FILE ))
-//	{
-//		IExec->DebugPrintF( "%s:%04lu: Function Not Enabled\n", __FILE__, __LINE__ );
-//		goto bailout;
-//	}
 
 	// --
 
@@ -68,6 +62,7 @@ struct libData *data;
 	// fcleaerr have no error indicators
 	// if stream is valid
 
+	// Find, Lock and Validate Stream
 	file = Self->Priv_FDLockStream( stream );
 
 	if ( ! file )

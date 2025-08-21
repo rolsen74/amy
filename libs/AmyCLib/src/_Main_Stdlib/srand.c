@@ -41,7 +41,7 @@
 
 // --
 
-void AMYFUNC _generic_stdlib_srand( struct AmyCLibIFace *Self UNUSED, unsigned int seed )
+void AMYFUNC _generic_stdlib_srand( struct AmyCLibPrivIFace *Self UNUSED, unsigned int seed )
 {
 struct libData *data;
 

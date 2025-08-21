@@ -40,7 +40,7 @@
 
 // --
 
-int AMYFUNC _generic_math_d__isnan( struct AmyCLibIFace *Self UNUSED, double x )
+int AMYFUNC _generic_math_d__isnan( struct AmyCLibPrivIFace *Self UNUSED, double x )
 {
 union DoubleBits xx;
 

@@ -46,10 +46,13 @@
 static S32 AMYFUNC my_Option_c( struct PrintStruct *ps, struct Intern *in )
 {
 S32 retval;
+S32 ch;
+
+	#ifdef DEBUG
+	IExec->DebugPrintF( "my_Option_c\n" );
+	#endif
 
 	retval = FALSE;
-
-	S32 ch;
 
 	if ( ! ps->ps_Args )
 	{

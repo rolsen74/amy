@@ -41,26 +41,20 @@
 
 // --
 
-int AMYFUNC _generic_stdio_fflush( struct AmyCLibIFace *Self, FILE *stream )
+int AMYFUNC _generic_stdio_fflush( struct AmyCLibPrivIFace *Self, struct PrivFile *stream )
 {
 struct PrivFile *file;
 struct libData *data;
 int retval;
 U32 cnt;
 
-	// -- Enable Check
+	// --
 
-	IExec->DebugPrintF( "_generic_stdio_fflush : FILE %p\n", stream );
+	IExec->DebugPrintF( "_generic_stdio_fflush : Stream %p\n", stream );
 
 	retval = EOF;
 
 	data = (PTR)( (U32) Self - Self->Data.NegativeSize );
-
-//	if ( ! ( data->EnableMask & EM_FILE ))
-//	{
-//		IExec->DebugPrintF( "%s:%04lu: Function Not Enabled\n", __FILE__, __LINE__ );
-//		goto bailout;
-//	}
 
 	// --
 
@@ -78,7 +72,7 @@ U32 cnt;
 
 		if (( ! file ) || ( file->pf_StructID != ID_PRIVFILE ))
 		{
-			retval = -1;
+			retval = EOF;
 			IExec->DebugPrintF( "%s:%04ld: Invalid file id\n", __FILE__, __LINE__ );
 			goto bailout;
 		}

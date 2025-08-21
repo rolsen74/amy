@@ -32,7 +32,7 @@ static const U8 table[256] =
 	0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,		// F
 };
 
-int AMYFUNC _generic_ctype_isspace( struct AmyCLibIFace *Self UNUSED, int c )
+int AMYFUNC _generic_ctype_isspace( struct AmyCLibPrivIFace *Self UNUSED, int c )
 {
 	IExec->DebugPrintF( "_generic_ctype_isspace : c %ld\n", c );
 

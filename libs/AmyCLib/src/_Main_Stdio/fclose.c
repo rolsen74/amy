@@ -41,25 +41,19 @@
 
 // --
 
-int AMYFUNC _generic_stdio_fclose( struct AmyCLibIFace *Self, FILE *stream )
+int AMYFUNC _generic_stdio_fclose( struct AmyCLibPrivIFace *Self, struct PrivFile *stream )
 {
 struct PrivFile *file;
 struct libData *data;
 int retval;
 
-	// -- Enable Check
+	// --
 
-	IExec->DebugPrintF( "_generic_stdio_fclose : FILE %p\n", stream );
+	IExec->DebugPrintF( "_generic_stdio_fclose : Stream %p\n", stream );
 
 	retval = EOF;
 
 	data = (PTR)( (U32) Self - Self->Data.NegativeSize );
-
-//	if ( ! ( data->EnableMask & EM_FILE ))
-//	{
-//		IExec->DebugPrintF( "%s:%04lu: Function Not Enabled\n", __FILE__, __LINE__ );
-//		goto bailout;
-//	}
 
 	// --
 

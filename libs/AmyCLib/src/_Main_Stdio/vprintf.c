@@ -41,25 +41,19 @@
 
 // --
 
-int AMYFUNC _generic_stdio_vprintf( struct AmyCLibIFace *Self, const char *fmt, va_list ap )
+int AMYFUNC _generic_stdio_vprintf( struct AmyCLibPrivIFace *Self, const char *fmt, va_list ap )
 {
 struct PrintStruct ps;
 struct libData *data;
 int retval;
 
-	// -- Enable Check
+	// --
 
 	IExec->DebugPrintF( "_generic_stdio_vprintf\n" );
 
-	retval = -1;
+	retval = EOF;
 
 	data = (PTR)( (U32) Self - Self->Data.NegativeSize );
-
-//	if ( ! ( data->EnableMask & EM_FILE ))
-//	{
-//		IExec->DebugPrintF( "%s:%04lu: Function Not Enabled\n", __FILE__, __LINE__ );
-//		goto bailout;
-//	}
 
 	// --
 
@@ -75,27 +69,22 @@ int retval;
 	}
 
 	ps.ps_Format	= fmt;
-	ps.ps_Stream	= (PTR) data->buf_PublicData->ra_stdout;
+	ps.ps_Stream	= data->buf_PublicData->ra_stdout;
 	ps.ps_Buffer	= NULL;
 	ps.ps_Size		= INT_MAX;
-	ps.ps_Result	= 0;
-//	ps.ps_Args		= & ap;
+	ps.ps_Written	= 0;
 
-//	IExec->DebugPrintF("fmt = %s\n", fmt);
-//	IExec->DebugPrintF("arg1 = %ld\n", va_arg(ap, long));
-//	IExec->DebugPrintF("arg2 = %lx\n", va_arg(ap, long));
-
-	va_copy( ps.ps_Args, ap );  // ✅ CORRECT for standard stdarg
+	va_copy( ps.ps_Args, ap );
 
 	Self->Priv_Print( & ps );
 
-	if ( ps.ps_Result < 0 )
+	if ( ps.ps_Written < 0 )
 	{
-		IExec->DebugPrintF( "_generic_stdio_vprintf : Failed with %ld\n", ps.ps_Result );
+		IExec->DebugPrintF( "_generic_stdio_vprintf : Failed with %ld\n", ps.ps_Written );
 		goto bailout;
 	}
 
-	retval = ps.ps_Result;
+	retval = ps.ps_Written;
 
 bailout:
 

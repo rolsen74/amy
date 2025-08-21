@@ -41,61 +41,59 @@
 
 // --
 
-#pragma GCC push_options
-#pragma GCC optimize ("Os,no-tree-loop-distribute-patterns")
+// #pragma GCC push_options
+// #pragma GCC optimize ("Os,no-tree-loop-distribute-patterns")
 
-int AMYFUNC _generic_string_strncmp( struct AmyCLibIFace *Self, const char *s1, const char *s2, size_t max )
+int AMYFUNC _generic_string_strncmp( struct AmyCLibPrivIFace *Self, const char *s1, const char *s2, size_t max )
 {
 int retval;
+U32 pos;
+S32 c1;
+S32 c2;
+U8 *m1;
+U8 *m2;
 
-	IExec->DebugPrintF( "_generic_string_strncmp : Str1 %p, Str2 %p, Max %lu\n", s1, s2, max );
-
+	pos = 0;
 	retval = 0;
 
 	if ( max )
 	{
 		/**/ if (( ! s1 ) || ( ! s2 ))
 		{
+			// Only an error if max is none zero
 			struct libData *data = (PTR)( (U32) Self - Self->Data.NegativeSize );
 			data->buf_PublicData->ra_ErrNo = EFAULT;
 		}
 		else if ( s1 != s2 )
 		{
-			U8 *m1 = (PTR) s1 ;
-			U8 *m2 = (PTR) s2 ;
-			U8 c;
+			m1 = (PTR) s1 ;
+			m2 = (PTR) s2 ;
 
-			while( max )
+			while( max > pos++ )
 			{
-				c = *m1;
+				c1 = *m1++;
+				c2 = *m2++;
 
-				if ( ! c )
+				if ( c1 != c2 )
 				{
+					retval = c1 - c2;
 					break;
 				}
 
-				if ( *m2 != c )
+				if ( ! c1 )
 				{
+					// retval = 0;
 					break;
 				}
-
-				m1++;
-				m2++;
-				max--;
-			}
-
-			if ( max )
-			{
-				S32 c1 = *m1 ;
-				S32 c2 = *m2 ;
-				retval = c1 - c2;
 			}
 		}
 	}
 
+	IExec->DebugPrintF( "_generic_string_strncmp : Str %p : Str %p : Max %lu : Pos %ld : Retval %ld\n", s1, s2, max, pos-1, retval );
+
 	return( retval );
 }
 
-#pragma GCC pop_options
+// #pragma GCC pop_options
 
 // --

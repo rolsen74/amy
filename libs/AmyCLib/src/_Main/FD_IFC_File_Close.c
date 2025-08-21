@@ -42,7 +42,7 @@
 // --
 // File Descriptor
 
-static void myClose( struct AmyCLibIFace *Self UNUSED, struct PrivFile *file )
+static void myClose( struct AmyCLibPrivIFace *Self UNUSED, struct PrivFile *file )
 {
 	IExec->DebugPrintF( "FD_IFC_File_Close\n" );
 

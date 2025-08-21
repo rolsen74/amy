@@ -41,25 +41,19 @@
 
 // --
 
-int AMYFUNC _generic_stdio_vsprintf( struct AmyCLibIFace *Self, char *buf, const char *fmt, va_list ap )
+int AMYFUNC _generic_stdio_vsprintf( struct AmyCLibPrivIFace *Self, char *buf, const char *fmt, va_list ap )
 {
 struct PrintStruct ps;
 struct libData *data;
 int retval;
 
-	// -- Enable Check
+	// --
 
 	IExec->DebugPrintF( "_generic_stdio_vsprintf\n" );
 
-	retval = -1;
+	retval = EOF;
 
 	data = (PTR)( (U32) Self - Self->Data.NegativeSize );
-
-//	if ( ! ( data->EnableMask & EM_FILE ))
-//	{
-//		IExec->DebugPrintF( "%s:%04lu: Function Not Enabled\n", __FILE__, __LINE__ );
-//		goto bailout;
-//	}
 
 	// --
 
@@ -78,20 +72,21 @@ int retval;
 	ps.ps_Stream	= NULL;
 	ps.ps_Buffer	= buf;
 	ps.ps_Size		= INT_MAX;
-	ps.ps_Result	= 0;
+	ps.ps_Written	= 0;
 //	ps.ps_Args		= & ap;
 
 	va_copy( ps.ps_Args, ap );
 
 	Self-> Priv_Print( & ps );
 
-	if ( ps.ps_Result < 0 )
+	if ( ps.ps_Written < 0 )
 	{
-		IExec->DebugPrintF( "_generic_stdio_vsprintf : err 2, stat %ld\n", ps.ps_Result );
+		IExec->DebugPrintF( "_generic_stdio_vsprintf : err 2, stat %ld\n", ps.ps_Written );
 		goto bailout;
 	}
 
-	retval = ps.ps_Result;
+	// NUL should not be counted
+	retval = ps.ps_Written - 1;
 
 bailout:
 

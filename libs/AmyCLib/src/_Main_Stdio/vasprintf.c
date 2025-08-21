@@ -41,26 +41,20 @@
 
 // --
 
-int AMYFUNC _generic_stdio_vasprintf( struct AmyCLibIFace *Self, char **ret, const char *fmt, va_list ap )
+int AMYFUNC _generic_stdio_vasprintf( struct AmyCLibPrivIFace *Self, char **ret, const char *fmt, va_list ap )
 {
 struct PrintStruct ps;
 struct libData *data;
 char *buf;
 int retval;
 
-	// -- Enable Check
+	// --
 
-	IExec->DebugPrintF( "_generic_stdio_vasprintf\n" );
+	IExec->DebugPrintF( "_generic_stdio_vasprintf : \n" );
 
-	retval = -1;
+	retval = EOF;
 
 	data = (PTR)( (U32) Self - Self->Data.NegativeSize );
-
-//	if ( ! ( data->EnableMask & EM_FILE ))
-//	{
-//		IExec->DebugPrintF( "%s:%04lu: Function Not Enabled\n", __FILE__, __LINE__ );
-//		goto bailout;
-//	}
 
 	// --
 
@@ -81,13 +75,13 @@ int retval;
 	ps.ps_Stream	= NULL;
 	ps.ps_Buffer	= NULL;
 	ps.ps_Size		= INT_MAX;
-	ps.ps_Result	= 0;
+	ps.ps_Written	= 0;
 
 	va_copy( ps.ps_Args, ap );
 
 	Self->Priv_Print( & ps );
 
-	if ( ps.ps_Result < 0 )
+	if ( ps.ps_Written < 0 )
 	{
 		goto bailout;
 	}
@@ -95,7 +89,7 @@ int retval;
 	// --
 	// Alloc Buffer
 
-	buf = Self->Priv_Mem_Alloc( ps.ps_Result + 1 );
+	buf = Self->Priv_Mem_Alloc( ps.ps_Written + 1 );
 
 	if ( ! buf )
 	{
@@ -108,14 +102,14 @@ int retval;
 	ps.ps_Format	= fmt;
 	ps.ps_Stream	= NULL;
 	ps.ps_Buffer	= buf;
-	ps.ps_Size		= ps.ps_Result + 1;
-	ps.ps_Result	= 0;
+	ps.ps_Size		= ps.ps_Written + 1;
+	ps.ps_Written	= 0;
 
 	va_copy( ps.ps_Args, ap );
 
 	Self->Priv_Print( & ps );
 
-	if ( ps.ps_Result < 0 )
+	if ( ps.ps_Written < 0 )
 	{
 		Self->Priv_Mem_Free( buf );
 		goto bailout;
@@ -125,7 +119,7 @@ int retval;
 
 	*ret = buf;
 	
-	retval = ps.ps_Result;
+	retval = ps.ps_Written;
 
 bailout:
 

@@ -11,25 +11,19 @@
 
 // --
 
-char * AMYFUNC _generic_string_strndup( struct AmyCLibIFace *Self, const char *s, size_t max )
+char * AMYFUNC _generic_string_strndup( struct AmyCLibPrivIFace *Self, const char *s, size_t max )
 {
 struct libData *data;
 size_t len;
 char *str;
 
-	// -- Enable Check
+	// --
 
 	IExec->DebugPrintF( "_generic_string_strndup\n" );
 
 	str = NULL;
 
 	data = (PTR)( (U32) Self - Self->Data.NegativeSize );
-
-//	if ( ! ( data->EnableMask & EM_STRING ))
-//	{
-//		IExec->DebugPrintF( "%s:%04lu: Function Not Enabled\n", __FILE__, __LINE__ );
-//		goto bailout;
-//	}
 
 	// --
 

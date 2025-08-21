@@ -42,42 +42,45 @@
 
 // --
 
-static S32 AMYFUNC my_writechar( struct PrintStruct *ps, struct Intern *in, char c )
+static enum myWriteStat AMYFUNC my_writechar( struct PrintStruct *ps, struct Intern *in, char c )
 {
-S32 retval;
+enum myWriteStat retval;
 
 	// Error
-	retval = -1;
+	retval = MWS_Error;
 
-	if ( ps->ps_Buffer )
+	/**/ if ( ps->ps_Buffer )
 	{
 		// Buffer
 
 		ps->ps_Buffer[ ps->ps_Written ] = c;
 	}
-	
-	if ( ps->ps_Stream )
+	else if ( ps->ps_Stream )
 	{
 		// Stream
 
-		if ( in->Self->stdio_fputc( c, (PTR) ps->ps_Stream ) == -1 )
+		if ( in->Self->stdio_fputc_unlocked( c, ps->ps_Stream ) == -1 )
 		{
 			goto bailout;
 		}
 
 	}
 
+//	IExec->DebugPrintF( "WriteChar : $%02x : ' %c ' :\n", c, ( c >= 0x20 && c <= 0x7f ) ? c : ' ' );
+
 	ps->ps_Written++;
 
-	if ( ps->ps_Written >= ps->ps_Size )
+	if (( ps->ps_Size ) && ( ps->ps_Size <= ps->ps_Written ))
 	{
-		// Buffer Full
-		retval = +1;
+//		IExec->DebugPrintF( "my_writechar : Buffer full : Size %ld : Written %ld\n", ps->ps_Size, ps->ps_Written );
+	
+		// Okay but is Buffer now Full
+		retval = MWS_Full;
 	}
 	else
 	{
 		// Okay
-		retval = 0;
+		retval = MWS_Okay;
 	}
 
 bailout:

@@ -41,25 +41,19 @@
 
 // --
 
-char * AMYFUNC _generic_string_strcat( struct AmyCLibIFace *Self, char *d, const char *s )
+char * AMYFUNC _generic_string_strcat( struct AmyCLibPrivIFace *Self, char *d, const char *s )
 {
 struct libData *data;
 char *retval;
 U8 c;
 
-	// -- Enable Check
+	// --
 
 	IExec->DebugPrintF( "_generic_string_strcat\n" );
 
 	retval = NULL;
 
 	data = (PTR)( (U32) Self - Self->Data.NegativeSize );
-
-//	if ( ! ( data->EnableMask & EM_STRING ))
-//	{
-//		IExec->DebugPrintF( "%s:%04lu: Function Not Enabled\n", __FILE__, __LINE__ );
-//		goto bailout;
-//	}
 
 	// --
 

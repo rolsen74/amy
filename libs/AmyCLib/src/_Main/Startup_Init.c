@@ -19,8 +19,9 @@
 
 // --
 
-S32 AMYFUNC _generic__Priv_Startup_Init( struct AmyCLibIFace *Self, STR args, U32 mask )
+S32 AMYFUNC _generic__Priv_Startup_Init( struct AmyCLibPrivIFace *Self, STR args, U32 mask )
 {
+struct _AmyCLibPublic *pd;
 struct libData *data;
 S32 retval;
 
@@ -65,6 +66,28 @@ S32 retval;
 	}
 
 	// --
+	// Public Data
+
+	pd = IExec->AllocVecTags( sizeof( struct _AmyCLibPublic ),
+		AVT_Clear, 0,
+		TAG_END
+	);
+
+	if ( ! pd )
+	{
+		IExec->DebugPrintF( "myInit_PublicData : Error allocating memory\n" );
+		goto bailout;
+	}
+
+	data->buf_PublicData = pd;
+
+	// --
+
+	// Will be allocated when used
+	// buf_gmtime;					// time / gmtime
+	// buf_LocalTime;				// time / localtime
+
+	// --
 
 	if ( mask & EM_FILE )
 	{
@@ -75,7 +98,6 @@ S32 retval;
 	}
 
 	// --
-	// todo : get buffer, if Mem is off
 
 	IExec->DebugPrintF( "_generic__Priv_Startup_Init : 3\n" );
 

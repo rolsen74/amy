@@ -110,7 +110,8 @@ S32 stat;
 	}
 	else
 	{
-		printf( "\033[34mFailed\033[31m\n" );
+		printf( "Failed\n" );
+//		printf( "\033[34mFailed\033[31m\n" );
 		Stat_Failed++;
 	}
 

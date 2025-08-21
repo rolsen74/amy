@@ -43,7 +43,7 @@
 
 #define BUFFER_SIZE		( 128 > sizeof( struct tm ) ? 128 : sizeof( struct tm ))
 
-struct tm * AMYFUNC _generic_time_localtime( struct AmyCLibIFace *Self, const time_t *time )
+struct tm * AMYFUNC _generic_time_localtime( struct AmyCLibPrivIFace *Self, const time_t *time )
 {
 struct libData *data;
 struct tm *retval;
@@ -67,7 +67,10 @@ int rc;
 
 	if ( ! data->buf_LocalTime )
 	{
-		data->buf_LocalTime = Self->Priv_Mem_Alloc( BUFFER_SIZE );
+		data->buf_LocalTime = IExec->AllocVecTags( BUFFER_SIZE,
+			AVT_Clear, 0,
+			TAG_END
+		);
 
 		if ( ! data->buf_LocalTime )
 		{

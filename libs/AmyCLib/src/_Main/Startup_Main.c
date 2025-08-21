@@ -16,7 +16,7 @@
 // --
 
 S32 AMYFUNC _generic__Priv_Startup_Main(
-	struct AmyCLibIFace *Self,
+	struct AmyCLibPrivIFace *Self,
 	int main( int, char ** ),
 	char *args UNUSED,
 	int arglen UNUSED,

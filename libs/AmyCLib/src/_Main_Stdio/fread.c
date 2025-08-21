@@ -41,26 +41,20 @@
 
 // --
 
-size_t AMYFUNC _generic_stdio_fread( struct AmyCLibIFace *Self, void *ptr, size_t size, size_t count, FILE *stream )
+size_t AMYFUNC _generic_stdio_fread( struct AmyCLibPrivIFace *Self, void *ptr, size_t size, size_t count, struct PrivFile *stream )
 {
 struct PrivFile *file;
 struct libData *data;
 size_t retval;
 
-	// -- Enable Check
+	// --
 
-	IExec->DebugPrintF( "_generic_stdio_fread, Buf %p, Size %ld, Count %ld, File %p\n", ptr, size, count, stream );
+	IExec->DebugPrintF( "_generic_stdio_fread : Buf %p, Size %ld, Count %ld, File %p\n", ptr, size, count, stream );
 
 	file = NULL;
 	retval = 0;
 
 	data = (PTR)( (U32) Self - Self->Data.NegativeSize );
-
-//	if ( ! ( data->EnableMask & EM_FILE ))
-//	{
-//		IExec->DebugPrintF( "%s:%04lu: Function Not Enabled\n", __FILE__, __LINE__ );
-//		goto bailout;
-//	}
 
 	// --
 
@@ -70,6 +64,7 @@ size_t retval;
 
 	data = (PTR)( (U32) Self - Self->Data.NegativeSize );
 
+	// Find, Lock and Validate Stream
 	file = Self->Priv_FDLockStream( stream );
 
 	if ( ! file )
@@ -85,7 +80,9 @@ size_t retval;
 
 	if ( ! file->pf_Read )
 	{
-//		IExec->DebugPrintF( "Error File Descriptor is not Read enabled" );
+		#ifdef DEBUG
+		IExec->DebugPrintF( "%s:%04d: Stream not readable\n", __FILE__, __LINE__ );
+		#endif
 		data->buf_PublicData->ra_ErrNo = ENXIO;
 		file->pf_Error = TRUE;
 		goto bailout;
@@ -104,6 +101,9 @@ size_t retval;
 
 		if ( ! file->pf_Read )
 		{
+			#ifdef DEBUG
+			IExec->DebugPrintF( "%s:%04d: Stream not readable\n", __FILE__, __LINE__ );
+			#endif
 			data->buf_PublicData->ra_ErrNo = EBADF;
 			file->pf_Error = TRUE;
 			goto bailout;

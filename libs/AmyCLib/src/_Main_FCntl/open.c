@@ -41,7 +41,7 @@
 
 // --
 
-int AMYFUNC _generic_fcntl_open( struct AmyCLibIFace *Self, const char *path, int oflag, ... )
+int AMYFUNC _generic_fcntl_open( struct AmyCLibPrivIFace *Self, const char *path, int oflag, ... )
 {
 struct FDInitStruct is;
 struct PrivFile *file;

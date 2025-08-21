@@ -41,25 +41,19 @@
 
 // --
 
-int AMYFUNC _generic_stdio_vsscanf( struct AmyCLibIFace *Self, const char *buf, const char *fmt, va_list ap )
+int AMYFUNC _generic_stdio_vsscanf( struct AmyCLibPrivIFace *Self, const char *buf, const char *fmt, va_list ap )
 {
 struct ScanStruct ss;
 struct libData *data;
 int retval;
 
-	// -- Enable Check
+	// --
 
 	IExec->DebugPrintF( "_generic_stdio_vsscanf\n" );
 
 	retval = EOF;
 
 	data = (PTR)( (U32) Self - Self->Data.NegativeSize );
-
-//	if ( ! ( data->EnableMask & EM_FILE ))
-//	{
-//		IExec->DebugPrintF( "%s:%04lu: Function Not Enabled\n", __FILE__, __LINE__ );
-//		goto bailout;
-//	}
 
 	// --
 
@@ -89,18 +83,7 @@ int retval;
 
 	Self->Priv_Scan( & ss );
 
-	#warning fix me -- result check
-
-// --	 if ( mybuf.Error )
-// --	 {
-// --		 IExec->DebugPrintF( "Error PrivPrint Failed" );
-// --		 goto bailout;
-// --	 }
-// --
-// --	 // --
-// --
-// --	 // Excluding NUL
-// --	 retval = ( mybuf.Written ) ? ( mybuf.Written - 1 ) : 0 ;
+	retval = ss.ss_Handled;
 
 bailout:
 

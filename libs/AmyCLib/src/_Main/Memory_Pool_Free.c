@@ -11,7 +11,7 @@
 
 // --
 
-U32 AMYFUNC _generic__Priv_Mem_FreePooled( struct AmyCLibIFace *Self, struct MemPoolHeader *handle, PTR mem )
+U32 AMYFUNC _generic__Priv_Mem_FreePooled( struct AmyCLibPrivIFace *Self, struct MemPoolHeader *handle, PTR mem )
 {
 //struct libData *idata;
 struct PoolBlock *old;

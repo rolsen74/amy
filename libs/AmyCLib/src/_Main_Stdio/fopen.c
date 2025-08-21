@@ -41,26 +41,20 @@
 
 // --
 
-FILE * AMYFUNC _generic_stdio_fopen( struct AmyCLibIFace *Self, const char *filename, const char *mode )
+struct PrivFile * AMYFUNC _generic_stdio_fopen( struct AmyCLibPrivIFace *Self, const char *filename, const char *mode )
 {
 struct FDInitStruct is;
 struct PrivFile *file;
 struct libData *data;
 U32 Mode;
 
-	// -- Enable Check
+	// --
 
 	IExec->DebugPrintF( "_generic_stdio_fopen, Filename %s, Mode: %s\n", filename, mode );
 
 	file = NULL;
 
 	data = (PTR)( (U32) Self - Self->Data.NegativeSize );
-
-//	if ( ! ( data->EnableMask & EM_FILE ))
-//	{
-//		IExec->DebugPrintF( "%s:%04lu: Function Not Enabled\n", __FILE__, __LINE__ );
-//		goto bailout;
-//	}
 
 	// --
 

@@ -23,13 +23,14 @@ CFLAGS		+= -I.
 CFLAGS		+= -I $(ROOTDIR)/inc_System
 CFLAGS		+= -I $(ROOTDIR)/inc_Public
 CFLAGS		+= -I $(ROOTDIR)/inc_Private
-CFLAGS		+= -DDEBUG
-CFLAGS		+= -gstabs
+#CFLAGS		+= -DDEBUG
+#CFLAGS		+= -gstabs
 CFLAGS		+= -W
 CFLAGS		+= -Wall
 CFLAGS		+= -MMD
 CFLAGS		+= -MP
 CFLAGS		+= -mcrt=clib2
+CFLAGS		+= -fno-builtin
 
 # Linker Flags
 LDFLAGS		:= -mcrt=clib2 
@@ -184,6 +185,8 @@ SRCS		+= src/_Main_Stdio/fgetpos.c
 SRCS		+= src/_Main_Stdio/flockfile.c
 SRCS		+= src/_Main_Stdio/fopen.c
 SRCS		+= src/_Main_Stdio/fputc.c
+SRCS		+= src/_Main_Stdio/fputc_unlocked.c
+SRCS		+= src/_Main_Stdio/fgetc.c
 SRCS		+= src/_Main_Stdio/fread.c
 SRCS		+= src/_Main_Stdio/fseek.c
 SRCS		+= src/_Main_Stdio/fseeko.c
@@ -242,6 +245,8 @@ SRCS		+= src/_Main_Strings/strncasecmp.c
 SRCS		+= src/_Main_Time/localtime.c
 SRCS		+= src/_Main_Time/strftime.c
 SRCS		+= src/_Main_Time/time.c
+SRCS		+= src/_Main_Time/gmtime.c
+SRCS		+= src/_Main_Time/gmtime_r.c
 
 # Main .. unistd
 SRCS		+= src/_Main_Unistd/close.c

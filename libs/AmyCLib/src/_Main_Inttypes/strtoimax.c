@@ -50,7 +50,7 @@
  * alphabets and digits are each contiguous.
  */
 
-intmax_t AMYFUNC _generic_inttypes_strtoimax( struct AmyCLibIFace *Self, const char *nptr, char **endptr, int base )
+intmax_t AMYFUNC _generic_inttypes_strtoimax( struct AmyCLibPrivIFace *Self, const char *nptr, char **endptr, int base )
 {
 struct libData *data;
 const char *s;
@@ -62,7 +62,7 @@ int neg;
 int any;
 int c;
 
-	IExec->DebugPrintF( "_generic_inttypes_strtoimax :\n" );
+	IExec->DebugPrintF( "_generic_inttypes_strtoimax : Str '%s', Ptr %p, Base %ld\n", nptr, endptr, base );
 
 	data = (PTR)( (U32) Self - Self->Data.NegativeSize );
 
@@ -71,9 +71,13 @@ int c;
 	 * value of 0.
 	 */
 
-	if (base < 0 || base == 1 || base > 36)
+	if (( base < 0 ) || ( base == 1 ) || ( base > 36 ))
 	{
-		if (endptr != 0)
+		#ifdef DEBUG
+		IExec->DebugPrintF( "_generic_inttypes_strtoimax : Invalid Base\n" );
+		#endif
+
+		if ( endptr )
 		{
 			*endptr = (char *)nptr;
 		}
@@ -97,7 +101,7 @@ int c;
 	}
 	while (Self->ctype_isspace(c));
 
-	if (c == '-')
+	if ( c == '-' )
 	{
 		neg = 1;
 		c = *s++;
@@ -106,7 +110,7 @@ int c;
 	{
 		neg = 0;
 
-		if (c == '+')
+		if ( c == '+' )
 		{
 			c = *s++;
 		}
@@ -120,7 +124,7 @@ int c;
 		base = 16;
 	}
 
-	if (base == 0)
+	if ( base == 0 )
 	{
 		base = c == '0' ? 8 : 10;
 	}
@@ -214,7 +218,7 @@ int c;
 		}
 	}
 
-	if (endptr != 0)
+	if ( endptr )
 	{
 		*endptr = (char *) (any ? s - 1 : nptr);
 	}
@@ -222,6 +226,10 @@ int c;
 	retval = acc;
 
 bailout:
+
+	#ifdef DEBUG
+	IExec->DebugPrintF( "_generic_inttypes_strtoimax : Retval %lld\n", retval );
+	#endif
 
 	return( retval );
 }

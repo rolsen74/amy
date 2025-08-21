@@ -13,7 +13,7 @@
 _generic_setjmp_setjmp:
 
 	# r1 - Stack Pointer
-	# r3 - ( Parm 1 ) struct AmyCLibIFace *
+	# r3 - ( Parm 1 ) struct AmyCLibPrivIFace *
 	# r4 - ( Parm 2 ) jmp_buf *
 
 	# Align to 8 byte boundary

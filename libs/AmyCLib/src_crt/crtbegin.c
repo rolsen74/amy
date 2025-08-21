@@ -56,7 +56,7 @@ struct Library *		AmyCBase	USED = NULL;	// D
 struct DOSIFace *		IDOS		USED = NULL;	// E
 struct ExecIFace *		IExec		USED = NULL;	// F
 //struct UtilityIFace *	IUtility	USED = NULL;	// G
-struct AmyCLibIFace *	IAmyCLib	USED = NULL;	// H
+struct AmyCLibPrivIFace *	IAmyCLib	USED = NULL;	// H
 
 struct _AmyCLibPublic *	__AmyCPublicData = NULL;
 

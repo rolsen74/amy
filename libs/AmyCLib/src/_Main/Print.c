@@ -55,11 +55,11 @@
 
 // --
 
-void AMYFUNC _generic__Priv_Print( struct AmyCLibIFace *Self, struct PrintStruct *ps )
+void AMYFUNC _generic__Priv_Print( struct AmyCLibPrivIFace *Self, struct PrintStruct *ps )
 {
+enum myWriteStat stat;
 struct Intern in;
 S32 retval;
-S32 stat;
 S32 val;
 
 	retval = -1;
@@ -68,55 +68,73 @@ S32 val;
 
 	Self->Priv_Check_Abort();
 
+	Self->string_memset( & in, 0, sizeof( in ));
+
 	// -- Validate Input
 
 	if ( ! ps )
 	{
+		#ifdef DEBUG
+		IExec->DebugPrintF( "%s:%04d: Error\n", __FILE__, __LINE__ );
+		#endif
 		goto bailout;
+	}
+
+	if ( ps->ps_Stream )
+	{
+		Self->stdio_flockfile( ps->ps_Stream );
+
+		if ( ! ps->ps_Stream->pf_Write )
+		{
+			#ifdef DEBUG
+			IExec->DebugPrintF( "%s:%04d: Stream not writeable\n", __FILE__, __LINE__ );
+			#endif
+			goto bailout;
+		}
 	}
 
 	if ( ! ps->ps_Format )
 	{
+		#ifdef DEBUG
+		IExec->DebugPrintF( "%s:%04d: Error\n", __FILE__, __LINE__ );
+		#endif
 		goto bailout;
 	}
 
 	if ( ps->ps_Size < 0 )
 	{
+		#ifdef DEBUG
+		IExec->DebugPrintF( "%s:%04d: Error\n", __FILE__, __LINE__ );
+		#endif
 		goto bailout;
 	}
 
 	// -- Reset values
 
-	Self->string_memset( & in, 0, sizeof( in ));
-
 	in.Self = Self;
 	ps->ps_Written = 0;
 
 	// --
+	// if Size == 0, then we count bytes
 
-	if ( ps->ps_Stream )
-	{
-		Self->stdio_flockfile( (PTR) ps->ps_Stream );
-
-		if ( ! ps->ps_Stream->pf_Write )
-		{
-			goto bailout;
-		}
-	}
-	else
+	if ( ps->ps_Size )
 	{
 		// Make space for NUL char
 		ps->ps_Size--;
 
 		if ( ps->ps_Size < 0 )
 		{
+			#ifdef DEBUG
+			IExec->DebugPrintF( "%s:%04d: Error\n", __FILE__, __LINE__ );
+			#endif
 			goto bailout;
 		}
 	}
 
 	while( TRUE )
 	{
-		if ( ps->ps_Written >= ps->ps_Size )
+		// if Size == 0, then we count bytes
+		if (( ps->ps_Size ) && ( ps->ps_Size <= ps->ps_Written ))
 		{
 			break;
 		}
@@ -132,25 +150,25 @@ S32 val;
 		{
 			stat = my_writechar( ps, & in, in.c );
 
-			if ( stat < 0 )
+			if ( stat == MWS_Error )
 			{
+				#ifdef DEBUG
+				IExec->DebugPrintF( "%s:%04d: Error\n", __FILE__, __LINE__ );
+				#endif
 				goto bailout;
 			}
 
-			if ( stat > 0 )
+			if ( stat == MWS_Full )
 			{
+				// Buffer full, we are done
 				goto done;
 			}
 
 			continue;
 		}
 
-
-
 		// rwo - not sure where to put this
 		in.FORMATF_IsNegative = 0;
-
-
 
 		/* If a string of digits, terminated by a '$' character appears here,
 			* it indicates which argument should be accessed. We evaluate this
@@ -182,9 +200,10 @@ S32 val;
 			}
 		}
 
-		/* Collect the flags: left justification, sign, space,
-			* alternate format, fill character.
-			*/
+		/*
+		** Collect the flags: left justification, sign, space,
+		** alternate format, fill character.
+		*/
 
 		in.Fill_Character  = ' ';
 
@@ -237,6 +256,9 @@ S32 val;
 
 		if ( val < 0 )
 		{
+			#ifdef DEBUG
+			IExec->DebugPrintF( "%s:%04d: Error\n", __FILE__, __LINE__ );
+			#endif
 			goto bailout;
 		}
 
@@ -262,6 +284,9 @@ S32 val;
 
 			if ( val < 0 )
 			{
+				#ifdef DEBUG
+				IExec->DebugPrintF( "%s:%04d: Error\n", __FILE__, __LINE__ );
+				#endif
 				goto bailout;
 			}
 
@@ -382,8 +407,11 @@ S32 val;
 			case 'c':
 			case 'C':
 			{
-				if ( my_Option_c( ps, & in ) == FALSE )
+				if ( ! my_Option_c( ps, & in ))
 				{
+					#ifdef DEBUG
+					IExec->DebugPrintF( "%s:%04d: Error\n", __FILE__, __LINE__ );
+					#endif
 					goto bailout;
 				}
 				break;
@@ -395,8 +423,11 @@ S32 val;
 			{
 				in.FORMATF_CapitalLetters = 0;
 
-				if ( my_Option_x( ps, & in ) == FALSE )
+				if ( ! my_Option_x( ps, & in ))
 				{
+					#ifdef DEBUG
+					IExec->DebugPrintF( "%s:%04d: Error\n", __FILE__, __LINE__ );
+					#endif
 					goto bailout;
 				}
 
@@ -407,8 +438,11 @@ S32 val;
 			{
 				in.FORMATF_CapitalLetters = 1;
 
-				if ( my_Option_x( ps, & in ) == FALSE )
+				if ( ! my_Option_x( ps, & in ))
 				{
+					#ifdef DEBUG
+					IExec->DebugPrintF( "%s:%04d: Error\n", __FILE__, __LINE__ );
+					#endif
 					goto bailout;
 				}
 
@@ -423,8 +457,11 @@ S32 val;
 				in.Fill_Character = '0';
 				in.minimum_field_width = 10; // 0x12345678
 
-				if ( my_Option_x( ps, & in ) == FALSE )
+				if ( ! my_Option_x( ps, & in ))
 				{
+					#ifdef DEBUG
+					IExec->DebugPrintF( "%s:%04d: Error\n", __FILE__, __LINE__ );
+					#endif
 					goto bailout;
 				}
 
@@ -435,8 +472,11 @@ S32 val;
 
 			case 'o':
 			{
-				if ( my_Option_o( ps, & in ) == FALSE )
+				if ( ! my_Option_o( ps, & in ))
 				{
+					#ifdef DEBUG
+					IExec->DebugPrintF( "%s:%04d: Error\n", __FILE__, __LINE__ );
+					#endif
 					goto bailout;
 				}
 				break;
@@ -446,8 +486,11 @@ S32 val;
 
 			case 'd': // Signed
 			{
-				if ( my_Option_d( ps, & in ) == FALSE )
+				if ( ! my_Option_d( ps, & in ))
 				{
+					#ifdef DEBUG
+					IExec->DebugPrintF( "%s:%04d: Error\n", __FILE__, __LINE__ );
+					#endif
 					goto bailout;
 				}
 				break;
@@ -455,8 +498,11 @@ S32 val;
 
 			case 'i': // Signed
 			{
-				if ( my_Option_d( ps, & in ) == FALSE )
+				if ( ! my_Option_d( ps, & in ))
 				{
+					#ifdef DEBUG
+					IExec->DebugPrintF( "%s:%04d: Error\n", __FILE__, __LINE__ );
+					#endif
 					goto bailout;
 				}
 				break;
@@ -464,8 +510,11 @@ S32 val;
 
 			case 'u': // Unsigned
 			{
-				if ( my_Option_u( ps, & in ) == FALSE )
+				if ( ! my_Option_u( ps, & in ))
 				{
+					#ifdef DEBUG
+					IExec->DebugPrintF( "%s:%04d: Error\n", __FILE__, __LINE__ );
+					#endif
 					goto bailout;
 				}
 				break;
@@ -476,8 +525,11 @@ S32 val;
 			case 's':
 			case 'S':
 			{
-				if ( my_Option_s( ps, & in ) == FALSE )
+				if ( ! my_Option_s( ps, & in ))
 				{
+					#ifdef DEBUG
+					IExec->DebugPrintF( "%s:%04d: Error\n", __FILE__, __LINE__ );
+					#endif
 					goto bailout;
 				}
 				break;
@@ -487,8 +539,11 @@ S32 val;
 
 			case 'n':
 			{
-				if ( my_Option_n( ps, & in ) == FALSE )
+				if ( ! my_Option_n( ps, & in ))
 				{
+					#ifdef DEBUG
+					IExec->DebugPrintF( "%s:%04d: Error\n", __FILE__, __LINE__ );
+					#endif
 					goto bailout;
 				}
 
@@ -503,20 +558,23 @@ S32 val;
 
 				stat = my_writechar( ps, & in, in.Conversion_Type );
 
-				if ( stat < 0 )
+				if ( stat == MWS_Error )
 				{
+					#ifdef DEBUG
+					IExec->DebugPrintF( "%s:%04d: Error\n", __FILE__, __LINE__ );
+					#endif
 					goto bailout;
 				}
 
-				if ( stat > 0 )
+				if ( stat == MWS_Full )
 				{
+					// Buffer full, we are done
 					goto done;
 				}
 
 				continue;
 			}
 		}
-
 
 //		  /**/ if ( in.Conversion_Type == 'a' )
 //		  {
@@ -620,41 +678,53 @@ S32 val;
 
 					stat = my_writechar( ps, & in, in.prefix[i] );
 
-					if ( stat < 0 )
+					if ( stat == MWS_Error )
 					{
+						#ifdef DEBUG
+						IExec->DebugPrintF( "%s:%04d: Error\n", __FILE__, __LINE__ );
+						#endif
 						goto bailout;
 					}
 
-					if ( stat > 0 )
+					if ( stat == MWS_Full )
 					{
+						// Buffer full, we are done
 						goto done;
 					}
 				}
 			}
 
+			if ( in.output_len )
 			{
 				stat = my_writestring( ps, & in, in.output_buffer, in.output_len );
 
-				if ( stat < 0 )
+				if ( stat == MWS_Error )
 				{
+					#ifdef DEBUG
+					IExec->DebugPrintF( "%s:%04d: Error\n", __FILE__, __LINE__ );
+					#endif
 					goto bailout;
 				}
 
-				if ( stat > 0 )
+				if ( stat == MWS_Full )
 				{
 					goto done;
 				}
 			}
 
+			if ( in.num_trailing_zeroes )
 			{
 				stat = my_writefill( ps, & in, '0', in.num_trailing_zeroes );
 
-				if ( stat < 0 )
+				if ( stat == MWS_Error )
 				{
+					#ifdef DEBUG
+					IExec->DebugPrintF( "%s:%04d: Error\n", __FILE__, __LINE__ );
+					#endif
 					goto bailout;
 				}
 
-				if ( stat > 0 )
+				if ( stat == MWS_Full )
 				{
 					goto done;
 				}
@@ -666,13 +736,17 @@ S32 val;
 			{
 				stat = my_writechar( ps, & in, in.trail_string[i] );
 
-				if ( stat < 0 )
+				if ( stat == MWS_Error )
 				{
+					#ifdef DEBUG
+					IExec->DebugPrintF( "%s:%04d: Error\n", __FILE__, __LINE__ );
+					#endif
 					goto bailout;
 				}
 
-				if ( stat > 0 )
+				if ( stat == MWS_Full )
 				{
+					// Buffer full, we are done
 					goto done;
 				}
 
@@ -684,12 +758,15 @@ S32 val;
 				   space as the fill character. */
 				stat = my_writefill( ps, & in, ' ', in.minimum_field_width - in.output_len );
 
-				if ( stat < 0 )
+				if ( stat == MWS_Error )
 				{
+					#ifdef DEBUG
+					IExec->DebugPrintF( "%s:%04d: Error\n", __FILE__, __LINE__ );
+					#endif
 					goto bailout;
 				}
 
-				if ( stat > 0 )
+				if ( stat == MWS_Full )
 				{
 					goto done;
 				}
@@ -697,10 +774,13 @@ S32 val;
 		}
 		else
 		{
-			/* If we have to add the prefix later, make sure that
-			   we don't add too many fill characters in front of
-			   it now. */
-			if ( in.prefix != NULL )
+			/* 
+			** If we have to add the prefix later, make sure that
+			*'we don't add too many fill characters in front of
+			** it now. 
+			*/
+
+			if ( in.prefix )
 			{
 				for( S32 i = 0 ; in.prefix[i] != '\0' ; i++ )
 				{
@@ -711,13 +791,17 @@ S32 val;
 					{
 						stat = my_writechar( ps, & in, in.prefix[i] );
 
-						if ( stat < 0 )
+						if ( stat == MWS_Error )
 						{
+							#ifdef DEBUG
+							IExec->DebugPrintF( "%s:%04d: Error\n", __FILE__, __LINE__ );
+							#endif
 							goto bailout;
 						}
 
-						if ( stat > 0 )
+						if ( stat == MWS_Full )
 						{
+							// Buffer full, we are done
 							goto done;
 						}
 					}
@@ -730,81 +814,108 @@ S32 val;
 				}
 			}
 
-			in.trail_string_len = Self->string_strlen( in.trail_string );
+			if ( in.trail_string[0] )
+			{
+				in.trail_string_len = Self->string_strlen( in.trail_string );
+			}
+			else
+			{
+				in.trail_string_len = 0;
+			}
 
 			in.minimum_field_width -= in.num_trailing_zeroes + in.trail_string_len;
 
 			{
 				stat = my_writefill( ps, & in, in.Fill_Character, in.minimum_field_width - in.output_len );
 
-				if ( stat < 0 )
+				if ( stat == MWS_Error )
 				{
+					#ifdef DEBUG
+					IExec->DebugPrintF( "%s:%04d: Error\n", __FILE__, __LINE__ );
+					#endif
 					goto bailout;
 				}
 
-				if ( stat > 0 )
+				if ( stat == MWS_Full )
 				{
+					// Buffer full, we are done
 					goto done;
 				}
 			}
 
 			/* If we still have a sign character to add, do it here. */
 
-			if ( in.prefix != NULL )
+			if ( in.prefix )
 			{
 				for( S32 i=0 ; in.prefix[i] ; i++ )
 				{
 					stat = my_writechar( ps, & in, in.prefix[i] );
 
-					if ( stat < 0 )
+					if ( stat == MWS_Error )
 					{
+						#ifdef DEBUG
+						IExec->DebugPrintF( "%s:%04d: Error\n", __FILE__, __LINE__ );
+						#endif
 						goto bailout;
 					}
 
-					if ( stat > 0 )
+					if ( stat == MWS_Full )
 					{
+						// Buffer full, we are done
 						goto done;
 					}
 				}
 			}
 
+			if ( in.output_len )
 			{
 				stat = my_writestring( ps, & in, in.output_buffer, in.output_len );
 
-				if ( stat < 0 )
+				if ( stat == MWS_Error )
 				{
+					#ifdef DEBUG
+					IExec->DebugPrintF( "%s:%04d: Error\n", __FILE__, __LINE__ );
+					#endif
 					goto bailout;
 				}
 
-				if ( stat > 0 )
+				if ( stat == MWS_Full )
 				{
 					goto done;
 				}
 			}
 
+			if ( in.num_trailing_zeroes )
 			{
 				stat = my_writefill( ps, & in, '0', in.num_trailing_zeroes );
 
-				if ( stat < 0 )
+				if ( stat == MWS_Error )
 				{
+					#ifdef DEBUG
+					IExec->DebugPrintF( "%s:%04d: Error\n", __FILE__, __LINE__ );
+					#endif
 					goto bailout;
 				}
 
-				if ( stat > 0 )
+				if ( stat == MWS_Full )
 				{
 					goto done;
 				}
 			}
 
+			if ( in.trail_string_len )
 			{
 				stat = my_writestring( ps, & in, in.trail_string, in.trail_string_len );
 
-				if ( stat < 0 )
+				if ( stat == MWS_Error )
 				{
+					#ifdef DEBUG
+					IExec->DebugPrintF( "%s:%04d: Error\n", __FILE__, __LINE__ );
+					#endif
 					goto bailout;
 				}
 
-				if ( stat > 0 )
+				if ( stat == MWS_Full )
 				{
 					goto done;
 				}
@@ -815,26 +926,36 @@ S32 val;
 done:
 
 	if ( ! ps->ps_Stream )
+//	if ( ps->ps_Buffer )	// ps_Buffer is null when counting
 	{
 		stat = my_writechar( ps, & in, '\0' );
 
-		if ( stat < 0 )
+		if ( stat == MWS_Error )
 		{
+			#ifdef DEBUG
+			IExec->DebugPrintF( "%s:%04d: Error\n", __FILE__, __LINE__ );
+			#endif
 			goto bailout;
 		}
+
+		// make snprintf/vsnprintf do the adjusting
+		// NUL char should not be counted
+		//ps->ps_Written--;
 	}
 
 	retval = ps->ps_Written;
 
 bailout:
 
+//	IExec->DebugPrintF( "EEEEEE2 : ps_Written %ld\n", retval );
+
 	if ( ps )
 	{
+		ps->ps_Written = retval;
+
 		if ( ps->ps_Stream )
 		{
 			Self->stdio_funlockfile( (PTR) ps->ps_Stream );
 		}
-
-		ps->ps_Result = retval;
 	}
 }

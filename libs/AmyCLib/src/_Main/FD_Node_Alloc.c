@@ -42,7 +42,7 @@
 // --
 // File Descriptor
 
-PTR AMYFUNC _generic__Priv_FD_Alloc( struct AmyCLibIFace *Self, U32 ID )
+PTR AMYFUNC _generic__Priv_FD_Alloc( struct AmyCLibPrivIFace *Self, U32 ID )
 {
 struct PrivFile *file;
 struct libData *data;
@@ -91,7 +91,7 @@ bailout:
 
 	IExec->ReleaseSemaphore( & data->FD_Semaphore );
 
-	IExec->DebugPrintF( "FDAlloc() - File %p, Error %ld\n", file, error );
+//	IExec->DebugPrintF( "FDAlloc() - File %p, Error %ld\n", file, error );
 
 	if (( error ) && ( file ))
 	{

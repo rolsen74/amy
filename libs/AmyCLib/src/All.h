@@ -22,9 +22,10 @@
 
 #include <proto/dos.h>
 #include <proto/exec.h>
-#include <proto/AmyCLib.h>
 #include <proto/locale.h>
 #include <proto/intuition.h>
+#include <proto/utility.h>
+#include <proto/AmyCLibPriv.h>
 
 #include <dos/obsolete.h>
 //#include <intuition/intuition.h>
@@ -111,7 +112,7 @@ struct libBase
 struct libData
 {
 //	  struct ReactiveIFace *      IReactive;
-	// struct AmyCLibIFace *	    IRA_C;
+	// struct AmyCLibPrivIFace *	    IRA_C;
 
 	// struct Library *		    SocketBase;
 	// struct SocketIFace *	    ISocket;
@@ -184,7 +185,7 @@ struct libData
 	// struct lconv *				buf_LocaleConv;				// locale /localeconv
 	signal_handler_t *			buf_SignalHandlers;			// signal / signal
 	// char *						buf_AscTime;				// time / asctime
-	// struct tm *					buf_gmtime;					// time / gmtime
+	struct tm *					buf_gmtime;					// time / gmtime
 	struct tm *					buf_LocalTime;				// time / localtime
 	// char *						buf_Tmpnam;					// stdio / tmpnam
 	// char *						buf_error_message;			// string / strerror_r
@@ -271,12 +272,12 @@ struct stat;
 struct PrivFile;
 struct PrivInterface
 {
-	void	( *pi_Close 	) ( struct AmyCLibIFace *, struct PrivFile *file );
-	S64		( *pi_Read		) ( struct AmyCLibIFace *, struct PrivFile *file, PTR buf, S32 size );
-	S64		( *pi_Write 	) ( struct AmyCLibIFace *, struct PrivFile *file, PTR buf, S32 size );
-	S32		( *pi_Seek		) ( struct AmyCLibIFace *, struct PrivFile *file, S64 pos, S32 mode );
-	S64		( *pi_GetPos	) ( struct AmyCLibIFace *, struct PrivFile *file );
-	S32		( *pi_Examine	) ( struct AmyCLibIFace *, struct PrivFile *file, struct stat *stat );
+	void	( *pi_Close 	) ( struct AmyCLibPrivIFace *, struct PrivFile *file );
+	S64		( *pi_Read		) ( struct AmyCLibPrivIFace *, struct PrivFile *file, PTR buf, S32 size );
+	S64		( *pi_Write 	) ( struct AmyCLibPrivIFace *, struct PrivFile *file, PTR buf, S32 size );
+	S32		( *pi_Seek		) ( struct AmyCLibPrivIFace *, struct PrivFile *file, S64 pos, S32 mode );
+	S64		( *pi_GetPos	) ( struct AmyCLibPrivIFace *, struct PrivFile *file );
+	S32		( *pi_Examine	) ( struct AmyCLibPrivIFace *, struct PrivFile *file, struct stat *stat );
 };
 
 // --
@@ -294,7 +295,7 @@ struct PrintStruct
 	S32							ps_Size;
 
 	// --
-	S32							ps_Result;		// -1 == Error, or Written Bytes
+	S32							ps_Written;		// -1 == Error, or Written Bytes
 };
 
 // --
@@ -311,11 +312,8 @@ struct ScanStruct
 	const char *				ss_Buffer;
 
 	// --
-	S32							ss_Result;		// Handled
-
-	//	const char *				Source;
-//	const char *				Format;
-//	struct PrivFile *			Stream;
+	S32							ss_Error;
+	S32							ss_Handled;
 };
 
 // --
@@ -335,7 +333,7 @@ struct PrivFile
 
 	S32							pf_ArrayPos;				// Array Pos number
 
-	// //	  S64						  pf_FilePosition;
+	//	S64						pf_FilePosition;
 
 	U8 *						pf_Buffer;					// Active Buffer
 	S32							pf_BufferSize;				// Size of allocated buffer
@@ -347,7 +345,7 @@ struct PrivFile
 	// STRPTR						pf_TempFileName;
 	// BPTR						pf_TempDirLock;
 
-	union
+	union 
 	{
 		BPTR					pf_File;
 		long					pf_Socket;
@@ -389,7 +387,7 @@ PTR _manager_Open( struct LibraryManagerInterface *Self, U32 version );
 PTR _manager_Close( struct LibraryManagerInterface *Self );
 PTR _manager_Expunge( struct LibraryManagerInterface *Self );
 
-U32 AMYFUNC _Main_Expunge( struct AmyCLibIFace *Self );
+U32 AMYFUNC _Main_Expunge( struct AmyCLibPrivIFace *Self );
 
 // --
 

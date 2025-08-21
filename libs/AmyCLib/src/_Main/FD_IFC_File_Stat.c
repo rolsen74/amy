@@ -42,7 +42,7 @@
 // --
 // File Descriptor
 
-static S32 myStat( struct AmyCLibIFace *Self, struct PrivFile *file, struct stat *stat )
+static S32 myStat( struct AmyCLibPrivIFace *Self, struct PrivFile *file, struct stat *stat )
 {
 struct ExamineData *ed;
 S32 retval;

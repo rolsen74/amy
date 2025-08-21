@@ -8,6 +8,8 @@ This repository contains several projects primarily targeting **AmigaOS 4**, all
 
 ## Contents
 
+- `classes/Application` – BSD-licensed library
+- `classes/Directory` – BSD-licensed library
 - `libs/AmyApplication` – BSD-licensed library
 - `libs/AmyBlanker` – BSD-licensed library
 - `libs/AmyCLib` – C runtime library (BSD-3-Clause)
@@ -15,6 +17,9 @@ This repository contains several projects primarily targeting **AmigaOS 4**, all
 - `libs/AmySDL` – Refactored SDL v1 code (LGPL-2.1)
 - `libs/AmySysLog` – BSD-licensed library
 - `libs/AmyZLib` – zlib-licensed library
+- `libs/Reactive` – BSD-licensed library
+- `programs/D` – BSD-licensed library
+- `programs/rTestCase` – BSD-licensed library
 
 ## Licensing
 

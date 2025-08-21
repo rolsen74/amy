@@ -41,12 +41,12 @@
 
 // --
 
-int AMYFUNC _locale_ctype_toupper( struct AmyCLibIFace *Self, int c )
+int AMYFUNC _locale_ctype_toupper( struct AmyCLibPrivIFace *Self, int c )
 {
 struct libData *data;
 int retval;
 
-	IExec->DebugPrintF( "_locale_ctype_toupper\n" );
+//	IExec->DebugPrintF( "_locale_ctype_toupper : c %ld\n", c );
 
 	data = (PTR)( (U32) Self - Self->Data.NegativeSize );
 

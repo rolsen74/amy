@@ -42,7 +42,7 @@
 // --
 
 void AMYFUNC _generic_assert_assert(
-	struct AmyCLibIFace *Self,
+	struct AmyCLibPrivIFace *Self,
 	const char *filename,
 	int linenumber,
 	const char *function,

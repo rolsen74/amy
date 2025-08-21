@@ -15,10 +15,12 @@
 // and gcc's build memcmp do not like NULL Pointers
 // so use -fno-builtin or remove NULL_PTR_TEST
 
-STR	txt1 = "rene olsen";
-STR	txt2 = "rene olsen";
-STR	txt3 = "rene Olsen";
-STR	txt4 = "rene olsen dk";
+STR	USED txt1 = "rene olsen  !!";
+STR	USED txt2 = "rene olsen  ##";
+STR	txt3 = "rene Olsen  &&";
+STR	txt4 = "rene olsen  dk";
+STR txt5A = "1234A";
+STR txt5B = "1234B";
 
 int main( int argc, char **argv )
 {
@@ -27,95 +29,121 @@ int error;
 
 	error = 10;
 
+
+
+
 	// Null Pointer test
 
 	#ifdef NULL_PTR_TEST
-
-IExec->DebugPrintF( "memcmp 1\n" );
 
 	stat = memcmp( NULL, txt1, 10 );
 
 	if ( stat != 0 )
 	{
-		IExec->DebugPrintF( "memcmp test 1 - failed\n" );
+		IExec->DebugPrintF( "%s:%04d: memcmp test 1 : Failed : Stat %ld :\n", __FILE__, __LINE__, stat );
 		goto bailout;
 	}
-
-IExec->DebugPrintF( "memcmp 2\n" );
 
 	stat = memcmp( txt1, NULL, 10 );
 
 	if ( stat != 0 )
 	{
-		IExec->DebugPrintF( "memcmp test 2 - failed\n" );
+		IExec->DebugPrintF( "%s:%04d: memcmp test 2 : Failed : Stat %ld :\n", __FILE__, __LINE__, stat );
 		goto bailout;
 	}
-
-IExec->DebugPrintF( "memcmp 3\n" );
 
 	stat = memcmp( NULL, NULL, 10 );
 
 	if ( stat != 0 )
 	{
-		IExec->DebugPrintF( "memcmp test 3 - failed\n" );
+		IExec->DebugPrintF( "%s:%04d: memcmp test 3 : Failed : Stat %ld :\n", __FILE__, __LINE__, stat );
 		goto bailout;
 	}
 
 	#endif
 
-	// Same input
 
-IExec->DebugPrintF( "memcmp 4\n" );
+
+	// --
+	// Same input pointers
 
 	stat = memcmp( txt1, txt1, 10 );
 
 	if ( stat != 0 )
 	{
-		IExec->DebugPrintF( "memcmp test 4 - failed\n" );
+		IExec->DebugPrintF( "%s:%04d: memcmp test 4 : Failed : Stat %ld :\n", __FILE__, __LINE__, stat );
 		goto bailout;
 	}
 
 	// --
-
-IExec->DebugPrintF( "memcmp 5\n" );
+	// Same strings
 
 	stat = memcmp( txt1, txt2, 10 );
 
 	if ( stat != 0 )
 	{
-		IExec->DebugPrintF( "memcmp test 5 - failed\n" );
+		IExec->DebugPrintF( "%s:%04d: memcmp test 5 : Failed : Stat %ld :\n", __FILE__, __LINE__, stat );
 		goto bailout;
 	}
 
-IExec->DebugPrintF( "memcmp 6\n" );
+	// --
+	// Diffrent Strings
 
 	stat = memcmp( txt1, txt3, 10 );
 
-	if ( stat < 0 )
+	if ( stat <= 0 )
 	{
-		IExec->DebugPrintF( "memcmp test 6 - failed\n" );
+		IExec->DebugPrintF( "%s:%04d: memcmp test 6 : Failed : Stat %ld :\n", __FILE__, __LINE__, stat );
 		goto bailout;
 	}
-
-IExec->DebugPrintF( "memcmp 7\n" );
 
 	stat = memcmp( txt3, txt2, 10 );
 
-	if ( stat > 0 )
+	if ( stat >= 0 )
 	{
-		IExec->DebugPrintF( "memcmp test 7 - failed\n" );
+		IExec->DebugPrintF( "%s:%04d: memcmp test 7 : Failed : Stat %ld :\n", __FILE__, __LINE__, stat );
 		goto bailout;
 	}
 
-IExec->DebugPrintF( "memcmp 8\n" );
+	// --
+	// First 4 chars are the same
+	// Make sure we don't test too much
 
-	stat = memcmp( txt2, txt4, 10 );
+	stat = memcmp( txt5A, txt5B, 4 );
 
-	if ( stat > 0 )
+	if ( stat )
 	{
-		IExec->DebugPrintF( "memcmp test 8 - failed\n" );
+		IExec->DebugPrintF( "%s:%04d: memcmp test 8 : Failed : Stat %ld :\n", __FILE__, __LINE__, stat );
 		goto bailout;
 	}
+
+	// --
+	// First 4 chars are the same, but 5th is diff
+	// Make sure we don't test too little
+	// 
+
+	stat = memcmp( txt5A, txt5B, 5 );
+
+	if ( stat >= 0 )
+	{
+		IExec->DebugPrintF( "%s:%04d: memcmp test 9 : Failed : Stat %ld :\n", __FILE__, __LINE__, stat );
+		goto bailout;
+	}
+
+	// --
+	// First 4 chars are the same, but 5th is diff, swapped pointers
+	// Make sure we don't test too little
+	// 
+
+	stat = memcmp( txt5B, txt5A, 5 );
+
+	if ( stat <= 0 )
+	{
+		IExec->DebugPrintF( "%s:%04d: memcmp test 10 : Failed : Stat %ld :\n", __FILE__, __LINE__, stat );
+		goto bailout;
+	}
+
+	// --
 
 	error = 0;
 
