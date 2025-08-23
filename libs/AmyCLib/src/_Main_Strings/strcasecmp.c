@@ -52,7 +52,7 @@ int c2;
 
 	// --
 
-	IExec->DebugPrintF( "_generic_strings_strcasecmp\n" );
+	DOFUNCTIONPRINTF( IExec->DebugPrintF( "_generic_strings_strcasecmp\n" ); );
 
 	DOFUNCTIONLOG( LOG_FUNC_strcasecmp );
 

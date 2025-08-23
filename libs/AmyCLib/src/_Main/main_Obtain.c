@@ -13,7 +13,7 @@
 
 U32 AMYFUNC _Main_Obtain( struct AmyCLibPrivIFace *Self )
 {
-	IExec->DebugPrintF( "AmyCLib : _Main_Obtain\n" );
+	DOFUNCTIONPRINTF( IExec->DebugPrintF( "AmyCLib : _Main_Obtain\n" ); );
 
 	Self->Data.RefCount++;
 

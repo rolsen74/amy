@@ -56,7 +56,7 @@ S32 cap;
 S32 len;
 S32 c;
 
-	IExec->DebugPrintF( "my_Scan_Arg_Integer\n" );
+	DODEBUGPRINTF( IExec->DebugPrintF( "my_Scan_Arg_Integer\n" ); );
 
 	retval = FALSE;
 
@@ -136,7 +136,7 @@ S32 c;
 	// NUL terminator
 	buf[len] = 0;
 
-	IExec->DebugPrintF( "IntBuf: %s\n", buf );
+//	IExec->DebugPrintF( "IntBuf: %s\n", buf );
 
 	// -- 
 	// Handle Arg is not Suppressed
@@ -145,7 +145,7 @@ S32 c;
 	{
 		v = Self->inttypes_strtoimax( buf, NULL, 10 );
 
-		IExec->DebugPrintF( "Val: %lld, v %ld\n", v, (int)v );
+//		IExec->DebugPrintF( "Val: %lld, v %ld\n", v, (int)v );
 
 		*va_arg( in->args, int * ) = (int) v;
 

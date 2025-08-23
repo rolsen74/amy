@@ -85,7 +85,7 @@ U8 *m2;
 		}
 	}
 
-	IExec->DebugPrintF( "_generic_string_strcmp : Str %p : Str %p : Retval %ld :\n", s1, s2, retval );
+	DOFUNCTIONPRINTF( IExec->DebugPrintF( "_generic_string_strcmp : Str %p : Str %p : Retval %ld :\n", s1, s2, retval ); );
 
 	return( retval );
 }

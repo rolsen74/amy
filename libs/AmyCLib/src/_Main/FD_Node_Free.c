@@ -44,17 +44,17 @@
 
 // was AMYFUNC _generic__Priv_FDInit
 
-S32 AMYFUNC _generic__Priv_FD_Free( struct AmyCLibPrivIFace *Self, PTR file_ptr )
+S32 AMYFUNC _generic__Priv_FD_Free( struct AmyCLibPrivIFace *Self, struct PrivFile *file )
 {
-struct PrivFile *file;
+//struct PrivFile *file;
 struct libData *data;
 S32 retval;
 
-	file = file_ptr;
+//	file = file_ptr;
 
 	retval = FALSE;
 
-	IExec->DebugPrintF( "_generic__Priv_FD_Free : File %p\n", file );
+	DOFUNCTIONPRINTF( IExec->DebugPrintF( "_generic__Priv_FD_Free : File %p, Fildes %ld\n", file, (file)?file->pf_ArrayPos:-1 ); );
 
 	data = (PTR)( (U32) Self - Self->Data.NegativeSize );
 
@@ -62,19 +62,20 @@ S32 retval;
 
 	if (( ! file ) || ( file->pf_StructID != ID_PRIVFILE ))
 	{
-		IExec->DebugPrintF( "%s:%04ld: Invalid file id\n", __FILE__, __LINE__ );
+		IExec->DebugPrintF( "%s:%04ld: Invalid StructID\n", __FILE__, __LINE__ );
 		goto bailout;
 	}
 
 	if ( file->pf_Locks > 0 )
 	{
-		IExec->DebugPrintF( "_generic__Priv_FD_Free : Still have lock %ld\n", file->pf_Locks );
+		DOFUNCTIONPRINTF( IExec->DebugPrintF( "_generic__Priv_FD_Free : Still have lock %ld\n", file->pf_Locks ); );
 		file->pf_Expunge = TRUE;
 		goto bailout;
 	}
 
-	// Socket handles start at Zero
-	if (( file->pf_Handle.pf_Socket < 0 ) && ( ! file->pf_DontFreeHandle ))
+	// Socket ID handles start at Zero
+	if ((( file->pf_FileType == ID_SOCKET ) && ( file->pf_Handle.pf_Socket >= 0 ))
+	||	(( file->pf_FileType != ID_SOCKET ) && ( file->pf_Handle.pf_Socket != 0 )))
 	{
 		if ( ! file->pf_Interface.pi_Close )
 		{

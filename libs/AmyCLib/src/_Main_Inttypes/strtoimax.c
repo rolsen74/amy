@@ -62,7 +62,7 @@ int neg;
 int any;
 int c;
 
-	IExec->DebugPrintF( "_generic_inttypes_strtoimax : Str '%s', Ptr %p, Base %ld\n", nptr, endptr, base );
+	DOFUNCTIONPRINTF( IExec->DebugPrintF( "_generic_inttypes_strtoimax : Str '%s', Ptr %p, Base %ld\n", nptr, endptr, base ); );
 
 	DOFUNCTIONLOG( LOG_FUNC_strtoimax );
 
@@ -76,7 +76,7 @@ int c;
 	if (( base < 0 ) || ( base == 1 ) || ( base > 36 ))
 	{
 		#ifdef DEBUG
-		IExec->DebugPrintF( "_generic_inttypes_strtoimax : Invalid Base\n" );
+		DOFUNCTIONPRINTF( IExec->DebugPrintF( "_generic_inttypes_strtoimax : Invalid Base\n" ); );
 		#endif
 
 		if ( endptr )
@@ -230,7 +230,7 @@ int c;
 bailout:
 
 	#ifdef DEBUG
-	IExec->DebugPrintF( "_generic_inttypes_strtoimax : Retval %lld\n", retval );
+	DOFUNCTIONPRINTF( IExec->DebugPrintF( "_generic_inttypes_strtoimax : Retval %lld\n", retval );
 	#endif
 
 	return( retval );

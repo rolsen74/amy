@@ -46,7 +46,7 @@
 
 char * AMYFUNC _generic_string_strcpy( struct AmyCLibPrivIFace *Self, char *dst, const char *src )
 {
-	IExec->DebugPrintF( "_generic_string_strcpy : Src %p : Dst %p :\n", src, dst );
+	DOFUNCTIONPRINTF( IExec->DebugPrintF( "_generic_string_strcpy : Src %p : Dst %p :\n", src, dst ); );
 
 	DOFUNCTIONLOG( LOG_FUNC_strcpy );
 

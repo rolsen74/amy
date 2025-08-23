@@ -44,13 +44,15 @@
 
 static void myClose( struct AmyCLibPrivIFace *Self UNUSED, struct PrivFile *file )
 {
-	IExec->DebugPrintF( "FD_IFC_File_Close\n" );
+	DOFUNCTIONPRINTF( IExec->DebugPrintF( "FD_IFC_File_Close : File %p\n", file ); );
 
 	if (( ! file ) || ( file->pf_StructID != ID_PRIVFILE ))
 	{
-		IExec->DebugPrintF( "%s:%04ld: Invalid file id\n", __FILE__, __LINE__ );
+		IExec->DebugPrintF( "%s:%04ld: Invalid StructID\n", __FILE__, __LINE__ );
 		goto bailout;
 	}
+
+//	IExec->DebugPrintF( "FD_IFC_File_Close : pf_File %p\n", file->pf_Handle.pf_File );
 
 	if ( file->pf_Handle.pf_File )
 	{
@@ -59,6 +61,8 @@ static void myClose( struct AmyCLibPrivIFace *Self UNUSED, struct PrivFile *file
 	}
 
 bailout:
+
+//	IExec->DebugPrintF( "FD_IFC_File_Close : 99\n" );
 
 	return;
 }

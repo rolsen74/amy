@@ -13,7 +13,7 @@
 
 void AMYFUNC _generic_stdlib_free( struct AmyCLibPrivIFace *Self, void *mem )
 {
-	IExec->DebugPrintF( "_generic_stdlib_free : Mem %p\n", mem );
+	DOFUNCTIONPRINTF( IExec->DebugPrintF( "_generic_stdlib_free : Mem %p\n", mem ); );
 
 	DOFUNCTIONLOG( LOG_FUNC_free );
 

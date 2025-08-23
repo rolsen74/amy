@@ -46,7 +46,7 @@
 
 void * AMYFUNC _generic_string_memmove( struct AmyCLibPrivIFace *Self, void *dst, const void *src, size_t len )
 {
-	IExec->DebugPrintF( "_generic_string_memmove : Src %p, Dst %p, Len %lu\n", src, dst, len );
+	DOFUNCTIONPRINTF( IExec->DebugPrintF( "_generic_string_memmove : Src %p, Dst %p, Len %lu\n", src, dst, len ); );
 
 	DOFUNCTIONLOG( LOG_FUNC_memmove );
 

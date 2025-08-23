@@ -42,18 +42,18 @@
 // --
 // File Descriptor
 
-void AMYFUNC _generic__Priv_FDUnlock( struct AmyCLibPrivIFace *Self, PTR file_ptr )
+void AMYFUNC _generic__Priv_FDUnlock( struct AmyCLibPrivIFace *Self, struct PrivFile *file )
 {
-struct PrivFile *file;
+//struct PrivFile *file;
 struct libData *data;
 
-	file = file_ptr;
+//	file = file_ptr;
 
-	IExec->DebugPrintF( "FDUnlock 1\n" );
+	DOFUNCTIONPRINTF( IExec->DebugPrintF( "FDUnlock 1\n" ); );
 
 	if (( ! file ) || ( file->pf_StructID != ID_PRIVFILE ))
 	{
-		IExec->DebugPrintF( "%s:%04ld: Invalid file id\n", __FILE__, __LINE__ );
+		IExec->DebugPrintF( "%s:%04ld: Invalid StructID\n", __FILE__, __LINE__ );
 		goto bailout;
 	}
 

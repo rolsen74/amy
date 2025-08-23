@@ -16,7 +16,7 @@ struct MemPoolHeader * AMYFUNC _generic__Priv_Mem_CreatePool( struct AmyCLibPriv
 struct MemPoolHeader *handle;
 struct libData *data;
 
-	IExec->DebugPrintF( "_generic__Priv_Mem_CreatePool\n" );
+	DOFUNCTIONPRINTF( IExec->DebugPrintF( "_generic__Priv_Mem_CreatePool\n" ); );
 
 	data = (PTR)( (U32) Self - Self->Data.NegativeSize );
 

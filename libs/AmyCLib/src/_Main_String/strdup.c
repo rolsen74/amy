@@ -19,7 +19,7 @@ char *str;
 
 	// --
 
-	IExec->DebugPrintF( "_generic_string_strdup\n" );
+	DOFUNCTIONPRINTF( IExec->DebugPrintF( "_generic_string_strdup\n" ); );
 
 	DOFUNCTIONLOG( LOG_FUNC_strdup );
 

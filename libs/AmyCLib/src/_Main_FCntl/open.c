@@ -48,7 +48,7 @@ struct PrivFile *file;
 struct libData *data;
 int retval;
 
-	IExec->DebugPrintF( "_generic_fcntl_open\n" );
+	DOFUNCTIONPRINTF( IExec->DebugPrintF( "_generic_fcntl_open\n" ); );
 
 	DOFUNCTIONLOG( LOG_FUNC_open );
 
@@ -98,7 +98,7 @@ int retval;
 
 		default:
 		{
-			IExec->DebugPrintF( "_generic_fcntl_open : Unknown mode\n" );
+			DOFUNCTIONPRINTF( IExec->DebugPrintF( "_generic_fcntl_open : Unknown mode\n" ); );
 			data->buf_PublicData->ra_ErrNo = EFAULT;
 			goto bailout;
 		}
@@ -110,7 +110,7 @@ int retval;
 
 	if ( ! file )
 	{
-		IExec->DebugPrintF( "_generic_fcntl_open : Priv_FD_Init failed\n" );
+		DOFUNCTIONPRINTF( IExec->DebugPrintF( "_generic_fcntl_open : Priv_FD_Init failed\n" ); );
 		goto bailout;
 	}
 
@@ -120,7 +120,7 @@ int retval;
 
 bailout:
 
-	IExec->DebugPrintF( "_generic_fcntl_open : Retval %ld\n", retval );
+	DOFUNCTIONPRINTF( IExec->DebugPrintF( "_generic_fcntl_open : Retval %ld\n", retval ); );
 
 	return( retval );
 }

@@ -65,7 +65,7 @@ U64 v;
 
 	/**/ if ( in->Parameter_Size == Parameter_Size_Byte )
 	{
-		IExec->DebugPrintF( "Parameter_Size_Byte\n" );
+		DODEBUGPRINTF( IExec->DebugPrintF( "Parameter_Size_Byte\n" ); );
 
 		S8 v8_integer;
 
@@ -75,7 +75,7 @@ U64 v;
 	}
 	else if ( in->Parameter_Size == Parameter_Size_Short )
 	{
-		IExec->DebugPrintF( "Parameter_Size_Short\n" );
+		DODEBUGPRINTF( IExec->DebugPrintF( "Parameter_Size_Short\n" ); );
 
 		S16 v16_integer;
 
@@ -85,7 +85,7 @@ U64 v;
 	}
 	else if ( in->Parameter_Size == Parameter_Size_Long_Long )
 	{
-		IExec->DebugPrintF( "Parameter_Size_Long_Long\n" );
+		DODEBUGPRINTF( IExec->DebugPrintF( "Parameter_Size_Long_Long\n" ); );
 
 		S64 v64_int;
 
@@ -95,7 +95,7 @@ U64 v;
 	}
 	else if ( in->Parameter_Size == Parameter_Size_Intmax_t )
 	{
-		IExec->DebugPrintF( "Parameter_Size_Intmax_t\n" );
+		DODEBUGPRINTF( IExec->DebugPrintF( "Parameter_Size_Intmax_t\n" ); );
 
 		S64 v64_int;
 
@@ -105,7 +105,7 @@ U64 v;
 	}
 	else
 	{
-		IExec->DebugPrintF( "Parameter_Size_Default\n" );
+		DODEBUGPRINTF( IExec->DebugPrintF( "Parameter_Size_Default\n" ); );
 
 		S32 v32_integer;
 

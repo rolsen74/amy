@@ -55,19 +55,19 @@ int AMYFUNC _generic__Priv_FB_Write_Flush_Buffer2( struct AmyCLibPrivIFace *Self
 int last_c;
 int retval;
 
-	IExec->DebugPrintF( "_generic__Priv_FB_Write_Flush_Buffer2\n" );
+	DOFUNCTIONPRINTF( IExec->DebugPrintF( "_generic__Priv_FB_Write_Flush_Buffer2\n" ); );
 
 	retval = -1;
 
 	if (( ! file ) || ( file->pf_StructID != ID_PRIVFILE ))
 	{
-		IExec->DebugPrintF( "%s:%04ld: Invalid file id\n", __FILE__, __LINE__ );
+		IExec->DebugPrintF( "%s:%04ld: Invalid StructID\n", __FILE__, __LINE__ );
 		goto bailout;
 	}
 
 	if ( ! file->pf_Handle.pf_File )
 	{
-		IExec->DebugPrintF( "_generic__Priv_FB_Write_Flush_Buffer2 : NULL Pointer\n" );
+		DOFUNCTIONPRINTF( IExec->DebugPrintF( "_generic__Priv_FB_Write_Flush_Buffer2 : NULL Pointer\n" ); );
 		goto bailout;
 	}
 

@@ -48,6 +48,33 @@
 
 // --
 
+#ifdef __DO_FUNCTION_PRINT__
+
+#define DOFUNCTIONPRINTF(x)		({x})
+
+#else
+
+#define DOFUNCTIONPRINTF(x)
+
+#endif
+
+// --
+
+#ifdef DEBUG
+
+#define DODEBUGPRINTF(x)		({x})
+
+#else
+
+#define DODEBUGPRINTF(x)
+
+#endif
+
+// --
+
+
+// --
+
 #define LIBNAME				"AmyCLib.library"
 #define VERSION				1
 #define REVISION			1

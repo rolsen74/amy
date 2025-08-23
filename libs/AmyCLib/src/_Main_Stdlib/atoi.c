@@ -46,7 +46,7 @@ int AMYFUNC _generic_stdlib_atoi( struct AmyCLibPrivIFace *Self, const char *str
 struct libData *data;
 int retval;
 
-	IExec->DebugPrintF( "_generic_stdlib_atoi\n" );
+	DOFUNCTIONPRINTF( IExec->DebugPrintF( "_generic_stdlib_atoi\n" ); );
 
 	DOFUNCTIONLOG( LOG_FUNC_atoi );
 

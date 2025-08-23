@@ -49,7 +49,7 @@ time_t t;
 
 	retval = -1;
 
-	IExec->DebugPrintF( "_generic_time_time\n" );
+	DOFUNCTIONPRINTF( IExec->DebugPrintF( "_generic_time_time\n" ); );
 
 	DOFUNCTIONLOG( LOG_FUNC_time );
 
@@ -57,7 +57,7 @@ time_t t;
 
 	if ( ! Self->Priv_Convert_DS_to_Time( & ds, & t ))
 	{
-		IExec->DebugPrintF( "_generic_time_time : Convert failed\n" );
+		DOFUNCTIONPRINTF( IExec->DebugPrintF( "_generic_time_time : Convert failed\n" ); );
 		goto bailout;
 	}
 

@@ -318,7 +318,7 @@ S32 c;
 		{
 			case '%': // "%%"
 			{
-				IExec->DebugPrintF( "strftime : %%\n" );
+				DODEBUGPRINTF( IExec->DebugPrintF( "strftime : %%\n" ); );
 
 				if ( myWrite_Char( in, '%' ) == MWS_Error )
 				{
@@ -336,7 +336,7 @@ S32 c;
 			{
 				if ( ! tm )	goto bailout;
 
-				IExec->DebugPrintF( "strftime : H : %ld\n", tm->tm_hour );
+				DODEBUGPRINTF( IExec->DebugPrintF( "strftime : H : %ld\n", tm->tm_hour ); );
 
 				if ( myWrite_02d( in, tm->tm_hour ) == MWS_Error )
 				{
@@ -352,7 +352,7 @@ S32 c;
 			{
 				if ( ! tm )	goto bailout;
 
-				IExec->DebugPrintF( "strftime : M : %ld\n", tm->tm_min );
+				DODEBUGPRINTF( IExec->DebugPrintF( "strftime : M : %ld\n", tm->tm_min ); );
 
 				if ( myWrite_02d( in, tm->tm_min ) == MWS_Error )
 				{
@@ -368,7 +368,7 @@ S32 c;
 			{
 				if ( ! tm )	goto bailout;
 
-				IExec->DebugPrintF( "strftime : S : %ld\n", tm->tm_sec );
+				DODEBUGPRINTF( IExec->DebugPrintF( "strftime : S : %ld\n", tm->tm_sec ); );
 
 				if ( myWrite_02d( in, tm->tm_sec ) == MWS_Error )
 				{
@@ -384,7 +384,7 @@ S32 c;
 			{
 				if ( ! tm )	goto bailout;
 
-				IExec->DebugPrintF( "strftime : Y : %ld\n", tm->tm_year );
+				DODEBUGPRINTF( IExec->DebugPrintF( "strftime : Y : %ld\n", tm->tm_year ); );
 
 				if ( myWrite_Int( in, tm->tm_year+1900 ) == MWS_Error )
 				{
@@ -402,7 +402,7 @@ S32 c;
 			{
 				if ( ! tm )	goto bailout;
 
-				IExec->DebugPrintF( "strftime : a : %ld\n", tm->tm_mon );
+				DODEBUGPRINTF( IExec->DebugPrintF( "strftime : a : %ld\n", tm->tm_mon ); );
 
 				S32 m = tm->tm_wday; // 0..6, Sun=0
 
@@ -422,7 +422,7 @@ S32 c;
 			{
 				if ( ! tm )	goto bailout;
 
-				IExec->DebugPrintF( "strftime : b : %ld\n", tm->tm_mon );
+				DODEBUGPRINTF( IExec->DebugPrintF( "strftime : b : %ld\n", tm->tm_mon ); );
 
 				S32 m = tm->tm_mon; // 0..11
 
@@ -442,7 +442,7 @@ S32 c;
 			{
 				if ( ! tm )	goto bailout;
 
-				IExec->DebugPrintF( "strftime : d : %ld\n", tm->tm_mday );
+				DODEBUGPRINTF( IExec->DebugPrintF( "strftime : d : %ld\n", tm->tm_mday ); );
 
 				if ( myWrite_02d( in, tm->tm_mday ) == MWS_Error )
 				{
@@ -458,7 +458,7 @@ S32 c;
 			{
 				if ( ! tm )	goto bailout;
 
-				IExec->DebugPrintF( "strftime : e : %ld\n", tm->tm_mday );
+				DODEBUGPRINTF( IExec->DebugPrintF( "strftime : e : %ld\n", tm->tm_mday ); );
 
 				if ( myWrite_2d( in, tm->tm_mday ) == MWS_Error )
 				{
@@ -474,7 +474,7 @@ S32 c;
 			{
 				if ( ! tm )	goto bailout;
 
-				IExec->DebugPrintF( "strftime : m : %ld\n", tm->tm_mon );
+				DODEBUGPRINTF( IExec->DebugPrintF( "strftime : m : %ld\n", tm->tm_mon ); );
 
 				if ( myWrite_02d( in, tm->tm_mon+1 ) == MWS_Error )
 				{
@@ -523,8 +523,8 @@ bailout:
 	{
 		// if error and we have a buffer
 		// lets just write a NUL terminator
-//		in->buffer[0] = 0;
-		in->buffer[ in->bufferPos ] = 0;
+		in->buffer[0] = 0;
+//		in->buffer[ in->bufferPos ] = 0;
 	}
 
 	return( retval );
@@ -536,7 +536,7 @@ size_t AMYFUNC _generic_time_strftime( struct AmyCLibPrivIFace *Self, char *s, s
 struct Intern in;
 size_t retval;
 
-	IExec->DebugPrintF( "_generic_time_strftime : Buf %p, Size %ld, Fmt '%s', TM %p\n", s, size, format, timeptr );
+	DOFUNCTIONPRINTF( IExec->DebugPrintF( "_generic_time_strftime : Buf %p, Size %ld, Fmt '%s', TM %p\n", s, size, format, timeptr ); );
 
 	DOFUNCTIONLOG( LOG_FUNC_strftime );
 
@@ -556,7 +556,7 @@ size_t retval;
 		retval = 0;
 	}
 
-	IExec->DebugPrintF( "_generic_time_strftime : Exit : Retval %ld, Buf %s\n", retval, s );
+	DOFUNCTIONPRINTF( IExec->DebugPrintF( "_generic_time_strftime : Exit : Retval %ld, Buf %s\n", retval, s ); );
 
 	return( retval );
 }

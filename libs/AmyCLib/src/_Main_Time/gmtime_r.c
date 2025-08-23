@@ -49,7 +49,7 @@ time_t *t;
 
 	retval = NULL;
 
-	IExec->DebugPrintF( "_generic_time_gmtime_r : Time %p\n", time );
+	DOFUNCTIONPRINTF( IExec->DebugPrintF( "_generic_time_gmtime_r : Time %p\n", time ); );
 
 	DOFUNCTIONLOG( LOG_FUNC_gmtime_r );
 

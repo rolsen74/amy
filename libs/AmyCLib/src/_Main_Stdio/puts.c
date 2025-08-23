@@ -51,7 +51,7 @@ int c;
 
 	// --
 
-	IExec->DebugPrintF( "_generic_stdio_puts : str '%s'\n", str );
+	DOFUNCTIONPRINTF( IExec->DebugPrintF( "_generic_stdio_puts : str '%s'\n", str ); );
 
 	DOFUNCTIONLOG( LOG_FUNC_puts );
 
@@ -72,7 +72,7 @@ int c;
 
 	if ( ! file )
 	{
-		IExec->DebugPrintF( "_generic_stdio_puts : NULL Pointer\n" );
+		DOFUNCTIONPRINTF( IExec->DebugPrintF( "_generic_stdio_puts : NULL Pointer\n" ); );
 		data->buf_PublicData->ra_ErrNo = EBADF;
 		goto bailout;
 	}
@@ -95,7 +95,7 @@ int c;
 	{
 		if ( ! Self->Priv_FB_Read_Drop_Buffer( file ))
 		{
-			IExec->DebugPrintF( "_generic_stdio_puts : Error flushing buffer\n" );
+			DOFUNCTIONPRINTF( IExec->DebugPrintF( "_generic_stdio_puts : Error flushing buffer\n" ); );
 			goto bailout;
 		}
 	}
@@ -145,7 +145,7 @@ bailout:
 		{
 			if ( Self->Priv_FB_Write_Flush_Buffer( file ) < 0 )
 			{
-				IExec->DebugPrintF( "_generic_stdio_puts : couldn't flush the write buffer" );
+				DOFUNCTIONPRINTF( IExec->DebugPrintF( "_generic_stdio_puts : couldn't flush the write buffer" ); );
 				retval = EOF;
 			}
 		}

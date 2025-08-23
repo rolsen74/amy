@@ -42,12 +42,12 @@
 // --
 // File Descriptor
 
-PTR AMYFUNC _generic__Priv_FDLockNr( struct AmyCLibPrivIFace *Self, S32 nr )
+struct PrivFile * AMYFUNC _generic__Priv_FDLockNr( struct AmyCLibPrivIFace *Self, S32 nr )
 {
 struct PrivFile *file;
 struct libData *data;
 
-	IExec->DebugPrintF( "_generic__Priv_FDLockNr : Fildes %ld\n", nr );
+	DOFUNCTIONPRINTF( IExec->DebugPrintF( "_generic__Priv_FDLockNr : Fildes %ld\n", nr ); );
 
 	data = (PTR)( (U32) Self - Self->Data.NegativeSize );
 

@@ -47,7 +47,7 @@ signal_handler_t handler;
 struct libData *data;
 int retval;
 
-	IExec->DebugPrintF( "_generic_signal_raise\n" );
+	DOFUNCTIONPRINTF( IExec->DebugPrintF( "_generic_signal_raise\n" ); );
 
 	DOFUNCTIONLOG( LOG_FUNC_raise );
 

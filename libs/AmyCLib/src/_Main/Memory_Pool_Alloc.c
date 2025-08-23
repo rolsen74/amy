@@ -38,7 +38,7 @@ PTR mem;
 
 	if ( ! Size )
 	{
-		IExec->DebugPrintF( "_generic__Priv_Mem_AllocPooled : Size is zero\n" );
+		DOFUNCTIONPRINTF( IExec->DebugPrintF( "_generic__Priv_Mem_AllocPooled : Size is zero\n" ); );
 		goto bailout;
 	}
 
@@ -57,13 +57,13 @@ PTR mem;
 
 	if ( ! handle )
 	{
-		IExec->DebugPrintF( "_generic__Priv_Mem_AllocPooled : Handle is NULL\n" );
+		DOFUNCTIONPRINTF( IExec->DebugPrintF( "_generic__Priv_Mem_AllocPooled : Handle is NULL\n" ); );
 		goto bailout;
 	}
 
 	if ( handle->ph_ID != ID_POOL )
 	{
-		IExec->DebugPrintF( "_generic__Priv_Mem_AllocPooled : Invalid Pool ID\n" );
+		DOFUNCTIONPRINTF( IExec->DebugPrintF( "_generic__Priv_Mem_AllocPooled : Invalid Pool ID\n" ); );
 		goto bailout;
 	}
 
@@ -269,7 +269,7 @@ PTR mem;
 
 	// --
 
-	IExec->DebugPrintF( "_generic__Priv_Mem_AllocPooled : mem %p, Size %lu\n", mem, Size );
+	DOFUNCTIONPRINTF( IExec->DebugPrintF( "_generic__Priv_Mem_AllocPooled : mem %p, Size %lu\n", mem, Size ); );
 
 bailout:
 

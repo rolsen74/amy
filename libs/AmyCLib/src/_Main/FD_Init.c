@@ -42,9 +42,9 @@
 // --
 // File Descriptor
 
-PTR AMYFUNC _generic__Priv_FD_Init( struct AmyCLibPrivIFace *Self, PTR is_ptr )
+struct PrivFile * AMYFUNC _generic__Priv_FD_Init( struct AmyCLibPrivIFace *Self, struct FDInitStruct *is )
 {
-struct FDInitStruct *is;
+//struct FDInitStruct *is;
 struct ExamineData *dat;
 struct PrivFile *file;
 struct libData *data;
@@ -52,7 +52,9 @@ S32 is_file_system;
 S32 error;
 U32 mode;
 
-	is = is_ptr;
+//	is = is_ptr;
+
+	dat = NULL;
 
 	file = NULL;
 
@@ -60,13 +62,13 @@ U32 mode;
 
 	error = TRUE;
 
-	IExec->DebugPrintF( "_generic__Priv_FD_Init : IS %p\n", is );
+	DOFUNCTIONPRINTF( IExec->DebugPrintF( "_generic__Priv_FD_Init : IS %p\n", is ); );
 
 	// --
 
 	if ( ! is->is_Filename )
 	{
-		IExec->DebugPrintF( "_generic__Priv_FD_Init : Missing Filename\n" );
+		DOFUNCTIONPRINTF( IExec->DebugPrintF( "_generic__Priv_FD_Init : Missing Filename\n" ); );
 		data->buf_PublicData->ra_ErrNo = EFAULT;
 		goto bailout;
 	}
@@ -75,11 +77,11 @@ U32 mode;
 
 	file = Self->Priv_FD_Alloc( ID_FILE );
 
-	IExec->DebugPrintF( "Priv_FD_Alloc : File %p\n", file );
+//	IExec->DebugPrintF( "Priv_FD_Alloc : File %p\n", file );
 
 	if ( ! file )
 	{
-		IExec->DebugPrintF( "_generic__Priv_FD_Init : Priv_FDAlloc failed\n" );
+		DOFUNCTIONPRINTF( IExec->DebugPrintF( "_generic__Priv_FD_Init : Priv_FDAlloc failed\n" ); );
 		data->buf_PublicData->ra_ErrNo = ENOMEM;
 		goto bailout;
 	}
@@ -102,25 +104,25 @@ U32 mode;
 		if ( EXD_IS_DIRECTORY( dat ))
 		{
 			// We can't open Directoryes
-			IExec->DebugPrintF( "_generic__Priv_FD_Init : We don't support directories" );
+			DOFUNCTIONPRINTF( IExec->DebugPrintF( "_generic__Priv_FD_Init : We don't support directories\n" ); );
 			data->buf_PublicData->ra_ErrNo = EISDIR;
 			goto bailout;
 		}
 
 		if ( is->is_MustNotExists )
 		{
-			IExec->DebugPrintF( "_generic__Priv_FD_Init : File exists" );
+			DOFUNCTIONPRINTF( IExec->DebugPrintF( "_generic__Priv_FD_Init : File exists\n" ); );
 			data->buf_PublicData->ra_ErrNo = EEXIST;
 			goto bailout;
 		}
 
 		if ( is->is_Write )
 		{
-			// Make sure its Wriable
+			// Make sure its Writeable
 			if (( dat->Protection & EXDF_NO_WRITE  )
 			||	( dat->Protection & EXDF_NO_DELETE ))
 			{
-				IExec->DebugPrintF( "_generic__Priv_FD_Init : File is not Wriable" );
+				DOFUNCTIONPRINTF( IExec->DebugPrintF( "_generic__Priv_FD_Init : File is not Writeable\n" ); );
 				data->buf_PublicData->ra_ErrNo = EACCES;
 				goto bailout;
 			}
@@ -128,10 +130,10 @@ U32 mode;
 
 		if ( is->is_Read )
 		{
-			// Make sure its reable
+			// Make sure its readable
 			if ( dat->Protection & EXDF_NO_READ )
 			{
-				IExec->DebugPrintF( "_generic__Priv_FD_Init : File is not Readable %08lx", dat->Protection );
+				DOFUNCTIONPRINTF( IExec->DebugPrintF( "_generic__Priv_FD_Init : File is not Readable %08lx\n", dat->Protection ); );
 				data->buf_PublicData->ra_ErrNo = EACCES;
 				goto bailout;
 			}
@@ -162,7 +164,7 @@ U32 mode;
 			}
 			else
 			{
-				IExec->DebugPrintF( "_generic__Priv_FD_Init : Unsupported mode for '%s'", is->is_Filename );
+				DOFUNCTIONPRINTF( IExec->DebugPrintF( "_generic__Priv_FD_Init : Unsupported mode for '%s'\n", is->is_Filename ); );
 				data->buf_PublicData->ra_ErrNo = ENOENT;
 				goto bailout;
 			}
@@ -179,7 +181,7 @@ U32 mode;
 
 	if ( file->pf_Handle.pf_File == 0 )
 	{
-		IExec->DebugPrintF( "_generic__Priv_FD_Init : Error opening File" );
+		DOFUNCTIONPRINTF( IExec->DebugPrintF( "_generic__Priv_FD_Init : Error opening File\n" ); );
 		data->buf_PublicData->ra_ErrNo = Self->Priv_Convert_IOErr_to_ErrNo( IDOS->IoErr() );
 		goto bailout;
 	}
@@ -227,7 +229,7 @@ U32 mode;
 
 	if ( Self->stdio_setvbuf( (PTR) file, NULL, BUFFER_MODE_FULL, BUFSIZ ) < 0 )
 	{
-		IExec->DebugPrintF( "_generic__Priv_FD_Init : stdio_setvbuf failed\n" );
+		DOFUNCTIONPRINTF( IExec->DebugPrintF( "_generic__Priv_FD_Init : stdio_setvbuf failed\n" ); );
 		goto bailout;
 	}
 
@@ -236,6 +238,12 @@ U32 mode;
 	error = FALSE;
 
 bailout:
+
+	if ( dat )
+	{
+		IDOS->FreeDosObject( DOS_EXAMINEDATA, dat );
+		dat = NULL;
+	}
 
 	if (( error ) && ( file ))
 	{

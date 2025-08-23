@@ -48,12 +48,12 @@ struct libData *data;
 S64 pos;
 S32 err;
 
-	IExec->DebugPrintF( "FD_IFC_File_GetPos\n" );
+	DOFUNCTIONPRINTF( IExec->DebugPrintF( "FD_IFC_File_GetPos : File %p\n", file ); );
 
 	if (( ! file ) || ( file->pf_StructID != ID_PRIVFILE ))
 	{
 		pos = -1LL;
-		IExec->DebugPrintF( "%s:%04ld: Invalid file id\n", __FILE__, __LINE__ );
+		IExec->DebugPrintF( "%s:%04ld: Invalid StructID\n", __FILE__, __LINE__ );
 		goto bailout;
 	}
 

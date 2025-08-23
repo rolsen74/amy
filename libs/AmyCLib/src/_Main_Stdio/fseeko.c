@@ -49,7 +49,7 @@ int retval;
 
 	// --
 
-	IExec->DebugPrintF( "_generic_stdio_fseeko : Stream %p, off %ld, from %ld\n", stream, offset, wherefrom );
+	DOFUNCTIONPRINTF( IExec->DebugPrintF( "_generic_stdio_fseeko : Stream %p, off %ld, from %ld\n", stream, offset, wherefrom ); );
 
 	DOFUNCTIONLOG( LOG_FUNC_fseeko );
 

@@ -22,7 +22,7 @@ void AMYFUNC _generic__Priv_Startup_Free( struct AmyCLibPrivIFace *Self )
 {
 struct libData *data;
 
-	IExec->DebugPrintF( "_generic__Priv_Startup_Free\n" );
+	DOFUNCTIONPRINTF( IExec->DebugPrintF( "_generic__Priv_Startup_Free\n" ); );
 
 	data = (PTR)( (U32) Self - Self->Data.NegativeSize );
 
@@ -36,13 +36,13 @@ struct libData *data;
 
 	// --
 
-	IExec->DebugPrintF( "_generic__Priv_Startup_Free : Signal\n" );
+	DOFUNCTIONPRINTF( IExec->DebugPrintF( "_generic__Priv_Startup_Free : Signal\n" ); );
 
 	myFree_Signal( Self, data );
 
 	// --
 
-	IExec->DebugPrintF( "_generic__Priv_Startup_Free : Locale\n" );
+	DOFUNCTIONPRINTF( IExec->DebugPrintF( "_generic__Priv_Startup_Free : Locale\n" ); );
 
 	myFree_Locale( Self, data );
 
@@ -52,13 +52,13 @@ struct libData *data;
 
 	// --
 
-	IExec->DebugPrintF( "_generic__Priv_Startup_Free : PublicData\n" );
+	DOFUNCTIONPRINTF( IExec->DebugPrintF( "_generic__Priv_Startup_Free : PublicData\n" ); );
 
 	myFree_PublicData( Self, data );
 
 	// --
 
-	IExec->DebugPrintF( "_generic__Priv_Startup_Free : Memory\n" );
+	DOFUNCTIONPRINTF( IExec->DebugPrintF( "_generic__Priv_Startup_Free : Memory\n" ); );
 
 	myFree_Memory( Self, data );
 

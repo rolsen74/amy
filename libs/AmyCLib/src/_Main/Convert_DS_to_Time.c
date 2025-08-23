@@ -52,17 +52,17 @@ S32 retval;
 
 	retval = FALSE;
 
-	IExec->DebugPrintF( "_generic__Priv_Convert_DS_to_Time\n" );
+	DOFUNCTIONPRINTF( IExec->DebugPrintF( "_generic__Priv_Convert_DS_to_Time\n" ); );
 
 	if ( ! ds )
 	{
-		IExec->DebugPrintF( "_generic__Priv_Convert_DS_to_Time : NULL Pointer\n" );
+		DOFUNCTIONPRINTF( IExec->DebugPrintF( "_generic__Priv_Convert_DS_to_Time : NULL Pointer\n" ); );
 		goto bailout;
 	}
 
 	if ( ! time )
 	{
-		IExec->DebugPrintF( "_generic__Priv_Convert_DS_to_Time : NULL Pointer\n" );
+		DOFUNCTIONPRINTF( IExec->DebugPrintF( "_generic__Priv_Convert_DS_to_Time : NULL Pointer\n" ); );
 		goto bailout;
 	}
 

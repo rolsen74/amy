@@ -53,7 +53,7 @@ int c2;
 
 	// --
 
-	IExec->DebugPrintF( "_generic_strings_strncasecmp\n" );
+	DOFUNCTIONPRINTF( IExec->DebugPrintF( "_generic_strings_strncasecmp\n" ); );
 
 	DOFUNCTIONLOG( LOG_FUNC_strncasecmp );
 

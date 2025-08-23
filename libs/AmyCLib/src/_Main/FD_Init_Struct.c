@@ -46,21 +46,22 @@ extern struct PrivInterface		Priv_FD_Interface_String;
 // --
 // File Descriptor
 
-S32 AMYFUNC _generic__Priv_FD_Init_Struct( struct AmyCLibPrivIFace *Self, PTR file_ptr, U32 id )
+S32 AMYFUNC _generic__Priv_FD_Init_Struct( struct AmyCLibPrivIFace *Self, struct PrivFile *file, U32 id )
 {
 struct PrivInterface *pi;
-struct PrivFile *file;
+//struct PrivFile *file;
 S32 retval;
+S32 initid;
 
 	retval = FALSE;
 
-	file = file_ptr;
+//	file = file_ptr;
 
-	IExec->DebugPrintF( "_generic__Priv_FD_Init_Struct : File %p, ID $%08lx\n", file, id );
+	DOFUNCTIONPRINTF( IExec->DebugPrintF( "_generic__Priv_FD_Init_Struct : File %p, ID $%08lx\n", file, id ); );
 
 	if ( ! file )
 	{
-		IExec->DebugPrintF( "_generic__Priv_FD_Init_Struct : NULL Pointer, ID $%08lx\n", id );
+		DOFUNCTIONPRINTF( IExec->DebugPrintF( "_generic__Priv_FD_Init_Struct : NULL Pointer, ID $%08lx\n", id ); );
 		goto bailout;
 	}
 
@@ -68,7 +69,7 @@ S32 retval;
 	&&	( id != ID_SOCKET )
 	&&	( id != ID_STRING ))
 	{
-		IExec->DebugPrintF( "_generic__Priv_FD_Init_Struct() : File %p, Error Illegal ID (%08lx)\n", file, id );
+		DOFUNCTIONPRINTF( IExec->DebugPrintF( "_generic__Priv_FD_Init_Struct() : File %p, Error Illegal ID (%08lx)\n", file, id ); );
 		goto bailout;
 	}
 
@@ -81,14 +82,17 @@ S32 retval;
 	/**/ if ( id == ID_FILE )
 	{
 		pi = & Priv_FD_Interface_File;
+		initid = 0;
 	}
 //	else if ( ID == ID_SOCKET )
 //	{
 //		pi = & Priv_FD_Interface_Socket;
+//		initid = -1;
 //	}
 //	else if ( id == ID_STRING )
 //	{
 //		pi = & Priv_FD_Interface_String;
+//		initid = 0;
 //	}
 	else
 	{
@@ -104,7 +108,7 @@ S32 retval;
 	file->pf_StructID = ID_PRIVFILE;
 	file->pf_Buffer = & file->pf_BufferDefault;
 	file->pf_BufferSize = 1;
-	file->pf_Handle.pf_File = -1L;
+	file->pf_Handle.pf_File = initid;
 	file->pf_ArrayPos = -1;
 	
 	// --

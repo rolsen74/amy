@@ -49,7 +49,7 @@ PTR Node;
 
 	Node = NULL;
 
-	IExec->DebugPrintF( "_generic__Priv_FD_Array_Remove : Node %p\n", Node );
+	DOFUNCTIONPRINTF( IExec->DebugPrintF( "_generic__Priv_FD_Array_Remove : Fildes %ld (pos)\n", Pos ); );
 
 	data = (PTR)( (U32) Self - Self->Data.NegativeSize );
 
@@ -69,7 +69,7 @@ PTR Node;
 
 	if (( Pos < 0 ) || ( data->FD_Array.Size <= (U32) Pos ))
 	{
-		IExec->DebugPrintF( "_generic__Priv_FD_Array_Remove : Invalid pos %ld\n", Pos );
+		DOFUNCTIONPRINTF( IExec->DebugPrintF( "_generic__Priv_FD_Array_Remove : Invalid pos %ld\n", Pos ); );
 		goto bailout;
 	}
 

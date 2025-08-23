@@ -50,7 +50,7 @@ int retval;
 
 	// --
 
-	IExec->DebugPrintF( "_generic_stdio_setvbuf, File %p, Buf %p, Mode %ld, Size %ld\n", stream, buf, mode, size );
+	DOFUNCTIONPRINTF( IExec->DebugPrintF( "_generic_stdio_setvbuf, File %p, Buf %p, Mode %ld, Size %ld\n", stream, buf, mode, size ); );
 
 	DOFUNCTIONLOG( LOG_FUNC_setvbuf );
 
@@ -68,7 +68,7 @@ int retval;
 
 	if ( ! file )
 	{
-		IExec->DebugPrintF( "_generic_stdio_setvbuf : NULL Pointer\n" );
+		DOFUNCTIONPRINTF( IExec->DebugPrintF( "_generic_stdio_setvbuf : NULL Pointer\n" ); );
 		data->buf_PublicData->ra_ErrNo = EBADF;
 		goto bailout;
 	}
@@ -83,7 +83,7 @@ int retval;
 
 	if (( mode < BUFFER_MODE_FULL ) || ( mode > BUFFER_MODE_NONE ))
 	{
-		IExec->DebugPrintF( "_generic_stdio_setvbuf : Invalid mode %ld\n", mode );
+		DOFUNCTIONPRINTF( IExec->DebugPrintF( "_generic_stdio_setvbuf : Invalid mode %ld\n", mode ); );
 		data->buf_PublicData->ra_ErrNo = EINVAL;
 		goto bailout;
 	}
@@ -130,7 +130,7 @@ int retval;
 
 		if ( ! newbuf )
 		{
-			IExec->DebugPrintF( "_generic_stdio_setvbuf : Error allocating memory\n" );
+			DOFUNCTIONPRINTF( IExec->DebugPrintF( "_generic_stdio_setvbuf : Error allocating memory\n" ); );
 			data->buf_PublicData->ra_ErrNo = ENOBUFS;
 			goto bailout;
 		}
@@ -146,7 +146,7 @@ int retval;
 	{
 		// Error - should not happen
 
-		IExec->DebugPrintF( "_generic_stdio_setvbuf : unknown mode\n" );
+		DOFUNCTIONPRINTF( IExec->DebugPrintF( "_generic_stdio_setvbuf : unknown mode\n" ); );
 		data->buf_PublicData->ra_ErrNo = ENOBUFS;
 		goto bailout;
 	}

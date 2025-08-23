@@ -56,17 +56,17 @@ S32 d;
 
 	retval = FALSE;
 
-	IExec->DebugPrintF( "_generic__Priv_Convert_Time_to_TM : Time %p, TM %p\n", time, tm );
+	DOFUNCTIONPRINTF( IExec->DebugPrintF( "_generic__Priv_Convert_Time_to_TM : Time %p, TM %p\n", time, tm ); );
 
 	if ( ! time )
 	{
-		IExec->DebugPrintF( "_generic__Priv_Convert_Time_to_TM : NULL Pointer\n" );
+		DOFUNCTIONPRINTF( IExec->DebugPrintF( "_generic__Priv_Convert_Time_to_TM : NULL Pointer\n" ); );
 		goto bailout;
 	}
 
 	if ( ! tm )
 	{
-		IExec->DebugPrintF( "_generic__Priv_Convert_Time_to_TM : NULL Pointer\n" );
+		DOFUNCTIONPRINTF( IExec->DebugPrintF( "_generic__Priv_Convert_Time_to_TM : NULL Pointer\n" ); );
 		goto bailout;
 	}
 
@@ -74,7 +74,7 @@ S32 d;
 
 	if ( t < 0 )
 	{
-		IExec->DebugPrintF( "_generic__Priv_Convert_Time_to_TM : Invalid time\n" );
+		DOFUNCTIONPRINTF( IExec->DebugPrintF( "_generic__Priv_Convert_Time_to_TM : Invalid time\n" ); );
 		goto bailout;
 	}
 
@@ -131,7 +131,7 @@ S32 d;
 
 	if ( ! valid )
 	{
-		IExec->DebugPrintF( "_generic__Priv_Convert_Time_to_TM : Invalid output\n" );
+		DOFUNCTIONPRINTF( IExec->DebugPrintF( "_generic__Priv_Convert_Time_to_TM : Invalid output\n" );
 		IExec->DebugPrintF( "tm_mon ... : %ld\n", tm->tm_mon );
 		IExec->DebugPrintF( "tm_mday .. : %ld\n", tm->tm_mday );
 		IExec->DebugPrintF( "tm_hour .. : %ld\n", tm->tm_hour );

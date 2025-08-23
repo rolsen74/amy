@@ -49,7 +49,7 @@ fpos_t pos;
 
 	// --
 
-	IExec->DebugPrintF( "_generic_stdio_ftell : Stream %p\n", stream );
+	DOFUNCTIONPRINTF( IExec->DebugPrintF( "_generic_stdio_ftell : Stream %p\n", stream ); );
 
 	DOFUNCTIONLOG( LOG_FUNC_ftell );
 

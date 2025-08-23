@@ -21,7 +21,7 @@ struct PoolNode *pn;
 U32 retval;
 //S32 Notify;
 
-	IExec->DebugPrintF( "_generic__Priv_Mem_FlushPool\n" );
+	DOFUNCTIONPRINTF( IExec->DebugPrintF( "_generic__Priv_Mem_FlushPool\n" ); );
 
 //	  IExec->DebugPrintF( "FlushPool( %p )\n", handle );
 

@@ -45,7 +45,7 @@ void AMYFUNC _generic_stdlib__Exit( struct AmyCLibPrivIFace *Self, int rc )
 {
 struct libData *data;
 
-	IExec->DebugPrintF( "_generic_stdlib__Exit\n" );
+	DOFUNCTIONPRINTF( IExec->DebugPrintF( "_generic_stdlib__Exit\n" ); );
 
 	DOFUNCTIONLOG( LOG_FUNC__Exit );
 

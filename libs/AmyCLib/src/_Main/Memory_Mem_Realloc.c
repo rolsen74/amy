@@ -19,7 +19,7 @@ U32 realsize;
 U32 len;
 PTR newmem;
 
-	IExec->DebugPrintF( "_generic__Priv_Mem_Realloc\n" );
+	DOFUNCTIONPRINTF( IExec->DebugPrintF( "_generic__Priv_Mem_Realloc\n" ); );
 
 //	data = (PTR)( (U32) Self - Self->Data.NegativeSize );
 

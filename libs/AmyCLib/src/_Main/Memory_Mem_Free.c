@@ -17,7 +17,7 @@ struct MemPoolHeader *pool;
 struct libData *data;
 U32 retval;
 
-	IExec->DebugPrintF( "_generic__Priv_Mem_Free : mem %p\n", mem );
+	DOFUNCTIONPRINTF( IExec->DebugPrintF( "_generic__Priv_Mem_Free : mem %p\n", mem ); );
 
 	data = (PTR)( (U32) Self - Self->Data.NegativeSize );
 
@@ -39,7 +39,7 @@ U32 retval;
 
 	if ( ! pool )
 	{
-		IExec->DebugPrintF( "_generic__Priv_Mem_Free : No Memory Pool\n" );
+		DOFUNCTIONPRINTF( IExec->DebugPrintF( "_generic__Priv_Mem_Free : No Memory Pool\n" ); );
 		goto bailout;
 	}
 

@@ -42,16 +42,18 @@
 // --
 // File Descriptor
 
-PTR AMYFUNC _generic__Priv_FD_Alloc( struct AmyCLibPrivIFace *Self, U32 ID )
+struct PrivFile * AMYFUNC _generic__Priv_FD_Alloc( struct AmyCLibPrivIFace *Self, U32 ID )
 {
 struct PrivFile *file;
 struct libData *data;
 S32 error;
 S32 pos;
 
+	pos = -1;
+
 	error = TRUE;
 
-	IExec->DebugPrintF( "_generic__Priv_FD_Alloc : ID %lu\n", ID );
+	DOFUNCTIONPRINTF( IExec->DebugPrintF( "_generic__Priv_FD_Alloc : ID $%08lx\n", ID ); );
 
 	data = (PTR)( (U32) Self - Self->Data.NegativeSize );
 
@@ -91,7 +93,7 @@ bailout:
 
 	IExec->ReleaseSemaphore( & data->FD_Semaphore );
 
-//	IExec->DebugPrintF( "FDAlloc() - File %p, Error %ld\n", file, error );
+//	IExec->DebugPrintF( "FDAlloc() - File %p, Fildes %ld, Error %ld\n", file, pos, error );
 
 	if (( error ) && ( file ))
 	{

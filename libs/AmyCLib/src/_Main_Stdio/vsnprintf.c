@@ -49,7 +49,7 @@ int retval;
 
 	// --
 
-	IExec->DebugPrintF( "_generic_stdio_vsnprintf : Enter : Buf %p, Size %ld, Fmt %s\n", buf, size, fmt );
+	DOFUNCTIONPRINTF( IExec->DebugPrintF( "_generic_stdio_vsnprintf : Enter : Buf %p, Size %ld, Fmt %s\n", buf, size, fmt ); );
 
 	DOFUNCTIONLOG( LOG_FUNC_vsnprintf );
 
@@ -67,7 +67,7 @@ int retval;
 	if (( ! fmt ) || (( size ) && ( ! buf )))
 	{
 		#ifdef DEBUG
-		IExec->DebugPrintF( "_generic_stdio_vsnprintf : NULL Pointer\n" );
+		DOFUNCTIONPRINTF( IExec->DebugPrintF( "_generic_stdio_vsnprintf : NULL Pointer\n" ); );
 		#endif
 		data->buf_PublicData->ra_ErrNo = EFAULT;
 		goto bailout;
@@ -104,11 +104,11 @@ int retval;
 
 	Self->Priv_Print( & ps );
 
-	IExec->DebugPrintF( "_generic_stdio_vsnprintf : Leave : '%s'\n", buf );
+	DOFUNCTIONPRINTF( IExec->DebugPrintF( "_generic_stdio_vsnprintf : Leave : '%s'\n", buf ); );
 
 	if ( ps.ps_Written < 0 )
 	{
-		IExec->DebugPrintF( "_generic_stdio_vsnprintf : err 2, stat %ld\n", ps.ps_Written );
+		DOFUNCTIONPRINTF( IExec->DebugPrintF( "_generic_stdio_vsnprintf : err 2, stat %ld\n", ps.ps_Written ); );
 		goto bailout;
 	}
 

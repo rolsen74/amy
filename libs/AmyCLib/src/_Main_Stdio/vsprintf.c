@@ -49,7 +49,7 @@ int retval;
 
 	// --
 
-	IExec->DebugPrintF( "_generic_stdio_vsprintf\n" );
+	DOFUNCTIONPRINTF( IExec->DebugPrintF( "_generic_stdio_vsprintf\n" ); );
 
 	DOFUNCTIONLOG( LOG_FUNC_vsprintf );
 
@@ -66,7 +66,7 @@ int retval;
 	if (( ! fmt ) || ( ! buf ))
 	{
 		data->buf_PublicData->ra_ErrNo = EFAULT;
-		IExec->DebugPrintF( "_generic_stdio_vsprintf : err 1\n" );
+		DOFUNCTIONPRINTF( IExec->DebugPrintF( "_generic_stdio_vsprintf : err 1\n" ); );
 		goto bailout;
 	}
 
@@ -83,7 +83,7 @@ int retval;
 
 	if ( ps.ps_Written < 0 )
 	{
-		IExec->DebugPrintF( "_generic_stdio_vsprintf : err 2, stat %ld\n", ps.ps_Written );
+		DOFUNCTIONPRINTF( IExec->DebugPrintF( "_generic_stdio_vsprintf : err 2, stat %ld\n", ps.ps_Written ); );
 		goto bailout;
 	}
 

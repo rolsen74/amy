@@ -17,7 +17,8 @@ struct AmyCLibPrivIFace *IFace;
 struct libData *data;
 S32 error;
 
-	IExec->DebugPrintF( "AmyCLib : _Main_Clone\n" );
+	IExec->DebugPrintF( "AmyCLib : _Main_Clone : Task \"%s\" :\n", IExec->FindTask(NULL)->tc_Node.ln_Name );
+//	DOFUNCTIONPRINTF( IExec->DebugPrintF( "AmyCLib : _Main_Clone\n" ); );
 
 	error = TRUE;
 
@@ -36,7 +37,7 @@ S32 error;
 
 	data = (PTR)( (U32) IFace - IFace->Data.NegativeSize );
 
-	IExec->DebugPrintF( "_Main_Clone : IFace %p, Data %p\n", IFace, data );
+//	IExec->DebugPrintF( "_Main_Clone : IFace %p, Data %p\n", IFace, data );
 
 //	IExec->DebugPrintF( "_Main_Clone 2 : Neg %ld, data %p, IFace %p, Self %p, bzerp %p\n", 
 //		IFace->Data.NegativeSize, data, IFace, Self, IFace->strings_bzero );

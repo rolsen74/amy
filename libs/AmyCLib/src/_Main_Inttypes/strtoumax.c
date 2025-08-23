@@ -62,7 +62,7 @@ int neg;
 int any;
 int c;
 
-	IExec->DebugPrintF( "_generic_inttypes_strtoumax :\n" );
+	DOFUNCTIONPRINTF( IExec->DebugPrintF( "_generic_inttypes_strtoumax :\n" ); );
 
 	DOFUNCTIONLOG( LOG_FUNC_strtoumax );
 

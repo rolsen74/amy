@@ -45,7 +45,7 @@ void AMYFUNC _generic_signal_signal( struct AmyCLibPrivIFace *Self, int sig, voi
 {
 struct libData *data;
 
-	IExec->DebugPrintF( "_generic_signal_signal\n" );
+	DOFUNCTIONPRINTF( IExec->DebugPrintF( "_generic_signal_signal\n" ); );
 
 	DOFUNCTIONLOG( LOG_FUNC_signal );
 

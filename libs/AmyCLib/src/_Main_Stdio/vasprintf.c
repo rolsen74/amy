@@ -50,7 +50,7 @@ int retval;
 
 	// --
 
-	IExec->DebugPrintF( "_generic_stdio_vasprintf : \n" );
+	DOFUNCTIONPRINTF( IExec->DebugPrintF( "_generic_stdio_vasprintf : \n" ); );
 
 	DOFUNCTIONLOG( LOG_FUNC_vasprintf );
 

@@ -46,7 +46,7 @@ void AMYFUNC _generic_stdlib_exit( struct AmyCLibPrivIFace *Self, int rc )
 struct ExitNode *node;
 struct libData *data;
 
-	IExec->DebugPrintF( "_generic_stdlib_exit\n" );
+	DOFUNCTIONPRINTF( IExec->DebugPrintF( "_generic_stdlib_exit\n" ); );
 
 	DOFUNCTIONLOG( LOG_FUNC_exit );
 
@@ -61,19 +61,19 @@ struct libData *data;
 
 		while( TRUE )
 		{
-			IExec->DebugPrintF( "_generic_stdlib_exit : 2 : Data %p, Header %p, IExec %p\n", data, & data->ExitHeader, IExec );
-			IExec->DebugPrintF( "_generic_stdlib_exit : 2 : Head %p, Tail %p\n", data->ExitHeader.lh_Head, data->ExitHeader.lh_Tail );
+			DOFUNCTIONPRINTF( IExec->DebugPrintF( "_generic_stdlib_exit : 2 : Data %p, Header %p, IExec %p\n", data, & data->ExitHeader, IExec ); );
+			DOFUNCTIONPRINTF( IExec->DebugPrintF( "_generic_stdlib_exit : 2 : Head %p, Tail %p\n", data->ExitHeader.lh_Head, data->ExitHeader.lh_Tail ); );
 
 			node = (PTR) IExec->RemHead( & data->ExitHeader );
 
-			IExec->DebugPrintF( "_generic_stdlib_exit : 3 : %p\n", node );
+			DOFUNCTIONPRINTF( IExec->DebugPrintF( "_generic_stdlib_exit : 3 : %p\n", node ); );
 
 			if ( ! node )
 			{
 				break;
 			}
 
-			IExec->DebugPrintF( "_generic_stdlib_exit : 4 : %p\n", node );
+			DOFUNCTIONPRINTF( IExec->DebugPrintF( "_generic_stdlib_exit : 4 : %p\n", node ); );
 
 			(*node->Function)();
 
@@ -82,12 +82,12 @@ struct libData *data;
 
 		// --
 
-		IExec->DebugPrintF( "_generic_stdlib_exit : 4\n" );
+		DOFUNCTIONPRINTF( IExec->DebugPrintF( "_generic_stdlib_exit : 4\n" ); );
 
 		Self->setjmp_longjmp( data->ExitJumpBuffer, 1 );
 	}
 
-	IExec->DebugPrintF( "_generic_stdlib_exit : 99\n" );
+	DOFUNCTIONPRINTF( IExec->DebugPrintF( "_generic_stdlib_exit : 99\n" ); );
 }
 
 /****************************************************************************/

@@ -45,7 +45,7 @@ void AMYFUNC _generic_stdlib_abort( struct AmyCLibPrivIFace *Self )
 {
 struct libData *data;
 
-	IExec->DebugPrintF( "_generic_stdlib_abort\n" );
+	DOFUNCTIONPRINTF( IExec->DebugPrintF( "_generic_stdlib_abort\n" ); );
 
 	DOFUNCTIONLOG( LOG_FUNC_abort );
 

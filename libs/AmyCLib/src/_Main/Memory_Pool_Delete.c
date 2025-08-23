@@ -17,7 +17,7 @@ struct libData *data;
 struct PoolNode *pn;
 U32 retval;
 
-	IExec->DebugPrintF( "_generic__Priv_Mem_DeletePool\n" );
+	DOFUNCTIONPRINTF( IExec->DebugPrintF( "_generic__Priv_Mem_DeletePool\n" ); );
 
 	data = (PTR)( (U32) Self - Self->Data.NegativeSize );
 

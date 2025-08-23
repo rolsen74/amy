@@ -56,7 +56,7 @@ U8 *m2;
 	pos = 0;
 	retval = 0;
 
-//	IExec->DebugPrintF( "_generic_string_memcmp : Mem %p, Mem %p, Len %lu\n", s1, s2, len );
+//	DOFUNCTIONPRINTF( IExec->DebugPrintF( "_generic_string_memcmp : Mem %p, Mem %p, Len %lu\n", s1, s2, len ); );
 
 	DOFUNCTIONLOG( LOG_FUNC_memcmp );
 
@@ -89,7 +89,7 @@ U8 *m2;
 		}
 	}
 
-	IExec->DebugPrintF( "_generic_string_memcmp : Mem %p : Mem %p : Len %lu : Pos %ld : Retval %ld :\n", s1, s2, len, pos-1, retval );
+	DOFUNCTIONPRINTF( IExec->DebugPrintF( "_generic_string_memcmp : Mem %p : Mem %p : Len %lu : Pos %ld : Retval %ld :\n", s1, s2, len, pos-1, retval ); );
 
 	return( retval );
 }

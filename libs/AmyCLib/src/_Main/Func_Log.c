@@ -406,6 +406,7 @@ static const FuncString myStrings[ LOG_FUNC_LAST ] =
 //	[LOG_FUNC_mktime] = { .Group = GROUP_Time, .Name = "mktime" },
 	[LOG_FUNC_time] = { .Group = GROUP_Time, .Name = "time" },
 //	[LOG_FUNC_timegm] = { .Group = GROUP_Time, .Name = "timegm" },
+	[LOG_FUNC_strftime] = { .Group = GROUP_Time, .Name = "strftime" },
 
 	// Unistd.h
 //	[LOG_FUNC__exit] = { .Group = GROUP_Unistd, .Name = "_exit" },

@@ -91,7 +91,7 @@ U8 *m2;
 		}
 	}
 
-	IExec->DebugPrintF( "_generic_string_strncmp : Str %p : Str %p : Max %lu : Pos %ld : Retval %ld\n", s1, s2, max, pos-1, retval );
+	DOFUNCTIONPRINTF( IExec->DebugPrintF( "_generic_string_strncmp : Str %p : Str %p : Max %lu : Pos %ld : Retval %ld\n", s1, s2, max, pos-1, retval ); );
 
 	return( retval );
 }

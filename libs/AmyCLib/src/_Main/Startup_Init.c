@@ -26,7 +26,7 @@ struct _AmyCLibPublic *pd;
 struct libData *data;
 S32 retval;
 
-	IExec->DebugPrintF( "_generic__Priv_Startup_Init : Mask $%08lx : Args '%s'\n", mask, (args)?args:"" );
+	DOFUNCTIONPRINTF( IExec->DebugPrintF( "_generic__Priv_Startup_Init : Mask $%08lx : Args '%s'\n", mask, (args)?args:"" ); );
 
 	retval = FALSE;
 
@@ -36,7 +36,7 @@ S32 retval;
 
 	if ( myInit_Check_Args( Self, data, args ))
 	{
-		IExec->DebugPrintF( "_generic__Priv_Startup_Init : Arg Check failed\n" );
+		DOFUNCTIONPRINTF( IExec->DebugPrintF( "_generic__Priv_Startup_Init : Arg Check failed\n" ); );
 		goto bailout;		
 	}
 
@@ -52,7 +52,7 @@ S32 retval;
 
 	if ( mask & EM_STRING )
 	{
-		IExec->DebugPrintF( "_generic__Priv_Startup_Init : Enabling Strings\n" );
+		DOFUNCTIONPRINTF( IExec->DebugPrintF( "_generic__Priv_Startup_Init : Enabling Strings\n" ); );
 
 		data->Enable_Strings = TRUE;
 		myInit_Enable( Self, data, EM_STRING );
@@ -62,7 +62,7 @@ S32 retval;
 
 	if ( mask & EM_MEMORY )
 	{
-		IExec->DebugPrintF( "_generic__Priv_Startup_Init : Enabling Memory\n" );
+		DOFUNCTIONPRINTF( IExec->DebugPrintF( "_generic__Priv_Startup_Init : Enabling Memory\n" ); );
 
 		data->Enable_Memory = TRUE;
 		myInit_Enable( Self, data, EM_MEMORY );
@@ -100,7 +100,7 @@ S32 retval;
 
 	if ( mask & EM_FILE )
 	{
-		IExec->DebugPrintF( "_generic__Priv_Startup_Init : Enabling File\n" );
+		DOFUNCTIONPRINTF( IExec->DebugPrintF( "_generic__Priv_Startup_Init : Enabling File\n" ); );
 
 		data->Enable_File = TRUE;
 		myInit_Enable( Self, data, EM_FILE );
@@ -108,7 +108,7 @@ S32 retval;
 
 	// --
 
-	IExec->DebugPrintF( "_generic__Priv_Startup_Init : 3\n" );
+	DOFUNCTIONPRINTF( IExec->DebugPrintF( "_generic__Priv_Startup_Init : 3\n" ); );
 
 	if ( myInit_PublicData( Self, data ))
 	{
@@ -118,7 +118,7 @@ S32 retval;
 
 	// --
 
-	IExec->DebugPrintF( "_generic__Priv_Startup_Init : 4\n" );
+	DOFUNCTIONPRINTF( IExec->DebugPrintF( "_generic__Priv_Startup_Init : 4\n" ); );
 
 	if ( myInit_Locale( Self, data ))
 	{
@@ -129,7 +129,7 @@ S32 retval;
 	// --
 	// todo : get buffer, if Mem is off
 
-	IExec->DebugPrintF( "_generic__Priv_Startup_Init : 5\n" );
+	DOFUNCTIONPRINTF( IExec->DebugPrintF( "_generic__Priv_Startup_Init : 5\n" ); );
 
 	if ( myInit_Signal( Self, data ))
 	{
@@ -143,7 +143,7 @@ S32 retval;
 
 bailout:
 
-	IExec->DebugPrintF( "_generic__Priv_Startup_Init : 99 : Retval %ld\n", retval );
+	DOFUNCTIONPRINTF( IExec->DebugPrintF( "_generic__Priv_Startup_Init : 99 : Retval %ld\n", retval ); );
 
 	return( retval );
 }

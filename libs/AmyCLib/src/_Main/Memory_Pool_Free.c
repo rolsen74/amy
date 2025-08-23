@@ -26,7 +26,7 @@ U32 size;
 //S32 Notify;
 //U32 cnt;
 
-	IExec->DebugPrintF( "_generic__Priv_Mem_FreePooled\n" );
+	DOFUNCTIONPRINTF( IExec->DebugPrintF( "_generic__Priv_Mem_FreePooled\n" ); );
 
 //IExec->DebugPrintF( "ReaciveMemory.c | AMYFUNC _generic__Priv_Mem_FreePooled - mem: %p\n", mem );
 

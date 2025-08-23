@@ -47,7 +47,7 @@ struct PrivFile *file;
 struct libData *data;
 S32 retval;
 
-	IExec->DebugPrintF( "_generic_stdio_fputc_unlocked : c %ld, File %p\n", c, stream );
+	DOFUNCTIONPRINTF( IExec->DebugPrintF( "_generic_stdio_fputc_unlocked : c %ld, File %p\n", c, stream ); );
 
 	DOFUNCTIONLOG( LOG_FUNC_fputc_unlocked );
 
@@ -63,7 +63,7 @@ S32 retval;
 		{
 			if ( ! Self->Priv_FB_Read_Drop_Buffer( file ))
 			{
-				IExec->DebugPrintF( "_generic_stdio_fputc_unlocked : failed\n" );
+				DOFUNCTIONPRINTF( IExec->DebugPrintF( "_generic_stdio_fputc_unlocked : failed\n" ); );
 				goto bailout;
 			}
 		}
@@ -78,7 +78,7 @@ bailout:
 	else
 	{
 		#ifdef DEBUG
-		IExec->DebugPrintF( "%s:%04ld: Invalid file id\n", __FILE__, __LINE__ );
+		IExec->DebugPrintF( "%s:%04ld: Invalid StructID\n", __FILE__, __LINE__ );
 		#endif
 
 		data = (PTR)( (U32) Self - Self->Data.NegativeSize );

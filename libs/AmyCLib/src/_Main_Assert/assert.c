@@ -54,7 +54,7 @@ struct Process *me;
 PTR wbmsg;
 STR fmt;
 
-	IExec->DebugPrintF( "_generic_assert_assert\n" );
+	DOFUNCTIONPRINTF( IExec->DebugPrintF( "_generic_assert_assert\n" ); );
 
 	DOFUNCTIONLOG( LOG_FUNC_assert );
 
@@ -88,7 +88,7 @@ STR fmt;
 
 	if ( ! data->ExitSet )
 	{
-		IExec->DebugPrintF( "_generic_assert_assert : 2 :\n" );
+		DOFUNCTIONPRINTF( IExec->DebugPrintF( "_generic_assert_assert : 2 :\n" ); );
 
 		// Reply WB Message
 
@@ -98,7 +98,7 @@ STR fmt;
 		{
 			struct MsgPort * mp = & me->pr_MsgPort;
 
-			IExec->DebugPrintF( "_generic_assert_assert : 3 : reply wb msg\n" );
+			DOFUNCTIONPRINTF( IExec->DebugPrintF( "_generic_assert_assert : 3 : reply wb msg\n" ); );
 
 			IExec->WaitPort( mp );
 
@@ -108,7 +108,7 @@ STR fmt;
 		}
 	}
 
-	IExec->DebugPrintF( "_generic_assert_assert : 99 : Exit %p\n", Self->stdlib_exit );
+	DOFUNCTIONPRINTF( IExec->DebugPrintF( "_generic_assert_assert : 99 : Exit %p\n", Self->stdlib_exit ); );
 
 	Self->stdlib_exit( EXIT_FAILURE );
 }

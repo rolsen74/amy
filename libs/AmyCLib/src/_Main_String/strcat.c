@@ -49,7 +49,7 @@ U8 c;
 
 	// --
 
-	IExec->DebugPrintF( "_generic_string_strcat\n" );
+	DOFUNCTIONPRINTF( IExec->DebugPrintF( "_generic_string_strcat\n" ); );
 
 	DOFUNCTIONLOG( LOG_FUNC_strcat );
 

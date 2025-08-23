@@ -31,7 +31,7 @@ STR *argv;
 S32 prg_rc;		// (User) Program Return Code
 S32 argc;
 
-	IExec->DebugPrintF( "_generic__Priv_Startup_Main : pd %p, args '%s'\n", pd, (args)?args:"<NULL>" );
+	DOFUNCTIONPRINTF( IExec->DebugPrintF( "_generic__Priv_Startup_Main : pd %p, args '%s'\n", pd, (args)?args:"<NULL>" ); );
 
 	prg_rc = 20;	// DOS return error code
 
@@ -82,7 +82,7 @@ S32 argc;
 
 	if ( InitArgs( Self, data, wbmsg, & argv, & argc ))
 	{
-		IExec->DebugPrintF( "Calling Main( argc %ld, argv %p )\n", argc, argv );
+		IExec->DebugPrintF( "AmyCLib : Calling Main( argc %ld, argv %p )\n", argc, argv );
 		prg_rc = main( argc, argv );
 
 		// --

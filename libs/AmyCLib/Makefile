@@ -30,8 +30,15 @@ CFLAGS		+= -Wall
 CFLAGS		+= -MMD
 CFLAGS		+= -MP
 CFLAGS		+= -mcrt=clib2
+
+# Make sure gcc do not swap functions to memset() and so on .. very important
 CFLAGS		+= -fno-builtin
+
+# Enable Function counting via 'AMYCLIB_FUNCTIONSTAT' shell arg
 CFLAGS		+= -D__DO_FUNCTION_LOG__
+
+# Print Function names on serial
+#CFLAGS		+= -D__DO_FUNCTION_PRINT__
 
 # Linker Flags
 LDFLAGS		:= -mcrt=clib2 

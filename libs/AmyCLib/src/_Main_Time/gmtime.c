@@ -50,7 +50,7 @@ struct tm *retval;
 
 	retval = NULL;
 
-	IExec->DebugPrintF( "_generic_time_gmtime : Time %p\n", time );
+	DOFUNCTIONPRINTF( IExec->DebugPrintF( "_generic_time_gmtime : Time %p\n", time ); );
 
 	DOFUNCTIONLOG( LOG_FUNC_gmtime );
 
@@ -65,7 +65,7 @@ struct tm *retval;
 
 		if ( ! data->buf_gmtime )
 		{
-			IExec->DebugPrintF( "_generic_time_gmtime : Failed to allocate memory\n" );
+			DOFUNCTIONPRINTF( IExec->DebugPrintF( "_generic_time_gmtime : Failed to allocate memory\n" ); );
 			data->buf_PublicData->ra_ErrNo = ENOMEM;
 			goto bailout;
 		}

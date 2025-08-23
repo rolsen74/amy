@@ -307,7 +307,7 @@ STR name;
 
 	if ( ! libBase )
 	{
-		IExec->DebugPrintF( "Reactive : Error creating Device" );
+		IExec->DebugPrintF( "Reactive : Error creating Device\n" );
 		goto bailout;
 	}
 
@@ -343,7 +343,7 @@ STR name;
 
 	libBase->lib_RootClass = RootClass;
 
-	IExec->DebugPrintF( "RootClass %p", RootClass );
+	IExec->DebugPrintF( "RootClass %p\n", RootClass );
 
 	// --
 

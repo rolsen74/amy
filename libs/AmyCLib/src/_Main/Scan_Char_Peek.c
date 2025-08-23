@@ -49,7 +49,7 @@ S32 val;
 U32 pos;
 STR str;
 
-	IExec->DebugPrintF( "my_Scan_Char_Peek\n" );
+	DODEBUGPRINTF( IExec->DebugPrintF( "my_Scan_Char_Peek\n" ); );
 
 	/**/ if ( in->buffer )
 	{

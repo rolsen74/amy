@@ -49,7 +49,7 @@ int retval;
 
 	// --
 
-	IExec->DebugPrintF( "_generic_stdio_vprintf\n" );
+	DOFUNCTIONPRINTF( IExec->DebugPrintF( "_generic_stdio_vprintf\n" ); );
 
 	DOFUNCTIONLOG( LOG_FUNC_vprintf );
 
@@ -65,7 +65,7 @@ int retval;
 
 	if ( ! fmt )
 	{
-		IExec->DebugPrintF( "_generic_stdio_vprintf : NULL Pointer\n" );
+		DOFUNCTIONPRINTF( IExec->DebugPrintF( "_generic_stdio_vprintf : NULL Pointer\n" ); );
 		data->buf_PublicData->ra_ErrNo = EFAULT;
 		goto bailout;
 	}
@@ -82,7 +82,7 @@ int retval;
 
 	if ( ps.ps_Written < 0 )
 	{
-		IExec->DebugPrintF( "_generic_stdio_vprintf : Failed with %ld\n", ps.ps_Written );
+		DOFUNCTIONPRINTF( IExec->DebugPrintF( "_generic_stdio_vprintf : Failed with %ld\n", ps.ps_Written ); );
 		goto bailout;
 	}
 

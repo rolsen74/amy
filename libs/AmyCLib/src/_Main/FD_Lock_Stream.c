@@ -42,13 +42,13 @@
 // --
 // File Descriptor
 
-PTR AMYFUNC _generic__Priv_FDLockStream( struct AmyCLibPrivIFace *Self, PTR file_ptr )
+struct PrivFile * AMYFUNC _generic__Priv_FDLockStream( struct AmyCLibPrivIFace *Self, struct PrivFile *file )
 {
 struct PrivFile *retval;
-struct PrivFile *file;
+//struct PrivFile *file;
 struct libData *data;
 
-	IExec->DebugPrintF( "FDLockStream\n" );
+	DOFUNCTIONPRINTF( IExec->DebugPrintF( "FDLockStream\n" ); );
 
 	retval = NULL;
 
@@ -56,11 +56,11 @@ struct libData *data;
 
 	IExec->ObtainSemaphore( & data->FD_Semaphore );
 
-	file = (PTR) file_ptr;
+//	file = (PTR) file_ptr;
 
 	if (( ! file ) || ( file->pf_StructID != ID_PRIVFILE ))
 	{
-		IExec->DebugPrintF( "%s:%04ld: Invalid file id\n", __FILE__, __LINE__ );
+		IExec->DebugPrintF( "%s:%04ld: Invalid StructID\n", __FILE__, __LINE__ );
 		goto bailout;
 	}
 

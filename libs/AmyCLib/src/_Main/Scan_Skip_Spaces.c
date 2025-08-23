@@ -48,7 +48,7 @@ struct AmyCLibPrivIFace *Self;
 S32 cnt;
 S32 c;
 
-	IExec->DebugPrintF( "my_Scan_Skip_Spaces\n" );
+	DODEBUGPRINTF( IExec->DebugPrintF( "my_Scan_Skip_Spaces\n" ); );
 
 	Self = in->Self;
 

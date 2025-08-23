@@ -48,7 +48,7 @@ struct libData *data;
 S64 retval;
 S32 err;
 
-	IExec->DebugPrintF( "FD_IFC_File_Write\n" );
+	DOFUNCTIONPRINTF( IExec->DebugPrintF( "FD_IFC_File_Write : File %p\n", file ); );
 
 	data = (PTR)( (U32) Self - Self->Data.NegativeSize );
 
@@ -56,7 +56,7 @@ S32 err;
 
 	if (( ! file ) || ( file->pf_StructID != ID_PRIVFILE ))
 	{
-		IExec->DebugPrintF( "%s:%04ld: Invalid file id\n", __FILE__, __LINE__ );
+		IExec->DebugPrintF( "%s:%04ld: Invalid StructID\n", __FILE__, __LINE__ );
 		goto bailout;
 	}
 

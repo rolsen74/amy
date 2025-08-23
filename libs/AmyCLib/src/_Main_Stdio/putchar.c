@@ -49,7 +49,7 @@ S32 retval;
 
 	// --
 
-	IExec->DebugPrintF( "_generic_stdio_putchar : c %ld\n", c );
+	DOFUNCTIONPRINTF( IExec->DebugPrintF( "_generic_stdio_putchar : c %ld\n", c ); );
 
 	DOFUNCTIONLOG( LOG_FUNC_putchar );
 

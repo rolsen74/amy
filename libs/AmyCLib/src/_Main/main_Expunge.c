@@ -16,7 +16,8 @@ U32 AMYFUNC _Main_Expunge( struct AmyCLibPrivIFace *Self )
 struct libData *data;
 U32 retval;
 
-	IExec->DebugPrintF( "AmyCLib : _Main_Expunge\n" );
+	IExec->DebugPrintF( "AmyCLib : _Main_Expunge : Task \"%s\" :\n", IExec->FindTask(NULL)->tc_Node.ln_Name );
+	DOFUNCTIONPRINTF( IExec->DebugPrintF( "AmyCLib : _Main_Expunge\n" ); );
 
 	retval = FALSE;
 

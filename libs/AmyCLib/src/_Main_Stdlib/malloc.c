@@ -16,7 +16,7 @@ void * AMYFUNC _generic_stdlib_malloc( struct AmyCLibPrivIFace *Self, size_t siz
 struct libData *data;
 void *retval;
 
-	IExec->DebugPrintF( "_generic_stdlib_malloc : Size %lu\n", size );
+	DOFUNCTIONPRINTF( IExec->DebugPrintF( "_generic_stdlib_malloc : Size %lu\n", size ); );
 
 	DOFUNCTIONLOG( LOG_FUNC_malloc );
 
@@ -28,7 +28,7 @@ void *retval;
 
 	if ( ! retval )
 	{
-		IExec->DebugPrintF( "_generic_stdlib_malloc : Error Allocating Memory : Size %lu\n", size );
+		DOFUNCTIONPRINTF( IExec->DebugPrintF( "_generic_stdlib_malloc : Error Allocating Memory : Size %lu\n", size ); );
 		data->buf_PublicData->ra_ErrNo = ENOMEM;
 	}
 

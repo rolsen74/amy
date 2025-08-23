@@ -53,7 +53,7 @@ U32 cnt;
 
 	retval = -1UL;
 
-	IExec->DebugPrintF( "_generic__Priv_FD_Array_Insert : Node %p\n", Node );
+	DOFUNCTIONPRINTF( IExec->DebugPrintF( "_generic__Priv_FD_Array_Insert : Node %p\n", Node ); );
 
 	data = (PTR)( (U32) Self - Self->Data.NegativeSize );
 
@@ -74,7 +74,7 @@ U32 cnt;
 
 		if ( ! newarray )
 		{
-			IExec->DebugPrintF( "_generic__Priv_FD_Array_Insert : Error allocating memory\n" );
+			DOFUNCTIONPRINTF( IExec->DebugPrintF( "_generic__Priv_FD_Array_Insert : Error allocating memory\n" ); );
 			goto bailout;
 		}
 

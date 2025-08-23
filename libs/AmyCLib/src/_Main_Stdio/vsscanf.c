@@ -49,7 +49,7 @@ int retval;
 
 	// --
 
-	IExec->DebugPrintF( "_generic_stdio_vsscanf\n" );
+	DOFUNCTIONPRINTF( IExec->DebugPrintF( "_generic_stdio_vsscanf\n" ); );
 
 	DOFUNCTIONLOG( LOG_FUNC_vsscanf );
 

@@ -74,19 +74,19 @@ S32 AMYFUNC _generic__Priv_FB_Read( struct AmyCLibPrivIFace *Self, struct PrivFi
 {
 S32 retval;
 
-	IExec->DebugPrintF( "_generic__Priv_FB_Read\n" );
+	DOFUNCTIONPRINTF( IExec->DebugPrintF( "_generic__Priv_FB_Read\n" ); );
 
 	retval = -1; // Error / EOF
 
 	if (( ! file ) || ( file->pf_StructID != ID_PRIVFILE ))
 	{
-		IExec->DebugPrintF( "%s:%04ld: Invalid file id\n", __FILE__, __LINE__ );
+		IExec->DebugPrintF( "%s:%04ld: Invalid StructID\n", __FILE__, __LINE__ );
 		goto bailout;
 	}
 
 	if ( ! file->pf_Handle.pf_File )
 	{
-		IExec->DebugPrintF( "_generic__Priv_FB_Read : NULL Pointer 1\n" );
+		DOFUNCTIONPRINTF( IExec->DebugPrintF( "_generic__Priv_FB_Read : NULL Pointer 1\n" ); );
 		goto bailout;
 	}
 
@@ -96,7 +96,7 @@ S32 retval;
 	{
 		if ( Self->Priv_FB_Read_Fill_Buffer( file ) < 0 )
 		{
-		IExec->DebugPrintF( "_generic__Priv_FB_Read : NULL Pointer 2\n" );
+		DOFUNCTIONPRINTF( IExec->DebugPrintF( "_generic__Priv_FB_Read : NULL Pointer 2\n" ); );
 			goto bailout;
 		}
 

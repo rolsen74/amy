@@ -54,7 +54,7 @@ int rc;
 
 	retval = NULL;
 
-	IExec->DebugPrintF( "_generic_time_localtime : Time %p\n", time );
+	DOFUNCTIONPRINTF( IExec->DebugPrintF( "_generic_time_localtime : Time %p\n", time ); );
 
 	DOFUNCTIONLOG( LOG_FUNC_localtime );
 
@@ -62,7 +62,7 @@ int rc;
 
 	if ( ! time )
 	{
-		IExec->DebugPrintF( "_generic_time_localtime : Null Pointer\n" );
+		DOFUNCTIONPRINTF( IExec->DebugPrintF( "_generic_time_localtime : Null Pointer\n" ); );
 		data->buf_PublicData->ra_ErrNo = EFAULT;
 		goto bailout;
 	}
@@ -76,17 +76,17 @@ int rc;
 
 		if ( ! data->buf_LocalTime )
 		{
-			IExec->DebugPrintF( "_generic_time_localtime : Failed to allocate memory\n" );
+			DOFUNCTIONPRINTF( IExec->DebugPrintF( "_generic_time_localtime : Failed to allocate memory\n" ); );
 			data->buf_PublicData->ra_ErrNo = ENOMEM;
 			goto bailout;
 		}
 
-		IExec->DebugPrintF( "_generic_time_localtime : Allocated new buffer %p\n", data->buf_LocalTime );
+		DOFUNCTIONPRINTF( IExec->DebugPrintF( "_generic_time_localtime : Allocated new buffer %p\n", data->buf_LocalTime ); );
 	}
 
 	t = (PTR) time;
 
-	IExec->DebugPrintF( "_generic_time_localtime : Calling Convert : LocalTime Buffer %p\n", data->buf_LocalTime );
+	DOFUNCTIONPRINTF( IExec->DebugPrintF( "_generic_time_localtime : Calling Convert : LocalTime Buffer %p\n", data->buf_LocalTime ); );
 
 	rc = Self->Priv_Convert_Time_to_TM( t, data->buf_LocalTime );
 

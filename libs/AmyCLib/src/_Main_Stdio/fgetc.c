@@ -47,7 +47,7 @@ struct PrivFile *file;
 struct libData *data;
 int retval;
 
-	IExec->DebugPrintF( "_generic_stdio_fgetc : File %p\n", stream );
+	DOFUNCTIONPRINTF( IExec->DebugPrintF( "_generic_stdio_fgetc : File %p\n", stream ); );
 
 	DOFUNCTIONLOG( LOG_FUNC_fgetc );
 
@@ -89,7 +89,7 @@ int retval;
 	{
 		if ( Self->Priv_FB_Write_Flush_Buffer( file ) < 0 )
 		{
-			IExec->DebugPrintF( "_generic_stdio_fgetc : Error flushing buffer" );
+			DOFUNCTIONPRINTF( IExec->DebugPrintF( "_generic_stdio_fgetc : Error flushing buffer" ); );
 			goto bailout;
 		}
 	}

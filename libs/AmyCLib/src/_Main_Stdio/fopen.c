@@ -50,7 +50,7 @@ U32 Mode;
 
 	// --
 
-	IExec->DebugPrintF( "_generic_stdio_fopen, Filename %s, Mode: %s\n", filename, mode );
+	DOFUNCTIONPRINTF( IExec->DebugPrintF( "_generic_stdio_fopen, Filename %s, Mode: %s\n", filename, mode ); );
 
 	DOFUNCTIONLOG( LOG_FUNC_fopen );
 
@@ -186,11 +186,11 @@ U32 Mode;
 		{
 			if ( Mode & Mode_I )
 			{
-				IExec->DebugPrintF( "_generic_stdio_fopen : Invalid Mode $%08lx\n", Mode );
+				DOFUNCTIONPRINTF( IExec->DebugPrintF( "_generic_stdio_fopen : Invalid Mode $%08lx\n", Mode ); );
 			}
 			else
 			{
-				IExec->DebugPrintF( "_generic_stdio_fopen : Unsupported Mode $%08lx\n", Mode );
+				DOFUNCTIONPRINTF( IExec->DebugPrintF( "_generic_stdio_fopen : Unsupported Mode $%08lx\n", Mode ); );
 			}
 
 			data->buf_PublicData->ra_ErrNo = EFAULT;
@@ -204,6 +204,7 @@ U32 Mode;
 
 	if ( ! file )
 	{
+		DOFUNCTIONPRINTF( IExec->DebugPrintF( "_generic_stdio_fopen : Priv_FD_Init failed\n" ); );
 		goto bailout;
 	}
 

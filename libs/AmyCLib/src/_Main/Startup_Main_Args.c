@@ -62,7 +62,7 @@ STR arg;
 STR str;
 S32 len;
 
-	IExec->DebugPrintF( "myClone_ArgString\n" );
+	DOFUNCTIONPRINTF( IExec->DebugPrintF( "myClone_ArgString\n" ); );
 
 	str = NULL;
 	arg = IDOS->GetArgStr();
@@ -163,7 +163,7 @@ U32 cnt;
 U8 mark;
 U8 c;
 
-	IExec->DebugPrintF( "myCount_StringArgs\n" );
+	DOFUNCTIONPRINTF( IExec->DebugPrintF( "myCount_StringArgs\n" ); );
 
 	cnt = 0;
 	args = 0;
@@ -259,7 +259,7 @@ U8 d;
 
 	retval = FALSE;
 
-	IExec->DebugPrintF( "myFill_StringArgs\n" );
+	DOFUNCTIONPRINTF( IExec->DebugPrintF( "myFill_StringArgs\n" ); );
 
 	if (( ! str ) || ( ! _argv ) ||( ! _argc ))
 	{
@@ -392,7 +392,7 @@ STR *_argv;
 S32 _argc;
 U32 cnt;
 
-	IExec->DebugPrintF( "myInit_CLI\n" );
+	DOFUNCTIONPRINTF( IExec->DebugPrintF( "myInit_CLI\n" ); );
 
 	retval = FALSE;
 
@@ -451,12 +451,14 @@ U32 cnt;
 
 	retval = TRUE;
 
+	#ifdef DEBUG
 {
 	for( U32 oo=0 ; oo<cnt ; oo++ )
 	{
 		IExec->DebugPrintF( "Idx %2ld : %s\n", oo, (_argv[oo])?_argv[oo]:"<NULL>" );
 	}
 }
+	#endif
 
 bailout:
 
@@ -503,7 +505,7 @@ S32 retval;
 	{
 		// -- WB Start
 
-		IExec->DebugPrintF( "InitArgs : WB Start\n" );
+		DOFUNCTIONPRINTF( IExec->DebugPrintF( "InitArgs : WB Start\n" ); );
 
 		*argv = (PTR) wbmsg;
 		*argc = 0;
@@ -514,12 +516,12 @@ S32 retval;
 	{
 		// -- Cli Start
 
-		IExec->DebugPrintF( "InitArgs : CLI Start\n" );
+		DOFUNCTIONPRINTF( IExec->DebugPrintF( "InitArgs : CLI Start\n" ); );
 
 		retval = myInit_CLI( data, argv, argc );
 	}
 
-	IExec->DebugPrintF( "InitArgs : retval %ld\n", retval );
+//	IExec->DebugPrintF( "InitArgs : retval %ld\n", retval );
 
 	return( retval );
 }

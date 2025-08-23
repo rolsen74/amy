@@ -46,7 +46,7 @@ static S32 my_Scan_Skip_Char( struct Intern *in )
 {
 S32 val;
 
-	IExec->DebugPrintF( "my_Scan_Skip_Char\n" );
+	DODEBUGPRINTF( IExec->DebugPrintF( "my_Scan_Skip_Char\n" ); );
 
 	/**/ if ( in->buffer )
 	{

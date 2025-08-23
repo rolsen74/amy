@@ -50,7 +50,7 @@ double sum;
 char c;
 int is_negative;
 
-	IExec->DebugPrintF( "_generic_stdlib_strtod\n" );
+	DOFUNCTIONPRINTF( IExec->DebugPrintF( "_generic_stdlib_strtod\n" ); );
 
 	DOFUNCTIONLOG( LOG_FUNC_strtod );
 

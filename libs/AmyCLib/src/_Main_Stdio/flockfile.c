@@ -48,7 +48,7 @@ struct libData *data;
 
 	// --
 
-	IExec->DebugPrintF( "_generic_stdio_flockfile : Stream %p\n", stream );
+	DOFUNCTIONPRINTF( IExec->DebugPrintF( "_generic_stdio_flockfile : Stream %p\n", stream ); );
 
 	DOFUNCTIONLOG( LOG_FUNC_flockfile );
 
@@ -67,7 +67,7 @@ struct libData *data;
 
 	if (( ! file ) || ( file->pf_StructID != ID_PRIVFILE ))
 	{
-		IExec->DebugPrintF( "%s:%04ld: Invalid file id\n", __FILE__, __LINE__ );
+		IExec->DebugPrintF( "%s:%04ld: Invalid StructID\n", __FILE__, __LINE__ );
 		data = (PTR)( (U32) Self - Self->Data.NegativeSize );
 		data->buf_PublicData->ra_ErrNo = EBADF;
 	}

@@ -61,7 +61,7 @@ S32 c;
 // S32 d;
 S32 v;
 
-	IExec->DebugPrintF( "_generic__Priv_Scan\n" );
+	DOFUNCTIONPRINTF( IExec->DebugPrintF( "_generic__Priv_Scan\n" ); );
 
 	// --
 
@@ -98,7 +98,7 @@ S32 v;
 	else
 	{
 		in.buffer = (PTR) ss->ss_Buffer;
-		IExec->DebugPrintF( "Input String : %s\n", ss->ss_Buffer );
+//		IExec->DebugPrintF( "Input String : %s\n", ss->ss_Buffer );
 	}
 
 	if ( ! ss->ss_Format )
@@ -112,7 +112,7 @@ S32 v;
 	in.fmt = (PTR) ss->ss_Format;
 	in.Self = Self;
 
-	IExec->DebugPrintF( "Input Format : %s\n", ss->ss_Format );
+//	IExec->DebugPrintF( "Input Format : %s\n", ss->ss_Format );
 
 	va_copy( in.args, ss->ss_Args );
 
@@ -122,7 +122,7 @@ S32 v;
 	{
 		c = my_Scan_Fmt_Get( & in );
 
-		IExec->DebugPrintF( "Fmt: $%02lx %ld\n", c, c );
+//		IExec->DebugPrintF( "Fmt: $%02lx %ld\n", c, c );
 
 		if ( ! c )
 		{
@@ -144,13 +144,13 @@ S32 v;
 			if ( v < 0 )
 			{
 				in.input_fail = TRUE;
-				IExec->DebugPrintF( "_generic__Priv_Scan : peek_char() failed (%ld)\n", v );
+				DOFUNCTIONPRINTF( IExec->DebugPrintF( "_generic__Priv_Scan : peek_char() failed (%ld)\n", v ); );
 				goto bailout;
 			}
 
 			if ( v != c )
 			{
-				IExec->DebugPrintF( "_generic__Priv_Scan : char mismatch %ld != %ld\n", c, v );
+				DOFUNCTIONPRINTF( IExec->DebugPrintF( "_generic__Priv_Scan : char mismatch %ld != %ld\n", c, v ); );
 				goto bailout;
 			}
 
@@ -159,7 +159,7 @@ S32 v;
 			if ( v < 0 )
 			{
 				in.input_fail = TRUE;
-				IExec->DebugPrintF( "_generic__Priv_Scan : skip_one() failed (%ld)\n", v );
+				DOFUNCTIONPRINTF( IExec->DebugPrintF( "_generic__Priv_Scan : skip_one() failed (%ld)\n", v ); );
 				goto bailout;
 			}
 
@@ -189,13 +189,13 @@ S32 v;
 			if ( v < 0 )
 			{
 				in.input_fail = TRUE;
-				IExec->DebugPrintF( "_generic__Priv_Scan : peek_char() failed (%ld)\n", v );
+				DOFUNCTIONPRINTF( IExec->DebugPrintF( "_generic__Priv_Scan : peek_char() failed (%ld)\n", v );
 				goto bailout;
 			}
 
 			if ( v != '%' )
 			{
-				IExec->DebugPrintF( "_generic__Priv_Scan : char mismatch %ld != %ld\n", '%', v );
+				DOFUNCTIONPRINTF( IExec->DebugPrintF( "_generic__Priv_Scan : char mismatch %ld != %ld\n", '%', v );
 				goto bailout;
 			}
 
@@ -204,7 +204,7 @@ S32 v;
 			if ( v < 0 )
 			{
 				in.input_fail = TRUE;
-				IExec->DebugPrintF( "_generic__Priv_Scan : skip_one() failed (%ld)\n", v );
+				DOFUNCTIONPRINTF( IExec->DebugPrintF( "_generic__Priv_Scan : skip_one() failed (%ld)\n", v );
 				goto bailout;
 			}
 
@@ -260,7 +260,7 @@ S32 v;
 			{
 				if ( ! my_Scan_Arg_Integer( & in ))
 				{
-					IExec->DebugPrintF( "my_Scan_Arg_Integer failed\n" );
+					DODEBUGPRINTF( IExec->DebugPrintF( "my_Scan_Arg_Integer failed\n" ); );
 				}
 				break;
 			}
@@ -275,8 +275,8 @@ S32 v;
 
 bailout:
 
-	IExec->DebugPrintF( "input_fail ... : %ld\n", in.input_fail );
-	IExec->DebugPrintF( "nassigned .... : %ld\n", in.nassigned );
+//	IExec->DebugPrintF( "input_fail ... : %ld\n", in.input_fail );
+//	IExec->DebugPrintF( "nassigned .... : %ld\n", in.nassigned );
 
 	if ( ss )
 	{

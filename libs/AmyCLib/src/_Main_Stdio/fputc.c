@@ -49,7 +49,7 @@ S32 retval;
 
 	// --
 
-	IExec->DebugPrintF( "_generic_stdio_fputc : c %ld, File %p\n", c, stream );
+	DOFUNCTIONPRINTF( IExec->DebugPrintF( "_generic_stdio_fputc : c %ld, File %p\n", c, stream ); );
 
 	DOFUNCTIONLOG( LOG_FUNC_fputc );
 
@@ -69,7 +69,7 @@ S32 retval;
 
 	if (( ! file ) || ( file->pf_StructID != ID_PRIVFILE ))
 	{
-		IExec->DebugPrintF( "%s:%04ld: Invalid file id\n", __FILE__, __LINE__ );
+		IExec->DebugPrintF( "%s:%04ld: Invalid StructID\n", __FILE__, __LINE__ );
 		data->buf_PublicData->ra_ErrNo = EBADF;
 		goto bailout;
 	}
@@ -93,7 +93,7 @@ S32 retval;
 	{
 		if ( ! Self->Priv_FB_Read_Drop_Buffer( file ))
 		{
-			IExec->DebugPrintF( "_generic_stdio_fputc : failed\n" );
+			DOFUNCTIONPRINTF( IExec->DebugPrintF( "_generic_stdio_fputc : failed\n" ); );
 			goto bailout;
 		}
 	}

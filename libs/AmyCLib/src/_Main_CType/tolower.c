@@ -34,7 +34,7 @@ static const U8 table[256] =
 
 int AMYFUNC _generic_ctype_tolower( struct AmyCLibPrivIFace *Self UNUSED, int c )
 {
-//	IExec->DebugPrintF( "_generic_ctype_tolower : c %ld\n", c );
+//	DOFUNCTIONPRINTF( IExec->DebugPrintF( "_generic_ctype_tolower : c %ld\n", c );
 
 	DOFUNCTIONLOG( LOG_FUNC_tolower );
 

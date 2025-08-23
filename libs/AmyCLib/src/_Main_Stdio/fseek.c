@@ -49,7 +49,7 @@ off_t off;
 
 	// --
 
-	IExec->DebugPrintF( "_generic_stdio_fseek : Stream %p\n", stream );
+	DOFUNCTIONPRINTF( IExec->DebugPrintF( "_generic_stdio_fseek : Stream %p\n", stream ); );
 
 	DOFUNCTIONLOG( LOG_FUNC_fseek );
 

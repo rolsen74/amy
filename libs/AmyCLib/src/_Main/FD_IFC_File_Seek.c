@@ -51,13 +51,13 @@ S32 success;
 S64 retval;
 S32 err;
 
-	IExec->DebugPrintF( "FD_IFC_File_Seek\n" );
+	DOFUNCTIONPRINTF( IExec->DebugPrintF( "FD_IFC_File_Seek : File %p\n", file ); );
 
 	retval = -1L;
 
 	if (( ! file ) || ( file->pf_StructID != ID_PRIVFILE ))
 	{
-		IExec->DebugPrintF( "%s:%04ld: Invalid file id\n", __FILE__, __LINE__ );
+		IExec->DebugPrintF( "%s:%04ld: Invalid StructID\n", __FILE__, __LINE__ );
 		goto bailout;
 	}
 

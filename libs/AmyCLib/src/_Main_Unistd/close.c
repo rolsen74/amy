@@ -47,7 +47,7 @@ struct PrivFile *file;
 struct libData *data;
 int retval;
 
-	IExec->DebugPrintF( "_generic_unistd_close : Fildes %ld\n", (S32) fildes );
+	DOFUNCTIONPRINTF( IExec->DebugPrintF( "_generic_unistd_close : Fildes %ld\n", (S32) fildes ); );
 
 	DOFUNCTIONLOG( LOG_FUNC_close );
 

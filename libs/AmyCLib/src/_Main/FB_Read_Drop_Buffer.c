@@ -51,7 +51,7 @@ S64 bytes;
 S64 pos;
 S32 retval;
 
-	IExec->DebugPrintF( "_generic__Priv_FB_Read_Drop_Buffer\n" );
+	DOFUNCTIONPRINTF( IExec->DebugPrintF( "_generic__Priv_FB_Read_Drop_Buffer\n" ); );
 
 	data = (PTR)( (U32) Self - Self->Data.NegativeSize );
 
@@ -59,13 +59,13 @@ S32 retval;
 
 	if (( ! file ) || ( file->pf_StructID != ID_PRIVFILE ))
 	{
-		IExec->DebugPrintF( "%s:%04ld: Invalid file id\n", __FILE__, __LINE__ );
+		IExec->DebugPrintF( "%s:%04ld: Invalid StructID\n", __FILE__, __LINE__ );
 		goto bailout;
 	}
 
 	if ( ! file->pf_Handle.pf_File )
 	{
-		IExec->DebugPrintF( "_generic__Priv_FB_Read_Drop_Buffer : NULL Pointer\n" );
+		DOFUNCTIONPRINTF( IExec->DebugPrintF( "_generic__Priv_FB_Read_Drop_Buffer : NULL Pointer\n" ); );
 		goto bailout;
 	}
 

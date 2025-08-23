@@ -49,7 +49,7 @@ int retval;
 
 	// --
 
-	IExec->DebugPrintF( "_generic_stdio_fclose : Stream %p\n", stream );
+	DOFUNCTIONPRINTF( IExec->DebugPrintF( "_generic_stdio_fclose : Stream %p\n", stream ); );
 
 	DOFUNCTIONLOG( LOG_FUNC_fclose );
 

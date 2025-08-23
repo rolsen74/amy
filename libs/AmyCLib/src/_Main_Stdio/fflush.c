@@ -50,7 +50,7 @@ U32 cnt;
 
 	// --
 
-	IExec->DebugPrintF( "_generic_stdio_fflush : Stream %p\n", stream );
+	DOFUNCTIONPRINTF( IExec->DebugPrintF( "_generic_stdio_fflush : Stream %p\n", stream ); );
 
 	DOFUNCTIONLOG( LOG_FUNC_fflush );
 
@@ -75,7 +75,7 @@ U32 cnt;
 		if (( ! file ) || ( file->pf_StructID != ID_PRIVFILE ))
 		{
 			retval = EOF;
-			IExec->DebugPrintF( "%s:%04ld: Invalid file id\n", __FILE__, __LINE__ );
+			IExec->DebugPrintF( "%s:%04ld: Invalid StructID\n", __FILE__, __LINE__ );
 			goto bailout;
 		}
 
@@ -89,7 +89,7 @@ U32 cnt;
 		{
 			if ( ! Self->Priv_FB_Read_Drop_Buffer( file ))
 			{
-				IExec->DebugPrintF( "_generic_stdio_fflush : Priv_FB_Read_Drop_Buffer failed\n" );
+				DOFUNCTIONPRINTF( IExec->DebugPrintF( "_generic_stdio_fflush : Priv_FB_Read_Drop_Buffer failed\n" ); );
 				// Failure
 				retval = EOF;
 			}
@@ -100,7 +100,7 @@ U32 cnt;
 		{
 			if ( Self->Priv_FB_Write_Flush_Buffer( file ) == FALSE )
 			{
-				IExec->DebugPrintF( "_generic_stdio_fflush : Priv_FB_Write_Flush_Buffer failed\n" );
+				DOFUNCTIONPRINTF( IExec->DebugPrintF( "_generic_stdio_fflush : Priv_FB_Write_Flush_Buffer failed\n" ); );
 				// Failure
 				retval = EOF;
 			}
