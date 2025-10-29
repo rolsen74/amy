@@ -23,16 +23,6 @@
 
 // --
 
-#define LIBNAME				"Reactive.library"
-#define VERSION				1
-#define REVISION			1
-#define DATE				"1.1.2025"
-#define VERS				"Reactive.library 1.1"
-#define VSTRING				"Reactive.library 1.1 (1.8.2025)\r\n"
-#define VERSTAG				"\0$VER: Reactive.library 1.1 (1.8.2025)"
-
-// --
-
 struct AppClassData
 {
 	int	dummy;
