@@ -39,7 +39,7 @@
 
 #include <proto/dos.h>
 #include <proto/exec.h>
-#include <proto/AmyCLib.h>
+#include <proto/AmyCLibPriv.h>
 #include <workbench/startup.h>
 
 #include "src/All.h"
@@ -56,7 +56,7 @@ struct Library *		AmyCBase	USED = NULL;	// D
 struct DOSIFace *		IDOS		USED = NULL;	// E
 struct ExecIFace *		IExec		USED = NULL;	// F
 //struct UtilityIFace *	IUtility	USED = NULL;	// G
-struct AmyCLibPrivIFace *	IAmyCLib	USED = NULL;	// H
+struct AmyCLibPrivIFace *IAmyCLib	USED = NULL;	// H
 
 struct _AmyCLibPublic *	__AmyCPublicData = NULL;
 
@@ -85,7 +85,7 @@ struct MsgPort *		wb_mp;			// 2  - Workbench MsgPort
 //struct UtilityIFace *	myIUtility;		// 4
 struct Library *		myAmyCBase;		// 5
 struct Library *		myDOSBase;		// 6
-struct AmyCLibIFace *	myIAmyC;		// 7
+struct AmyCLibPrivIFace *myIAmyC;		// 7
 struct DOSIFace *		myIDOS;			// 8
 char *					errtxt;			// 9  - Error String
 int						prg_rc;			// 10 - Program Return Code
