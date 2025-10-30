@@ -41,6 +41,7 @@ struct _AmyCLibPublic
 
 // --
 
+extern struct _AmyCLibPublic *__AmyCPublicData;
 #define AmyCLibPublic __AmyCPublicData
 
 /****************************************************************************/
