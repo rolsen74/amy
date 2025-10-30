@@ -94,7 +94,7 @@ stubs:
 
 # Build the archive
 $(BINDIR)/$(TARGET): $(OBJS)
-	@$(MKDIR) $(dir $@)
+	$(MKDIR) $(BINDIR)/$(TARGET)
 	$(RM) $@
 	$(AR) rcs $@ $(OBJS)
 
