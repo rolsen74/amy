@@ -63,6 +63,8 @@ typedef struct
 
 } FILE;
 
+#include <Amy_Public.h>
+
 /****************************************************************************/
 
 AMY_EXTERN_C_BEGIN
