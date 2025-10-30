@@ -29,11 +29,11 @@ CFLAGS		+= -W
 CFLAGS		+= -Wall
 CFLAGS		+= -MMD
 CFLAGS		+= -MP
-CFLAGS		+= -mcrt=clib2
+CFLAGS		+= -mcrt=amyclib
 
 # Linker Flags
 LDFLAGS		:= -nostartfiles
-LDFLAGS		+= -mcrt=clib2
+LDFLAGS		+= -mcrt=amyclib
 
 # Link Libraries
 LIBS		:= -lc

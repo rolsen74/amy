@@ -29,7 +29,7 @@ CFLAGS		+= -W
 CFLAGS		+= -Wall
 CFLAGS		+= -MMD
 CFLAGS		+= -MP
-CFLAGS		+= -mcrt=clib2
+CFLAGS		+= -mcrt=amyclib
 
 # Make sure gcc do not swap functions to memset() and so on .. very important
 CFLAGS		+= -fno-builtin
@@ -41,7 +41,7 @@ CFLAGS		+= -D__DO_FUNCTION_LOG__
 #CFLAGS		+= -D__DO_FUNCTION_PRINT__
 
 # Linker Flags
-LDFLAGS		:= -mcrt=clib2 
+LDFLAGS		:= -mcrt=amyclib 
 LDFLAGS		+= -nostartfiles
 
 # Link Libraries

@@ -34,7 +34,7 @@ CFLAGS				+= -W
 CFLAGS				+= -Wall
 CFLAGS				+= -MMD
 CFLAGS				+= -MP
-CFLAGS				+= -mcrt=clib2
+CFLAGS				+= -mcrt=amyclib
 
 # Linker Flags
 LDFLAGS				:=
@@ -57,7 +57,7 @@ CC					:= gcc
 STRIP				:= strip
 MKDIR				:= makedir FORCE
 COPY				:= copy
-SDK					:= sdk:clib2
+SDK					:= sdk:amyclib
 
 else ifeq ($(HOSTOS),Linux)
 
@@ -68,7 +68,7 @@ CC					:= ppc-amigaos-gcc
 STRIP				:= ppc-amigaos-strip
 MKDIR				:= mkdir -p
 COPY				:= cp
-SDK					:= /SDK/clib2
+SDK					:= /SDK/amyclib
 
 else
 $(error Unknown Host SYS type: $(HOSTOS).)

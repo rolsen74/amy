@@ -13,7 +13,7 @@ INCLUDES	+= -I$(ROOTDIR)/inc_Private
 CFLAGS		:= -O2
 CFLAGS		+= -Wall
 CFLAGS		+= -W
-CFLAGS		+= -mcrt=clib2
+CFLAGS		+= -mcrt=amyclib
 CFLAGS		+= $(INCLUDES)
 ASFLAGS		:= $(CFLAGS)
 
@@ -31,7 +31,7 @@ CC			:= gcc
 STRIP		:= strip
 MKDIR		:= makedir FORCE
 COPY		:= copy
-SDK			:= sdk:clib2
+SDK			:= sdk:amyclib
 
 # --
 
@@ -43,7 +43,7 @@ CC			:= ppc-amigaos-gcc
 STRIP		:= ppc-amigaos-strip
 MKDIR		:= mkdir -p
 COPY		:= cp
-SDK			:= /SDK/clib2
+SDK			:= /SDK/amyclib
 
 else
 

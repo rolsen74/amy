@@ -29,11 +29,11 @@ CFLAGS		+= -W
 CFLAGS		+= -Wall
 CFLAGS		+= -MMD
 CFLAGS		+= -MP
-CFLAGS		+= -mcrt=clib2
+CFLAGS		+= -mcrt=amyclib
 #CFLAGS		+= -D__RA_CLASS__
 
 # Linker Flags
-LDFLAGS		:= -mcrt=clib2 
+LDFLAGS		:= -mcrt=amyclib 
 #LDFLAGS	+= -nostartfiles
 
 # Link Libraries
