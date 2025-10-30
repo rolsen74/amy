@@ -89,8 +89,8 @@ all: stubs $(BINDIR)/$(TARGET)
 # Generate stubs BEFORE compiling anything
 stubs:
 	@echo "Generating stub files from registry into $(GEN_STUB_DIR)..."
-	@$(MKDIR) $(GEN_STUB_DIR)
-	@python3 $(STUB_GEN_SCRIPT)
+	$(MKDIR) $(GEN_STUB_DIR)
+	python3 $(STUB_GEN_SCRIPT)
 
 # Build the archive
 $(BINDIR)/$(TARGET): $(OBJS)
@@ -103,12 +103,12 @@ $(BINDIR)/$(TARGET): $(OBJS)
 
 # C sources
 $(OBJDIR)/%.o: %.c
-	@mkdir -p $(dir $@)
+	mkdir -p $(dir $@)
 	$(CC) $(CFLAGS) -c $< -o $@
 
 # ASM sources
 $(OBJDIR)/%.o: %.s
-	@mkdir -p $(dir $@)
+	mkdir -p $(dir $@)
 	$(CC) -c -mregnames $< -o $@
 
 ###########################################################################
