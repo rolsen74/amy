@@ -122,6 +122,8 @@ int			unsetenv( const char * );
 size_t		wcstombs( char *, const wchar_t *, size_t );
 int			wctomb( char *, wchar_t );
 
+AMY_EXTERN_C_END
+
 /****************************************************************************/
 // Legacy
 
