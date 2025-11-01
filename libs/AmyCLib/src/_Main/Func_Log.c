@@ -238,7 +238,7 @@ static const FuncString myStrings[ LOG_FUNC_LAST ] =
 	[LOG_FUNC_fgetc] = { .Group = GROUP_Stdio, .Name = "fgetc" },
 	[LOG_FUNC_fgetpos] = { .Group = GROUP_Stdio, .Name = "fgetpos" },
 	[LOG_FUNC_fgets] = { .Group = GROUP_Stdio, .Name = "fgets" },
-//	[LOG_FUNC_fileno] = { .Group = GROUP_Stdio, .Name = "fileno" },
+	[LOG_FUNC_fileno] = { .Group = GROUP_Stdio, .Name = "fileno" },
 	[LOG_FUNC_flockfile] = { .Group = GROUP_Stdio, .Name = "flockfile" },
 	[LOG_FUNC_fopen] = { .Group = GROUP_Stdio, .Name = "fopen" },
 //	[LOG_FUNC_fprintf] = { .Group = GROUP_Stdio, .Name = "fprintf" },

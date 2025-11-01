@@ -170,14 +170,14 @@ struct AmyCLibPrivIFace
 /*  116 */	void						AMYFUNC (*assert_assert)( struct AmyCLibPrivIFace *Self, const char *filename, int linenumber, const char *function, const char *expression );
 /*  117 */	void						AMYFUNC (*stdlib_exit)( struct AmyCLibPrivIFace *Self, int rc );
 /*  118 */ 	int							AMYFUNC (*ctype_islower)( struct AmyCLibPrivIFace *Self, int c );
-/*  119 */	int							AMYFUNC (*stdio_fgetc)(struct AmyCLibPrivIFace *, struct PrivFile *stream);
+/*  119 */	int							AMYFUNC (*stdio_fgetc)(struct AmyCLibPrivIFace *, struct PrivFile *stream );
 /*  120 */	struct tm *					AMYFUNC (*time_gmtime)(struct AmyCLibPrivIFace *, const time_t *time );
 /*  121 */	struct tm *					AMYFUNC (*time_gmtime_r)(struct AmyCLibPrivIFace *, const time_t *time, struct tm *tm );
 /*  122 */	int							AMYFUNC	(*stdio_ferror)( struct AmyCLibPrivIFace *Self, struct PrivFile *stream );
 /*  123 */	void						AMYFUNC (*Priv_Print_Log)( struct AmyCLibPrivIFace *Self );
 /*  124 */	void						AMYFUNC (*Priv_Func_Log)( struct AmyCLibPrivIFace *Self, S32 xx );
 /*  125 */ 	char *					 	AMYFUNC (*string_strncat)( struct AmyCLibPrivIFace *Self, char *dst, const char *src, size_t max );
-
+/*  126 */	int							AMYFUNC (*stdio_fileno)(struct AmyCLibPrivIFace *, struct PrivFile *stream );
 
 
 };

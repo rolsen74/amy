@@ -314,7 +314,7 @@ static const PTR Main_Vectors[] =
 /*  123 */	(PTR) _generic__Priv_Print_Log,
 /*  124 */	(PTR) _generic__Priv_Func_Log,
 /*  125 */	(PTR) _generic_string_strncat,
-
+/*  126 */	(PTR) _NotEnabled,	// _generic_stdio_fileno
 
 	(PTR) -1
 };

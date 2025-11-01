@@ -57,6 +57,7 @@
 "int"		fclose		stdio_fclose		"stream"			"FILE *stream"
 "int"		fflush		stdio_fflush		"stream"			"FILE *stream"
 "int"		fgetpos		stdio_fgetpos		"stream, pos"			"FILE *stream, fpos_t *pos"
+"int"		fileno		stdio_fileno		"stream"			"FILE *stream"
 "void"		flockfile	stdio_flockfile		"stream"			"FILE *stream"
 "FILE *"	fopen		stdio_fopen		"filename, mode"		"const char *filename, const char *mode"
 "int"		fputc		stdio_fputc		"c, stream"			"int c, FILE *stream"

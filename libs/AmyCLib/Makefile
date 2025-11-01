@@ -196,6 +196,7 @@ SRCS		+= src/_Main_Stdio/fopen.c
 SRCS		+= src/_Main_Stdio/fputc.c
 SRCS		+= src/_Main_Stdio/fputc_unlocked.c
 SRCS		+= src/_Main_Stdio/fgetc.c
+SRCS		+= src/_Main_Stdio/fileno.c
 SRCS		+= src/_Main_Stdio/fread.c
 SRCS		+= src/_Main_Stdio/fseek.c
 SRCS		+= src/_Main_Stdio/fseeko.c
