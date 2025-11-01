@@ -8,6 +8,8 @@
 ** This file is part of Amy C Lib
 */
 
+/* -- */
+
 #ifndef AMYSYS_DEFINES_H
 #define AMYSYS_DEFINES_H
 
@@ -147,4 +149,4 @@ typedef char* STR;
 
 // --
 
-#endif
+#endif /* AMYSYS_DEFINES_H */

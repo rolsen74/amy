@@ -1,7 +1,5 @@
 
 /*
-** Based on The Open Group Base Specifications Issue 7
-**
 ** SPDX-License-Identifier: BSD-3-Clause
 ** Copyright (c) 2025 Rene W. Olsen
 ** Target OS: AmigaOS
@@ -21,35 +19,19 @@
 
 /* -- */
 
-#ifndef AMYSYS_GRP_H
-#define AMYSYS_GRP_H
+#ifndef AMYSYS_SYS_PARAM_H
+#define AMYSYS_SYS_PARAM_H
 
 /****************************************************************************/
 
-#include <sys/types.h>
+#define NBBY			8
+#define setbit(x, y)	( (x)[(y)/NBBY] |=   1U << ((y) % NBBY))
+#define clrbit(x, y)	( (x)[(y)/NBBY] &= ~(1U << ((y) % NBBY)))
+#define isset(x, y)		(((x)[(y)/NBBY] &   (1U << ((y) % NBBY))) != 0)
+#define isclr(x, y)		(((x)[(y)/NBBY] &   (1U << ((y) % NBBY))) == 0)
 
-/****************************************************************************/
-
-struct group
-{
-	char *	gr_name;
-	gid_t	gr_gid;
-	char **	gr_mem;
-};
-
-/****************************************************************************/
-
-AMY_EXTERN_C_BEGIN
-
-void			endgrent( void );
-struct group *	getgrent( void );
-struct group *	getgrgid( gid_t );
-int				getgrgid_r(  gid_t, struct group *, char *, size_t, struct group ** );
-struct group *	getgrnam( const char * );
-int				getgrnam_r( const char *, struct group *, char *, size_t, struct group ** );
-void			setgrent( void );
-
-AMY_EXTERN_C_END
+#define roundup(x, y)	((((x) + ((y) - 1)) / (y)) * (y))
+#define howmany(x, y)	(( (x) + ((y) - 1)) / (y))
 
 /****************************************************************************/
 

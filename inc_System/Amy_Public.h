@@ -8,6 +8,8 @@
 ** This file is part of Amy C Lib
 */
 
+/* -- */
+
 #ifndef AMYSYS_PUBLIC_H
 #define AMYSYS_PUBLIC_H
 

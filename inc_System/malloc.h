@@ -1,7 +1,5 @@
 
 /*
-** Based on The Open Group Base Specifications Issue 7
-**
 ** SPDX-License-Identifier: BSD-3-Clause
 ** Copyright (c) 2025 Rene W. Olsen
 ** Target OS: AmigaOS
@@ -21,47 +19,37 @@
 
 /* -- */
 
-#ifndef AMYSYS_STRINGS_H
-#define AMYSYS_STRINGS_H
+#ifndef AMYSYS_MALLOC_H
+#define AMYSYS_MALLOC_H
 
 /****************************************************************************/
 
-#include <stddef.h>
+#include <stdlib.h>
+
+/****************************************************************************/
+
+struct mallinfo 
+{
+	int arena;
+	int ordblks;
+	int smblks;
+	int hblks;
+	int hblkhd;
+	int usmblks;
+	int fsmblks;
+	int uordblks;
+	int fordblks;
+	int keepcost;
+};
 
 /****************************************************************************/
 
 AMY_EXTERN_C_BEGIN
 
-int		bcmp( const void *, const void *, size_t );
-void	bcopy( const void *, void *, size_t );
-void	bzero( void *, size_t );
-void	explicit_bzero( void *, size_t );
-int		ffs( int );
-char *	index( const char *, int );
-char *	rindex( const char *, int );
-int		strcasecmp( const char *, const char *);
-int		strncasecmp( const char *, const char *, size_t );
-int		timingsafe_bcmp( const void *, const void *, size_t );
+struct mallinfo	mallinfo( void );
+int				mallopt( int param, int value );
 
 AMY_EXTERN_C_END
-
-/****************************************************************************/
-
-#ifndef strcmpi
-#define strcmpi strcasecmp
-#endif
-
-#ifndef stricmp
-#define stricmp strcasecmp
-#endif
-
-#ifndef strncmpi
-#define strncmpi strncasecmp
-#endif
-
-#ifndef strnicmp
-#define strnicmp strncasecmp
-#endif
 
 /****************************************************************************/
 
