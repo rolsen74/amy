@@ -41,9 +41,6 @@
 
 // --
 
-// #pragma GCC push_options
-// #pragma GCC optimize ("Os,no-tree-loop-distribute-patterns")
-
 char * AMYFUNC _generic_string_strncpy( struct AmyCLibPrivIFace *Self, char *dst, const char *src, size_t max )
 {
 	DOFUNCTIONPRINTF( IExec->DebugPrintF( "_generic_string_strncpy : Src %p, Dst %p, Max %lu\n", src, dst, max ); );
@@ -58,7 +55,7 @@ char * AMYFUNC _generic_string_strncpy( struct AmyCLibPrivIFace *Self, char *dst
 			struct libData *data = (PTR)( (U32) Self - Self->Data.NegativeSize );
 			data->buf_PublicData->ra_ErrNo = EFAULT;
 		}
-		else if ( src != dst )	// hmm if I remove the src != dst check, it would still do padding
+		else if ( src != dst ) // hmm if I remove the src != dst check, it would still do padding
 		{
 			size_t n = max;
 			STR d = (PTR) dst ;
@@ -80,11 +77,13 @@ char * AMYFUNC _generic_string_strncpy( struct AmyCLibPrivIFace *Self, char *dst
 				}
 			}
 		}
+		else // ( src == dst )
+		{
+			// find end and do padding ?
+		}
 	}
 
 	return( dst );
 }
-
-// #pragma GCC pop_options
 
 // --

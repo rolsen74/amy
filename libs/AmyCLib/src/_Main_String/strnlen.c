@@ -41,9 +41,6 @@
 
 // --
 
-// #pragma GCC push_options
-// #pragma GCC optimize ("Os,no-tree-loop-distribute-patterns")
-
 size_t AMYFUNC _generic_string_strnlen( struct AmyCLibPrivIFace *Self, const char *s, size_t max )
 {
 	DOFUNCTIONPRINTF( IExec->DebugPrintF( "_generic_string_strnlen : Ptr %p, Max %lu : Str '%s'\n", s, max, (s)?s:"<NULL>" ); );
@@ -75,7 +72,5 @@ size_t AMYFUNC _generic_string_strnlen( struct AmyCLibPrivIFace *Self, const cha
 
 	return( len );
 }
-
-// #pragma GCC pop_options
 
 // --

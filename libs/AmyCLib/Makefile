@@ -241,6 +241,7 @@ SRCS		+= src/_Main_String/strcmp.c
 SRCS		+= src/_Main_String/strcpy.c
 SRCS		+= src/_Main_String/strdup.c
 SRCS		+= src/_Main_String/strlen.c
+SRCS		+= src/_Main_String/strncat.c
 SRCS		+= src/_Main_String/strncmp.c
 SRCS		+= src/_Main_String/strncpy.c
 SRCS		+= src/_Main_String/strndup.c

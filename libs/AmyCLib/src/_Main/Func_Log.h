@@ -363,7 +363,7 @@ enum
 //	LOG_FUNC_strlcat,
 //	LOG_FUNC_strlcpy,
 	LOG_FUNC_strlen,
-//	LOG_FUNC_strncat,
+	LOG_FUNC_strncat,
 	LOG_FUNC_strncmp,
 	LOG_FUNC_strncpy,
 	LOG_FUNC_strndup,

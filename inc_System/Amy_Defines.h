@@ -107,12 +107,12 @@ typedef char* STR;
 #endif
 #endif
 
-#ifndef USED
-#define USED		__attribute__((used))
+#ifndef AMYUSED
+#define AMYUSED		__attribute__((used))
 #endif
 
-#ifndef UNUSED
-#define UNUSED		__attribute__((unused))
+#ifndef AMYUNUSED
+#define AMYUNUSED	__attribute__((unused))
 #endif
 
 #ifndef AMYFUNC		// Library Call and we want Stack only args

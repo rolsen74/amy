@@ -41,9 +41,6 @@
 
 // --
 
-// #pragma GCC push_options
-// #pragma GCC optimize ("Os,no-tree-loop-distribute-patterns")
-
 void * AMYFUNC _generic_string_memmove( struct AmyCLibPrivIFace *Self, void *dst, const void *src, size_t len )
 {
 	DOFUNCTIONPRINTF( IExec->DebugPrintF( "_generic_string_memmove : Src %p, Dst %p, Len %lu\n", src, dst, len ); );
@@ -85,7 +82,5 @@ void * AMYFUNC _generic_string_memmove( struct AmyCLibPrivIFace *Self, void *dst
 
 	return( dst );
 }
-
-// #pragma GCC pop_options
 
 // --

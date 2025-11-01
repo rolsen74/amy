@@ -96,7 +96,9 @@ void _generic_string_strnlen(void);
 // void _generic_string_strndup(void);
 void _generic_string_strcpy(void);
 void _generic_string_strncpy(void);
+void _generic_string_strcat(void);
 void _generic_string_strcmp(void);
+void _generic_string_strncat(void);
 void _generic_string_strncmp(void);
 void _generic_string_memcmp(void);
 void _generic_string_memmove(void);
@@ -311,6 +313,7 @@ static const PTR Main_Vectors[] =
 /*  122 */	(PTR) _NotEnabled,	// _generic_stdio_ferror
 /*  123 */	(PTR) _generic__Priv_Print_Log,
 /*  124 */	(PTR) _generic__Priv_Func_Log,
+/*  125 */	(PTR) _generic_string_strncat,
 
 
 	(PTR) -1

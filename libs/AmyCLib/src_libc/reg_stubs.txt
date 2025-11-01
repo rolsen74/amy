@@ -110,6 +110,7 @@
 "char *"	strcpy		string_strcpy		"dst, src"			"char *dst, const char *src"
 "char *"	strdup		string_strdup		"str"				"const char *str"
 "size_t"	strlen		string_strlen		"str"				"const char *str"
+"char *"	strncat		string_strncat		"dst, src, max"			"char *dst, const char *src, size_t max"
 "int"		strncmp		string_strncmp		"s1, s2, max"			"const char *s1, const char *s2, size_t max"
 "char *"	strncpy		string_strncpy		"dst, src, max"			"char *dst, const char *src, size_t max"
 "char *"	strndup		string_strndup		"str, max"			"const char *str, size_t max"

@@ -366,6 +366,7 @@ static const FuncString myStrings[ LOG_FUNC_LAST ] =
 //	[LOG_FUNC_strlcat] = { .Group = GROUP_String, .Name = "strlcat" },
 //	[LOG_FUNC_strlcpy] = { .Group = GROUP_String, .Name = "strlcpy" },
 	[LOG_FUNC_strlen] = { .Group = GROUP_String, .Name = "strlen" },
+	[LOG_FUNC_strncat] = { .Group = GROUP_String, .Name = "strncat" },
 	[LOG_FUNC_strncmp] = { .Group = GROUP_String, .Name = "strncmp" },
 	[LOG_FUNC_strncpy] = { .Group = GROUP_String, .Name = "strncpy" },
 	[LOG_FUNC_strndup] = { .Group = GROUP_String, .Name = "strndup" },

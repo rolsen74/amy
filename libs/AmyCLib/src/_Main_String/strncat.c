@@ -41,42 +41,50 @@
 
 // --
 
-void * AMYFUNC _generic_string_memset( struct AmyCLibPrivIFace *Self, void *s, int c, size_t len )
+char * AMYFUNC _generic_string_strncat( struct AmyCLibPrivIFace *Self, char *d, const char *s, size_t n )
 {
-	DOFUNCTIONPRINTF( IExec->DebugPrintF( "_generic_string_memset : Mem %p : Val %ld : Len %lu :\n", s, c, len ); );
+struct libData *data;
+char *retval;
 
-	DOFUNCTIONLOG( LOG_FUNC_memset );
+	// --
 
-	if ( len )
+	DOFUNCTIONPRINTF( IExec->DebugPrintF( "_generic_string_strncat\n" ); );
+
+	DOFUNCTIONLOG( LOG_FUNC_strncat );
+
+	retval = d;
+
+	data = (PTR)( (U32) Self - Self->Data.NegativeSize );
+
+	// --
+
+	if ( n > 0 )
 	{
-		if ( ! s )
+		if (( ! s ) || ( ! d ))
 		{
-			// Only an error if len is none zero
-			struct libData *data = (PTR)( (U32) Self - Self->Data.NegativeSize );
 			data->buf_PublicData->ra_ErrNo = EFAULT;
+			goto bailout;
 		}
-		else
+
+		/* find end of dest */
+		while( *d )
 		{
-			#if 0
-
-			U8 v = c;
-			U8 *mem = s;
-
-			for( size_t cnt=0 ; cnt<len ; cnt++ )
-			{
-				mem[cnt] = v;
-			}
-
-			#else
-
-			// hmm maybe we should just call Utility  
-			IUtility->SetMem( s, c, len );
-
-			#endif
+			d++;
 		}
+
+		/* copy at most n characters */
+		while(( n-- ) && ( *s ))
+		{
+			*d++ = *s++;
+		}
+
+		/* always null terminate */
+		*d = '\0';
 	}
 
-	return( s );
+bailout:
+
+	return( retval );
 }
 
 // --

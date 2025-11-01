@@ -176,6 +176,7 @@ struct AmyCLibPrivIFace
 /*  122 */	int							AMYFUNC	(*stdio_ferror)( struct AmyCLibPrivIFace *Self, struct PrivFile *stream );
 /*  123 */	void						AMYFUNC (*Priv_Print_Log)( struct AmyCLibPrivIFace *Self );
 /*  124 */	void						AMYFUNC (*Priv_Func_Log)( struct AmyCLibPrivIFace *Self, S32 xx );
+/*  125 */ 	char *					 	AMYFUNC (*string_strncat)( struct AmyCLibPrivIFace *Self, char *dst, const char *src, size_t max );
 
 
 

@@ -41,9 +41,6 @@
 
 // --
 
-// #pragma GCC push_options
-// #pragma GCC optimize ("Os,no-tree-loop-distribute-patterns")
-
 int AMYFUNC _generic_string_strncmp( struct AmyCLibPrivIFace *Self, const char *s1, const char *s2, size_t max )
 {
 int retval;
@@ -95,7 +92,5 @@ U8 *m2;
 
 	return( retval );
 }
-
-// #pragma GCC pop_options
 
 // --

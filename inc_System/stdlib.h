@@ -10,22 +10,12 @@
 ** This file is part of Amy C Lib
 */
 
-/* --------------------------------------------------------------------------
-** Always include Amy_Features.h FIRST — this defines feature macros like
-** _FILE_OFFSET_BITS and _TIME_BITS before any typedefs depend on them.
-** -------------------------------------------------------------------------- 
-*/
-
-#include <Amy_Features.h>
-#include <Amy_Defines.h>
-
-/* -- */
-
 #ifndef AMYSYS_STDLIB_H
 #define AMYSYS_STDLIB_H
 
 /****************************************************************************/
 
+#include <Amy_Defines.h>	// Need AMY_EXTERN_C_BEGIN
 #include <stddef.h>
 #include <stdint.h>
 #include <sys/types.h>
@@ -70,11 +60,6 @@ void		_Exit( int );
 long		a641( const char * );
 void		abort( void );
 int			abs( int );
-uint32_t	arc4random( void );
-void		arc4random_addrandom( unsigned char *, int );
-void		arc4random_buf( void *, size_t );
-uint32_t	arc4random_uniform( uint32_t );
-void		arc4random_stir( void );
 int			atexit( void (*)(void) );
 double		atof( const char * );
 int			atoi( const char * );
@@ -137,12 +122,28 @@ int			unsetenv( const char * );
 size_t		wcstombs( char *, const wchar_t *, size_t );
 int			wctomb( char *, wchar_t );
 
+/****************************************************************************/
+// Legacy
+
+AMY_EXTERN_C_BEGIN
+
+char *			ecvt( double, int, int *restrict, int * );
+char *			fcvt( double, int, int *restrict, int * );
+char *			gcvt( double, int, char * );
+char *			mktemp( char * );
+
 AMY_EXTERN_C_END
 
 /****************************************************************************/
 // BSD
 
 AMY_EXTERN_C_BEGIN
+
+uint32_t		arc4random( void );
+void			arc4random_addrandom( unsigned char *, int );
+void			arc4random_buf( void *, size_t );
+uint32_t		arc4random_uniform( uint32_t );
+void			arc4random_stir( void );
 
 const char *	getprogname( void );
 void			setprogname( const char * );
