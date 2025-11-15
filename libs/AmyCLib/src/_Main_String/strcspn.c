@@ -41,42 +41,38 @@
 
 // --
 
-char * AMYFUNC _generic_string_strcat( struct AmyCLibPrivIFace *Self, char *d, const char *s )
+size_t AMYFUNC _generic_string_strcspn( struct AmyCLibPrivIFace *Self, const char *s, const char *reject )
 {
 struct libData *data;
-char *retval;
-U8 c;
+const char *start;
+size_t retval;
 
-	// --
+// --
 
-	DOFUNCTIONPRINTF( IExec->DebugPrintF( "_generic_string_strcat\n" ); );
+	DOFUNCTIONPRINTF( IExec->DebugPrintF( "_generic_string_strcspn\n" ); );
 
-	DOFUNCTIONLOG( LOG_FUNC_strcat );
+	DOFUNCTIONLOG( LOG_FUNC_strcspn );
 
 	data = (PTR)( (U32) Self - Self->Data.NegativeSize );
 
 	// --
 
-	retval = d;
+	retval = 0;
 
-	if (( ! s ) || ( ! d ))
+	if (( ! s ) || ( ! reject ))
 	{
 		data->buf_PublicData->ra_ErrNo = EFAULT;
 		goto bailout;
 	}
 
-	while( *d )
+	start = s;
+
+	while(( *s ) && ( ! strchr( reject, *s )))
 	{
-		d++;
+		s++;
 	}
 
-	do
-	{
-		c = *s++;
-
-		*d++ = c;
-	}
-	while( c );
+	retval = s - start;
 
 bailout:
 

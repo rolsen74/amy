@@ -57,7 +57,6 @@
 "int"		fclose		stdio_fclose		"stream"			"FILE *stream"
 "int"		fflush		stdio_fflush		"stream"			"FILE *stream"
 "int"		fgetpos		stdio_fgetpos		"stream, pos"			"FILE *stream, fpos_t *pos"
-"int"		fileno		stdio_fileno		"stream"			"FILE *stream"
 "void"		flockfile	stdio_flockfile		"stream"			"FILE *stream"
 "FILE *"	fopen		stdio_fopen		"filename, mode"		"const char *filename, const char *mode"
 "int"		fputc		stdio_fputc		"c, stream"			"int c, FILE *stream"
@@ -107,15 +106,19 @@
 "void *"	memmove		string_memmove		"dst, src, len"			"void *dst, const void *src, size_t len"
 "void *"	memset		string_memset		"mem, val, len"			"void *mem, int val, size_t len"
 "char *"	strcat		string_strcat		"dst, src"			"char *dst, const char *src"
+"char *"	strchr		string_strchr		"str, c"			"const char *str, int c"
 "int"		strcmp		string_strcmp		"s1, s2"			"const char *s1, const char *s2"
 "char *"	strcpy		string_strcpy		"dst, src"			"char *dst, const char *src"
+"size_t"	strspn		string_strspn		"s1, s2"			"const char *s1, const char *s2"
+"size_t"	strcspn		string_strcspn		"s1, s2"			"const char *s1, const char *s2"
 "char *"	strdup		string_strdup		"str"				"const char *str"
 "size_t"	strlen		string_strlen		"str"				"const char *str"
-"char *"	strncat		string_strncat		"dst, src, max"			"char *dst, const char *src, size_t max"
 "int"		strncmp		string_strncmp		"s1, s2, max"			"const char *s1, const char *s2, size_t max"
 "char *"	strncpy		string_strncpy		"dst, src, max"			"char *dst, const char *src, size_t max"
 "char *"	strndup		string_strndup		"str, max"			"const char *str, size_t max"
 "size_t"	strnlen		string_strnlen		"str, max"			"const char *str, size_t max"
+"char *"	strpbrk		string_strpbrk		"s1, s2"			"const char *s1, const char *s2"
+"size_t"	strspn		string_strspn		"s1, s2"			"const char *s1, const char *s2"
 
 
 # strings	func-name	iface-name		args-call			args-decl

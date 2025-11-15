@@ -172,8 +172,11 @@ struct AmyCLibIFace
 /*  122 */	int							AMYFUNC (*stdio_ferror)( struct AmyCLibIFace *Self, FILE *stream );
 /*  123 */	void						AMYFUNC (*Priv_Print_Log)( struct AmyCLibIFace *Self );
 /*  124 */	void						AMYFUNC (*Priv_Func_Log)( struct AmyCLibIFace *Self, S32 xx );
-/*  125 */ 	char *					 	AMYFUNC (*string_strncat)( struct AmyCLibIFace *Self, char *dst, const char *src, size_t max );
-/*  126 */	int							AMYFUNC (*stdio_fileno)(struct AmyCLibIFace *, FILE *stream );
+/*  125 */ 	size_t						AMYFUNC (*string_strcspn)( struct AmyCLibIFace *Self, const char *s1, const char *s2 );
+/*  126 */ 	size_t						AMYFUNC (*string_strspn)( struct AmyCLibIFace *Self, const char *s1, const char *s2 );
+/*  127 */ 	char *						AMYFUNC (*string_strpbrk)( struct AmyCLibIFace *Self, const char *s1, const char *s2 );
+/*  128 */ 	char *						AMYFUNC (*string_strchr)( struct AmyCLibIFace *Self, const char *str, int c );
+
 
 };
 

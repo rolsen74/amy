@@ -13,7 +13,7 @@ INCLUDES	+= -I$(ROOTDIR)/inc_Private
 CFLAGS		:= -O2
 CFLAGS		+= -Wall
 CFLAGS		+= -W
-CFLAGS		+= -mcrt=amyclib
+CFLAGS		+= -mcrt=clib2
 CFLAGS		+= $(INCLUDES)
 ASFLAGS		:= $(CFLAGS)
 
@@ -31,7 +31,7 @@ CC			:= gcc
 STRIP		:= strip
 MKDIR		:= makedir FORCE
 COPY		:= copy
-SDK			:= sdk:amyclib
+SDK			:= sdk:clib2
 
 # --
 
@@ -43,7 +43,7 @@ CC			:= ppc-amigaos-gcc
 STRIP		:= ppc-amigaos-strip
 MKDIR		:= mkdir -p
 COPY		:= cp
-SDK			:= /SDK/amyclib
+SDK			:= /SDK/clib2
 
 else
 
@@ -56,7 +56,8 @@ endif
 
 CRT_OBJS := \
 	$(BINDIR)/crtbegin.o \
-	$(BINDIR)/crtend.o
+	$(BINDIR)/crtend.o \
+	$(BINDIR)/crt0.o
 
 ###########################################################################
 # Targets
@@ -69,6 +70,9 @@ $(BINDIR)/crtbegin.o: $(SRCDIR)/crtbegin.c
 $(BINDIR)/crtend.o: $(SRCDIR)/crtend.c
 	$(CC) $(CFLAGS) -c $< -o $@
 
+$(BINDIR)/crt0.o: $(SRCDIR)/crt0.s
+	$(CC) $(ASFLAGS) -c $< -o $@
+
 clean:
 	$(RM) $(CRT_OBJS)
 
@@ -78,5 +82,6 @@ strip:
 install:
 	$(COPY) $(BINDIR)/crtbegin.o $(SDK)/lib/
 	$(COPY) $(BINDIR)/crtend.o $(SDK)/lib/
+	$(COPY) $(BINDIR)/crt0.o $(SDK)/lib/
 
 ###########################################################################

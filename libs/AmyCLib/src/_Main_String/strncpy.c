@@ -55,7 +55,7 @@ char * AMYFUNC _generic_string_strncpy( struct AmyCLibPrivIFace *Self, char *dst
 			struct libData *data = (PTR)( (U32) Self - Self->Data.NegativeSize );
 			data->buf_PublicData->ra_ErrNo = EFAULT;
 		}
-		else if ( src != dst ) // hmm if I remove the src != dst check, it would still do padding
+		else if ( src != dst )	// hmm if I remove the src != dst check, it would still do padding
 		{
 			size_t n = max;
 			STR d = (PTR) dst ;
@@ -76,10 +76,6 @@ char * AMYFUNC _generic_string_strncpy( struct AmyCLibPrivIFace *Self, char *dst
 					break;
 				}
 			}
-		}
-		else // ( src == dst )
-		{
-			// find end and do padding ?
 		}
 	}
 

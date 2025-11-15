@@ -81,6 +81,8 @@ int c2;
 
 	while( TRUE )
 	{
+		// maybe do IUtility->Stricmp
+
 		c1 = Self->ctype_toupper( *str1 );
 		c2 = Self->ctype_toupper( *str2 );
 

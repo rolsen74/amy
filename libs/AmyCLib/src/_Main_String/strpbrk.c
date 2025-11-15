@@ -41,46 +41,42 @@
 
 // --
 
-char * AMYFUNC _generic_string_strcat( struct AmyCLibPrivIFace *Self, char *d, const char *s )
+char * AMYFUNC _generic_string_strpbrk( struct AmyCLibPrivIFace *Self, const char *s, const char *set )
 {
 struct libData *data;
 char *retval;
-U8 c;
+char c;
 
-	// --
+	DOFUNCTIONPRINTF( IExec->DebugPrintF( "_generic_string_strpbrk :\n" ); );
 
-	DOFUNCTIONPRINTF( IExec->DebugPrintF( "_generic_string_strcat\n" ); );
+	DOFUNCTIONLOG( LOG_FUNC_strpbrk );
 
-	DOFUNCTIONLOG( LOG_FUNC_strcat );
+	retval = NULL;
 
-	data = (PTR)( (U32) Self - Self->Data.NegativeSize );
-
-	// --
-
-	retval = d;
-
-	if (( ! s ) || ( ! d ))
+	if (( ! s ) || ( ! set ))
 	{
+		data = (PTR)( (U32) Self - Self->Data.NegativeSize );
 		data->buf_PublicData->ra_ErrNo = EFAULT;
 		goto bailout;
 	}
 
-	while( *d )
+	while(( c = *s ) != 0 )
 	{
-		d++;
-	}
+		/* Is this character found in the set? */
+		if ( Self->string_strchr( set, c ) != NULL )
+		{
+			/* If it's in there, remember where we found it. */
+			retval = (char *)s;
+			break;
+		}
 
-	do
-	{
-		c = *s++;
-
-		*d++ = c;
+		s++;
 	}
-	while( c );
 
 bailout:
 
-	return( retval );
+	return(	retval );
 }
 
-// --
+/****************************************************************************/
+

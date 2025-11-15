@@ -29,7 +29,7 @@ CFLAGS		+= -W
 CFLAGS		+= -Wall
 CFLAGS		+= -MMD
 CFLAGS		+= -MP
-CFLAGS		+= -mcrt=amyclib
+CFLAGS		+= -mcrt=clib2
 
 # Make sure gcc do not swap functions to memset() and so on .. very important
 CFLAGS		+= -fno-builtin
@@ -41,7 +41,7 @@ CFLAGS		+= -D__DO_FUNCTION_LOG__
 #CFLAGS		+= -D__DO_FUNCTION_PRINT__
 
 # Linker Flags
-LDFLAGS		:= -mcrt=amyclib 
+LDFLAGS		:= -mcrt=clib2 
 LDFLAGS		+= -nostartfiles
 
 # Link Libraries
@@ -196,7 +196,6 @@ SRCS		+= src/_Main_Stdio/fopen.c
 SRCS		+= src/_Main_Stdio/fputc.c
 SRCS		+= src/_Main_Stdio/fputc_unlocked.c
 SRCS		+= src/_Main_Stdio/fgetc.c
-SRCS		+= src/_Main_Stdio/fileno.c
 SRCS		+= src/_Main_Stdio/fread.c
 SRCS		+= src/_Main_Stdio/fseek.c
 SRCS		+= src/_Main_Stdio/fseeko.c
@@ -238,15 +237,18 @@ SRCS		+= src/_Main_String/memcpy.c
 SRCS		+= src/_Main_String/memmove.c
 SRCS		+= src/_Main_String/memset.c
 SRCS		+= src/_Main_String/strcat.c
+SRCS		+= src/_Main_String/strchr.c
 SRCS		+= src/_Main_String/strcmp.c
 SRCS		+= src/_Main_String/strcpy.c
+SRCS		+= src/_Main_String/strcspn.c
 SRCS		+= src/_Main_String/strdup.c
 SRCS		+= src/_Main_String/strlen.c
-SRCS		+= src/_Main_String/strncat.c
 SRCS		+= src/_Main_String/strncmp.c
 SRCS		+= src/_Main_String/strncpy.c
 SRCS		+= src/_Main_String/strndup.c
 SRCS		+= src/_Main_String/strnlen.c
+SRCS		+= src/_Main_String/strpbrk.c
+SRCS		+= src/_Main_String/strspn.c
 
 # Main .. strings
 SRCS		+= src/_Main_Strings/bzero.c

@@ -59,7 +59,7 @@ S32 retval;
 
 	// --
 
-	stream = (PTR) data->buf_PublicData->ra_stdout;
+	stream = data->buf_PublicData->ra_stdout;
 
 	retval = Self->stdio_fputc( c, stream );
 
