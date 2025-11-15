@@ -10,19 +10,12 @@
 ** This file is part of Amy C Lib
 */
 
-/* --------------------------------------------------------------------------
-** Always include Amy_Features.h FIRST — this defines feature macros like
-** _FILE_OFFSET_BITS and _TIME_BITS before any typedefs depend on them.
-** -------------------------------------------------------------------------- 
-*/
-
-#include <Amy_Features.h>
-#include <Amy_Defines.h>
-
-/* -- */
-
 #ifndef AMYSYS_SYS_TYPES_H
 #define AMYSYS_SYS_TYPES_H
+
+/****************************************************************************/
+
+#include <Amy_Defines.h>
 
 /****************************************************************************/
 
@@ -48,7 +41,7 @@ typedef unsigned int id_t;
 
 typedef unsigned int ino_t;
 
-typedef unsigned int key_t;
+typedef struct key key_t;
 
 typedef unsigned int mode_t;
 
