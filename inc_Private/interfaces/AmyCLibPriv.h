@@ -121,7 +121,7 @@ struct AmyCLibPrivIFace
 /*   69 */	struct tm *					AMYFUNC (*time_localtime)( struct AmyCLibPrivIFace *Self, const time_t *time );
 /*   70 */	time_t						AMYFUNC (*time_time)( struct AmyCLibPrivIFace *Self, time_t *ptr );
 
-/*   71 */	struct PrivFile *					AMYFUNC (*stdio_fopen)( struct AmyCLibPrivIFace *Self, const char *filename, const char *mode );
+/*   71 */	struct PrivFile *			AMYFUNC (*stdio_fopen)( struct AmyCLibPrivIFace *Self, const char *filename, const char *mode );
 /*   72 */	long						AMYFUNC (*stdio_ftell)( struct AmyCLibPrivIFace *Self, struct PrivFile *stream );
 /*   73 */	int							AMYFUNC (*stdio_fgetpos)( struct AmyCLibPrivIFace *Self, struct PrivFile *stream, fpos_t *pos );
 /*   74 */	void						AMYFUNC (*stdio_flockfile)( struct AmyCLibPrivIFace *Self, struct PrivFile *stream );
