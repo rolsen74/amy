@@ -41,7 +41,7 @@ typedef unsigned int id_t;
 
 typedef unsigned int ino_t;
 
-typedef struct key key_t;
+typedef unsigned int key_t;
 
 typedef unsigned int mode_t;
 
