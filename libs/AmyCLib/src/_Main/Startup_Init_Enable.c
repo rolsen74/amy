@@ -111,6 +111,7 @@ void _generic_stdio_flockfile( void );
 void _generic_stdio_funlockfile( void );
 void _generic_stdio_fflush( void );
 void _generic_stdio_ferror( void );
+void _generic_stdio_fileno( void );
 void _generic_stdio_puts( void );
 void _generic_stdio_putchar( void );
 void _generic_stdio_fputc( void );
@@ -206,31 +207,36 @@ struct EnableFunc  __strcat[] =					{{ CPUType_Any, _generic_string_strcat }};
 // struct EnableFunc  __memmove[] =				{{ CPUType_Any, _generic_string_memmove }};
 // struct EnableFunc  __memcpy[] =				{{ CPUType_Any, _generic_string_memcpy }};
 // struct EnableFunc  __memset[] =				{{ CPUType_Any, _generic_string_memset }};
-struct EnableFunc  __fopen[] =					{{ CPUType_Any, _generic_stdio_fopen }};
-struct EnableFunc  __ftell[] =					{{ CPUType_Any, _generic_stdio_ftell }};
-struct EnableFunc  __fgetpos[] =				{{ CPUType_Any, _generic_stdio_fgetpos }};
-struct EnableFunc  __flockfile[] =				{{ CPUType_Any, _generic_stdio_flockfile }};
-struct EnableFunc  __funlockfile[] =			{{ CPUType_Any, _generic_stdio_funlockfile }};
-struct EnableFunc  __fflush[] =					{{ CPUType_Any, _generic_stdio_fflush }};
-struct EnableFunc  __puts[] =					{{ CPUType_Any, _generic_stdio_puts }};
-struct EnableFunc  __putchar[] =				{{ CPUType_Any, _generic_stdio_putchar }};
-struct EnableFunc  __fputc[] =					{{ CPUType_Any, _generic_stdio_fputc }};
-struct EnableFunc  __fputc_unlocked[] =			{{ CPUType_Any, _generic_stdio_fputc_unlocked }};
-struct EnableFunc  __setvbuf[] =				{{ CPUType_Any, _generic_stdio_setvbuf }};
-struct EnableFunc  __fclose[] =					{{ CPUType_Any, _generic_stdio_fclose }};
-struct EnableFunc  __fseek[] =					{{ CPUType_Any, _generic_stdio_fseek }};
-struct EnableFunc  __fseeko[] =					{{ CPUType_Any, _generic_stdio_fseeko }};
-struct EnableFunc  __vprintf[] =				{{ CPUType_Any, _generic_stdio_vprintf }};
+// --
+struct EnableFunc  __stdio_fopen[] =			{{ CPUType_Any, _generic_stdio_fopen }};
+struct EnableFunc  __stdio_ftell[] =			{{ CPUType_Any, _generic_stdio_ftell }};
+struct EnableFunc  __stdio_fgetpos[] =			{{ CPUType_Any, _generic_stdio_fgetpos }};
+struct EnableFunc  __stdio_flockfile[] =		{{ CPUType_Any, _generic_stdio_flockfile }};
+struct EnableFunc  __stdio_funlockfile[] =		{{ CPUType_Any, _generic_stdio_funlockfile }};
+struct EnableFunc  __stdio_fflush[] =			{{ CPUType_Any, _generic_stdio_fflush }};
+struct EnableFunc  __stdio_puts[] =				{{ CPUType_Any, _generic_stdio_puts }};
+struct EnableFunc  __stdio_putchar[] =			{{ CPUType_Any, _generic_stdio_putchar }};
+struct EnableFunc  __stdio_fputc[] =			{{ CPUType_Any, _generic_stdio_fputc }};
+struct EnableFunc  __stdio_fputc_unlocked[] =	{{ CPUType_Any, _generic_stdio_fputc_unlocked }};
+struct EnableFunc  __stdio_setvbuf[] =			{{ CPUType_Any, _generic_stdio_setvbuf }};
+struct EnableFunc  __stdio_fclose[] =			{{ CPUType_Any, _generic_stdio_fclose }};
+struct EnableFunc  __stdio_fseek[] =			{{ CPUType_Any, _generic_stdio_fseek }};
+struct EnableFunc  __stdio_fseeko[] =			{{ CPUType_Any, _generic_stdio_fseeko }};
+struct EnableFunc  __stdio_vprintf[] =			{{ CPUType_Any, _generic_stdio_vprintf }};
 // struct EnableFunc  __sprintf[] =				{{ CPUType_Any, _generic_stdio_sprintf }};
 // struct EnableFunc  __snprintf[] =			{{ CPUType_Any, _generic_stdio_snprintf }};
-struct EnableFunc  __vsprintf[] =				{{ CPUType_Any, _generic_stdio_vsprintf }};
-struct EnableFunc  __vsnprintf[] =				{{ CPUType_Any, _generic_stdio_vsnprintf }};
-struct EnableFunc  __ungetc[] =					{{ CPUType_Any, _generic_stdio_ungetc }};
-struct EnableFunc  __fread[] =					{{ CPUType_Any, _generic_stdio_fread }};
-struct EnableFunc  __clearerr[] =				{{ CPUType_Any, _generic_stdio_clearerr }};
-struct EnableFunc  __fgetc[] =					{{ CPUType_Any, _generic_stdio_fgetc }};
+struct EnableFunc  __stdio_vsprintf[] =			{{ CPUType_Any, _generic_stdio_vsprintf }};
+struct EnableFunc  __stdio_vsnprintf[] =		{{ CPUType_Any, _generic_stdio_vsnprintf }};
+struct EnableFunc  __stdio_ungetc[] =			{{ CPUType_Any, _generic_stdio_ungetc }};
+struct EnableFunc  __stdio_fread[] =			{{ CPUType_Any, _generic_stdio_fread }};
+struct EnableFunc  __stdio_clearerr[] =			{{ CPUType_Any, _generic_stdio_clearerr }};
+struct EnableFunc  __stdio_fgetc[] =			{{ CPUType_Any, _generic_stdio_fgetc }};
+struct EnableFunc  __stdio_ferror[] =			{{ CPUType_Any, _generic_stdio_ferror }};
+struct EnableFunc  __stdio_fileno[] =			{{ CPUType_Any, _generic_stdio_fileno }};
+// --
 struct EnableFunc  __setjmp_longjmp[] =			{{ CPUType_Any, _generic_setjmp_longjmp }};
 struct EnableFunc  __setjmp_setjmp[] =			{{ CPUType_Any, _generic_setjmp_setjmp }};
+// --
 struct EnableFunc  __stdlib_calloc[] =			{{ CPUType_Any, _generic_stdlib_calloc }};
 struct EnableFunc  __stdlib_malloc[] =			{{ CPUType_Any, _generic_stdlib_malloc }};
 struct EnableFunc  __stdlib_realloc[] =			{{ CPUType_Any, _generic_stdlib_realloc }};
@@ -240,7 +246,9 @@ struct EnableFunc  __stdlib_rand_r[] =			{{ CPUType_Any, _generic_stdlib_rand_r 
 struct EnableFunc  __stdlib_srand[] =			{{ CPUType_Any, _generic_stdlib_srand }};
 struct EnableFunc  __stdlib_atoi[] =			{{ CPUType_Any, _generic_stdlib_atoi }};
 struct EnableFunc  __stdlib_strtol[] =			{{ CPUType_Any, _generic_stdlib_strtol }};
-// struct EnableFunc  __strings_bzero[] =			{{ CPUType_Any, _generic_strings_bzero }};
+// --
+struct EnableFunc  __assert_assert[] =			{{ CPUType_Any, _generic_assert_assert }};
+// --
 struct EnableFunc  __ctype_isalpha[] =			{{ CPUType_Any, _locale_ctype_isalpha }};
 struct EnableFunc  __ctype_isdigit[] =			{{ CPUType_Any, _locale_ctype_isdigit }};
 struct EnableFunc  __ctype_isspace[] =			{{ CPUType_Any, _locale_ctype_isspace }};
@@ -248,17 +256,13 @@ struct EnableFunc  __ctype_isupper[] =			{{ CPUType_Any, _locale_ctype_isupper }
 struct EnableFunc  __ctype_isxdigit[] =			{{ CPUType_Any, _locale_ctype_isxdigit }};
 struct EnableFunc  __ctype_tolower[] =			{{ CPUType_Any, _locale_ctype_tolower }};
 struct EnableFunc  __ctype_toupper[] =			{{ CPUType_Any, _locale_ctype_toupper }};
-//struct EnableFunc  __ctype_islower[] =			{{ CPUType_Any, _locale_ctype_islower }};
-struct EnableFunc  __time_localtime[] =			{{ CPUType_Any, _generic_time_localtime }};
-struct EnableFunc  __time_time[] =				{{ CPUType_Any, _generic_time_time }};
+// struct EnableFunc  __ctype_islower[] =			{{ CPUType_Any, _locale_ctype_islower }};
+// --
 struct EnableFunc  __fcntl_open[] =				{{ CPUType_Any, _generic_fcntl_open }};
-struct EnableFunc  __unistd_close[] =			{{ CPUType_Any, _generic_unistd_close }};
-struct EnableFunc  __stdlib_strtof[] =			{{ CPUType_Any, _generic_stdlib_strtof }};
-struct EnableFunc  __stdlib_strtod[] =			{{ CPUType_Any, _generic_stdlib_strtod }};
+// --
 struct EnableFunc  __inttypes_strtoumax[] =		{{ CPUType_Any, _generic_inttypes_strtoumax }};
 struct EnableFunc  __inttypes_strtoimax[] =		{{ CPUType_Any, _generic_inttypes_strtoimax }};
-struct EnableFunc  __strings_strcasecmp[] =		{{ CPUType_Any, _generic_strings_strcasecmp }};
-struct EnableFunc  __strings_strncasecmp[] =	{{ CPUType_Any, _generic_strings_strncasecmp }};
+// --
 struct EnableFunc  __math_d__get_huge_val[] =	{{ CPUType_Any, _generic_math_d__get_huge_val }};
 struct EnableFunc  __math_d__inf[] =			{{ CPUType_Any, _generic_math_d__inf }};
 struct EnableFunc  __math_d__isinf[] =			{{ CPUType_Any, _generic_math_d__isinf }};
@@ -269,16 +273,32 @@ struct EnableFunc  __math_d_fabs[] =			{{ CPUType_Any, _generic_math_d_fabs }};
 struct EnableFunc  __math_d_scalbn[] =			{{ CPUType_Any, _generic_math_d_scalbn }};
 struct EnableFunc  __math_d_sqrt[] =			{{ CPUType_Any, _generic_math_d_sqrt }};
 struct EnableFunc  __math_d_copysign[] =		{{ CPUType_Any, _generic_math_d_copysign }};
+// --
+struct EnableFunc  __stdlib__Exit[] =			{{ CPUType_Any, _generic_stdlib__Exit }};
+struct EnableFunc  __stdlib_abort[] =			{{ CPUType_Any, _generic_stdlib_abort }};
+struct EnableFunc  __stdlib_exit[] =			{{ CPUType_Any, _generic_stdlib_exit }};
+struct EnableFunc  __stdlib_strtof[] =			{{ CPUType_Any, _generic_stdlib_strtof }};
+struct EnableFunc  __stdlib_strtod[] =			{{ CPUType_Any, _generic_stdlib_strtod }};
+// --
+struct EnableFunc  __stdio_vasprintf[] =		{{ CPUType_Any, _generic_stdio_vasprintf }};
 struct EnableFunc  __stdio_vsscanf[] =			{{ CPUType_Any, _generic_stdio_vsscanf }};
+// --
+// --
+struct EnableFunc  __strings_strcasecmp[] =		{{ CPUType_Any, _generic_strings_strcasecmp }};
+struct EnableFunc  __strings_strncasecmp[] =	{{ CPUType_Any, _generic_strings_strncasecmp }};
+// --
+struct EnableFunc  __time_localtime[] =			{{ CPUType_Any, _generic_time_localtime }};
+struct EnableFunc  __time_time[] =				{{ CPUType_Any, _generic_time_time }};
+// --
+struct EnableFunc  __unistd_close[] =			{{ CPUType_Any, _generic_unistd_close }};
+// --
+
+
+
+
 // struct EnableFunc  __time_strftime[] =			{{ CPUType_Any, _generic_time_strftime }};
 struct EnableFunc  __signal_signal[] =			{{ CPUType_Any, _generic_signal_signal }};
 struct EnableFunc  __signal_raise[] =			{{ CPUType_Any, _generic_signal_raise }};
-struct EnableFunc  __stdlib_abort[] =			{{ CPUType_Any, _generic_stdlib_abort }};
-struct EnableFunc  __stdlib__Exit[] =			{{ CPUType_Any, _generic_stdlib__Exit }};
-struct EnableFunc  __stdio_vasprintf[] =		{{ CPUType_Any, _generic_stdio_vasprintf }};
-struct EnableFunc  __assert_assert[] =			{{ CPUType_Any, _generic_assert_assert }};
-struct EnableFunc  __stdlib_exit[] =			{{ CPUType_Any, _generic_stdlib_exit }};
-struct EnableFunc  __stdio_ferror[] =			{{ CPUType_Any, _generic_stdio_ferror }};
 
 
 // --
@@ -451,28 +471,28 @@ struct EnableStruct funcs[] =
 /*   68 */ { offsetof( struct AmyCLibPrivIFace, ctype_toupper ), EM_LOCALE, __ctype_toupper },
 /*   69 */ { offsetof( struct AmyCLibPrivIFace, time_localtime ), EM_ALWAYS, __time_localtime },
 /*   70 */ { offsetof( struct AmyCLibPrivIFace, time_time ), EM_ALWAYS, __time_time },
-/*   71 */ { offsetof( struct AmyCLibPrivIFace, stdio_fopen ), EM_FILE, __fopen },
-/*   72 */ { offsetof( struct AmyCLibPrivIFace, stdio_ftell ), EM_FILE, __ftell },
-/*   73 */ { offsetof( struct AmyCLibPrivIFace, stdio_fgetpos ), EM_FILE, __fgetpos },
-/*   74 */ { offsetof( struct AmyCLibPrivIFace, stdio_flockfile ), EM_FILE, __flockfile },
-/*   75 */ { offsetof( struct AmyCLibPrivIFace, stdio_funlockfile ), EM_FILE, __funlockfile },
-/*   76 */ { offsetof( struct AmyCLibPrivIFace, stdio_fflush ), EM_FILE, __fflush },
-/*   77 */ { offsetof( struct AmyCLibPrivIFace, stdio_puts ), EM_FILE, __puts },
-/*   78 */ { offsetof( struct AmyCLibPrivIFace, stdio_putchar ), EM_FILE, __putchar },
-/*   79 */ { offsetof( struct AmyCLibPrivIFace, stdio_fputc ), EM_FILE, __fputc },
-/*   80 */ { offsetof( struct AmyCLibPrivIFace, stdio_setvbuf ), EM_FILE, __setvbuf },
-/*   81 */ { offsetof( struct AmyCLibPrivIFace, stdio_fclose ), EM_FILE, __fclose },
-/*   82 */ { offsetof( struct AmyCLibPrivIFace, stdio_fseek ), EM_FILE, __fseek },
-/*   83 */ { offsetof( struct AmyCLibPrivIFace, stdio_fseeko ), EM_FILE, __fseeko },
-/*   84 */ { offsetof( struct AmyCLibPrivIFace, stdio_vprintf ), EM_FILE, __vprintf },
-/*   85 */ { offsetof( struct AmyCLibPrivIFace, stdio_vsprintf ), EM_FILE, __vsprintf },
-/*   86 */ { offsetof( struct AmyCLibPrivIFace, stdio_fputc_unlocked ), EM_FILE, __fputc_unlocked },
-/*   87 */ { offsetof( struct AmyCLibPrivIFace, stdio_vsnprintf ), EM_FILE, __vsnprintf },
+/*   71 */ { offsetof( struct AmyCLibPrivIFace, stdio_fopen ), EM_FILE, __stdio_fopen },
+/*   72 */ { offsetof( struct AmyCLibPrivIFace, stdio_ftell ), EM_FILE, __stdio_ftell },
+/*   73 */ { offsetof( struct AmyCLibPrivIFace, stdio_fgetpos ), EM_FILE, __stdio_fgetpos },
+/*   74 */ { offsetof( struct AmyCLibPrivIFace, stdio_flockfile ), EM_FILE, __stdio_flockfile },
+/*   75 */ { offsetof( struct AmyCLibPrivIFace, stdio_funlockfile ), EM_FILE, __stdio_funlockfile },
+/*   76 */ { offsetof( struct AmyCLibPrivIFace, stdio_fflush ), EM_FILE, __stdio_fflush },
+/*   77 */ { offsetof( struct AmyCLibPrivIFace, stdio_puts ), EM_FILE, __stdio_puts },
+/*   78 */ { offsetof( struct AmyCLibPrivIFace, stdio_putchar ), EM_FILE, __stdio_putchar },
+/*   79 */ { offsetof( struct AmyCLibPrivIFace, stdio_fputc ), EM_FILE, __stdio_fputc },
+/*   80 */ { offsetof( struct AmyCLibPrivIFace, stdio_setvbuf ), EM_FILE, __stdio_setvbuf },
+/*   81 */ { offsetof( struct AmyCLibPrivIFace, stdio_fclose ), EM_FILE, __stdio_fclose },
+/*   82 */ { offsetof( struct AmyCLibPrivIFace, stdio_fseek ), EM_FILE, __stdio_fseek },
+/*   83 */ { offsetof( struct AmyCLibPrivIFace, stdio_fseeko ), EM_FILE, __stdio_fseeko },
+/*   84 */ { offsetof( struct AmyCLibPrivIFace, stdio_vprintf ), EM_FILE, __stdio_vprintf },
+/*   85 */ { offsetof( struct AmyCLibPrivIFace, stdio_vsprintf ), EM_FILE, __stdio_vsprintf },
+/*   86 */ { offsetof( struct AmyCLibPrivIFace, stdio_fputc_unlocked ), EM_FILE, __stdio_fputc_unlocked },
+/*   87 */ { offsetof( struct AmyCLibPrivIFace, stdio_vsnprintf ), EM_FILE, __stdio_vsnprintf },
 /*   88 */ { offsetof( struct AmyCLibPrivIFace, fcntl_open ), EM_FILE, __fcntl_open },
 /*   89 */ { offsetof( struct AmyCLibPrivIFace, unistd_close ), EM_FILE, __unistd_close },
-/*   90 */ { offsetof( struct AmyCLibPrivIFace, stdio_ungetc ), EM_FILE, __ungetc },
-/*   91 */ { offsetof( struct AmyCLibPrivIFace, stdio_fread ), EM_FILE, __fread },
-/*   92 */ { offsetof( struct AmyCLibPrivIFace, stdio_clearerr ), EM_FILE, __clearerr },
+/*   90 */ { offsetof( struct AmyCLibPrivIFace, stdio_ungetc ), EM_FILE, __stdio_ungetc },
+/*   91 */ { offsetof( struct AmyCLibPrivIFace, stdio_fread ), EM_FILE, __stdio_fread },
+/*   92 */ { offsetof( struct AmyCLibPrivIFace, stdio_clearerr ), EM_FILE, __stdio_clearerr },
 /*   92 */ { offsetof( struct AmyCLibPrivIFace, stdlib_strtof ), EM_ALWAYS, __stdlib_strtof },
 /*   93 */ { offsetof( struct AmyCLibPrivIFace, stdlib_strtod ), EM_ALWAYS, __stdlib_strtod },
 /*   94 */ { offsetof( struct AmyCLibPrivIFace, inttypes_strtoumax ), EM_STRING, __inttypes_strtoumax },
@@ -499,11 +519,17 @@ struct EnableStruct funcs[] =
 /*  116 */ { offsetof( struct AmyCLibPrivIFace, assert_assert ), EM_ALWAYS, __assert_assert },
 /*  117 */ { offsetof( struct AmyCLibPrivIFace, stdlib_exit ), EM_ALWAYS, __stdlib_exit },
 /*  118 */ // { offsetof( struct AmyCLibPrivIFace, ctype_islower ), EM_LOCALE, __ctype_islower },
-/*  119 */ { offsetof( struct AmyCLibPrivIFace, stdio_fgetc ), EM_FILE, __fgetc },
+/*  119 */ { offsetof( struct AmyCLibPrivIFace, stdio_fgetc ), EM_FILE, __stdio_fgetc },
 /*  120 */	// time_gmtime
 /*  121 */	// time_gmtime_r
 /*  122 */ { offsetof( struct AmyCLibPrivIFace, stdio_ferror ), EM_FILE, __stdio_ferror },
-
+/*  123 */	// _generic__Priv_Print_Log,
+/*  124 */	// _generic__Priv_Func_Log,
+/*  125 */	// _generic_string_strcspn,
+/*  126 */	// _generic_string_strspn,
+/*  127 */	// _generic_string_strpbrk,
+/*  128 */	// _generic_string_strchr,
+/*  129 */	{ offsetof( struct AmyCLibPrivIFace, stdio_fileno ), EM_FILE, __stdio_fileno },
 
 
 	{ 0, 0, NULL },

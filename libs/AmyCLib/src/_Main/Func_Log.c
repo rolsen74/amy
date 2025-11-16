@@ -238,7 +238,7 @@ static const FuncString myStrings[ LOG_FUNC_LAST ] =
 	[LOG_FUNC_fgetc] = { .Group = GROUP_Stdio, .Name = "fgetc" },
 	[LOG_FUNC_fgetpos] = { .Group = GROUP_Stdio, .Name = "fgetpos" },
 	[LOG_FUNC_fgets] = { .Group = GROUP_Stdio, .Name = "fgets" },
-//	[LOG_FUNC_fileno] = { .Group = GROUP_Stdio, .Name = "fileno" },
+	[LOG_FUNC_fileno] = { .Group = GROUP_Stdio, .Name = "fileno" },
 	[LOG_FUNC_flockfile] = { .Group = GROUP_Stdio, .Name = "flockfile" },
 	[LOG_FUNC_fopen] = { .Group = GROUP_Stdio, .Name = "fopen" },
 //	[LOG_FUNC_fprintf] = { .Group = GROUP_Stdio, .Name = "fprintf" },
@@ -630,7 +630,7 @@ struct libData *data;
 
 	if ( ! data->buf_FuncLogs )
 	{
-		// Too valid a deadlock we are allocating with the System
+		// Too avoid a deadlock we are allocating with the System
 		// instead of using our own Memory function.
 		data->buf_FuncLogs = IExec->AllocVecTags( sizeof( uint64 ) * LOG_FUNC_LAST,
 			AVT_Clear, 0,

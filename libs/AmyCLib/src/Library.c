@@ -319,6 +319,7 @@ static const PTR Main_Vectors[] =
 /*  126 */	(PTR) _generic_string_strspn,
 /*  127 */	(PTR) _generic_string_strpbrk,
 /*  128 */	(PTR) _generic_string_strchr,
+/*  129 */	(PTR) _NotEnabled,	// _generic_stdio_fileno,
 
 
 	(PTR) -1

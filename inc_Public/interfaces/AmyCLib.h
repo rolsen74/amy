@@ -176,6 +176,8 @@ struct AmyCLibIFace
 /*  126 */ 	size_t						AMYFUNC (*string_strspn)( struct AmyCLibIFace *Self, const char *s1, const char *s2 );
 /*  127 */ 	char *						AMYFUNC (*string_strpbrk)( struct AmyCLibIFace *Self, const char *s1, const char *s2 );
 /*  128 */ 	char *						AMYFUNC (*string_strchr)( struct AmyCLibIFace *Self, const char *str, int c );
+/*  129 */	int							AMYFUNC	(*stdio_fileno)( struct AmyCLibIFace *Self, FILE *stream );
+
 
 
 };

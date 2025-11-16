@@ -53,18 +53,17 @@ int retval;
 
 	// --
 
-	Self->_Priv_CheckAbort();
+	Self->Priv_Check_Abort();
 
 	// --
 
 	retval = -1;
 
-	data = (PTR)( (U32) Self - Self->Data.NegativeSize );
-
-	file = Self->_Priv_FDLockStream( stream );
+	file = Self->Priv_FDLockStream( stream );
 
 	if ( ! file )
 	{
+		data = (PTR)( (U32) Self - Self->Data.NegativeSize );
 		data->buf_PublicData->ra_ErrNo = EBADF;
 		goto bailout;
 	}
@@ -75,7 +74,7 @@ bailout:
 
 	if ( file )
 	{
-		Self->_Priv_FDUnlock( file );
+		Self->Priv_FDUnlock( file );
 	}
 
 	return(	retval );

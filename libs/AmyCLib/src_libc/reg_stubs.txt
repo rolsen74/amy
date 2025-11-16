@@ -52,11 +52,12 @@
 
 
 # stdio		func-name	iface-name		args-call			args-decl
-# asprintf -- custom stub
+# asprintf	-- custom stub
 "void"		clearerr	stdio_clearerr		"stream"			"FILE *stream"
 "int"		fclose		stdio_fclose		"stream"			"FILE *stream"
 "int"		fflush		stdio_fflush		"stream"			"FILE *stream"
 "int"		fgetpos		stdio_fgetpos		"stream, pos"			"FILE *stream, fpos_t *pos"
+"int"		fileno		stdio_fileno		"stream"			"FILE *stream"
 "void"		flockfile	stdio_flockfile		"stream"			"FILE *stream"
 "FILE *"	fopen		stdio_fopen		"filename, mode"		"const char *filename, const char *mode"
 "int"		fputc		stdio_fputc		"c, stream"			"int c, FILE *stream"
@@ -67,24 +68,27 @@
 "long"		ftell		stdio_ftell		"stream"			"FILE *stream"
 "void"		funlockfile	stdio_funlockfile	"stream"			"FILE *stream"
 "int"		ferror		stdio_ferror		"stream"			"FILE *stream"
+# printf	-- custom stub
 "int"		putchar		stdio_putchar		"c"				"int c"
 "int"		puts		stdio_puts		"str"				"const char *str"
 "int"		setvbuf		stdio_setvbuf		"stream, buf, mode, size"	"FILE *stream, char *buf, int mode, size_t size"
+# snprintf	-- custom stub
+# sprintf	-- custom stub
+# sscanf	-- custom stub
 "int"		ungetc		stdio_ungetc		"c, stream"			"int c, FILE *stream"
 "int"		vasprintf	stdio_vasprintf		"ret, fmt, ap"			"char **ret, const char *fmt, va_list ap"
 "int"		vprintf		stdio_vprintf		"fmt, ap"			"const char *fmt, va_list ap"
 "int"		vsprintf	stdio_vsprintf		"buf, fmt, ap"			"char *buf, const char *fmt, va_list ap"
 "int"		vsnprintf	stdio_vsnprintf		"buf, size, fmt, ap"		"char *buf, size_t size, const char *fmt, va_list ap"
 "int"		vsscanf		stdio_vsscanf		"buf, fmt, ap"			"const char *buf, const char *fmt, va_list ap"
-# sscanf -- custom stub
-# printf -- custom stub
-# sprintf -- custom stub
-# snprintf -- custom stub
 
 
 # stdlib	func-name	iface-name		args-call			args-decl
+# _Exit		-- custom stub
+# abort		-- custom stub
 "int"		atoi		stdlib_atoi		"str"				"const char *str"
 "void *"	calloc		stdlib_calloc		"num, size"			"size_t num, size_t size"
+# exit		-- custom stub
 "void"		free		stdlib_free		"mem"				"void *mem"
 "void *"	malloc		stdlib_malloc		"size"				"size_t size"
 "int"		rand		stdlib_rand		""				"void"
@@ -94,10 +98,6 @@
 "double"	strtod		stdlib_strtod		"str, ptr"			"const char *str, char **ptr"
 "float"		strtof		stdlib_strtof		"str, ptr"			"const char *str, char **ptr"
 "long"		strtol		stdlib_strtol		"nptr, endptr, base"		"const char *nptr, char **endptr, int base"
-# _Exit -- custom stub
-# abort -- custom stub
-# exit -- custom stub
-
 
 
 # string	func-name	iface-name		args-call			args-decl

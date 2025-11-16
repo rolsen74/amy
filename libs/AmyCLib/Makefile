@@ -191,6 +191,7 @@ SRCS		+= src/_Main_Stdio/clearerr.c
 SRCS		+= src/_Main_Stdio/fclose.c
 SRCS		+= src/_Main_Stdio/fflush.c
 SRCS		+= src/_Main_Stdio/fgetpos.c
+SRCS		+= src/_Main_Stdio/fileno.c
 SRCS		+= src/_Main_Stdio/flockfile.c
 SRCS		+= src/_Main_Stdio/fopen.c
 SRCS		+= src/_Main_Stdio/fputc.c

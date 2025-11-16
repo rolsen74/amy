@@ -71,7 +71,7 @@ int retval;
 	}
 
 	ps.ps_Format	= fmt;
-	ps.ps_Stream	= data->buf_PublicData->ra_stdout;
+	ps.ps_Stream	= (PTR) data->buf_PublicData->ra_stdout;
 	ps.ps_Buffer	= NULL;
 	ps.ps_Size		= INT_MAX;
 	ps.ps_Written	= 0;

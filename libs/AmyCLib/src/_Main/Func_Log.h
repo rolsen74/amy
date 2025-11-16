@@ -230,7 +230,7 @@ enum
 	LOG_FUNC_fgetc,
 	LOG_FUNC_fgetpos,
 	LOG_FUNC_fgets,
-//	LOG_FUNC_fileno,
+	LOG_FUNC_fileno,
 	LOG_FUNC_flockfile,
 	LOG_FUNC_fopen,
 //	LOG_FUNC_fprintf,
