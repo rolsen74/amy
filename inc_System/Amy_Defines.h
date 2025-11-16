@@ -8,6 +8,8 @@
 ** This file is part of Amy C Lib
 */
 
+/* -- */
+
 #ifndef AMYSYS_DEFINES_H
 #define AMYSYS_DEFINES_H
 
@@ -105,12 +107,12 @@ typedef char* STR;
 #endif
 #endif
 
-#ifndef USED
-#define USED		__attribute__((used))
+#ifndef AMYUSED
+#define AMYUSED		__attribute__((used))
 #endif
 
-#ifndef UNUSED
-#define UNUSED		__attribute__((unused))
+#ifndef AMYUNUSED
+#define AMYUNUSED	__attribute__((unused))
 #endif
 
 #ifndef AMYFUNC		// Library Call and we want Stack only args
@@ -126,7 +128,7 @@ typedef char* STR;
 // Unknown Compiler
 
 #else
-svn com
+
 #ifndef USED
 #define USED
 #endif
@@ -146,34 +148,5 @@ svn com
 #endif
 
 // --
-// Should I make a Amy_Public.h instead
-// it really do not belong her
 
-struct _AmyCLibPublic
-{
-	// Version v1.1
-
-	int			ra_ErrNo;		// Errno.h
-
-	PTR			ra_stderr;		// Stdio.h
-	PTR			ra_stdin;		// Stdio.h
-	PTR			ra_stdout;		// Stdio.h
-
-	int			ra_h_ErrNo;		// Netdb.h
-
-//	fenv_t		ra_fenv;		// fenv.h - Default float envirement
-//
-// --	 int		 ra_daylight;	 // Time.h
-// --	 long int	 ra_timezone;	 // Time.h
-// --	 char **	 ra_tzname;		 // Time.h
-//
-//
-// --	 int		 ra_signgam;	 // Math.h
-};
-
-extern struct _AmyCLibPublic * __AmyCPublicData;
-#define AmyCLibPublic __AmyCPublicData
-
-// --
-
-#endif
+#endif /* AMYSYS_DEFINES_H */

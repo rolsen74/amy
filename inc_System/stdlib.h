@@ -60,11 +60,6 @@ void		_Exit( int );
 long		a641( const char * );
 void		abort( void );
 int			abs( int );
-uint32_t	arc4random( void );
-void		arc4random_addrandom( unsigned char *, int );
-void		arc4random_buf( void *, size_t );
-uint32_t	arc4random_uniform( uint32_t );
-void		arc4random_stir( void );
 int			atexit( void (*)(void) );
 double		atof( const char * );
 int			atoi( const char * );
@@ -130,9 +125,27 @@ int			wctomb( char *, wchar_t );
 AMY_EXTERN_C_END
 
 /****************************************************************************/
+// Legacy
+
+AMY_EXTERN_C_BEGIN
+
+char *			ecvt( double, int, int *restrict, int * );
+char *			fcvt( double, int, int *restrict, int * );
+char *			gcvt( double, int, char * );
+char *			mktemp( char * );
+
+AMY_EXTERN_C_END
+
+/****************************************************************************/
 // BSD
 
 AMY_EXTERN_C_BEGIN
+
+uint32_t		arc4random( void );
+void			arc4random_addrandom( unsigned char *, int );
+void			arc4random_buf( void *, size_t );
+uint32_t		arc4random_uniform( uint32_t );
+void			arc4random_stir( void );
 
 const char *	getprogname( void );
 void			setprogname( const char * );
