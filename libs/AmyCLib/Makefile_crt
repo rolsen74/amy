@@ -43,7 +43,7 @@ CC			:= ppc-amigaos-gcc
 STRIP		:= ppc-amigaos-strip
 MKDIR		:= mkdir -p
 COPY		:= cp
-SDK			:= /SDK/clib2
+SDK			:= /SDK/amyclib
 
 else
 

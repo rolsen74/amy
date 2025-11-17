@@ -1,0 +1,30 @@
+
+/*
+** SPDX-License-Identifier: BSD-3-Clause
+** Copyright (c) 2025 Rene W. Olsen
+** Target OS: AmigaOS
+*/
+
+// --
+
+#include <proto/AmyCLib.h>
+
+// --
+
+int fscanf( FILE *stream, const char *fmt, ... )
+{
+va_list ap;
+int retval;
+
+//	IExec->DebugPrintF( "stub : fscanf\n" );
+
+	va_start( ap, fmt );
+
+	retval = IAmyCLib->stdio_vfscanf( stream, fmt, ap );
+
+	va_end( ap );
+
+	return(	retval );
+}
+
+// --

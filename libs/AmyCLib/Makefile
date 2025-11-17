@@ -189,41 +189,58 @@ SRCS		+= src/_Main_Signal/signal.c
 # Main .. stdio
 SRCS		+= src/_Main_Stdio/clearerr.c
 SRCS		+= src/_Main_Stdio/fclose.c
+SRCS		+= src/_Main_Stdio/feof.c
+SRCS		+= src/_Main_Stdio/ferror.c
 SRCS		+= src/_Main_Stdio/fflush.c
+SRCS		+= src/_Main_Stdio/fgetc.c
 SRCS		+= src/_Main_Stdio/fgetpos.c
+SRCS		+= src/_Main_Stdio/fgets.c
 SRCS		+= src/_Main_Stdio/fileno.c
 SRCS		+= src/_Main_Stdio/flockfile.c
 SRCS		+= src/_Main_Stdio/fopen.c
+SRCS		+= src/_Main_Stdio/fprintf.c
 SRCS		+= src/_Main_Stdio/fputc.c
 SRCS		+= src/_Main_Stdio/fputc_unlocked.c
-SRCS		+= src/_Main_Stdio/fgetc.c
+SRCS		+= src/_Main_Stdio/fputs.c
 SRCS		+= src/_Main_Stdio/fread.c
 SRCS		+= src/_Main_Stdio/fseek.c
 SRCS		+= src/_Main_Stdio/fseeko.c
 SRCS		+= src/_Main_Stdio/ftell.c
 SRCS		+= src/_Main_Stdio/funlockfile.c
-SRCS		+= src/_Main_Stdio/ferror.c
-#SRCS		+= src/_Main_Stdio/printf.c
+SRCS		+= src/_Main_Stdio/fwrite.c
+SRCS		+= src/_Main_Stdio/getc.c
+SRCS		+= src/_Main_Stdio/getchar.c
+SRCS		+= src/_Main_Stdio/perror.c
+SRCS		+= src/_Main_Stdio/putc.c
 SRCS		+= src/_Main_Stdio/putchar.c
 SRCS		+= src/_Main_Stdio/puts.c
+SRCS		+= src/_Main_Stdio/remove.c
+SRCS		+= src/_Main_Stdio/rename.c
+SRCS		+= src/_Main_Stdio/rewind.c
 SRCS		+= src/_Main_Stdio/setvbuf.c
-#SRCS		+= src/_Main_Stdio/snprintf.c
-#SRCS		+= src/_Main_Stdio/sprintf.c
 SRCS		+= src/_Main_Stdio/ungetc.c
 SRCS		+= src/_Main_Stdio/vasprintf.c
+SRCS		+= src/_Main_Stdio/vfscanf.c
 SRCS		+= src/_Main_Stdio/vprintf.c
-SRCS		+= src/_Main_Stdio/vsprintf.c
 SRCS		+= src/_Main_Stdio/vsnprintf.c
+SRCS		+= src/_Main_Stdio/vsprintf.c
 SRCS		+= src/_Main_Stdio/vsscanf.c
+#SRCS		+= src/_Main_Stdio/printf.c
+#SRCS		+= src/_Main_Stdio/snprintf.c
+#SRCS		+= src/_Main_Stdio/sprintf.c
 
 # Main .. stdlib
+SRCS		+= src/_Main_Stdlib/_exit.c
 SRCS		+= src/_Main_Stdlib/_Exit.c
 SRCS		+= src/_Main_Stdlib/abort.c
 SRCS		+= src/_Main_Stdlib/atoi.c
+SRCS		+= src/_Main_Stdlib/atol.c
 SRCS		+= src/_Main_Stdlib/calloc.c
 SRCS		+= src/_Main_Stdlib/exit.c
 SRCS		+= src/_Main_Stdlib/free.c
+SRCS		+= src/_Main_Stdlib/getenv.c
 SRCS		+= src/_Main_Stdlib/malloc.c
+SRCS		+= src/_Main_Stdlib/qsort.c
 SRCS		+= src/_Main_Stdlib/rand.c
 SRCS		+= src/_Main_Stdlib/rand_r.c
 SRCS		+= src/_Main_Stdlib/realloc.c
@@ -250,6 +267,7 @@ SRCS		+= src/_Main_String/strndup.c
 SRCS		+= src/_Main_String/strnlen.c
 SRCS		+= src/_Main_String/strpbrk.c
 SRCS		+= src/_Main_String/strspn.c
+SRCS		+= src/_Main_String/strstr.c
 
 # Main .. strings
 SRCS		+= src/_Main_Strings/bzero.c
@@ -264,7 +282,31 @@ SRCS		+= src/_Main_Time/gmtime.c
 SRCS		+= src/_Main_Time/gmtime_r.c
 
 # Main .. unistd
+SRCS		+= src/_Main_Unistd/access.c
 SRCS		+= src/_Main_Unistd/close.c
+SRCS		+= src/_Main_Unistd/fcntl_ap.c
+SRCS		+= src/_Main_Unistd/getcwd.c
+SRCS		+= src/_Main_Unistd/getpid.c
+SRCS		+= src/_Main_Unistd/isatty.c
+SRCS		+= src/_Main_Unistd/link.c
+SRCS		+= src/_Main_Unistd/read.c
+SRCS		+= src/_Main_Unistd/rmdir.c
+SRCS		+= src/_Main_Unistd/unlink.c
+
+# Main .. utime
+SRCS		+= src/_Main_UTime/utime.c
+
+# Main .. wchar
+SRCS		+= src/_Main_WChar/mbrtowc.c
+SRCS		+= src/_Main_WChar/mbstowcs.c
+
+# Main .. sys/stat
+SRCS		+= src/_Main_Sys_Stat/chmod.c
+SRCS		+= src/_Main_Sys_Stat/fstat.c
+SRCS		+= src/_Main_Sys_Stat/mkdir.c
+SRCS		+= src/_Main_Sys_Stat/mktemp.c
+SRCS		+= src/_Main_Sys_Stat/stat.c
+SRCS		+= src/_Main_Sys_Stat/umask.c
 
 ###########################################################################
 

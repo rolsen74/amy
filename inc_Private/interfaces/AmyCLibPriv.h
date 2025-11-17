@@ -23,6 +23,8 @@
 #include <stdio.h>
 #include <sys/stat.h>
 #include <fcntl.h>
+#include <utime.h>
+#include <wchar.h>
 
 // --
 struct PrintStruct;
@@ -169,18 +171,61 @@ struct AmyCLibPrivIFace
 /*  115 */	int							AMYFUNC (*stdio_vasprintf)( struct AmyCLibPrivIFace *Self, char **ret, const char *fmt, va_list ap );
 /*  116 */	void						AMYFUNC (*assert_assert)( struct AmyCLibPrivIFace *Self, const char *filename, int linenumber, const char *function, const char *expression );
 /*  117 */	void						AMYFUNC (*stdlib_exit)( struct AmyCLibPrivIFace *Self, int rc );
-/*  118 */ 	int							AMYFUNC (*ctype_islower)( struct AmyCLibPrivIFace *Self, int c );
+/*  118 */	int							AMYFUNC (*ctype_islower)( struct AmyCLibPrivIFace *Self, int c );
 /*  119 */	int							AMYFUNC (*stdio_fgetc)(struct AmyCLibPrivIFace *, struct PrivFile *stream);
 /*  120 */	struct tm *					AMYFUNC (*time_gmtime)(struct AmyCLibPrivIFace *, const time_t *time );
 /*  121 */	struct tm *					AMYFUNC (*time_gmtime_r)(struct AmyCLibPrivIFace *, const time_t *time, struct tm *tm );
 /*  122 */	int							AMYFUNC	(*stdio_ferror)( struct AmyCLibPrivIFace *Self, struct PrivFile *stream );
 /*  123 */	void						AMYFUNC (*Priv_Print_Log)( struct AmyCLibPrivIFace *Self );
 /*  124 */	void						AMYFUNC (*Priv_Func_Log)( struct AmyCLibPrivIFace *Self, S32 xx );
-/*  125 */ 	size_t						AMYFUNC (*string_strcspn)( struct AmyCLibPrivIFace *Self, const char *s1, const char *s2 );
-/*  126 */ 	size_t						AMYFUNC (*string_strspn)( struct AmyCLibPrivIFace *Self, const char *s1, const char *s2 );
-/*  127 */ 	char *						AMYFUNC (*string_strpbrk)( struct AmyCLibPrivIFace *Self, const char *s1, const char *s2 );
-/*  128 */ 	char *						AMYFUNC (*string_strchr)( struct AmyCLibPrivIFace *Self, const char *str, int c );
+/*  125 */	size_t						AMYFUNC (*string_strcspn)( struct AmyCLibPrivIFace *Self, const char *s1, const char *s2 );
+/*  126 */	size_t						AMYFUNC (*string_strspn)( struct AmyCLibPrivIFace *Self, const char *s1, const char *s2 );
+/*  127 */	char *						AMYFUNC (*string_strpbrk)( struct AmyCLibPrivIFace *Self, const char *s1, const char *s2 );
+/*  128 */	char *						AMYFUNC (*string_strchr)( struct AmyCLibPrivIFace *Self, const char *str, int c );
 /*  129 */	int							AMYFUNC	(*stdio_fileno)( struct AmyCLibPrivIFace *Self, struct PrivFile *stream );
+
+/*  130 */	int							AMYFUNC (*stdio_fprintf)( struct AmyCLibPrivIFace *Self, struct PrivFile *stream, const char *format, ... );
+/*  131 */	int							AMYFUNC (*stdio_fputs)( struct AmyCLibPrivIFace *Self, const void *s, struct PrivFile *stream );
+/*  132 */	size_t						AMYFUNC (*stdio_fwrite)( struct AmyCLibPrivIFace *Self, const void *ptr, size_t size, size_t nitems, struct PrivFile *stream );
+/*  133 */	int							AMYFUNC (*stdio_putc)( struct AmyCLibPrivIFace *Self, int c, struct PrivFile *stream );
+/*  134 */	void						AMYFUNC (*stdlib__exit)( struct AmyCLibPrivIFace *Self, int status );
+/*  135 */	long						AMYFUNC (*stdlib_atol)( struct AmyCLibPrivIFace *Self, const char *str );
+/*  136 */	char *						AMYFUNC (*stdlib_getenv)( struct AmyCLibPrivIFace *Self, const char *name );
+/*  137 */	void						AMYFUNC (*stdlib_qsort)( struct AmyCLibPrivIFace *Self, void *base, size_t nel, size_t width, int (*compar)(const void *, const void *));
+/*  138 */	int							AMYFUNC (*sys_stat_chmod)( struct AmyCLibPrivIFace *Self, const char *path, mode_t mode );
+/*  139 */	int							AMYFUNC (*sys_stat_mkdir)( struct AmyCLibPrivIFace *Self, const char *path, mode_t mode );
+/*  140 */	char *						AMYFUNC (*sys_stat_mktemp)( struct AmyCLibPrivIFace *Self, char *template );
+/*  141 */	int							AMYFUNC (*sys_stat_stat)( struct AmyCLibPrivIFace *Self, const char *path, struct stat *buf );
+/*  142 */	char *						AMYFUNC (*time_ctime)( struct AmyCLibPrivIFace *Self, const time_t *clock );
+/*  143 */	int							AMYFUNC (*unistd_unlink)( struct AmyCLibPrivIFace *Self, const char *path );
+/*  144 */	char *						AMYFUNC (*string_strncat)( struct AmyCLibPrivIFace *Self, char *d, const char *s, size_t n );
+/*  145 */	int							AMYFUNC (*stdio_vfprintf)( struct AmyCLibPrivIFace *Self, struct PrivFile *stream, const char *format, va_list ap );
+/*  146 */	mode_t						AMYFUNC (*sys_stat_umask)( struct AmyCLibPrivIFace *Self, mode_t cmask );
+/*  147 */	pid_t						AMYFUNC (*unistd_getpid)( struct AmyCLibPrivIFace *Self );
+/*  148 */	char *						AMYFUNC (*unistd_getcwd)( struct AmyCLibPrivIFace *Self, char *buf, size_t size );
+/*  149 */	int							AMYFUNC (*sys_stat_fstat)( struct AmyCLibPrivIFace *Self, int fildes, struct stat *buf );
+/*  150 */	int							AMYFUNC (*sys_stat_lstat)( struct AmyCLibPrivIFace *Self, const char *path, struct stat *buf );
+/*  151 */	int							AMYFUNC (*unistd_access)( struct AmyCLibPrivIFace *Self, const char *path, int amode );
+/*  152 */	int							AMYFUNC (*unistd_fcntl_ap)( struct AmyCLibPrivIFace *Self, int fildes, int cmd, va_list ap );
+/*  153 */	ssize_t						AMYFUNC (*unistd_read)( struct AmyCLibPrivIFace *Self, int fildes, void *buf, size_t nbyte );
+/*  154 */	double						AMYFUNC (*stdlib_atof)( struct AmyCLibPrivIFace *Self, const char *str );
+/*  155 */	int							AMYFUNC (*stdio_getc)( struct AmyCLibPrivIFace *Self, struct PrivFile *stream );
+/*  156 */	int							AMYFUNC (*utime_utime)( struct AmyCLibPrivIFace *Self, const char *str, const struct utimbuf *buf );
+/*  157 */	int							AMYFUNC (*unistd_link)( struct AmyCLibPrivIFace *Self, const char *path1, const char *path2 );
+/*  158 */	int							AMYFUNC (*unistd_isatty)( struct AmyCLibPrivIFace *Self, int fildes );
+/*  159 */	void						AMYFUNC (*stdio_perror)( struct AmyCLibPrivIFace *Self, const char *s );
+/*  160 */	int							AMYFUNC (*stdio_remove)( struct AmyCLibPrivIFace *Self, const char *path );
+/*  161 */	int							AMYFUNC (*stdio_rename)( struct AmyCLibPrivIFace *Self, const char *old, const char *new );
+/*  162 */	int							AMYFUNC (*unistd_rmdir)( struct AmyCLibPrivIFace *Self, const char *path );
+/*  163 */	int							AMYFUNC (*stdio_feof)( struct AmyCLibPrivIFace *Self, struct PrivFile *stream );
+/*  164 */	char *						AMYFUNC (*stdio_fgets)( struct AmyCLibPrivIFace *Self, char *s, int n, struct PrivFile *stream );
+/*  165 */	void						AMYFUNC (*stdio_rewind)( struct AmyCLibPrivIFace *Self, struct PrivFile *stream );
+/*  166 */	int							AMYFUNC (*stdio_vfscanf)( struct AmyCLibPrivIFace *Self, struct PrivFile *stream, const char *format, va_list arg );
+/*  167 */	size_t						AMYFUNC (*wchar_mbrtowc)( struct AmyCLibPrivIFace *Self, wchar_t *pwc, const char *s, size_t n, mbstate_t *ps );
+/*  168 */	int							AMYFUNC (*stdio_getchar)( struct AmyCLibPrivIFace *Self );
+/*  169 */	char *						AMYFUNC (*string_strstr)( struct AmyCLibPrivIFace *Self, const char *s1, const char *s2 );
+/*  170 */	size_t						AMYFUNC (*wchar_mbstowcs)( struct AmyCLibPrivIFace *Self, wchar_t *pwcs, const char *s, size_t n );
+
 
 
 

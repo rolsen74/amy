@@ -23,6 +23,8 @@
 #include <stdio.h>
 #include <sys/stat.h>
 #include <fcntl.h>
+#include <utime.h>
+#include <wchar.h>
 
 // --
 struct PrintStruct;
@@ -37,7 +39,7 @@ struct AmyCLibIFace
 /*    3 */ 	struct Interface *			AMYFUNC (*Clone)( struct AmyCLibIFace *Self );
 /*    4 */ 	S32							AMYFUNC (*Priv_Startup_Init)( struct AmyCLibIFace *, STR args, U32 mask );
 /*    5 */ 	S32							AMYFUNC (*Priv_Startup_Main)( struct AmyCLibIFace *, int main( int, char ** ) , STR arg_string, S32 arg_length, PTR wbmsg, struct _AmyCLibPublic **pd );
-/*    6 */ 	void							AMYFUNC	(*Priv_Startup_Free)( struct AmyCLibIFace * );
+/*    6 */ 	void						AMYFUNC	(*Priv_Startup_Free)( struct AmyCLibIFace * );
 
 	// --
 
@@ -177,6 +179,50 @@ struct AmyCLibIFace
 /*  127 */ 	char *						AMYFUNC (*string_strpbrk)( struct AmyCLibIFace *Self, const char *s1, const char *s2 );
 /*  128 */ 	char *						AMYFUNC (*string_strchr)( struct AmyCLibIFace *Self, const char *str, int c );
 /*  129 */	int							AMYFUNC	(*stdio_fileno)( struct AmyCLibIFace *Self, FILE *stream );
+
+
+/*  130 */	int							AMYFUNC (*stdio_fprintf)( struct AmyCLibIFace *Self, FILE *stream, const char *format, ... );
+/*  131 */	int							AMYFUNC (*stdio_fputs)( struct AmyCLibIFace *Self, const void *s, FILE *stream );
+/*  132 */	size_t						AMYFUNC (*stdio_fwrite)( struct AmyCLibIFace *Self, const void *ptr, size_t size, size_t nitems, FILE *stream );
+/*  133 */	int							AMYFUNC (*stdio_putc)( struct AmyCLibIFace *Self, int c, FILE *stream );
+/*  134 */	void						AMYFUNC (*stdlib__exit)( struct AmyCLibIFace *Self, int status );
+/*  135 */	long						AMYFUNC (*stdlib_atol)( struct AmyCLibIFace *Self, const char *str );
+/*  136 */	char *						AMYFUNC (*stdlib_getenv)( struct AmyCLibIFace *Self, const char *name );
+/*  137 */	void						AMYFUNC (*stdlib_qsort)( struct AmyCLibIFace *Self, void *base, size_t nel, size_t width, int (*compar)(const void *, const void *));
+/*  138 */	int							AMYFUNC (*sys_stat_chmod)( struct AmyCLibIFace *Self, const char *path, mode_t mode );
+/*  139 */	int							AMYFUNC (*sys_stat_mkdir)( struct AmyCLibIFace *Self, const char *path, mode_t mode );
+/*  140 */	char *						AMYFUNC (*sys_stat_mktemp)( struct AmyCLibIFace *Self, char *template );
+/*  141 */	int							AMYFUNC (*sys_stat_stat)( struct AmyCLibIFace *Self, const char *path, struct stat *buf );
+/*  142 */	char *						AMYFUNC (*time_ctime)( struct AmyCLibIFace *Self, const time_t *clock );
+/*  143 */	int							AMYFUNC (*unistd_unlink)( struct AmyCLibIFace *Self, const char *path );
+/*  144 */	char *						AMYFUNC (*string_strncat)( struct AmyCLibIFace *Self, char *d, const char *s, size_t n );
+/*  145 */	int							AMYFUNC (*stdio_vfprintf)( struct AmyCLibIFace *Self, FILE *stream, const char *format, va_list ap );
+/*  146 */	mode_t						AMYFUNC (*sys_stat_umask)( struct AmyCLibIFace *Self, mode_t cmask );
+/*  147 */	pid_t						AMYFUNC (*unistd_getpid)( struct AmyCLibIFace *Self );
+/*  148 */	char *						AMYFUNC (*unistd_getcwd)( struct AmyCLibIFace *Self, char *buf, size_t size );
+/*  149 */	int							AMYFUNC (*sys_stat_fstat)( struct AmyCLibIFace *Self, int fildes, struct stat *buf );
+/*  150 */	int							AMYFUNC (*sys_stat_lstat)( struct AmyCLibIFace *Self, const char *path, struct stat *buf );
+/*  151 */	int							AMYFUNC (*unistd_access)( struct AmyCLibIFace *Self, const char *path, int amode );
+/*  152 */	int							AMYFUNC (*unistd_fcntl_ap)( struct AmyCLibIFace *Self, int fildes, int cmd, va_list ap );
+/*  153 */	ssize_t						AMYFUNC (*unistd_read)( struct AmyCLibIFace *Self, int fildes, void *buf, size_t nbyte );
+/*  154 */	double						AMYFUNC (*stdlib_atof)( struct AmyCLibIFace *Self, const char *str );
+/*  155 */	int							AMYFUNC (*stdio_getc)( struct AmyCLibIFace *Self, FILE *stream );
+/*  156 */	int							AMYFUNC (*utime_utime)( struct AmyCLibIFace *Self, const char *str, const struct utimbuf *buf );
+/*  157 */	int							AMYFUNC (*unistd_link)( struct AmyCLibIFace *Self, const char *path1, const char *path2 );
+/*  158 */	int							AMYFUNC (*unistd_isatty)( struct AmyCLibIFace *Self, int fildes );
+/*  159 */	void						AMYFUNC (*stdio_perror)( struct AmyCLibIFace *Self, const char *s );
+/*  160 */	int							AMYFUNC (*stdio_remove)( struct AmyCLibIFace *Self, const char *path );
+/*  161 */	int							AMYFUNC (*stdio_rename)( struct AmyCLibIFace *Self, const char *old, const char *new );
+/*  162 */	int							AMYFUNC (*unistd_rmdir)( struct AmyCLibIFace *Self, const char *path );
+/*  163 */	int							AMYFUNC (*stdio_feof)( struct AmyCLibIFace *Self, FILE *stream );
+/*  164 */	char *						AMYFUNC (*stdio_fgets)( struct AmyCLibIFace *Self, char *s, int n, FILE *stream );
+/*  165 */	void						AMYFUNC (*stdio_rewind)( struct AmyCLibIFace *Self, FILE *stream );
+/*  166 */	int							AMYFUNC (*stdio_vfscanf)( struct AmyCLibIFace *Self, FILE *stream, const char *format, va_list arg );
+/*  167 */	size_t						AMYFUNC (*wchar_mbrtowc)( struct AmyCLibIFace *Self, wchar_t *pwc, const char *s, size_t n, mbstate_t *ps );
+/*  168 */	int							AMYFUNC (*stdio_getchar)( struct AmyCLibIFace *Self );
+/*  169 */	char *						AMYFUNC (*string_strstr)( struct AmyCLibIFace *Self, const char *s1, const char *s2 );
+/*  170 */	size_t						AMYFUNC (*wchar_mbstowcs)( struct AmyCLibIFace *Self, wchar_t *pwcs, const char *s, size_t n );
+
 
 
 

@@ -67,7 +67,7 @@ size_t retval;
 
 	start = s;
 
-	while(( *s ) && ( strchr( accept, *s )))
+	while(( *s ) && ( Self->string_strchr( accept, *s )))
 	{
 		s++;
 	}

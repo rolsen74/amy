@@ -320,6 +320,49 @@ static const PTR Main_Vectors[] =
 /*  127 */	(PTR) _generic_string_strpbrk,
 /*  128 */	(PTR) _generic_string_strchr,
 /*  129 */	(PTR) _NotEnabled,	// _generic_stdio_fileno,
+/*  130 */	(PTR) _NotEnabled,	// int AMYFUNC _generic_stdio_fprintf( struct AmyCLibPrivIFace *Self, struct PrivFile *stream, const char *format, ... )
+/*  131 */	(PTR) _NotEnabled,	// int AMYFUNC _generic_stdio_fputs( struct AmyCLibPrivIFace *Self, const void *s, struct PrivFile *stream )
+/*  132 */	(PTR) _NotEnabled,	// size_t AMYFUNC _generic_stdio_fwrite( struct AmyCLibPrivIFace *Self, const void *ptr, size_t size, size_t nitems, struct PrivFile *stream )
+/*  133 */	(PTR) _NotEnabled,	// int AMYFUNC _generic_stdio_putc( struct AmyCLibPrivIFace *Self, int c, struct PrivFile *stream )
+/*  134 */	(PTR) _NotEnabled,	// void AMYFUNC _generic_stdlib__exit( struct AmyCLibPrivIFace *Self, int status )
+/*  135 */	(PTR) _NotEnabled,	// long AMYFUNC _generic_stdlib_atol( struct AmyCLibPrivIFace *Self, const char *str )
+/*  136 */	(PTR) _NotEnabled,	// char * AMYFUNC _generic_stdlib_getenv( struct AmyCLibPrivIFace *Self, const char *name )
+/*  137 */	(PTR) _NotEnabled,	// void AMYFUNC _generic_stdlib_qsort( struct AmyCLibPrivIFace *Self, void *base, size_t nel, size_t width, int (*compar)(const void *, const void *))
+/*  138 */	(PTR) _NotEnabled,	// int AMYFUNC _generic_sys_stat_chmod( struct AmyCLibPrivIFace *Self, const char *path, mode_t mode )
+/*  139 */	(PTR) _NotEnabled,	// int AMYFUNC _generic_sys_stat_mkdir( struct AmyCLibPrivIFace *Self, const char *path, mode_t mode )
+/*  140 */	(PTR) _NotEnabled,	// char * AMYFUNC _generic_sys_stat_mktemp( struct AmyCLibPrivIFace *Self, char *template )
+/*  141 */	(PTR) _NotEnabled,	// int AMYFUNC _generic_sys_stat_stat( struct AmyCLibPrivIFace *Self, const char *path, struct stat *buf )
+/*  142 */	(PTR) _NotEnabled,	// char * AMYFUNC _generic_time_ctime( struct AmyCLibPrivIFace *Self, const time_t *clock )
+/*  143 */	(PTR) _NotEnabled,	// int AMYFUNC _generic_unistd_unlink( struct AmyCLibPrivIFace *Self, const char *path )
+/*  144 */	(PTR) _NotEnabled,	// char *AMYFUNC (*string_strncat)( struct AmyCLibPrivIFace *Self, char *d, const char *s, size_t n );
+/*  145 */	(PTR) _NotEnabled,	// int AMYFUNC (*stdio_vfprintf)( struct AmyCLibPrivIFace *Self, FILE *stream, const char *format, va_list ap );
+/*  146 */	(PTR) _NotEnabled,	// mode_t AMYFUNC (*sys_stat_umask)( struct AmyCLibPrivIFace *Self, mode_t cmask );
+/*  147 */	(PTR) _NotEnabled,	// pid_t AMYFUNC (*unistd_getpid)( struct AmyCLibPrivIFace *Self );
+/*  148 */	(PTR) _NotEnabled,	// char * AMYFUNC (*unistd_getcwd)( struct AmyCLibPrivIFace *Self, char *buf, size_t size );
+/*  149 */	(PTR) _NotEnabled,	// int AMYFUNC (*sys_stat_fstat)( struct AmyCLibPrivIFace *Self, int fildes, struct stat *buf );
+/*  150 */	(PTR) _NotEnabled,	// int AMYFUNC (*sys_stat_lstat)( struct AmyCLibPrivIFace *Self, const char *path, struct stat *buf );
+/*  151 */	(PTR) _NotEnabled,	// int AMYFUNC (*unistd_access)( struct AmyCLibPrivIFace *Self, const char *path, int amode );
+/*  152 */	(PTR) _NotEnabled,	// int AMYFUNC (*unistd_fcntl_ap)( struct AmyCLibPrivIFace *Self, int fildes, int cmd, va_list ap );
+/*  153 */	(PTR) _NotEnabled,	// ssize_t AMYFUNC (*unistd_read)( struct AmyCLibPrivIFace *Self, int fildes, void *buf, size_t nbyte );
+/*  154 */	(PTR) _NotEnabled,	// double AMYFUNC (*stdlib_atof)( struct AmyCLibPrivIFace *Self, const char *str );
+/*  155 */	(PTR) _NotEnabled,	// int AMYFUNC (*stdio_getc)( struct AmyCLibPrivIFace *Self, struct PrivFile *stream );
+/*  156 */	(PTR) _NotEnabled,	// int AMYFUNC (*utime_utime)( struct AmyCLibPrivIFace *Self, const char *str, const struct utimbuf *buf );
+/*  157 */	(PTR) _NotEnabled,	// int AMYFUNC (*unistd_link)( struct AmyCLibPrivIFace *Self, const char *path1, const char *path2 );
+/*  158 */	(PTR) _NotEnabled,	// int AMYFUNC (*unistd_isatty)( struct AmyCLibPrivIFace *Self, int fildes );
+/*  159 */	(PTR) _NotEnabled,	// void AMYFUNC (*stdio_perror)( struct AmyCLibPrivIFace *Self, const char *s );
+/*  160 */	(PTR) _NotEnabled,	// int AMYFUNC (*stdio_remove)( struct AmyCLibPrivIFace *Self, const char *path );
+/*  161 */	(PTR) _NotEnabled,	// int AMYFUNC (*stdio_rename)( struct AmyCLibPrivIFace *Self, const char *old, const char *new );
+/*  162 */	(PTR) _NotEnabled,	// int AMYFUNC (*unistd_rmdir)( struct AmyCLibPrivIFace *Self, const char *path );
+/*  163 */	(PTR) _NotEnabled,	// int AMYFUNC (*stdio_feof)( struct AmyCLibPrivIFace *Self, struct PrivFile *stream );
+/*  164 */	(PTR) _NotEnabled,	// char * AMYFUNC (*stdio_fgets)( struct AmyCLibPrivIFace *Self, char *s, int n, struct PrivFile *stream );
+/*  165 */	(PTR) _NotEnabled,	// void AMYFUNC (*stdio_rewind)( struct AmyCLibPrivIFace *Self, struct PrivFile *stream );
+/*  166 */	(PTR) _NotEnabled,	// int AMYFUNC (*stdio_vfscanf)( struct AmyCLibPrivIFace *Self, struct PrivFile *stream, const char *format, va_list arg );
+/*  167 */	(PTR) _NotEnabled,	// size_t AMYFUNC (*wchar_mbrtowc)( struct AmyCLibPrivIFace *Self, wchar_t *pwc, const char *s, size_t n, mbstate_t *ps );
+/*  168 */	(PTR) _NotEnabled,	// int AMYFUNC (*stdio_getchar)( struct AmyCLibPrivIFace *Self );
+/*  169 */	(PTR) _NotEnabled,	// char * AMYFUNC (*string_strstr)( struct AmyCLibPrivIFace *Self, const char *s1, const char *s2 );
+/*  170 */	(PTR) _NotEnabled,	// size_t AMYFUNC (*wchar_mbstowcs)( struct AmyCLibPrivIFace *Self, wchar_t *pwcs, const char *s, size_t n );
+
+
 
 
 	(PTR) -1

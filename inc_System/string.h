@@ -28,7 +28,7 @@
 
 #include <stddef.h>
 #include <locale.h>
-#include <sys/types.h>		// for mode_t
+#include <sys/types.h>		/* for mode_t */
 
 /****************************************************************************/
 

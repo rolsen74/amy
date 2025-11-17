@@ -36,7 +36,9 @@ INCLUDE_MAP = {
     'strings_': 'strings.h',
     'setjmp_':  'setjmp.h',
     'unistd_':  'unistd.h',
+    'utime_':   'utime.h',
     'math_d_':  'math.h',
+    'wchar':    'wchar.h',
 }
 
 def deduce_header(iface_func: str):
