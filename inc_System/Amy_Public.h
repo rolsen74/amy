@@ -31,12 +31,17 @@ struct _AmyCLibPublic
 
 	int			ra_h_ErrNo;		// Netdb.h
 
+	char *		ra_optarg;		// Locale.h
+	int			ra_optind;		// Locale.h
+	int			ra_opterr;		// Locale.h
+	int			ra_optopt;		// Locale.h
+
+
 //	fenv_t		ra_fenv;		// fenv.h - Default float envirement
 //
 // --	 int		 ra_daylight;	 // Time.h
 // --	 long int	 ra_timezone;	 // Time.h
 // --	 char **	 ra_tzname;		 // Time.h
-//
 //
 // --	 int		 ra_signgam;	 // Math.h
 };
