@@ -28,6 +28,7 @@
 
 #include <inttypes.h>
 #include <sys/types.h>
+#include <getopt.h>
 
 /****************************************************************************/
 
@@ -161,16 +162,12 @@ AMY_EXTERN_C_END
 
 /****************************************************************************/
 
-AMY_EXTERN_C_BEGIN
-
-extern char *	optarg;
-extern int		optind;
-extern int		opterr;
-extern int		optopt;
-
-AMY_EXTERN_C_END
+// moved to getopt.h
+// char *optarg
+// int optind
+// int opterr
+// int optopt
 
 /****************************************************************************/
 
 #endif
-
