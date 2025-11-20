@@ -225,7 +225,12 @@ struct AmyCLibPrivIFace
 /*  168 */	int							AMYFUNC (*stdio_getchar)( struct AmyCLibPrivIFace *Self );
 /*  169 */	char *						AMYFUNC (*string_strstr)( struct AmyCLibPrivIFace *Self, const char *s1, const char *s2 );
 /*  170 */	size_t						AMYFUNC (*wchar_mbstowcs)( struct AmyCLibPrivIFace *Self, wchar_t *pwcs, const char *s, size_t n );
-
+/*  171 */	uid_t						AMYFUNC (*unistd_geteuid)( struct AmyCLibPrivIFace *Self );
+/*  172 */	gid_t						AMYFUNC (*unistd_getegid)( struct AmyCLibPrivIFace *Self );
+/*  173 */	char *						AMYFUNC (*locale_setlocale)( struct AmyCLibPrivIFace *Self, int category, const char *locale );
+/*  174 */	ssize_t						AMYFUNC (*stdio_getline)( struct AmyCLibPrivIFace *Self, char **lineptr, size_t *n, struct PrivFile *stream );
+/*  175 */	ssize_t						AMYFUNC (*stdio_getdelim)( struct AmyCLibPrivIFace *Self, char **lineptr, size_t *n, int delimiter, struct PrivFile *stream );
+/*  176 */	int							AMYFUNC (*stdio_putc_unlocked)( struct AmyCLibPrivIFace *Self, int c, struct PrivFile *stream );
 
 
 

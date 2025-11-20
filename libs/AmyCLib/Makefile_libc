@@ -34,7 +34,7 @@ CFLAGS				+= -W
 CFLAGS				+= -Wall
 CFLAGS				+= -MMD
 CFLAGS				+= -MP
-CFLAGS				+= -mcrt=clib2
+CFLAGS				+= -mcrt=amyclib
 
 # Linker Flags
 LDFLAGS				:=

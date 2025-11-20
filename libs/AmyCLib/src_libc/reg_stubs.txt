@@ -32,6 +32,8 @@
 "intmax_t"	strtoimax	"inttypes_strtoimax"	"nptr, endptr, base"		"const char *nptr, char **endptr, int base"
 "uintmax_t"	strtoumax	"inttypes_strtoumax"	"nptr, endptr, base"		"const char *nptr, char **endptr, int base"
 
+# locale	func-name	iface-name		args-call			args-decl					
+"char *"	setlocale	"locale_setlocale"	"category, locale"		"int category, const char *locale"
 
 # math		func-name	iface-name		args-call			args-decl					
 "double"	_get_huge_val	math_d__get_huge_val	""				""
@@ -71,8 +73,8 @@
 "FILE *"	fopen		stdio_fopen		"filename, mode"		"const char *filename, const char *mode"
 # fprintf	-- custom stub
 "int"		fputc		stdio_fputc		"c, stream"			"int c, FILE *stream"
-"int"		fputs		stdio_fputs		"s, stream"			"const char *s, FILE *stream"
 "int"		fputc_unlocked	stdio_fputc_unlocked	"c, stream"			"int c, FILE *stream"
+"int"		fputs		stdio_fputs		"s, stream"			"const char *s, FILE *stream"
 "size_t"	fread		stdio_fread		"ptr, size, count, stream"	"void *ptr, size_t size, size_t count, FILE *stream"
 "int"		fseek		stdio_fseek		"stream, offset, from"		"FILE *stream, long offset, int from"
 "int"		fseeko		stdio_fseeko		"stream, offset, from"		"FILE *stream, off_t offset, int from"
@@ -82,9 +84,12 @@
 "size_t"	fwrite		stdio_fwrite		"ptr, size, nitems, stream"	"const void *ptr, size_t size, size_t nitems, FILE *stream"
 "int"		getc		stdio_getc		"stream"			"FILE *stream"
 "int"		getchar		stdio_getchar		""				"void"
+"ssize_t"	getline		stdio_getline		"lineptr, n, stream"		"char **lineptr, size_t *n, FILE *stream"
+"ssize_t"	getdelim	stdio_getdelim		"lineptr, n, delimiter, stream"	"char **lineptr, size_t *n, int delimiter, FILE *stream"
 # printf	-- custom stub
 "void"		perror		stdio_perror		"s"				"const char *s"
 "int"		putc		stdio_putc		"c, stream"			"int c, FILE *stream"
+"int"		putc_unlocked	stdio_putc_unlocked	"c, stream"			"int c, FILE *stream"
 "int"		putchar		stdio_putchar		"c"				"int c"
 "int"		puts		stdio_puts		"str"				"const char *str"
 "int"		remove		stdio_remove		"path"				"const char *path"
@@ -164,6 +169,8 @@
 "int"		close		unistd_close		"fildes"			"int fildes"
 "int"		access		unistd_access		"path, amode"			"const char *path, int amode"
 "char *"	getcwd		unistd_getcwd		"buf, size"			"char *buf, size_t size"
+"uid_t"		geteuid		unistd_geteuid		""				"void"
+"gid_t"		getegid		unistd_getegid		""				"void"
 "pid_t"		getpid		unistd_getpid		""				"void"
 "int"		isatty		unistd_isatty		"fildes"			"int fildes"
 "int"		link		unistd_link		"path1, path2"			"const char *path1, const char *path2"

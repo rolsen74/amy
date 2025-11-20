@@ -29,7 +29,7 @@ CFLAGS		+= -W
 CFLAGS		+= -Wall
 CFLAGS		+= -MMD
 CFLAGS		+= -MP
-CFLAGS		+= -mcrt=clib2
+CFLAGS		+= -mcrt=amyclib
 
 # Make sure gcc do not swap functions to memset() and so on .. very important
 CFLAGS		+= -fno-builtin
@@ -41,7 +41,7 @@ CFLAGS		+= -D__DO_FUNCTION_LOG__
 #CFLAGS		+= -D__DO_FUNCTION_PRINT__
 
 # Linker Flags
-LDFLAGS		:= -mcrt=clib2 
+LDFLAGS		:= -mcrt=amyclib
 LDFLAGS		+= -nostartfiles
 
 # Link Libraries
@@ -166,6 +166,9 @@ SRCS		+= src/_Main_FCntl/open.c
 SRCS		+= src/_Main_Inttypes/strtoimax.c
 SRCS		+= src/_Main_Inttypes/strtoumax.c
 
+# Main .. Locale
+SRCS		+= src/_Main_Locale/setlocale.c
+
 # Main .. Math
 SRCS		+= src/_Main_Math/d__get_huge_val.c
 SRCS		+= src/_Main_Math/d__inf.c
@@ -210,8 +213,11 @@ SRCS		+= src/_Main_Stdio/funlockfile.c
 SRCS		+= src/_Main_Stdio/fwrite.c
 SRCS		+= src/_Main_Stdio/getc.c
 SRCS		+= src/_Main_Stdio/getchar.c
+SRCS		+= src/_Main_Stdio/getline.c
+SRCS		+= src/_Main_Stdio/getdelim.c
 SRCS		+= src/_Main_Stdio/perror.c
 SRCS		+= src/_Main_Stdio/putc.c
+SRCS		+= src/_Main_Stdio/putc_unlocked.c
 SRCS		+= src/_Main_Stdio/putchar.c
 SRCS		+= src/_Main_Stdio/puts.c
 SRCS		+= src/_Main_Stdio/remove.c
@@ -286,6 +292,8 @@ SRCS		+= src/_Main_Unistd/access.c
 SRCS		+= src/_Main_Unistd/close.c
 SRCS		+= src/_Main_Unistd/fcntl_ap.c
 SRCS		+= src/_Main_Unistd/getcwd.c
+SRCS		+= src/_Main_Unistd/geteuid.c
+SRCS		+= src/_Main_Unistd/getegid.c
 SRCS		+= src/_Main_Unistd/getpid.c
 SRCS		+= src/_Main_Unistd/isatty.c
 SRCS		+= src/_Main_Unistd/link.c

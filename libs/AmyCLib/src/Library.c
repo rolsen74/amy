@@ -361,6 +361,12 @@ static const PTR Main_Vectors[] =
 /*  168 */	(PTR) _NotEnabled,	// int AMYFUNC (*stdio_getchar)( struct AmyCLibPrivIFace *Self );
 /*  169 */	(PTR) _NotEnabled,	// char * AMYFUNC (*string_strstr)( struct AmyCLibPrivIFace *Self, const char *s1, const char *s2 );
 /*  170 */	(PTR) _NotEnabled,	// size_t AMYFUNC (*wchar_mbstowcs)( struct AmyCLibPrivIFace *Self, wchar_t *pwcs, const char *s, size_t n );
+/*  171 */	(PTR) _NotEnabled,	// uid_t AMYFUNC (*unistd_geteuid)( struct AmyCLibPrivIFace *Self );
+/*  172 */	(PTR) _NotEnabled,	// gid_t AMYFUNC (*unistd_getegid)( struct AmyCLibPrivIFace *Self );
+/*  173 */	(PTR) _NotEnabled,	// char * AMYFUNC (*locale_setlocale)( struct AmyCLibIFace *Self, int category, char *locale );
+/*  174 */	(PTR) _NotEnabled,	// ssize_t AMYFUNC (*stdio_getline)( struct AmyCLibPrivIFace *Self, char **lineptr, size_t *n, FILE *stream );
+/*  175 */	(PTR) _NotEnabled,	// ssize_t AMYFUNC (*stdio_getdelim)( struct AmyCLibPrivIFace *Self, char **lineptr, size_t *n, int delimiter, FILE *stream );
+/*  176 */	(PTR) _NotEnabled,	// int AMYFUNC (*stdio_putc_unlocked)( struct AmyCLibPrivIFace *Self, int c, struct PrivFile *stream );
 
 
 

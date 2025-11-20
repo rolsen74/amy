@@ -72,7 +72,7 @@ enum
 //	## Locale ##
 
 //	LOG_FUNC_localeconv,
-
+	LOG_FUNC_setlocale,
 
 //	## Math ##
 
@@ -251,10 +251,12 @@ enum
 //	LOG_FUNC_getc_unlocked,
 	LOG_FUNC_getchar,
 //	LOG_FUNC_getchar_unlocked,
+	LOG_FUNC_getline,
+	LOG_FUNC_getdelim,
 	LOG_FUNC_perror,
 //	LOG_FUNC_printf,
 	LOG_FUNC_putc,
-//	LOG_FUNC_putc_unlocked,
+	LOG_FUNC_putc_unlocked,
 	LOG_FUNC_putchar,
 //	LOG_FUNC_putchar_unlocked,
 	LOG_FUNC_puts,
@@ -432,6 +434,8 @@ enum
 	LOG_FUNC_close,
 //	LOG_FUNC_ftruncate,
 	LOG_FUNC_getcwd,
+	LOG_FUNC_geteuid,
+	LOG_FUNC_getegid,
 //	LOG_FUNC_getpagesize,
 	LOG_FUNC_getpid,
 //	LOG_FUNC_getppid,

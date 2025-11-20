@@ -39,6 +39,7 @@ INCLUDE_MAP = {
     'utime_':   'utime.h',
     'math_d_':  'math.h',
     'wchar':    'wchar.h',
+    'locale_':  'locale.h',
 }
 
 def deduce_header(iface_func: str):

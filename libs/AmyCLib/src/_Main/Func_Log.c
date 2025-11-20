@@ -102,6 +102,7 @@ static const FuncString myStrings[ LOG_FUNC_LAST ] =
 
 	// Locale.h
 //	[LOG_FUNC_localeconv] = { .Group = GROUP_Locale, .Name = "localeconv" },
+	[LOG_FUNC_setlocale] = { .Group = GROUP_Locale, .Name = "setlocale" },
 
 	// Math.h (Float)
 //	[LOG_FUNC_F___signbit] = { .Group = GROUP_Math_F, .Name = "__signbit.f" },
@@ -259,10 +260,12 @@ static const FuncString myStrings[ LOG_FUNC_LAST ] =
 //	[LOG_FUNC_getc_unlocked] = { .Group = GROUP_Stdio, .Name = "getc_unlocked" },
 	[LOG_FUNC_getchar] = { .Group = GROUP_Stdio, .Name = "getchar" },
 //	[LOG_FUNC_getchar_unlocked] = { .Group = GROUP_Stdio, .Name = "getchar_unlocked" },
+	[LOG_FUNC_getline] = { .Group = GROUP_Stdio, .Name = "getline" },
+	[LOG_FUNC_getdelim] = { .Group = GROUP_Stdio, .Name = "getdelim" },
 	[LOG_FUNC_perror] = { .Group = GROUP_Stdio, .Name = "perror" },
 //	[LOG_FUNC_printf] = { .Group = GROUP_Stdio, .Name = "printf" },
 	[LOG_FUNC_putc] = { .Group = GROUP_Stdio, .Name = "putc" },
-//	[LOG_FUNC_putc_unlocked] = { .Group = GROUP_Stdio, .Name = "putc_unlocked" },
+	[LOG_FUNC_putc_unlocked] = { .Group = GROUP_Stdio, .Name = "putc_unlocked" },
 	[LOG_FUNC_putchar] = { .Group = GROUP_Stdio, .Name = "putchar" },
 //	[LOG_FUNC_putchar_unlocked] = { .Group = GROUP_Stdio, .Name = "putchar_unlocked" },
 	[LOG_FUNC_puts] = { .Group = GROUP_Stdio, .Name = "puts" },
@@ -413,6 +416,8 @@ static const FuncString myStrings[ LOG_FUNC_LAST ] =
 	[LOG_FUNC_close] = { .Group = GROUP_Unistd, .Name = "close" },
 //	[LOG_FUNC_ftruncate] = { .Group = GROUP_Unistd, .Name = "ftruncate" },
 	[LOG_FUNC_getcwd] = { .Group = GROUP_Unistd, .Name = "getcwd" },
+	[LOG_FUNC_geteuid] = { .Group = GROUP_Unistd, .Name = "geteuid" },
+	[LOG_FUNC_getegid] = { .Group = GROUP_Unistd, .Name = "getegid" },
 //	[LOG_FUNC_getpagesize] = { .Group = GROUP_Unistd, .Name = "getpagesize" },
 	[LOG_FUNC_getpid] = { .Group = GROUP_Unistd, .Name = "getpid" },
 //	[LOG_FUNC_getppid] = { .Group = GROUP_Unistd, .Name = "getppid" },
