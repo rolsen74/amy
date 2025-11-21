@@ -18,6 +18,7 @@
 
 #include <Amy_Features.h>
 #include <Amy_Defines.h>
+#include <Amy_Public.h>
 
 /* -- */
 
@@ -32,8 +33,7 @@
 
 /****************************************************************************/
 
-// fix me for AmyCLib
-//#define h_errno		AmyCLibPublic->ra_h_ErrNo
+#define h_errno		AmyCLibPublic->ra_h_ErrNo
 
 /****************************************************************************/
 

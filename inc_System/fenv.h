@@ -33,6 +33,8 @@ typedef struct
 
 typedef long int fexcept_t;
 
+#include <Amy_Public.h>
+
 /****************************************************************************/
 
 #define FE_DIVBYZERO	0x0001
@@ -50,8 +52,7 @@ enum
 	FE_TOWARDZERO,
 };
 
-// fix me for AmyCLib
-// #define FE_DFL_ENV		& AmyCLibPublic->ra_fenv;  
+#define FE_DFL_ENV		AmyCLibPublic->ra_fenv;
 
 /****************************************************************************/
 

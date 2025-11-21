@@ -577,7 +577,9 @@ struct EnableStruct funcs[] =
 /*  174 */	// ssize_t AMYFUNC (*stdio_getline)( struct AmyCLibPrivIFace *Self, char **lineptr, size_t *n, FILE *stream );
 /*  175 */	// ssize_t AMYFUNC (*stdio_getdelim)( struct AmyCLibPrivIFace *Self, char **lineptr, size_t *n, int delimiter, FILE *stream );
 /*  176 */	// int AMYFUNC (*stdio_putc_unlocked)( struct AmyCLibPrivIFace *Self, int c, struct PrivFile *stream );
-
+/*  177 */	// int AMYFUNC _generic_ctype_isprint( struct AmyCLibPrivIFace *Self, int c )
+/*  178 */	// char * AMYFUNC _generic_string_strerror( struct AmyCLibPrivIFace *Self, int errnum )
+/*  179 */	// int AMYFUNC _generic_string_strerror_r( struct AmyCLibPrivIFace *Self, int errnum, char *buf, size_t buflen )
 
 
 

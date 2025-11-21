@@ -15,7 +15,8 @@
 
 /****************************************************************************/
 
-#include <stdio.h>		// get 'FILE *'
+#include <stdio.h>		// FILE
+#include <fenv.h>		// fenv_t
 
 /****************************************************************************/
 
@@ -23,27 +24,26 @@ struct _AmyCLibPublic
 {
 	// Version v1.1
 
-	int			ra_ErrNo;		// Errno.h
+	int				ra_ErrNo;		// Errno.h
 
-	FILE *		ra_stderr;		// Stdio.h
-	FILE *		ra_stdin;		// Stdio.h
-	FILE *		ra_stdout;		// Stdio.h
+	char *			ra_optarg;		// Locale.h
+	int				ra_optind;		// Locale.h
+	int				ra_opterr;		// Locale.h
+	int				ra_optopt;		// Locale.h
 
-	int			ra_h_ErrNo;		// Netdb.h
+	FILE *			ra_stderr;		// Stdio.h
+	FILE *			ra_stdin;		// Stdio.h
+	FILE *			ra_stdout;		// Stdio.h
 
-	char *		ra_optarg;		// Locale.h
-	int			ra_optind;		// Locale.h
-	int			ra_opterr;		// Locale.h
-	int			ra_optopt;		// Locale.h
+	int				ra_h_ErrNo;		// Netdb.h
 
+	int				ra_signgam;		// Math.h
 
-//	fenv_t		ra_fenv;		// fenv.h - Default float envirement
-//
-// --	 int		 ra_daylight;	 // Time.h
-// --	 long int	 ra_timezone;	 // Time.h
-// --	 char **	 ra_tzname;		 // Time.h
-//
-// --	 int		 ra_signgam;	 // Math.h
+	int				ra_daylight;	// Time.h
+	long int		ra_timezone;	// Time.h
+	char **			ra_tzname;		// Time.h
+
+	const fenv_t	ra_fenv;		// FEnv.h
 };
 
 // --

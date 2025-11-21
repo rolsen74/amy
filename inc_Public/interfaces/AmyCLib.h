@@ -228,7 +228,9 @@ struct AmyCLibIFace
 /*  174 */	ssize_t						AMYFUNC (*stdio_getline)( struct AmyCLibIFace *Self, char **lineptr, size_t *n, FILE *stream );
 /*  175 */	ssize_t						AMYFUNC (*stdio_getdelim)( struct AmyCLibIFace *Self, char **lineptr, size_t *n, int delimiter, FILE *stream );
 /*  176 */	int							AMYFUNC (*stdio_putc_unlocked)( struct AmyCLibIFace *Self, int c, FILE *stream );
-
+/*  177 */	int							AMYFUNC (*ctype_isprint)( struct AmyCLibIFace *Self, int c );
+/*  178 */	char *						AMYFUNC (*string_strerror)( struct AmyCLibIFace *Self, int errnum );
+/*  179 */	int							AMYFUNC (*string_strerror_r)( struct AmyCLibIFace *Self, int errnum, char *buf, size_t buflen );
 
 
 

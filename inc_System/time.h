@@ -18,6 +18,7 @@
 
 #include <Amy_Features.h>
 #include <Amy_Defines.h>
+#include <Amy_Public.h>
 
 /* -- */
 
@@ -66,6 +67,21 @@ struct itimerspec
 	struct timespec	it_interval;
 	struct timespec	it_value;
 };
+
+/****************************************************************************/
+/* Legacy BSD/GNU timezone structure (used by gettimeofday) */
+
+struct timezone
+{
+	int tz_minuteswest;
+	int tz_dsttime;
+};
+
+/****************************************************************************/
+
+#define daylight		AmyCLibPublic->ra_daylight
+#define timezone		AmyCLibPublic->ra_timezone
+#define tzname			AmyCLibPublic->ra_tzname
 
 /****************************************************************************/
 

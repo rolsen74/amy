@@ -16,12 +16,13 @@
 # ctype		func-name	iface-name		args-call			args-decl					
 "int"		isalpha		ctype_isalpha		"c"				"int c"
 "int"		isdigit		ctype_isdigit		"c"				"int c"
+"int"		islower		ctype_islower		"c"				"int c"
+"int"		isprint		ctype_isprint		"c"				"int c"
 "int"		isspace		ctype_isspace		"c"				"int c"
 "int"		isupper		ctype_isupper		"c"				"int c"
 "int"		isxdigit	ctype_isxdigit		"c"				"int c"
 "int"		tolower		ctype_tolower		"c"				"int c"
 "int"		toupper		ctype_toupper		"c"				"int c"
-"int"		islower		ctype_islower		"c"				"int c"
 
 
 # fcntl		func-name	iface-name		args-call			args-decl					
@@ -32,8 +33,10 @@
 "intmax_t"	strtoimax	"inttypes_strtoimax"	"nptr, endptr, base"		"const char *nptr, char **endptr, int base"
 "uintmax_t"	strtoumax	"inttypes_strtoumax"	"nptr, endptr, base"		"const char *nptr, char **endptr, int base"
 
+
 # locale	func-name	iface-name		args-call			args-decl					
 "char *"	setlocale	"locale_setlocale"	"category, locale"		"int category, const char *locale"
+
 
 # math		func-name	iface-name		args-call			args-decl					
 "double"	_get_huge_val	math_d__get_huge_val	""				""
@@ -141,6 +144,8 @@
 "size_t"	strspn		string_strspn		"s1, s2"			"const char *s1, const char *s2"
 "size_t"	strcspn		string_strcspn		"s1, s2"			"const char *s1, const char *s2"
 "char *"	strdup		string_strdup		"str"				"const char *str"
+"char *"	strerror	string_strerror		"errnum"			"int errnum"
+"int"		strerror_r	string_strerror_r	"errnum, buf, buflen"		"int errnum, char *buf, size_t buflen"
 "size_t"	strlen		string_strlen		"str"				"const char *str"
 "char *"	strncat		string_strncat		"s1, s2, max"			"char *s1, const char *s2, size_t max"
 "int"		strncmp		string_strncmp		"s1, s2, max"			"const char *s1, const char *s2, size_t max"

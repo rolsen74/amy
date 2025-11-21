@@ -18,6 +18,7 @@
 
 #include <Amy_Features.h>
 #include <Amy_Defines.h>
+#include <Amy_Public.h>
 
 /* -- */
 
@@ -30,15 +31,14 @@
 
 /****************************************************************************/
 
-#define FLT_EVAL_METHOD	0
+#define FLT_EVAL_METHOD		0
 
 /****************************************************************************/
 
-typedef float			float_t;
-typedef double			double_t;
+typedef float				float_t;
+typedef double				double_t;
 
-// fix me for AmyCLib
-// #define signgam			AmyCLibPublic->ra_signgam
+#define signgam				AmyCLibPublic->ra_signgam
 
 #define HUGE_VAL			__builtin_huge_val()
 #define HUGE_VALF			__builtin_huge_valf()

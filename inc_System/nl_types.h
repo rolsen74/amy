@@ -26,12 +26,12 @@
 
 /****************************************************************************/
 
-typedef struct _nl_catd
-{
-	void *	__data;
-	int		__size;
+#ifndef _NL_ITEM_DEFINED
+#define _NL_ITEM_DEFINED
+typedef int nl_item;
+#endif
 
-} *nl_catd;
+typedef void *nl_catd;
 
 #define NL_SETD			1
 #define NL_CAT_LOCALE	1
