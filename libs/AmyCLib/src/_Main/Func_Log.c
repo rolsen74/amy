@@ -483,7 +483,7 @@ static const FuncString myStrings[ LOG_FUNC_LAST ] =
 	[LOG_FUNC_umask] = { .Group = GROUP_Sys_Stat, .Name = "umask" },
 
 	// Sys / Time.h
-//	[LOG_FUNC_gettimeofday] = { .Group = GROUP_Sys_Time, .Name = "gettimeofday" },
+	[LOG_FUNC_gettimeofday] = { .Group = GROUP_Sys_Time, .Name = "gettimeofday" },
 
 	// Sys / Uio.h
 //	[LOG_FUNC_readv] = { .Group = GROUP_Sys_Uio, .Name = "readv" },

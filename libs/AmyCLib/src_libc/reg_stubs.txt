@@ -58,7 +58,8 @@
 
 # signal	func-name	iface-name		args-call			args-decl
 "int"		raise		signal_raise		"sig"				"int sig"
-"void"		signal		signal_signal		"sig, func"			"int sig, void (*func)(int)"
+#"void"		signal		signal_signal		"sig, func"			"int sig, void (*func)(int)"
+"void"		signal		signal_signal		"sig, func"			"int sig, void *func"
 
 
 # stdio		func-name	iface-name		args-call			args-decl
@@ -202,3 +203,6 @@
 "char *"	mktemp		sys_stat_mktemp		"template"			"char *template"
 "mode_t"	umask		sys_stat_umask		"cmask"				"mode_t cmask"
 
+
+# sys/time	func-name	iface-name		args-call			args-decl
+"int"		gettimeofday	sys_time_gettimeofday	"tp, tzp"			"struct timeval *tp, void *tzp"

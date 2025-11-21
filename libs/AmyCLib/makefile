@@ -319,6 +319,9 @@ SRCS		+= src/_Main_Sys_Stat/mktemp.c
 SRCS		+= src/_Main_Sys_Stat/stat.c
 SRCS		+= src/_Main_Sys_Stat/umask.c
 
+# Main .. sys/time
+SRCS		+= src/_Main_Sys_Time/gettimeofday.c
+
 ###########################################################################
 
 OBJS		:= $(patsubst %.c,$(OBJDIR)/%.o,$(SRCS))

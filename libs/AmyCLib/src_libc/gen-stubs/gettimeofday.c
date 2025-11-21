@@ -9,6 +9,6 @@
 
 #include "Stub.h"
 
-LIBC_STUB(void, signal, signal_signal,
-    (int sig, void *func),
-    sig, func);
+LIBC_STUB(int, gettimeofday, sys_time_gettimeofday,
+    (struct timeval *tp, void *tzp),
+    tp, tzp);

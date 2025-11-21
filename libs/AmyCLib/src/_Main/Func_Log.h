@@ -511,7 +511,7 @@ enum
 
 //	## Sys / Time ##
 
-//	LOG_FUNC_gettimeofday,
+	LOG_FUNC_gettimeofday,
 
 
 //	## Sys / Uio ##

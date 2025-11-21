@@ -370,7 +370,7 @@ static const PTR Main_Vectors[] =
 /*  177 */	(PTR) _NotEnabled,	// int AMYFUNC _generic_ctype_isprint( struct AmyCLibPrivIFace *Self, int c )
 /*  178 */	(PTR) _NotEnabled,	// char * AMYFUNC _generic_string_strerror( struct AmyCLibPrivIFace *Self, int errnum )
 /*  179 */	(PTR) _NotEnabled,	// int AMYFUNC _generic_string_strerror_r( struct AmyCLibPrivIFace *Self, int errnum, char *buf, size_t buflen )
-
+/*  180 */	(PTR) _NotEnabled,	// int AMYFUNC _generic_sys_time_gettimeofday( struct AmyCLibPrivIFace *Self, struct timeval *tp, void *tzp )
 
 
 

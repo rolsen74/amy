@@ -22,6 +22,7 @@
 #include <setjmp.h>
 #include <stdio.h>
 #include <sys/stat.h>
+#include <sys/time.h>
 #include <fcntl.h>
 #include <utime.h>
 #include <wchar.h>
@@ -231,7 +232,7 @@ struct AmyCLibIFace
 /*  177 */	int							AMYFUNC (*ctype_isprint)( struct AmyCLibIFace *Self, int c );
 /*  178 */	char *						AMYFUNC (*string_strerror)( struct AmyCLibIFace *Self, int errnum );
 /*  179 */	int							AMYFUNC (*string_strerror_r)( struct AmyCLibIFace *Self, int errnum, char *buf, size_t buflen );
-
+/*  180 */	int							AMYFUNC (*sys_time_gettimeofday)( struct AmyCLibIFace *Self, struct timeval *tp, void *tzp );
 
 
 };
