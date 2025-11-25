@@ -30,9 +30,9 @@ enum
 
 //	## CType ##
 
-//	LOG_FUNC_isalnum,
+	LOG_FUNC_isalnum,
 	LOG_FUNC_isalpha,
-//	LOG_FUNC_isascii,
+	LOG_FUNC_isascii,
 //	LOG_FUNC_isblank,
 //	LOG_FUNC_iscntrl,
 	LOG_FUNC_isdigit,
@@ -71,7 +71,7 @@ enum
 
 //	## Locale ##
 
-//	LOG_FUNC_localeconv,
+	LOG_FUNC_localeconv,
 	LOG_FUNC_setlocale,
 
 //	## Math ##
@@ -99,7 +99,7 @@ enum
 	LOG_FUNC_D__get_huge_val,
 	LOG_FUNC_D__inf,
 //	LOG_FUNC_D___signbit,
-//	LOG_FUNC_D_ceil,
+	LOG_FUNC_D_ceil,
 	LOG_FUNC_D_copysign,
 	LOG_FUNC_D_fabs,
 //	LOG_FUNC_D_fdim,
@@ -107,7 +107,7 @@ enum
 //	LOG_FUNC_D_fpclassify,
 //	LOG_FUNC_D_fmax,
 //	LOG_FUNC_D_fmin,
-//	LOG_FUNC_D_fmod,
+	LOG_FUNC_D_fmod,
 //	LOG_FUNC_D_isfinite,
 	LOG_FUNC_D_isinf,
 	LOG_FUNC_D_isnan,
@@ -117,6 +117,9 @@ enum
 	LOG_FUNC_D_pow,
 	LOG_FUNC_D_scalbn,
 	LOG_FUNC_D_sqrt,
+	LOG_FUNC_D_cos,
+	LOG_FUNC_D_sin,
+	LOG_FUNC_D_atan2,
 
 //	LOG_FUNC_LD___signbit,
 
@@ -338,6 +341,7 @@ enum
 //	LOG_FUNC_strtoul,
 //	LOG_FUNC_strtoull,
 //	LOG_FUNC_system,
+	LOG_FUNC_mkstemp,
 
 
 //	## String ##
@@ -351,7 +355,7 @@ enum
 //	LOG_FUNC_memmem,
 	LOG_FUNC_memmove,
 	LOG_FUNC_memset,
-//	LOG_FUNC_stpcpy,
+	LOG_FUNC_stpcpy,
 //	LOG_FUNC_stpncpy,
 	LOG_FUNC_strcat,
 	LOG_FUNC_strchr,
@@ -375,7 +379,7 @@ enum
 //	LOG_FUNC_strsep,
 	LOG_FUNC_strspn,
 	LOG_FUNC_strstr,
-//	LOG_FUNC_strtok,
+	LOG_FUNC_strtok,
 //	LOG_FUNC_strtok_r,
 //	LOG_FUNC_strxfrm,
 //	LOG_FUNC_timingsafe_memcmp,

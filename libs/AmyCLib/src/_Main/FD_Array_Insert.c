@@ -70,7 +70,7 @@ U32 cnt;
 	if ( data->FD_Array.Size == data->FD_Array.Used )
 	{
 		// Alloc new Array
-		newarray = Self->Priv_Mem_Alloc( sizeof( struct ArrayNode ) * ( data->FD_Array.Size + ArrayChunkSize ) );
+		newarray = Self->Priv_Mem_Alloc( sizeof( struct ArrayNode ) * ( data->FD_Array.Size + ArrayChunkSize ));
 
 		if ( ! newarray )
 		{

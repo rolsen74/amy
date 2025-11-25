@@ -5,204 +5,217 @@
 ## Target OS: AmigaOS
 ##
 
-# assert	func-name	iface-name		args-call			args-decl					
-"void"		"__assert"	assert_assert		"file, line, func, expr"	"const char *file, int line, const char *func, const char *expr"
+# assert		func-name		iface-name			args-call			args-decl					
+"void"			"__assert"		assert_assert			"file, line, func, expr"	"const char *file, int line, const char *func, const char *expr"
 
 
-# ctype		func-name	iface-name		args-call			args-decl					
-"char *"	ctime		time_ctime		"clock"				"const time_t *clock"
+# ctype			func-name		iface-name			args-call			args-decl					
+"char *"		ctime			time_ctime			"clock"				"const time_t *clock"
 
 
-# ctype		func-name	iface-name		args-call			args-decl					
-"int"		isalpha		ctype_isalpha		"c"				"int c"
-"int"		isdigit		ctype_isdigit		"c"				"int c"
-"int"		islower		ctype_islower		"c"				"int c"
-"int"		isprint		ctype_isprint		"c"				"int c"
-"int"		isspace		ctype_isspace		"c"				"int c"
-"int"		isupper		ctype_isupper		"c"				"int c"
-"int"		isxdigit	ctype_isxdigit		"c"				"int c"
-"int"		tolower		ctype_tolower		"c"				"int c"
-"int"		toupper		ctype_toupper		"c"				"int c"
+# ctype			func-name		iface-name			args-call			args-decl					
+"int"			isalnum			ctype_isalnum			"c"				"int c"
+"int"			isalpha			ctype_isalpha			"c"				"int c"
+"int"			isascii			ctype_isascii			"c"				"int c"
+"int"			isdigit			ctype_isdigit			"c"				"int c"
+"int"			islower			ctype_islower			"c"				"int c"
+"int"			isprint			ctype_isprint			"c"				"int c"
+"int"			isspace			ctype_isspace			"c"				"int c"
+"int"			isupper			ctype_isupper			"c"				"int c"
+"int"			isxdigit		ctype_isxdigit			"c"				"int c"
+"int"			tolower			ctype_tolower			"c"				"int c"
+"int"			toupper			ctype_toupper			"c"				"int c"
 
 
-# fcntl		func-name	iface-name		args-call			args-decl					
-"int"		open		"fcntl_open"		"path, oflag"			"const char *path, int oflag, ..."
+# fcntl			func-name		iface-name			args-call			args-decl					
+"int"			open			"fcntl_open"			"path, oflag"			"const char *path, int oflag, ..."
 
 
-# inttypes	func-name	iface-name		args-call			args-decl					
-"intmax_t"	strtoimax	"inttypes_strtoimax"	"nptr, endptr, base"		"const char *nptr, char **endptr, int base"
-"uintmax_t"	strtoumax	"inttypes_strtoumax"	"nptr, endptr, base"		"const char *nptr, char **endptr, int base"
+# inttypes		func-name		iface-name			args-call			args-decl					
+"intmax_t"		strtoimax		"inttypes_strtoimax"		"nptr, endptr, base"		"const char *nptr, char **endptr, int base"
+"uintmax_t"		strtoumax		"inttypes_strtoumax"		"nptr, endptr, base"		"const char *nptr, char **endptr, int base"
 
 
-# locale	func-name	iface-name		args-call			args-decl					
-"char *"	setlocale	"locale_setlocale"	"category, locale"		"int category, const char *locale"
+# locale		func-name		iface-name			args-call			args-decl					
+"char *"		setlocale		"locale_setlocale"		"category, locale"		"int category, const char *locale"
+"struct lconv *"	localeconv		"locale_localeconv"		""				""
 
 
-# math		func-name	iface-name		args-call			args-decl					
-"double"	_get_huge_val	math_d__get_huge_val	""				""
-"double"	__inf		math_d__inf		""				""
-"int"		_isinf		math_d__isinf		"x"				"double x"
-"int"		_isnan		math_d__isnan		"x"				"double x"
-"double"	nan		math_d_nan		"x"				"const char *x"
-"double"	pow		math_d_pow		"x, y"				"double x, double y"
-"double"	fabs		math_d_fabs		"x"				"double x"
-"double"	scalbn		math_d_scalbn		"x, n"				"double x, int n"
-"double"	sqrt		math_d_sqrt		"x"				"double x"
-"double"	copysign	math_d_copysign		"x, y"				"double x, double y"
+# math			func-name		iface-name			args-call			args-decl					
+"double"		_get_huge_val		math_d__get_huge_val		""				""
+"double"		__inf			math_d__inf			""				""
+"int"			_isinf			math_d__isinf			"x"				"double x"
+"int"			_isnan			math_d__isnan			"x"				"double x"
+"double"		ceil			math_d_ceil			"x"				"double x"
+"double"		nan			math_d_nan			"x"				"const char *x"
+"double"		pow			math_d_pow			"x, y"				"double x, double y"
+"double"		fabs			math_d_fabs			"x"				"double x"
+"double"		scalbn			math_d_scalbn			"x, n"				"double x, int n"
+"double"		sqrt			math_d_sqrt			"x"				"double x"
+"double"		copysign		math_d_copysign			"x, y"				"double x, double y"
+"double"		cos			math_d_cos			"x"				"double x"
+"double"		sin			math_d_sin			"x"				"double x"
+"double"		atan2			math_d_atan2			"y,x"				"double y, double x"
+"double"		fmod			math_d_fmod			"x,y"				"double x, double y"
 
 
-# setjmp	func-name	iface-name		args-call			args-decl					
-"int"		setjmp		setjmp_setjmp		"buf"				"jmp_buf buf"
-"void"		longjmp		setjmp_longjmp		"buf, val"			"jmp_buf buf, int val"
+# setjmp		func-name		iface-name			args-call			args-decl					
+"int"			setjmp			setjmp_setjmp			"buf"				"jmp_buf buf"
+"void"			longjmp			setjmp_longjmp			"buf, val"			"jmp_buf buf, int val"
 
 
-# signal	func-name	iface-name		args-call			args-decl
-"int"		raise		signal_raise		"sig"				"int sig"
-#"void"		signal		signal_signal		"sig, func"			"int sig, void (*func)(int)"
-"void"		signal		signal_signal		"sig, func"			"int sig, void *func"
+# signal		func-name		iface-name			args-call			args-decl
+"int"			raise			signal_raise			"sig"				"int sig"
+#"void"			signal			signal_signal			"sig, func"			"int sig, void (*func)(int)"
+"void"			signal			signal_signal			"sig, func"			"int sig, void *func"
 
 
-# stdio		func-name	iface-name		args-call			args-decl
-# asprintf	-- custom stub
-"void"		clearerr	stdio_clearerr		"stream"			"FILE *stream"
-"int"		fclose		stdio_fclose		"stream"			"FILE *stream"
-"int"		feof		stdio_feof		"stream"			"FILE *stream"
-"int"		ferror		stdio_ferror		"stream"			"FILE *stream"
-"int"		fflush		stdio_fflush		"stream"			"FILE *stream"
-"int"		fgetc		stdio_fgetc		"stream"			"FILE *stream"
-"int"		fgetpos		stdio_fgetpos		"stream, pos"			"FILE *stream, fpos_t *pos"
-"char *"	fgets		stdio_fgets		"s, n, stream"			"char *s, int n, FILE *stream"
-"int"		fileno		stdio_fileno		"stream"			"FILE *stream"
-"void"		flockfile	stdio_flockfile		"stream"			"FILE *stream"
-"FILE *"	fopen		stdio_fopen		"filename, mode"		"const char *filename, const char *mode"
-# fprintf	-- custom stub
-"int"		fputc		stdio_fputc		"c, stream"			"int c, FILE *stream"
-"int"		fputc_unlocked	stdio_fputc_unlocked	"c, stream"			"int c, FILE *stream"
-"int"		fputs		stdio_fputs		"s, stream"			"const char *s, FILE *stream"
-"size_t"	fread		stdio_fread		"ptr, size, count, stream"	"void *ptr, size_t size, size_t count, FILE *stream"
-"int"		fseek		stdio_fseek		"stream, offset, from"		"FILE *stream, long offset, int from"
-"int"		fseeko		stdio_fseeko		"stream, offset, from"		"FILE *stream, off_t offset, int from"
-"long"		ftell		stdio_ftell		"stream"			"FILE *stream"
-"void"		funlockfile	stdio_funlockfile	"stream"			"FILE *stream"
-"int"		vfprintf	stdio_vfprintf		"stream, format, ap"		"FILE *stream, const char *format, va_list ap"
-"size_t"	fwrite		stdio_fwrite		"ptr, size, nitems, stream"	"const void *ptr, size_t size, size_t nitems, FILE *stream"
-"int"		getc		stdio_getc		"stream"			"FILE *stream"
-"int"		getchar		stdio_getchar		""				"void"
-"ssize_t"	getline		stdio_getline		"lineptr, n, stream"		"char **lineptr, size_t *n, FILE *stream"
-"ssize_t"	getdelim	stdio_getdelim		"lineptr, n, delimiter, stream"	"char **lineptr, size_t *n, int delimiter, FILE *stream"
-# printf	-- custom stub
-"void"		perror		stdio_perror		"s"				"const char *s"
-"int"		putc		stdio_putc		"c, stream"			"int c, FILE *stream"
-"int"		putc_unlocked	stdio_putc_unlocked	"c, stream"			"int c, FILE *stream"
-"int"		putchar		stdio_putchar		"c"				"int c"
-"int"		puts		stdio_puts		"str"				"const char *str"
-"int"		remove		stdio_remove		"path"				"const char *path"
-"int"		rename		stdio_rename		"old, new"			"const char *old, const char *new"
-"void"		rewind		stdio_rewind		"stream"			"FILE *stream"
-"int"		setvbuf		stdio_setvbuf		"stream, buf, mode, size"	"FILE *stream, char *buf, int mode, size_t size"
-# snprintf	-- custom stub
-# sprintf	-- custom stub
-# sscanf	-- custom stub
-"int"		ungetc		stdio_ungetc		"c, stream"			"int c, FILE *stream"
-"int"		vasprintf	stdio_vasprintf		"ret, fmt, ap"			"char **ret, const char *fmt, va_list ap"
-"int"		vprintf		stdio_vprintf		"fmt, ap"			"const char *fmt, va_list ap"
-"int"		vsprintf	stdio_vsprintf		"buf, fmt, ap"			"char *buf, const char *fmt, va_list ap"
-"int"		vsnprintf	stdio_vsnprintf		"buf, size, fmt, ap"		"char *buf, size_t size, const char *fmt, va_list ap"
-"int"		vsscanf		stdio_vsscanf		"buf, fmt, ap"			"const char *buf, const char *fmt, va_list ap"
+# stdio			func-name		iface-name			args-call			args-decl
+# asprintf		-- custom stub
+"void"			clearerr		stdio_clearerr			"stream"			"FILE *stream"
+"int"			fclose			stdio_fclose			"stream"			"FILE *stream"
+"int"			feof			stdio_feof			"stream"			"FILE *stream"
+"int"			ferror			stdio_ferror			"stream"			"FILE *stream"
+"int"			fflush			stdio_fflush			"stream"			"FILE *stream"
+"int"			fgetc			stdio_fgetc			"stream"			"FILE *stream"
+"int"			fgetpos			stdio_fgetpos			"stream, pos"			"FILE *stream, fpos_t *pos"
+"char *"		fgets			stdio_fgets			"s, n, stream"			"char *s, int n, FILE *stream"
+"int"			fileno			stdio_fileno			"stream"			"FILE *stream"
+"void"			flockfile		stdio_flockfile			"stream"			"FILE *stream"
+"FILE *"		fopen			stdio_fopen			"filename, mode"		"const char *filename, const char *mode"
+# fprintf		-- custom stub
+"int"			fputc			stdio_fputc			"c, stream"			"int c, FILE *stream"
+"int"			fputc_unlocked		stdio_fputc_unlocked		"c, stream"			"int c, FILE *stream"
+"int"			fputs			stdio_fputs			"s, stream"			"const char *s, FILE *stream"
+"size_t"		fread			stdio_fread			"ptr, size, count, stream"	"void *ptr, size_t size, size_t count, FILE *stream"
+"int"			fseek			stdio_fseek			"stream, offset, from"		"FILE *stream, long offset, int from"
+"int"			fseeko			stdio_fseeko			"stream, offset, from"		"FILE *stream, off_t offset, int from"
+"long"			ftell			stdio_ftell			"stream"			"FILE *stream"
+"void"			funlockfile		stdio_funlockfile		"stream"			"FILE *stream"
+"int"			vfprintf		stdio_vfprintf			"stream, format, ap"		"FILE *stream, const char *format, va_list ap"
+"size_t"		fwrite			stdio_fwrite			"ptr, size, nitems, stream"	"const void *ptr, size_t size, size_t nitems, FILE *stream"
+"int"			getc			stdio_getc			"stream"			"FILE *stream"
+"int"			getchar			stdio_getchar			""				"void"
+"ssize_t"		getline			stdio_getline			"lineptr, n, stream"		"char **lineptr, size_t *n, FILE *stream"
+"ssize_t"		getdelim		stdio_getdelim			"lineptr, n, delimiter, stream"	"char **lineptr, size_t *n, int delimiter, FILE *stream"
+# printf		-- custom stub
+"void"			perror			stdio_perror			"s"				"const char *s"
+"int"			putc			stdio_putc			"c, stream"			"int c, FILE *stream"
+"int"			putc_unlocked		stdio_putc_unlocked		"c, stream"			"int c, FILE *stream"
+"int"			putchar			stdio_putchar			"c"				"int c"
+"int"			puts			stdio_puts			"str"				"const char *str"
+"int"			remove			stdio_remove			"path"				"const char *path"
+"int"			rename			stdio_rename			"old, new"			"const char *old, const char *new"
+"void"			rewind			stdio_rewind			"stream"			"FILE *stream"
+"int"			setvbuf			stdio_setvbuf			"stream, buf, mode, size"	"FILE *stream, char *buf, int mode, size_t size"
+# snprintf		-- custom stub
+# sprintf		-- custom stub
+# sscanf		-- custom stub
+"int"			ungetc			stdio_ungetc			"c, stream"			"int c, FILE *stream"
+"int"			vasprintf		stdio_vasprintf			"ret, fmt, ap"			"char **ret, const char *fmt, va_list ap"
+"int"			vprintf			stdio_vprintf			"fmt, ap"			"const char *fmt, va_list ap"
+"int"			vsprintf		stdio_vsprintf			"buf, fmt, ap"			"char *buf, const char *fmt, va_list ap"
+"int"			vsnprintf		stdio_vsnprintf			"buf, size, fmt, ap"		"char *buf, size_t size, const char *fmt, va_list ap"
+"int"			vsscanf			stdio_vsscanf			"buf, fmt, ap"			"const char *buf, const char *fmt, va_list ap"
 
 
-# stdlib	func-name	iface-name		args-call			args-decl
-# _exit		-- custom stub
-# _Exit		-- custom stub
-# abort		-- custom stub
-"double"	atof		stdlib_atof		"str"				"const char *str"
-"int"		atoi		stdlib_atoi		"str"				"const char *str"
-"long"		atol		stdlib_atol		"str"				"const char *str"
-"void *"	calloc		stdlib_calloc		"num, size"			"size_t num, size_t size"
-# exit		-- custom stub
-"void"		free		stdlib_free		"mem"				"void *mem"
-"char *"	getenv		stdlib_getenv		"name"				"const char *name"
-"void *"	malloc		stdlib_malloc		"size"				"size_t size"
-"void"		qsort		stdlib_qsort		"base, nel, width, compar"	"void *base, size_t nel, size_t width, int (*compar)(const void *, const void *)"
-"int"		rand		stdlib_rand		""				"void"
-"int"		rand_r		stdlib_rand_r		"seed"				"unsigned int *seed"
-"void *"	realloc		stdlib_realloc		"mem, size"			"void *mem, size_t size"
-"void"		srand		stdlib_srand		"seed"				"unsigned int seed"
-"double"	strtod		stdlib_strtod		"str, ptr"			"const char *str, char **ptr"
-"float"		strtof		stdlib_strtof		"str, ptr"			"const char *str, char **ptr"
-"long"		strtol		stdlib_strtol		"nptr, endptr, base"		"const char *nptr, char **endptr, int base"
+# stdlib		func-name		iface-name			args-call			args-decl
+# _exit			-- custom stub
+# _Exit			-- custom stub
+# abort			-- custom stub
+"double"		atof			stdlib_atof			"str"				"const char *str"
+"int"			atoi			stdlib_atoi			"str"				"const char *str"
+"long"			atol			stdlib_atol			"str"				"const char *str"
+"void *"		calloc			stdlib_calloc			"num, size"			"size_t num, size_t size"
+# exit			-- custom stub
+"void"			free			stdlib_free			"mem"				"void *mem"
+"char *"		getenv			stdlib_getenv			"name"				"const char *name"
+"void *"		malloc			stdlib_malloc			"size"				"size_t size"
+"void"			qsort			stdlib_qsort			"base, nel, width, compar"	"void *base, size_t nel, size_t width, int (*compar)(const void *, const void *)"
+"int"			rand			stdlib_rand			""				"void"
+"int"			rand_r			stdlib_rand_r			"seed"				"unsigned int *seed"
+"void *"		realloc			stdlib_realloc			"mem, size"			"void *mem, size_t size"
+"void"			srand			stdlib_srand			"seed"				"unsigned int seed"
+"double"		strtod			stdlib_strtod			"str, ptr"			"const char *str, char **ptr"
+"float"			strtof			stdlib_strtof			"str, ptr"			"const char *str, char **ptr"
+"long"			strtol			stdlib_strtol			"nptr, endptr, base"		"const char *nptr, char **endptr, int base"
+"int"			mkstemp			stdlib_mkstemp			"template"			"char *template"
 
 
-# string	func-name	iface-name		args-call			args-decl
-"int"		memcmp		string_memcmp		"s1, s2, len"			"const void *s1, const void *s2, size_t len"
-"void *"	memcpy		string_memcpy		"dst, src, len"			"void *dst, const void *src, size_t len"
-"void *"	memmove		string_memmove		"dst, src, len"			"void *dst, const void *src, size_t len"
-"void *"	memset		string_memset		"mem, val, len"			"void *mem, int val, size_t len"
-"char *"	strcat		string_strcat		"dst, src"			"char *dst, const char *src"
-"char *"	strchr		string_strchr		"str, c"			"const char *str, int c"
-"int"		strcmp		string_strcmp		"s1, s2"			"const char *s1, const char *s2"
-"char *"	strcpy		string_strcpy		"dst, src"			"char *dst, const char *src"
-"size_t"	strspn		string_strspn		"s1, s2"			"const char *s1, const char *s2"
-"size_t"	strcspn		string_strcspn		"s1, s2"			"const char *s1, const char *s2"
-"char *"	strdup		string_strdup		"str"				"const char *str"
-"char *"	strerror	string_strerror		"errnum"			"int errnum"
-"int"		strerror_r	string_strerror_r	"errnum, buf, buflen"		"int errnum, char *buf, size_t buflen"
-"size_t"	strlen		string_strlen		"str"				"const char *str"
-"char *"	strncat		string_strncat		"s1, s2, max"			"char *s1, const char *s2, size_t max"
-"int"		strncmp		string_strncmp		"s1, s2, max"			"const char *s1, const char *s2, size_t max"
-"char *"	strncpy		string_strncpy		"dst, src, max"			"char *dst, const char *src, size_t max"
-"char *"	strndup		string_strndup		"str, max"			"const char *str, size_t max"
-"size_t"	strnlen		string_strnlen		"str, max"			"const char *str, size_t max"
-"char *"	strpbrk		string_strpbrk		"s1, s2"			"const char *s1, const char *s2"
-"size_t"	strspn		string_strspn		"s1, s2"			"const char *s1, const char *s2"
-"char *"	strstr		string_strstr		"s1, s2"			"const char *s1, const char *s2"
 
-# strings	func-name	iface-name		args-call			args-decl
-"void"		bzero		strings_bzero		"mem, len"			"void *mem, size_t len"
-"int"		strcasecmp	strings_strcasecmp	"s1, s2"			"const char *s1, const char *s2"
-"int"		strncasecmp	strings_strncasecmp	"s1, s2, len"			"const char *s1, const char *s2, size_t len"
+# string		func-name		iface-name			args-call			args-decl
+"int"			memcmp			string_memcmp			"s1, s2, len"			"const void *s1, const void *s2, size_t len"
+"void *"		memcpy			string_memcpy			"dst, src, len"			"void *dst, const void *src, size_t len"
+"void *"		memmove			string_memmove			"dst, src, len"			"void *dst, const void *src, size_t len"
+"void *"		memset			string_memset			"mem, val, len"			"void *mem, int val, size_t len"
+"char *"		stpcpy			string_stpcpy			"s1, s2"			"char *s1, const char *s2"
+"char *"		strcat			string_strcat			"dst, src"			"char *dst, const char *src"
+"char *"		strchr			string_strchr			"str, c"			"const char *str, int c"
+"int"			strcmp			string_strcmp			"s1, s2"			"const char *s1, const char *s2"
+"char *"		strcpy			string_strcpy			"dst, src"			"char *dst, const char *src"
+"size_t"		strspn			string_strspn			"s1, s2"			"const char *s1, const char *s2"
+"size_t"		strcspn			string_strcspn			"s1, s2"			"const char *s1, const char *s2"
+"char *"		strdup			string_strdup			"str"				"const char *str"
+"char *"		strerror		string_strerror			"errnum"			"int errnum"
+"int"			strerror_r		string_strerror_r		"errnum, buf, buflen"		"int errnum, char *buf, size_t buflen"
+"size_t"		strlen			string_strlen			"str"				"const char *str"
+"char *"		strncat			string_strncat			"s1, s2, max"			"char *s1, const char *s2, size_t max"
+"int"			strncmp			string_strncmp			"s1, s2, max"			"const char *s1, const char *s2, size_t max"
+"char *"		strncpy			string_strncpy			"dst, src, max"			"char *dst, const char *src, size_t max"
+"char *"		strndup			string_strndup			"str, max"			"const char *str, size_t max"
+"size_t"		strnlen			string_strnlen			"str, max"			"const char *str, size_t max"
+"char *"		strpbrk			string_strpbrk			"s1, s2"			"const char *s1, const char *s2"
+"size_t"		strspn			string_strspn			"s1, s2"			"const char *s1, const char *s2"
+"char *"		strstr			string_strstr			"s1, s2"			"const char *s1, const char *s2"
+"char *"		strtok			string_strtok			"s1, s2"			"char *s1, const char *s2"
 
 
-# time		func-name	iface-name		args-call			args-decl
-"struct tm *"	localtime	time_localtime		"time"				"const time_t *time"
-"size_t"	strftime	time_strftime		"s, max, fmt, timptr"		"char *s, size_t max, const char *fmt, const struct tm *timptr"
-"time_t"	time		time_time		"ptr"				"time_t *ptr"
-"struct tm *"	gmtime		time_gmtime		"time"				"const time_t *time"
-"struct tm *"	gmtime_r	time_gmtime_r		"time, tm"			"const time_t *time, struct tm *tm"
+# strings		func-name		iface-name			args-call			args-decl
+"void"			bzero			strings_bzero			"mem, len"			"void *mem, size_t len"
+"int"			strcasecmp		strings_strcasecmp		"s1, s2"			"const char *s1, const char *s2"
+"int"			strncasecmp		strings_strncasecmp		"s1, s2, len"			"const char *s1, const char *s2, size_t len"
 
 
-# unistd	func-name	iface-name		args-call			args-decl
-"int"		close		unistd_close		"fildes"			"int fildes"
-"int"		access		unistd_access		"path, amode"			"const char *path, int amode"
-"char *"	getcwd		unistd_getcwd		"buf, size"			"char *buf, size_t size"
-"uid_t"		geteuid		unistd_geteuid		""				"void"
-"gid_t"		getegid		unistd_getegid		""				"void"
-"pid_t"		getpid		unistd_getpid		""				"void"
-"int"		isatty		unistd_isatty		"fildes"			"int fildes"
-"int"		link		unistd_link		"path1, path2"			"const char *path1, const char *path2"
-"ssize_t"	read		unistd_read		"fildes, buf, nbyte"		"int fildes, void *buf, size_t nbyte"
-"int"		rmdir		unistd_rmdir		"path"				"const char *path"
-"int"		unlink		unistd_unlink		"path"				"const char *path"
+# time			func-name		iface-name			args-call			args-decl
+"struct tm *"		localtime		time_localtime			"time"				"const time_t *time"
+"size_t"		strftime		time_strftime			"s, max, fmt, timptr"		"char *s, size_t max, const char *fmt, const struct tm *timptr"
+"time_t"		time			time_time			"ptr"				"time_t *ptr"
+"struct tm *"		gmtime			time_gmtime			"time"				"const time_t *time"
+"struct tm *"		gmtime_r		time_gmtime_r			"time, tm"			"const time_t *time, struct tm *tm"
 
 
-# utime		func-name	iface-name		args-call			args-decl
-"int"		utime		utime_utime		"str, buf"			"const char *str, const struct utimbuf *buf"
+# unistd		func-name		iface-name			args-call			args-decl
+"int"			close			unistd_close			"fildes"			"int fildes"
+"int"			access			unistd_access			"path, amode"			"const char *path, int amode"
+"char *"		getcwd			unistd_getcwd			"buf, size"			"char *buf, size_t size"
+"uid_t"			geteuid			unistd_geteuid			""				"void"
+"gid_t"			getegid			unistd_getegid			""				"void"
+"pid_t"			getpid			unistd_getpid			""				"void"
+"int"			isatty			unistd_isatty			"fildes"			"int fildes"
+"int"			link			unistd_link			"path1, path2"			"const char *path1, const char *path2"
+"ssize_t"		read			unistd_read			"fildes, buf, nbyte"		"int fildes, void *buf, size_t nbyte"
+"int"			rmdir			unistd_rmdir			"path"				"const char *path"
+"int"			unlink			unistd_unlink			"path"				"const char *path"
 
 
-# wchar		func-name	iface-name		args-call			args-decl
-"size_t"	mbrtowc		wchar_mbrtowc		"pwc, s, n, ps"			"wchar_t *pwc, const char *s, size_t n, mbstate_t *ps"
-"size_t"	mbstowcs	wchar_mbstowcs		"pwcs, s, n"			"wchar_t *pwcs, const char *s, size_t n"
+# utime			func-name		iface-name			args-call			args-decl
+"int"			utime			utime_utime			"str, buf"			"const char *str, const struct utimbuf *buf"
 
 
-# sys/stat	func-name	iface-name		args-call			args-decl
-"int"		chmod		sys_stat_chmod		"path, mode"			"const char *path, mode_t mode"
-"int"		fstat		sys_stat_fstat		"fildes, buf"			"int fildes, struct stat *buf"
-"int"		lstat		sys_stat_lstat		"path, buf"			"const char *path, struct stat *buf"
-"int"		mkdir		sys_stat_mkdir		"path, mode"			"const char *path, mode_t mode"
-"int"		stat		sys_stat_stat		"path, buf"			"const char *path, struct stat *buf"
-"char *"	mktemp		sys_stat_mktemp		"template"			"char *template"
-"mode_t"	umask		sys_stat_umask		"cmask"				"mode_t cmask"
+# wchar			func-name		iface-name			args-call			args-decl
+"size_t"		mbrtowc			wchar_mbrtowc			"pwc, s, n, ps"			"wchar_t *pwc, const char *s, size_t n, mbstate_t *ps"
+"size_t"		mbstowcs		wchar_mbstowcs			"pwcs, s, n"			"wchar_t *pwcs, const char *s, size_t n"
 
 
-# sys/time	func-name	iface-name		args-call			args-decl
-"int"		gettimeofday	sys_time_gettimeofday	"tp, tzp"			"struct timeval *tp, void *tzp"
+# sys/stat		func-name		iface-name			args-call			args-decl
+"int"			chmod			sys_stat_chmod			"path, mode"			"const char *path, mode_t mode"
+"int"			fstat			sys_stat_fstat			"fildes, buf"			"int fildes, struct stat *buf"
+"int"			lstat			sys_stat_lstat			"path, buf"			"const char *path, struct stat *buf"
+"int"			mkdir			sys_stat_mkdir			"path, mode"			"const char *path, mode_t mode"
+"int"			stat			sys_stat_stat			"path, buf"			"const char *path, struct stat *buf"
+"char *"		mktemp			sys_stat_mktemp			"template"			"char *template"
+"mode_t"		umask			sys_stat_umask			"cmask"				"mode_t cmask"
+
+
+# sys/time		func-name		iface-name			args-call			args-decl
+"int"			gettimeofday		sys_time_gettimeofday		"tp, tzp"			"struct timeval *tp, void *tzp"

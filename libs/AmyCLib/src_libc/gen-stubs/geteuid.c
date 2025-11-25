@@ -12,4 +12,4 @@
 
 LIBC_STUB(uid_t, geteuid, unistd_geteuid,
     (void)
-);
+ );

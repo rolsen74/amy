@@ -12,4 +12,4 @@
 
 LIBC_STUB(int, getchar, stdio_getchar,
     (void)
-);
+ );

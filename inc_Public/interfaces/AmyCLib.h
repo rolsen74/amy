@@ -233,6 +233,18 @@ struct AmyCLibIFace
 /*  178 */	char *						AMYFUNC (*string_strerror)( struct AmyCLibIFace *Self, int errnum );
 /*  179 */	int							AMYFUNC (*string_strerror_r)( struct AmyCLibIFace *Self, int errnum, char *buf, size_t buflen );
 /*  180 */	int							AMYFUNC (*sys_time_gettimeofday)( struct AmyCLibIFace *Self, struct timeval *tp, void *tzp );
+/*  181 */	int							AMYFUNC (*ctype_isascii)( struct AmyCLibIFace *Self, int c );
+/*  182 */	char *						AMYFUNC (*string_stpcpy)( struct AmyCLibIFace *Self, char *s1, const char *s2 );
+/*  183 */	int							AMYFUNC (*ctype_isalnum)( struct AmyCLibIFace *Self, int c );
+/*  184 */	double						AMYFUNC (*math_d_ceil)( struct AmyCLibIFace *Self, double x );
+/*  185 */	double						AMYFUNC	(*math_d_cos)( struct AmyCLibIFace *Self, double x );
+/*  186 */	double						AMYFUNC (*math_d_sin)( struct AmyCLibIFace *Self, double x );
+/*  187 */	double						AMYFUNC (*math_d_atan2)( struct AmyCLibIFace *Self, double y, double x );
+/*  188 */	double						AMYFUNC (*math_d_fmod)( struct AmyCLibIFace *Self, double x, double y );
+/*  189 */	char *						AMYFUNC (*string_strtok)( struct AmyCLibIFace *Self, char *s1, const char *s2 );
+/*  190 */	struct lconv *				AMYFUNC (*locale_localeconv)( struct AmyCLibIFace *Self );
+/*  191 */	int							AMYFUNC (*stdlib_mkstemp)( struct AmyCLibIFace *Self, char *template );
+
 
 
 };

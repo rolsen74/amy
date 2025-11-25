@@ -8,8 +8,8 @@
 */
 
 #include "Stub.h"
-#include <unistd.h>
+#include <ctype.h>
 
-LIBC_STUB(gid_t, getegid, unistd_getegid,
-    (void)
- );
+LIBC_STUB(int, isascii, ctype_isascii,
+    (int c),
+    c);

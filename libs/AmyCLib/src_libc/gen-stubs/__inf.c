@@ -12,4 +12,4 @@
 
 LIBC_STUB(double, __inf, math_d__inf,
     (void)
-);
+ );

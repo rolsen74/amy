@@ -8,8 +8,8 @@
 */
 
 #include "Stub.h"
-#include <unistd.h>
+#include <stdlib.h>
 
-LIBC_STUB(gid_t, getegid, unistd_getegid,
-    (void)
- );
+LIBC_STUB(int, mkstemp, stdlib_mkstemp,
+    (char *template),
+    template);

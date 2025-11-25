@@ -15,4 +15,4 @@
 
 // --
 
-#endif
+#endif /* AMYLIB_INLINE4_AMYCLIB_H */

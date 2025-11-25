@@ -371,7 +371,17 @@ static const PTR Main_Vectors[] =
 /*  178 */	(PTR) _NotEnabled,	// char * AMYFUNC _generic_string_strerror( struct AmyCLibPrivIFace *Self, int errnum )
 /*  179 */	(PTR) _NotEnabled,	// int AMYFUNC _generic_string_strerror_r( struct AmyCLibPrivIFace *Self, int errnum, char *buf, size_t buflen )
 /*  180 */	(PTR) _NotEnabled,	// int AMYFUNC _generic_sys_time_gettimeofday( struct AmyCLibPrivIFace *Self, struct timeval *tp, void *tzp )
-
+/*  181 */	(PTR) _NotEnabled,	// int AMYFUNC _generic_ctype_isascii( struct AmyCLibPrivIFace *Self, int c )
+/*  182 */	(PTR) _NotEnabled,	// char * AMYFUNC (*string_stpcpy)( struct AmyCLibPrivIFace *Self, char *s1, const char *s2 );
+/*  183 */	(PTR) _NotEnabled,	// int AMYFUNC (*ctype_isalnum)( struct AmyCLibPrivIFace *Self, int c );
+/*  184 */	(PTR) _NotEnabled,	// double AMYFUNC (*math_ceil)( struct AmyCLibPrivIFace *Self, double x );
+/*  185 */	(PTR) _NotEnabled,	// double AMYFUNC (*math_cos)( struct AmyCLibPrivIFace *Self, double x );
+/*  186 */	(PTR) _NotEnabled,	// double AMYFUNC (*math_sin)( struct AmyCLibPrivIFace *Self, double x );
+/*  187 */	(PTR) _NotEnabled,	// double AMYFUNC (*math_atan2)( struct AmyCLibPrivIFace *Self, double y, double x );
+/*  188 */	(PTR) _NotEnabled,	// double AMYFUNC (*math_fmod)( struct AmyCLibPrivIFace *Self, double x, double y );
+/*  189 */	(PTR) _NotEnabled,	// char * AMYFUNC (*string_strtok)( struct AmyCLibPrivIFace *Self, char *s1, const char *s2 );
+/*  190 */	(PTR) _NotEnabled,	// struct lconv * AMYFUNC (*locale_localeconv)( struct AmyCLibPrivIFace *Self );
+/*  191 */	(PTR) _NotEnabled,	// int AMYFUNC (*stdlib_mkstemp)( struct AmyCLibPrivIFace *Self, char *template );
 
 
 

@@ -8,8 +8,8 @@
 */
 
 #include "Stub.h"
-#include <unistd.h>
+#include <locale.h>
 
-LIBC_STUB(gid_t, getegid, unistd_getegid,
+LIBC_STUB(struct lconv *, localeconv, locale_localeconv,
     (void)
  );

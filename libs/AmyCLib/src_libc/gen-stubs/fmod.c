@@ -8,8 +8,8 @@
 */
 
 #include "Stub.h"
-#include <unistd.h>
+#include <math.h>
 
-LIBC_STUB(gid_t, getegid, unistd_getegid,
-    (void)
- );
+LIBC_STUB(double, fmod, math_d_fmod,
+    (double x, double y),
+    x, y);

@@ -126,7 +126,7 @@ with open(REGISTRY) as f:
                     out.write(
                         f"LIBC_STUB({ret}, {name}, {iface_func},\n"
                         f"    {decl_text}\n"
-                        f");\n"
+                        f" );\n"
                     )
 
         print(f"Generated: {filename}")

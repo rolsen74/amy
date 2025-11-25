@@ -972,7 +972,7 @@ literal:
 					{
 						nread += n;
 						width--;
-						if (!(flags & SUPPRESS))
+						if ( ! (flags & SUPPRESS))
 							wcp++;
 						n = 0;
 					}
@@ -986,7 +986,7 @@ literal:
 						break;
 					}
 				}
-				if (!(flags & SUPPRESS))
+				if ( ! (flags & SUPPRESS))
 					nassigned++;
 			} else
 #endif /* SCANF_WIDE_CHAR */
@@ -1102,7 +1102,7 @@ literal:
 						}
 						nread += n;
 						width--;
-						if (!(flags & SUPPRESS))
+						if ( ! (flags & SUPPRESS))
 							wcp++;
 						nchars++;
 						n = 0;
@@ -1129,7 +1129,7 @@ literal:
 				if (n == 0)
 					goto match_failure;
 
-				if (!(flags & SUPPRESS))
+				if ( ! (flags & SUPPRESS))
 				{
 					*wcp = L'\0';
 					nassigned++;
@@ -1207,7 +1207,7 @@ literal:
 				else
 					wcp = &twc;
 				n = 0;
-				while (!isspace(*fp->_p) && width != 0)
+				while ( ! isspace(*fp->_p) && width != 0)
 				{
 					if (n == MB_CUR_MAX)
 					{
@@ -1228,7 +1228,7 @@ literal:
 						*wcp = L'\0';
 					if (nconv != (size_t)-2)
 					{
-						if (iswspace(*wcp))
+						if ( iswspace(*wcp))
 						{
 							while (n != 0)
 							{
@@ -1240,7 +1240,7 @@ literal:
 						}
 						nread += n;
 						width--;
-						if (!(flags & SUPPRESS))
+						if ( ! (flags & SUPPRESS))
 							wcp++;
 						n = 0;
 					}
@@ -1254,7 +1254,7 @@ literal:
 						break;
 					}
 				}
-				if (!(flags & SUPPRESS)) {
+				if ( ! (flags & SUPPRESS)) {
 					*wcp = L'\0';
 					nassigned++;
 				}
@@ -1263,8 +1263,8 @@ literal:
 			if (flags & SUPPRESS) {
 				n = 0;
 
-		//		while (!isspace(*fp->_p))
-				while (!Self->ctype_isspace( __Priv_Peek_Buffer(file) ))
+		//		while ( ! isspace(*fp->_p))
+				while ( ! Self->ctype_isspace( __Priv_Peek_Buffer(file) ))
 				{
 		//			n++, fp->_r--, fp->_p++;
 					n++, __Priv_Skip_Bytes( Self, file, 1 );
@@ -1282,8 +1282,8 @@ literal:
 			} else {
 				p0 = p = va_arg(ss->ss_Args, char *);
 
-	//			while (!isspace(*fp->_p))
-				while (!Self->ctype_isspace( __Priv_Peek_Buffer(file) ))
+	//			while ( ! isspace(*fp->_p))
+				while ( ! Self->ctype_isspace( __Priv_Peek_Buffer(file) ))
 				{
 		//			fp->_r--;
 		//			*p++ = *fp->_p++;

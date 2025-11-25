@@ -182,7 +182,7 @@ U32 mode;
 	if ( file->pf_Handle.pf_File == 0 )
 	{
 		DOFUNCTIONPRINTF( IExec->DebugPrintF( "_generic__Priv_FD_Init : Error opening File\n" ); );
-		data->buf_PublicData->ra_ErrNo = Self->Priv_Convert_IOErr_to_ErrNo( IDOS->IoErr() );
+		data->buf_PublicData->ra_ErrNo = Self->Priv_Convert_IOErr_to_ErrNo( IDOS->IoErr());
 		goto bailout;
 	}
 

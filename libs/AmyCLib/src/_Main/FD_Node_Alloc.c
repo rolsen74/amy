@@ -61,7 +61,7 @@ S32 pos;
 
 	// --
 
-	file = Self->Priv_Mem_Alloc( sizeof( struct PrivFile ) );
+	file = Self->Priv_Mem_Alloc( sizeof( struct PrivFile ));
 
 	if ( ! file )
 	{

@@ -135,7 +135,7 @@ int32 k;
 	xx = (uint64)(( hx & 0x800fffff ) | ( k << 20 )) << 32;
 	xx |= val.raw & 0x00000000ffffffff;
 	val.raw = xx;
-//	SET_HIGH_WORD( x, ( hx & 0x800fffff ) | ( k << 20 ) );
+//	SET_HIGH_WORD( x, ( hx & 0x800fffff ) | ( k << 20 ));
 	
 //	return x*twom54;
 	return( val.value * twom54 );

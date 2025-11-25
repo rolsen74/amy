@@ -67,9 +67,9 @@ static const FuncString myStrings[ LOG_FUNC_LAST ] =
 	[LOG_FUNC_assert] = { .Group = GROUP_Assert, .Name = "assert" },
 
 	// CType.h
-//	[LOG_FUNC_isalnum] = { .Group = GROUP_CType, .Name = "isalnum" },
+	[LOG_FUNC_isalnum] = { .Group = GROUP_CType, .Name = "isalnum" },
 	[LOG_FUNC_isalpha] = { .Group = GROUP_CType, .Name = "isalpha" },
-//	[LOG_FUNC_isascii] = { .Group = GROUP_CType, .Name = "isascii" },
+	[LOG_FUNC_isascii] = { .Group = GROUP_CType, .Name = "isascii" },
 //	[LOG_FUNC_isblank] = { .Group = GROUP_CType, .Name = "isblank" },
 //	[LOG_FUNC_iscntrl] = { .Group = GROUP_CType, .Name = "iscntrl" },
 	[LOG_FUNC_isdigit] = { .Group = GROUP_CType, .Name = "isdigit" },
@@ -101,7 +101,7 @@ static const FuncString myStrings[ LOG_FUNC_LAST ] =
 	[LOG_FUNC_strtoumax] = { .Group = GROUP_Inttypes, .Name = "strtoumax" },
 
 	// Locale.h
-//	[LOG_FUNC_localeconv] = { .Group = GROUP_Locale, .Name = "localeconv" },
+	[LOG_FUNC_localeconv] = { .Group = GROUP_Locale, .Name = "localeconv" },
 	[LOG_FUNC_setlocale] = { .Group = GROUP_Locale, .Name = "setlocale" },
 
 	// Math.h (Float)
@@ -127,7 +127,7 @@ static const FuncString myStrings[ LOG_FUNC_LAST ] =
 
 	// Math.h (Double)
 //	[LOG_FUNC_D___signbit] = { .Group = GROUP_Math_D, .Name = "__signbit" },
-//	[LOG_FUNC_D_ceil] = { .Group = GROUP_Math_D, .Name = "ceil" },
+	[LOG_FUNC_D_ceil] = { .Group = GROUP_Math_D, .Name = "ceil" },
 	[LOG_FUNC_D_copysign] = { .Group = GROUP_Math_D, .Name = "copysign" },
 	[LOG_FUNC_D_fabs] = { .Group = GROUP_Math_D, .Name = "fabs" },
 //	[LOG_FUNC_D_fdim] = { .Group = GROUP_Math_D, .Name = "fdim" },
@@ -135,7 +135,7 @@ static const FuncString myStrings[ LOG_FUNC_LAST ] =
 //	[LOG_FUNC_D_fpclassify] = { .Group = GROUP_Math_D, .Name = "fpclassify" },
 //	[LOG_FUNC_D_fmax] = { .Group = GROUP_Math_D, .Name = "fmax" },
 //	[LOG_FUNC_D_fmin] = { .Group = GROUP_Math_D, .Name = "fmin" },
-//	[LOG_FUNC_D_fmod] = { .Group = GROUP_Math_D, .Name = "fmod" },
+	[LOG_FUNC_D_fmod] = { .Group = GROUP_Math_D, .Name = "fmod" },
 //	[LOG_FUNC_D_isfinite] = { .Group = GROUP_Math_D, .Name = "isfinite" },
 	[LOG_FUNC_D_isinf] = { .Group = GROUP_Math_D, .Name = "isinf" },
 	[LOG_FUNC_D_isnan] = { .Group = GROUP_Math_D, .Name = "isnan" },
@@ -145,6 +145,10 @@ static const FuncString myStrings[ LOG_FUNC_LAST ] =
 	[LOG_FUNC_D_pow] = { .Group = GROUP_Math_D, .Name = "pow" },
 	[LOG_FUNC_D_scalbn] = { .Group = GROUP_Math_D, .Name = "scalbn" },
 	[LOG_FUNC_D_sqrt] = { .Group = GROUP_Math_D, .Name = "sqrt" },
+	[LOG_FUNC_D_cos] = { .Group = GROUP_Math_D, .Name = "cos" },
+	[LOG_FUNC_D_sin] = { .Group = GROUP_Math_D, .Name = "sin" },
+	[LOG_FUNC_D_atan2] = { .Group = GROUP_Math_D, .Name = "atan2" },
+
 
 	// Math.h (Long Double)
 //	[LOG_FUNC_LD___signbit] = { .Group = GROUP_Math_LD, .Name = "__signbitl" },
@@ -344,6 +348,7 @@ static const FuncString myStrings[ LOG_FUNC_LAST ] =
 //	[LOG_FUNC_strtoul] = { .Group = GROUP_Stdio, .Name = "strtoul" },
 //	[LOG_FUNC_strtoull] = { .Group = GROUP_Stdio, .Name = "strtoull" },
 //	[LOG_FUNC_system] = { .Group = GROUP_Stdio, .Name = "system" },
+	[LOG_FUNC_mkstemp] = { .Group = GROUP_Stdio, .Name = "mkstemp" },
 
 	// String.h
 //	[LOG_FUNC_ffsl] = { .Group = GROUP_String, .Name = "ffsl" },
@@ -355,7 +360,7 @@ static const FuncString myStrings[ LOG_FUNC_LAST ] =
 //	[LOG_FUNC_memmem] = { .Group = GROUP_String, .Name = "memmem" },
 	[LOG_FUNC_memmove] = { .Group = GROUP_String, .Name = "memmove" },
 	[LOG_FUNC_memset] = { .Group = GROUP_String, .Name = "memset" },
-//	[LOG_FUNC_stpcpy] = { .Group = GROUP_String, .Name = "stpcpy" },
+	[LOG_FUNC_stpcpy] = { .Group = GROUP_String, .Name = "stpcpy" },
 //	[LOG_FUNC_stpncpy] = { .Group = GROUP_String, .Name = "stpncpy" },
 	[LOG_FUNC_strcat] = { .Group = GROUP_String, .Name = "strcat" },
 	[LOG_FUNC_strchr] = { .Group = GROUP_String, .Name = "strchr" },
@@ -378,7 +383,7 @@ static const FuncString myStrings[ LOG_FUNC_LAST ] =
 //	[LOG_FUNC_strsep] = { .Group = GROUP_String, .Name = "strsep" },
 	[LOG_FUNC_strspn] = { .Group = GROUP_String, .Name = "strspn" },
 	[LOG_FUNC_strstr] = { .Group = GROUP_String, .Name = "strstr" },
-//	[LOG_FUNC_strtok] = { .Group = GROUP_String, .Name = "strtok" },
+	[LOG_FUNC_strtok] = { .Group = GROUP_String, .Name = "strtok" },
 //	[LOG_FUNC_strtok_r] = { .Group = GROUP_String, .Name = "strtok_r" },
 //	[LOG_FUNC_strxfrm] = { .Group = GROUP_String, .Name = "strxfrm" },
 //	[LOG_FUNC_timingsafe_memcmp] = { .Group = GROUP_String, .Name = "timingsafe_memcmp" },

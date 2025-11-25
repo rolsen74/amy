@@ -12,4 +12,4 @@
 
 LIBC_STUB(int, rand, stdlib_rand,
     (void)
-);
+ );

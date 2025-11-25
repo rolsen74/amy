@@ -12,4 +12,4 @@
 
 LIBC_STUB(pid_t, getpid, unistd_getpid,
     (void)
-);
+ );

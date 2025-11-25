@@ -142,8 +142,10 @@ SRCS		+= src/_Main/Startup_Free.c
 SRCS		+= src/_Main_Assert/assert.c
 
 # Main .. ctype
+SRCS		+= src/_Main_CType/isalnum.c
 SRCS		+= src/_Main_CType/isalpha.c
 SRCS		+= src/_Main_CType/isalpha_locale.c
+SRCS		+= src/_Main_CType/isascii.c
 SRCS		+= src/_Main_CType/isdigit.c
 SRCS		+= src/_Main_CType/isdigit_locale.c
 SRCS		+= src/_Main_CType/isprint.c
@@ -169,18 +171,24 @@ SRCS		+= src/_Main_Inttypes/strtoumax.c
 
 # Main .. Locale
 SRCS		+= src/_Main_Locale/setlocale.c
+SRCS		+= src/_Main_Locale/localeconv.c
 
 # Main .. Math
 SRCS		+= src/_Main_Math/d__get_huge_val.c
 SRCS		+= src/_Main_Math/d__inf.c
 SRCS		+= src/_Main_Math/d__isinf.c
 SRCS		+= src/_Main_Math/d__isnan.c
+SRCS		+= src/_Main_Math/d_ceil.c
 SRCS		+= src/_Main_Math/d_copysign.c
+SRCS		+= src/_Main_Math/d_cos.c
 SRCS		+= src/_Main_Math/d_nan.c
 SRCS		+= src/_Main_Math/d_fabs.c
 SRCS		+= src/_Main_Math/d_pow.c
 SRCS		+= src/_Main_Math/d_scalbn.c
+SRCS		+= src/_Main_Math/d_sin.c
 SRCS		+= src/_Main_Math/d_sqrt.c
+SRCS		+= src/_Main_Math/d_atan2.c
+SRCS		+= src/_Main_Math/d_fmod.c
 
 # Main .. setjmp
 ASMSRCS		+= src/_Main_SetJmp/longjmp.s
@@ -255,12 +263,14 @@ SRCS		+= src/_Main_Stdlib/srand.c
 SRCS		+= src/_Main_Stdlib/strtod.c
 SRCS		+= src/_Main_Stdlib/strtof.c
 SRCS		+= src/_Main_Stdlib/strtol.c
+SRCS		+= src/_Main_Stdlib/mkstemp.c
 
 # Main .. string
 SRCS		+= src/_Main_String/memcmp.c
 SRCS		+= src/_Main_String/memcpy.c
 SRCS		+= src/_Main_String/memmove.c
 SRCS		+= src/_Main_String/memset.c
+SRCS		+= src/_Main_String/stpcpy.c
 SRCS		+= src/_Main_String/strcat.c
 SRCS		+= src/_Main_String/strchr.c
 SRCS		+= src/_Main_String/strcmp.c

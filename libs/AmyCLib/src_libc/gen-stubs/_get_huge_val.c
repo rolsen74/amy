@@ -12,4 +12,4 @@
 
 LIBC_STUB(double, _get_huge_val, math_d__get_huge_val,
     (void)
-);
+ );

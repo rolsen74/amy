@@ -56,7 +56,7 @@ typedef void* PTR;
 #endif
 
 #ifndef STR
-typedef char* STR;
+typedef char *STR;
 #endif
 
 #ifndef BE_SWAP16
