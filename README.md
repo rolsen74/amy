@@ -13,6 +13,7 @@ This repository contains several projects primarily targeting **AmigaOS 4**, all
 - `libs/AmyApplication` – BSD-licensed library
 - `libs/AmyBlanker` – BSD-licensed library
 - `libs/AmyCLib` – C runtime library (BSD-3-Clause)
+- `libs/AmyIUP` – MIT-licensed library
 - `libs/AmyInput` – BSD-licensed library
 - `libs/AmySDL` – Refactored SDL v1 code (LGPL-2.1)
 - `libs/AmySysLog` – BSD-licensed library
