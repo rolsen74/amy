@@ -1,0 +1,830 @@
+src/iup_attrib.c: In function ‘amy_IupConvertXYToPos’:
+src/iup_attrib.c:1621:23: warning: cast between incompatible function types from ‘Icallback’ {aka ‘int (*)(struct libData *, struct Ihandle_ *)’} to ‘int (*)(struct libData *, Ihandle *, int,  int)’ {aka ‘int (*)(struct libData *, struct Ihandle_ *, int,  int)’} [-Wcast-function-type]
+ 1621 |   drvConvertXYToPos = (Iconvertxytopos) amy_IupGetCallback( data, ih, "_IUP_XY2POS_CB" );
+      |                       ^
+src/iup_classattrib.c: In function ‘iupClassObjectSetAttributeId2’:
+src/iup_classattrib.c:141:37: warning: cast between incompatible function types from ‘IattribSetFunc’ {aka ‘int (*)(struct libData *, struct Ihandle_ *, const char *)’} to ‘int (*)(struct libData *, Ihandle *, int,  int,  const char *)’ {aka ‘int (*)(struct libData *, struct Ihandle_ *, int,  int,  const char *)’} [-Wcast-function-type]
+  141 |         IattribSetId2Func id2_set = (IattribSetId2Func)afunc->set;
+      |                                     ^
+src/iup_classattrib.c:146:35: warning: cast between incompatible function types from ‘IattribSetFunc’ {aka ‘int (*)(struct libData *, struct Ihandle_ *, const char *)’} to ‘int (*)(struct libData *, Ihandle *, int,  const char *)’ {aka ‘int (*)(struct libData *, struct Ihandle_ *, int,  const char *)’} [-Wcast-function-type]
+  146 |         IattribSetIdFunc id_set = (IattribSetIdFunc)afunc->set;
+      |                                   ^
+src/iup_classattrib.c: In function ‘iupClassObjectSetAttributeId’:
+src/iup_classattrib.c:183:33: warning: cast between incompatible function types from ‘IattribSetFunc’ {aka ‘int (*)(struct libData *, struct Ihandle_ *, const char *)’} to ‘int (*)(struct libData *, Ihandle *, int,  const char *)’ {aka ‘int (*)(struct libData *, struct Ihandle_ *, int,  const char *)’} [-Wcast-function-type]
+  183 |       IattribSetIdFunc id_set = (IattribSetIdFunc)afunc->set;
+      |                                 ^
+src/iup_classattrib.c: In function ‘iupClassObjectSetAttribute’:
+src/iup_classattrib.c:223:41: warning: cast between incompatible function types from ‘IattribSetFunc’ {aka ‘int (*)(struct libData *, struct Ihandle_ *, const char *)’} to ‘int (*)(struct libData *, Ihandle *, int,  int,  const char *)’ {aka ‘int (*)(struct libData *, struct Ihandle_ *, int,  int,  const char *)’} [-Wcast-function-type]
+  223 |             IattribSetId2Func id2_set = (IattribSetId2Func)afunc->set;
+      |                                         ^
+src/iup_classattrib.c:230:39: warning: cast between incompatible function types from ‘IattribSetFunc’ {aka ‘int (*)(struct libData *, struct Ihandle_ *, const char *)’} to ‘int (*)(struct libData *, Ihandle *, int,  const char *)’ {aka ‘int (*)(struct libData *, struct Ihandle_ *, int,  const char *)’} [-Wcast-function-type]
+  230 |             IattribSetIdFunc id_set = (IattribSetIdFunc)afunc->set;
+      |                                       ^
+src/iup_classattrib.c:276:37: warning: cast between incompatible function types from ‘IattribSetFunc’ {aka ‘int (*)(struct libData *, struct Ihandle_ *, const char *)’} to ‘int (*)(struct libData *, Ihandle *, int,  int,  const char *)’ {aka ‘int (*)(struct libData *, struct Ihandle_ *, int,  int,  const char *)’} [-Wcast-function-type]
+  276 |         IattribSetId2Func id2_set = (IattribSetId2Func)afunc->set;
+      |                                     ^
+src/iup_classattrib.c:281:35: warning: cast between incompatible function types from ‘IattribSetFunc’ {aka ‘int (*)(struct libData *, struct Ihandle_ *, const char *)’} to ‘int (*)(struct libData *, Ihandle *, int,  const char *)’ {aka ‘int (*)(struct libData *, struct Ihandle_ *, int,  const char *)’} [-Wcast-function-type]
+  281 |         IattribSetIdFunc id_set = (IattribSetIdFunc)afunc->set;
+      |                                   ^
+src/iup_classattrib.c: In function ‘iupClassObjectGetAttributeId2’:
+src/iup_classattrib.c:321:37: warning: cast between incompatible function types from ‘IattribGetFunc’ {aka ‘char * (*)(struct libData *, struct Ihandle_ *)’} to ‘char * (*)(struct libData *, Ihandle *, int,  int)’ {aka ‘char * (*)(struct libData *, struct Ihandle_ *, int,  int)’} [-Wcast-function-type]
+  321 |         IattribGetId2Func id2_get = (IattribGetId2Func)afunc->get;
+      |                                     ^
+src/iup_classattrib.c:326:35: warning: cast between incompatible function types from ‘IattribGetFunc’ {aka ‘char * (*)(struct libData *, struct Ihandle_ *)’} to ‘char * (*)(struct libData *, Ihandle *, int)’ {aka ‘char * (*)(struct libData *, struct Ihandle_ *, int)’} [-Wcast-function-type]
+  326 |         IattribGetIdFunc id_get = (IattribGetIdFunc)afunc->get;
+      |                                   ^
+src/iup_classattrib.c: In function ‘iupClassObjectGetAttributeId’:
+src/iup_classattrib.c:355:33: warning: cast between incompatible function types from ‘IattribGetFunc’ {aka ‘char * (*)(struct libData *, struct Ihandle_ *)’} to ‘char * (*)(struct libData *, Ihandle *, int)’ {aka ‘char * (*)(struct libData *, struct Ihandle_ *, int)’} [-Wcast-function-type]
+  355 |       IattribGetIdFunc id_get = (IattribGetIdFunc)afunc->get;
+      |                                 ^
+src/iup_classattrib.c: In function ‘iupClassObjectGetAttribute’:
+src/iup_classattrib.c:389:41: warning: cast between incompatible function types from ‘IattribGetFunc’ {aka ‘char * (*)(struct libData *, struct Ihandle_ *)’} to ‘char * (*)(struct libData *, Ihandle *, int,  int)’ {aka ‘char * (*)(struct libData *, struct Ihandle_ *, int,  int)’} [-Wcast-function-type]
+  389 |             IattribGetId2Func id2_get = (IattribGetId2Func)afunc->get;
+      |                                         ^
+src/iup_classattrib.c:396:39: warning: cast between incompatible function types from ‘IattribGetFunc’ {aka ‘char * (*)(struct libData *, struct Ihandle_ *)’} to ‘char * (*)(struct libData *, Ihandle *, int)’ {aka ‘char * (*)(struct libData *, struct Ihandle_ *, int)’} [-Wcast-function-type]
+  396 |             IattribGetIdFunc id_get = (IattribGetIdFunc)afunc->get;
+      |                                       ^
+src/iup_classattrib.c:426:37: warning: cast between incompatible function types from ‘IattribGetFunc’ {aka ‘char * (*)(struct libData *, struct Ihandle_ *)’} to ‘char * (*)(struct libData *, Ihandle *, int,  int)’ {aka ‘char * (*)(struct libData *, struct Ihandle_ *, int,  int)’} [-Wcast-function-type]
+  426 |         IattribGetId2Func id2_get = (IattribGetId2Func)afunc->get;
+      |                                     ^
+src/iup_classattrib.c:431:35: warning: cast between incompatible function types from ‘IattribGetFunc’ {aka ‘char * (*)(struct libData *, struct Ihandle_ *)’} to ‘char * (*)(struct libData *, Ihandle *, int)’ {aka ‘char * (*)(struct libData *, struct Ihandle_ *, int)’} [-Wcast-function-type]
+  431 |         IattribGetIdFunc id_get = (IattribGetIdFunc)afunc->get;
+      |                                   ^
+src/iup_classattrib.c: In function ‘iupClassRegisterAttributeId’:
+src/iup_classattrib.c:617:16: warning: cast between incompatible function types from ‘IattribGetIdFunc’ {aka ‘char * (*)(struct libData *, struct Ihandle_ *, int)’} to ‘char * (*)(struct libData *, Ihandle *)’ {aka ‘char * (*)(struct libData *, struct Ihandle_ *)’} [-Wcast-function-type]
+  617 |   afunc->get = (IattribGetFunc)_get;
+      |                ^
+src/iup_classattrib.c:618:16: warning: cast between incompatible function types from ‘IattribSetIdFunc’ {aka ‘int (*)(struct libData *, struct Ihandle_ *, int,  const char *)’} to ‘int (*)(struct libData *, Ihandle *, const char *)’ {aka ‘int (*)(struct libData *, struct Ihandle_ *, const char *)’} [-Wcast-function-type]
+  618 |   afunc->set = (IattribSetFunc)_set;
+      |                ^
+src/iup_classattrib.c: In function ‘iupClassRegisterAttributeId2’:
+src/iup_classattrib.c:640:16: warning: cast between incompatible function types from ‘IattribGetId2Func’ {aka ‘char * (*)(struct libData *, struct Ihandle_ *, int,  int)’} to ‘char * (*)(struct libData *, Ihandle *)’ {aka ‘char * (*)(struct libData *, struct Ihandle_ *)’} [-Wcast-function-type]
+  640 |   afunc->get = (IattribGetFunc)_get;
+      |                ^
+src/iup_classattrib.c:641:16: warning: cast between incompatible function types from ‘IattribSetId2Func’ {aka ‘int (*)(struct libData *, struct Ihandle_ *, int,  int,  const char *)’} to ‘int (*)(struct libData *, Ihandle *, const char *)’ {aka ‘int (*)(struct libData *, struct Ihandle_ *, const char *)’} [-Wcast-function-type]
+  641 |   afunc->set = (IattribSetFunc)_set;
+      |                ^
+At top level:
+src/iup_classattrib.c:559:13: warning: ‘iClassCheckAttrib’ defined but not used [-Wunused-function]
+  559 | static void iClassCheckAttrib( struct libData *data, Iclass *ic, const char *name, IattribGetFunc get, IattribSetFunc set, int flags)
+      |             ^~~~~~~~~~~~~~~~~
+src/iup_classinfo.c: In function ‘amy_IupClassInfoDialog’:
+src/iup_classinfo.c:419:55: warning: cast between incompatible function types from ‘int (*)(struct libData *, Ihandle *, char *, int,  int)’ {aka ‘int (*)(struct libData *, struct Ihandle_ *, char *, int,  int)’} to ‘int (*)(struct libData *, Ihandle *)’ {aka ‘int (*)(struct libData *, struct Ihandle_ *)’} [-Wcast-function-type]
+  419 |   amy_IupSetCallback( data, listClasses,    "ACTION", (Icallback)    classesList_ActionCB );
+      |                                                       ^
+src/iup_classinfo.c:420:55: warning: cast between incompatible function types from ‘int (*)(struct libData *, Ihandle *, char *, int,  int)’ {aka ‘int (*)(struct libData *, struct Ihandle_ *, char *, int,  int)’} to ‘int (*)(struct libData *, Ihandle *)’ {aka ‘int (*)(struct libData *, struct Ihandle_ *)’} [-Wcast-function-type]
+  420 |   amy_IupSetCallback( data, listAttributes, "ACTION", (Icallback) attributesList_ActionCB );
+      |                                                       ^
+src/iup_classinfo.c:421:55: warning: cast between incompatible function types from ‘int (*)(struct libData *, Ihandle *, char *, int,  int)’ {aka ‘int (*)(struct libData *, struct Ihandle_ *, char *, int,  int)’} to ‘int (*)(struct libData *, Ihandle *)’ {aka ‘int (*)(struct libData *, struct Ihandle_ *)’} [-Wcast-function-type]
+  421 |   amy_IupSetCallback( data, listCallbacks,  "ACTION", (Icallback)  callbacksList_ActionCB );
+      |                                                       ^
+src/iup_colorbar.c: In function ‘iColorbarCallExtentedCb’:
+src/iup_colorbar.c:638:22: warning: cast between incompatible function types from ‘Icallback’ {aka ‘int (*)(struct libData *, struct Ihandle_ *)’} to ‘int (*)(struct libData *, Ihandle *, int)’ {aka ‘int (*)(struct libData *, struct Ihandle_ *, int)’} [-Wcast-function-type]
+  638 |   IFni extended_cb = (IFni) amy_IupGetCallback( data, ih, "EXTENDED_CB" );
+      |                      ^
+src/iup_colorbar.c: In function ‘iColorbarCallSelectCb’:
+src/iup_colorbar.c:655:15: warning: cast between incompatible function types from ‘Icallback’ {aka ‘int (*)(struct libData *, struct Ihandle_ *)’} to ‘int (*)(struct libData *, Ihandle *, int,  int)’ {aka ‘int (*)(struct libData *, struct Ihandle_ *, int,  int)’} [-Wcast-function-type]
+  655 |   select_cb = (IFnii) amy_IupGetCallback( data, ih, "SELECT_CB" );
+      |               ^
+src/iup_colorbar.c: In function ‘iColorbarCallCellCb’:
+src/iup_colorbar.c:670:19: warning: cast between incompatible function types from ‘Icallback’ {aka ‘int (*)(struct libData *, struct Ihandle_ *)’} to ‘char * (*)(struct libData *, Ihandle *, int)’ {aka ‘char * (*)(struct libData *, struct Ihandle_ *, int)’} [-Wcast-function-type]
+  670 |   sIFni cell_cb = (sIFni) amy_IupGetCallback( data, ih, "CELL_CB" );
+      |                   ^
+src/iup_colorbar.c: In function ‘iColorbarButton_CB’:
+src/iup_colorbar.c:794:29: warning: cast between incompatible function types from ‘Icallback’ {aka ‘int (*)(struct libData *, struct Ihandle_ *)’} to ‘int (*)(struct libData *, Ihandle *, int,  int)’ {aka ‘int (*)(struct libData *, struct Ihandle_ *, int,  int)’} [-Wcast-function-type]
+  794 |           IFnii switch_cb = (IFnii) amy_IupGetCallback( data, ih, "SWITCH_CB" );
+      |                             ^
+src/iup_colorbar.c: In function ‘iColorbarCreateMethod’:
+src/iup_colorbar.c:905:46: warning: cast between incompatible function types from ‘int (*)(struct libData *, Ihandle *, int,  int)’ {aka ‘int (*)(struct libData *, struct Ihandle_ *, int,  int)’} to ‘int (*)(struct libData *, Ihandle *)’ {aka ‘int (*)(struct libData *, struct Ihandle_ *)’} [-Wcast-function-type]
+  905 |   amy_IupSetCallback( data, ih, "RESIZE_CB", (Icallback)iColorbarResize_CB);
+      |                                              ^
+src/iup_colorbar.c:907:46: warning: cast between incompatible function types from ‘int (*)(struct libData *, Ihandle *, int,  int,  int,  int,  char *)’ {aka ‘int (*)(struct libData *, struct Ihandle_ *, int,  int,  int,  int,  char *)’} to ‘int (*)(struct libData *, Ihandle *)’ {aka ‘int (*)(struct libData *, struct Ihandle_ *)’} [-Wcast-function-type]
+  907 |   amy_IupSetCallback( data, ih, "BUTTON_CB", (Icallback)iColorbarButton_CB);
+      |                                              ^
+src/iup_colorbar.c:908:45: warning: cast between incompatible function types from ‘int (*)(struct libData *, Ihandle *, int)’ {aka ‘int (*)(struct libData *, struct Ihandle_ *, int)’} to ‘int (*)(struct libData *, Ihandle *)’ {aka ‘int (*)(struct libData *, struct Ihandle_ *)’} [-Wcast-function-type]
+  908 |   amy_IupSetCallback( data, ih, "FOCUS_CB", (Icallback)iColorbarFocus_CB);
+      |                                             ^
+src/iup_colorbar.c:909:48: warning: cast between incompatible function types from ‘int (*)(struct libData *, Ihandle *, int,  int)’ {aka ‘int (*)(struct libData *, struct Ihandle_ *, int,  int)’} to ‘int (*)(struct libData *, Ihandle *)’ {aka ‘int (*)(struct libData *, struct Ihandle_ *)’} [-Wcast-function-type]
+  909 |   amy_IupSetCallback( data, ih, "KEYPRESS_CB", (Icallback)iColorbarKeyPress_CB);
+      |                                                ^
+src/iup_colorbrowser.c: In function ‘iColorBrowserCallChangeCb’:
+src/iup_colorbrowser.c:379:22: warning: cast between incompatible function types from ‘Icallback’ {aka ‘int (*)(struct libData *, struct Ihandle_ *)’} to ‘int (*)(struct libData *, Ihandle *, unsigned char,  unsigned char,  unsigned char)’ {aka ‘int (*)(struct libData *, struct Ihandle_ *, unsigned char,  unsigned char,  unsigned char)’} [-Wcast-function-type]
+  379 |   IFnccc change_cb = (IFnccc) amy_IupGetCallback( data, ih, "CHANGE_CB" );
+      |                      ^
+src/iup_colorbrowser.c: In function ‘iColorBrowserCallDragCb’:
+src/iup_colorbrowser.c:388:20: warning: cast between incompatible function types from ‘Icallback’ {aka ‘int (*)(struct libData *, struct Ihandle_ *)’} to ‘int (*)(struct libData *, Ihandle *, unsigned char,  unsigned char,  unsigned char)’ {aka ‘int (*)(struct libData *, struct Ihandle_ *, unsigned char,  unsigned char,  unsigned char)’} [-Wcast-function-type]
+  388 |   IFnccc drag_cb = (IFnccc) amy_IupGetCallback( data, ih, "DRAG_CB" );
+      |                    ^
+src/iup_colorbrowser.c: In function ‘iColorBrowserCreateMethod’:
+src/iup_colorbrowser.c:841:48: warning: cast between incompatible function types from ‘int (*)(struct libData *, Ihandle *, int,  int)’ {aka ‘int (*)(struct libData *, struct Ihandle_ *, int,  int)’} to ‘int (*)(struct libData *, Ihandle *)’ {aka ‘int (*)(struct libData *, struct Ihandle_ *)’} [-Wcast-function-type]
+  841 |   amy_IupSetCallback( data, ih, "RESIZE_CB",   (Icallback)iColorBrowserResize_CB);
+      |                                                ^
+src/iup_colorbrowser.c:842:48: warning: cast between incompatible function types from ‘int (*)(struct libData *, Ihandle *, int,  int,  int,  int)’ {aka ‘int (*)(struct libData *, struct Ihandle_ *, int,  int,  int,  int)’} to ‘int (*)(struct libData *, Ihandle *)’ {aka ‘int (*)(struct libData *, struct Ihandle_ *)’} [-Wcast-function-type]
+  842 |   amy_IupSetCallback( data, ih, "BUTTON_CB",   (Icallback)iColorBrowserButton_CB);
+      |                                                ^
+src/iup_colorbrowser.c:843:48: warning: cast between incompatible function types from ‘int (*)(struct libData *, Ihandle *, int,  int,  char *)’ {aka ‘int (*)(struct libData *, struct Ihandle_ *, int,  int,  char *)’} to ‘int (*)(struct libData *, Ihandle *)’ {aka ‘int (*)(struct libData *, struct Ihandle_ *)’} [-Wcast-function-type]
+  843 |   amy_IupSetCallback( data, ih, "MOTION_CB",   (Icallback)iColorBrowserMotion_CB);
+      |                                                ^
+src/iup_colorbrowser.c:844:48: warning: cast between incompatible function types from ‘int (*)(struct libData *, Ihandle *, int)’ {aka ‘int (*)(struct libData *, struct Ihandle_ *, int)’} to ‘int (*)(struct libData *, Ihandle *)’ {aka ‘int (*)(struct libData *, struct Ihandle_ *)’} [-Wcast-function-type]
+  844 |   amy_IupSetCallback( data, ih, "FOCUS_CB",    (Icallback)iColorBrowserFocus_CB);
+      |                                                ^
+src/iup_colorbrowser.c:845:48: warning: cast between incompatible function types from ‘int (*)(struct libData *, Ihandle *, int,  int)’ {aka ‘int (*)(struct libData *, struct Ihandle_ *, int,  int)’} to ‘int (*)(struct libData *, Ihandle *)’ {aka ‘int (*)(struct libData *, struct Ihandle_ *)’} [-Wcast-function-type]
+  845 |   amy_IupSetCallback( data, ih, "KEYPRESS_CB", (Icallback)iColorBrowserKeyPress_CB);
+      |                                                ^
+src/iup_colorbrowser.c:846:48: warning: cast between incompatible function types from ‘int (*)(struct libData *, Ihandle *, float)’ {aka ‘int (*)(struct libData *, struct Ihandle_ *, float)’} to ‘int (*)(struct libData *, Ihandle *)’ {aka ‘int (*)(struct libData *, struct Ihandle_ *)’} [-Wcast-function-type]
+  846 |   amy_IupSetCallback( data, ih, "WHEEL_CB",    (Icallback)iColorBrowserWheel_CB);
+      |                                                ^
+src/iup_colordlg.c: In function ‘iColorDlgGetValueHSIAttrib’:
+src/iup_colordlg.c:775:74: warning: left-hand operand of comma expression has no effect [-Wunused-value]
+  775 |   return iupStrReturnStrf("%d %d %d",(int)colordlg_data->hue, (int)( data, colordlg_data->saturation*100), (int)( data, colordlg_data->intensity*100));
+      |                                                                          ^
+src/iup_colordlg.c:775:119: warning: left-hand operand of comma expression has no effect [-Wunused-value]
+  775 |   return iupStrReturnStrf("%d %d %d",(int)colordlg_data->hue, (int)( data, colordlg_data->saturation*100), (int)( data, colordlg_data->intensity*100));
+      |                                                                                                                       ^
+src/iup_colordlg.c: In function ‘iColorDlgCreateMethod’:
+src/iup_colordlg.c:894:72: warning: cast between incompatible function types from ‘int (*)(struct libData *, Ihandle *, unsigned char,  unsigned char,  unsigned char)’ {aka ‘int (*)(struct libData *, struct Ihandle_ *, unsigned char,  unsigned char,  unsigned char)’} to ‘int (*)(struct libData *, Ihandle *)’ {aka ‘int (*)(struct libData *, struct Ihandle_ *)’} [-Wcast-function-type]
+  894 |   amy_IupSetCallback( data, colordlg_data->color_browser, "DRAG_CB",   (Icallback)iColorDlgColorSelDrag_CB);
+      |                                                                        ^
+src/iup_colordlg.c:895:72: warning: cast between incompatible function types from ‘int (*)(struct libData *, Ihandle *, unsigned char,  unsigned char,  unsigned char)’ {aka ‘int (*)(struct libData *, struct Ihandle_ *, unsigned char,  unsigned char,  unsigned char)’} to ‘int (*)(struct libData *, Ihandle *)’ {aka ‘int (*)(struct libData *, struct Ihandle_ *)’} [-Wcast-function-type]
+  895 |   amy_IupSetCallback( data, colordlg_data->color_browser, "CHANGE_CB", (Icallback)iColorDlgColorSelDrag_CB);
+      |                                                                        ^
+src/iup_colordlg.c:902:69: warning: cast between incompatible function types from ‘int (*)(struct libData *, Ihandle *, int,  int,  int,  int)’ {aka ‘int (*)(struct libData *, struct Ihandle_ *, int,  int,  int,  int)’} to ‘int (*)(struct libData *, Ihandle *)’ {aka ‘int (*)(struct libData *, struct Ihandle_ *)’} [-Wcast-function-type]
+  902 |   amy_IupSetCallback ( data, colordlg_data->color_cnv, "BUTTON_CB", (Icallback)iColorDlgColorCnvButton_CB);
+      |                                                                     ^
+src/iup_colordlg.c:906:69: warning: cast between incompatible function types from ‘int (*)(struct libData *, Ihandle *, int,  char *)’ {aka ‘int (*)(struct libData *, struct Ihandle_ *, int,  char *)’} to ‘int (*)(struct libData *, Ihandle *)’ {aka ‘int (*)(struct libData *, struct Ihandle_ *)’} [-Wcast-function-type]
+  906 |   amy_IupSetCallback ( data, colordlg_data->colorhex_txt, "ACTION", (Icallback)iColorDlgHexAction_CB);
+      |                                                                     ^
+src/iup_colordlg.c:918:72: warning: cast between incompatible function types from ‘int (*)(struct libData *, Ihandle *, double)’ {aka ‘int (*)(struct libData *, struct Ihandle_ *, double)’} to ‘int (*)(struct libData *, Ihandle *)’ {aka ‘int (*)(struct libData *, struct Ihandle_ *)’} [-Wcast-function-type]
+  918 |   amy_IupSetCallback ( data, colordlg_data->alpha_val, "MOUSEMOVE_CB", (Icallback)iColorDlgAlphaVal_CB);
+      |                                                                        ^
+src/iup_colordlg.c:919:75: warning: cast between incompatible function types from ‘int (*)(struct libData *, Ihandle *, double)’ {aka ‘int (*)(struct libData *, struct Ihandle_ *, double)’} to ‘int (*)(struct libData *, Ihandle *)’ {aka ‘int (*)(struct libData *, struct Ihandle_ *)’} [-Wcast-function-type]
+  919 |   amy_IupSetCallback ( data, colordlg_data->alpha_val, "BUTTON_PRESS_CB", (Icallback)iColorDlgAlphaVal_CB);
+      |                                                                           ^
+src/iup_colordlg.c:920:77: warning: cast between incompatible function types from ‘int (*)(struct libData *, Ihandle *, double)’ {aka ‘int (*)(struct libData *, struct Ihandle_ *, double)’} to ‘int (*)(struct libData *, Ihandle *)’ {aka ‘int (*)(struct libData *, struct Ihandle_ *)’} [-Wcast-function-type]
+  920 |   amy_IupSetCallback ( data, colordlg_data->alpha_val, "BUTTON_RELEASE_CB", (Icallback)iColorDlgAlphaVal_CB);
+      |                                                                             ^
+src/iup_colordlg.c:928:66: warning: cast between incompatible function types from ‘int (*)(struct libData *, Ihandle *, int,  char *)’ {aka ‘int (*)(struct libData *, struct Ihandle_ *, int,  char *)’} to ‘int (*)(struct libData *, Ihandle *)’ {aka ‘int (*)(struct libData *, struct Ihandle_ *)’} [-Wcast-function-type]
+  928 |   amy_IupSetCallback ( data, colordlg_data->alpha_txt, "ACTION", (Icallback)iColorDlgAlphaAction_CB);
+      |                                                                  ^
+src/iup_colordlg.c:929:67: warning: cast between incompatible function types from ‘int (*)(struct libData *, Ihandle *, int)’ {aka ‘int (*)(struct libData *, struct Ihandle_ *, int)’} to ‘int (*)(struct libData *, Ihandle *)’ {aka ‘int (*)(struct libData *, struct Ihandle_ *)’} [-Wcast-function-type]
+  929 |   amy_IupSetCallback ( data, colordlg_data->alpha_txt, "SPIN_CB", (Icallback)iColorDlgAlphaSpin_CB);
+      |                                                                   ^
+src/iup_colordlg.c:942:77: warning: cast between incompatible function types from ‘int (*)(struct libData *, Ihandle *, int,  int)’ {aka ‘int (*)(struct libData *, struct Ihandle_ *, int,  int)’} to ‘int (*)(struct libData *, Ihandle *)’ {aka ‘int (*)(struct libData *, struct Ihandle_ *)’} [-Wcast-function-type]
+  942 |   amy_IupSetCallback ( data, colordlg_data->colortable_cbar, "SELECT_CB",   (Icallback)iColorDlgColorTableSelect_CB);
+      |                                                                             ^
+src/iup_colordlg.c:953:64: warning: cast between incompatible function types from ‘int (*)(struct libData *, Ihandle *, int,  char *)’ {aka ‘int (*)(struct libData *, struct Ihandle_ *, int,  char *)’} to ‘int (*)(struct libData *, Ihandle *)’ {aka ‘int (*)(struct libData *, struct Ihandle_ *)’} [-Wcast-function-type]
+  953 |   amy_IupSetCallback ( data, colordlg_data->red_txt, "ACTION", (Icallback)iColorDlgRedAction_CB);
+      |                                                                ^
+src/iup_colordlg.c:954:65: warning: cast between incompatible function types from ‘int (*)(struct libData *, Ihandle *, int)’ {aka ‘int (*)(struct libData *, struct Ihandle_ *, int)’} to ‘int (*)(struct libData *, Ihandle *)’ {aka ‘int (*)(struct libData *, struct Ihandle_ *)’} [-Wcast-function-type]
+  954 |   amy_IupSetCallback ( data, colordlg_data->red_txt, "SPIN_CB", (Icallback)iColorDlgRedSpin_CB);
+      |                                                                 ^
+src/iup_colordlg.c:963:66: warning: cast between incompatible function types from ‘int (*)(struct libData *, Ihandle *, int,  char *)’ {aka ‘int (*)(struct libData *, struct Ihandle_ *, int,  char *)’} to ‘int (*)(struct libData *, Ihandle *)’ {aka ‘int (*)(struct libData *, struct Ihandle_ *)’} [-Wcast-function-type]
+  963 |   amy_IupSetCallback ( data, colordlg_data->green_txt, "ACTION", (Icallback)iColorDlgGreenAction_CB);
+      |                                                                  ^
+src/iup_colordlg.c:964:67: warning: cast between incompatible function types from ‘int (*)(struct libData *, Ihandle *, int)’ {aka ‘int (*)(struct libData *, struct Ihandle_ *, int)’} to ‘int (*)(struct libData *, Ihandle *)’ {aka ‘int (*)(struct libData *, struct Ihandle_ *)’} [-Wcast-function-type]
+  964 |   amy_IupSetCallback ( data, colordlg_data->green_txt, "SPIN_CB", (Icallback)iColorDlgGreenSpin_CB);
+      |                                                                   ^
+src/iup_colordlg.c:973:65: warning: cast between incompatible function types from ‘int (*)(struct libData *, Ihandle *, int,  char *)’ {aka ‘int (*)(struct libData *, struct Ihandle_ *, int,  char *)’} to ‘int (*)(struct libData *, Ihandle *)’ {aka ‘int (*)(struct libData *, struct Ihandle_ *)’} [-Wcast-function-type]
+  973 |   amy_IupSetCallback ( data, colordlg_data->blue_txt, "ACTION", (Icallback)iColorDlgBlueAction_CB);
+      |                                                                 ^
+src/iup_colordlg.c:974:66: warning: cast between incompatible function types from ‘int (*)(struct libData *, Ihandle *, int)’ {aka ‘int (*)(struct libData *, struct Ihandle_ *, int)’} to ‘int (*)(struct libData *, Ihandle *)’ {aka ‘int (*)(struct libData *, struct Ihandle_ *)’} [-Wcast-function-type]
+  974 |   amy_IupSetCallback ( data, colordlg_data->blue_txt, "SPIN_CB", (Icallback)iColorDlgBlueSpin_CB);
+      |                                                                  ^
+src/iup_colordlg.c:987:63: warning: cast between incompatible function types from ‘int (*)(struct libData *, Ihandle *, int,  char *)’ {aka ‘int (*)(struct libData *, struct Ihandle_ *, int,  char *)’} to ‘int (*)(struct libData *, Ihandle *)’ {aka ‘int (*)(struct libData *, struct Ihandle_ *)’} [-Wcast-function-type]
+  987 |   amy_IupSetCallback( data, colordlg_data->hue_txt, "ACTION", (Icallback)iColorDlgHueAction_CB);
+      |                                                               ^
+src/iup_colordlg.c:988:64: warning: cast between incompatible function types from ‘int (*)(struct libData *, Ihandle *, int)’ {aka ‘int (*)(struct libData *, struct Ihandle_ *, int)’} to ‘int (*)(struct libData *, Ihandle *)’ {aka ‘int (*)(struct libData *, struct Ihandle_ *)’} [-Wcast-function-type]
+  988 |   amy_IupSetCallback( data, colordlg_data->hue_txt, "SPIN_CB", (Icallback)iColorDlgHueSpin_CB);
+      |                                                                ^
+src/iup_colordlg.c:997:70: warning: cast between incompatible function types from ‘int (*)(struct libData *, Ihandle *, int,  char *)’ {aka ‘int (*)(struct libData *, struct Ihandle_ *, int,  char *)’} to ‘int (*)(struct libData *, Ihandle *)’ {aka ‘int (*)(struct libData *, struct Ihandle_ *)’} [-Wcast-function-type]
+  997 |   amy_IupSetCallback( data, colordlg_data->saturation_txt, "ACTION", (Icallback)iColorDlgSaturationAction_CB);
+      |                                                                      ^
+src/iup_colordlg.c:998:71: warning: cast between incompatible function types from ‘int (*)(struct libData *, Ihandle *, int)’ {aka ‘int (*)(struct libData *, struct Ihandle_ *, int)’} to ‘int (*)(struct libData *, Ihandle *)’ {aka ‘int (*)(struct libData *, struct Ihandle_ *)’} [-Wcast-function-type]
+  998 |   amy_IupSetCallback( data, colordlg_data->saturation_txt, "SPIN_CB", (Icallback)iColorDlgSaturationSpin_CB);
+      |                                                                       ^
+src/iup_colordlg.c:1007:69: warning: cast between incompatible function types from ‘int (*)(struct libData *, Ihandle *, int,  char *)’ {aka ‘int (*)(struct libData *, struct Ihandle_ *, int,  char *)’} to ‘int (*)(struct libData *, Ihandle *)’ {aka ‘int (*)(struct libData *, struct Ihandle_ *)’} [-Wcast-function-type]
+ 1007 |   amy_IupSetCallback( data, colordlg_data->intensity_txt, "ACTION", (Icallback)iColorDlgIntensityAction_CB);
+      |                                                                     ^
+src/iup_colordlg.c:1008:70: warning: cast between incompatible function types from ‘int (*)(struct libData *, Ihandle *, int)’ {aka ‘int (*)(struct libData *, struct Ihandle_ *, int)’} to ‘int (*)(struct libData *, Ihandle *)’ {aka ‘int (*)(struct libData *, struct Ihandle_ *)’} [-Wcast-function-type]
+ 1008 |   amy_IupSetCallback( data, colordlg_data->intensity_txt, "SPIN_CB", (Icallback)iColorDlgIntensitySpin_CB);
+      |                                                                      ^
+src/iup_datepick.c: In function ‘iDatePickCreateText’:
+src/iup_datepick.c:421:43: warning: cast between incompatible function types from ‘int (*)(struct libData *, Ihandle *, int)’ {aka ‘int (*)(struct libData *, struct Ihandle_ *, int)’} to ‘int (*)(struct libData *, Ihandle *)’ {aka ‘int (*)(struct libData *, struct Ihandle_ *)’} [-Wcast-function-type]
+  421 |   amy_IupSetCallback( data, txt, "K_ANY", (Icallback)iDatePickTextKAny_CB);
+      |                                           ^
+src/iup_datepick.c: In function ‘iDatePickCreateMethod’:
+src/iup_datepick.c:436:44: warning: cast between incompatible function types from ‘int (*)(struct libData *, Ihandle *, int)’ {aka ‘int (*)(struct libData *, struct Ihandle_ *, int)’} to ‘int (*)(struct libData *, Ihandle *)’ {aka ‘int (*)(struct libData *, struct Ihandle_ *)’} [-Wcast-function-type]
+  436 |   amy_IupSetCallback( data, tgl, "ACTION", (Icallback)iDatePickToggleAction_CB);
+      |                                            ^
+src/iup_dialog.c: In function ‘iDialogSetModal’:
+src/iup_dialog.c:249:14: warning: cast between incompatible function types from ‘Icallback’ {aka ‘int (*)(struct libData *, struct Ihandle_ *)’} to ‘void (*)(int)’ [-Wcast-function-type]
+  249 |     IFi cb = (IFi) amy_IupGetFunction( data, "GLOBALENTERMODAL_CB" );
+      |              ^
+src/iup_dialog.c: In function ‘iDialogUnSetModal’:
+src/iup_dialog.c:289:14: warning: cast between incompatible function types from ‘Icallback’ {aka ‘int (*)(struct libData *, struct Ihandle_ *)’} to ‘void (*)(int)’ [-Wcast-function-type]
+  289 |     IFi cb = (IFi) amy_IupGetFunction( data, "GLOBALLEAVEMODAL_CB" );
+      |              ^
+src/iup_dialog.c: In function ‘iDialogAfterHide’:
+src/iup_dialog.c:416:13: warning: cast between incompatible function types from ‘Icallback’ {aka ‘int (*)(struct libData *, struct Ihandle_ *)’} to ‘int (*)(struct libData *, Ihandle *, int)’ {aka ‘int (*)(struct libData *, struct Ihandle_ *, int)’} [-Wcast-function-type]
+  416 |   show_cb = (IFni) amy_IupGetCallback( data, ih, "SHOW_CB" );
+      |             ^
+src/iup_dialog.c: In function ‘iDialogAfterShow’:
+src/iup_dialog.c:444:13: warning: cast between incompatible function types from ‘Icallback’ {aka ‘int (*)(struct libData *, struct Ihandle_ *)’} to ‘int (*)(struct libData *, Ihandle *, int)’ {aka ‘int (*)(struct libData *, struct Ihandle_ *, int)’} [-Wcast-function-type]
+  444 |   show_cb = (IFni) amy_IupGetCallback( data, ih, "SHOW_CB" );
+      |             ^
+src/iup_dialog.c: In function ‘iupDialogCustomFrameSimulateCheckCallbacks’:
+src/iup_dialog.c:1023:58: warning: cast between incompatible function types from ‘int (*)(struct libData *, Ihandle *, int,  int,  int,  int,  char *)’ {aka ‘int (*)(struct libData *, struct Ihandle_ *, int,  int,  int,  int,  char *)’} to ‘int (*)(struct libData *, Ihandle *)’ {aka ‘int (*)(struct libData *, struct Ihandle_ *)’} [-Wcast-function-type]
+ 1023 |       amy_IupSetCallback( data, ih_caption, "BUTTON_CB", (Icallback)iDialogCustomFrameSimulateCaptionButton_CB );
+      |                                                          ^
+src/iup_dialog.c:1026:58: warning: cast between incompatible function types from ‘int (*)(struct libData *, Ihandle *, int,  int,  char *)’ {aka ‘int (*)(struct libData *, struct Ihandle_ *, int,  int,  char *)’} to ‘int (*)(struct libData *, Ihandle *)’ {aka ‘int (*)(struct libData *, struct Ihandle_ *)’} [-Wcast-function-type]
+ 1026 |       amy_IupSetCallback( data, ih_caption, "MOTION_CB", (Icallback)iDialogCustomFrameSimulateCaptionMotion_CB );
+      |                                                          ^
+src/iup_dialog.c: In function ‘iDialogSetCustomFrameSimulateAttrib’:
+src/iup_dialog.c:1036:48: warning: cast between incompatible function types from ‘int (*)(struct libData *, Ihandle *, int,  int,  int,  int,  char *)’ {aka ‘int (*)(struct libData *, struct Ihandle_ *, int,  int,  int,  int,  char *)’} to ‘int (*)(struct libData *, Ihandle *)’ {aka ‘int (*)(struct libData *, struct Ihandle_ *)’} [-Wcast-function-type]
+ 1036 |     amy_IupSetCallback( data, ih, "BUTTON_CB", (Icallback)iDialogCustomFrameSimulateButton_CB );
+      |                                                ^
+src/iup_dialog.c:1037:48: warning: cast between incompatible function types from ‘int (*)(struct libData *, Ihandle *, int,  int,  char *)’ {aka ‘int (*)(struct libData *, struct Ihandle_ *, int,  int,  char *)’} to ‘int (*)(struct libData *, Ihandle *)’ {aka ‘int (*)(struct libData *, struct Ihandle_ *)’} [-Wcast-function-type]
+ 1037 |     amy_IupSetCallback( data, ih, "MOTION_CB", (Icallback)iDialogCustomFrameSimulateMotion_CB );
+      |                                                ^
+src/iup_elemprodpdlg.c: In function ‘iLayoutPropertiesCallAttribChanged’:
+src/iup_elemprodpdlg.c:209:13: warning: cast between incompatible function types from ‘Icallback’ {aka ‘int (*)(struct libData *, struct Ihandle_ *)’} to ‘int (*)(struct libData *, Ihandle *, char *)’ {aka ‘int (*)(struct libData *, struct Ihandle_ *, char *)’} [-Wcast-function-type]
+  209 |   IFns cb = (IFns) amy_IupGetCallback( data, dlg, "ATTRIBCHANGED_CB" );
+      |             ^
+src/iup_elemprodpdlg.c: In function ‘iLayoutPropertiesCreateDialog’:
+src/iup_elemprodpdlg.c:610:46: warning: cast between incompatible function types from ‘int (*)(struct libData *, Ihandle *, char *, int,  int)’ {aka ‘int (*)(struct libData *, struct Ihandle_ *, char *, int,  int)’} to ‘int (*)(struct libData *, Ihandle *)’ {aka ‘int (*)(struct libData *, struct Ihandle_ *)’} [-Wcast-function-type]
+  610 |   amy_IupSetCallback( data, list1, "ACTION", (Icallback)iLayoutPropertiesList1_CB );
+      |                                              ^
+src/iup_elemprodpdlg.c:617:46: warning: cast between incompatible function types from ‘int (*)(struct libData *, Ihandle *, char *, int,  int)’ {aka ‘int (*)(struct libData *, struct Ihandle_ *, char *, int,  int)’} to ‘int (*)(struct libData *, Ihandle *)’ {aka ‘int (*)(struct libData *, struct Ihandle_ *)’} [-Wcast-function-type]
+  617 |   amy_IupSetCallback( data, list2, "ACTION", (Icallback)iLayoutPropertiesList2_CB );
+      |                                              ^
+src/iup_elemprodpdlg.c:624:46: warning: cast between incompatible function types from ‘int (*)(struct libData *, Ihandle *, char *, int,  int)’ {aka ‘int (*)(struct libData *, struct Ihandle_ *, char *, int,  int)’} to ‘int (*)(struct libData *, Ihandle *)’ {aka ‘int (*)(struct libData *, struct Ihandle_ *)’} [-Wcast-function-type]
+  624 |   amy_IupSetCallback( data, list3, "ACTION", (Icallback)iLayoutPropertiesList3_CB );
+      |                                              ^
+src/iup_elemprodpdlg.c:718:54: warning: cast between incompatible function types from ‘int (*)(struct libData *, Ihandle *, int,  int)’ {aka ‘int (*)(struct libData *, struct Ihandle_ *, int,  int)’} to ‘int (*)(struct libData *, Ihandle *)’ {aka ‘int (*)(struct libData *, struct Ihandle_ *)’} [-Wcast-function-type]
+  718 |   amy_IupSetCallback( data, tabs, "TABCHANGEPOS_CB", (Icallback)iLayoutPropertiesTabChangePos_CB );
+      |                                                      ^
+src/iup_flattoggle.c: In function ‘iFlatToggleNotify’:
+src/iup_flattoggle.c:340:13: warning: cast between incompatible function types from ‘Icallback’ {aka ‘int (*)(struct libData *, struct Ihandle_ *)’} to ‘int (*)(struct libData *, Ihandle *, int)’ {aka ‘int (*)(struct libData *, struct Ihandle_ *, int)’} [-Wcast-function-type]
+  340 |   IFni cb = (IFni) amy_IupGetCallback( data, ih, "FLAT_ACTION" );
+      |             ^
+src/iup_flattoggle.c: In function ‘iFlatToggleButton_CB’:
+src/iup_flattoggle.c:378:17: warning: cast between incompatible function types from ‘Icallback’ {aka ‘int (*)(struct libData *, struct Ihandle_ *)’} to ‘int (*)(struct libData *, Ihandle *, int,  int,  int,  int,  char *)’ {aka ‘int (*)(struct libData *, struct Ihandle_ *, int,  int,  int,  int,  char *)’} [-Wcast-function-type]
+  378 |   IFniiiis cb = (IFniiiis) amy_IupGetCallback( data, ih, "FLAT_BUTTON_CB" );
+      |                 ^
+src/iup_flattoggle.c: In function ‘iFlatToggleMotion_CB’:
+src/iup_flattoggle.c:455:15: warning: cast between incompatible function types from ‘Icallback’ {aka ‘int (*)(struct libData *, struct Ihandle_ *)’} to ‘int (*)(struct libData *, Ihandle *, int,  int,  char *)’ {aka ‘int (*)(struct libData *, struct Ihandle_ *, int,  int,  char *)’} [-Wcast-function-type]
+  455 |   IFniis cb = (IFniis) amy_IupGetCallback( data, ih, "FLAT_MOTION_CB" );
+      |               ^
+src/iup_flattoggle.c: In function ‘iFlatToggleFocus_CB’:
+src/iup_flattoggle.c:488:13: warning: cast between incompatible function types from ‘Icallback’ {aka ‘int (*)(struct libData *, struct Ihandle_ *)’} to ‘int (*)(struct libData *, Ihandle *, int)’ {aka ‘int (*)(struct libData *, struct Ihandle_ *, int)’} [-Wcast-function-type]
+  488 |   IFni cb = (IFni) amy_IupGetCallback( data, ih, "FLAT_FOCUS_CB" );
+      |             ^
+src/iup_flattoggle.c: In function ‘iFlatToggleCreateMethod’:
+src/iup_flattoggle.c:784:46: warning: cast between incompatible function types from ‘int (*)(struct libData *, Ihandle *, int,  int,  int,  int,  char *)’ {aka ‘int (*)(struct libData *, struct Ihandle_ *, int,  int,  int,  int,  char *)’} to ‘int (*)(struct libData *, Ihandle *)’ {aka ‘int (*)(struct libData *, struct Ihandle_ *)’} [-Wcast-function-type]
+  784 |   amy_IupSetCallback( data, ih, "BUTTON_CB", (Icallback)iFlatToggleButton_CB );
+      |                                              ^
+src/iup_flattoggle.c:785:46: warning: cast between incompatible function types from ‘int (*)(struct libData *, Ihandle *, int,  int,  char *)’ {aka ‘int (*)(struct libData *, struct Ihandle_ *, int,  int,  char *)’} to ‘int (*)(struct libData *, Ihandle *)’ {aka ‘int (*)(struct libData *, struct Ihandle_ *)’} [-Wcast-function-type]
+  785 |   amy_IupSetCallback( data, ih, "MOTION_CB", (Icallback)iFlatToggleMotion_CB );
+      |                                              ^
+src/iup_flattoggle.c:786:45: warning: cast between incompatible function types from ‘int (*)(struct libData *, Ihandle *, int)’ {aka ‘int (*)(struct libData *, struct Ihandle_ *, int)’} to ‘int (*)(struct libData *, Ihandle *)’ {aka ‘int (*)(struct libData *, struct Ihandle_ *)’} [-Wcast-function-type]
+  786 |   amy_IupSetCallback( data, ih, "FOCUS_CB", (Icallback)iFlatToggleFocus_CB );
+      |                                             ^
+src/iup_focus.c: In function ‘iupSetCurrentFocus’:
+src/iup_focus.c:266:14: warning: cast between incompatible function types from ‘Icallback’ {aka ‘int (*)(struct libData *, struct Ihandle_ *)’} to ‘int (*)(struct libData *, Ihandle *, int)’ {aka ‘int (*)(struct libData *, struct Ihandle_ *, int)’} [-Wcast-function-type]
+  266 |         cb = (IFni) amy_IupGetCallback( data, current_dialog, "FOCUS_CB" );
+      |              ^
+src/iup_focus.c:270:12: warning: cast between incompatible function types from ‘Icallback’ {aka ‘int (*)(struct libData *, struct Ihandle_ *)’} to ‘int (*)(struct libData *, Ihandle *, int)’ {aka ‘int (*)(struct libData *, struct Ihandle_ *, int)’} [-Wcast-function-type]
+  270 |       cb = (IFni) amy_IupGetCallback( data, iup_current_dialog_focus, "FOCUS_CB" );
+      |            ^
+src/iup_focus.c: In function ‘iupCallGetFocusCb’:
+src/iup_focus.c:313:16: warning: cast between incompatible function types from ‘Icallback’ {aka ‘int (*)(struct libData *, struct Ihandle_ *)’} to ‘int (*)(struct libData *, Ihandle *, int)’ {aka ‘int (*)(struct libData *, struct Ihandle_ *, int)’} [-Wcast-function-type]
+  313 |     IFni cb2 = (IFni) amy_IupGetCallback( data, ih, "FOCUS_CB" );
+      |                ^
+src/iup_focus.c:324:23: warning: cast between incompatible function types from ‘Icallback’ {aka ‘int (*)(struct libData *, struct Ihandle_ *)’} to ‘int (*)(struct libData *, Ihandle *, int)’ {aka ‘int (*)(struct libData *, struct Ihandle_ *, int)’} [-Wcast-function-type]
+  324 |       IFni focus_cb = (IFni) amy_IupGetCallback( data, parent, "FOCUS_CB" );
+      |                       ^
+src/iup_focus.c: In function ‘iupCallKillFocusCb’:
+src/iup_focus.c:348:16: warning: cast between incompatible function types from ‘Icallback’ {aka ‘int (*)(struct libData *, struct Ihandle_ *)’} to ‘int (*)(struct libData *, Ihandle *, int)’ {aka ‘int (*)(struct libData *, struct Ihandle_ *, int)’} [-Wcast-function-type]
+  348 |     IFni cb2 = (IFni) amy_IupGetCallback( data, ih, "FOCUS_CB" );
+      |                ^
+src/iup_focus.c:357:23: warning: cast between incompatible function types from ‘Icallback’ {aka ‘int (*)(struct libData *, struct Ihandle_ *)’} to ‘int (*)(struct libData *, Ihandle *, int)’ {aka ‘int (*)(struct libData *, struct Ihandle_ *, int)’} [-Wcast-function-type]
+  357 |       IFni focus_cb = (IFni) amy_IupGetCallback( data, parent, "FOCUS_CB" );
+      |                       ^
+src/iup_getparam.c: In function ‘iParamDlgClose_CB’:
+src/iup_getparam.c:64:17: warning: cast between incompatible function types from ‘Icallback’ {aka ‘int (*)(struct libData *, struct Ihandle_ *)’} to ‘int (*)(Ihandle *, int,  void *)’ {aka ‘int (*)(struct Ihandle_ *, int,  void *)’} [-Wcast-function-type]
+   64 |   Iparamcb cb = (Iparamcb) amy_IupGetCallback( data, param_box, "PARAM_CB" );
+      |                 ^
+src/iup_getparam.c: In function ‘iParamButton1_CB’:
+src/iup_getparam.c:75:17: warning: cast between incompatible function types from ‘Icallback’ {aka ‘int (*)(struct libData *, struct Ihandle_ *)’} to ‘int (*)(Ihandle *, int,  void *)’ {aka ‘int (*)(struct Ihandle_ *, int,  void *)’} [-Wcast-function-type]
+   75 |   Iparamcb cb = (Iparamcb) amy_IupGetCallback( data, param_box, "PARAM_CB" );
+      |                 ^
+src/iup_getparam.c: In function ‘iParamButton2_CB’:
+src/iup_getparam.c:86:17: warning: cast between incompatible function types from ‘Icallback’ {aka ‘int (*)(struct libData *, struct Ihandle_ *)’} to ‘int (*)(Ihandle *, int,  void *)’ {aka ‘int (*)(struct Ihandle_ *, int,  void *)’} [-Wcast-function-type]
+   86 |   Iparamcb cb = (Iparamcb) amy_IupGetCallback( data, param_box, "PARAM_CB" );
+      |                 ^
+src/iup_getparam.c: In function ‘iParamButton3_CB’:
+src/iup_getparam.c:97:17: warning: cast between incompatible function types from ‘Icallback’ {aka ‘int (*)(struct libData *, struct Ihandle_ *)’} to ‘int (*)(Ihandle *, int,  void *)’ {aka ‘int (*)(struct Ihandle_ *, int,  void *)’} [-Wcast-function-type]
+   97 |   Iparamcb cb = (Iparamcb) amy_IupGetCallback( data, param_box, "PARAM_CB" );
+      |                 ^
+src/iup_getparam.c: In function ‘iParamToggleAction_CB’:
+src/iup_getparam.c:111:17: warning: cast between incompatible function types from ‘Icallback’ {aka ‘int (*)(struct libData *, struct Ihandle_ *)’} to ‘int (*)(Ihandle *, int,  void *)’ {aka ‘int (*)(struct Ihandle_ *, int,  void *)’} [-Wcast-function-type]
+  111 |   Iparamcb cb = (Iparamcb) amy_IupGetCallback( data, param_box, "PARAM_CB" );
+      |                 ^
+src/iup_getparam.c: In function ‘iParamDateValueChanged_CB’:
+src/iup_getparam.c:150:17: warning: cast between incompatible function types from ‘Icallback’ {aka ‘int (*)(struct libData *, struct Ihandle_ *)’} to ‘int (*)(Ihandle *, int,  void *)’ {aka ‘int (*)(struct Ihandle_ *, int,  void *)’} [-Wcast-function-type]
+  150 |   Iparamcb cb = (Iparamcb) amy_IupGetCallback( data, param_box, "PARAM_CB" );
+      |                 ^
+src/iup_getparam.c: In function ‘iParamTextAction_CB’:
+src/iup_getparam.c:171:17: warning: cast between incompatible function types from ‘Icallback’ {aka ‘int (*)(struct libData *, struct Ihandle_ *)’} to ‘int (*)(Ihandle *, int,  void *)’ {aka ‘int (*)(struct Ihandle_ *, int,  void *)’} [-Wcast-function-type]
+  171 |   Iparamcb cb = (Iparamcb) amy_IupGetCallback( data, param_box, "PARAM_CB" );
+      |                 ^
+src/iup_getparam.c: In function ‘iParamValAction_CB’:
+src/iup_getparam.c:237:17: warning: cast between incompatible function types from ‘Icallback’ {aka ‘int (*)(struct libData *, struct Ihandle_ *)’} to ‘int (*)(Ihandle *, int,  void *)’ {aka ‘int (*)(struct Ihandle_ *, int,  void *)’} [-Wcast-function-type]
+  237 |   Iparamcb cb = (Iparamcb) amy_IupGetCallback( data, param_box, "PARAM_CB" );
+      |                 ^
+src/iup_getparam.c: In function ‘iParamListAction_CB’:
+src/iup_getparam.c:329:19: warning: cast between incompatible function types from ‘Icallback’ {aka ‘int (*)(struct libData *, struct Ihandle_ *)’} to ‘int (*)(Ihandle *, int,  void *)’ {aka ‘int (*)(struct Ihandle_ *, int,  void *)’} [-Wcast-function-type]
+  329 |     Iparamcb cb = (Iparamcb) amy_IupGetCallback( data, param_box, "PARAM_CB" );
+      |                   ^
+src/iup_getparam.c: In function ‘iParamOptionsAction_CB’:
+src/iup_getparam.c:354:19: warning: cast between incompatible function types from ‘Icallback’ {aka ‘int (*)(struct libData *, struct Ihandle_ *)’} to ‘int (*)(Ihandle *, int,  void *)’ {aka ‘int (*)(struct Ihandle_ *, int,  void *)’} [-Wcast-function-type]
+  354 |     Iparamcb cb = (Iparamcb) amy_IupGetCallback( data, param_box, "PARAM_CB" );
+      |                   ^
+src/iup_getparam.c: In function ‘iParamFileButton_CB’:
+src/iup_getparam.c:376:17: warning: cast between incompatible function types from ‘Icallback’ {aka ‘int (*)(struct libData *, struct Ihandle_ *)’} to ‘int (*)(Ihandle *, int,  void *)’ {aka ‘int (*)(struct Ihandle_ *, int,  void *)’} [-Wcast-function-type]
+  376 |   Iparamcb cb = (Iparamcb) amy_IupGetCallback( data, param_box, "PARAM_CB" );
+      |                 ^
+src/iup_getparam.c: In function ‘iParamColorButton_CB’:
+src/iup_getparam.c:427:17: warning: cast between incompatible function types from ‘Icallback’ {aka ‘int (*)(struct libData *, struct Ihandle_ *)’} to ‘int (*)(Ihandle *, int,  void *)’ {aka ‘int (*)(struct Ihandle_ *, int,  void *)’} [-Wcast-function-type]
+  427 |   Iparamcb cb = (Iparamcb) amy_IupGetCallback( data, param_box, "PARAM_CB" );
+      |                 ^
+src/iup_getparam.c: In function ‘iParamFontButton_CB’:
+src/iup_getparam.c:464:17: warning: cast between incompatible function types from ‘Icallback’ {aka ‘int (*)(struct libData *, struct Ihandle_ *)’} to ‘int (*)(Ihandle *, int,  void *)’ {aka ‘int (*)(struct Ihandle_ *, int,  void *)’} [-Wcast-function-type]
+  464 |   Iparamcb cb = (Iparamcb) amy_IupGetCallback( data, param_box, "PARAM_CB" );
+      |                 ^
+src/iup_getparam.c: In function ‘iParamSpinReal_CB’:
+src/iup_getparam.c:499:17: warning: cast between incompatible function types from ‘Icallback’ {aka ‘int (*)(struct libData *, struct Ihandle_ *)’} to ‘int (*)(Ihandle *, int,  void *)’ {aka ‘int (*)(struct Ihandle_ *, int,  void *)’} [-Wcast-function-type]
+  499 |   Iparamcb cb = (Iparamcb) amy_IupGetCallback( data, param_box, "PARAM_CB" );
+      |                 ^
+src/iup_getparam.c: In function ‘iParamSpinInt_CB’:
+src/iup_getparam.c:547:17: warning: cast between incompatible function types from ‘Icallback’ {aka ‘int (*)(struct libData *, struct Ihandle_ *)’} to ‘int (*)(Ihandle *, int,  void *)’ {aka ‘int (*)(struct Ihandle_ *, int,  void *)’} [-Wcast-function-type]
+  547 |   Iparamcb cb = (Iparamcb) amy_IupGetCallback( data, param_box, "PARAM_CB" );
+      |                 ^
+src/iup_getparam.c: In function ‘iParamCreateCtrlBox’:
+src/iup_getparam.c:645:47: warning: cast between incompatible function types from ‘int (*)(struct libData *, Ihandle *, int)’ {aka ‘int (*)(struct libData *, struct Ihandle_ *, int)’} to ‘int (*)(struct libData *, Ihandle *)’ {aka ‘int (*)(struct libData *, struct Ihandle_ *)’} [-Wcast-function-type]
+  645 |     amy_IupSetCallback( data, ctrl, "ACTION", (Icallback)iParamToggleAction_CB );
+      |                                               ^
+src/iup_getparam.c:662:47: warning: cast between incompatible function types from ‘int (*)(struct libData *, Ihandle *, char *, int,  int)’ {aka ‘int (*)(struct libData *, struct Ihandle_ *, char *, int,  int)’} to ‘int (*)(struct libData *, Ihandle *)’ {aka ‘int (*)(struct libData *, struct Ihandle_ *)’} [-Wcast-function-type]
+  662 |     amy_IupSetCallback( data, ctrl, "ACTION", (Icallback)iParamListAction_CB );
+      |                                               ^
+src/iup_getparam.c:687:48: warning: cast between incompatible function types from ‘int (*)(struct libData *, Ihandle *, int)’ {aka ‘int (*)(struct libData *, struct Ihandle_ *, int)’} to ‘int (*)(struct libData *, Ihandle *)’ {aka ‘int (*)(struct libData *, struct Ihandle_ *)’} [-Wcast-function-type]
+  687 |       amy_IupSetCallback( data, tgl, "ACTION", (Icallback)iParamOptionsAction_CB );
+      |                                                ^
+src/iup_getparam.c:730:47: warning: cast between incompatible function types from ‘int (*)(struct libData *, Ihandle *, int,  char *)’ {aka ‘int (*)(struct libData *, struct Ihandle_ *, int,  char *)’} to ‘int (*)(struct libData *, Ihandle *)’ {aka ‘int (*)(struct libData *, struct Ihandle_ *)’} [-Wcast-function-type]
+  730 |     amy_IupSetCallback( data, ctrl, "ACTION", (Icallback)iParamTextAction_CB );
+      |                                               ^
+src/iup_getparam.c:769:47: warning: cast between incompatible function types from ‘int (*)(struct libData *, Ihandle *, int,  char *)’ {aka ‘int (*)(struct libData *, struct Ihandle_ *, int,  char *)’} to ‘int (*)(struct libData *, Ihandle *)’ {aka ‘int (*)(struct libData *, struct Ihandle_ *)’} [-Wcast-function-type]
+  769 |     amy_IupSetCallback( data, ctrl, "ACTION", (Icallback)iParamTextAction_CB );
+      |                                               ^
+src/iup_getparam.c:794:47: warning: cast between incompatible function types from ‘int (*)(struct libData *, Ihandle *, int,  char *)’ {aka ‘int (*)(struct libData *, struct Ihandle_ *, int,  char *)’} to ‘int (*)(struct libData *, Ihandle *)’ {aka ‘int (*)(struct libData *, struct Ihandle_ *)’} [-Wcast-function-type]
+  794 |     amy_IupSetCallback( data, ctrl, "ACTION", (Icallback)iParamTextAction_CB );
+      |                                               ^
+src/iup_getparam.c:821:47: warning: cast between incompatible function types from ‘int (*)(struct libData *, Ihandle *, int,  char *)’ {aka ‘int (*)(struct libData *, struct Ihandle_ *, int,  char *)’} to ‘int (*)(struct libData *, Ihandle *)’ {aka ‘int (*)(struct libData *, struct Ihandle_ *)’} [-Wcast-function-type]
+  821 |     amy_IupSetCallback( data, ctrl, "ACTION", (Icallback)iParamTextAction_CB );
+      |                                               ^
+src/iup_getparam.c:842:47: warning: cast between incompatible function types from ‘int (*)(struct libData *, Ihandle *, int,  char *)’ {aka ‘int (*)(struct libData *, struct Ihandle_ *, int,  char *)’} to ‘int (*)(struct libData *, Ihandle *)’ {aka ‘int (*)(struct libData *, struct Ihandle_ *)’} [-Wcast-function-type]
+  842 |     amy_IupSetCallback( data, ctrl, "ACTION", (Icallback)iParamTextAction_CB );
+      |                                               ^
+src/iup_getparam.c:867:52: warning: cast between incompatible function types from ‘int (*)(struct libData *, Ihandle *, int)’ {aka ‘int (*)(struct libData *, struct Ihandle_ *, int)’} to ‘int (*)(struct libData *, Ihandle *)’ {aka ‘int (*)(struct libData *, struct Ihandle_ *)’} [-Wcast-function-type]
+  867 |         amy_IupSetCallback( data, ctrl, "SPIN_CB", (Icallback)iParamSpinReal_CB );
+      |                                                    ^
+src/iup_getparam.c:899:50: warning: cast between incompatible function types from ‘int (*)(struct libData *, Ihandle *, int)’ {aka ‘int (*)(struct libData *, struct Ihandle_ *, int)’} to ‘int (*)(struct libData *, Ihandle *)’ {aka ‘int (*)(struct libData *, struct Ihandle_ *)’} [-Wcast-function-type]
+  899 |       amy_IupSetCallback( data, ctrl, "SPIN_CB", (Icallback)iParamSpinInt_CB );
+      |                                                  ^
+src/iup_getparam.c: In function ‘amy_IupGetParamv’:
+src/iup_getparam.c:1751:52: warning: cast between incompatible function types from ‘Iparamcb’ {aka ‘int (*)(struct Ihandle_ *, int,  void *)’} to ‘int (*)(struct libData *, Ihandle *)’ {aka ‘int (*)(struct libData *, struct Ihandle_ *)’} [-Wcast-function-type]
+ 1751 |   amy_IupSetCallback( data, param_box, "PARAM_CB", (Icallback)action );
+      |                                                    ^
+src/iup_getparam.c: In function ‘iParamCreateMethod’:
+src/iup_getparam.c:1559:5: warning: this statement may fall through [-Wimplicit-fallthrough=]
+ 1559 |     iupAttribSet( data, param, "MULTILINE", "Yes" );
+      |     ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+src/iup_getparam.c:1561:3: note: here
+ 1561 |   case 's':
+      |   ^~~~
+src/iup_globalattrib.c: In function ‘iupGlobalIsPointer’:
+src/iup_globalattrib.c:284:19: warning: comparison of integer expressions of different signedness: ‘int’ and ‘unsigned int’ [-Wsign-compare]
+  284 |     for (i = 0; i < PTR_TABLE_SIZE; i++)
+      |                   ^
+src/iup_globaldlg.c: In function ‘iGlobalsCreateDialog’:
+src/iup_globaldlg.c:660:46: warning: cast between incompatible function types from ‘int (*)(struct libData *, Ihandle *, char *, int,  int)’ {aka ‘int (*)(struct libData *, struct Ihandle_ *, char *, int,  int)’} to ‘int (*)(struct libData *, Ihandle *)’ {aka ‘int (*)(struct libData *, struct Ihandle_ *)’} [-Wcast-function-type]
+  660 |   amy_IupSetCallback( data, list1, "ACTION", (Icallback)iGlobalsList_CB );
+      |                                              ^
+src/iup_globaldlg.c:687:46: warning: cast between incompatible function types from ‘int (*)(struct libData *, Ihandle *, char *, int,  int)’ {aka ‘int (*)(struct libData *, struct Ihandle_ *, char *, int,  int)’} to ‘int (*)(struct libData *, Ihandle *)’ {aka ‘int (*)(struct libData *, struct Ihandle_ *)’} [-Wcast-function-type]
+  687 |   amy_IupSetCallback( data, list2, "ACTION", (Icallback)iGlobalsList_CB );
+      |                                              ^
+src/iup_globaldlg.c:714:46: warning: cast between incompatible function types from ‘int (*)(struct libData *, Ihandle *, char *, int,  int)’ {aka ‘int (*)(struct libData *, struct Ihandle_ *, char *, int,  int)’} to ‘int (*)(struct libData *, Ihandle *)’ {aka ‘int (*)(struct libData *, struct Ihandle_ *)’} [-Wcast-function-type]
+  714 |   amy_IupSetCallback( data, list3, "ACTION", (Icallback)iGlobalsFunctionsList_CB );
+      |                                              ^
+src/iup_globaldlg.c:725:46: warning: cast between incompatible function types from ‘int (*)(struct libData *, Ihandle *, char *, int,  int)’ {aka ‘int (*)(struct libData *, struct Ihandle_ *, char *, int,  int)’} to ‘int (*)(struct libData *, Ihandle *)’ {aka ‘int (*)(struct libData *, struct Ihandle_ *)’} [-Wcast-function-type]
+  725 |   amy_IupSetCallback( data, list4, "ACTION", (Icallback)iGlobalsNamesList_CB );
+      |                                              ^
+src/iup_globaldlg.c:764:229: warning: cast between incompatible function types from ‘int (*)(struct libData *, Ihandle *, int)’ {aka ‘int (*)(struct libData *, struct Ihandle_ *, int)’} to ‘int (*)(struct libData *, Ihandle *)’ {aka ‘int (*)(struct libData *, struct Ihandle_ *)’} [-Wcast-function-type]
+  764 |     amy_IupSetCallbacks( data, amy_IupSetAttributes( data, amy_IupToggle( data, "Show Auto Names", NULL), "NAME=SHOWAUTO, TIP=\"Show Automatic Generated Names (_IUP_NAME*)\", NORMALIZERGROUP=amy_IupGlobalNamesNorm" ), "ACTION", (Icallback)iGlobalsNamesShowAuto_CB, NULL),
+      |                                                                                                                                                                                                                                     ^
+src/iup_globaldlg.c:805:54: warning: cast between incompatible function types from ‘int (*)(struct libData *, Ihandle *, int,  int)’ {aka ‘int (*)(struct libData *, struct Ihandle_ *, int,  int)’} to ‘int (*)(struct libData *, Ihandle *)’ {aka ‘int (*)(struct libData *, struct Ihandle_ *)’} [-Wcast-function-type]
+  805 |   amy_IupSetCallback( data, tabs, "TABCHANGEPOS_CB", (Icallback)iGlobalsTabChangePos_CB );
+      |                                                      ^
+src/iup_key.c: In function ‘iupKeyForEach’:
+src/iup_key.c:317:23: warning: passing argument 2 of ‘iKeyCallFunc’ from incompatible pointer type [-Wincompatible-pointer-types]
+  317 |   iKeyCallFunc( data, func, user_data, "K_BS", K_BS, 0 );
+      |                       ^~~~
+      |                       |
+      |                       void (*)(struct libData *, const char *, int,  void *)
+src/iup_key.c:287:56: note: expected ‘void (*)(const char *, int,  void *)’ but argument is of type ‘void (*)(struct libData *, const char *, int,  void *)’
+  287 | static void iKeyCallFunc( struct libData *data, void (*func)(const char *name, int code, void *user_data), void *user_data, const char *name, int code, unsigned char mod)
+      |                                                 ~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+src/iup_key.c:318:23: warning: passing argument 2 of ‘iKeyCallFunc’ from incompatible pointer type [-Wincompatible-pointer-types]
+  318 |   iKeyCallFunc( data, func, user_data, "K_TAB", K_TAB, 0 );
+      |                       ^~~~
+      |                       |
+      |                       void (*)(struct libData *, const char *, int,  void *)
+src/iup_key.c:287:56: note: expected ‘void (*)(const char *, int,  void *)’ but argument is of type ‘void (*)(struct libData *, const char *, int,  void *)’
+  287 | static void iKeyCallFunc( struct libData *data, void (*func)(const char *name, int code, void *user_data), void *user_data, const char *name, int code, unsigned char mod)
+      |                                                 ~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+src/iup_key.c:319:23: warning: passing argument 2 of ‘iKeyCallFunc’ from incompatible pointer type [-Wincompatible-pointer-types]
+  319 |   iKeyCallFunc( data, func, user_data, "K_CR", K_CR, 0 );
+      |                       ^~~~
+      |                       |
+      |                       void (*)(struct libData *, const char *, int,  void *)
+src/iup_key.c:287:56: note: expected ‘void (*)(const char *, int,  void *)’ but argument is of type ‘void (*)(struct libData *, const char *, int,  void *)’
+  287 | static void iKeyCallFunc( struct libData *data, void (*func)(const char *name, int code, void *user_data), void *user_data, const char *name, int code, unsigned char mod)
+      |                                                 ~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+src/iup_key.c:322:25: warning: passing argument 2 of ‘iKeyCallFunc’ from incompatible pointer type [-Wincompatible-pointer-types]
+  322 |     iKeyCallFunc( data, func, user_data, ikey_map_ascii[code-32].name, code, ikey_map_ascii[code-32].mod );
+      |                         ^~~~
+      |                         |
+      |                         void (*)(struct libData *, const char *, int,  void *)
+src/iup_key.c:287:56: note: expected ‘void (*)(const char *, int,  void *)’ but argument is of type ‘void (*)(struct libData *, const char *, int,  void *)’
+  287 | static void iKeyCallFunc( struct libData *data, void (*func)(const char *name, int code, void *user_data), void *user_data, const char *name, int code, unsigned char mod)
+      |                                                 ~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+src/iup_key.c:334:27: warning: passing argument 2 of ‘iKeyCallFunc’ from incompatible pointer type [-Wincompatible-pointer-types]
+  334 |       iKeyCallFunc( data, func, user_data, ikey_map_ext[map], 0xFF00|map, mod );
+      |                           ^~~~
+      |                           |
+      |                           void (*)(struct libData *, const char *, int,  void *)
+src/iup_key.c:287:56: note: expected ‘void (*)(const char *, int,  void *)’ but argument is of type ‘void (*)(struct libData *, const char *, int,  void *)’
+  287 | static void iKeyCallFunc( struct libData *data, void (*func)(const char *name, int code, void *user_data), void *user_data, const char *name, int code, unsigned char mod)
+      |                                                 ~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+src/iup_key.c:338:23: warning: passing argument 2 of ‘iKeyCallFunc’ from incompatible pointer type [-Wincompatible-pointer-types]
+  338 |   iKeyCallFunc( data, func, user_data, "K_ccedilla", K_ccedilla, 1 );  /* NO modifiers */
+      |                       ^~~~
+      |                       |
+      |                       void (*)(struct libData *, const char *, int,  void *)
+src/iup_key.c:287:56: note: expected ‘void (*)(const char *, int,  void *)’ but argument is of type ‘void (*)(struct libData *, const char *, int,  void *)’
+  287 | static void iKeyCallFunc( struct libData *data, void (*func)(const char *name, int code, void *user_data), void *user_data, const char *name, int code, unsigned char mod)
+      |                                                 ~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+src/iup_key.c:339:23: warning: passing argument 2 of ‘iKeyCallFunc’ from incompatible pointer type [-Wincompatible-pointer-types]
+  339 |   iKeyCallFunc( data, func, user_data, "K_Ccedilla", K_Ccedilla, 2 );  /* NO shift */
+      |                       ^~~~
+      |                       |
+      |                       void (*)(struct libData *, const char *, int,  void *)
+src/iup_key.c:287:56: note: expected ‘void (*)(const char *, int,  void *)’ but argument is of type ‘void (*)(struct libData *, const char *, int,  void *)’
+  287 | static void iKeyCallFunc( struct libData *data, void (*func)(const char *name, int code, void *user_data), void *user_data, const char *name, int code, unsigned char mod)
+      |                                                 ~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+src/iup_key.c:341:23: warning: passing argument 2 of ‘iKeyCallFunc’ from incompatible pointer type [-Wincompatible-pointer-types]
+  341 |   iKeyCallFunc( data, func, user_data, "K_acute", K_acute, 1 );
+      |                       ^~~~
+      |                       |
+      |                       void (*)(struct libData *, const char *, int,  void *)
+src/iup_key.c:287:56: note: expected ‘void (*)(const char *, int,  void *)’ but argument is of type ‘void (*)(struct libData *, const char *, int,  void *)’
+  287 | static void iKeyCallFunc( struct libData *data, void (*func)(const char *name, int code, void *user_data), void *user_data, const char *name, int code, unsigned char mod)
+      |                                                 ~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+src/iup_key.c:342:23: warning: passing argument 2 of ‘iKeyCallFunc’ from incompatible pointer type [-Wincompatible-pointer-types]
+  342 |   iKeyCallFunc( data, func, user_data, "K_diaeresis", K_diaeresis, 1 );
+      |                       ^~~~
+      |                       |
+      |                       void (*)(struct libData *, const char *, int,  void *)
+src/iup_key.c:287:56: note: expected ‘void (*)(const char *, int,  void *)’ but argument is of type ‘void (*)(struct libData *, const char *, int,  void *)’
+  287 | static void iKeyCallFunc( struct libData *data, void (*func)(const char *name, int code, void *user_data), void *user_data, const char *name, int code, unsigned char mod)
+      |                                                 ~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+src/iup_key.c: In function ‘iupKeyCallKeyCb’:
+src/iup_key.c:352:12: warning: cast between incompatible function types from ‘Icallback’ {aka ‘int (*)(struct libData *, struct Ihandle_ *)’} to ‘int (*)(struct libData *, Ihandle *, int)’ {aka ‘int (*)(struct libData *, struct Ihandle_ *, int)’} [-Wcast-function-type]
+  352 |       cb = (IFni) amy_IupGetCallback( data, ih, name );
+      |            ^
+src/iup_key.c:354:12: warning: cast between incompatible function types from ‘Icallback’ {aka ‘int (*)(struct libData *, struct Ihandle_ *)’} to ‘int (*)(struct libData *, Ihandle *, int)’ {aka ‘int (*)(struct libData *, struct Ihandle_ *, int)’} [-Wcast-function-type]
+  354 |       cb = (IFni) amy_IupGetCallback( data, ih, "K_ANY" );
+      |            ^
+src/iup_key.c: In function ‘iupKeyCallKeyPressCb’:
+src/iup_key.c:368:14: warning: cast between incompatible function types from ‘Icallback’ {aka ‘int (*)(struct libData *, struct Ihandle_ *)’} to ‘int (*)(struct libData *, Ihandle *, int,  int)’ {aka ‘int (*)(struct libData *, struct Ihandle_ *, int,  int)’} [-Wcast-function-type]
+  368 |   IFnii cb = (IFnii) amy_IupGetCallback( data, ih, "KEYPRESS_CB" );
+      |              ^
+src/iup_key.c: In function ‘iupKeyProcessNavigation’:
+src/iup_key.c:520:14: warning: cast between incompatible function types from ‘Icallback’ {aka ‘int (*)(struct libData *, struct Ihandle_ *)’} to ‘void (*)(int)’ [-Wcast-function-type]
+  520 |     IFi cb = (IFi) amy_IupGetFunction( data, "GLOBALCTRLFUNC_CB" );
+      |              ^
+src/iup_key.c: In function ‘iupKeyProcessMnemonic’:
+src/iup_key.c:537:31: warning: passing argument 2 of ‘iupClassMatch’ from incompatible pointer type [-Wincompatible-pointer-types]
+  537 |     if ( iupClassMatch( data, ih_mnemonic, "label" ))
+      |                               ^~~~~~~~~~~
+      |                               |
+      |                               Ihandle * {aka struct Ihandle_ *}
+In file included from ./inc/All.h:40,
+                 from src/iup_key.c:11:
+./inc/iup_class.h:211:62: note: expected ‘Iclass *’ {aka ‘struct Iclass_ *’} but argument is of type ‘Ihandle *’ {aka ‘struct Ihandle_ *’}
+  211 | IUP_SDK_API int iupClassMatch( struct libData *data, Iclass *ic, const char *classname );
+      |                                                      ~~~~~~~~^~
+src/iup_key.c:542:35: warning: passing argument 2 of ‘iupClassMatch’ from incompatible pointer type [-Wincompatible-pointer-types]
+  542 |         if ( iupClassMatch( data, ih_next, "button" ) ||
+      |                                   ^~~~~~~
+      |                                   |
+      |                                   Ihandle * {aka struct Ihandle_ *}
+In file included from ./inc/All.h:40,
+                 from src/iup_key.c:11:
+./inc/iup_class.h:211:62: note: expected ‘Iclass *’ {aka ‘struct Iclass_ *’} but argument is of type ‘Ihandle *’ {aka ‘struct Ihandle_ *’}
+  211 | IUP_SDK_API int iupClassMatch( struct libData *data, Iclass *ic, const char *classname );
+      |                                                      ~~~~~~~~^~
+src/iup_key.c:550:36: warning: passing argument 2 of ‘iupClassMatch’ from incompatible pointer type [-Wincompatible-pointer-types]
+  550 |     else if ( iupClassMatch( data, ih_mnemonic, "tabs" ))
+      |                                    ^~~~~~~~~~~
+      |                                    |
+      |                                    Ihandle * {aka struct Ihandle_ *}
+In file included from ./inc/All.h:40,
+                 from src/iup_key.c:11:
+./inc/iup_class.h:211:62: note: expected ‘Iclass *’ {aka ‘struct Iclass_ *’} but argument is of type ‘Ihandle *’ {aka ‘struct Ihandle_ *’}
+  211 | IUP_SDK_API int iupClassMatch( struct libData *data, Iclass *ic, const char *classname );
+      |                                                      ~~~~~~~~^~
+src/iup_key.c: In function ‘iupKeySetMnemonic’:
+src/iup_key.c:569:29: warning: passing argument 2 of ‘iupClassMatch’ from incompatible pointer type [-Wincompatible-pointer-types]
+  569 |   if ( iupClassMatch( data, ih, "tabs" ))
+      |                             ^~
+      |                             |
+      |                             Ihandle * {aka struct Ihandle_ *}
+In file included from ./inc/All.h:40,
+                 from src/iup_key.c:11:
+./inc/iup_class.h:211:62: note: expected ‘Iclass *’ {aka ‘struct Iclass_ *’} but argument is of type ‘Ihandle *’ {aka ‘struct Ihandle_ *’}
+  211 | IUP_SDK_API int iupClassMatch( struct libData *data, Iclass *ic, const char *classname );
+      |                                                      ~~~~~~~~^~
+src/iup_layoutdlg.c: In function ‘iLayoutFindDialogNext_CB’:
+src/iup_layoutdlg.c:148:16: warning: cast between incompatible function types from ‘Icallback’ {aka ‘int (*)(struct libData *, struct Ihandle_ *)’} to ‘int (*)(struct libData *, Ihandle *, int,  int)’ {aka ‘int (*)(struct libData *, struct Ihandle_ *, int,  int)’} [-Wcast-function-type]
+  148 |     IFnii cb = (IFnii) amy_IupGetCallback( data, tree, "SELECTION_CB" );
+      |                ^
+src/iup_layoutdlg.c: In function ‘iLayoutMenuOpacity_CB’:
+src/iup_layoutdlg.c:934:48: warning: passing argument 3 of ‘amy_IupGetParam’ from incompatible pointer type [-Wincompatible-pointer-types]
+  934 |   if ( amy_IupGetParam( data, "Dialog Layout", iLayoutGetParamOpacity_CB, dlg,
+      |                                                ^~~~~~~~~~~~~~~~~~~~~~~~~
+      |                                                |
+      |                                                int (*)(struct libData *, Ihandle *, int,  void *) {aka int (*)(struct libData *, struct Ihandle_ *, int,  void *)}
+In file included from src/iup_layoutdlg.c:11:
+./inc/All.h:304:100: note: expected ‘Iparamcb’ {aka ‘int (*)(struct Ihandle_ *, int,  void *)’} but argument is of type ‘int (*)(struct libData *, Ihandle *, int,  void *)’ {aka ‘int (*)(struct libData *, struct Ihandle_ *, int,  void *)’}
+  304 | IUP_API int                     amy_IupGetParam( struct libData *data, const char *title, Iparamcb action, void* user_data, const char *format, ... );
+      |                                                                                           ~~~~~~~~~^~~~~~
+src/iup_layoutdlg.c: In function ‘iLayoutAttribChanged_CB’:
+src/iup_layoutdlg.c:1439:13: warning: cast between incompatible function types from ‘Icallback’ {aka ‘int (*)(struct libData *, struct Ihandle_ *)’} to ‘int (*)(struct libData *, Ihandle *, char *)’ {aka ‘int (*)(struct libData *, struct Ihandle_ *, char *)’} [-Wcast-function-type]
+ 1439 |   IFns cb = (IFns) amy_IupGetCallback( data, dlg, "ATTRIBCHANGED_CB" );
+      |             ^
+src/iup_layoutdlg.c: In function ‘iLayoutContextMenuProperties_CB’:
+src/iup_layoutdlg.c:1465:74: warning: cast between incompatible function types from ‘int (*)(struct libData *, Ihandle *, char *)’ {aka ‘int (*)(struct libData *, struct Ihandle_ *, char *)’} to ‘int (*)(struct libData *, Ihandle *)’ {aka ‘int (*)(struct libData *, struct Ihandle_ *)’} [-Wcast-function-type]
+ 1465 |     amy_IupSetCallback( data, layoutdlg->properties, "ATTRIBCHANGED_CB", (Icallback)iLayoutAttribChanged_CB );
+      |                                                                          ^
+src/iup_layoutdlg.c: In function ‘iLayoutCallLayoutChangedCb’:
+src/iup_layoutdlg.c:1496:13: warning: cast between incompatible function types from ‘Icallback’ {aka ‘int (*)(struct libData *, struct Ihandle_ *)’} to ‘int (*)(struct libData *, Ihandle *, Ihandle *)’ {aka ‘int (*)(struct libData *, struct Ihandle_ *, struct Ihandle_ *)’} [-Wcast-function-type]
+ 1496 |   IFnn cb = (IFnn) amy_IupGetCallback( data, dlg, "LAYOUTCHANGED_CB" );
+      |             ^
+src/iup_layoutdlg.c: In function ‘iLayoutSelectClassDialog’:
+src/iup_layoutdlg.c:1608:53: warning: cast between incompatible function types from ‘int (*)(struct libData *, Ihandle *, int)’ {aka ‘int (*)(struct libData *, struct Ihandle_ *, int)’} to ‘int (*)(struct libData *, Ihandle *)’ {aka ‘int (*)(struct libData *, struct Ihandle_ *)’} [-Wcast-function-type]
+ 1608 |   amy_IupSetCallback( data, tree, "EXECUTELEAF_CB", (Icallback)iLayoutSelectClassTreeExecuteLeaf_CB );
+      |                                                     ^
+src/iup_layoutdlg.c:1631:47: warning: passing argument 4 of ‘qsort’ from incompatible pointer type [-Wincompatible-pointer-types]
+ 1631 |   qsort(class_list_str, count, sizeof(char*), iLayoutCompareClassNames );
+      |                                               ^~~~~~~~~~~~~~~~~~~~~~~~
+      |                                               |
+      |                                               int (*)(struct libData *, const void *, const void *)
+In file included from ./inc/All.h:23,
+                 from src/iup_layoutdlg.c:11:
+../../inc_System/stdlib.h:99:48: note: expected ‘int (*)(const void *, const void *)’ but argument is of type ‘int (*)(struct libData *, const void *, const void *)’
+   99 | void            qsort( void *, size_t, size_t, int (*)( const void *, const void * ));
+      |                                                ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+src/iup_layoutdlg.c: In function ‘amy_IupLayoutDialog’:
+src/iup_layoutdlg.c:3407:47: warning: cast between incompatible function types from ‘int (*)(struct libData *, Ihandle *, float,  float)’ {aka ‘int (*)(struct libData *, struct Ihandle_ *, float,  float)’} to ‘int (*)(struct libData *, Ihandle *)’ {aka ‘int (*)(struct libData *, struct Ihandle_ *)’} [-Wcast-function-type]
+ 3407 |   amy_IupSetCallback( data, canvas, "ACTION", (Icallback)iLayoutCanvasRedraw_CB );
+      |                                               ^
+src/iup_layoutdlg.c:3408:50: warning: cast between incompatible function types from ‘int (*)(struct libData *, Ihandle *, int,  int,  int,  int,  char *)’ {aka ‘int (*)(struct libData *, struct Ihandle_ *, int,  int,  int,  int,  char *)’} to ‘int (*)(struct libData *, Ihandle *)’ {aka ‘int (*)(struct libData *, struct Ihandle_ *)’} [-Wcast-function-type]
+ 3408 |   amy_IupSetCallback( data, canvas, "BUTTON_CB", (Icallback)iLayoutCanvasButton_CB );
+      |                                                  ^
+src/iup_layoutdlg.c:3409:50: warning: cast between incompatible function types from ‘int (*)(struct libData *, Ihandle *, int,  int,  char *)’ {aka ‘int (*)(struct libData *, struct Ihandle_ *, int,  int,  char *)’} to ‘int (*)(struct libData *, Ihandle *)’ {aka ‘int (*)(struct libData *, struct Ihandle_ *)’} [-Wcast-function-type]
+ 3409 |   amy_IupSetCallback( data, canvas, "MOTION_CB", (Icallback)iLayoutCanvasMotion_CB );
+      |                                                  ^
+src/iup_layoutdlg.c:3410:50: warning: cast between incompatible function types from ‘int (*)(struct libData *, Ihandle *, int,  int)’ {aka ‘int (*)(struct libData *, struct Ihandle_ *, int,  int)’} to ‘int (*)(struct libData *, Ihandle *)’ {aka ‘int (*)(struct libData *, struct Ihandle_ *)’} [-Wcast-function-type]
+ 3410 |   amy_IupSetCallback( data, canvas, "RESIZE_CB", (Icallback)iLayoutCanvasResize_CB );
+      |                                                  ^
+src/iup_layoutdlg.c:3422:51: warning: cast between incompatible function types from ‘int (*)(struct libData *, Ihandle *, int,  int)’ {aka ‘int (*)(struct libData *, struct Ihandle_ *, int,  int)’} to ‘int (*)(struct libData *, Ihandle *)’ {aka ‘int (*)(struct libData *, struct Ihandle_ *)’} [-Wcast-function-type]
+ 3422 |   amy_IupSetCallback( data, tree, "SELECTION_CB", (Icallback)iLayoutTreeSelection_CB );
+      |                                                   ^
+src/iup_layoutdlg.c:3423:53: warning: cast between incompatible function types from ‘int (*)(struct libData *, Ihandle *, int)’ {aka ‘int (*)(struct libData *, struct Ihandle_ *, int)’} to ‘int (*)(struct libData *, Ihandle *)’ {aka ‘int (*)(struct libData *, struct Ihandle_ *)’} [-Wcast-function-type]
+ 3423 |   amy_IupSetCallback( data, tree, "EXECUTELEAF_CB", (Icallback)iLayoutTreeExecuteNode_CB );
+      |                                                     ^
+src/iup_layoutdlg.c:3424:55: warning: cast between incompatible function types from ‘int (*)(struct libData *, Ihandle *, int)’ {aka ‘int (*)(struct libData *, struct Ihandle_ *, int)’} to ‘int (*)(struct libData *, Ihandle *)’ {aka ‘int (*)(struct libData *, struct Ihandle_ *)’} [-Wcast-function-type]
+ 3424 |   amy_IupSetCallback( data, tree, "EXECUTEBRANCH_CB", (Icallback)iLayoutTreeExecuteNode_CB );
+      |                                                       ^
+src/iup_layoutdlg.c:3425:53: warning: cast between incompatible function types from ‘int (*)(struct libData *, Ihandle *, int)’ {aka ‘int (*)(struct libData *, struct Ihandle_ *, int)’} to ‘int (*)(struct libData *, Ihandle *)’ {aka ‘int (*)(struct libData *, struct Ihandle_ *)’} [-Wcast-function-type]
+ 3425 |   amy_IupSetCallback( data, tree, "BRANCHCLOSE_CB", (Icallback)iLayoutTreeBranchClose_CB );
+      |                                                     ^
+src/iup_layoutdlg.c:3426:52: warning: cast between incompatible function types from ‘int (*)(struct libData *, Ihandle *, int)’ {aka ‘int (*)(struct libData *, struct Ihandle_ *, int)’} to ‘int (*)(struct libData *, Ihandle *)’ {aka ‘int (*)(struct libData *, struct Ihandle_ *)’} [-Wcast-function-type]
+ 3426 |   amy_IupSetCallback( data, tree, "RIGHTCLICK_CB", (Icallback)iLayoutTreeRightClick_CB );
+      |                                                    ^
+src/iup_layoutdlg.c:3427:50: warning: cast between incompatible function types from ‘int (*)(struct libData *, Ihandle *, int,  int,  int,  int)’ {aka ‘int (*)(struct libData *, struct Ihandle_ *, int,  int,  int,  int)’} to ‘int (*)(struct libData *, Ihandle *)’ {aka ‘int (*)(struct libData *, struct Ihandle_ *)’} [-Wcast-function-type]
+ 3427 |   amy_IupSetCallback( data, tree, "DRAGDROP_CB", (Icallback)iLayoutTreeDragDrop_CB );
+      |                                                  ^
+src/iup_layoutdlg.c:3444:341: warning: cast between incompatible function types from ‘int (*)(struct libData *, Ihandle *, int)’ {aka ‘int (*)(struct libData *, struct Ihandle_ *, int)’} to ‘int (*)(struct libData *, Ihandle *)’ {aka ‘int (*)(struct libData *, struct Ihandle_ *)’} [-Wcast-function-type]
+ 3444 |       amy_IupSetCallbacks( data, amy_IupSetAttributes( data, amy_IupFlatToggle( data, NULL ), "CHECKSIZE=0, IMAGE=IupLayoutArrowCursor, TIP=\"Select elements on layout.\nThe other options are only part of the IUP available classes,\nother classes can be selected at the dialog from the context menu\", NAME=TOGGLE_SELECT" ), "FLAT_ACTION", (Icallback)iLayoutElemOptionToggle_cb, NULL),
+      |                                                                                                                                                                                                                                                                                                                                                     ^
+src/iup_layoutdlg.c:3447:246: warning: cast between incompatible function types from ‘int (*)(struct libData *, Ihandle *, int)’ {aka ‘int (*)(struct libData *, struct Ihandle_ *, int)’} to ‘int (*)(struct libData *, Ihandle *)’ {aka ‘int (*)(struct libData *, struct Ihandle_ *)’} [-Wcast-function-type]
+ 3447 |         amy_IupSetCallbacks( data, amy_IupSetAttributes( data, amy_IupFlatToggle( data, NULL ), "CHECKSIZE=0, IMAGE=IupLayoutHbox, TIP=\"Insert a Hbox at cursor when click at layout or double click at tree \", _IUP_CLASS=hbox" ), "FLAT_ACTION", (Icallback)iLayoutElemOptionToggle_cb, NULL),
+      |                                                                                                                                                                                                                                                      ^
+src/iup_layoutdlg.c:3448:246: warning: cast between incompatible function types from ‘int (*)(struct libData *, Ihandle *, int)’ {aka ‘int (*)(struct libData *, struct Ihandle_ *, int)’} to ‘int (*)(struct libData *, Ihandle *)’ {aka ‘int (*)(struct libData *, struct Ihandle_ *)’} [-Wcast-function-type]
+ 3448 |         amy_IupSetCallbacks( data, amy_IupSetAttributes( data, amy_IupFlatToggle( data, NULL ), "CHECKSIZE=0, IMAGE=IupLayoutVbox, TIP=\"Insert a Vbox at cursor when click at layout or double click at tree \", _IUP_CLASS=vbox" ), "FLAT_ACTION", (Icallback)iLayoutElemOptionToggle_cb, NULL),
+      |                                                                                                                                                                                                                                                      ^
+src/iup_layoutdlg.c:3451:246: warning: cast between incompatible function types from ‘int (*)(struct libData *, Ihandle *, int)’ {aka ‘int (*)(struct libData *, struct Ihandle_ *, int)’} to ‘int (*)(struct libData *, Ihandle *)’ {aka ‘int (*)(struct libData *, struct Ihandle_ *)’} [-Wcast-function-type]
+ 3451 |         amy_IupSetCallbacks( data, amy_IupSetAttributes( data, amy_IupFlatToggle( data, NULL ), "CHECKSIZE=0, IMAGE=IupLayoutZbox, TIP=\"Insert a Zbox at cursor when click at layout or double click at tree \", _IUP_CLASS=zbox" ), "FLAT_ACTION", (Icallback)iLayoutElemOptionToggle_cb, NULL),
+      |                                                                                                                                                                                                                                                      ^
+src/iup_layoutdlg.c:3452:246: warning: cast between incompatible function types from ‘int (*)(struct libData *, Ihandle *, int)’ {aka ‘int (*)(struct libData *, struct Ihandle_ *, int)’} to ‘int (*)(struct libData *, Ihandle *)’ {aka ‘int (*)(struct libData *, struct Ihandle_ *)’} [-Wcast-function-type]
+ 3452 |         amy_IupSetCallbacks( data, amy_IupSetAttributes( data, amy_IupFlatToggle( data, NULL ), "CHECKSIZE=0, IMAGE=IupLayoutCbox, TIP=\"Insert a Cbox at cursor when click at layout or double click at tree \", _IUP_CLASS=cbox" ), "FLAT_ACTION", (Icallback)iLayoutElemOptionToggle_cb, NULL),
+      |                                                                                                                                                                                                                                                      ^
+src/iup_layoutdlg.c:3455:315: warning: cast between incompatible function types from ‘int (*)(struct libData *, Ihandle *, int)’ {aka ‘int (*)(struct libData *, struct Ihandle_ *, int)’} to ‘int (*)(struct libData *, Ihandle *)’ {aka ‘int (*)(struct libData *, struct Ihandle_ *)’} [-Wcast-function-type]
+ 3455 |         amy_IupSetCallbacks( data, amy_IupSetAttributes( data, amy_IupFlatToggle( data, NULL ), "CHECKSIZE=0, IMAGE=IupLayoutGridBox, TIP=\"Insert a GridBox at cursor when click at layout or double click at tree .\nPress Shift to select a MultiBox\", _IUP_CLASS=gridbox, _IUP_CLASS_ALT=multibox" ), "FLAT_ACTION", (Icallback)iLayoutElemOptionToggle_cb, NULL),
+      |                                                                                                                                                                                                                                                                                                                           ^
+src/iup_layoutdlg.c:3456:331: warning: cast between incompatible function types from ‘int (*)(struct libData *, Ihandle *, int)’ {aka ‘int (*)(struct libData *, struct Ihandle_ *, int)’} to ‘int (*)(struct libData *, Ihandle *)’ {aka ‘int (*)(struct libData *, struct Ihandle_ *)’} [-Wcast-function-type]
+ 3456 |         amy_IupSetCallbacks( data, amy_IupSetAttributes( data, amy_IupFlatToggle( data, NULL ), "CHECKSIZE=0, IMAGE=IupLayoutScrollBox, TIP=\"Insert a ScrollBox at cursor when click at layout or double click at tree .\nPress Shift to select a FlatScrollBox\", _IUP_CLASS=scrollbox, _IUP_CLASS_ALT=flatscrollbox" ), "FLAT_ACTION", (Icallback)iLayoutElemOptionToggle_cb, NULL),
+      |                                                                                                                                                                                                                                                                                                                                           ^
+src/iup_layoutdlg.c:3459:249: warning: cast between incompatible function types from ‘int (*)(struct libData *, Ihandle *, int)’ {aka ‘int (*)(struct libData *, struct Ihandle_ *, int)’} to ‘int (*)(struct libData *, Ihandle *)’ {aka ‘int (*)(struct libData *, struct Ihandle_ *)’} [-Wcast-function-type]
+ 3459 |         amy_IupSetCallbacks( data, amy_IupSetAttributes( data, amy_IupFlatToggle( data, NULL ), "CHECKSIZE=0, IMAGE=IupLayoutSplit, TIP=\"Insert a Split at cursor when click at layout or double click at tree \", _IUP_CLASS=split" ), "FLAT_ACTION", (Icallback)iLayoutElemOptionToggle_cb, NULL),
+      |                                                                                                                                                                                                                                                         ^
+src/iup_layoutdlg.c:3460:258: warning: cast between incompatible function types from ‘int (*)(struct libData *, Ihandle *, int)’ {aka ‘int (*)(struct libData *, struct Ihandle_ *, int)’} to ‘int (*)(struct libData *, Ihandle *)’ {aka ‘int (*)(struct libData *, struct Ihandle_ *)’} [-Wcast-function-type]
+ 3460 |         amy_IupSetCallbacks( data, amy_IupSetAttributes( data, amy_IupFlatToggle( data, NULL ), "CHECKSIZE=0, IMAGE=IupLayoutExpander, TIP=\"Insert a Expander at cursor when click at layout or double click at tree \", _IUP_CLASS=expander" ), "FLAT_ACTION", (Icallback)iLayoutElemOptionToggle_cb, NULL),
+      |                                                                                                                                                                                                                                                                  ^
+src/iup_layoutdlg.c:3463:300: warning: cast between incompatible function types from ‘int (*)(struct libData *, Ihandle *, int)’ {aka ‘int (*)(struct libData *, struct Ihandle_ *, int)’} to ‘int (*)(struct libData *, Ihandle *)’ {aka ‘int (*)(struct libData *, struct Ihandle_ *)’} [-Wcast-function-type]
+ 3463 |         amy_IupSetCallbacks( data, amy_IupSetAttributes( data, amy_IupFlatToggle( data, NULL ), "CHECKSIZE=0, IMAGE=IupLayoutFill, TIP=\"Insert a Fill at cursor when click at layout or double click at tree .\nPress Shift to select a Space\", _IUP_CLASS=fill, _IUP_CLASS_ALT=space" ), "FLAT_ACTION", (Icallback)iLayoutElemOptionToggle_cb, NULL),
+      |                                                                                                                                                                                                                                                                                                            ^
+src/iup_layoutdlg.c:3464:273: warning: cast between incompatible function types from ‘int (*)(struct libData *, Ihandle *, int)’ {aka ‘int (*)(struct libData *, struct Ihandle_ *, int)’} to ‘int (*)(struct libData *, Ihandle *)’ {aka ‘int (*)(struct libData *, struct Ihandle_ *)’} [-Wcast-function-type]
+ 3464 |         amy_IupSetCallbacks( data, amy_IupSetAttributes( data, amy_IupFlatToggle( data, NULL ), "CHECKSIZE=0, IMAGE=IupLayoutFlatSeparator, TIP=\"Insert a FlatSeparator at cursor when click at layout or double click at tree \", _IUP_CLASS=flatseparator" ), "FLAT_ACTION", (Icallback)iLayoutElemOptionToggle_cb, NULL),
+      |                                                                                                                                                                                                                                                                                 ^
+src/iup_layoutdlg.c:3467:311: warning: cast between incompatible function types from ‘int (*)(struct libData *, Ihandle *, int)’ {aka ‘int (*)(struct libData *, struct Ihandle_ *, int)’} to ‘int (*)(struct libData *, Ihandle *)’ {aka ‘int (*)(struct libData *, struct Ihandle_ *)’} [-Wcast-function-type]
+ 3467 |         amy_IupSetCallbacks( data, amy_IupSetAttributes( data, amy_IupFlatToggle( data, NULL ), "CHECKSIZE=0, IMAGE=IupLayoutFrame, TIP=\"Insert a Frame at cursor when click at layout or double click at tree .\nPress Shift to select a FlatFrame\", _IUP_CLASS=frame, _IUP_CLASS_ALT=flatframe" ), "FLAT_ACTION", (Icallback)iLayoutElemOptionToggle_cb, NULL),
+      |                                                                                                                                                                                                                                                                                                                       ^
+src/iup_layoutdlg.c:3468:306: warning: cast between incompatible function types from ‘int (*)(struct libData *, Ihandle *, int)’ {aka ‘int (*)(struct libData *, struct Ihandle_ *, int)’} to ‘int (*)(struct libData *, Ihandle *)’ {aka ‘int (*)(struct libData *, struct Ihandle_ *)’} [-Wcast-function-type]
+ 3468 |         amy_IupSetCallbacks( data, amy_IupSetAttributes( data, amy_IupFlatToggle( data, NULL ), "CHECKSIZE=0, IMAGE=IupLayoutTabs, TIP=\"Insert a Tabs at cursor when click at layout or double click at tree .\nPress Shift to select a FlatTabs\", _IUP_CLASS=tabs, _IUP_CLASS_ALT=flattabs" ), "FLAT_ACTION", (Icallback)iLayoutElemOptionToggle_cb, NULL),
+      |                                                                                                                                                                                                                                                                                                                  ^
+src/iup_layoutdlg.c:3472:311: warning: cast between incompatible function types from ‘int (*)(struct libData *, Ihandle *, int)’ {aka ‘int (*)(struct libData *, struct Ihandle_ *, int)’} to ‘int (*)(struct libData *, Ihandle *)’ {aka ‘int (*)(struct libData *, struct Ihandle_ *)’} [-Wcast-function-type]
+ 3472 |         amy_IupSetCallbacks( data, amy_IupSetAttributes( data, amy_IupFlatToggle( data, NULL ), "CHECKSIZE=0, IMAGE=IupLayoutLabel, TIP=\"Insert a Label at cursor when click at layout or double click at tree .\nPress Shift to select a FlatLabel\", _IUP_CLASS=label, _IUP_CLASS_ALT=flatlabel" ), "FLAT_ACTION", (Icallback)iLayoutElemOptionToggle_cb, NULL),
+      |                                                                                                                                                                                                                                                                                                                       ^
+src/iup_layoutdlg.c:3473:316: warning: cast between incompatible function types from ‘int (*)(struct libData *, Ihandle *, int)’ {aka ‘int (*)(struct libData *, struct Ihandle_ *, int)’} to ‘int (*)(struct libData *, Ihandle *)’ {aka ‘int (*)(struct libData *, struct Ihandle_ *)’} [-Wcast-function-type]
+ 3473 |         amy_IupSetCallbacks( data, amy_IupSetAttributes( data, amy_IupFlatToggle( data, NULL ), "CHECKSIZE=0, IMAGE=IupLayoutButton, TIP=\"Insert a Button at cursor when click at layout or double click at tree .\nPress Shift to select a FlatButton\", _IUP_CLASS=button, _IUP_CLASS_ALT=flatbutton" ), "FLAT_ACTION", (Icallback)iLayoutElemOptionToggle_cb, NULL),
+      |                                                                                                                                                                                                                                                                                                                            ^
+src/iup_layoutdlg.c:3476:316: warning: cast between incompatible function types from ‘int (*)(struct libData *, Ihandle *, int)’ {aka ‘int (*)(struct libData *, struct Ihandle_ *, int)’} to ‘int (*)(struct libData *, Ihandle *)’ {aka ‘int (*)(struct libData *, struct Ihandle_ *)’} [-Wcast-function-type]
+ 3476 |         amy_IupSetCallbacks( data, amy_IupSetAttributes( data, amy_IupFlatToggle( data, NULL ), "CHECKSIZE=0, IMAGE=IupLayoutToggle, TIP=\"Insert a Toggle at cursor when click at layout or double click at tree .\nPress Shift to select a FlatToggle\", _IUP_CLASS=toggle, _IUP_CLASS_ALT=flattoggle" ), "FLAT_ACTION", (Icallback)iLayoutElemOptionToggle_cb, NULL),
+      |                                                                                                                                                                                                                                                                                                                            ^
+src/iup_layoutdlg.c:3477:249: warning: cast between incompatible function types from ‘int (*)(struct libData *, Ihandle *, int)’ {aka ‘int (*)(struct libData *, struct Ihandle_ *, int)’} to ‘int (*)(struct libData *, Ihandle *)’ {aka ‘int (*)(struct libData *, struct Ihandle_ *)’} [-Wcast-function-type]
+ 3477 |         amy_IupSetCallbacks( data, amy_IupSetAttributes( data, amy_IupFlatToggle( data, NULL ), "CHECKSIZE=0, IMAGE=IupLayoutRadio, TIP=\"Insert a Radio at cursor when click at layout or double click at tree \", _IUP_CLASS=radio" ), "FLAT_ACTION", (Icallback)iLayoutElemOptionToggle_cb, NULL),
+      |                                                                                                                                                                                                                                                         ^
+src/iup_layoutdlg.c:3480:306: warning: cast between incompatible function types from ‘int (*)(struct libData *, Ihandle *, int)’ {aka ‘int (*)(struct libData *, struct Ihandle_ *, int)’} to ‘int (*)(struct libData *, Ihandle *)’ {aka ‘int (*)(struct libData *, struct Ihandle_ *)’} [-Wcast-function-type]
+ 3480 |         amy_IupSetCallbacks( data, amy_IupSetAttributes( data, amy_IupFlatToggle( data, NULL ), "CHECKSIZE=0, IMAGE=IupLayoutList, TIP=\"Insert a List at cursor when click at layout or double click at tree .\nPress Shift to select a FlatList\", _IUP_CLASS=list, _IUP_CLASS_ALT=flatlist" ), "FLAT_ACTION", (Icallback)iLayoutElemOptionToggle_cb, NULL),
+      |                                                                                                                                                                                                                                                                                                                  ^
+src/iup_layoutdlg.c:3481:306: warning: cast between incompatible function types from ‘int (*)(struct libData *, Ihandle *, int)’ {aka ‘int (*)(struct libData *, struct Ihandle_ *, int)’} to ‘int (*)(struct libData *, Ihandle *)’ {aka ‘int (*)(struct libData *, struct Ihandle_ *)’} [-Wcast-function-type]
+ 3481 |         amy_IupSetCallbacks( data, amy_IupSetAttributes( data, amy_IupFlatToggle( data, NULL ), "CHECKSIZE=0, IMAGE=IupLayoutTree, TIP=\"Insert a Tree at cursor when click at layout or double click at tree .\nPress Shift to select a FlatTree\", _IUP_CLASS=tree, _IUP_CLASS_ALT=flattree" ), "FLAT_ACTION", (Icallback)iLayoutElemOptionToggle_cb, NULL),
+      |                                                                                                                                                                                                                                                                                                                  ^
+src/iup_layoutdlg.c:3484:301: warning: cast between incompatible function types from ‘int (*)(struct libData *, Ihandle *, int)’ {aka ‘int (*)(struct libData *, struct Ihandle_ *, int)’} to ‘int (*)(struct libData *, Ihandle *)’ {aka ‘int (*)(struct libData *, struct Ihandle_ *)’} [-Wcast-function-type]
+ 3484 |         amy_IupSetCallbacks( data, amy_IupSetAttributes( data, amy_IupFlatToggle( data, NULL ), "CHECKSIZE=0, IMAGE=IupLayoutVal, TIP=\"Insert a Val at cursor when click at layout or double click at tree .\nPress Shift to select a FlatVal\", _IUP_CLASS=val, _IUP_CLASS_ALT=flatval" ), "FLAT_ACTION", (Icallback)iLayoutElemOptionToggle_cb, NULL),
+      |                                                                                                                                                                                                                                                                                                             ^
+src/iup_layoutdlg.c:3485:321: warning: cast between incompatible function types from ‘int (*)(struct libData *, Ihandle *, int)’ {aka ‘int (*)(struct libData *, struct Ihandle_ *, int)’} to ‘int (*)(struct libData *, Ihandle *)’ {aka ‘int (*)(struct libData *, struct Ihandle_ *)’} [-Wcast-function-type]
+ 3485 |         amy_IupSetCallbacks( data, amy_IupSetAttributes( data, amy_IupFlatToggle( data, NULL ), "CHECKSIZE=0, IMAGE=IupLayoutProgressBar, TIP=\"Insert a ProgressBar at cursor when click at layout or double click at tree .\nPress Shift to select a Gauge\", _IUP_CLASS=progressbar, _IUP_CLASS_ALT=gauge" ), "FLAT_ACTION", (Icallback)iLayoutElemOptionToggle_cb, NULL),
+      |                                                                                                                                                                                                                                                                                                                                 ^
+src/iup_layoutdlg.c:3488:308: warning: cast between incompatible function types from ‘int (*)(struct libData *, Ihandle *, int)’ {aka ‘int (*)(struct libData *, struct Ihandle_ *, int)’} to ‘int (*)(struct libData *, Ihandle *)’ {aka ‘int (*)(struct libData *, struct Ihandle_ *)’} [-Wcast-function-type]
+ 3488 |         amy_IupSetCallbacks( data, amy_IupSetAttributes( data, amy_IupFlatToggle( data, NULL ), "CHECKSIZE=0, IMAGE=IupLayoutText, TIP=\"Insert a Text at cursor when click at layout or double click at tree .\nPress Shift to select a Multiline\", _IUP_CLASS=text, _IUP_CLASS_ALT=multiline" ), "FLAT_ACTION", (Icallback)iLayoutElemOptionToggle_cb, NULL),
+      |                                                                                                                                                                                                                                                                                                                    ^
+src/iup_layoutdlg.c:3489:312: warning: cast between incompatible function types from ‘int (*)(struct libData *, Ihandle *, int)’ {aka ‘int (*)(struct libData *, struct Ihandle_ *, int)’} to ‘int (*)(struct libData *, Ihandle *)’ {aka ‘int (*)(struct libData *, struct Ihandle_ *)’} [-Wcast-function-type]
+ 3489 |         amy_IupSetCallbacks( data, amy_IupSetAttributes( data, amy_IupFlatToggle( data, NULL ), "CHECKSIZE=0, IMAGE=IupLayoutCanvas, TIP=\"Insert a Canvas at cursor when click at layout or double click at tree .\nPress Shift to select a GLCanvas\", _IUP_CLASS=canvas, _IUP_CLASS_ALT=glcanvas" ), "FLAT_ACTION", (Icallback)iLayoutElemOptionToggle_cb, NULL),
+      |                                                                                                                                                                                                                                                                                                                        ^
+src/iup_layoutdlg.c:3493:312: warning: cast between incompatible function types from ‘int (*)(struct libData *, Ihandle *, int)’ {aka ‘int (*)(struct libData *, struct Ihandle_ *, int)’} to ‘int (*)(struct libData *, Ihandle *)’ {aka ‘int (*)(struct libData *, struct Ihandle_ *)’} [-Wcast-function-type]
+ 3493 |         amy_IupSetCallbacks( data, amy_IupSetAttributes( data, amy_IupFlatToggle( data, NULL ), "CHECKSIZE=0, IMAGE=IupLayoutMatrix, TIP=\"Insert a Matrix at cursor when click at layout or double click at tree .\nPress Shift to select a MatrixEx\", _IUP_CLASS=matrix, _IUP_CLASS_ALT=matrixex" ), "FLAT_ACTION", (Icallback)iLayoutElemOptionToggle_cb, NULL),
+      |                                                                                                                                                                                                                                                                                                                        ^
+src/iup_layoutdlg.c:3494:246: warning: cast between incompatible function types from ‘int (*)(struct libData *, Ihandle *, int)’ {aka ‘int (*)(struct libData *, struct Ihandle_ *, int)’} to ‘int (*)(struct libData *, Ihandle *)’ {aka ‘int (*)(struct libData *, struct Ihandle_ *)’} [-Wcast-function-type]
+ 3494 |         amy_IupSetCallbacks( data, amy_IupSetAttributes( data, amy_IupFlatToggle( data, NULL ), "CHECKSIZE=0, IMAGE=IupLayoutPlot, TIP=\"Insert a Plot at cursor when click at layout or double click at tree \", _IUP_CLASS=plot" ), "FLAT_ACTION", (Icallback)iLayoutElemOptionToggle_cb, NULL),
+      |                                                                                                                                                                                                                                                      ^
+src/iup_layoutdlg.c:3561:43: warning: cast between incompatible function types from ‘int (*)(struct libData *, Ihandle *, int)’ {aka ‘int (*)(struct libData *, struct Ihandle_ *, int)’} to ‘int (*)(struct libData *, Ihandle *)’ {aka ‘int (*)(struct libData *, struct Ihandle_ *)’} [-Wcast-function-type]
+ 3561 |   amy_IupSetCallback( data, dlg, "K_ANY", (Icallback)iLayoutDialogKAny_CB );
+      |                                           ^
+src/iup_layoutdlg.c: In function ‘iLayoutDialogKAny_CB’:
+src/iup_layoutdlg.c:3326:3: warning: this statement may fall through [-Wimplicit-fallthrough=]
+ 3326 |   {
+      |   ^
+src/iup_layoutdlg.c:3337:3: note: here
+ 3337 |   case K_F5:
+      |   ^~~~
+src/iup_link.c: In function ‘iLinkButton_CB’:
+src/iup_link.c:44:15: warning: cast between incompatible function types from ‘Icallback’ {aka ‘int (*)(struct libData *, struct Ihandle_ *)’} to ‘int (*)(struct libData *, Ihandle *, char *)’ {aka ‘int (*)(struct libData *, struct Ihandle_ *, char *)’} [-Wcast-function-type]
+   44 |     IFns cb = (IFns) amy_IupGetCallback( data, ih, "ACTION" );
+      |               ^
+src/iup_link.c: In function ‘iLinkCreateMethod’:
+src/iup_link.c:90:46: warning: cast between incompatible function types from ‘int (*)(struct libData *, Ihandle *, int,  int,  int,  int,  char *)’ {aka ‘int (*)(struct libData *, struct Ihandle_ *, int,  int,  int,  int,  char *)’} to ‘int (*)(struct libData *, Ihandle *)’ {aka ‘int (*)(struct libData *, struct Ihandle_ *)’} [-Wcast-function-type]
+   90 |   amy_IupSetCallback( data, ih, "BUTTON_CB", (Icallback)iLinkButton_CB);
+      |                                              ^
+src/iup_list.c: In function ‘iupListCallDragDropCb’:
+src/iup_list.c:656:24: warning: cast between incompatible function types from ‘Icallback’ {aka ‘int (*)(struct libData *, struct Ihandle_ *)’} to ‘int (*)(struct libData *, Ihandle *, int,  int,  int,  int)’ {aka ‘int (*)(struct libData *, struct Ihandle_ *, int,  int,  int,  int)’} [-Wcast-function-type]
+  656 |   IFniiii cbDragDrop = (IFniiii) amy_IupGetCallback( data, ih, "DRAGDROP_CB" );
+      |                        ^
+src/iup_list.c: In function ‘iListSetDragDropListAttrib’:
+src/iup_list.c:838:54: warning: cast between incompatible function types from ‘int (*)(struct libData *, Ihandle *, int,  int)’ {aka ‘int (*)(struct libData *, struct Ihandle_ *, int,  int)’} to ‘int (*)(struct libData *, Ihandle *)’ {aka ‘int (*)(struct libData *, struct Ihandle_ *)’} [-Wcast-function-type]
+  838 |     amy_IupSetCallback( data, ih, "DRAGBEGIN_CB",    (Icallback)iListDragBegin_CB );
+      |                                                      ^
+src/iup_list.c:839:54: warning: cast between incompatible function types from ‘int (*)(struct libData *, Ihandle *, char *)’ {aka ‘int (*)(struct libData *, struct Ihandle_ *, char *)’} to ‘int (*)(struct libData *, Ihandle *)’ {aka ‘int (*)(struct libData *, struct Ihandle_ *)’} [-Wcast-function-type]
+  839 |     amy_IupSetCallback( data, ih, "DRAGDATASIZE_CB", (Icallback)iListDragDataSize_CB );
+      |                                                      ^
+src/iup_list.c:840:54: warning: cast between incompatible function types from ‘int (*)(struct libData *, Ihandle *, char *, void *, int)’ {aka ‘int (*)(struct libData *, struct Ihandle_ *, char *, void *, int)’} to ‘int (*)(struct libData *, Ihandle *)’ {aka ‘int (*)(struct libData *, struct Ihandle_ *)’} [-Wcast-function-type]
+  840 |     amy_IupSetCallback( data, ih, "DRAGDATA_CB",     (Icallback)iListDragData_CB );
+      |                                                      ^
+src/iup_list.c:841:54: warning: cast between incompatible function types from ‘int (*)(struct libData *, Ihandle *, int)’ {aka ‘int (*)(struct libData *, struct Ihandle_ *, int)’} to ‘int (*)(struct libData *, Ihandle *)’ {aka ‘int (*)(struct libData *, struct Ihandle_ *)’} [-Wcast-function-type]
+  841 |     amy_IupSetCallback( data, ih, "DRAGEND_CB",      (Icallback)iListDragEnd_CB );
+      |                                                      ^
+src/iup_list.c:842:54: warning: cast between incompatible function types from ‘int (*)(struct libData *, Ihandle *, char *, void *, int,  int,  int)’ {aka ‘int (*)(struct libData *, struct Ihandle_ *, char *, void *, int,  int,  int)’} to ‘int (*)(struct libData *, Ihandle *)’ {aka ‘int (*)(struct libData *, struct Ihandle_ *)’} [-Wcast-function-type]
+  842 |     amy_IupSetCallback( data, ih, "DROPDATA_CB",     (Icallback)iListDropData_CB );
+      |                                                      ^
+src/iup_predialogs.c: In function ‘amy_IupListDialog’:
+src/iup_predialogs.c:113:46: warning: cast between incompatible function types from ‘int (*)(struct libData *, Ihandle *, char *, int,  int)’ {aka ‘int (*)(struct libData *, struct Ihandle_ *, char *, int,  int)’} to ‘int (*)(struct libData *, Ihandle *)’ {aka ‘int (*)(struct libData *, struct Ihandle_ *)’} [-Wcast-function-type]
+  113 |     amy_IupSetCallback( data, lst, "ACTION", (Icallback)CB_list );
+      |                                              ^
+src/iup_predialogs.c:114:51: warning: cast between incompatible function types from ‘int (*)(struct libData *, Ihandle *, int,  char *)’ {aka ‘int (*)(struct libData *, struct Ihandle_ *, int,  char *)’} to ‘int (*)(struct libData *, Ihandle *)’ {aka ‘int (*)(struct libData *, struct Ihandle_ *)’} [-Wcast-function-type]
+  114 |     amy_IupSetCallback( data, lst, "DBLCLICK_CB", (Icallback)CB_dblclick );
+      |                                                   ^
+src/iup_sbox.c: In function ‘iSboxCreateMethod’:
+src/iup_sbox.c:450:47: warning: cast between incompatible function types from ‘int (*)(struct libData *, Ihandle *, int,  int,  int,  int,  char *)’ {aka ‘int (*)(struct libData *, struct Ihandle_ *, int,  int,  int,  int,  char *)’} to ‘int (*)(struct libData *, Ihandle *)’ {aka ‘int (*)(struct libData *, struct Ihandle_ *)’} [-Wcast-function-type]
+  450 |   amy_IupSetCallback( data, bar, "BUTTON_CB", (Icallback) iSboxButton_CB);
+      |                                               ^
+src/iup_sbox.c:451:47: warning: cast between incompatible function types from ‘int (*)(struct libData *, Ihandle *, int)’ {aka ‘int (*)(struct libData *, struct Ihandle_ *, int)’} to ‘int (*)(struct libData *, Ihandle *)’ {aka ‘int (*)(struct libData *, struct Ihandle_ *)’} [-Wcast-function-type]
+  451 |   amy_IupSetCallback( data, bar, "FOCUS_CB",  (Icallback) iSboxFocus_CB);
+      |                                               ^
+src/iup_sbox.c:452:47: warning: cast between incompatible function types from ‘int (*)(struct libData *, Ihandle *, int,  int,  char *)’ {aka ‘int (*)(struct libData *, struct Ihandle_ *, int,  int,  char *)’} to ‘int (*)(struct libData *, Ihandle *)’ {aka ‘int (*)(struct libData *, struct Ihandle_ *)’} [-Wcast-function-type]
+  452 |   amy_IupSetCallback( data, bar, "MOTION_CB", (Icallback) iSboxMotion_CB);
+      |                                               ^
+src/iup_split.c: In function ‘iSplitCreateMethod’:
+src/iup_split.c:818:47: warning: cast between incompatible function types from ‘int (*)(struct libData *, Ihandle *, int,  int,  int,  int,  char *)’ {aka ‘int (*)(struct libData *, struct Ihandle_ *, int,  int,  int,  int,  char *)’} to ‘int (*)(struct libData *, Ihandle *)’ {aka ‘int (*)(struct libData *, struct Ihandle_ *)’} [-Wcast-function-type]
+  818 |   amy_IupSetCallback( data, bar, "BUTTON_CB", (Icallback) iSplitButton_CB );
+      |                                               ^
+src/iup_split.c:819:47: warning: cast between incompatible function types from ‘int (*)(struct libData *, Ihandle *, int)’ {aka ‘int (*)(struct libData *, struct Ihandle_ *, int)’} to ‘int (*)(struct libData *, Ihandle *)’ {aka ‘int (*)(struct libData *, struct Ihandle_ *)’} [-Wcast-function-type]
+  819 |   amy_IupSetCallback( data, bar, "FOCUS_CB",  (Icallback) iSplitFocus_CB );
+      |                                               ^
+src/iup_split.c:820:47: warning: cast between incompatible function types from ‘int (*)(struct libData *, Ihandle *, int,  int,  char *)’ {aka ‘int (*)(struct libData *, struct Ihandle_ *, int,  int,  char *)’} to ‘int (*)(struct libData *, Ihandle *)’ {aka ‘int (*)(struct libData *, struct Ihandle_ *)’} [-Wcast-function-type]
+  820 |   amy_IupSetCallback( data, bar, "MOTION_CB", (Icallback) iSplitMotion_CB );
+      |                                               ^
+src/iup_str.c: In function ‘iStrUTF8toLatin1’:
+src/iup_str.c:1334:9: warning: comparison is always true due to limited range of data type [-Wtype-limits]
+ 1334 |   if (c >= 0)
+      |         ^~
+src/iup_str.c: In function ‘iStrIncUTF8’:
+src/iup_str.c:1679:12: warning: comparison is always true due to limited range of data type [-Wtype-limits]
+ 1679 |   if (*str >= 0)      /* ASCII */
+      |            ^~
+src/iup_text.c: In function ‘iupEditCallActionCb’:
+src/iup_text.c:87:20: warning: cast between incompatible function types from ‘Icallback’ {aka ‘int (*)(struct libData *, struct Ihandle_ *)’} to ‘int (*)(struct libData *, Ihandle *, char *)’ {aka ‘int (*)(struct libData *, struct Ihandle_ *, char *)’} [-Wcast-function-type]
+   87 |     IFns fail_cb = (IFns) amy_IupGetCallback( data, ih, "MASKFAIL_CB" );
+      |                    ^
+src/iup_text.c: In function ‘amy_IupTextConvertLinColToPos’:
+src/iup_text.c:605:34: warning: cast between incompatible function types from ‘Icallback’ {aka ‘int (*)(struct libData *, struct Ihandle_ *)’} to ‘void (*)(struct libData *, Ihandle *, int,  int,  int *)’ {aka ‘void (*)(struct libData *, struct Ihandle_ *, int,  int,  int *)’} [-Wcast-function-type]
+  605 |     Iconvertlincol2pos convert = (Iconvertlincol2pos) amy_IupGetCallback( data, ih, "_IUP_LINCOL2POS_CB" );
+      |                                  ^
+src/iup_text.c: In function ‘amy_IupTextConvertPosToLinCol’:
+src/iup_text.c:632:34: warning: cast between incompatible function types from ‘Icallback’ {aka ‘int (*)(struct libData *, struct Ihandle_ *)’} to ‘void (*)(struct libData *, Ihandle *, int,  int *, int *)’ {aka ‘void (*)(struct libData *, struct Ihandle_ *, int,  int *, int *)’} [-Wcast-function-type]
+  632 |     Iconvertpos2lincol convert = (Iconvertpos2lincol) amy_IupGetCallback( data, ih, "_IUP_POS2LINCOL_CB" );
+      |                                  ^
+src/iup_tree.c: In function ‘iTreeSetDragDropTreeAttrib’:
+src/iup_tree.c:812:54: warning: cast between incompatible function types from ‘int (*)(struct libData *, Ihandle *, int,  int)’ {aka ‘int (*)(struct libData *, struct Ihandle_ *, int,  int)’} to ‘int (*)(struct libData *, Ihandle *)’ {aka ‘int (*)(struct libData *, struct Ihandle_ *)’} [-Wcast-function-type]
+  812 |     amy_IupSetCallback( data, ih, "DRAGBEGIN_CB",    (Icallback)iTreeDragBegin_CB );
+      |                                                      ^
+src/iup_tree.c:813:54: warning: cast between incompatible function types from ‘int (*)(struct libData *, Ihandle *, char *)’ {aka ‘int (*)(struct libData *, struct Ihandle_ *, char *)’} to ‘int (*)(struct libData *, Ihandle *)’ {aka ‘int (*)(struct libData *, struct Ihandle_ *)’} [-Wcast-function-type]
+  813 |     amy_IupSetCallback( data, ih, "DRAGDATASIZE_CB", (Icallback)iTreeDragDataSize_CB );
+      |                                                      ^
+src/iup_tree.c:814:54: warning: cast between incompatible function types from ‘int (*)(struct libData *, Ihandle *, char *, void *, int)’ {aka ‘int (*)(struct libData *, struct Ihandle_ *, char *, void *, int)’} to ‘int (*)(struct libData *, Ihandle *)’ {aka ‘int (*)(struct libData *, struct Ihandle_ *)’} [-Wcast-function-type]
+  814 |     amy_IupSetCallback( data, ih, "DRAGDATA_CB",     (Icallback)iTreeDragData_CB );
+      |                                                      ^
+src/iup_tree.c:815:54: warning: cast between incompatible function types from ‘int (*)(struct libData *, Ihandle *, int)’ {aka ‘int (*)(struct libData *, struct Ihandle_ *, int)’} to ‘int (*)(struct libData *, Ihandle *)’ {aka ‘int (*)(struct libData *, struct Ihandle_ *)’} [-Wcast-function-type]
+  815 |     amy_IupSetCallback( data, ih, "DRAGEND_CB",      (Icallback)iTreeDragEnd_CB );
+      |                                                      ^
+src/iup_tree.c:816:54: warning: cast between incompatible function types from ‘int (*)(struct libData *, Ihandle *, char *, void *, int,  int,  int)’ {aka ‘int (*)(struct libData *, struct Ihandle_ *, char *, void *, int,  int,  int)’} to ‘int (*)(struct libData *, Ihandle *)’ {aka ‘int (*)(struct libData *, struct Ihandle_ *)’} [-Wcast-function-type]
+  816 |     amy_IupSetCallback( data, ih, "DROPDATA_CB",     (Icallback)iTreeDropData_CB );
+      |                                                      ^
+src/iup_tree.c: In function ‘iTreeCreateMethod’:
+src/iup_tree.c:932:62: warning: cast between incompatible function types from ‘int (*)(struct libData *, Ihandle *, void *)’ {aka ‘int (*)(struct libData *, struct Ihandle_ *, void *)’} to ‘int (*)(struct libData *, Ihandle *)’ {aka ‘int (*)(struct libData *, struct Ihandle_ *)’} [-Wcast-function-type]
+  932 |   amy_IupSetCallback( data, ih, "_IUPTREE_FIND_USERDATA_CB", (Icallback)iTreeFindUserDataId );
+      |                                                              ^
+obj/src/iup_draw.o: In function `iFlatDrawGetImageName':
+src/iup_draw.c:1032: undefined reference to `stpcpy'
+obj/src/iup_draw.o: In function `iFlatDrawGetImageNameId':
+src/iup_draw.c:1074: undefined reference to `stpcpy'
+obj/src/iup_export.o: In function `iExportSavedAttribs':
+src/iup_export.c:146: undefined reference to `stpcpy'
+obj/src/iup_export.o: In function `iExportElementC':
+src/iup_export.c:572: undefined reference to `stpcpy'
+src/iup_export.c:599: undefined reference to `stpcpy'
+obj/src/iup_export.o:src/iup_export.c:498: more undefined references to `stpcpy' follow
+collect2: error: ld returned 1 exit status
+make: *** [Makefile:208: bin/AmyIUP.library] Error 1
