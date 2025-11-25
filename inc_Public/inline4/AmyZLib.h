@@ -16,4 +16,4 @@
 
 // --
 
-#endif
+#endif /* AMYLIB_INLINE4_AMYZLIB_H */

@@ -14,4 +14,4 @@
 
 // --
 
-#endif
+#endif /* AMYLIB_INLINE4_AMYSYSLOG_H */
