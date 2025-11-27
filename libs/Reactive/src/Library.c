@@ -31,14 +31,12 @@ static const PTR Manager_Vectors[] =
 	(PTR) -1,
 };
 
-
-
 static const struct TagItem Manager_Tags[] =
 {
-	{ MIT_Name,				(U32) "__library"		},
-	{ MIT_VectorTable,		(U32) Manager_Vectors	},
-	{ MIT_Version,			(U32) 1					},
-	{ TAG_END,				(U32) 0					}
+	{ MIT_Name,				(Tag) "__library"		},
+	{ MIT_VectorTable,		(Tag) Manager_Vectors	},
+	{ MIT_Version,			(Tag) 1					},
+	{ TAG_END,				(Tag) 0					}
 };
 
 // -- Main Interface
@@ -185,10 +183,11 @@ static const PTR Main_Vectors[] =
 
 const struct TagItem Main_Tags[] =
 {
-	{ MIT_Name,				(U32) "main"		},
-	{ MIT_VectorTable,		(U32) Main_Vectors	},
-	{ MIT_Version,			(U32) 1				},
-	{ TAG_END,				(U32) 0				}
+	{ MIT_Name,				(Tag) "main"		},
+	{ MIT_VectorTable,		(Tag) Main_Vectors	},
+	{ MIT_DataSize,			(Tag) sizeof( struct libData ) },
+	{ MIT_Version,			(Tag) 1				},
+	{ TAG_END,				(Tag) 0				}
 };
 
 // --

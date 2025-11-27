@@ -34,10 +34,10 @@ static const PTR Manager_Vectors[] =
 
 static const struct TagItem Manager_Tags[] =
 {
-	{ MIT_Name,				(U32) "__library"		},
-	{ MIT_VectorTable,		(U32) Manager_Vectors	},
-	{ MIT_Version,			(U32) 1					},
-	{ TAG_END,				(U32) 0					}
+	{ MIT_Name,				(Tag) "__library"		},
+	{ MIT_VectorTable,		(Tag) Manager_Vectors	},
+	{ MIT_Version,			(Tag) 1					},
+	{ TAG_END,				(Tag) 0					}
 };
 
 // -- Main Interface
@@ -57,10 +57,12 @@ static const PTR Main_Vectors[] =
 
 const struct TagItem Main_Tags[] =
 {
-	{ MIT_Name,				(U32) "main"		},
-	{ MIT_VectorTable,		(U32) Main_Vectors	},
-	{ MIT_Version,			(U32) 1				},
-	{ TAG_END,				(U32) 0				}
+	{ MIT_Name,				(Tag) "main"		},
+	{ MIT_VectorTable,		(Tag) Main_Vectors	},
+	{ MIT_DataSize,			(Tag) sizeof( struct libData ) },
+	{ MIT_Flags,			(Tag) IFLF_PRIVATE	},
+	{ MIT_Version,			(Tag) 1				},
+	{ TAG_END,				(Tag) 0				}
 };
 
 // --
@@ -116,19 +118,19 @@ S32 error;
 
 	IExec->DebugPrintF( "AmyIUP : ROMInit 1\n" );
 
-	AmyCLibBase = IExec->OpenLibrary( "amyclib.library", 1 );
+	AmyCLibBase = IExec->OpenLibrary( "AmyCLib.library", 1 );
 
 	if ( ! AmyCLibBase )
 	{
-		IExec->DebugPrintF( "AmyIUP : Error opening amyclib v1" );
+		IExec->DebugPrintF( "AmyIUP : Error opening amyclib v1\n" );
 		goto bailout;
 	}
 
-	IAmyCLib = IExec->GetInterface( AmyCLibBase, "main", 1, NULL );
+	IAmyCLib = (PTR) IExec->GetInterface( AmyCLibBase, "main", 1, NULL );
 
 	if ( ! IAmyCLib )
 	{
-		IExec->DebugPrintF( "AmyIUP : Error opening amyclib interface" );
+		IExec->DebugPrintF( "AmyIUP : Error opening amyclib interface\n" );
 		goto bailout;
 	}
 

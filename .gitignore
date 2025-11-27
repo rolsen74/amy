@@ -3,3 +3,4 @@ runrsync.sh
 *.d
 *.map
 *.library
+*.txt

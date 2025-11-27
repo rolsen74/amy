@@ -40,12 +40,16 @@
 
 IUP_API Ihandle *amy_IupFileDlg( struct libData *data )
 {
+	IExec->DebugPrintF( "amy_IupFileDlg\n" );
+
 	return amy_IupCreate( data, "filedlg" );
 }
 
 Iclass *iupFileDlgNewClass( struct libData *data )
 {
-  Iclass *ic = iupClassNew( data, iupRegisterFindClass( data, "dialog" ));
+	IExec->DebugPrintF( "iupFileDlgNewClass\n" );
+
+	Iclass *ic = iupClassNew( data, iupRegisterFindClass( data, "dialog" ));
 
   ic->name = "filedlg";
   ic->cons = "FileDlg";

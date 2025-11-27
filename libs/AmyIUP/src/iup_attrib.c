@@ -1605,24 +1605,26 @@ IUP_SDK_API int iupAttribIsIhandle( struct libData *data, Ihandle *ih, const cha
   return iupClassObjectAttribIsIhandle( data, ih, name );
 }
 
-typedef int (*Iconvertxytopos)( struct libData *data, Ihandle *ih, int x, int y );
+typedef int (*Iconvertxytopos)( struct libData *, Ihandle *, int, int );
 
 IUP_API int amy_IupConvertXYToPos( struct libData *data, Ihandle *ih, int x, int y )
 {
-  Iconvertxytopos drvConvertXYToPos;
+	Iconvertxytopos drvConvertXYToPos;
 
-  iupASSERT(iupObjectCheck( data, ih ));
-  if ( ! iupObjectCheck( data, ih ))
-    return -1;
+	iupASSERT(iupObjectCheck( data, ih ));
 
-  if ( ! ih->handle)
-    return -1;
+	if ( ! iupObjectCheck( data, ih ))
+		return -1;
 
-  drvConvertXYToPos = (Iconvertxytopos) amy_IupGetCallback( data, ih, "_IUP_XY2POS_CB" );
-  if (drvConvertXYToPos)
-    return drvConvertXYToPos( data, ih, x, y );
+	if ( ! ih->handle )
+		return -1;
 
-  return -1;
+	drvConvertXYToPos = (Iconvertxytopos) amy_IupGetCallback( data, ih, "_IUP_XY2POS_CB" );
+
+	if (drvConvertXYToPos)
+		return drvConvertXYToPos( data, ih, x, y );
+
+	return -1;
 }
 
 IUP_API int amy_IupStringCompare( struct libData *data, const char *str1, const char *str2, int casesensitive, int lexicographic)

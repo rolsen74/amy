@@ -17,6 +17,11 @@ U32 AMYFUNC _Main_Release( struct AmyInputIFace *Self )
 
 	Self->Data.RefCount--;
 
+//	if (( ! Self->Data.RefCount ) && ( Self->Data.Flags & IFLF_CLONED ))
+//	{
+//		_Main_Expunge( Self );
+//	}
+
 	return( Self->Data.RefCount );
 }
 

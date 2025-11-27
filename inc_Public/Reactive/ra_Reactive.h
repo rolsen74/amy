@@ -17,7 +17,7 @@
 
 /***[ Reactive Arguments ]**************************************************/
 
-#define RAArg(name,var)		{ (name), (PTR*)&(var) }
+#define RAArg( name,var)		{ (name), (PTR*)&(var) }
 #define RAArgEnd()			{ NULL, NULL }
 
 struct RAArguments

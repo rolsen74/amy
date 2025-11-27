@@ -129,7 +129,12 @@ static void iTableCheckDuplicated(ItableItem *item, unsigned int nextItemIndex,
 
 IUP_SDK_API Itable *iupTableCreate( struct libData *data, Itable_IndexTypes indexType )
 {
-	return iupTableCreateSized( data, indexType, 1 );  /* 101 shows to be a better start for IUP */
+Itable *tbl;
+
+	/* 101 shows to be a better start for IUP */
+	tbl = iupTableCreateSized( data, indexType, 1 );  
+
+	return( tbl );
 }
 
 IUP_SDK_API Itable *iupTableCreateSized( struct libData *data, Itable_IndexTypes indexType, unsigned int initialSizeIndex )
@@ -359,6 +364,8 @@ IUP_SDK_API void *iupTableGet( struct libData *data, Itable *it, const char *key
 	unsigned long keyIndex;
 	ItableEntry  *entry;
 	void         *value = 0;
+
+//	IExec->DebugPrintF( "iupTableGet : data %p, table %p, key '%s'\n", data, it, key );
 
 	iupASSERT(it!=NULL );
 	iupASSERT(key!=NULL );

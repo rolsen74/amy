@@ -26,8 +26,8 @@
 
 #include "RAM_New.c"
 #include "RAM_Delete.c"
-#include "RAM_Get.c"
 #include "RAM_Set.c"
+#include "RAM_Get.c"
 
 #include "RAM__Dispatcher.c"
 

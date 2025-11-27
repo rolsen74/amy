@@ -33,10 +33,10 @@ static const PTR Manager_Vectors[] =
 
 static const struct TagItem Manager_Tags[] =
 {
-	{ MIT_Name,				(U32) "__library"		},
-	{ MIT_VectorTable,		(U32) Manager_Vectors	},
-	{ MIT_Version,			(U32) 1					},
-	{ TAG_END,				(U32) 0					}
+	{ MIT_Name,				(Tag) "__library"		},
+	{ MIT_VectorTable,		(Tag) Manager_Vectors	},
+	{ MIT_Version,			(Tag) 1					},
+	{ TAG_END,				(Tag) 0					}
 };
 
 // -- Main Interface
@@ -133,12 +133,13 @@ void _generic_ctype_islower(void);
 // void _generic_stdio_fseeko(void);
 //-- void _generic_stdio_printf(void);
 // void _generic_stdio_vprintf(void);
-// void _generic_stdio_sprintf(void);
-// void _generic_stdio_snprintf(void);
-// void _generic_stdio_vsnprintf(void);
+void _generic_stdio_sprintf(void);
+void _generic_stdio_vsprintf(void);
+void _generic_stdio_snprintf(void);
+void _generic_stdio_vsnprintf(void);
 // void _generic_fcntl_open(void);
 // void _generic_unistd_close(void);
-// // --
+// --
 // void _generic_stdio_ungetc(void);
 // void _generic_stdio_fread(void);
 // void _generic_stdlib_strtof(void);
@@ -182,9 +183,122 @@ struct EnableStruct
 	struct EnableFunc *	Func;
 };
 
-static U32 _NotEnabled( void )
+static const PTR Main_Vectors[];
+
+// ----
+
+static PTR __Get_User_CLib( void )
 {
-	IExec->DebugPrintF( "Function not enabled\n" );
+struct AmyTaskInfo *ati;
+struct Task *opener_task;
+PTR clib;
+
+	clib = NULL;
+
+	while( TRUE )
+	{
+		opener_task = IExec->FindTask( NULL );
+
+		ati = (PTR) opener_task->tc_UserData;
+
+		// Check for NULL Pointer
+		if ( ! ati )
+		{
+			IExec->DebugPrintF( "tc_UserData not set\n" );
+			break;
+		}
+
+		// Make sure we have correct data
+		if ( ati->ati_ID != Amy_ATI_ID )
+		{
+			IExec->DebugPrintF( "invalid ATI ID\n" );
+			break;
+		}
+
+		// The C library should alway be there, if we have ATI
+		if ( ! ati->ati_IFace_C )
+		{
+			IExec->DebugPrintF( "no C library\n" );
+			break;
+		}
+
+		clib = (PTR) ati->ati_IFace_C;
+		break;
+	}
+
+	return( clib );
+}
+
+// ----
+// no Return, 1 arg
+// name1 = stub name
+// name2 = interface name
+// arg1  = type name
+#define NORET_ARG_1(name1,name2,arg1t,arg1n) \
+void name1( struct AmyCLibPrivIFace *Self, arg1t arg1n ) \
+{ \
+	Self = __Get_User_CLib(); \
+	if (( Self ) && ( Self->name2 ) && ( Self->name2 != name1 )) \
+	{ \
+		Self->name2(arg1n); \
+	} \
+}
+
+// --
+// Return, 1 arg
+// ret   = return type
+// name1 = stub name
+// name2 = interface name
+// arg1  = type + name
+#define RET_ARG_1(name1,name2,ret,arg1t,arg1n) \
+ret name1( struct AmyCLibPrivIFace *Self, arg1t arg1n ) \
+{ \
+	Self = __Get_User_CLib(); \
+	if (( Self ) && ( Self->name2 ) && ( Self->name2 != name1 )) \
+	{ \
+		return( Self->name2( arg1n )); \
+	} \
+	else \
+	{ \
+		return( NULL ); \
+	} \
+}
+
+// --
+// Return, 2 args
+// ret   = return type
+// name1 = stub name
+// name2 = interface name
+// arg1  = type + name
+// arg2  = type + name
+#define RET_ARG_2(name1,name2,ret,arg1t,arg1n,arg2t,arg2n) \
+ret name1( struct AmyCLibPrivIFace *Self, arg1t arg1n, arg2t arg2n ) \
+{ \
+	Self = __Get_User_CLib(); \
+	if (( Self ) && ( Self->name2 ) && ( Self->name2 != name1 )) \
+	{ \
+		return( Self->name2( arg1n, arg2n )); \
+	} \
+	else \
+	{ \
+		return( NULL ); \
+	} \
+}
+
+// --
+
+
+NORET_ARG_1(	stub_free,		stdlib_free,	void *,ptr );
+RET_ARG_1(		stub_malloc,	stdlib_malloc,	void *,size_t,size);
+RET_ARG_2(		stub_realloc,	stdlib_realloc,	void *,void *,ptr,size_t,size);
+RET_ARG_1(		stub_strdup,	string_strdup,	char *,const char *,str);
+RET_ARG_2(		stub_calloc,	stdlib_calloc,	void *,size_t,nelem,size_t,elsize);
+
+
+static U32 _NotEnabled( struct AmyCLibPrivIFace *Self )
+{
+	IExec->DebugPrintF( "Function not enabled!\n" );
+	(*(volatile int*)0) = 0;
 	return( 0 );
 }
 
@@ -229,10 +343,10 @@ static const PTR Main_Vectors[] =
 /*   36 */	(PTR) _NotEnabled,	// _generic__Priv_Scan,
 /*   37 */	(PTR) _NotEnabled,	// _generic_setjmp_longjmp,
 /*   38 */	(PTR) _NotEnabled,	// _generic_setjmp_setjmp,
-/*   39 */	(PTR) _NotEnabled,	// _generic_stdlib_calloc,
-/*   40 */	(PTR) _NotEnabled,	// _generic_stdlib_malloc,
-/*   41 */	(PTR) _NotEnabled,	// _generic_stdlib_realloc,
-/*   42 */	(PTR) _NotEnabled,	// _generic_stdlib_free,
+/*   39 */	(PTR) stub_calloc,	// _generic_stdlib_calloc,
+/*   40 */	(PTR) stub_malloc,	// _generic_stdlib_malloc,
+/*   41 */	(PTR) stub_realloc,	// _generic_stdlib_realloc,
+/*   42 */	(PTR) stub_free,	// _generic_stdlib_free,
 /*   43 */	(PTR) _NotEnabled,	// _generic_stdlib_rand,
 /*   44 */	(PTR) _NotEnabled,	// _generic_stdlib_rand_r,
 /*   45 */	(PTR) _NotEnabled,	// _generic_stdlib_srand,
@@ -240,7 +354,7 @@ static const PTR Main_Vectors[] =
 /*   47 */	(PTR) _NotEnabled,	// _generic_stdlib_strtol,
 /*   48 */	(PTR) _generic_string_strlen,
 /*   49 */	(PTR) _generic_string_strnlen,
-/*   50 */	(PTR) _NotEnabled,	// _generic_string_strdup,
+/*   50 */	(PTR) stub_strdup,	// _generic_string_strdup,
 /*   51 */	(PTR) _NotEnabled,	// _generic_string_strndup,
 /*   52 */	(PTR) _generic_string_strcpy,
 /*   53 */	(PTR) _generic_string_strncpy,
@@ -275,9 +389,9 @@ static const PTR Main_Vectors[] =
 /*   82 */	(PTR) _NotEnabled,	// _generic_stdio_fseek,
 /*   83 */	(PTR) _NotEnabled,	// _generic_stdio_fseeko,
 /*   84 */	(PTR) _NotEnabled,	// _generic_stdio_vprintf,
-/*   85 */	(PTR) _NotEnabled,	// _generic_stdio_vsprintf,
+/*   85 */	(PTR) _generic_stdio_vsprintf,
 /*   86 */	(PTR) _NotEnabled,	// _generic_stdio_fputc_unlocked,
-/*   87 */	(PTR) _NotEnabled,	// _generic_stdio_vsnprintf,
+/*   87 */	(PTR) _generic_stdio_vsnprintf,
 /*   88 */	(PTR) _NotEnabled,	// _generic_fcntl_open,
 /*   89 */	(PTR) _NotEnabled,	// _generic_unistd_close,
 /*   90 */	(PTR) _NotEnabled,	// _generic_stdio_ungetc,
@@ -390,12 +504,12 @@ static const PTR Main_Vectors[] =
 
 const struct TagItem Main_Tags[] =
 {
-	{ MIT_Name,				(U32) "main"		},
-	{ MIT_VectorTable,		(U32) Main_Vectors	},
-	{ MIT_DataSize,			(U32) sizeof( struct libData ) },
-	{ MIT_Flags,			(U32) IFLF_PRIVATE	},
-	{ MIT_Version,			(U32) 1				},
-	{ TAG_END,				(U32) 0				}
+	{ MIT_Name,				(Tag) "main"		},
+	{ MIT_VectorTable,		(Tag) Main_Vectors	},
+	{ MIT_DataSize,			(Tag) sizeof( struct libData ) },
+	{ MIT_Flags,			(Tag) IFLF_PRIVATE	},
+	{ MIT_Version,			(Tag) 1				},
+	{ TAG_END,				(Tag) 0				}
 };
 
 // --
@@ -460,26 +574,6 @@ S32 error;
 
 	IExec->DebugPrintF( "AmyCLib : Library ROMInit :\n" );
 
-	// --
-	#if 0
-
-	// NewlibBase = IExec->OpenLibrary( "newlib.library", 50 );
-
-	// if ( ! NewlibBase )
-	// {
-	// 	IExec->DebugPrintF( "AmyCLib : Error opening newlib v50" );
-	// 	goto bailout;
-	// }
-
-	// INewlib = IExec->GetInterface( NewlibBase, "main", 1, NULL );
-
-	// if ( ! INewlib )
-	// {
-	// 	IExec->DebugPrintF( "AmyCLib : Error opening newlib interface" );
-	// 	goto bailout;
-	// }
-
-	#endif
 	// --
 
 	DOSBase = IExec->OpenLibrary( "dos.library", 50 );

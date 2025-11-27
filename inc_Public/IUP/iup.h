@@ -28,7 +28,7 @@ extern "C" {
 
 struct libData;
 typedef struct Ihandle_ Ihandle;
-typedef int (*Icallback)(struct libData*,Ihandle*);
+typedef int (*Icallback)( struct libData *, Ihandle * );
 
 /************************************************************************/
 /*                        Main API                                      */

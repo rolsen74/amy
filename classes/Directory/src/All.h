@@ -23,6 +23,11 @@
 
 // --
 
+#define VERSION		1
+#define REVISION	1
+
+// --
+
 struct DirClassData
 {
 	int	dummy;

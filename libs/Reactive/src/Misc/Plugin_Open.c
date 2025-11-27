@@ -138,8 +138,9 @@ BPTR seg;
 	if ( ! seg )
 	{
 		free( namebuf );
+		namebuf = NULL;
 
-		asprintf( & namebuf, "libs:RA/%s", name );
+		asprintf( & namebuf, "libs:Reactive/%s", name );
 
 		if ( ! namebuf )
 		{

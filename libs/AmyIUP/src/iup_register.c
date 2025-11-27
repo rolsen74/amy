@@ -85,13 +85,22 @@ IUP_SDK_API Iclass *iupRegisterFindClass( struct libData *data, const char *name
 
 static void iupRegisterClassInternal( struct libData *data, Iclass *ic )
 {
-  Iclass *old_ic = (Iclass*) iupTableGet( data, data->iregister_table, ic->name );
-  if (old_ic)
-    iupClassRelease( data, old_ic );
+	if ( ! ic )
+	{
+		// rwo : Added check
+		return;
+	}
 
-  ic->is_internal = 1;
+	Iclass *old_ic = (Iclass*) iupTableGet( data, data->iregister_table, ic->name );
 
-  iupTableSet( data, data->iregister_table, ic->name, (void*)ic, IUPTABLE_POINTER );
+	if ( old_ic )
+	{
+		iupClassRelease( data, old_ic );
+	}
+
+	ic->is_internal = 1;
+
+	iupTableSet( data, data->iregister_table, ic->name, (void*)ic, IUPTABLE_POINTER );
 }
 
 IUP_SDK_API void iupRegisterClass( struct libData *data, Iclass *ic )
@@ -119,77 +128,117 @@ void iupRegisterUpdateClasses( struct libData *data )
 
 void iupRegisterInternalClasses( struct libData *data )
 {
-  iupRegisterClassInternal( data, iupDialogNewClass( data ));
-  iupRegisterClassInternal( data, iupMessageDlgNewClass( data ));
-  iupRegisterClassInternal( data, iupColorDlgNewClass( data ));
-  iupRegisterClassInternal( data, iupFontDlgNewClass( data ));
-  iupRegisterClassInternal( data, iupFileDlgNewClass( data ));
-  iupRegisterClassInternal( data, iupProgressDlgNewClass( data ));
-  iupRegisterClassInternal( data, iupParamBoxNewClass( data ));
-  iupRegisterClassInternal( data, iupParamNewClass( data ));
+	IExec->DebugPrintF( "iupRegisterInternalClasses : 1\n" ),
+	iupRegisterClassInternal( data, iupDialogNewClass( data ));
+	IExec->DebugPrintF( "iupRegisterInternalClasses : 2\n" ),
+	iupRegisterClassInternal( data, iupMessageDlgNewClass( data ));
+	IExec->DebugPrintF( "iupRegisterInternalClasses : 3\n" ),
+	iupRegisterClassInternal( data, iupColorDlgNewClass( data ));
+	IExec->DebugPrintF( "iupRegisterInternalClasses : 4\n" ),
+	iupRegisterClassInternal( data, iupFontDlgNewClass( data ));
+	IExec->DebugPrintF( "iupRegisterInternalClasses : 5\n" ),
+	iupRegisterClassInternal( data, iupFileDlgNewClass( data ));
+	IExec->DebugPrintF( "iupRegisterInternalClasses : 6\n" ),
+	iupRegisterClassInternal( data, iupProgressDlgNewClass( data ));
+	IExec->DebugPrintF( "iupRegisterInternalClasses : 7\n" ),
+	iupRegisterClassInternal( data, iupParamBoxNewClass( data ));
+	IExec->DebugPrintF( "iupRegisterInternalClasses : 8\n" ),
+	iupRegisterClassInternal( data, iupParamNewClass( data ));
 
-  iupRegisterClassInternal( data, iupTimerNewClass( data ));
-  iupRegisterClassInternal( data, iupImageNewClass( data ));
-  iupRegisterClassInternal( data, iupImageRGBNewClass( data ));
-  iupRegisterClassInternal( data, iupImageRGBANewClass( data ));
-  iupRegisterClassInternal( data, iupUserNewClass( data ));
-  iupRegisterClassInternal( data, iupClipboardNewClass( data ));
-  iupRegisterClassInternal( data, iupThreadNewClass( data ));
+	IExec->DebugPrintF( "iupRegisterInternalClasses : 9\n" ),
+	iupRegisterClassInternal( data, iupTimerNewClass( data ));
+	IExec->DebugPrintF( "iupRegisterInternalClasses : 10\n" ),
+	iupRegisterClassInternal( data, iupImageNewClass( data ));
+	IExec->DebugPrintF( "iupRegisterInternalClasses : 11\n" ),
+	iupRegisterClassInternal( data, iupImageRGBNewClass( data ));
+	IExec->DebugPrintF( "iupRegisterInternalClasses : 12\n" ),
+	iupRegisterClassInternal( data, iupImageRGBANewClass( data ));
+	IExec->DebugPrintF( "iupRegisterInternalClasses : 13\n" ),
+	iupRegisterClassInternal( data, iupUserNewClass( data ));
+	IExec->DebugPrintF( "iupRegisterInternalClasses : 14\n" ),
+	iupRegisterClassInternal( data, iupClipboardNewClass( data ));
+	IExec->DebugPrintF( "iupRegisterInternalClasses : 15\n" ),
+	iupRegisterClassInternal( data, iupThreadNewClass( data ));
 
-  iupRegisterClassInternal( data, iupRadioNewClass( data ));
-  iupRegisterClassInternal( data, iupFillNewClass( data ));
-  iupRegisterClassInternal( data, iupHboxNewClass( data ));
-  iupRegisterClassInternal( data, iupVboxNewClass( data ));
-  iupRegisterClassInternal( data, iupZboxNewClass( data ));
-  iupRegisterClassInternal( data, iupCboxNewClass( data ));
-  iupRegisterClassInternal( data, iupSboxNewClass( data ));
-  iupRegisterClassInternal( data, iupNormalizerNewClass( data ));
-  iupRegisterClassInternal( data, iupSplitNewClass( data ));
-  iupRegisterClassInternal( data, iupExpanderNewClass( data ));
-  iupRegisterClassInternal( data, iupDetachBoxNewClass( data ));
+	IExec->DebugPrintF( "iupRegisterInternalClasses : 16\n" ),
+	iupRegisterClassInternal( data, iupRadioNewClass( data ));
+	IExec->DebugPrintF( "iupRegisterInternalClasses : 17\n" ),
+	iupRegisterClassInternal( data, iupFillNewClass( data ));
+	IExec->DebugPrintF( "iupRegisterInternalClasses : 18\n" ),
+	iupRegisterClassInternal( data, iupHboxNewClass( data ));
+	IExec->DebugPrintF( "iupRegisterInternalClasses : 19\n" ),
+	iupRegisterClassInternal( data, iupVboxNewClass( data ));
+	IExec->DebugPrintF( "iupRegisterInternalClasses : 20\n" ),
+	iupRegisterClassInternal( data, iupZboxNewClass( data ));
+	IExec->DebugPrintF( "iupRegisterInternalClasses : 21\n" ),
+	iupRegisterClassInternal( data, iupCboxNewClass( data ));
+	IExec->DebugPrintF( "iupRegisterInternalClasses : 22\n" ),
+	iupRegisterClassInternal( data, iupSboxNewClass( data ));
+	IExec->DebugPrintF( "iupRegisterInternalClasses : 23\n" ),
+	iupRegisterClassInternal( data, iupNormalizerNewClass( data ));
+	IExec->DebugPrintF( "iupRegisterInternalClasses : 24\n" ),
+	iupRegisterClassInternal( data, iupSplitNewClass( data ));
+	IExec->DebugPrintF( "iupRegisterInternalClasses : 25\n" ),
+	iupRegisterClassInternal( data, iupExpanderNewClass( data ));
+	IExec->DebugPrintF( "iupRegisterInternalClasses : 26\n" ),
+	iupRegisterClassInternal( data, iupDetachBoxNewClass( data ));
 
-  iupRegisterClassInternal( data, iupMenuNewClass( data ));
-  iupRegisterClassInternal( data, iupItemNewClass( data ));
-  iupRegisterClassInternal( data, iupSeparatorNewClass( data ));
-  iupRegisterClassInternal( data, iupSubmenuNewClass( data ));
+	IExec->DebugPrintF( "iupRegisterInternalClasses : 27\n" ),
+	iupRegisterClassInternal( data, iupMenuNewClass( data ));
+	IExec->DebugPrintF( "iupRegisterInternalClasses : 28\n" ),
+	iupRegisterClassInternal( data, iupItemNewClass( data ));
+	IExec->DebugPrintF( "iupRegisterInternalClasses : 29\n" ),
+	iupRegisterClassInternal( data, iupSeparatorNewClass( data ));
+	IExec->DebugPrintF( "iupRegisterInternalClasses : 30\n" ),
+	iupRegisterClassInternal( data, iupSubmenuNewClass( data ));
 
-  iupRegisterClassInternal( data, iupLabelNewClass( data ));
-  iupRegisterClassInternal( data, iupButtonNewClass( data ));
-  iupRegisterClassInternal( data, iupToggleNewClass( data ));
-  iupRegisterClassInternal( data, iupCanvasNewClass( data ));
-  iupRegisterClassInternal( data, iupFrameNewClass( data ));
-  iupRegisterClassInternal( data, iupTextNewClass( data ));
-  iupRegisterClassInternal( data, iupMultilineNewClass( data ));
-  iupRegisterClassInternal( data, iupListNewClass( data ));
-  iupRegisterClassInternal( data, iupFlatLabelNewClass( data ));
-  iupRegisterClassInternal( data, iupFlatButtonNewClass( data ));
-  iupRegisterClassInternal( data, iupFlatToggleNewClass( data ));
-  iupRegisterClassInternal( data, iupFlatSeparatorNewClass( data ));
-  iupRegisterClassInternal( data, iupDropButtonNewClass( data ));
-  iupRegisterClassInternal( data, iupCalendarNewClass( data ));
-  iupRegisterClassInternal( data, iupDatePickNewClass( data ));
-  iupRegisterClassInternal( data, iupSpaceNewClass( data ));
+	IExec->DebugPrintF( "iupRegisterInternalClasses : 31\n" ),
+	iupRegisterClassInternal( data, iupLabelNewClass( data ));
+	IExec->DebugPrintF( "iupRegisterInternalClasses : 32\n" ),
+	iupRegisterClassInternal( data, iupButtonNewClass( data ));
+	IExec->DebugPrintF( "iupRegisterInternalClasses : 33\n" ),
+	iupRegisterClassInternal( data, iupToggleNewClass( data ));
+	IExec->DebugPrintF( "iupRegisterInternalClasses : 34\n" ),
+	iupRegisterClassInternal( data, iupCanvasNewClass( data ));
+	IExec->DebugPrintF( "iupRegisterInternalClasses : 35\n" ),
+	iupRegisterClassInternal( data, iupFrameNewClass( data ));
+	IExec->DebugPrintF( "iupRegisterInternalClasses : 36\n" ),
+	iupRegisterClassInternal( data, iupTextNewClass( data ));
+	IExec->DebugPrintF( "iupRegisterInternalClasses : 37\n" ),
+	iupRegisterClassInternal( data, iupMultilineNewClass( data ));
+	IExec->DebugPrintF( "iupRegisterInternalClasses : 38\n" ),
+	iupRegisterClassInternal( data, iupListNewClass( data ));
+	IExec->DebugPrintF( "iupRegisterInternalClasses : 39\n" ),
+	iupRegisterClassInternal( data, iupFlatLabelNewClass( data ));
+	IExec->DebugPrintF( "iupRegisterInternalClasses : 40\n" ),
+	iupRegisterClassInternal( data, iupFlatButtonNewClass( data ));
+	iupRegisterClassInternal( data, iupFlatToggleNewClass( data ));
+	iupRegisterClassInternal( data, iupFlatSeparatorNewClass( data ));
+	iupRegisterClassInternal( data, iupDropButtonNewClass( data ));
+	iupRegisterClassInternal( data, iupCalendarNewClass( data ));
+	iupRegisterClassInternal( data, iupDatePickNewClass( data ));
+	iupRegisterClassInternal( data, iupSpaceNewClass( data ));
 
-  iupRegisterClassInternal( data, iupProgressBarNewClass( data ));
-  iupRegisterClassInternal( data, iupValNewClass( data ));
-  iupRegisterClassInternal( data, iupTabsNewClass( data ));
-  iupRegisterClassInternal( data, iupSpinNewClass( data ));
-  iupRegisterClassInternal( data, iupSpinboxNewClass( data ));
-  iupRegisterClassInternal( data, iupTreeNewClass( data ));
-  iupRegisterClassInternal( data, iupScrollBoxNewClass( data ));
-  iupRegisterClassInternal( data, iupBackgroundBoxNewClass( data ));
-  iupRegisterClassInternal( data, iupLinkNewClass( data ));
-  iupRegisterClassInternal( data, iupGridBoxNewClass( data ));
-  iupRegisterClassInternal( data, iupAnimatedLabelNewClass( data ));
-  iupRegisterClassInternal( data, iupFlatFrameNewClass( data ));
-  iupRegisterClassInternal( data, iupFlatTabsNewClass( data ));
-  iupRegisterClassInternal( data, iupFlatScrollBoxNewClass( data ));
-  iupRegisterClassInternal( data, iupDialNewClass( data ));
-  iupRegisterClassInternal( data, iupGaugeNewClass( data ));
-  iupRegisterClassInternal( data, iupColorbarNewClass( data ));
-  iupRegisterClassInternal( data, iupColorBrowserNewClass( data ));
-  iupRegisterClassInternal( data, iupMultiBoxNewClass( data ));
-  iupRegisterClassInternal( data, iupFlatListNewClass( data ));
-  iupRegisterClassInternal( data, iupFlatValNewClass( data ));
-  iupRegisterClassInternal( data, iupFlatTreeNewClass( data ));
+	iupRegisterClassInternal( data, iupProgressBarNewClass( data ));
+	iupRegisterClassInternal( data, iupValNewClass( data ));
+	iupRegisterClassInternal( data, iupTabsNewClass( data ));
+	iupRegisterClassInternal( data, iupSpinNewClass( data ));
+	iupRegisterClassInternal( data, iupSpinboxNewClass( data ));
+	iupRegisterClassInternal( data, iupTreeNewClass( data ));
+	iupRegisterClassInternal( data, iupScrollBoxNewClass( data ));
+	iupRegisterClassInternal( data, iupBackgroundBoxNewClass( data ));
+	iupRegisterClassInternal( data, iupLinkNewClass( data ));
+	iupRegisterClassInternal( data, iupGridBoxNewClass( data ));
+	iupRegisterClassInternal( data, iupAnimatedLabelNewClass( data ));
+	iupRegisterClassInternal( data, iupFlatFrameNewClass( data ));
+	iupRegisterClassInternal( data, iupFlatTabsNewClass( data ));
+	iupRegisterClassInternal( data, iupFlatScrollBoxNewClass( data ));
+	iupRegisterClassInternal( data, iupDialNewClass( data ));
+	iupRegisterClassInternal( data, iupGaugeNewClass( data ));
+	iupRegisterClassInternal( data, iupColorbarNewClass( data ));
+	iupRegisterClassInternal( data, iupColorBrowserNewClass( data ));
+	iupRegisterClassInternal( data, iupMultiBoxNewClass( data ));
+	iupRegisterClassInternal( data, iupFlatListNewClass( data ));
+	iupRegisterClassInternal( data, iupFlatValNewClass( data ));
+	iupRegisterClassInternal( data, iupFlatTreeNewClass( data ));
 }

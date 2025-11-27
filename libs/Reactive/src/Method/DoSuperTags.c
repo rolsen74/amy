@@ -42,7 +42,7 @@ va_list ap;
 
 	va_start( ap, obj );
 
-	retval = Self->Method_RunFunc( cl->RA_Class_Super, obj, va_getlinearva( ap, struct RA_Method * ) );
+	retval = Self->Method_RunFunc( cl->RA_Class_Super, obj, va_getlinearva( ap, struct RA_Method * ));
 
 	va_end( ap );
 

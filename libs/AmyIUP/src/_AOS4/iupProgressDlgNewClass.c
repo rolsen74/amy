@@ -15,5 +15,6 @@
 
 Iclass *iupProgressDlgNewClass( struct libData *data )
 {
+	IExec->DebugPrintF( "iupProgressDlgNewClass\n" );
 	return( NULL );
 }

@@ -48,6 +48,18 @@ struct _AmyCLibPublic
 
 // --
 
+#define Amy_ATI_ID			0x6CE70F0B
+#define Amy_ATI_VERSION		1
+
+struct AmyTaskInfo
+{
+	U32						ati_ID;
+	U32						ati_Version;
+	struct AmyCLibIFace	*	ati_IFace_C;
+};
+
+// --
+
 extern struct _AmyCLibPublic *__AmyCPublicData;
 #define AmyCLibPublic __AmyCPublicData
 

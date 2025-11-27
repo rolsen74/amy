@@ -162,6 +162,8 @@ struct libData
 
 	// --
 
+	struct AmyTaskInfo			ATIData;
+
 	U32							EnableMask;
 
 	struct SignalSemaphore		LocaleSemaphore;
@@ -221,6 +223,7 @@ struct libData
 	U8							Enable_Strings;
 	U8							Enable_Memory;
 	U8							Enable_File;
+	U8							UserDataSet;
 
 	// // -- Function Buffers, gets allocated when first used
 

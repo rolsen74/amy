@@ -168,6 +168,8 @@ U32						i;				// 14
 	IAmyCLib		= (PTR) myIAmyC;			// H
 
 	// --
+	// Make sure we can start
+	self->pr_Task.tc_UserData = NULL;
 
 	if ( ! myIAmyC->Priv_Startup_Init( arg_string, -1 ))	// Enable everything
 	{

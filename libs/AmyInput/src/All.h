@@ -35,6 +35,13 @@ struct libBase
 
 // --
 
+struct libData
+{
+	int		dummy;
+};
+
+// --
+
 void ROMFree( struct libBase *libBase );
 
 U32 _manager_Obtain( struct LibraryManagerInterface *Self );

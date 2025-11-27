@@ -284,32 +284,32 @@ IUP_SDK_API char *iupKeyCodeToName( struct libData *data, int code )
   return (char*)base_name;
 }
 
-static void iKeyCallFunc( struct libData *data, void (*func)(const char *name, int code, void *user_data), void *user_data, const char *name, int code, unsigned char mod)
+static void iKeyCallFunc( struct libData *data, void (*func)(struct libData *,const char *, int, void *), void *user_data, const char *name, int code, unsigned char mod)
 {
   char mod_name[30];
 
-  func( name, code, user_data );
+  func( data, name, code, user_data );
 
   if (mod==0)
   {
     iKeyMakeXName(mod_name, "K_s", name );
-    func(mod_name, iup_XkeyShift(code), user_data );
+    func( data, mod_name, iup_XkeyShift(code), user_data );
   }
 
   if (mod!=1) 
   {
     iKeyMakeXName(mod_name, "K_c", name );
-    func(mod_name, iup_XkeyCtrl(code), user_data );
+    func( data, mod_name, iup_XkeyCtrl(code), user_data );
 
     iKeyMakeXName(mod_name, "K_m", name );
-    func(mod_name, iup_XkeyAlt(code), user_data );
+    func( data, mod_name, iup_XkeyAlt(code), user_data );
 
     iKeyMakeXName(mod_name, "K_y", name );
-    func(mod_name, iup_XkeySys(code), user_data );
+    func( data, mod_name, iup_XkeySys(code), user_data );
   }
 }
 
-IUP_SDK_API void iupKeyForEach( struct libData *data, void(*func)(struct libData *data, const char *name, int code, void *user_data), void *user_data)
+IUP_SDK_API void iupKeyForEach( struct libData *data, void(*func)(struct libData *, const char *, int, void *), void *user_data)
 {
   /* Used only by the amy_IupLua binding. */
   int code, map;

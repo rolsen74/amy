@@ -3316,55 +3316,63 @@ static int iLayoutTreeSelection_CB( struct libData *data, Ihandle *tree, int id,
 
 static int iLayoutDialogKAny_CB( struct libData *data, Ihandle *dlg, int key)
 {
-  switch (key)
-  {
-  case K_DEL:
-    return iLayoutContextMenuRemove_CB( data, dlg );
-  case K_cF5:
-    return iLayoutMenuRebuildTree_CB( data, dlg );
-  case K_ESC:
-  {
-    iLayoutDialog *layoutdlg = (iLayoutDialog*) iupAttribGet( data, dlg, "_IUP_LAYOUTDIALOG" );
-    if ( layoutdlg->new_elem_class)
-    {
-      Ihandle *tgl = amy_IupGetDialogChild( data, dlg, "TOGGLE_SELECT" );
-      amy_IupSetAttribute( data, tgl, "VALUE", "ON" );
-      layoutdlg->new_elem_class = NULL;
-    }
-    else
-      return iLayoutMenuClose_CB( data, dlg );
-  }
-  case K_F5:
-    return iLayoutMenuRefresh_CB( data, dlg );
-  case K_F3:
-  {
-    Ihandle *find_dlg = (Ihandle*) amy_IupGetAttribute( data, dlg, "FIND_ELEM_DIALOG" );
-    if ( ! find_dlg)
-      return iLayoutMenuFindElement_CB( data, dlg );
-    else
-      return iLayoutFindDialogNext_CB( data, find_dlg );
-  }
-  case K_cF:
-    return iLayoutMenuFindElement_CB( data, dlg );
-  case K_cMinus:
-  case K_cPlus:
-    {
-      int opacity = amy_IupGetInt( data, dlg, "OPACITY" );
-      if (opacity == 0)
-        opacity = 255;
-      if (key == K_cPlus)
-        opacity++;
-      else
-        opacity--;
-      if (opacity == 0 || opacity == 255)
-        amy_IupSetAttribute( data, dlg, "OPACITY", NULL );
-      else
-        amy_IupSetInt( data, dlg, "OPACITY", opacity );
-      break;
-    }
-  }
+	switch (key)
+	{
+		case K_DEL:
+			return iLayoutContextMenuRemove_CB( data, dlg );
 
-  return IUP_DEFAULT;
+		case K_cF5:
+			return iLayoutMenuRebuildTree_CB( data, dlg );
+
+		case K_ESC:
+		{
+			iLayoutDialog *layoutdlg = (iLayoutDialog*) iupAttribGet( data, dlg, "_IUP_LAYOUTDIALOG" );
+			if ( layoutdlg->new_elem_class)
+			{
+				Ihandle *tgl = amy_IupGetDialogChild( data, dlg, "TOGGLE_SELECT" );
+				amy_IupSetAttribute( data, tgl, "VALUE", "ON" );
+				layoutdlg->new_elem_class = NULL;
+			}
+			else
+				return iLayoutMenuClose_CB( data, dlg );
+		}
+
+		// rwo fall's throu.. is this intented?
+
+		case K_F5:
+			return iLayoutMenuRefresh_CB( data, dlg );
+
+		case K_F3:
+		{
+			Ihandle *find_dlg = (Ihandle*) amy_IupGetAttribute( data, dlg, "FIND_ELEM_DIALOG" );
+			if ( ! find_dlg)
+				return iLayoutMenuFindElement_CB( data, dlg );
+			else
+				return iLayoutFindDialogNext_CB( data, find_dlg );
+		}
+
+		case K_cF:
+			return iLayoutMenuFindElement_CB( data, dlg );
+	
+		case K_cMinus:
+		case K_cPlus:
+		{
+			int opacity = amy_IupGetInt( data, dlg, "OPACITY" );
+			if (opacity == 0)
+				opacity = 255;
+			if (key == K_cPlus)
+				opacity++;
+			else
+				opacity--;
+			if (opacity == 0 || opacity == 255)
+				amy_IupSetAttribute( data, dlg, "OPACITY", NULL );
+			else
+				amy_IupSetInt( data, dlg, "OPACITY", opacity );
+			break;
+		}
+	}
+
+	return IUP_DEFAULT;
 }
 
 static int iLayoutDialogClose_CB( struct libData *data, Ihandle *dlg )

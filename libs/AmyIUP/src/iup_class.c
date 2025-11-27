@@ -269,19 +269,35 @@ static void iClassReleaseAttribFuncTable( struct libData *data, Iclass *ic )
 
 IUP_SDK_API Iclass *iupClassNew( struct libData *data, Iclass *parent )
 {
-  Iclass *ic = malloc(sizeof(Iclass));
-  memset( ic, 0, sizeof(Iclass));
+Iclass *ic;
 
-  if (parent)
-  {
-    parent = parent->New( data );
-    ic->attrib_func = parent->attrib_func;
-    ic->parent = parent;
-  }
-  else
-    ic->attrib_func = iupTableCreate( data, IUPTABLE_STRINGINDEXED );
+	IExec->DebugPrintF( "iupClassNew : Enter : Parent %p\n", parent );
 
-  return ic;
+	ic = malloc( sizeof( Iclass ));
+
+	IExec->DebugPrintF( "iupClassNew : New ic %p\n", ic );
+
+	if ( ! ic )
+	{
+		return( NULL );
+	}
+
+	memset( ic, 0, sizeof( Iclass ));
+
+	if ( parent )
+	{
+		parent = parent->New( data );
+		ic->attrib_func = parent->attrib_func;
+		ic->parent = parent;
+	}
+	else
+	{
+		ic->attrib_func = iupTableCreate( data, IUPTABLE_STRINGINDEXED );
+	}
+
+	IExec->DebugPrintF( "iupClassNew : Exit : New ic %p\n", ic );
+
+	return( ic );
 }
 
 IUP_SDK_API void iupClassRelease( struct libData *data, Iclass *ic)

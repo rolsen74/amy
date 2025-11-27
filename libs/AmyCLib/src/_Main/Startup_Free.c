@@ -20,7 +20,9 @@
 
 void AMYFUNC _generic__Priv_Startup_Free( struct AmyCLibPrivIFace *Self )
 {
+struct AmyTaskInfo *ati;
 struct libData *data;
+struct Task *opener_task;
 
 	DOFUNCTIONPRINTF( IExec->DebugPrintF( "_generic__Priv_Startup_Free\n" ); );
 
@@ -61,6 +63,17 @@ struct libData *data;
 	DOFUNCTIONPRINTF( IExec->DebugPrintF( "_generic__Priv_Startup_Free : Memory\n" ); );
 
 	myFree_Memory( Self, data );
+
+	// --
+
+	if ( data->UserDataSet )
+	{
+		opener_task = IExec->FindTask( NULL );
+		opener_task->tc_UserData = NULL;
+		data->UserDataSet = FALSE;
+	}
+
+	// --
 
 	return;
 }

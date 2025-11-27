@@ -33,10 +33,10 @@ static const PTR Manager_Vectors[] =
 
 static const struct TagItem Manager_Tags[] =
 {
-	{ MIT_Name,				(U32) "__library"		},
-	{ MIT_VectorTable,		(U32) Manager_Vectors	},
-	{ MIT_Version,			(U32) 1					},
-	{ TAG_END,				(U32) 0					}
+	{ MIT_Name,				(Tag) "__library"		},
+	{ MIT_VectorTable,		(Tag) Manager_Vectors	},
+	{ MIT_Version,			(Tag) 1					},
+	{ TAG_END,				(Tag) 0					}
 };
 
 // -- Main Interface
@@ -57,10 +57,11 @@ static const PTR Main_Vectors[] =
 
 static const struct TagItem Main_Tags[] =
 {
-	{ MIT_Name,				(U32) "main"		},
-	{ MIT_VectorTable,		(U32) Main_Vectors	},
-	{ MIT_Version,			(U32) 1				},
-	{ TAG_END,				(U32) 0				}
+	{ MIT_Name,				(Tag) "main"		},
+	{ MIT_VectorTable,		(Tag) Main_Vectors	},
+	{ MIT_DataSize,			(Tag) sizeof( struct libData ) },
+	{ MIT_Version,			(Tag) 1				},
+	{ TAG_END,				(Tag) 0				}
 };
 #endif
 
@@ -94,8 +95,8 @@ static USED const struct Resident lib_res =
 // --
 
 static const char USED	verstag[]		= VERSTAG;
-struct Library *		NewlibBase		= NULL;
-struct Interface *		INewlib			= NULL;
+struct Library *		AmyCLibBase		= NULL;
+struct Interface *		IAmyCLib		= NULL;
 struct ExecIFace *		IExec			= NULL;
 
 // --
@@ -117,19 +118,12 @@ S32 error;
 
 	IExec->DebugPrintF( "AmyApplication : ROMInit 1\n" );
 
-	NewlibBase = IExec->OpenLibrary( "newlib.library", 53 );
+	AmyCLibBase = IExec->OpenLibrary( "AmyCLib.library", 1 );
+	IAmyCLib = (PTR) IExec->GetInterface( AmyCLibBase, "main", 1, NULL );
 
-	if ( ! NewlibBase )
+	if ( ! IAmyCLib )
 	{
-		IExec->DebugPrintF( "AmyApplication : Error opening newlib v53" );
-		goto bailout;
-	}
-
-	INewlib = IExec->GetInterface( NewlibBase, "main", 1, NULL );
-
-	if ( ! INewlib )
-	{
-		IExec->DebugPrintF( "AmyApplication : Error opening newlib interface" );
+		IExec->DebugPrintF( "AmyApplication : Error opening AmyCLib" );
 		goto bailout;
 	}
 

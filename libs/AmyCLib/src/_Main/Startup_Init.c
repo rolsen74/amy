@@ -23,7 +23,9 @@
 S32 AMYFUNC _generic__Priv_Startup_Init( struct AmyCLibPrivIFace *Self, STR args, U32 mask )
 {
 struct _AmyCLibPublic *pd;
+struct AmyTaskInfo *ati;
 struct libData *data;
+struct Task *opener_task;
 S32 retval;
 
 	DOFUNCTIONPRINTF( IExec->DebugPrintF( "_generic__Priv_Startup_Init : Mask $%08lx : Args '%s'\n", mask, (args)?args:"" ); );
@@ -31,6 +33,27 @@ S32 retval;
 	retval = FALSE;
 
 	data = (PTR)( (U32) Self - Self->Data.NegativeSize );
+
+	// --
+
+	opener_task = IExec->FindTask( NULL );
+
+	if ( mask & EM_USERTASK )
+	{
+		if ( opener_task->tc_UserData )
+		{
+			IExec->DebugPrintF( "tc_UserData allready set\n" );
+			goto bailout;
+		}
+
+		ati = & data->ATIData;
+		ati->ati_ID			= Amy_ATI_ID;
+		ati->ati_Version	= Amy_ATI_VERSION;
+		ati->ati_IFace_C	= (PTR) Self;
+
+		opener_task->tc_UserData = ati;
+		data->UserDataSet = TRUE;
+	}
 
 	// --
 
@@ -142,6 +165,16 @@ S32 retval;
 	retval = TRUE;
 
 bailout:
+
+	// --
+
+	if  (( ! retval ) && ( data->UserDataSet ))
+	{
+		opener_task->tc_UserData = NULL;
+		data->UserDataSet = FALSE;
+	}
+
+	// --
 
 	DOFUNCTIONPRINTF( IExec->DebugPrintF( "_generic__Priv_Startup_Init : 99 : Retval %ld\n", retval ); );
 

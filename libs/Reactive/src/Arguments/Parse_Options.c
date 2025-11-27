@@ -189,7 +189,7 @@ S32 Key;
 
 	// --
 
-	retval = malloc( sizeof( struct ArgStruct ) );
+	retval = malloc( sizeof( struct ArgStruct ));
 
 	if ( retval == NULL )
 	{
@@ -198,8 +198,8 @@ S32 Key;
 	}
 
 	retval->as_ID		= ARG_ID;
-	retval->as_Strings	= malloc( ( argc + 1 ) * sizeof( PTR ) );
-	retval->as_Keys		= malloc( ( argc + 1 ) * sizeof( PTR ) );
+	retval->as_Strings	= malloc( ( argc + 1 ) * sizeof( PTR ));
+	retval->as_Keys		= malloc( ( argc + 1 ) * sizeof( PTR ));
 
 	if (( retval->as_Strings == NULL )
 	||	( retval->as_Keys	 == NULL ))

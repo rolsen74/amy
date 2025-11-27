@@ -114,7 +114,7 @@ with open(REGISTRY) as f:
                     out.write(
                         f"LIBRA_STUB({ret}, {name}, {iface_func},\n"
                         f"    {decl_text}\n"
-                        f");\n"
+                        f" );\n"
                     )
 
         print(f"Generated: {filename}")
