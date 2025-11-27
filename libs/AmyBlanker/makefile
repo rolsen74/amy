@@ -15,7 +15,7 @@ OBJDIR		:= obj
 BINDIR		:= bin
 
 # Target Name
-TARGET		:= AmyApplication.library
+TARGET		:= AmyBlanker.library
 
 # Compiler Flags
 CFLAGS		:= -O2
@@ -29,9 +29,11 @@ CFLAGS		+= -W
 CFLAGS		+= -Wall
 CFLAGS		+= -MMD
 CFLAGS		+= -MP
+CFLAGS		+= -mcrt=amyclib
 
 # Linker Flags
-LDFLAGS		:= -nostartfiles
+LDFLAGS		:= -mcrt=amyclib 
+LDFLAGS		+= -nostartfiles
 
 # Link Libraries
 LIBS		:=
@@ -109,8 +111,6 @@ SRCS		+= src/_Manager/Obtain.c
 SRCS		+= src/_Manager/Open.c
 SRCS		+= src/_Manager/Release.c
 
-# Main Interface
-
 ###########################################################################
 
 OBJS		:= $(patsubst %.c,$(OBJDIR)/%.o,$(SRCS))
@@ -121,7 +121,7 @@ all: $(BINDIR)/$(TARGET)
 ###############################################################################
 
 $(BINDIR)/$(TARGET): $(OBJS)
-	$(CC) $(LDFLAGS) -o $(BINDIR)/$(TARGET) $(OBJS) $(LIBS) -Wl,--cref,-M,-Map=AmyApplication.map
+	$(CC) $(LDFLAGS) -o $(BINDIR)/$(TARGET) $(OBJS) $(LIBS) -Wl,--cref,-M,-Map=AmyBlanker.map
 
 ###############################################################################
 
@@ -131,7 +131,7 @@ $(BINDIR)/$(TARGET): $(OBJS)
 ###############################################################################
 
 clean:
-	$(RM) $(OBJS) $(DEPS) bin/$(TARGET) AmyApplication.map
+	$(RM) $(OBJS) $(DEPS) bin/$(TARGET) AmyBlanker.map
 
 ###############################################################################
 
@@ -148,6 +148,7 @@ strip:
 ###############################################################################
 
 $(OBJDIR)/%.o: %.c
+	@$(MKDIR) $(dir $@)
 	$(CC) $(CFLAGS) -c $< -o $@
 
 ###########################################################################

@@ -13,9 +13,13 @@ INCLUDES	+= -I$(ROOTDIR)/inc_Private
 CFLAGS		:= -O2
 CFLAGS		+= -Wall
 CFLAGS		+= -W
-CFLAGS		+= -mcrt=amyclib
 CFLAGS		+= $(INCLUDES)
 ASFLAGS		:= $(CFLAGS)
+CFLAGS		+= -mcrt=amyclib
+
+# Linker Flags
+LDFLAGS		:= -mcrt=amyclib 
+LDFLAGS		+= -nostartfiles
 
 # Host SYS we compile on
 HOSTOS		:= $(shell uname)

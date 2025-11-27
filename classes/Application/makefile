@@ -1,7 +1,7 @@
 
 ###########################################################################
 
-.PHONY: all clean revision install makedirs
+.PHONY: all clean revision install makedirs strip
 
 ###########################################################################
 
@@ -15,60 +15,36 @@ OBJDIR		:= obj
 BINDIR		:= bin
 
 # Target Name
-TARGET		:= AmySysLog.library
+TARGET		:= Application.ra
 
 # Compiler Flags
 CFLAGS		:= -O2
 CFLAGS		+= -I.
 CFLAGS		+= -I $(ROOTDIR)/inc_System
 CFLAGS		+= -I $(ROOTDIR)/inc_Public
-CFLAGS		+= -I $(ROOTDIR)/inc_Private
-CFLAGS		+= -DDEBUG
+#CFLAGS		+= -I $(ROOTDIR)/inc_Private
+#CFLAGS		+= -DDEBUG
 CFLAGS		+= -gstabs
 CFLAGS		+= -W
 CFLAGS		+= -Wall
 CFLAGS		+= -MMD
 CFLAGS		+= -MP
+CFLAGS		+= -mcrt=amyclib
+CFLAGS		+= -D__RA_CLASS__
 
 # Linker Flags
-LDFLAGS		:= -nostartfiles
+LDFLAGS		:= -mcrt=amyclib 
+LDFLAGS		+= -nostartfiles
 
 # Link Libraries
 LIBS		:=
 
 # Empty Source File List (Will grow)
+ASMSRCS		:=
 SRCS		:=
 
 # Host SYS we compile on
 HOSTOS		:= $(shell uname)
-
-###########################################################################
-
-# --
-
-ifeq ($(HOSTOS),AmigaOS)
-
-LS			:= list
-RM			:= delete
-RMDIR		:= rm -rf
-MKDIR		:= makedir ALL
-
-# --
-
-else ifeq ($(HOSTOS),Linux)
-
-LS			:= ls -lort
-RM			:= rm
-RMDIR		:= rm -rf
-MKDIR		:= mkdir -p
-
-# --
-
-else
-
-$(error Unknown Host SYS type: $(HOSTOS).)
-
-endif
 
 ###########################################################################
 # Set Compiler
@@ -81,7 +57,7 @@ CC			:= gcc
 STRIP		:= strip
 MKDIR		:= makedir FORCE
 COPY		:= copy
-SDK			:= sdk:
+INSTALLDIR	:= libs:RA
 
 # --
 
@@ -93,61 +69,65 @@ CC			:= ppc-amigaos-gcc
 STRIP		:= ppc-amigaos-strip
 MKDIR		:= mkdir -p
 COPY		:= cp
-SDK			:= /SDK/
+INSTALLDIR	:= 
+
+else
+
+$(error Unknown Host SYS type: $(HOSTOS).)
 
 endif
 
 ###########################################################################
 # 
 
-SRCS		+= src/Library.c
-
-# Manager Interface
-SRCS		+= src/_Manager/Close.c
-SRCS		+= src/_Manager/Expunge.c
-SRCS		+= src/_Manager/Obtain.c
-SRCS		+= src/_Manager/Open.c
-SRCS		+= src/_Manager/Release.c
-
-# Main Interface
+SRCS		+= src/Application.c
 
 ###########################################################################
 
 OBJS		:= $(patsubst %.c,$(OBJDIR)/%.o,$(SRCS))
 DEPS		:= $(patsubst %.c,$(OBJDIR)/%.d,$(SRCS))
+ASMOBJS		:= $(patsubst %.s,$(OBJDIR)/%.o,$(ASMSRCS))
+ALL_OBJS	:= $(OBJS) $(ASMOBJS)
 
-all: $(BINDIR)/$(TARGET)
+all: $(BINDIR)/$(TARGET) 
 
-###############################################################################
+###########################################################################
 
-$(BINDIR)/$(TARGET): $(OBJS)
-	$(CC) $(LDFLAGS) -o $(BINDIR)/$(TARGET) $(OBJS) $(LIBS) -Wl,--cref,-M,-Map=AmySysLog.map
+$(BINDIR)/$(TARGET): $(ALL_OBJS)
+	$(CC) $(LDFLAGS) -o $(BINDIR)/$(TARGET) $(ALL_OBJS) $(LIBS) -Wl,--cref,-M,-Map=App.map
 
-###############################################################################
+###########################################################################
 
 # Include dependency files
 -include $(DEPS)
 
-###############################################################################
+###########################################################################
 
 clean:
-	$(RM) $(OBJS) $(DEPS) bin/$(TARGET) AmySysLog.map
+	$(RM) $(ALL_OBJS) $(DEPS) bin/$(TARGET) App.map
 
-###############################################################################
+###########################################################################
 
 install:
-	copy $(BINDIR)/$(TARGET) $(INSTALLDIR)
+	$(COPY) $(BINDIR)/$(TARGET) $(INSTALLDIR)
 
-###############################################################################
+###########################################################################
 
 strip:
 	@$(LS)		$(BINDIR)/$(TARGET)
 	@$(STRIP)	$(BINDIR)/$(TARGET)
 	@$(LS)		$(BINDIR)/$(TARGET)
 
-###############################################################################
+###########################################################################
 
+# Pattern rule for C source files
 $(OBJDIR)/%.o: %.c
+	@$(MKDIR) $(dir $@)
 	$(CC) $(CFLAGS) -c $< -o $@
+
+# Pattern rule for ASM (.s) source files
+$(OBJDIR)/%.o: %.s
+	@$(MKDIR) $(dir $@)
+	$(CC) -c -mregnames $< -o $@
 
 ###########################################################################

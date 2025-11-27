@@ -6,16 +6,16 @@
 ###########################################################################
 
 # Root Dir
-ROOTDIR		:= ../..
+ROOTDIR		:= ../../..
 
 # Object Dir
 OBJDIR		:= obj
 
 # Binary Dir
-BINDIR		:= bin
+BINDIR		:= .
 
 # Target Name
-TARGET		:= Directory.ra
+TARGET		:= tst-iup.exe
 
 # Compiler Flags
 CFLAGS		:= -O2
@@ -30,7 +30,7 @@ CFLAGS		+= -Wall
 CFLAGS		+= -MMD
 CFLAGS		+= -MP
 CFLAGS		+= -mcrt=amyclib
-CFLAGS		+= -D__RA_CLASS__
+#CFLAGS		+= -D__RA_CLASS__
 
 # Linker Flags
 LDFLAGS		:= -mcrt=amyclib 
@@ -57,7 +57,7 @@ CC			:= gcc
 STRIP		:= strip
 MKDIR		:= makedir FORCE
 COPY		:= copy
-INSTALLDIR	:= libs:RA
+INSTALLDIR	:= 
 
 # --
 
@@ -80,7 +80,7 @@ endif
 ###########################################################################
 # 
 
-SRCS		+= src/Directory.c
+SRCS		+= tst.c
 
 ###########################################################################
 
@@ -94,7 +94,7 @@ all: $(BINDIR)/$(TARGET)
 ###########################################################################
 
 $(BINDIR)/$(TARGET): $(ALL_OBJS)
-	$(CC) $(LDFLAGS) -o $(BINDIR)/$(TARGET) $(ALL_OBJS) $(LIBS) -Wl,--cref,-M,-Map=Dir.map
+	$(CC) $(LDFLAGS) -o $(BINDIR)/$(TARGET) $(ALL_OBJS) $(LIBS) -Wl,--cref,-M,-Map=App.map
 
 ###########################################################################
 
@@ -104,7 +104,7 @@ $(BINDIR)/$(TARGET): $(ALL_OBJS)
 ###########################################################################
 
 clean:
-	$(RM) $(ALL_OBJS) $(DEPS) bin/$(TARGET) Dir.map
+	$(RM) $(ALL_OBJS) $(DEPS) bin/$(TARGET) tst-iup.map
 
 ###########################################################################
 
@@ -122,12 +122,12 @@ strip:
 
 # Pattern rule for C source files
 $(OBJDIR)/%.o: %.c
-	@mkdir -p $(dir $@)
+	@$(MKDIR) $(dir $@)
 	$(CC) $(CFLAGS) -c $< -o $@
 
 # Pattern rule for ASM (.s) source files
 $(OBJDIR)/%.o: %.s
-	@mkdir -p $(dir $@)
+	@$(MKDIR) $(dir $@)
 	$(CC) -c -mregnames $< -o $@
 
 ###########################################################################

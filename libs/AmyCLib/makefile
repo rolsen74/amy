@@ -356,7 +356,8 @@ $(BINDIR)/$(TARGET): $(ALL_OBJS)
 clean:
 	$(RM) $(ALL_OBJS) $(DEPS) bin/$(TARGET) AmyCLib.map
 
-###########################################################################
+elfinfo:
+	@readelf -S $(BINDIR)/$(TARGET)
 
 install:
 	$(COPY) $(BINDIR)/$(TARGET) $(INSTALLDIR)
@@ -372,12 +373,12 @@ strip:
 
 # Pattern rule for C source files
 $(OBJDIR)/%.o: %.c
-	@mkdir -p $(dir $@)
+	@$(MKDIR) $(dir $@)
 	$(CC) $(CFLAGS) -c $< -o $@
 
 # Pattern rule for ASM (.s) source files
 $(OBJDIR)/%.o: %.s
-	@mkdir -p $(dir $@)
+	@$(MKDIR) $(dir $@)
 	$(CC) -c -mregnames $< -o $@
 
 ###########################################################################

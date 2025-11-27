@@ -4,11 +4,11 @@
 
 ###########################################################################
 
-STUB_REGISTRY		:= src_libc/reg_stubs.txt
-GEN_STUB_DIR		:= src_libc/gen-stubs
-CUSTOM_STUB_DIR		:= src_libc/custom-stubs
+STUB_REGISTRY		:= src_libra/reg_stubs.txt
+GEN_STUB_DIR		:= src_libra/gen-stubs
+CUSTOM_STUB_DIR		:= src_libra/custom-stubs
 STUB_DIRS			:= $(GEN_STUB_DIR) $(CUSTOM_STUB_DIR)
-STUB_GEN_SCRIPT		:= src_libc/gen_stubs.py
+STUB_GEN_SCRIPT		:= src_libra/gen_stubs.py
 
 # Root Dir
 ROOTDIR				:= ../..
@@ -20,11 +20,11 @@ OBJDIR				:= obj
 BINDIR				:= bin
 
 # Target Name
-TARGET				:= libc.a
+TARGET				:= libra.a
 
 # Compiler Flags
 CFLAGS				:= -O2
-CFLAGS				+= -I src_libc
+CFLAGS				+= -I src_libra
 CFLAGS				+= -I $(ROOTDIR)/inc_System
 CFLAGS				+= -I $(ROOTDIR)/inc_Public
 CFLAGS				+= -I $(ROOTDIR)/inc_Private
@@ -126,10 +126,7 @@ clean:
 	$(RM) $(GEN_STUB_DIR)/*.c
 
 install:
-	$(COPY) $(BINDIR)/libc.a $(SDK)/lib/
-	$(COPY) $(BINDIR)/libm.a $(SDK)/lib/
-	$(COPY) $(BINDIR)/libsocket.a $(SDK)/lib/
-	$(COPY) $(BINDIR)/libpthread.a $(SDK)/lib/
+	$(COPY) $(BINDIR)/libra.a $(SDK)/lib/
 
 strip:
 	@$(LS)		$(BINDIR)/$(TARGET)
