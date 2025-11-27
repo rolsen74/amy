@@ -16,7 +16,7 @@ static U32 App_RAM_New(
 	struct RA_Class *cl,
 	struct RA_Object *obj,
 	struct RAP_New *msg,
-	struct AppClassData *cls,
+	struct AppClassData *cls UNUSED,
 	InstanceData *data )
 {
 struct RAArguments *arglist;
