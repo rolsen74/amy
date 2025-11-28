@@ -76,7 +76,7 @@ U32 RootDispatcher(
 {
 U32 retval;
 
-	IExec->DebugPrintF( "Root Dispatcher\n" );
+//	IExec->DebugPrintF( "Root Dispatcher\n" );
 
 	#define RUNFUNC(x)	retval = x( Self, cl, obj, (PTR) msg, libBase, rcd ); break
 
@@ -97,7 +97,7 @@ U32 retval;
 
 		default:
 		{
-			IExec->DebugPrintF( "Root Class : Unknown $%08lx %sMethod\n", msg->RA_Method_ID, GetTagGroup( msg->RA_Method_ID ));
+//			IExec->DebugPrintF( "Root Class : Unknown $%08lx %sMethod\n", msg->RA_Method_ID, GetTagGroup( msg->RA_Method_ID ));
 
 //			#ifdef DEBUG
 //			IExec->DebugPrintF( "\nUnknown %sMethod: 0x%08lx\n\n", (PTR) GetTagGroup( msg->RA_Method_ID ), msg->RA_Method_ID );

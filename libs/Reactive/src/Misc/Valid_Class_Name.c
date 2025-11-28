@@ -18,7 +18,7 @@ struct libBase *libBase;
 S32 retval;
 U32 len;
 
-	IExec->DebugPrintF( "RA_Misc_Valid_Class_Name : Name '%s'\n", (name)?name:"<NULL>" );
+//	IExec->DebugPrintF( "RA_Misc_Valid_Class_Name : Name '%s'\n", (name)?name:"<NULL>" );
 
 	libBase = (PTR) Self->Data.LibBase;
 	IExec->ObtainSemaphore( & libBase->lib_ClassSemaphore );
@@ -27,7 +27,7 @@ U32 len;
 
 	if ( ! name )
 	{
-		IExec->DebugPrintF( "NULL Pointer\n" );
+//		IExec->DebugPrintF( "NULL Pointer\n" );
 		goto bailout;
 	}
 
@@ -49,7 +49,7 @@ U32 len;
 
 	if ( cl )
 	{
-		IExec->DebugPrintF( "Name allready Used\n" );
+//		IExec->DebugPrintF( "Name allready Used\n" );
 		goto bailout;
 	}
 

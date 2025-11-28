@@ -22,7 +22,7 @@ UNUSED	InstanceData *data )
 U32 *Storage32;
 U32 retval;
 
-	IExec->DebugPrintF( "App_RAM_Get\n" );
+//	IExec->DebugPrintF( "App_RAM_Get\n" );
 
 	Storage32 = msg->Storage;
 

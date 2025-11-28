@@ -22,7 +22,7 @@ UNUSED	struct DirClassData *cls,
 U32 *Storage32;
 U32 retval;
 
-	IExec->DebugPrintF( "Dir_RAM_Get\n" );
+//	IExec->DebugPrintF( "Dir_RAM_Get\n" );
 
 	Storage32 = msg->Storage;
 

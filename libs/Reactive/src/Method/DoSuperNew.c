@@ -21,13 +21,13 @@ struct RAP_New method;
 U32 retval;
 va_list ap;
 
-	IExec->DebugPrintF( "RA_Method_DoSuperNew\n" );
+//	IExec->DebugPrintF( "RA_Method_DoSuperNew\n" );
 
 	retval	= RAV_General_Failure;
 
 	if (( ! cl ) || ( cl->RA_Class_ID != ID_RAClass ))
 	{
-		IExec->DebugPrintF( "Method_DoSuperNew: Invalid Reactive object" );
+//		IExec->DebugPrintF( "Method_DoSuperNew: Invalid Reactive object" );
 //		  Self->Error_LogTags( txt );
 
 		retval = RAV_General_InvalidClass;
@@ -36,7 +36,7 @@ va_list ap;
 
 	if (( ! obj ) || ( obj->RA_Object_ID != ID_RAObject ))
 	{
-		IExec->DebugPrintF( "Method_DoSuperNew: Invalid Reactive object" );
+//		IExec->DebugPrintF( "Method_DoSuperNew: Invalid Reactive object" );
 //		  Self->Error_LogTags( txt );
 
 		retval = RAV_General_InvalidObject;

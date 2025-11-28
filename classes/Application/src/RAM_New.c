@@ -26,7 +26,7 @@ STR basename;
 U32 retval;
 int argc;
 
-	IExec->DebugPrintF( "App_RAM_New\n" );
+//	IExec->DebugPrintF( "App_RAM_New\n" );
 
 	arglist	= NULL;
 	argv	= NULL;
@@ -36,7 +36,7 @@ int argc;
 
 	if ( retval != RAV_General_Success )
 	{
-		IExec->DebugPrintF( "App_RAM_New 2\n" );
+//		IExec->DebugPrintF( "App_RAM_New 2\n" );
 		goto bailout;
 	}
 
@@ -50,14 +50,14 @@ int argc;
 
 			if ( ! data->AppBase )
 			{
-				IExec->DebugPrintF( "App_RAM_New : Error allocating memory\n" );
+//				IExec->DebugPrintF( "App_RAM_New : Error allocating memory\n" );
 
 				retval = RAV_General_OutOfMemory;
 			}
 		}
 		else
 		{
-			IExec->DebugPrintF( "App_RAM_New : Application Base Name is missing\n" );
+//			IExec->DebugPrintF( "App_RAM_New : Application Base Name is missing\n" );
 
 			retval = RAV_General_MissingTag;
 		}
@@ -73,7 +73,7 @@ int argc;
 			{
 				argc = tag->ti_Data;
 
-				IExec->DebugPrintF( "App_RAM_New : RAA_APP_Argument_Count : Argc %ld\n", argc );
+//				IExec->DebugPrintF( "App_RAM_New : RAA_APP_Argument_Count : Argc %ld\n", argc );
 				break;
 			}
 
@@ -81,7 +81,7 @@ int argc;
 			{
 				argv = (PTR) tag->ti_Data;
 
-				IExec->DebugPrintF( "App_RAM_New : RAA_APP_Argument_Values : Argv %p\n", argv );
+//				IExec->DebugPrintF( "App_RAM_New : RAA_APP_Argument_Values : Argv %p\n", argv );
 				break;
 			}
 
@@ -89,13 +89,13 @@ int argc;
 			{
 				arglist = (PTR) tag->ti_Data;
 
-				IExec->DebugPrintF( "App_RAM_New : RAA_APP_Argument_List : ArgList %p\n", arglist );
+//				IExec->DebugPrintF( "App_RAM_New : RAA_APP_Argument_List : ArgList %p\n", arglist );
 				break;
 			}
 
 			default:
 			{
-				IExec->DebugPrintF( "App_RAM_New : Unknown $%08lx:%08lx\n", tag->ti_Tag, tag->ti_Data );
+//				IExec->DebugPrintF( "App_RAM_New : Unknown $%08lx:%08lx\n", tag->ti_Tag, tag->ti_Data );
 				break;
 			}
 		}
@@ -115,7 +115,7 @@ int argc;
 
 		if (( ! data->Args  ) || ( retval != RAV_General_Success ))
 		{
-			IExec->DebugPrintF( "App_RAM_New : Error parsing Arguments\n" );
+//			IExec->DebugPrintF( "App_RAM_New : Error parsing Arguments\n" );
 			goto bailout;
 		}
 	}

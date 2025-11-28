@@ -113,7 +113,7 @@ U32 result;
 S32 error;
 BPTR seg;
 
-	IExec->DebugPrintF( "RA_Misc_Plugin_Open\n" );
+//	IExec->DebugPrintF( "RA_Misc_Plugin_Open\n" );
 
 //	libBase = (PTR) Self->Data.LibBase;
 
@@ -129,7 +129,7 @@ BPTR seg;
 
 	if ( ! namebuf )
 	{
-		IExec->DebugPrintF( "Error building path name\n" );
+//		IExec->DebugPrintF( "Error building path name\n" );
 		goto bailout;
 	}
 
@@ -144,7 +144,7 @@ BPTR seg;
 
 		if ( ! namebuf )
 		{
-			IExec->DebugPrintF( "Error building path name\n" );
+//			IExec->DebugPrintF( "Error building path name\n" );
 			goto bailout;
 		}
 
@@ -153,7 +153,7 @@ BPTR seg;
 
 	if ( ! seg )
 	{
-		IExec->DebugPrintF( "Unable to load '%s' class\n", name );
+//		IExec->DebugPrintF( "Unable to load '%s' class\n", name );
 		free( namebuf );
 		goto bailout;
 	}
@@ -162,7 +162,7 @@ BPTR seg;
 
 	if ( ! rap )
 	{
-		IExec->DebugPrintF( "Plugin segment not found\n" );
+//		IExec->DebugPrintF( "Plugin segment not found\n" );
 		free( namebuf );
 		goto bailout;
 	}
@@ -173,7 +173,7 @@ BPTR seg;
 
 	if ( ! Self->Misc_Valid_Class_Name( rap->RA_Plugin_PubName ))
 	{
-		IExec->DebugPrintF( "Class name used\n" );
+//		IExec->DebugPrintF( "Class name used\n" );
 		goto bailout;
 	}
 
@@ -186,7 +186,7 @@ BPTR seg;
 
 		if ( ! rap->RA_Plugin_Data )
 		{
-			IExec->DebugPrintF( "Error allocating ClassData (Size: %lu)\n", rap->RA_Plugin_DataSize );
+//			IExec->DebugPrintF( "Error allocating ClassData (Size: %lu)\n", rap->RA_Plugin_DataSize );
 			goto bailout;
 		}
 	}
@@ -201,7 +201,7 @@ BPTR seg;
 
 		if ( result != RAV_General_Success )
 		{
-			IExec->DebugPrintF( "Init of Plugin failed\n" );
+//			IExec->DebugPrintF( "Init of Plugin failed\n" );
 			goto bailout;
 		}
 	}
@@ -217,7 +217,7 @@ BPTR seg;
 
 	if ( ! cl )
 	{
-		IExec->DebugPrintF( "Error creating class\n" );
+//		IExec->DebugPrintF( "Error creating class\n" );
 		goto bailout;
 	}
 
@@ -252,7 +252,7 @@ BPTR seg;
 
 	if ( ! Self->Class_Add( cl, cl->RA_Class_Plugin->RA_Plugin_PubName ))
 	{
-		IExec->DebugPrintF( "Error adding class to public list\n" );
+//		IExec->DebugPrintF( "Error adding class to public list\n" );
 		goto bailout;
 	}
 

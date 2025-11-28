@@ -17,7 +17,7 @@ struct WBArg *arg;
 U32 errcode;
 PTR retval;
 
-	IExec->DebugPrintF( "RA_Arguments_ParseList : Handle_WBArgs\n" );
+//	IExec->DebugPrintF( "RA_Arguments_ParseList : Handle_WBArgs\n" );
 
 	errcode = RAV_General_Failure;
 

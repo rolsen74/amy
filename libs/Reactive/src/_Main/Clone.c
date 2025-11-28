@@ -19,7 +19,7 @@ struct AmyCLibIFace *IFace;
 struct libData *data;
 S32 error;
 
-	IExec->DebugPrintF( "Reactive : _Main_Clone\n" );
+//	IExec->DebugPrintF( "Reactive : _Main_Clone\n" );
 
 	error = TRUE;
 
@@ -38,7 +38,7 @@ S32 error;
 
 	data = (PTR)( (U32) IFace - IFace->Data.NegativeSize );
 
-	IExec->DebugPrintF( "Reactive : _Main_Clone : IFace %p, Data %p\n", IFace, data );
+//	IExec->DebugPrintF( "Reactive : _Main_Clone : IFace %p, Data %p\n", IFace, data );
 
 	memset( data, 0, sizeof( struct libData ));
 

@@ -22,7 +22,7 @@ static U32 Dir_RAM_New(
 struct TagItem *tag;
 U32 retval;
 
-	IExec->DebugPrintF( "Dir_RAM_New\n" );
+//	IExec->DebugPrintF( "Dir_RAM_New\n" );
 
 	IExec->NewList( &data->Header );
 
@@ -42,7 +42,7 @@ U32 retval;
 		{
 			case RAA_DIR_DataFields:
 			{
-				IExec->DebugPrintF( "RAA_DIR_DataFields\n" );
+//				IExec->DebugPrintF( "RAA_DIR_DataFields\n" );
 				data->DataFields = tag->ti_Data;
 				break;
 			}
@@ -50,15 +50,15 @@ U32 retval;
 			case RAA_DIR_Path:
 			{
 				STR str = (STR) tag->ti_Data;
-				IExec->DebugPrintF( "RAA_DIR_Path : '%s'\n", (str)?str:"" );
+//				IExec->DebugPrintF( "RAA_DIR_Path : '%s'\n", (str)?str:"" );
 				Parse_Path( Self, cls, data, str );
 				break;
 			}
 
 			case RAA_DIR_Pattern:
 			{
-				STR str = (STR) tag->ti_Data;
-				IExec->DebugPrintF( "RAA_DIR_Pattern : '%s'\n", (str)?str:"" );
+//				STR str = (STR) tag->ti_Data;
+//				IExec->DebugPrintF( "RAA_DIR_Pattern : '%s'\n", (str)?str:"" );
 				data->UserPattern = (PTR) tag->ti_Data;
 				break;
 			}

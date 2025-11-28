@@ -23,7 +23,7 @@ struct ExamineData *linkedata;
 struct ExamineData *dat;
 U32 retval;
 
-	IExec->DebugPrintF( "Dir_Scan\n" );
+//	IExec->DebugPrintF( "Dir_Scan\n" );
 
 	retval	= RAV_General_Failure;
 

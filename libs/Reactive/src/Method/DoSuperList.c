@@ -15,11 +15,11 @@ U32 AMYFUNC _main_Method_DoSuperList( struct ReactivePrivIFace *Self, struct RA_
 {
 U32 retval;
 
-	IExec->DebugPrintF( "RA_Method_DoSuperList\n" );
+//	IExec->DebugPrintF( "RA_Method_DoSuperList\n" );
 
 	if (( ! cl ) || ( cl->RA_Class_ID != ID_RAClass ))
 	{
-		IExec->DebugPrintF( "Method_DoSuperArgList: Invalid Reactive Class (0x%08lx)", cl );
+//		IExec->DebugPrintF( "Method_DoSuperArgList: Invalid Reactive Class (0x%08lx)", cl );
 //		  Self->Error_LogTags( txt, cl );
 
 		retval = RAV_General_InvalidClass;
@@ -28,7 +28,7 @@ U32 retval;
 
 	if (( ! obj ) || ( obj->RA_Object_ID != ID_RAObject ))
 	{
-		IExec->DebugPrintF( "Method_DoSuperArgList: Invalid Reactive Object (0x%08lx)", obj );
+//		IExec->DebugPrintF( "Method_DoSuperArgList: Invalid Reactive Object (0x%08lx)", obj );
 //		  Self->Error_LogTags( txt, obj );
 
 		retval = RAV_General_InvalidObject;
@@ -37,7 +37,7 @@ U32 retval;
 
 	if ( method->RA_Method_ID == 0 )
 	{
-		IExec->DebugPrintF( "Method_DoSuperArgList: Invalid MethodID (0x%08lx)", method->RA_Method_ID );
+//		IExec->DebugPrintF( "Method_DoSuperArgList: Invalid MethodID (0x%08lx)", method->RA_Method_ID );
 //		  Self->Error_LogTags( txt, method->RA_Method_ID );
 
 		retval = RAV_General_InvalidMethod;

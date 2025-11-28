@@ -15,11 +15,11 @@ U32 AMYFUNC _main_Method_DoList( struct ReactivePrivIFace *Self, struct RA_PrivO
 {
 U32 retval;
 
-	IExec->DebugPrintF( "RA_Method_DoList\n" );
+//	IExec->DebugPrintF( "RA_Method_DoList\n" );
 
 	if (( ! obj ) || ( obj->RA_Object_ID != ID_RAObject ))
 	{
-		IExec->DebugPrintF( "Method_DoArgList: Invalid Reactive object (0x%08lx)", obj );
+//		IExec->DebugPrintF( "Method_DoArgList: Invalid Reactive object (0x%08lx)", obj );
 //		  Self->Error_LogTags( txt, obj );
 
 		retval = RAV_General_InvalidObject;
@@ -28,7 +28,7 @@ U32 retval;
 
 	if ( method->RA_Method_ID == 0 )
 	{
-		IExec->DebugPrintF( "Method_DoTagList: Invalid MethodID" );
+//		IExec->DebugPrintF( "Method_DoTagList: Invalid MethodID" );
 //		  Self->Error_LogTags( txt );
 
 		retval = RAV_General_InvalidMethod;

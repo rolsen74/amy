@@ -15,7 +15,7 @@ U32 AMYFUNC _main_Misc_GetTagValue( struct ReactivePrivIFace *Self UNUSED, struc
 {
 U32 retval;
 
-	IExec->DebugPrintF( "RA_Misc_GetTagValue\n" );
+//	IExec->DebugPrintF( "RA_Misc_GetTagValue\n" );
 
 	retval = defval;
 

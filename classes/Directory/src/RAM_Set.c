@@ -22,7 +22,7 @@ UNUSED	struct DirClassData *cls,
 U32 retval;
 S32 clr;
 
-	IExec->DebugPrintF( "Dir_RAM_Set\n" );
+//	IExec->DebugPrintF( "Dir_RAM_Set\n" );
 
 	clr = FALSE;
 

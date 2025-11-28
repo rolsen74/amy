@@ -15,7 +15,7 @@ static U32 Handle_Option( struct ReactivePrivIFace *Self UNUSED, struct RAArgume
 {
 U32 error;
 
-	IExec->DebugPrintF( "RA_Arguments_ParseList : Handle_Option\n" );
+//	IExec->DebugPrintF( "RA_Arguments_ParseList : Handle_Option\n" );
 
 	error = RAV_General_Success;
 
@@ -137,7 +137,7 @@ U32 error;
 
 		default:
 		{
-			IExec->DebugPrintF( "_main_Arguments_ParseList : Unknown Type\n" );
+//			IExec->DebugPrintF( "_main_Arguments_ParseList : Unknown Type\n" );
 			error = RAV_General_Failure;
 			break;
 		}

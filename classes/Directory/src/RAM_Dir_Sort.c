@@ -24,7 +24,7 @@ struct ExamineData *dat2;
 struct List l;
 U32 retval;
 
-	IExec->DebugPrintF( "Dir_Sort\n" );
+//	IExec->DebugPrintF( "Dir_Sort\n" );
 
 	// --
 

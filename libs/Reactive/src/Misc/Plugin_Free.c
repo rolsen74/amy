@@ -16,7 +16,7 @@ S32 AMYFUNC _main_Misc_Plugin_Free( struct ReactivePrivIFace *Self UNUSED, struc
 U32 result;
 S32 retval;
 
-	IExec->DebugPrintF( "RA_Misc_Plugin_Free\n" );
+//	IExec->DebugPrintF( "RA_Misc_Plugin_Free\n" );
 
 	retval = FALSE;
 
@@ -27,13 +27,13 @@ S32 retval;
 
 	if ( rap->RA_Plugin_Exit )
 	{
-		// Plugin Exit may resuze to exit, and we have to obay that
+		// Plugin Exit may refuze to exit, and we have to obay that
 		
 		result = rap->RA_Plugin_Exit( IExec, rap );
 
 		if ( result != RAV_General_Success )
 		{
-			IExec->DebugPrintF( "Plugin refused to Exit\n" );
+//			IExec->DebugPrintF( "Plugin refused to Exit\n" );
 			goto bailout;
 		}
 	}

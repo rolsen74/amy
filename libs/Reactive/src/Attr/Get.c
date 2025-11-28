@@ -18,7 +18,7 @@ U32 retval;
 
 	if (( ! obj ) || ( obj->RA_Object_ID != ID_RAObject ))
 	{
-		IExec->DebugPrintF( "Attr_Get: Invalid Object Pointer (%p)", obj );
+//		IExec->DebugPrintF( "Attr_Get: Invalid Object Pointer (%p)", obj );
 //		  Self->Error_LogTags( txt, obj );
 
 		retval = RAV_General_InvalidObject;
@@ -27,7 +27,7 @@ U32 retval;
 
 	if ( ! Storage )
 	{
-		IExec->DebugPrintF( "Attr_Get: Missing Storage Pointer (%p)", obj );
+//		IExec->DebugPrintF( "Attr_Get: Missing Storage Pointer (%p)", obj );
 //		  Self->Error_LogTags( txt, obj );
 
 		retval = RAV_General_NoStorage;

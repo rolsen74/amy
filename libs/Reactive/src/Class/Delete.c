@@ -17,7 +17,7 @@ struct RA_PrivClass *super;
 struct libBase *libBase;
 U32 retval;
 
-	IExec->DebugPrintF( "RA_Class_Delete\n" );
+//	IExec->DebugPrintF( "RA_Class_Delete\n" );
 
 	libBase = (PTR) Self->Data.LibBase;
 
@@ -25,19 +25,19 @@ U32 retval;
 
 	if ( ! cl )
 	{
-		IExec->DebugPrintF( "Class_Delete: Class Pointer is missing\n" );
+//		IExec->DebugPrintF( "Class_Delete: Class Pointer is missing\n" );
 		goto bailout;
 	}
 
 	if ( cl->RA_Class_ID != ID_RAClass )
 	{
-		IExec->DebugPrintF( "Class_Delete: Not a Class Object\n" );
+//		IExec->DebugPrintF( "Class_Delete: Not a Class Object\n" );
 		goto bailout;
 	}
 
 	if ( ! cl->RA_Class_Super )
 	{
-		IExec->DebugPrintF( "Class_Delete: Can't Delete Root Class\n" );
+//		IExec->DebugPrintF( "Class_Delete: Can't Delete Root Class\n" );
 		goto bailout;
 	}
 
@@ -59,7 +59,7 @@ U32 retval;
 		{
 			if ( ! Self->Misc_Plugin_Free( cl->RA_Class_Plugin ))
 			{
-				IExec->DebugPrintF( "Plugin will not exit\n" );
+//				IExec->DebugPrintF( "Plugin will not exit\n" );
 				goto bailout;
 			}
 

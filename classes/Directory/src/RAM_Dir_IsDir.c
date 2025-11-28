@@ -22,7 +22,7 @@ UNUSED	InstanceData *data )
 struct ExamineData *ed;
 U32 retval;
 
-	IExec->DebugPrintF( "Dir_IsDir\n" );
+//	IExec->DebugPrintF( "Dir_IsDir\n" );
 
 	PTR oldproc = IDOS->SetProcWindow( (PTR) -1 );
 

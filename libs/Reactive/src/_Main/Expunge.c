@@ -16,7 +16,7 @@ U32 AMYFUNC _Main_Expunge( struct ReactivePrivIFace *Self )
 struct libData *data;
 U32 retval;
 
-	IExec->DebugPrintF( "Reactive : _Main_Expunge\n" );
+//	IExec->DebugPrintF( "Reactive : _Main_Expunge\n" );
 
 	retval = FALSE;
 

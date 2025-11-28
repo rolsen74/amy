@@ -16,7 +16,7 @@ U32 AMYFUNC _main_Class_Unlock( struct ReactivePrivIFace *Self, struct RA_PrivCl
 struct libBase *libBase;
 U32 retval;
 
-	IExec->DebugPrintF( "RA_Class_Unlock\n" );
+//	IExec->DebugPrintF( "RA_Class_Unlock\n" );
 
 	libBase = (PTR) Self->Data.LibBase;
 

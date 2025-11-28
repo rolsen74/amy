@@ -31,7 +31,7 @@ PTR wb;
 
 	retval	= NULL;
 
-	IExec->DebugPrintF( "RA_Arguments_ParseList\n" );
+//	IExec->DebugPrintF( "RA_Arguments_ParseList\n" );
 
 	errptr	= Self->Misc_GetTagData( taglist, RAA_ErrorCode, NULL );
 	file	= Self->Misc_GetTagData( taglist, RAA_Argument_File, NULL );

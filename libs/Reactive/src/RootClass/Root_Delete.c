@@ -22,7 +22,7 @@ UNUSED	struct RootClass_Data *rcd )
 //struct NotifyNode *nn;
 U32 retval;
 
-	IExec->DebugPrintF( "Root_Delete\n" );
+//	IExec->DebugPrintF( "Root_Delete\n" );
 
 	// Clear ID, then it can't be used any more
 	obj->RA_Object_ID = 0;

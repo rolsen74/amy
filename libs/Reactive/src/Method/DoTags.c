@@ -21,11 +21,11 @@ struct RA_Method *m;
 U32 retval;
 va_list ap;
 
-	IExec->DebugPrintF( "RA_Method_DoTags\n" );
+//	IExec->DebugPrintF( "RA_Method_DoTags\n" );
 
 	if (( ! obj ) || ( obj->RA_Object_ID != ID_RAObject ))
 	{
-		IExec->DebugPrintF( "Method_DoArgs: Invalid Reactive object (0x%08lx)", obj );
+//		IExec->DebugPrintF( "Method_DoArgs: Invalid Reactive object (0x%08lx)", obj );
 //		  Self->Error_LogTags( txt, obj );
 
 		retval = RAV_General_InvalidObject;
@@ -41,12 +41,12 @@ va_list ap;
 
 	if ( cl->RA_Class_ID != ID_RAClass )
 	{
-		IExec->DebugPrintF( "Method_DoTags: Invalid Class ID\n" );
+//		IExec->DebugPrintF( "Method_DoTags: Invalid Class ID\n" );
 	}
 
 	if (( m->RA_Method_ID & 0xff000000 ) != 0xac000000 )
 	{
-		IExec->DebugPrintF( "Method_DoTags: Not a system MethodID\n" );
+//		IExec->DebugPrintF( "Method_DoTags: Not a system MethodID\n" );
 	}
 
 	#endif

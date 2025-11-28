@@ -21,7 +21,7 @@ UNUSED	struct DirClassData *cls,
 {
 U32 retval;
 
-	IExec->DebugPrintF( "Dir_Delete\n" );
+//	IExec->DebugPrintF( "Dir_Delete\n" );
 
 	if ( data->String )
 	{

@@ -31,7 +31,7 @@ S32 Req;
 S32 Case;
 S32 Key;
 
-	IExec->DebugPrintF( "RA_Arguments_ParseList : Handle_Options\n" );
+//	IExec->DebugPrintF( "RA_Arguments_ParseList : Handle_Options\n" );
 
 	retval	= NULL;
 	Multi	= FALSE;
@@ -64,7 +64,7 @@ S32 Key;
 
 				default:
 				{
-					IExec->DebugPrintF( "Illegal Arguments" );
+//					IExec->DebugPrintF( "Illegal Arguments" );
 					*error = RAV_General_IllegalArguments;
 					goto bailout;
 				}
@@ -77,14 +77,14 @@ S32 Key;
 
 		if (( Key == TRUE ) && ( Req == TRUE ))
 		{
-			IExec->DebugPrintF( "Illegal Arguments" );
+//			IExec->DebugPrintF( "Illegal Arguments" );
 			*error = RAV_General_IllegalArguments;
 			goto bailout;
 		}
 
 		if (( Type == ArgType_NotSet ) && ( Key == FALSE ))
 		{
-			IExec->DebugPrintF( "Illegal Arguments, Missing Type" );
+//			IExec->DebugPrintF( "Illegal Arguments, Missing Type" );
 			*error = RAV_General_IllegalArguments;
 			goto bailout;
 		}
@@ -96,7 +96,7 @@ S32 Key;
 
 		if ( Args[pos].Name[l] != ',' )
 		{
-			IExec->DebugPrintF( "Illegal Arguments, Missing Comma" );
+//			IExec->DebugPrintF( "Illegal Arguments, Missing Comma" );
 			*error = RAV_General_IllegalArguments;
 			goto bailout;
 		}

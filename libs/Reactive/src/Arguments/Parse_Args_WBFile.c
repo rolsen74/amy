@@ -18,7 +18,7 @@ U32 errorcode;
 PTR retval;
 U32 pos;
 
-	IExec->DebugPrintF( "RA_Arguments_ParseList : Handle_WBArgs\n" );
+//	IExec->DebugPrintF( "RA_Arguments_ParseList : Handle_WBArgs\n" );
 
 	errorcode = RAV_General_Success;
 
@@ -41,7 +41,7 @@ U32 pos;
 
 		if ( ! IIcon )
 		{
-			IExec->DebugPrintF( "RA_Arguments_ParseList : Error opening icon.library v53" );
+//			IExec->DebugPrintF( "RA_Arguments_ParseList : Error opening icon.library v53" );
 			goto bailout;
 		}
 	}

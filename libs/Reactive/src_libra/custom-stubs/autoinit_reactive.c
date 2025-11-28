@@ -20,7 +20,7 @@ void __attribute__((constructor)) __init_libreactive( void )
 
 	if ( ! ReativeBase )
 	{
-		IExec->DebugPrintF( "Unable to open Reactive.library v%lu\n", (U32) RA_LIB_VERSION );
+//		IExec->DebugPrintF( "Unable to open Reactive.library v%lu\n", (U32) RA_LIB_VERSION );
 	}
 
 	assert( ReativeBase );
@@ -40,7 +40,7 @@ void __attribute__((constructor)) __init_libreactive( void )
 
 	if ( ! IReactive )
 	{
-		IExec->DebugPrintF( "Unable to obtain Reactive interface\n" );
+//		IExec->DebugPrintF( "Unable to obtain Reactive interface\n" );
 	}
 
 	assert( IReactive );

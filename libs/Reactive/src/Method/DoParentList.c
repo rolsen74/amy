@@ -17,11 +17,11 @@ struct RA_PrivObject *o;
 struct RA_PrivClass *cl;
 U32 retval;
 
-	IExec->DebugPrintF( "RA_Method_DoParentList\n" );
+//	IExec->DebugPrintF( "RA_Method_DoParentList\n" );
 
 	if (( ! obj ) || ( obj->RA_Object_ID != ID_RAObject ))
 	{
-		IExec->DebugPrintF( "Method_DoParentList: Invalid Reactive Object (0x%08lx)", obj );
+//		IExec->DebugPrintF( "Method_DoParentList: Invalid Reactive Object (0x%08lx)", obj );
 
 		retval = RAV_General_InvalidObject;
 		goto bailout;
@@ -29,7 +29,7 @@ U32 retval;
 
 	if ( method->RA_Method_ID == 0 )
 	{
-		IExec->DebugPrintF( "Method_DoParentList: Invalid MethodID (0x%08lx)", method->RA_Method_ID );
+//		IExec->DebugPrintF( "Method_DoParentList: Invalid MethodID (0x%08lx)", method->RA_Method_ID );
 
 		retval = RAV_General_InvalidMethod;
 		goto bailout;
@@ -39,7 +39,7 @@ U32 retval;
 
 	if ( o == NULL )
 	{
-		IExec->DebugPrintF( "Method_DoParentList: Object has no Parent" );
+//		IExec->DebugPrintF( "Method_DoParentList: Object has no Parent" );
 
 		retval = RAV_General_NoParent;
 		goto bailout;
@@ -47,7 +47,7 @@ U32 retval;
 
 	if ( o->RA_Object_ID != ID_RAObject )
 	{
-		IExec->DebugPrintF( "_main_Method_DoParentTags: Invalid Reactive Object (0x%08lx)", o );
+//		IExec->DebugPrintF( "_main_Method_DoParentTags: Invalid Reactive Object (0x%08lx)", o );
 
 		retval = RAV_General_InvalidObject;
 		goto bailout;
@@ -57,7 +57,7 @@ U32 retval;
 
 	if (( ! cl ) || ( cl->RA_Class_ID != ID_RAClass ))
 	{
-		IExec->DebugPrintF( "Method_DoParentList: Object has no Class" );
+//		IExec->DebugPrintF( "Method_DoParentList: Object has no Class" );
 
 		retval = RAV_General_InvalidClass;
 		goto bailout;

@@ -19,11 +19,11 @@ U32 cnt;
 
 	retval = FALSE;
 
-	IExec->DebugPrintF( "RA_Arguments_Free\n" );
+//	IExec->DebugPrintF( "RA_Arguments_Free\n" );
 
 	if (( ! as ) ||( as->as_ID != ARG_ID ))
 	{
-		IExec->DebugPrintF( "RA_Arguments_Free : Illegal Argument Pointer" );
+//		IExec->DebugPrintF( "RA_Arguments_Free : Illegal Argument Pointer" );
 		goto bailout;
 	}
 

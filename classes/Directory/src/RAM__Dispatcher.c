@@ -21,7 +21,7 @@ static U32 Dir_Dispatcher(
 {
 U32 retval;
 
-	IExec->DebugPrintF( "Dir Dispatcher\n" );
+//	IExec->DebugPrintF( "Dir Dispatcher\n" );
 
 	#define RUNFUNC(x)	retval = x( Self, cl, obj, (PTR) msg, dcls, data ); break
 

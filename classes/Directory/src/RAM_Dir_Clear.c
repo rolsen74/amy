@@ -21,7 +21,7 @@ UNUSED	struct DirClassData *cls,
 {
 U32 retval;
 
-	IExec->DebugPrintF( "Dir_Clear\n" );
+//	IExec->DebugPrintF( "Dir_Clear\n" );
 
 	retval	= RAV_General_Success;
 

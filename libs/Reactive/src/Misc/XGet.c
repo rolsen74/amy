@@ -15,13 +15,13 @@ U32 AMYFUNC _main_Misc_XGet( struct ReactivePrivIFace *Self, struct RA_PrivObjec
 {
 U32 retval;
 
-	IExec->DebugPrintF( "_main_Misc_XGet : Object %p, AttrID $%08lx\n", obj, AttrID );
+//	IExec->DebugPrintF( "_main_Misc_XGet : Object %p, AttrID $%08lx\n", obj, AttrID );
 
 	retval = 0;
 
 	if (( ! obj ) || ( obj->RA_Object_ID != ID_RAObject ))
 	{
-		IExec->DebugPrintF( "_main_Misc_XGet : Invalid Object Pointer : Obj %p", obj );
+//		IExec->DebugPrintF( "_main_Misc_XGet : Invalid Object Pointer : Obj %p", obj );
 //		  Self->Error_LogTags( txt );
 
 //		retval = RAV_General_InvalidObject;

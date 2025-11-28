@@ -27,7 +27,7 @@ STR s3;
 STR s;
 U8 chr;
 
-	IExec->DebugPrintF( "RA_Arguments_ParseList : Handle_CLIArgs\n" );
+//	IExec->DebugPrintF( "RA_Arguments_ParseList : Handle_CLIArgs\n" );
 
 	array	= NULL;
 	retval	= NULL;

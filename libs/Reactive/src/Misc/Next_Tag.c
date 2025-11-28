@@ -13,7 +13,7 @@
 
 struct TagItem * AMYFUNC _main_Misc_NextTag( struct ReactivePrivIFace *Self UNUSED, struct TagItem *tag )
 {
-	IExec->DebugPrintF( "_main_Misc_NextTag\n" );
+//	IExec->DebugPrintF( "_main_Misc_NextTag\n" );
 
 	while( tag )
 	{

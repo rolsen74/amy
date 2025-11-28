@@ -21,7 +21,7 @@ UNUSED	struct DirClassData *cls,
 {
 U32 retval;
 
-	IExec->DebugPrintF( "Dir_GetEntry\n" );
+//	IExec->DebugPrintF( "Dir_GetEntry\n" );
 
 	retval = RAV_General_Failure;
 

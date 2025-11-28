@@ -249,7 +249,7 @@ STR name;
 	error	= TRUE;
 	libBase	= NULL;
 
-	IExec->DebugPrintF( "Reactive : ROMInit 1\n" );
+//	IExec->DebugPrintF( "Reactive : ROMInit 1\n" );
 
 	// --
 
@@ -257,7 +257,7 @@ STR name;
 
 	if ( ! AmyCLibBase )
 	{
-		IExec->DebugPrintF( "Reactive : Error opening AmyCLib v1\n" );
+//		IExec->DebugPrintF( "Reactive : Error opening AmyCLib v1\n" );
 		goto bailout;
 	}
 
@@ -265,13 +265,13 @@ STR name;
 
 	if ( ! IAmyCLib )
 	{
-		IExec->DebugPrintF( "Reactive : Error opening AmyCLib interface\n" );
+//		IExec->DebugPrintF( "Reactive : Error opening AmyCLib interface\n" );
 		goto bailout;
 	}
 
 	if ( ! IAmyCLib->Priv_Startup_Init( NULL, EM_STRING|EM_MEMORY ))
 	{
-		IExec->DebugPrintF( "Reactive : Error AmyC Startup failed\n" );
+//		IExec->DebugPrintF( "Reactive : Error AmyC Startup failed\n" );
 		goto bailout;
 	}
 
@@ -281,7 +281,7 @@ STR name;
 
 	if ( ! AmyCLibBase )
 	{
-		IExec->DebugPrintF( "Reactive : Error opening DOS v50\n" );
+//		IExec->DebugPrintF( "Reactive : Error opening DOS v50\n" );
 		goto bailout;
 	}
 
@@ -289,13 +289,13 @@ STR name;
 
 	if ( ! IDOS )
 	{
-		IExec->DebugPrintF( "Reactive : Error opening DOS interface\n" );
+//		IExec->DebugPrintF( "Reactive : Error opening DOS interface\n" );
 		goto bailout;
 	}
 
 	// --
 
-	IExec->DebugPrintF( "Reactive : ROMInit 2\n" );
+//	IExec->DebugPrintF( "Reactive : ROMInit 2\n" );
 
 	libBase = (PTR) IExec->CreateLibraryTags(
 		CLT_DataSize, sizeof( struct libBase ),
@@ -306,11 +306,11 @@ STR name;
 
 	if ( ! libBase )
 	{
-		IExec->DebugPrintF( "Reactive : Error creating Device\n" );
+//		IExec->DebugPrintF( "Reactive : Error creating Device\n" );
 		goto bailout;
 	}
 
-	IExec->DebugPrintF( "Reactive : ROMInit 3\n" );
+//	IExec->DebugPrintF( "Reactive : ROMInit 3\n" );
 
 	libBase->lib_Base.lib_Node.ln_Type	= NT_LIBRARY;
 	libBase->lib_Base.lib_Node.ln_Pri	= 0;
@@ -336,13 +336,13 @@ STR name;
 
 	if ( ! RootClass )
 	{
-		IExec->DebugPrintF( "Error allocating memory\n" );
+//		IExec->DebugPrintF( "Error allocating memory\n" );
 		goto bailout;
 	}
 
 	libBase->lib_RootClass = RootClass;
 
-	IExec->DebugPrintF( "RootClass %p\n", RootClass );
+//	IExec->DebugPrintF( "RootClass %p\n", RootClass );
 
 	// --
 
@@ -356,7 +356,7 @@ STR name;
 
 	if ( ! name )
 	{
-		IExec->DebugPrintF( "Error allocating memory\n" );
+//		IExec->DebugPrintF( "Error allocating memory\n" );
 		goto bailout;
 	}
 
@@ -365,7 +365,7 @@ STR name;
 		name[cnt] = RAC_Root[cnt];
 	}
 
-	IExec->DebugPrintF( "RootName: '%s'\n", name );
+//	IExec->DebugPrintF( "RootName: '%s'\n", name );
 
 	// --
 

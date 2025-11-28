@@ -13,7 +13,7 @@
 
 U32 AMYFUNC _Main_Release( struct ReactivePrivIFace *Self )
 {
-	IExec->DebugPrintF( "Reactive : _Main_Release\n" );
+//	IExec->DebugPrintF( "Reactive : _Main_Release\n" );
 
 	Self->Data.RefCount--;
 

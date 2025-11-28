@@ -18,7 +18,7 @@ U8 *mem;
 BPTR handle;
 S32 err;
 
-	IExec->DebugPrintF( "_main_Misc_LoadFile_32\n" );
+//	IExec->DebugPrintF( "_main_Misc_LoadFile_32\n" );
 
 	size	= 0ULL;
 	mem		= NULL;
@@ -36,13 +36,13 @@ S32 err;
 
 	if ( ! size )
 	{
-		IExec->DebugPrintF( "LoadFile32 : Error getting filesize\n" );
+//		IExec->DebugPrintF( "LoadFile32 : Error getting filesize\n" );
 		goto bailout;
 	}
 
 	if ( size > 512*1024*1024 )	// Max 512mb
 	{
-		IExec->DebugPrintF( "LoadFile32 : Error file too big %lld bytes\n", size );
+//		IExec->DebugPrintF( "LoadFile32 : Error file too big %lld bytes\n", size );
 		goto bailout;
 	}
 
@@ -50,13 +50,13 @@ S32 err;
 
 	if ( ! mem )
 	{
-		IExec->DebugPrintF( "LoadFile32 : Error allocating memory\n" );
+//		IExec->DebugPrintF( "LoadFile32 : Error allocating memory\n" );
 		goto bailout;
 	}
 
 	if ( IDOS->Read( handle, mem, size ) != (S32) size )
 	{
-		IExec->DebugPrintF( "LoadFile32 : Error reading file\n" );
+//		IExec->DebugPrintF( "LoadFile32 : Error reading file\n" );
 		goto bailout;
 	}
 

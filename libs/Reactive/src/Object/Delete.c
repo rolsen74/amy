@@ -19,7 +19,7 @@ struct RA_PrivClass *cl;
 struct libBase *libBase;
 U32 retval;
 
-	IExec->DebugPrintF( "RA_Object_Delete\n" );
+//	IExec->DebugPrintF( "RA_Object_Delete\n" );
 
 	libBase = (PTR) Self->Data.LibBase;
 

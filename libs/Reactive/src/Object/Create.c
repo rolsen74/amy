@@ -22,7 +22,7 @@ struct RA_PrivObject * AMYFUNC _main_Object_CreateTags(
 struct RA_PrivObject *obj;
 va_list ap;
 
-	IExec->DebugPrintF( "RA_Object_CreateTags\n" );
+//	IExec->DebugPrintF( "RA_Object_CreateTags\n" );
 
 	va_start( ap, ClassName );
 
@@ -53,25 +53,25 @@ U32 *err;
 S32 findlock;
 //S32 dologs;
 
-	IExec->DebugPrintF( "RA_Object_CreateList\n" );
+//	IExec->DebugPrintF( "RA_Object_CreateList\n" );
 
 	#if 0
 	if ( Class )
 	{
-		IExec->DebugPrintF( "ClassPtr: %p\n", Class );
+//		IExec->DebugPrintF( "ClassPtr: %p\n", Class );
 	}
 	else
 	{
-		IExec->DebugPrintF( "ClassName: %s\n", ClassName );
+//		IExec->DebugPrintF( "ClassName: %s\n", ClassName );
 	}
 
 	if ( taglist )
 	{
-		IExec->DebugPrintF( "TagList: %08lx:%08lx\n", taglist->ti_Tag, taglist->ti_Data );
+//		IExec->DebugPrintF( "TagList: %08lx:%08lx\n", taglist->ti_Tag, taglist->ti_Data );
 	}
 	else
 	{
-		IExec->DebugPrintF( "TagList: NULL\n" );
+//		IExec->DebugPrintF( "TagList: NULL\n" );
 	}
 	#endif
 
@@ -164,7 +164,7 @@ S32 findlock;
 
 	if (( btype ) && ( cl->RA_Class_Type != btype ))
 	{
-		IExec->DebugPrintF( "Object_Create : Class not the correct Base Type" );
+//		IExec->DebugPrintF( "Object_Create : Class not the correct Base Type" );
 
 //--		if ( dologs )
 //--		{
@@ -183,7 +183,7 @@ S32 findlock;
 
 	if ( ! obj )
 	{
-		IExec->DebugPrintF( "Object_Create: Error allocating memory for new object" );
+//		IExec->DebugPrintF( "Object_Create: Error allocating memory for new object" );
 
 //--		if ( dologs == TRUE )
 //--		{
@@ -300,7 +300,7 @@ bailout:
 		Self->Class_Unlock( cl );
 	}
 
-	IExec->DebugPrintF( "Object_Create : New Object %p\n", obj );
+//	IExec->DebugPrintF( "Object_Create : New Object %p\n", obj );
 
 	return(	obj );
 }

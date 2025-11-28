@@ -20,11 +20,11 @@ U32 AMYFUNC _main_Method_DoSuperTags(
 U32 retval;
 va_list ap;
 
-	IExec->DebugPrintF( "RA_Method_DoSuperTags\n" );
+//	IExec->DebugPrintF( "RA_Method_DoSuperTags\n" );
 
 	if (( ! cl ) || ( cl->RA_Class_ID != ID_RAClass ))
 	{
-		IExec->DebugPrintF( "Method_DoSuperArgs: Invalid Reactive Class (0x%08lx)", obj );
+//		IExec->DebugPrintF( "Method_DoSuperArgs: Invalid Reactive Class (0x%08lx)", obj );
 //		  Self->Error_LogTags( txt, cl );
 
 		retval = RAV_General_InvalidClass;
@@ -33,7 +33,7 @@ va_list ap;
 
 	if (( ! obj ) || ( obj->RA_Object_ID != ID_RAObject ))
 	{
-		IExec->DebugPrintF( "Method_DoSuperArgs: Invalid Reactive Object (0x%08lx)", obj );
+//		IExec->DebugPrintF( "Method_DoSuperArgs: Invalid Reactive Object (0x%08lx)", obj );
 //		  Self->Error_LogTags( txt, obj );
 
 		retval = RAV_General_InvalidObject;

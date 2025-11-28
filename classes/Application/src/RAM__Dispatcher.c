@@ -21,7 +21,7 @@ static U32 App_Dispatcher(
 {
 U32 retval;
 
-	IExec->DebugPrintF( "App Dispatcher\n" );
+//	IExec->DebugPrintF( "App Dispatcher\n" );
 
 	#define RUNFUNC(x)	retval = x( Self, cl, obj, (PTR) msg, acls, data ); break
 

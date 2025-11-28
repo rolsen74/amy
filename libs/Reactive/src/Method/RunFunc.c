@@ -54,17 +54,17 @@ U32 free;
 U32 err;
 U32 sp;
 
-	IExec->DebugPrintF( "RA_Method_RunFunc\n" );
+//	IExec->DebugPrintF( "RA_Method_RunFunc\n" );
 
-#if 1
+#if 0
 	if ( cl->RA_Class_ID != ID_RAClass )
 	{
-		IExec->DebugPrintF( "Self->Method_RunFunc: Invalid Class ID\n" );
+//		IExec->DebugPrintF( "Self->Method_RunFunc: Invalid Class ID\n" );
 	}
 
 	if ( obj->RA_Object_ID != ID_RAObject )
 	{
-		IExec->DebugPrintF( "Self->Method_RunFunc: Invalid Object ID\n" );
+//		IExec->DebugPrintF( "Self->Method_RunFunc: Invalid Object ID\n" );
 	}
 #endif
 
@@ -103,7 +103,7 @@ U32 sp;
 	}
 	else
 	{
-		IExec->DebugPrintF( "Method new stack (free %ld)", free );
+//		IExec->DebugPrintF( "Method new stack (free %ld)", free );
 
 		struct NSR_Args args =
 		{

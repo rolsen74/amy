@@ -17,7 +17,7 @@ struct libBase *libBase;
 U32 retval;
 STR name;
 
-	IExec->DebugPrintF( "RA_Class_Add\n" );
+//	IExec->DebugPrintF( "RA_Class_Add\n" );
 
 	libBase = (PTR) Self->Data.LibBase;
 
@@ -25,31 +25,31 @@ STR name;
 
 	if ( ! cl )
 	{
-		IExec->DebugPrintF( "Class_Add: Class Pointer is missing\n" );
+//		IExec->DebugPrintF( "Class_Add: Class Pointer is missing\n" );
 		goto bailout;
 	}
 
 	if ( cl->RA_Class_ID != ID_RAClass )
 	{
-		IExec->DebugPrintF( "Class_Add: Not a Class Object\n" );
+//		IExec->DebugPrintF( "Class_Add: Not a Class Object\n" );
 		goto bailout;
 	}
 
 	if ( cl->RA_Class_Name )
 	{
-		IExec->DebugPrintF( "Class_Add: Class is allready public\n" );
+//		IExec->DebugPrintF( "Class_Add: Class is allready public\n" );
 		goto bailout;
 	}
 
 	if (( ! PubName ) || ( PubName[0] == 0 ))
 	{
-		IExec->DebugPrintF( "Class_Add: Public Name is missing\n" );
+//		IExec->DebugPrintF( "Class_Add: Public Name is missing\n" );
 		goto bailout;
 	}
 
 	if ( ! Self->Misc_Valid_Class_Name( PubName ))
 	{
-		IExec->DebugPrintF( "Class name used\n" );
+//		IExec->DebugPrintF( "Class name used\n" );
 		goto bailout;
 	}
 
@@ -62,7 +62,7 @@ STR name;
 
 	if ( ! name )
 	{
-		IExec->DebugPrintF( "Class_Add: Error copying Name\n" );
+//		IExec->DebugPrintF( "Class_Add: Error copying Name\n" );
 		goto bailout;
 	}
 
@@ -70,7 +70,7 @@ STR name;
 
 	cl->RA_Class_Name = name;
 
-	IExec->DebugPrintF( "Making Public Class %p (%s)\n", cl, PubName );
+//	IExec->DebugPrintF( "Making Public Class %p (%s)\n", cl, PubName );
 
 	IExec->ObtainSemaphore( & libBase->lib_ClassSemaphore );
 

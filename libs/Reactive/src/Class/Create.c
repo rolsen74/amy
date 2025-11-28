@@ -52,7 +52,7 @@ struct libBase *libBase;
 S32 findlock;
 S32 error;
 
-	IExec->DebugPrintF( "RA_Class_CreateList: '%s'\n", SuperName );
+//	IExec->DebugPrintF( "RA_Class_CreateList: '%s'\n", SuperName );
 
 	libBase = (PTR) Self->Data.LibBase;
 
@@ -66,13 +66,13 @@ S32 error;
 
 	if (( SuperClass == NULL ) && (( SuperName == NULL ) || ( SuperName[0] == 0 )))
 	{
-		IExec->DebugPrintF( "Class_Create: Missing Super Class Pointer\n" );
+//		IExec->DebugPrintF( "Class_Create: Missing Super Class Pointer\n" );
 		goto bailout;
 	}
 
 	if ( ! Dispatcher )
 	{
-		IExec->DebugPrintF( "Class_Create: Missing Dispatcher Pointer\n" );
+//		IExec->DebugPrintF( "Class_Create: Missing Dispatcher Pointer\n" );
 		goto bailout;
 	}
 
@@ -82,7 +82,7 @@ S32 error;
 
 		if ( super->RA_Class_ID != ID_RAClass )
 		{
-			IExec->DebugPrintF( "Class_Create: Invalid SuperClass Pointer\n" );
+//			IExec->DebugPrintF( "Class_Create: Invalid SuperClass Pointer\n" );
 			goto bailout;
 		}
 	}
@@ -92,7 +92,7 @@ S32 error;
 
 		if ( ! super )
 		{
-			IExec->DebugPrintF( "Class_Create: SuperClass '%s' not found\n", SuperName );
+//			IExec->DebugPrintF( "Class_Create: SuperClass '%s' not found\n", SuperName );
 			goto bailout;
 		}
 
@@ -109,7 +109,7 @@ S32 error;
 
 	if ( ! cl )
 	{
-		IExec->DebugPrintF( "Class_Create: Error allocating class memory\n" );
+//		IExec->DebugPrintF( "Class_Create: Error allocating class memory\n" );
 		goto bailout;
 	}
 
@@ -137,7 +137,7 @@ S32 error;
 //	cl->RA_Class_Name				 = NULL;
 //	cl->RA_Class_Data				 = NULL;
 
-	IExec->DebugPrintF( "New Class %p\n", cl );
+//	IExec->DebugPrintF( "New Class %p\n", cl );
 
 	error = FALSE;
 

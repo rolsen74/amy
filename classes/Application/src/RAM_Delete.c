@@ -21,7 +21,7 @@ UNUSED	struct AppClassData *cls,
 {
 U32 retval;
 
-	IExec->DebugPrintF( "App_Delete\n" );
+//	IExec->DebugPrintF( "App_Delete\n" );
 
 	/* Free */
 

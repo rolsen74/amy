@@ -23,7 +23,7 @@ UNUSED	struct RootClass_Data *rcd )
 struct TagItem *tag;
 U32 retval;
 
-	IExec->DebugPrintF( "Root_New\n" );
+//	IExec->DebugPrintF( "Root_New\n" );
 
 	IExec->NewList( & rcd->rcd_NotifyList );
 

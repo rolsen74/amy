@@ -51,7 +51,7 @@ U32 len;
 U32 pos;
 //S32 dologs;
 
-	IExec->DebugPrintF( "RA_Class_FindList : %s\n", name );
+//	IExec->DebugPrintF( "RA_Class_FindList : %s\n", name );
 
 	libBase = (PTR) Self->Data.LibBase;
 
@@ -63,7 +63,7 @@ U32 pos;
 
 	if (( name == NULL ) || ( name[0] == 0 ))
 	{
-		IExec->DebugPrintF( "RA_Class_Find : invalid class name\n" );
+//		IExec->DebugPrintF( "RA_Class_Find : invalid class name\n" );
 
 //		  if ( dologs )
 //		  {
@@ -87,7 +87,7 @@ U32 pos;
 	{
 		if (( len == cl->RA_Class_NameLength ) && ( strcmp( cl->RA_Class_Name, name2 ) == 0 ))
 		{
-			IExec->DebugPrintF( "RA_Class_Find : Found '%s' Class\n", name2 );
+//			IExec->DebugPrintF( "RA_Class_Find : Found '%s' Class\n", name2 );
 			break;
 		}
 		else
@@ -103,7 +103,7 @@ U32 pos;
 
 		if ( ! cl )
 		{
-			IExec->DebugPrintF( "RA_Class_Find : Error finding %s class\n", name );
+//			IExec->DebugPrintF( "RA_Class_Find : Error finding %s class\n", name );
 
 //			  if ( dologs )
 //			  {

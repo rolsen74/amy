@@ -38,7 +38,7 @@ U32 result;
 
 	if (( ! obj ) || ( obj->RA_Object_ID != ID_RAObject ))
 	{
-		IExec->DebugPrintF( "Attr_GetParentList: Invalid Object Pointer (%p)", obj );
+//		IExec->DebugPrintF( "Attr_GetParentList: Invalid Object Pointer (%p)", obj );
 //		  Self->Error_LogTags( txt, obj );
 		goto bailout;
 	}

@@ -13,7 +13,7 @@
 
 U32 AMYFUNC _Main_Obtain( struct ReactivePrivIFace *Self )
 {
-	IExec->DebugPrintF( "Reactive : _Main_Obtain\n" );
+//	IExec->DebugPrintF( "Reactive : _Main_Obtain\n" );
 
 	Self->Data.RefCount++;
 
