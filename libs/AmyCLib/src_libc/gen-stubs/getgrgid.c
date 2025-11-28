@@ -9,6 +9,6 @@
 
 #include "Stub.h"
 
-LIBC_STUB(sighandler_t, signal, signal_signal,
-    (int sig, sighandler_t func),
-    sig, func);
+LIBC_STUB(struct group *, getgrgid, grp_getgrgid,
+    (gid_t id),
+    id);

@@ -1,0 +1,36 @@
+
+/*
+** SPDX-License-Identifier: BSD-3-Clause
+** Modifications (c) 2025 Rene W. Olsen
+** Part of Amy C Lib
+**
+** Note : temp file for now, please implement me
+**
+*/
+
+// --
+
+#include "src/All.h"
+
+// --
+
+int AMYFUNC _generic_stdlib_atexit( struct AmyCLibPrivIFace *Self, void (*func)(void) )
+{
+struct libData *data;
+int retval;
+
+	DOFUNCTIONPRINTF( IExec->DebugPrintF( "_generic_stdlib_atexit ::IMPLEMENT::ME::\n" ); );
+
+	DOFUNCTIONLOG( LOG_FUNC_atexit );
+
+	data = (PTR)( (U32) Self - Self->Data.NegativeSize );
+
+	// --
+
+	retval = -1;  // error
+	data->buf_PublicData->ra_ErrNo = ENOMEM;
+
+	// --
+
+	return( retval );
+}

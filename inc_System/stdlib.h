@@ -157,6 +157,15 @@ quad_t			strtoq( const char *, char **, int );
 AMY_EXTERN_C_END
 
 /****************************************************************************/
+// GNU
+
+AMY_EXTERN_C_BEGIN
+
+int				on_exit( void(*)(int, void *), void * );
+
+AMY_EXTERN_C_END
+
+/****************************************************************************/
 
 #endif
 

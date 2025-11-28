@@ -8,7 +8,8 @@
 */
 
 #include "Stub.h"
+#include <stdlib.h>
 
-LIBC_STUB(sighandler_t, signal, signal_signal,
-    (int sig, sighandler_t func),
-    sig, func);
+LIBC_STUB(int, atexit, stdlib_atexit,
+    (void (*func)(void)),
+    func);

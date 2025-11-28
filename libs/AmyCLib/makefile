@@ -162,8 +162,22 @@ SRCS		+= src/_Main_CType/toupper_locale.c
 SRCS		+= src/_Main_CType/islower.c
 #SRCS		+= src/_Main_CType/islower_locale.c
 
+# Main .. dirent
+SRCS		+= src/_Main_Dirent/closedir.c
+SRCS		+= src/_Main_Dirent/dirfd.c
+SRCS		+= src/_Main_Dirent/opendir.c
+SRCS		+= src/_Main_Dirent/readdir.c
+
 # Main .. fcntl
 SRCS		+= src/_Main_FCntl/open.c
+
+# Main .. getopt
+SRCS		+= src/_Main_Getopt/getopt.c
+SRCS		+= src/_Main_Getopt/getopt_long.c
+
+# Main .. grp
+SRCS		+= src/_Main_Grp/getgrgid.c
+SRCS		+= src/_Main_Grp/getgrnam.c
 
 # Main .. Inttypes
 SRCS		+= src/_Main_Inttypes/strtoimax.c
@@ -189,6 +203,10 @@ SRCS		+= src/_Main_Math/d_sin.c
 SRCS		+= src/_Main_Math/d_sqrt.c
 SRCS		+= src/_Main_Math/d_atan2.c
 SRCS		+= src/_Main_Math/d_fmod.c
+
+# Main .. pwd
+SRCS		+= src/_Main_Pwd/getpwnam.c
+SRCS		+= src/_Main_Pwd/getpwuid.c
 
 # Main .. setjmp
 ASMSRCS		+= src/_Main_SetJmp/longjmp.s
@@ -248,6 +266,7 @@ SRCS		+= src/_Main_Stdio/vsscanf.c
 SRCS		+= src/_Main_Stdlib/_exit.c
 SRCS		+= src/_Main_Stdlib/_Exit.c
 SRCS		+= src/_Main_Stdlib/abort.c
+SRCS		+= src/_Main_Stdlib/atexit.c
 SRCS		+= src/_Main_Stdlib/atoi.c
 SRCS		+= src/_Main_Stdlib/atol.c
 SRCS		+= src/_Main_Stdlib/calloc.c
@@ -284,6 +303,7 @@ SRCS		+= src/_Main_String/strncmp.c
 SRCS		+= src/_Main_String/strncpy.c
 SRCS		+= src/_Main_String/strndup.c
 SRCS		+= src/_Main_String/strnlen.c
+SRCS		+= src/_Main_String/strrchr.c
 SRCS		+= src/_Main_String/strpbrk.c
 SRCS		+= src/_Main_String/strspn.c
 SRCS		+= src/_Main_String/strstr.c
@@ -302,10 +322,12 @@ SRCS		+= src/_Main_Time/gmtime_r.c
 
 # Main .. unistd
 SRCS		+= src/_Main_Unistd/access.c
+SRCS		+= src/_Main_Unistd/chown.c
 SRCS		+= src/_Main_Unistd/close.c
 SRCS		+= src/_Main_Unistd/fcntl_ap.c
 SRCS		+= src/_Main_Unistd/getcwd.c
 SRCS		+= src/_Main_Unistd/geteuid.c
+SRCS		+= src/_Main_Unistd/getgroups.c
 SRCS		+= src/_Main_Unistd/getegid.c
 SRCS		+= src/_Main_Unistd/getpid.c
 SRCS		+= src/_Main_Unistd/isatty.c

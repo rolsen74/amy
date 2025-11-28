@@ -221,6 +221,11 @@ typedef struct
 } siginfo_t;
 
 /****************************************************************************/
+/* Helper function for signals */
+
+typedef void (*sighandler_t)(int);
+
+/****************************************************************************/
 
 AMY_EXTERN_C_BEGIN
 
@@ -242,14 +247,15 @@ int		sighold( int );
 int		sigignore( int );
 int		siginterrupt( int, int );
 int		sigismember( const sigset_t *, int );
+sighandler_t signal( int, sighandler_t );
 //void	(*signal( int, void (*)(int)))(int);
-void	signal( int, void * );
 int		sigpause( int );
 int		sigpending( sigset_t * );
 int		sigprocmask( int, const sigset_t *, sigset_t * );
 int		sigqueue( pid_t, int, union sigval );
 int		sigrelse( int );
-void	(*sigset( int, void (*)(int)))(int);
+sighandler_t sigset( int, sighandler_t );
+//void	(*sigset( int, void (*)(int)))(int);
 int		sigsuspend( const sigset_t * );
 int		sigtimedwait( const sigset_t *, siginfo_t *, const struct timespec * );
 int		sigwait( const sigset_t *, int * );

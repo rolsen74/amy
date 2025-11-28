@@ -27,13 +27,34 @@
 "int"			toupper			ctype_toupper			"c"				"int c"
 
 
+# dirent		func-name		iface-name			args-call			args-decl					
+"int"			closedir		"dirent_closedir"		"dirp"				"DIR *dirp"
+"int"			dirfd			"dirent_dirfd"			"dirp"				"DIR *dirp"
+"DIR *"			opendir			"dirent_opendir"		"name"				"const char *name"
+"struct dirent *"	readdir			"dirent_readdir"		"dirp"				"DIR *dirp"
+
+
+
 # fcntl			func-name		iface-name			args-call			args-decl					
 "int"			open			"fcntl_open"			"path, oflag"			"const char *path, int oflag, ..."
+
+
+# getopt		func-name		iface-name			args-call			args-decl					
+"int"			getopt			"getopt_getopt"			"argc, argv, ostr"		"int argc, char * const argv[], const char *ostr"
+"int"			getopt_long		"getopt_getopt_long"		"argc, argv, ostr, opts, idx"	"int argc, char * const argv[], const char *ostr, const struct option *opts, int *idx"
+
+
+
+# getopt		func-name		iface-name			args-call			args-decl					
+"struct group *"	getgrgid		"grp_getgrgid"			"id"				"gid_t id"
+"struct group *"	getgrnam		"grp_getgrnam"			"name"				"const char *name"
+
 
 
 # inttypes		func-name		iface-name			args-call			args-decl					
 "intmax_t"		strtoimax		"inttypes_strtoimax"		"nptr, endptr, base"		"const char *nptr, char **endptr, int base"
 "uintmax_t"		strtoumax		"inttypes_strtoumax"		"nptr, endptr, base"		"const char *nptr, char **endptr, int base"
+
 
 
 # locale		func-name		iface-name			args-call			args-decl					
@@ -59,15 +80,22 @@
 "double"		fmod			math_d_fmod			"x,y"				"double x, double y"
 
 
+
+# pwd			func-name		iface-name			args-call			args-decl					
+"struct passwd *"	getpwuid		pwd_getpwuid			"id"				"uid_t id"
+"struct passwd *"	getpwnam		pwd_getpwnam			"nam"				"const char *nam"
+
+
 # setjmp		func-name		iface-name			args-call			args-decl					
 "int"			setjmp			setjmp_setjmp			"buf"				"jmp_buf buf"
 "void"			longjmp			setjmp_longjmp			"buf, val"			"jmp_buf buf, int val"
 
 
+
 # signal		func-name		iface-name			args-call			args-decl
 "int"			raise			signal_raise			"sig"				"int sig"
-#"void"			signal			signal_signal			"sig, func"			"int sig, void (*func)(int)"
-"void"			signal			signal_signal			"sig, func"			"int sig, void *func"
+"sighandler_t"		signal			signal_signal			"sig, func"			"int sig, sighandler_t func"
+#"void"			signal			signal_signal			"sig, func"			"int sig, void *func"
 
 
 # stdio			func-name		iface-name			args-call			args-decl
@@ -123,6 +151,7 @@
 # _exit			-- custom stub
 # _Exit			-- custom stub
 # abort			-- custom stub
+"int"			atexit			stdlib_atexit			"func"				"void (*func)(void)"
 "double"		atof			stdlib_atof			"str"				"const char *str"
 "int"			atoi			stdlib_atoi			"str"				"const char *str"
 "long"			atol			stdlib_atol			"str"				"const char *str"
@@ -165,6 +194,7 @@
 "char *"		strndup			string_strndup			"str, max"			"const char *str, size_t max"
 "size_t"		strnlen			string_strnlen			"str, max"			"const char *str, size_t max"
 "char *"		strpbrk			string_strpbrk			"s1, s2"			"const char *s1, const char *s2"
+"char *"		strrchr			string_strrchr			"aa, bb"			"const char *aa, int bb"
 "size_t"		strspn			string_strspn			"s1, s2"			"const char *s1, const char *s2"
 "char *"		strstr			string_strstr			"s1, s2"			"const char *s1, const char *s2"
 "char *"		strtok			string_strtok			"s1, s2"			"char *s1, const char *s2"
@@ -185,11 +215,13 @@
 
 
 # unistd		func-name		iface-name			args-call			args-decl
+"int"			chown			unistd_chown			"aa, bb, cc"			"const char *aa, uid_t bb, gid_t cc"
 "int"			close			unistd_close			"fildes"			"int fildes"
 "int"			access			unistd_access			"path, amode"			"const char *path, int amode"
 "char *"		getcwd			unistd_getcwd			"buf, size"			"char *buf, size_t size"
 "uid_t"			geteuid			unistd_geteuid			""				"void"
 "gid_t"			getegid			unistd_getegid			""				"void"
+"int"			getgroups		unistd_getgroups		"gidsetsize, grouplist"		"int gidsetsize, gid_t grouplist[]"
 "pid_t"			getpid			unistd_getpid			""				"void"
 "int"			isatty			unistd_isatty			"fildes"			"int fildes"
 "int"			link			unistd_link			"path1, path2"			"const char *path1, const char *path2"

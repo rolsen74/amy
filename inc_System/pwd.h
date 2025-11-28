@@ -21,8 +21,8 @@
 
 /* -- */
 
-#ifndef AMYSYS_DIRENT_H
-#define AMYSYS_DIRENT_H
+#ifndef AMYSYS_PWD_H
+#define AMYSYS_PWD_H
 
 /****************************************************************************/
 
@@ -30,31 +30,28 @@
 
 /****************************************************************************/
 
-typedef struct _DIR DIR;
-
-/****************************************************************************/
-
-struct dirent
+struct passwd
 {
-	ino_t	d_ino;
-	char	d_name[256];
+	char *	pw_name;
+	char *	pw_passwd;
+	uid_t	pw_uid;
+	gid_t	pw_gid;
+	char *	pw_gecos;
+	char *	pw_dir;
+	char *	pw_shell;
 };
 
 /****************************************************************************/
 
 AMY_EXTERN_C_BEGIN
 
-int				alphasort( const struct dirent **, const struct dirent ** );
-int				closedir( DIR * );
-int				dirfd( DIR * );
-DIR *			fdopendir( int fildes );
-DIR *			opendir( const char * );
-struct dirent *	readdir( DIR * );
-int				readdir_r( DIR *, struct dirent *, struct dirent ** );
-void			rewinddir( DIR * );
-int				scandir( const char *, struct dirent ***, int (*)( const struct dirent *), int (*)(const struct dirent **, const struct dirent **));
-void			seekdir( DIR *, long );
-long			telldir( DIR * );
+struct passwd *	getpwnam( const char * );
+struct passwd *	getpwuid( uid_t );
+int				getpwnam_r( const char *, struct passwd *, char *, size_t, struct passwd ** );
+int				getpwuid_r( uid_t, struct passwd *, char *, size_t, struct passwd ** );
+void			endpwent( void );
+struct passwd *	getpwent( void );
+void			setpwent( void );
 
 AMY_EXTERN_C_END
 

@@ -26,6 +26,8 @@
 #include <fcntl.h>
 #include <utime.h>
 #include <wchar.h>
+#include <getopt.h>
+#include <dirent.h>
 
 // --
 struct PrintStruct;
@@ -161,7 +163,7 @@ struct AmyCLibIFace
 /*  108 */ 	double						AMYFUNC (*math_d_copysign)( struct AmyCLibIFace *Self, double x, double y );
 /*  109 */ 	int							AMYFUNC (*stdio_vsscanf)( struct AmyCLibIFace *Self, const char *, const char *, va_list );
 /*  110 */ 	size_t						AMYFUNC (*time_strftime)( struct AmyCLibIFace *Self, char *s, size_t maxsize, const char *format, const struct tm *timptr );
-/*  111 */ 	void						AMYFUNC (*signal_signal)( struct AmyCLibIFace *Self, int sig, void (*func)(int) );
+/*  111 */	sighandler_t				AMYFUNC (*signal_signal)( struct AmyCLibIFace *Self, int sig, sighandler_t func );
 /*  112 */ 	int							AMYFUNC (*signal_raise)( struct AmyCLibIFace *Self, int sig );
 /*  113 */ 	void						AMYFUNC (*stdlib_abort)( struct AmyCLibIFace *Self );
 /*  114 */ 	void						AMYFUNC (*stdlib__Exit)( struct AmyCLibIFace *Self, int rc );
@@ -244,6 +246,21 @@ struct AmyCLibIFace
 /*  189 */	char *						AMYFUNC (*string_strtok)( struct AmyCLibIFace *Self, char *s1, const char *s2 );
 /*  190 */	struct lconv *				AMYFUNC (*locale_localeconv)( struct AmyCLibIFace *Self );
 /*  191 */	int							AMYFUNC (*stdlib_mkstemp)( struct AmyCLibIFace *Self, char *template );
+/*  192 */	int							AMYFUNC (*stdlib_atexit)( struct AmyCLibIFace *Self, void (*func)(void) );
+/*  193 */	int							AMYFUNC (*unistd_getgroups)( struct AmyCLibIFace *Self, int gidsetsize, gid_t grouplist[] );
+/*  194 */	int							AMYFUNC (*getopt_getopt)( struct AmyCLibIFace *Self, int argc, char * const argv[], const char *optstring );
+/*  195 */	int							AMYFUNC (*getopt_getopt_long)( struct AmyCLibIFace *Self, int argc, char * const argv[], const char *optstring, const struct option *longopts, int *longindex );
+/*  196 */	int							AMYFUNC (*dirent_closedir)( struct AmyCLibIFace *Self, DIR *dirp );
+/*  197 */	int							AMYFUNC (*dirent_dirfd)( struct AmyCLibIFace *Self, DIR *dirp );
+/*  198 */	DIR *						AMYFUNC (*dirent_opendir)( struct AmyCLibIFace *Self, const char *name );
+/*  199 */	struct dirent *				AMYFUNC (*dirent_readdir)( struct AmyCLibIFace *Self, DIR *dirp );
+/*  200 */	struct group *				AMYFUNC (*grp_getgrgid)( struct AmyCLibIFace *Self, gid_t aa );
+/*  201 */	struct group *				AMYFUNC (*grp_getgrnam)( struct AmyCLibIFace *Self, const char *aa );
+/*  202 */	struct passwd *				AMYFUNC (*pwd_getpwuid)( struct AmyCLibIFace *Self, uid_t aa );
+/*  203 */	int							AMYFUNC (*unistd_chown)( struct AmyCLibIFace *Self, const char *aa, uid_t bb, gid_t cc );
+/*  204 */	char *						AMYFUNC (*string_strrchr)( struct AmyCLibIFace *Self, const char *aa, int bb );
+/*  205 */	struct passwd *				AMYFUNC (*pwd_getpwnam)( struct AmyCLibIFace *Self, const char *aa );
+
 
 
 

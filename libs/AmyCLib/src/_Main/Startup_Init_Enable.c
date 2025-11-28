@@ -592,7 +592,20 @@ struct EnableStruct funcs[] =
 /*  189 */	// char * AMYFUNC (*string_strtok)( struct AmyCLibPrivIFace *Self, char *s1, const char *s2 );
 /*  190 */	// struct lconv * AMYFUNC (*locale_localeconv)( struct AmyCLibPrivIFace *Self );
 /*  191 */	// int AMYFUNC (*stdlib_mkstemp)( struct AmyCLibPrivIFace *Self, char *template );
-
+/*  192 */	// int AMYFUNC (*stdlib_atexit)( struct AmyCLibPrivIFace *Self, void (*func)(void) );
+/*  193 */	// int AMYFUNC (*unistd_getgroups)( struct AmyCLibPrivIFace *Self, int gidsetsize, gid_t grouplist[] );
+/*  194 */	// int AMYFUNC (*getopt_getopt)( struct AmyCLibPrivIFace *Self, int argc, char * const argv[], const char *optstring );
+/*  195 */	// int AMYFUNC (*getopt_getopt_long)( struct AmyCLibPrivIFace *Self, int argc, char * const argv[], const char *optstring, const struct option *longopts, int *longindex );
+/*  196 */	// int AMYFUNC (*dirent_closedir)( struct AmyCLibPrivIFace *Self, DIR *dirp );
+/*  197 */	// int AMYFUNC (*dirent_dirfd)( struct AmyCLibPrivIFace *Self, DIR *dirp );
+/*  198 */	// DIR * AMYFUNC (*dirent_opendir)( struct AmyCLibPrivIFace *Self, const char *name );
+/*  199 */	// struct dirent * AMYFUNC (*dirent_readdir)( struct AmyCLibPrivIFace *Self, DIR *dirp );
+/*  200 */	// struct group * AMYFUNC (*grp_getgrgid)( struct AmyCLibPrivIFace *Self, gid_t aa );
+/*  201 */	// struct group * AMYFUNC (*grp_getgrnam)( struct AmyCLibPrivIFace *Self, const char *aa );
+/*  202 */	// struct passwd * AMYFUNC (*pwd_getpwuid)( struct AmyCLibPrivIFace *Self, uid_t aa );
+/*  203 */	// int AMYFUNC (*unistd_chown)( struct AmyCLibPrivIFace *Self, const char *aa, uid_t bb, gid_t cc );
+/*  204 */	// char * AMYFUNC (*string_strrchr)( struct AmyCLibPrivIFace *Self, const char *aa, int bb );
+/*  205 */	// struct passwd * AMYFUNC (*pwd_getpwnam)( struct AmyCLibPrivIFace *Self, const char *aa );
 
 
 

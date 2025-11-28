@@ -41,9 +41,10 @@
 
 // --
 
-void AMYFUNC _generic_signal_signal( struct AmyCLibPrivIFace *Self, int sig, void (*handler)(int) )
+sighandler_t AMYFUNC _generic_signal_signal( struct AmyCLibPrivIFace *Self, int sig, sighandler_t func )
 {
 struct libData *data;
+sighandler_t retval;
 
 	DOFUNCTIONPRINTF( IExec->DebugPrintF( "_generic_signal_signal\n" ); );
 
@@ -51,17 +52,24 @@ struct libData *data;
 
 	data = (PTR)( (U32) Self - Self->Data.NegativeSize );
 
-	if (( sig > SIGTERM ) || ( handler == SIG_ERR ))
+	retval = SIG_ERR;
+
+	if (( sig <= 0 ) || ( sig > SIGLAST ))
 	{
 		goto bailout;
 	}
 
-	data->buf_SignalHandlers[ sig ] = handler;
+	if ( func == SIG_ERR )
+	{
+		goto bailout;
+	}
+
+	retval = data->buf_SignalHandlers[ sig ];
+	data->buf_SignalHandlers[ sig ] = func;
 
 bailout:
 
-	return;
+	return( retval );
 }
-
 
 // --

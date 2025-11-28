@@ -39,9 +39,9 @@ struct _AmyCLibPublic
 
 	int				ra_signgam;		// Math.h
 
-	int				ra_daylight;	// Time.h
-	long int		ra_timezone;	// Time.h
-	char *			ra_tzname;		// Time.h
+//	int				ra_daylight;	// Time.h
+//	long int		ra_timezone;	// Time.h
+//	char *			ra_tzname;		// Time.h
 
 	const fenv_t	ra_fenv;		// FEnv.h
 };

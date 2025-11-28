@@ -25,7 +25,7 @@ int error;
 	{
 		data->Signals_BreakMask = SIGBREAKF_CTRL_C;
 
-		data->buf_SignalHandlers = Self->Priv_Mem_Alloc( sizeof( signal_handler_t ) * 32 );
+		data->buf_SignalHandlers = Self->Priv_Mem_Alloc( sizeof( signal_handler_t ) * (SIGLAST+1) );
 
 		if ( ! data->buf_SignalHandlers )
 		{

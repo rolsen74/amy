@@ -79,9 +79,10 @@ struct timezone
 
 /****************************************************************************/
 
-#define daylight		AmyCLibPublic->ra_daylight
-#define timezone		AmyCLibPublic->ra_timezone
-#define tzname			AmyCLibPublic->ra_tzname
+// hmm can't define timezone this way
+//#define daylight		AmyCLibPublic->ra_daylight
+//#define timezone		AmyCLibPublic->ra_timezone
+//#define tzname			AmyCLibPublic->ra_tzname
 
 /****************************************************************************/
 

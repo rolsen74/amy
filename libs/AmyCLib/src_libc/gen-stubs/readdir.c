@@ -9,6 +9,6 @@
 
 #include "Stub.h"
 
-LIBC_STUB(sighandler_t, signal, signal_signal,
-    (int sig, sighandler_t func),
-    sig, func);
+LIBC_STUB(struct dirent *, readdir, dirent_readdir,
+    (DIR *dirp),
+    dirp);

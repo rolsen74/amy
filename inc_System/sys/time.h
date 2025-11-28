@@ -70,6 +70,7 @@ AMY_EXTERN_C_BEGIN
 int getitimer( int, struct itimerval * );
 int setitimer( int, const struct itimerval *, struct itimerval * );
 int gettimeofday( struct timeval *, void * );
+int settimeofday( const struct timeval *tv, const struct timezone *tz );
 int select( int, fd_set *, fd_set *, fd_set *, struct timeval * );
 int utimes( const char *, const struct timeval [2] );
 

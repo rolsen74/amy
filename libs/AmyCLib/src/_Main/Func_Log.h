@@ -49,9 +49,10 @@ enum
 
 //	## Dirent ##
 
-//	LOG_FUNC_closedir,
-//	LOG_FUNC_opendir,
-//	LOG_FUNC_readdir,
+	LOG_FUNC_closedir,
+	LOG_FUNC_dirfd,
+	LOG_FUNC_opendir,
+	LOG_FUNC_readdir,
 //	LOG_FUNC_rewinddir,
 
 
@@ -61,6 +62,15 @@ enum
 	LOG_FUNC_fcntl_ap,
 	LOG_FUNC_open,
 
+
+//	## Getopt ##
+	LOG_FUNC_getopt,
+	LOG_FUNC_getopt_long,
+
+
+//	## Grp ##
+	LOG_FUNC_getgrgid,
+	LOG_FUNC_getgrnam,
 
 //	## Inttypes ##
 
@@ -200,6 +210,11 @@ enum
 //	LOG_FUNC_pthread_spinlock_destroy,
 
 
+//	## Pwd ##
+	LOG_FUNC_getpwuid,
+	LOG_FUNC_getpwnam,
+
+
 //	## Regex ##
 
 //	LOG_FUNC_regcomp,
@@ -296,7 +311,7 @@ enum
 //	LOG_FUNC_arc4random_stir,
 //	LOG_FUNC_arc4random_uniform,
 //	LOG_FUNC_arc4random_addrandom,
-//	LOG_FUNC_atexit,
+	LOG_FUNC_atexit,
 	LOG_FUNC_atof,
 	LOG_FUNC_atoi,
 	LOG_FUNC_atol,
@@ -374,6 +389,7 @@ enum
 	LOG_FUNC_strncpy,
 	LOG_FUNC_strndup,
 	LOG_FUNC_strnlen,
+	LOG_FUNC_strrchr,
 	LOG_FUNC_strpbrk,
 //	LOG_FUNC_strrchr,
 //	LOG_FUNC_strsep,
@@ -435,11 +451,13 @@ enum
 
 	LOG_FUNC__exit,
 	LOG_FUNC_access,
+	LOG_FUNC_chown,
 	LOG_FUNC_close,
 //	LOG_FUNC_ftruncate,
 	LOG_FUNC_getcwd,
 	LOG_FUNC_geteuid,
 	LOG_FUNC_getegid,
+	LOG_FUNC_getgroups,
 //	LOG_FUNC_getpagesize,
 	LOG_FUNC_getpid,
 //	LOG_FUNC_getppid,

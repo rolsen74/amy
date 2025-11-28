@@ -9,6 +9,6 @@
 
 #include "Stub.h"
 
-LIBC_STUB(sighandler_t, signal, signal_signal,
-    (int sig, sighandler_t func),
-    sig, func);
+LIBC_STUB(int, getopt_long, getopt_getopt_long,
+    (int argc, char * const argv[], const char *ostr, const struct option *opts, int *idx),
+    argc, argv, ostr, opts, idx);

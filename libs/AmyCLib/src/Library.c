@@ -496,6 +496,24 @@ static const PTR Main_Vectors[] =
 /*  189 */	(PTR) _NotEnabled,	// char * AMYFUNC (*string_strtok)( struct AmyCLibPrivIFace *Self, char *s1, const char *s2 );
 /*  190 */	(PTR) _NotEnabled,	// struct lconv * AMYFUNC (*locale_localeconv)( struct AmyCLibPrivIFace *Self );
 /*  191 */	(PTR) _NotEnabled,	// int AMYFUNC (*stdlib_mkstemp)( struct AmyCLibPrivIFace *Self, char *template );
+/*  192 */	(PTR) _NotEnabled,	// int AMYFUNC (*stdlib_atexit)( struct AmyCLibPrivIFace *Self, void (*func)(void) );
+/*  193 */	(PTR) _NotEnabled,	// int AMYFUNC (*unistd_getgroups)( struct AmyCLibPrivIFace *Self, int gidsetsize, gid_t grouplist[] );
+/*  194 */	(PTR) _NotEnabled,	// int AMYFUNC (*getopt_getopt)( struct AmyCLibPrivIFace *Self, int argc, char * const argv[], const char *optstring );
+/*  195 */	(PTR) _NotEnabled,	// int AMYFUNC (*getopt_getopt_long)( struct AmyCLibPrivIFace *Self, int argc, char * const argv[], const char *optstring, const struct option *longopts, int *longindex );
+/*  196 */	(PTR) _NotEnabled,	// int AMYFUNC (*dirent_closedir)( struct AmyCLibPrivIFace *Self, DIR *dirp );
+/*  197 */	(PTR) _NotEnabled,	// int AMYFUNC (*dirent_dirfd)( struct AmyCLibPrivIFace *Self, DIR *dirp );
+/*  198 */	(PTR) _NotEnabled,	// DIR * AMYFUNC (*dirent_opendir)( struct AmyCLibPrivIFace *Self, const char *name );
+/*  199 */	(PTR) _NotEnabled,	// struct dirent * AMYFUNC (*dirent_readdir)( struct AmyCLibPrivIFace *Self, DIR *dirp );
+/*  200 */	(PTR) _NotEnabled,	// struct group * AMYFUNC (*grp_getgrgid)( struct AmyCLibPrivIFace *Self, gid_t aa );
+/*  201 */	(PTR) _NotEnabled,	// struct group * AMYFUNC (*grp_getgrnam)( struct AmyCLibPrivIFace *Self, const char *aa );
+/*  202 */	(PTR) _NotEnabled,	// struct passwd * AMYFUNC (*pwd_getpwuid)( struct AmyCLibPrivIFace *Self, uid_t aa );
+/*  203 */	(PTR) _NotEnabled,	// int AMYFUNC (*unistd_chown)( struct AmyCLibPrivIFace *Self, const char *aa, uid_t bb, gid_t cc );
+/*  204 */	(PTR) _NotEnabled,	// char * AMYFUNC (*string_strrchr)( struct AmyCLibPrivIFace *Self, const char *aa, int bb );
+/*  205 */	(PTR) _NotEnabled,	// struct passwd * AMYFUNC (*pwd_getpwnam)( struct AmyCLibPrivIFace *Self, const char *aa );
+
+
+
+
 
 
 
