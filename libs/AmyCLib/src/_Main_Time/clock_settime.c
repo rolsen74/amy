@@ -14,14 +14,15 @@
 
 // --
 
-int AMYFUNC _generic_unistd_isatty( struct AmyCLibPrivIFace *Self, int fildes )
+int AMYFUNC _generic_time_clock_settime( struct AmyCLibPrivIFace *Self, clockid_t aa, const struct timespec *bb )
 {
+struct PrivFile *file;
 struct libData *data;
 int retval;
 
-	DOFUNCTIONPRINTF( IExec->DebugPrintF( "_generic_unistd_isatty ::IMPLEMENT::ME::\n" ); );
+	DOFUNCTIONPRINTF( IExec->DebugPrintF( "_generic_time_clock_settime ::IMPLEMENT::ME::\n" ); );
 
-	DOFUNCTIONLOG( LOG_FUNC_isatty );
+	DOFUNCTIONLOG( LOG_FUNC_clock_settime );
 
 	data = (PTR)( (U32) Self - Self->Data.NegativeSize );
 

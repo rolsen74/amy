@@ -240,12 +240,14 @@ SRCS		+= src/_Main_Stdio/funlockfile.c
 SRCS		+= src/_Main_Stdio/fwrite.c
 SRCS		+= src/_Main_Stdio/getc.c
 SRCS		+= src/_Main_Stdio/getchar.c
+SRCS		+= src/_Main_Stdio/getchar_unlocked.c
 SRCS		+= src/_Main_Stdio/getline.c
 SRCS		+= src/_Main_Stdio/getdelim.c
 SRCS		+= src/_Main_Stdio/perror.c
 SRCS		+= src/_Main_Stdio/putc.c
 SRCS		+= src/_Main_Stdio/putc_unlocked.c
 SRCS		+= src/_Main_Stdio/putchar.c
+SRCS		+= src/_Main_Stdio/putchar_unlocked.c
 SRCS		+= src/_Main_Stdio/puts.c
 SRCS		+= src/_Main_Stdio/remove.c
 SRCS		+= src/_Main_Stdio/rename.c
@@ -314,11 +316,14 @@ SRCS		+= src/_Main_Strings/strcasecmp.c
 SRCS		+= src/_Main_Strings/strncasecmp.c
 
 # Main .. time
+SRCS		+= src/_Main_Time/clock_gettime.c
+SRCS		+= src/_Main_Time/clock_settime.c
 SRCS		+= src/_Main_Time/localtime.c
 SRCS		+= src/_Main_Time/strftime.c
 SRCS		+= src/_Main_Time/time.c
 SRCS		+= src/_Main_Time/gmtime.c
 SRCS		+= src/_Main_Time/gmtime_r.c
+
 
 # Main .. unistd
 SRCS		+= src/_Main_Unistd/access.c
@@ -327,14 +332,18 @@ SRCS		+= src/_Main_Unistd/close.c
 SRCS		+= src/_Main_Unistd/fcntl_ap.c
 SRCS		+= src/_Main_Unistd/getcwd.c
 SRCS		+= src/_Main_Unistd/geteuid.c
-SRCS		+= src/_Main_Unistd/getgroups.c
 SRCS		+= src/_Main_Unistd/getegid.c
+SRCS		+= src/_Main_Unistd/getgroups.c
+SRCS		+= src/_Main_Unistd/gethostname.c
 SRCS		+= src/_Main_Unistd/getpid.c
 SRCS		+= src/_Main_Unistd/isatty.c
 SRCS		+= src/_Main_Unistd/link.c
+SRCS		+= src/_Main_Unistd/lseek.c
 SRCS		+= src/_Main_Unistd/read.c
 SRCS		+= src/_Main_Unistd/rmdir.c
+SRCS		+= src/_Main_Unistd/symlink.c
 SRCS		+= src/_Main_Unistd/unlink.c
+SRCS		+= src/_Main_Unistd/write.c
 
 # Main .. utime
 SRCS		+= src/_Main_UTime/utime.c
@@ -383,6 +392,10 @@ elfinfo:
 
 install:
 	$(COPY) $(BINDIR)/$(TARGET) $(INSTALLDIR)
+
+installsdk:
+	rm -rf /SDK/amyclib/include/*
+	cp -r $(ROOTDIR)/inc_System/* /SDK/amyclib/include/
 
 ###########################################################################
 

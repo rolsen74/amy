@@ -80,11 +80,12 @@ AMY_EXTERN_C_END
 
 AMY_EXTERN_C_BEGIN
 
+void *	memmem( const void *, size_t, const void *, size_t );
+void *	memrchr( const void *, int, size_t );
 char *	strsep( char **, const char * );
 size_t	strlcpy( char *, const char *, size_t );
 size_t	strlcat( char *, const char *, size_t );
-void	strmode( mode_t mode, char *p );
-void *	memmem( const void *, size_t, const void *, size_t );
+void	strmode( mode_t, char * );
 
 AMY_EXTERN_C_END
 

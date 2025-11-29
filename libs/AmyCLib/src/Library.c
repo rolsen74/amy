@@ -510,6 +510,17 @@ static const PTR Main_Vectors[] =
 /*  203 */	(PTR) _NotEnabled,	// int AMYFUNC (*unistd_chown)( struct AmyCLibPrivIFace *Self, const char *aa, uid_t bb, gid_t cc );
 /*  204 */	(PTR) _NotEnabled,	// char * AMYFUNC (*string_strrchr)( struct AmyCLibPrivIFace *Self, const char *aa, int bb );
 /*  205 */	(PTR) _NotEnabled,	// struct passwd * AMYFUNC (*pwd_getpwnam)( struct AmyCLibPrivIFace *Self, const char *aa );
+/*  206 */	(PTR) _NotEnabled,	// int AMYFUNC (*stdio_getchar_unlocked)( struct AmyCLibPrivIFace *Self );
+/*  207 */	(PTR) _NotEnabled,	// int AMYFUNC (*stdio_putchar_unlocked)( struct AmyCLibPrivIFace *Self, int c );
+/*  208 */	(PTR) _NotEnabled,	// off_t AMYFUNC (*unistd_lseek)( struct AmyCLibPrivIFace *Self, int, off_t, int );
+/*  209 */	(PTR) _NotEnabled,	// ssize_t AMYFUNC (*unistd_write)( struct AmyCLibPrivIFace *Self, int, const void *, size_t );
+/*  210 */	(PTR) _NotEnabled,	// int AMYFUNC (*unistd_symlink)( struct AmyCLibPrivIFace *Self, const char *, const char * );
+/*  211 */	(PTR) _NotEnabled,	// int AMYFUNC (*time_clock_gettime)( struct AmyCLibPrivIFace *Self, clockid_t, struct timespec * );
+/*  212 */	(PTR) _NotEnabled,	// int AMYFUNC (*time_clock_settime)( struct AmyCLibPrivIFace *Self, clockid_t, const struct timespec * );
+/*  213 */	(PTR) _NotEnabled,	// int AMYFUNC (*unistd_gethostname)( struct AmyCLibPrivIFace *Self, char *, size_t );
+/*  214 */	(PTR) _NotEnabled,	// void * AMYFUNC (*string_memrchr)( struct AmyCLibPrivIFace *Self, const void *, int, size_t );
+/*  215 */	(PTR) _NotEnabled,	// time_t AMYFUNC (*time_mktime)( struct AmyCLibPrivIFace *Self, struct tm * );
+/*  216 */	(PTR) _NotEnabled,	// long long AMYFUNC (*stdlib_strtoll)( struct AmyCLibPrivIFace *Self, const char *, char **, int );
 
 
 

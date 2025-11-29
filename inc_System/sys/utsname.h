@@ -21,49 +21,35 @@
 
 /* -- */
 
-#ifndef AMYSYS_STRINGS_H
-#define AMYSYS_STRINGS_H
+#ifndef AMYSYS_SYS_UTSNAME_H
+#define AMYSYS_SYS_UTSNAME_H
 
 /****************************************************************************/
 
-#include <stddef.h>
-#include <string.h>
+#include <sys/types.h>
+
+/****************************************************************************/
+
+#define _UTSNAME_LENGTH		256
+
+struct utsname
+{
+	char sysname[_UTSNAME_LENGTH];
+	char nodename[_UTSNAME_LENGTH];
+	char release[_UTSNAME_LENGTH];
+	char version[_UTSNAME_LENGTH];
+	char machine[_UTSNAME_LENGTH];
+};
 
 /****************************************************************************/
 
 AMY_EXTERN_C_BEGIN
 
-int		bcmp( const void *, const void *, size_t );
-void	bcopy( const void *, void *, size_t );
-void	bzero( void *, size_t );
-void	explicit_bzero( void *, size_t );
-int		ffs( int );
-char *	index( const char *, int );
-char *	rindex( const char *, int );
-int		strcasecmp( const char *, const char *);
-int		strncasecmp( const char *, const char *, size_t );
-int		timingsafe_bcmp( const void *, const void *, size_t );
+int		uname( struct utsname * );
 
 AMY_EXTERN_C_END
 
 /****************************************************************************/
 
-#ifndef strcmpi
-#define strcmpi strcasecmp
 #endif
 
-#ifndef stricmp
-#define stricmp strcasecmp
-#endif
-
-#ifndef strncmpi
-#define strncmpi strncasecmp
-#endif
-
-#ifndef strnicmp
-#define strnicmp strncasecmp
-#endif
-
-/****************************************************************************/
-
-#endif

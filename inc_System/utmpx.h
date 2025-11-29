@@ -21,48 +21,57 @@
 
 /* -- */
 
-#ifndef AMYSYS_STRINGS_H
-#define AMYSYS_STRINGS_H
+#ifndef AMYSYS_UTMPX_H
+#define AMYSYS_UTMPX_H
 
 /****************************************************************************/
 
-#include <stddef.h>
-#include <string.h>
+#include <sys/types.h>
+#include <sys/time.h>
+
+/****************************************************************************/
+// Must match utmp.h
+
+#define EMPTY			0
+#define RUN_LVL			1
+#define BOOT_TIME		2
+#define NEW_TIME		3
+#define OLD_TIME		4
+#define INIT_PROCESS	5
+#define LOGIN_PROCESS	6
+#define USER_PROCESS	7
+#define DEAD_PROCESS	8
+
+/****************************************************************************/
+
+#define __UT_IDSIZE		4
+#define __UT_NAMESIZE	32
+#define __UT_LINESIZE	32
+#define __UT_HOSTSIZE	256
+
+struct utmpx
+{
+	short			ut_type;
+	pid_t			ut_pid;
+	char			ut_id[__UT_IDSIZE];
+	char			ut_line[__UT_LINESIZE];
+	char			ut_user[__UT_NAMESIZE];
+	char			ut_host[__UT_HOSTSIZE];
+	struct timeval	ut_tv;
+};
 
 /****************************************************************************/
 
 AMY_EXTERN_C_BEGIN
 
-int		bcmp( const void *, const void *, size_t );
-void	bcopy( const void *, void *, size_t );
-void	bzero( void *, size_t );
-void	explicit_bzero( void *, size_t );
-int		ffs( int );
-char *	index( const char *, int );
-char *	rindex( const char *, int );
-int		strcasecmp( const char *, const char *);
-int		strncasecmp( const char *, const char *, size_t );
-int		timingsafe_bcmp( const void *, const void *, size_t );
+void			endutxent( void );
+struct utmpx *	getutxent( void );
+struct utmpx *	getutxid( const struct utmpx * );
+struct utmpx *	getutxline( const struct utmpx * );
+struct utmpx *	pututxline( const struct utmpx * );
+void			setutxent( void );
 
 AMY_EXTERN_C_END
-
-/****************************************************************************/
-
-#ifndef strcmpi
-#define strcmpi strcasecmp
-#endif
-
-#ifndef stricmp
-#define stricmp strcasecmp
-#endif
-
-#ifndef strncmpi
-#define strncmpi strncasecmp
-#endif
-
-#ifndef strnicmp
-#define strnicmp strncasecmp
-#endif
 
 /****************************************************************************/
 

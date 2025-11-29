@@ -260,6 +260,17 @@ struct AmyCLibIFace
 /*  203 */	int							AMYFUNC (*unistd_chown)( struct AmyCLibIFace *Self, const char *aa, uid_t bb, gid_t cc );
 /*  204 */	char *						AMYFUNC (*string_strrchr)( struct AmyCLibIFace *Self, const char *aa, int bb );
 /*  205 */	struct passwd *				AMYFUNC (*pwd_getpwnam)( struct AmyCLibIFace *Self, const char *aa );
+/*  206 */	int							AMYFUNC (*stdio_getchar_unlocked)( struct AmyCLibIFace *Self );
+/*  207 */	int							AMYFUNC (*stdio_putchar_unlocked)( struct AmyCLibIFace *Self, int c );
+/*  208 */	off_t						AMYFUNC (*unistd_lseek)( struct AmyCLibIFace *Self, int, off_t, int );
+/*  209 */	ssize_t						AMYFUNC (*unistd_write)( struct AmyCLibIFace *Self, int, const void *, size_t );
+/*  210 */	int							AMYFUNC (*unistd_symlink)( struct AmyCLibIFace *Self, const char *, const char * );
+/*  211 */	int							AMYFUNC (*time_clock_gettime)( struct AmyCLibIFace *Self, clockid_t, struct timespec * );
+/*  212 */	int							AMYFUNC (*time_clock_settime)( struct AmyCLibIFace *Self, clockid_t, const struct timespec * );
+/*  213 */	int							AMYFUNC (*unistd_gethostname)( struct AmyCLibIFace *Self, char *, size_t );
+/*  214 */	void *						AMYFUNC (*string_memrchr)( struct AmyCLibIFace *Self, const void *, int, size_t );
+/*  215 */	time_t						AMYFUNC (*time_mktime)( struct AmyCLibIFace *Self, struct tm * );
+/*  216 */	long long					AMYFUNC (*stdlib_strtoll)( struct AmyCLibIFace *Self, const char *, char **, int );
 
 
 

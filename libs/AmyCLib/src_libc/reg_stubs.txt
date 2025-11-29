@@ -124,6 +124,7 @@
 "size_t"		fwrite			stdio_fwrite			"ptr, size, nitems, stream"	"const void *ptr, size_t size, size_t nitems, FILE *stream"
 "int"			getc			stdio_getc			"stream"			"FILE *stream"
 "int"			getchar			stdio_getchar			""				"void"
+"int"			getchar_unlocked	stdio_getchar_unlocked		""				"void"
 "ssize_t"		getline			stdio_getline			"lineptr, n, stream"		"char **lineptr, size_t *n, FILE *stream"
 "ssize_t"		getdelim		stdio_getdelim			"lineptr, n, delimiter, stream"	"char **lineptr, size_t *n, int delimiter, FILE *stream"
 # printf		-- custom stub
@@ -131,6 +132,7 @@
 "int"			putc			stdio_putc			"c, stream"			"int c, FILE *stream"
 "int"			putc_unlocked		stdio_putc_unlocked		"c, stream"			"int c, FILE *stream"
 "int"			putchar			stdio_putchar			"c"				"int c"
+"int"			putchar_unlocked	stdio_putchar_unlocked		"c"				"int c"
 "int"			puts			stdio_puts			"str"				"const char *str"
 "int"			remove			stdio_remove			"path"				"const char *path"
 "int"			rename			stdio_rename			"old, new"			"const char *old, const char *new"
@@ -160,6 +162,7 @@
 "void"			free			stdlib_free			"mem"				"void *mem"
 "char *"		getenv			stdlib_getenv			"name"				"const char *name"
 "void *"		malloc			stdlib_malloc			"size"				"size_t size"
+"int"			mkstemp			stdlib_mkstemp			"template"			"char *template"
 "void"			qsort			stdlib_qsort			"base, nel, width, compar"	"void *base, size_t nel, size_t width, int (*compar)(const void *, const void *)"
 "int"			rand			stdlib_rand			""				"void"
 "int"			rand_r			stdlib_rand_r			"seed"				"unsigned int *seed"
@@ -168,7 +171,7 @@
 "double"		strtod			stdlib_strtod			"str, ptr"			"const char *str, char **ptr"
 "float"			strtof			stdlib_strtof			"str, ptr"			"const char *str, char **ptr"
 "long"			strtol			stdlib_strtol			"nptr, endptr, base"		"const char *nptr, char **endptr, int base"
-"int"			mkstemp			stdlib_mkstemp			"template"			"char *template"
+"long long"		strtoll			stdlib_strtol			"nptr, endptr, base"		"const char *nptr, char **endptr, int base"
 
 
 
@@ -176,6 +179,7 @@
 "int"			memcmp			string_memcmp			"s1, s2, len"			"const void *s1, const void *s2, size_t len"
 "void *"		memcpy			string_memcpy			"dst, src, len"			"void *dst, const void *src, size_t len"
 "void *"		memmove			string_memmove			"dst, src, len"			"void *dst, const void *src, size_t len"
+"void *"		memrchr			string_memrchr			"aa, bb, cc"			"const void *aa, int bb, size_t cc"
 "void *"		memset			string_memset			"mem, val, len"			"void *mem, int val, size_t len"
 "char *"		stpcpy			string_stpcpy			"s1, s2"			"char *s1, const char *s2"
 "char *"		strcat			string_strcat			"dst, src"			"char *dst, const char *src"
@@ -200,6 +204,7 @@
 "char *"		strtok			string_strtok			"s1, s2"			"char *s1, const char *s2"
 
 
+
 # strings		func-name		iface-name			args-call			args-decl
 "void"			bzero			strings_bzero			"mem, len"			"void *mem, size_t len"
 "int"			strcasecmp		strings_strcasecmp		"s1, s2"			"const char *s1, const char *s2"
@@ -207,11 +212,15 @@
 
 
 # time			func-name		iface-name			args-call			args-decl
+"int"			clock_gettime		time_clock_gettime		"aa, bb"			"clockid_t aa, struct timespec *bb"
+"int"			clock_settime		time_clock_settime		"aa, bb"			"clockid_t aa, const struct timespec *bb"
 "struct tm *"		localtime		time_localtime			"time"				"const time_t *time"
 "size_t"		strftime		time_strftime			"s, max, fmt, timptr"		"char *s, size_t max, const char *fmt, const struct tm *timptr"
 "time_t"		time			time_time			"ptr"				"time_t *ptr"
 "struct tm *"		gmtime			time_gmtime			"time"				"const time_t *time"
 "struct tm *"		gmtime_r		time_gmtime_r			"time, tm"			"const time_t *time, struct tm *tm"
+"time_t"		mktime			time_mktime			"tm"				"struct tm *tm"
+
 
 
 # unistd		func-name		iface-name			args-call			args-decl
@@ -225,9 +234,13 @@
 "pid_t"			getpid			unistd_getpid			""				"void"
 "int"			isatty			unistd_isatty			"fildes"			"int fildes"
 "int"			link			unistd_link			"path1, path2"			"const char *path1, const char *path2"
+"off_t"			lseek			unistd_lseek			"aa, bb, cc"			"int aa, off_t bb, int cc"
 "ssize_t"		read			unistd_read			"fildes, buf, nbyte"		"int fildes, void *buf, size_t nbyte"
 "int"			rmdir			unistd_rmdir			"path"				"const char *path"
+"int"			symlink			unistd_symlink			"aa, bb"			"const char *aa, const char *bb"
 "int"			unlink			unistd_unlink			"path"				"const char *path"
+"ssize_t"		write			unistd_write			"aa, bb, cc"			"int aa, const void *bb, size_t cc"
+"int"			gethostname		unistd_gethostname		"aa, bb"			"char *aa, size_t bb"
 
 
 # utime			func-name		iface-name			args-call			args-decl

@@ -14,14 +14,14 @@
 
 // --
 
-int AMYFUNC _generic_unistd_isatty( struct AmyCLibPrivIFace *Self, int fildes )
+ssize_t AMYFUNC _generic_unistd_write( struct AmyCLibPrivIFace *Self, int aa, const void *bb, size_t cc )
 {
 struct libData *data;
-int retval;
+ssize_t retval;
 
-	DOFUNCTIONPRINTF( IExec->DebugPrintF( "_generic_unistd_isatty ::IMPLEMENT::ME::\n" ); );
+	DOFUNCTIONPRINTF( IExec->DebugPrintF( "_generic_unistd_write ::IMPLEMENT::ME::\n" ); );
 
-	DOFUNCTIONLOG( LOG_FUNC_isatty );
+	DOFUNCTIONLOG( LOG_FUNC_write );
 
 	data = (PTR)( (U32) Self - Self->Data.NegativeSize );
 

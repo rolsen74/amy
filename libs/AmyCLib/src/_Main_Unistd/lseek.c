@@ -14,14 +14,14 @@
 
 // --
 
-int AMYFUNC _generic_unistd_isatty( struct AmyCLibPrivIFace *Self, int fildes )
+off_t AMYFUNC _generic_unistd_lseek( struct AmyCLibPrivIFace *Self, int aa, off_t bb, int cc )
 {
 struct libData *data;
 int retval;
 
-	DOFUNCTIONPRINTF( IExec->DebugPrintF( "_generic_unistd_isatty ::IMPLEMENT::ME::\n" ); );
+	DOFUNCTIONPRINTF( IExec->DebugPrintF( "_generic_unistd_lseek ::IMPLEMENT::ME::\n" ); );
 
-	DOFUNCTIONLOG( LOG_FUNC_isatty );
+	DOFUNCTIONLOG( LOG_FUNC_lseek );
 
 	data = (PTR)( (U32) Self - Self->Data.NegativeSize );
 

@@ -17,6 +17,7 @@
 #define EM_STRING			2
 #define EM_MEMORY			4
 #define EM_LOCALE			8
+#define EM_USERTASK			16
 
 // --
 

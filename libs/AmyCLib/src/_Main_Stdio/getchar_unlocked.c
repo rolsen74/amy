@@ -14,14 +14,14 @@
 
 // --
 
-int AMYFUNC _generic_unistd_isatty( struct AmyCLibPrivIFace *Self, int fildes )
+int AMYFUNC _generic_stdio_getchar_unlocked( struct AmyCLibPrivIFace *Self )
 {
 struct libData *data;
 int retval;
 
-	DOFUNCTIONPRINTF( IExec->DebugPrintF( "_generic_unistd_isatty ::IMPLEMENT::ME::\n" ); );
+	DOFUNCTIONPRINTF( IExec->DebugPrintF( "_generic_stdio_getchar_unlocked ::IMPLEMENT::ME::\n" ); );
 
-	DOFUNCTIONLOG( LOG_FUNC_isatty );
+	DOFUNCTIONLOG( LOG_FUNC_getchar_unlocked );
 
 	data = (PTR)( (U32) Self - Self->Data.NegativeSize );
 
