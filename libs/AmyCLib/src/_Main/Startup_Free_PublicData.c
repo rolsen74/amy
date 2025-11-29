@@ -11,7 +11,7 @@
 
 // --
 
-static void myFree_PublicData( struct AmyCLibPrivIFace *Self UNUSED, struct libData *data UNUSED )
+static void myFree_PublicData( struct AmyCLibIFace *Self UNUSED, struct libData *data UNUSED )
 {
 	// ENTER( 8 );
 

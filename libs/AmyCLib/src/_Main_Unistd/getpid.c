@@ -14,7 +14,7 @@
 
 // --
 
-pid_t AMYFUNC _generic_unistd_getpid( struct AmyCLibPrivIFace *Self )
+pid_t AMYFUNC _generic_unistd_getpid( struct AmyCLibIFace *Self )
 {
 struct libData *data;
 pid_t retval;

@@ -50,7 +50,7 @@
    never be used in place of fflush(). */
 
 // Same as __flush
-int AMYFUNC _generic__Priv_FB_Write_Flush_Buffer2( struct AmyCLibPrivIFace *Self, struct PrivFile *file )
+int AMYFUNC _generic__Priv_FB_Write_Flush_Buffer2( struct AmyCLibIFace *Self, struct FileStruct *file )
 {
 int last_c;
 int retval;

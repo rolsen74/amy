@@ -41,7 +41,7 @@
 
 // --
 
-int AMYFUNC _generic_strings_strncasecmp( struct AmyCLibPrivIFace *Self, const char *s1, const char *s2, size_t maxlen )
+int AMYFUNC _generic_strings_strncasecmp( struct AmyCLibIFace *Self, const char *s1, const char *s2, size_t maxlen )
 {
 struct libData *data;
 uint8 *str1;

@@ -41,9 +41,9 @@
 
 // --
 
-int AMYFUNC _generic_stdio_setvbuf( struct AmyCLibPrivIFace *Self, struct PrivFile *stream, char *buf, int mode, size_t size )
+int AMYFUNC _generic_stdio_setvbuf( struct AmyCLibIFace *Self, FILE *stream, char *buf, int mode, size_t size )
 {
-struct PrivFile *file;
+struct FileStruct *file;
 struct libData *data;
 char *newbuf;
 int retval;

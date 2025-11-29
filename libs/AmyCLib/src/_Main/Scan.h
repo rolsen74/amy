@@ -82,8 +82,8 @@ struct Intern
 	STR			buffer;
 	U32			bufferPos;
 
-	struct PrivFile *stream;
-	struct AmyCLibPrivIFace *Self;
+	FILE *stream;
+	struct AmyCLibIFace *Self;
 };
 
 // --

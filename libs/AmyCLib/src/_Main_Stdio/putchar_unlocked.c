@@ -14,7 +14,7 @@
 
 // --
 
-int AMYFUNC _generic_stdio_putchar_unlocked( struct AmyCLibPrivIFace *Self, int c )
+int AMYFUNC _generic_stdio_putchar_unlocked( struct AmyCLibIFace *Self, int c )
 {
 struct libData *data;
 int retval;

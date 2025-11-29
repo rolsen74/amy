@@ -42,7 +42,7 @@
 
 // --
 
-double AMYFUNC _generic_math_d_nan( struct AmyCLibPrivIFace *Self UNUSED, const char *xx UNUSED )
+double AMYFUNC _generic_math_d_nan( struct AmyCLibIFace *Self UNUSED, const char *xx UNUSED )
 {
 union DoubleBits x;
 

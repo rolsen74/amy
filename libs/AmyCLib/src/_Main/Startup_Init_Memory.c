@@ -11,7 +11,7 @@
 
 // --
 
-static S32 myInit_Memory( struct AmyCLibPrivIFace *Self, struct libData *data UNUSED )
+static S32 myInit_Memory( struct AmyCLibIFace *Self, struct libData *data UNUSED )
 {
 struct MemPoolHeader *ph;
 S32 error;

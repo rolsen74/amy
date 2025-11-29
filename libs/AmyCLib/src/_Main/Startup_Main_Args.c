@@ -493,7 +493,7 @@ bailout:
 // --
 
 static S32 InitArgs(
-	struct AmyCLibPrivIFace *Self UNUSED,
+	struct AmyCLibIFace *Self UNUSED,
 	struct libData *data,
 	struct WBStartup *wbmsg,
 	STR **argv,

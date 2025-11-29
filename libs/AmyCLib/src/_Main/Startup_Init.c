@@ -20,7 +20,7 @@
 
 // --
 
-S32 AMYFUNC _generic__Priv_Startup_Init( struct AmyCLibPrivIFace *Self, STR args, U32 mask )
+S32 AMYFUNC _generic__Priv_Startup_Init( struct AmyCLibIFace *Self, STR args, U32 mask )
 {
 struct _AmyCLibPublic *pd;
 struct AmyTaskInfo *ati;

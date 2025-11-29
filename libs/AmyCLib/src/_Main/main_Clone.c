@@ -11,9 +11,9 @@
 
 // --
 
-struct Interface * AMYFUNC _Main_Clone( struct AmyCLibPrivIFace *Self )
+struct Interface * AMYFUNC _Main_Clone( struct AmyCLibIFace *Self )
 {
-struct AmyCLibPrivIFace *IFace;
+struct AmyCLibIFace *IFace;
 struct libData *data;
 S32 error;
 

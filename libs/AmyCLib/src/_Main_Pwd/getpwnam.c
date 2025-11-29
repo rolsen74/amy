@@ -14,7 +14,7 @@
 
 // --
 
-struct passwd * AMYFUNC _generic_pwd_getpwnam( struct AmyCLibPrivIFace *Self, const char *nam )
+struct passwd * AMYFUNC _generic_pwd_getpwnam( struct AmyCLibIFace *Self, const char *nam )
 {
 struct libData *data;
 struct passwd *retval;

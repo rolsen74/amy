@@ -46,10 +46,10 @@ extern struct PrivInterface		Priv_FD_Interface_String;
 // --
 // File Descriptor
 
-S32 AMYFUNC _generic__Priv_FD_Init_Struct( struct AmyCLibPrivIFace *Self, struct PrivFile *file, U32 id )
+S32 AMYFUNC _generic__Priv_FD_Init_Struct( struct AmyCLibIFace *Self, struct FileStruct *file, U32 id )
 {
 struct PrivInterface *pi;
-//struct PrivFile *file;
+//FILE *file;
 S32 retval;
 S32 initid;
 
@@ -73,7 +73,7 @@ S32 initid;
 		goto bailout;
 	}
 
-	Self->string_memset( file, 0, sizeof( struct PrivFile ));
+	Self->string_memset( file, 0, sizeof( struct FileStruct ));
 
 	IExec->InitSemaphore( & file->pf_Semaphore );
 

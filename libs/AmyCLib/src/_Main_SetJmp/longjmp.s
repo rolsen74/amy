@@ -13,7 +13,7 @@
 _generic_setjmp_longjmp:
 
 	# r1 - Stack Pointer
-	# r3 - ( Parm 1 ) struct AmyCLibPrivIFace *
+	# r3 - ( Parm 1 ) struct AmyCLibIFace *
 	# r4 - ( Parm 2 ) jmp_buf *
 	# r5 - ( Parm 3 ) int val
 

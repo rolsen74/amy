@@ -41,7 +41,7 @@
 
 // --
 
-int AMYFUNC _generic_stdio_vasprintf( struct AmyCLibPrivIFace *Self, char **ret, const char *fmt, va_list ap )
+int AMYFUNC _generic_stdio_vasprintf( struct AmyCLibIFace *Self, char **ret, const char *fmt, va_list ap )
 {
 struct PrintStruct ps;
 struct libData *data;

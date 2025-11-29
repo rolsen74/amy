@@ -14,7 +14,7 @@
 
 // --
 
-int AMYFUNC _generic_ctype_isalnum( struct AmyCLibPrivIFace *Self, int c )
+int AMYFUNC _generic_ctype_isalnum( struct AmyCLibIFace *Self, int c )
 {
 struct libData *data;
 int retval;

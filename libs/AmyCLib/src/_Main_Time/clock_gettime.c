@@ -14,9 +14,9 @@
 
 // --
 
-int AMYFUNC _generic_time_clock_gettime( struct AmyCLibPrivIFace *Self, clockid_t aa, struct timespec *bb )
+int AMYFUNC _generic_time_clock_gettime( struct AmyCLibIFace *Self, clockid_t aa, struct timespec *bb )
 {
-struct PrivFile *file;
+struct FileStruct *file;
 struct libData *data;
 int retval;
 

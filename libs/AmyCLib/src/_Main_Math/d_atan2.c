@@ -14,7 +14,7 @@
 
 // --
 
-double AMYFUNC _generic_math_atan2( struct AmyCLibPrivIFace *Self, double y, double x )
+double AMYFUNC _generic_math_atan2( struct AmyCLibIFace *Self, double y, double x )
 {
 struct libData *data;
 double retval;

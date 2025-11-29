@@ -41,9 +41,9 @@
 
 // --
 
-int AMYFUNC _generic_stdio_fputc_unlocked( struct AmyCLibPrivIFace *Self, int c, struct PrivFile *stream )
+int AMYFUNC _generic_stdio_fputc_unlocked( struct AmyCLibIFace *Self, int c, FILE *stream )
 {
-struct PrivFile *file;
+struct FileStruct *file;
 struct libData *data;
 S32 retval;
 

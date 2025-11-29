@@ -42,7 +42,7 @@
 // --
 // File Descriptor
 
-PTR AMYFUNC _generic__Priv_FD_Array_Remove( struct AmyCLibPrivIFace *Self, S32 Pos )
+PTR AMYFUNC _generic__Priv_FD_Array_Remove( struct AmyCLibIFace *Self, S32 Pos )
 {
 struct libData *data;
 PTR Node;
@@ -62,7 +62,7 @@ PTR Node;
 //
 //	  for( U32 cnt=0 ; cnt < RA_MIN( data->FD_Array.Size, 10 ) ; cnt++ )
 //	  {
-//struct PrivFile *pf = data->FD_Array.Nodes[ cnt ].Node;
+//FILE *pf = data->FD_Array.Nodes[ cnt ].Node;
 //IExec->DebugPrintF( "NODE %2d : %p [%08lx]\n", cnt, pf, pf ? pf->pf_FileType : -1U );
 //	  }
 //}
@@ -88,7 +88,7 @@ bailout:
 //
 //	  for( U32 cnt=0 ; cnt < RA_MIN( data->FD_Array.Size, 10 ) ; cnt++ )
 //	  {
-//struct PrivFile *pf = data->FD_Array.Nodes[ cnt ].Node;
+//FILE *pf = data->FD_Array.Nodes[ cnt ].Node;
 //IExec->DebugPrintF( "NODE %2d : %p [%08lx]\n", cnt, pf, pf ? pf->pf_FileType : -1U );
 //	  }
 //}

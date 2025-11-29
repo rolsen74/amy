@@ -171,7 +171,7 @@
 "double"		strtod			stdlib_strtod			"str, ptr"			"const char *str, char **ptr"
 "float"			strtof			stdlib_strtof			"str, ptr"			"const char *str, char **ptr"
 "long"			strtol			stdlib_strtol			"nptr, endptr, base"		"const char *nptr, char **endptr, int base"
-"long long"		strtoll			stdlib_strtol			"nptr, endptr, base"		"const char *nptr, char **endptr, int base"
+"long long"		strtoll			stdlib_strtoll			"nptr, endptr, base"		"const char *nptr, char **endptr, int base"
 
 
 

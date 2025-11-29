@@ -16,7 +16,7 @@ static S32 mySetup_PublicData(
 	struct libData *data )
 {
 // struct RACLibStruct *pd;
-// struct PrivFile *file;
+// FILE *file;
 S32 error;
 
 // 	ENTER( 8 );

@@ -13,7 +13,7 @@
 
 int main( int argc, char **argv )
 {
-FILE *file;
+struct FileStruct *file;
 int error;
 
 	error = 10;

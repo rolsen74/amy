@@ -14,7 +14,7 @@
 
 // --
 
-void AMYFUNC _generic_stdio_rewind( struct AmyCLibPrivIFace *Self, struct PrivFile *stream )
+void AMYFUNC _generic_stdio_rewind( struct AmyCLibIFace *Self, FILE *stream )
 {
 struct libData *data;
 

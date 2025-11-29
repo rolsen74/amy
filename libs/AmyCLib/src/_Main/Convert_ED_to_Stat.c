@@ -41,7 +41,7 @@
 
 // --
 
-S32 AMYFUNC _generic__Priv_Convert_ED_to_Stat( struct AmyCLibPrivIFace *Self, struct ExamineData *ed, struct stat *st )
+S32 AMYFUNC _generic__Priv_Convert_ED_to_Stat( struct AmyCLibIFace *Self, struct ExamineData *ed, struct stat *st )
 {
 time_t time;
 mode_t mode;

@@ -44,7 +44,7 @@
 
 static S32 my_Scan_Char_Peek( struct Intern *in )
 {
-// struct AmyCLibPrivIFace *Self;
+// struct AmyCLibIFace *Self;
 S32 val;
 U32 pos;
 STR str;

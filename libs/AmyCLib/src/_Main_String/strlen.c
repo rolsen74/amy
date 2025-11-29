@@ -41,7 +41,7 @@
 
 // --
 
-size_t AMYFUNC _generic_string_strlen( struct AmyCLibPrivIFace *Self, const char *s )
+size_t AMYFUNC _generic_string_strlen( struct AmyCLibIFace *Self, const char *s )
 {
 	DOFUNCTIONPRINTF( IExec->DebugPrintF( "_generic_string_strlen : Ptr %p : Str '%s'\n", s, (s)?s:"<NULL>" ); );
 

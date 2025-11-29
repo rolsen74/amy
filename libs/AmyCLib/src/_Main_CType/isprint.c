@@ -14,7 +14,7 @@
 
 // --
 
-int AMYFUNC _generic_ctype_isprint( struct AmyCLibPrivIFace *Self, int c )
+int AMYFUNC _generic_ctype_isprint( struct AmyCLibIFace *Self, int c )
 {
 struct libData *data;
 int retval;

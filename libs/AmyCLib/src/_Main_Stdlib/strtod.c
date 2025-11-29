@@ -41,7 +41,7 @@
 
 // --
 
-double AMYFUNC _generic_stdlib_strtod( struct AmyCLibPrivIFace *Self, const char *str, char **ptr )
+double AMYFUNC _generic_stdlib_strtod( struct AmyCLibIFace *Self, const char *str, char **ptr )
 {
 struct libData *data;
 const char *stop;

@@ -41,7 +41,7 @@
 
 // --
 
-long AMYFUNC _generic_stdio_ftell( struct AmyCLibPrivIFace *Self, struct PrivFile *stream )
+long AMYFUNC _generic_stdio_ftell( struct AmyCLibIFace *Self, FILE *stream )
 {
 //struct libData *data;
 long retval;

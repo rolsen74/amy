@@ -14,7 +14,7 @@
 
 // --
 
-int AMYFUNC _generic_stdio_getchar( struct AmyCLibPrivIFace *Self )
+int AMYFUNC _generic_stdio_getchar( struct AmyCLibIFace *Self )
 {
 struct libData *data;
 int retval;

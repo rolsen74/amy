@@ -42,11 +42,11 @@
 // --
 // File Descriptor
 
-struct PrivFile * AMYFUNC _generic__Priv_FD_Init( struct AmyCLibPrivIFace *Self, struct FDInitStruct *is )
+FILE * AMYFUNC _generic__Priv_FD_Init( struct AmyCLibIFace *Self, struct FDInitStruct *is )
 {
 //struct FDInitStruct *is;
 struct ExamineData *dat;
-struct PrivFile *file;
+struct FileStruct *file;
 struct libData *data;
 S32 is_file_system;
 S32 error;

@@ -42,7 +42,7 @@
 // --
 // File Descriptor
 
-static S64 myRead( struct AmyCLibPrivIFace *Self UNUSED, struct PrivFile *file, PTR buf, S32 size )
+static S64 myRead( struct AmyCLibIFace *Self UNUSED, struct FileStruct *file, PTR buf, S32 size )
 {
 struct libData *data;
 S64 retval;

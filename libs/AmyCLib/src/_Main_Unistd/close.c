@@ -41,9 +41,9 @@
 
 // --
 
-int AMYFUNC _generic_unistd_close( struct AmyCLibPrivIFace *Self, int fildes )
+int AMYFUNC _generic_unistd_close( struct AmyCLibIFace *Self, int fildes )
 {
-struct PrivFile *file;
+struct FileStruct *file;
 struct libData *data;
 int retval;
 

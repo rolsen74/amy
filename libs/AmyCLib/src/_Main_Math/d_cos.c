@@ -14,7 +14,7 @@
 
 // --
 
-double AMYFUNC _generic_math_cos( struct AmyCLibPrivIFace *Self, double x )
+double AMYFUNC _generic_math_cos( struct AmyCLibIFace *Self, double x )
 {
 struct libData *data;
 double retval;

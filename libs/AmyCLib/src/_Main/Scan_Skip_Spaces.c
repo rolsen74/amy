@@ -44,7 +44,7 @@
 
 static S32 my_Scan_Skip_Spaces( struct Intern *in )
 {
-struct AmyCLibPrivIFace *Self;
+struct AmyCLibIFace *Self;
 S32 cnt;
 S32 c;
 

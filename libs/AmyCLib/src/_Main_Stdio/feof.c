@@ -14,7 +14,7 @@
 
 // --
 
-int AMYFUNC _generic_stdio_feof( struct AmyCLibPrivIFace *Self, struct PrivFile *stream )
+int AMYFUNC _generic_stdio_feof( struct AmyCLibIFace *Self, FILE *stream )
 {
 struct libData *data;
 int retval;

@@ -11,7 +11,7 @@
 
 // --
 
-void AMYFUNC _generic_strings_bzero( struct AmyCLibPrivIFace *Self UNUSED, void *mem, size_t len )
+void AMYFUNC _generic_strings_bzero( struct AmyCLibIFace *Self UNUSED, void *mem, size_t len )
 {
 	DOFUNCTIONPRINTF( IExec->DebugPrintF( "_generic_strings_bzero : Mem %p : Len %lu :\n", mem, len ); );
 

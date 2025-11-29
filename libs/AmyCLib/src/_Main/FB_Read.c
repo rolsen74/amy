@@ -42,7 +42,7 @@
 // --
 // File Buffer
 
-static S32 __FB_Read_Is_Buffer_Empty( struct PrivFile *file )
+static S32 __FB_Read_Is_Buffer_Empty( struct FileStruct *file )
 {
 S32 retval;
 
@@ -70,7 +70,7 @@ bailout:
 // --
 
 // Same as __fgetc
-S32 AMYFUNC _generic__Priv_FB_Read( struct AmyCLibPrivIFace *Self, struct PrivFile *file )
+S32 AMYFUNC _generic__Priv_FB_Read( struct AmyCLibIFace *Self, struct FileStruct *file )
 {
 S32 retval;
 

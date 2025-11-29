@@ -14,7 +14,7 @@
 
 // --
 
-int AMYFUNC _generic_stdio_putc( struct AmyCLibPrivIFace *Self, int c, struct PrivFile *stream )
+int AMYFUNC _generic_stdio_putc( struct AmyCLibIFace *Self, int c, FILE *stream )
 {
 struct libData *data;
 int retval;

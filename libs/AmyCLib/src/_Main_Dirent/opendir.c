@@ -14,7 +14,7 @@
 
 // --
 
-DIR * AMYFUNC _generic_dirent_opendir( struct AmyCLibPrivIFace *Self, const char *dirname )
+DIR * AMYFUNC _generic_dirent_opendir( struct AmyCLibIFace *Self, const char *dirname )
 {
 struct libData *data;
 DIR *retval;

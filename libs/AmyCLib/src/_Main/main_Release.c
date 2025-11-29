@@ -11,7 +11,7 @@
 
 // --
 
-U32 AMYFUNC _Main_Release( struct AmyCLibPrivIFace *Self )
+U32 AMYFUNC _Main_Release( struct AmyCLibIFace *Self )
 {
 	DOFUNCTIONPRINTF( IExec->DebugPrintF( "AmyCLib : _Main_Release\n" ); );
 

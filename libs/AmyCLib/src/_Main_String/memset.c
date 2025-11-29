@@ -41,7 +41,7 @@
 
 // --
 
-void * AMYFUNC _generic_string_memset( struct AmyCLibPrivIFace *Self, void *s, int c, size_t len )
+void * AMYFUNC _generic_string_memset( struct AmyCLibIFace *Self, void *s, int c, size_t len )
 {
 	DOFUNCTIONPRINTF( IExec->DebugPrintF( "_generic_string_memset : Mem %p : Val %ld : Len %lu :\n", s, c, len ); );
 

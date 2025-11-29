@@ -11,7 +11,7 @@
 
 // --
 
-static void myFree_Memory( struct AmyCLibPrivIFace *Self, struct libData *data )
+static void myFree_Memory( struct AmyCLibIFace *Self, struct libData *data )
 {
 PTR handle;
 

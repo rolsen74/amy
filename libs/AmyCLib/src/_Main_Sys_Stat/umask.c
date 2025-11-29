@@ -14,7 +14,7 @@
 
 // --
 
-mode_t AMYFUNC _generic_sys_stat_umask( struct AmyCLibPrivIFace *Self, mode_t cmask )
+mode_t AMYFUNC _generic_sys_stat_umask( struct AmyCLibIFace *Self, mode_t cmask )
 {
 struct libData *data;
 mode_t retval;

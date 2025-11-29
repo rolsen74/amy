@@ -41,7 +41,7 @@
 
 // --
 
-int AMYFUNC _generic_strings_strcasecmp( struct AmyCLibPrivIFace *Self, const char *s1, const char *s2 )
+int AMYFUNC _generic_strings_strcasecmp( struct AmyCLibIFace *Self, const char *s1, const char *s2 )
 {
 struct libData *data;
 uint8 *str1;

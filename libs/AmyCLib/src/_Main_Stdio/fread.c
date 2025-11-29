@@ -41,9 +41,9 @@
 
 // --
 
-size_t AMYFUNC _generic_stdio_fread( struct AmyCLibPrivIFace *Self, void *ptr, size_t size, size_t count, struct PrivFile *stream )
+size_t AMYFUNC _generic_stdio_fread( struct AmyCLibIFace *Self, void *ptr, size_t size, size_t count, FILE *stream )
 {
-struct PrivFile *file;
+struct FileStruct *file;
 struct libData *data;
 size_t retval;
 

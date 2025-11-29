@@ -41,9 +41,9 @@
 
 // --
 
-int AMYFUNC _generic_stdio_fflush( struct AmyCLibPrivIFace *Self, struct PrivFile *stream )
+int AMYFUNC _generic_stdio_fflush( struct AmyCLibIFace *Self, FILE *stream )
 {
-struct PrivFile *file;
+struct FileStruct *file;
 struct libData *data;
 int retval;
 U32 cnt;

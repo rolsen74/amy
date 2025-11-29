@@ -555,7 +555,7 @@ static STR GroupNames[GROUP_LAST] =
 // --
 #ifdef __DO_FUNCTION_LOG__
 
-static int myPrintF( struct AmyCLibPrivIFace *Self, const char *fmt, ... )
+static int myPrintF( struct AmyCLibIFace *Self, const char *fmt, ... )
 {
 va_list ap;
 int retval;
@@ -572,7 +572,7 @@ int retval;
 #endif
 // --
 
-void _generic__Priv_Print_Log( struct AmyCLibPrivIFace *Self UNUSED )
+void _generic__Priv_Print_Log( struct AmyCLibIFace *Self UNUSED )
 {
 
 #ifdef __DO_FUNCTION_LOG__
@@ -650,7 +650,7 @@ bailout:
 
 // --
 
-void _generic__Priv_Func_Log( struct AmyCLibPrivIFace *Self UNUSED, S32 xx UNUSED )
+void _generic__Priv_Func_Log( struct AmyCLibIFace *Self UNUSED, S32 xx UNUSED )
 {
 
 	#ifdef __DO_FUNCTION_LOG__

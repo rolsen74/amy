@@ -43,7 +43,7 @@
 
 #define BUFFER_SIZE		( 128 > sizeof( struct tm ) ? 128 : sizeof( struct tm ))
 
-struct tm *_generic_time_gmtime( struct AmyCLibPrivIFace *Self, const time_t *time )
+struct tm *_generic_time_gmtime( struct AmyCLibIFace *Self, const time_t *time )
 {
 struct libData *data;
 struct tm *retval;

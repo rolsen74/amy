@@ -44,7 +44,7 @@
 // --
 // File Descriptor
 
-S32 AMYFUNC _generic__Priv_FD_Array_Insert( struct AmyCLibPrivIFace *Self, PTR Node )
+S32 AMYFUNC _generic__Priv_FD_Array_Insert( struct AmyCLibIFace *Self, PTR Node )
 {
 struct ArrayNode *newarray;
 struct libData *data;

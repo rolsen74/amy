@@ -14,7 +14,7 @@
 
 // --
 
-int AMYFUNC _generic_stdio_vfscanf( struct AmyCLibPrivIFace *Self, struct PrivFile *stream, const char *format, va_list arg )
+int AMYFUNC _generic_stdio_vfscanf( struct AmyCLibIFace *Self, FILE *stream, const char *format, va_list arg )
 {
 struct libData *data;
 int retval;

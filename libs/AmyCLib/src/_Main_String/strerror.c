@@ -14,7 +14,7 @@
 
 // --
 
-char * AMYFUNC _generic_string_strerror( struct AmyCLibPrivIFace *Self, int errnum )
+char * AMYFUNC _generic_string_strerror( struct AmyCLibIFace *Self, int errnum )
 {
 struct libData *data;
 char *retval;

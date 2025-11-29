@@ -14,7 +14,7 @@
 
 // --
 
-struct group * AMYFUNC _generic_grp_getgrgid( struct AmyCLibPrivIFace *Self, gid_t aa )
+struct group * AMYFUNC _generic_grp_getgrgid( struct AmyCLibIFace *Self, gid_t aa )
 {
 struct libData *data;
 struct group *retval;

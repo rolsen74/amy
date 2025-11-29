@@ -44,7 +44,7 @@
 
 static S32 my_Scan_Char_Unget( struct Intern *in, S32 c )
 {
-struct AmyCLibPrivIFace *Self;
+struct AmyCLibIFace *Self;
 S32 val;
 U32 pos;
 STR str;

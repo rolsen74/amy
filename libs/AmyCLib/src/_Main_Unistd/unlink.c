@@ -14,7 +14,7 @@
 
 // --
 
-int AMYFUNC _generic_unistd_unlink( struct AmyCLibPrivIFace *Self, const char *path )
+int AMYFUNC _generic_unistd_unlink( struct AmyCLibIFace *Self, const char *path )
 {
 struct libData *data;
 int retval;

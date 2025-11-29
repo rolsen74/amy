@@ -11,7 +11,7 @@
 
 // --
 
-PTR AMYFUNC _generic__Priv_Mem_Alloc( struct AmyCLibPrivIFace *Self, U32 Size )
+PTR AMYFUNC _generic__Priv_Mem_Alloc( struct AmyCLibIFace *Self, U32 Size )
 {
 struct MemPoolHeader *pool;
 struct libData *data;

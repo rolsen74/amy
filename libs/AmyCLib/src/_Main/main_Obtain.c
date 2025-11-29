@@ -11,7 +11,7 @@
 
 // --
 
-U32 AMYFUNC _Main_Obtain( struct AmyCLibPrivIFace *Self )
+U32 AMYFUNC _Main_Obtain( struct AmyCLibIFace *Self )
 {
 	DOFUNCTIONPRINTF( IExec->DebugPrintF( "AmyCLib : _Main_Obtain\n" ); );
 

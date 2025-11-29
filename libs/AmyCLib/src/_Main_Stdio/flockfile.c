@@ -41,9 +41,9 @@
 
 // --
 
-void AMYFUNC _generic_stdio_flockfile( struct AmyCLibPrivIFace *Self, struct PrivFile *stream )
+void AMYFUNC _generic_stdio_flockfile( struct AmyCLibIFace *Self, FILE *stream )
 {
-struct PrivFile *file;
+struct FileStruct *file;
 struct libData *data;
 
 	// --

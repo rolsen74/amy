@@ -32,7 +32,7 @@ enum Parameter_Size_t
 
 struct Intern
 {
-	struct AmyCLibPrivIFace *Self;
+	struct AmyCLibIFace *Self;
 	const char *prefix;
 	enum Parameter_Size_t Parameter_Size;
 	char *output_buffer;

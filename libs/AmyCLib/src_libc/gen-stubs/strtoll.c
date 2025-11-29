@@ -8,7 +8,8 @@
 */
 
 #include "Stub.h"
+#include <stdlib.h>
 
-LIBC_STUB(int, clock_settime, time_clock_settime,
-    (clockid_t aa, const struct timespec *bb),
-    aa, bb);
+LIBC_STUB(long long, strtoll, stdlib_strtoll,
+    (const char *nptr, char **endptr, int base),
+    nptr, endptr, base);

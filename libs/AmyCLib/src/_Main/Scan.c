@@ -54,7 +54,7 @@
 
 // --
 
-void AMYFUNC _generic__Priv_Scan( struct AmyCLibPrivIFace *Self, struct ScanStruct *ss )
+void AMYFUNC _generic__Priv_Scan( struct AmyCLibIFace *Self, struct ScanStruct *ss )
 {
 struct Intern in;
 S32 c;
@@ -407,7 +407,7 @@ bailout:
 
 /// Protos
 
-static u_char *__sccl( struct AmyCLibPrivIFace *Self, char *, u_char *);
+static u_char *__sccl( struct AmyCLibIFace *Self, char *, u_char *);
 
 ///
 
@@ -419,7 +419,7 @@ static u_char *__sccl( struct AmyCLibPrivIFace *Self, char *, u_char *);
 ** Check if there are unused Bytess in the buffer
 */
 
-static S32 __Priv_Check_Is_Buffer_Empty( struct PrivFile *file )
+static S32 __Priv_Check_Is_Buffer_Empty( FILE *file )
 {
 S32 retval;
 
@@ -449,7 +449,7 @@ bailout:
 ** Returns 'TRUE' if buffer is empty and we can't fill it
 */
 
-static S32 __Priv_Is_Buffer_Empty( struct AmyCLibPrivIFace *Self, struct PrivFile *file )
+static S32 __Priv_Is_Buffer_Empty( struct AmyCLibIFace *Self, FILE *file )
 {
 S32 retval;
 
@@ -478,7 +478,7 @@ done:
 ///
 /// __Priv_Peek_Buffer
 
-static int __Priv_Peek_Buffer( struct PrivFile *file )
+static int __Priv_Peek_Buffer( FILE *file )
 {
 int retval;
 
@@ -490,7 +490,7 @@ int retval;
 ///
 /// __Priv_Skip_Bytes
 
-static S32 __Priv_Skip_Bytes( struct AmyCLibPrivIFace *Self, struct PrivFile *file, int bytes )
+static S32 __Priv_Skip_Bytes( struct AmyCLibIFace *Self, FILE *file, int bytes )
 {
 S32 retval;
 
@@ -522,7 +522,7 @@ done:
 ///
 /// __Priv_Next_Pos_With_Refill
 
-static int __Priv_Next_Pos_With_Refill( struct AmyCLibPrivIFace *Self, struct PrivFile *file )
+static int __Priv_Next_Pos_With_Refill( struct AmyCLibIFace *Self, FILE *file )
 {
 int retval;
 int val;
@@ -537,7 +537,7 @@ int val;
 ///
 /// __Priv_Get_Char
 
-static int __Priv_Get_Char( struct AmyCLibPrivIFace *Self, struct PrivFile *file )
+static int __Priv_Get_Char( struct AmyCLibIFace *Self, FILE *file )
 {
 int retval;
 
@@ -549,7 +549,7 @@ int retval;
 ///
 /// __Priv_Bytes_Left
 
-static int __Priv_Bytes_Left( struct PrivFile *file )
+static int __Priv_Bytes_Left( FILE *file )
 {
 int retval;
 
@@ -567,12 +567,12 @@ int retval;
 /*
  * Internal, unlocked version of vfscanf
  */
-// static int __svfscanf( struct AmyCLibPrivIFace *Self, struct PrivFile *fp, const char *fmt0, va_list ap )
-void AMYFUNC _generic__Priv_Scan( struct AmyCLibPrivIFace *Self, struct ScanStruct *ss )
+// static int __svfscanf( struct AmyCLibIFace *Self, FILE *fp, const char *fmt0, va_list ap )
+void AMYFUNC _generic__Priv_Scan( struct AmyCLibIFace *Self, struct ScanStruct *ss )
 {
-//	struct PrivFile *file = (PTR) fp;
-struct PrivFile *file;
-struct PrivFile *fp;
+//	FILE *file = (PTR) fp;
+FILE *file;
+FILE *fp;
 
 	u_char *fmt;	// = (u_char *)fmt0;
 	int c;				/* character from format, or conversion */
@@ -1641,7 +1641,7 @@ bailout:
  * closing `]'.  The table has a 1 wherever characters should be
  * considered part of the scanset.
  */
-static u_char * __sccl( struct AmyCLibPrivIFace *Self, char *tab, u_char *fmt )
+static u_char * __sccl( struct AmyCLibIFace *Self, char *tab, u_char *fmt )
 {
 	int c, n, v;
 

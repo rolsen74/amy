@@ -14,7 +14,7 @@
 
 // --
 
-int AMYFUNC _generic_dirent_closedir( struct AmyCLibPrivIFace *Self, DIR *dirp )
+int AMYFUNC _generic_dirent_closedir( struct AmyCLibIFace *Self, DIR *dirp )
 {
 struct libData *data;
 int retval;

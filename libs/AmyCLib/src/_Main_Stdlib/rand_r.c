@@ -46,7 +46,7 @@
 #define QQ	44488
 #define RR	3399
 
-int AMYFUNC _generic_stdlib_rand_r( struct AmyCLibPrivIFace *Self UNUSED, unsigned int *seed )
+int AMYFUNC _generic_stdlib_rand_r( struct AmyCLibIFace *Self UNUSED, unsigned int *seed )
 {
 int X;
 

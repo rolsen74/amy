@@ -11,7 +11,7 @@
 
 // --
 
-static int doFuncStat( struct AmyCLibPrivIFace *Self UNUSED, struct libData *data )
+static int doFuncStat( struct AmyCLibIFace *Self UNUSED, struct libData *data )
 {
 	#ifdef DEBUG
 	IExec->DebugPrintF( "Enabling Function Stat tracking\n" );
@@ -28,7 +28,7 @@ struct Option
 {
 	U32		Len;
 	STR		Name;
-	int		( *Func )( struct AmyCLibPrivIFace *Self, struct libData *data );
+	int		( *Func )( struct AmyCLibIFace *Self, struct libData *data );
 };
 
 struct Option myOptions[] =
@@ -40,7 +40,7 @@ struct Option myOptions[] =
 
 // --
 
-static S32 myInit_Check_Args( struct AmyCLibPrivIFace *Self, struct libData *data UNUSED, STR args )
+static S32 myInit_Check_Args( struct AmyCLibIFace *Self, struct libData *data UNUSED, STR args )
 {
 
 STR str_out;

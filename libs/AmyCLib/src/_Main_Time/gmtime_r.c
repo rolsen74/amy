@@ -41,7 +41,7 @@
 
 // --
 
-struct tm *_generic_time_gmtime_r( struct AmyCLibPrivIFace *Self, const time_t *time, struct tm *tm )
+struct tm *_generic_time_gmtime_r( struct AmyCLibIFace *Self, const time_t *time, struct tm *tm )
 {
 struct libData *data;
 struct tm *retval;

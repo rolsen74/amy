@@ -41,9 +41,9 @@
 
 // --
 
-int AMYFUNC _generic_stdio_puts( struct AmyCLibPrivIFace *Self, const char *str )
+int AMYFUNC _generic_stdio_puts( struct AmyCLibIFace *Self, const char *str )
 {
-struct PrivFile *file;
+struct FileStruct *file;
 struct libData *data;
 int retval;
 int mode;

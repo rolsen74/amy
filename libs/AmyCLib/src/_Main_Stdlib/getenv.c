@@ -14,7 +14,7 @@
 
 // --
 
-char * AMYFUNC _generic_stdlib_getenv( struct AmyCLibPrivIFace *Self, const char *name )
+char * AMYFUNC _generic_stdlib_getenv( struct AmyCLibIFace *Self, const char *name )
 {
 struct libData *data;
 char *retval;

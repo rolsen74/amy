@@ -41,9 +41,9 @@
 
 // --
 
-int AMYFUNC _generic_stdio_ungetc( struct AmyCLibPrivIFace *Self, int c, struct PrivFile *stream )
+int AMYFUNC _generic_stdio_ungetc( struct AmyCLibIFace *Self, int c, FILE *stream )
 {
-struct PrivFile *file;
+struct FileStruct *file;
 struct libData *data;
 int retval;
 

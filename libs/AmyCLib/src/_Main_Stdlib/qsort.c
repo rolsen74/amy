@@ -14,7 +14,7 @@
 
 // --
 
-void AMYFUNC _generic_stdlib_qsort( struct AmyCLibPrivIFace *Self, void *base, size_t nel, size_t width, int (*compar)(const void *, const void *))
+void AMYFUNC _generic_stdlib_qsort( struct AmyCLibIFace *Self, void *base, size_t nel, size_t width, int (*compar)(const void *, const void *))
 {
 struct libData *data;
 

@@ -45,7 +45,7 @@
 
 // --
 
-int AMYFUNC _generic__Priv_Convert_IOErr_to_ErrNo( struct AmyCLibPrivIFace *Self UNUSED, S32 err )
+int AMYFUNC _generic__Priv_Convert_IOErr_to_ErrNo( struct AmyCLibIFace *Self UNUSED, S32 err )
 {
 int retval;
 U32 i;

@@ -102,7 +102,7 @@ static const double ivln2_l	=  1.92596299112661746887e-08; /* 0x3E54AE0B, 0xF85D
 
 // --
 
-static double __pow( struct AmyCLibPrivIFace *Self, double x, double y )
+static double __pow( struct AmyCLibIFace *Self, double x, double y )
 {
 union DoubleBits val;
 double z;
@@ -582,7 +582,7 @@ int32 iy;
 
 // --
 
-double AMYFUNC _generic_math_d_pow( struct AmyCLibPrivIFace *Self, double x, double y )
+double AMYFUNC _generic_math_d_pow( struct AmyCLibIFace *Self, double x, double y )
 {
 double retval;
 

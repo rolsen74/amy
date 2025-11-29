@@ -14,7 +14,7 @@
 
 // --
 
-int AMYFUNC _generic_unistd_symlink( struct AmyCLibPrivIFace *Self, const char *aa, const char *bb )
+int AMYFUNC _generic_unistd_symlink( struct AmyCLibIFace *Self, const char *aa, const char *bb )
 {
 struct libData *data;
 int retval;

@@ -42,7 +42,7 @@
 // --
 // File Descriptor
 
-static S64 myGetPos( struct AmyCLibPrivIFace *Self, struct PrivFile *file )
+static S64 myGetPos( struct AmyCLibIFace *Self, struct FileStruct *file )
 {
 struct libData *data;
 S64 pos;

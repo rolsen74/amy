@@ -14,7 +14,7 @@
 
 // --
 
-int AMYFUNC _generic_sys_stat_mkdir( struct AmyCLibPrivIFace *Self, const char *path, mode_t mode )
+int AMYFUNC _generic_sys_stat_mkdir( struct AmyCLibIFace *Self, const char *path, mode_t mode )
 {
 struct libData *data;
 int retval;

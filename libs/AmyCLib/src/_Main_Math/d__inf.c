@@ -42,7 +42,7 @@
 
 // --
 
-double AMYFUNC _generic_math_d__inf( struct AmyCLibPrivIFace *Self UNUSED )
+double AMYFUNC _generic_math_d__inf( struct AmyCLibIFace *Self UNUSED )
 {
 union DoubleBits xx;
 

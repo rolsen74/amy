@@ -14,7 +14,7 @@
 
 // --
 
-int AMYFUNC _generic_stdio_rename( struct AmyCLibPrivIFace *Self, const char *old, const char *new )
+int AMYFUNC _generic_stdio_rename( struct AmyCLibIFace *Self, const char *old, const char *new )
 {
 struct libData *data;
 int retval;

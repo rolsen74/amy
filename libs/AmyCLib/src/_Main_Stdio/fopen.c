@@ -41,10 +41,10 @@
 
 // --
 
-struct PrivFile * AMYFUNC _generic_stdio_fopen( struct AmyCLibPrivIFace *Self, const char *filename, const char *mode )
+FILE * AMYFUNC _generic_stdio_fopen( struct AmyCLibIFace *Self, const char *filename, const char *mode )
 {
 struct FDInitStruct is;
-struct PrivFile *file;
+struct FileStruct *file;
 struct libData *data;
 U32 Mode;
 

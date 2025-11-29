@@ -41,10 +41,10 @@
 
 // --
 
-int AMYFUNC _generic_stdio_putchar( struct AmyCLibPrivIFace *Self, int c )
+int AMYFUNC _generic_stdio_putchar( struct AmyCLibIFace *Self, int c )
 {
 struct libData *data;
-struct PrivFile *stream;
+FILE *stream;
 S32 retval;
 
 	// --

@@ -42,9 +42,9 @@
 // --
 // File Descriptor
 
-struct PrivFile * AMYFUNC _generic__Priv_FD_Alloc( struct AmyCLibPrivIFace *Self, U32 ID )
+struct FileStruct * AMYFUNC _generic__Priv_FD_Alloc( struct AmyCLibIFace *Self, U32 ID )
 {
-struct PrivFile *file;
+struct FileStruct *file;
 struct libData *data;
 S32 error;
 S32 pos;
@@ -61,7 +61,7 @@ S32 pos;
 
 	// --
 
-	file = Self->Priv_Mem_Alloc( sizeof( struct PrivFile ));
+	file = Self->Priv_Mem_Alloc( sizeof( struct FileStruct ));
 
 	if ( ! file )
 	{

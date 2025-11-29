@@ -46,7 +46,7 @@
 
 static S32 my_Scan_Arg_Integer( struct Intern *in )
 {
-struct AmyCLibPrivIFace *Self;
+struct AmyCLibIFace *Self;
 char buf[MAX_BUF+1];	// +1 for NUL char
 intmax_t v;
 S32 retval;

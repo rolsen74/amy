@@ -27,10 +27,9 @@
 #include <proto/locale.h>
 #include <proto/intuition.h>
 #include <proto/utility.h>
-#include <proto/AmyCLibPriv.h>
+#include <proto/AmyCLib.h>
 
 #include <dos/obsolete.h>
-//#include <intuition/intuition.h>
 #include <workbench/startup.h>
 
 // --
@@ -154,7 +153,7 @@ struct libBase
 struct libData
 {
 //	  struct ReactiveIFace *      IReactive;
-	// struct AmyCLibPrivIFace *	    IRA_C;
+	// struct AmyCLibIFace *	    IRA_C;
 
 	// struct Library *		    SocketBase;
 	// struct SocketIFace *	    ISocket;
@@ -314,15 +313,15 @@ struct FDInitStruct
 };
 
 struct stat;
-struct PrivFile;
+struct FileStruct;
 struct PrivInterface
 {
-	void	( *pi_Close 	) ( struct AmyCLibPrivIFace *, struct PrivFile *file );
-	S64		( *pi_Read		) ( struct AmyCLibPrivIFace *, struct PrivFile *file, PTR buf, S32 size );
-	S64		( *pi_Write 	) ( struct AmyCLibPrivIFace *, struct PrivFile *file, PTR buf, S32 size );
-	S32		( *pi_Seek		) ( struct AmyCLibPrivIFace *, struct PrivFile *file, S64 pos, S32 mode );
-	S64		( *pi_GetPos	) ( struct AmyCLibPrivIFace *, struct PrivFile *file );
-	S32		( *pi_Examine	) ( struct AmyCLibPrivIFace *, struct PrivFile *file, struct stat *stat );
+	void	( *pi_Close 	) ( struct AmyCLibIFace *, struct FileStruct *file );
+	S64		( *pi_Read		) ( struct AmyCLibIFace *, struct FileStruct *file, PTR buf, S32 size );
+	S64		( *pi_Write 	) ( struct AmyCLibIFace *, struct FileStruct *file, PTR buf, S32 size );
+	S32		( *pi_Seek		) ( struct AmyCLibIFace *, struct FileStruct *file, S64 pos, S32 mode );
+	S64		( *pi_GetPos	) ( struct AmyCLibIFace *, struct FileStruct *file );
+	S32		( *pi_Examine	) ( struct AmyCLibIFace *, struct FileStruct *file, struct stat *stat );
 };
 
 // --
@@ -333,7 +332,7 @@ struct PrintStruct
 	const char *				ps_Format;
 
 	// -- File
-	struct PrivFile *			ps_Stream;
+	struct FileStruct *			ps_Stream;
 
 	// -- Buffer
 	char *						ps_Buffer;
@@ -351,7 +350,7 @@ struct ScanStruct
 	const char *				ss_Format;
 
 	// -- File
-	struct PrivFile *			ss_Stream;
+	struct FileStruct *			ss_Stream;
 
 	// -- Buffer
 	const char *				ss_Buffer;
@@ -363,7 +362,7 @@ struct ScanStruct
 
 // --
 
-struct PrivFile
+struct FileStruct
 {
 	// -- Public
 
@@ -432,7 +431,7 @@ PTR _manager_Open( struct LibraryManagerInterface *Self, U32 version );
 PTR _manager_Close( struct LibraryManagerInterface *Self );
 PTR _manager_Expunge( struct LibraryManagerInterface *Self );
 
-U32 AMYFUNC _Main_Expunge( struct AmyCLibPrivIFace *Self );
+U32 AMYFUNC _Main_Expunge( struct AmyCLibIFace *Self );
 
 // --
 

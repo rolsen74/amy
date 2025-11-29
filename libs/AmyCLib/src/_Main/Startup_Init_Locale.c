@@ -11,7 +11,7 @@
 
 // --
 
-static S32 myInit_Locale( struct AmyCLibPrivIFace *Self UNUSED, struct libData *data )
+static S32 myInit_Locale( struct AmyCLibIFace *Self UNUSED, struct libData *data )
 {
 int error;
 

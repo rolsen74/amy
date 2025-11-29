@@ -14,7 +14,7 @@
 
 // --
 
-ssize_t AMYFUNC _generic_unistd_write( struct AmyCLibPrivIFace *Self, int aa, const void *bb, size_t cc )
+ssize_t AMYFUNC _generic_unistd_write( struct AmyCLibIFace *Self, int aa, const void *bb, size_t cc )
 {
 struct libData *data;
 ssize_t retval;

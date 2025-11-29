@@ -44,7 +44,7 @@
 #define SECONDS_PER_DAY		86400		// 24 * 60 * 60
 #define SECONDS_PER_MIN		60
 
-S32 AMYFUNC _generic__Priv_Convert_DS_to_Time( struct AmyCLibPrivIFace *Self UNUSED, const struct DateStamp *ds, time_t *time )
+S32 AMYFUNC _generic__Priv_Convert_DS_to_Time( struct AmyCLibIFace *Self UNUSED, const struct DateStamp *ds, time_t *time )
 {
 //struct libData *data;
 time_t t;

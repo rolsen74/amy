@@ -41,7 +41,7 @@
 
 // --
 
-size_t AMYFUNC _generic_string_strnlen( struct AmyCLibPrivIFace *Self, const char *s, size_t max )
+size_t AMYFUNC _generic_string_strnlen( struct AmyCLibIFace *Self, const char *s, size_t max )
 {
 	DOFUNCTIONPRINTF( IExec->DebugPrintF( "_generic_string_strnlen : Ptr %p, Max %lu : Str '%s'\n", s, max, (s)?s:"<NULL>" ); );
 

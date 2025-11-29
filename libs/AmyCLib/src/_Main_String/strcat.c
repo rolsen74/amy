@@ -41,7 +41,7 @@
 
 // --
 
-char * AMYFUNC _generic_string_strcat( struct AmyCLibPrivIFace *Self, char *d, const char *s )
+char * AMYFUNC _generic_string_strcat( struct AmyCLibIFace *Self, char *d, const char *s )
 {
 struct libData *data;
 char *retval;

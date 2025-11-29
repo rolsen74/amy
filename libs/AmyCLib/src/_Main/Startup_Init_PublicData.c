@@ -12,11 +12,11 @@
 // --
 
 static S32 myInit_PublicData(
-	struct AmyCLibPrivIFace *Self,
+	struct AmyCLibIFace *Self,
 	struct libData *data )
 {
 struct _AmyCLibPublic *pd;	// Public Data
-struct PrivFile *file;
+FILE *file;
 S32 error;
 S32 stat;
 

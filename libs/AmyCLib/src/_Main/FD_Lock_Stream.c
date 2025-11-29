@@ -42,10 +42,10 @@
 // --
 // File Descriptor
 
-struct PrivFile * AMYFUNC _generic__Priv_FDLockStream( struct AmyCLibPrivIFace *Self, struct PrivFile *file )
+struct FileStruct * AMYFUNC _generic__Priv_FDLockStream( struct AmyCLibIFace *Self, struct FileStruct *file )
 {
-struct PrivFile *retval;
-//struct PrivFile *file;
+struct FileStruct *retval;
+//FILE *file;
 struct libData *data;
 
 	DOFUNCTIONPRINTF( IExec->DebugPrintF( "FDLockStream\n" ); );

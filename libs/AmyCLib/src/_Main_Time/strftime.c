@@ -54,7 +54,7 @@ struct Intern
 	STR			fmt;
 	STR			buffer;
 	U32			bufferPos;
-//	struct AmyCLibPrivIFace *Self;
+//	struct AmyCLibIFace *Self;
 };
 
 // English (non-locale) abbreviations
@@ -531,7 +531,7 @@ bailout:
 }
 
 // generic version without Locale
-size_t AMYFUNC _generic_time_strftime( struct AmyCLibPrivIFace *Self, char *s, size_t size, const char *format, const struct tm *timeptr )
+size_t AMYFUNC _generic_time_strftime( struct AmyCLibIFace *Self, char *s, size_t size, const char *format, const struct tm *timeptr )
 {
 struct Intern in;
 size_t retval;

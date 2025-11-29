@@ -361,42 +361,42 @@ struct EnableFunc  __signal_raise[] =			{{ CPUType_Any, _generic_signal_raise }}
 	EM_LOCALE:
 		__ctype_tolower
 		__ctype_toupper
-/*   62 */ { offsetof( struct AmyCLibPrivIFace, ctype_isalpha ), EM_ALWAYS, __ctype_isalpha },
-/*   63 */ { offsetof( struct AmyCLibPrivIFace, ctype_isdigit ), EM_ALWAYS, __ctype_isdigit },
-/*   64 */ { offsetof( struct AmyCLibPrivIFace, ctype_isspace ), EM_ALWAYS, __ctype_isspace },
-/*   65 */ { offsetof( struct AmyCLibPrivIFace, ctype_isupper ), EM_ALWAYS, __ctype_isupper },
-/*   66 */ { offsetof( struct AmyCLibPrivIFace, ctype_isxdigit ), EM_ALWAYS, __ctype_isxdigit },
-/*  118 */ { offsetof( struct AmyCLibPrivIFace, ctype_islower ), EM_ALWAYS, __ctype_islower },
+/*   62 */ { offsetof( struct AmyCLibIFace, ctype_isalpha ), EM_ALWAYS, __ctype_isalpha },
+/*   63 */ { offsetof( struct AmyCLibIFace, ctype_isdigit ), EM_ALWAYS, __ctype_isdigit },
+/*   64 */ { offsetof( struct AmyCLibIFace, ctype_isspace ), EM_ALWAYS, __ctype_isspace },
+/*   65 */ { offsetof( struct AmyCLibIFace, ctype_isupper ), EM_ALWAYS, __ctype_isupper },
+/*   66 */ { offsetof( struct AmyCLibIFace, ctype_isxdigit ), EM_ALWAYS, __ctype_isxdigit },
+/*  118 */ { offsetof( struct AmyCLibIFace, ctype_islower ), EM_ALWAYS, __ctype_islower },
 
 	EM_ALWAYS:
 
-/*   37 */ { offsetof( struct AmyCLibPrivIFace, setjmp_longjmp ), EM_ALWAYS, __setjmp_longjmp },
-/*   38 */ { offsetof( struct AmyCLibPrivIFace, setjmp_setjmp ), EM_ALWAYS, __setjmp_setjmp },
-/*   43 */ { offsetof( struct AmyCLibPrivIFace, stdlib_rand ), EM_ALWAYS, __stdlib_rand },
-/*   44 */ { offsetof( struct AmyCLibPrivIFace, stdlib_rand_r ), EM_ALWAYS, __stdlib_rand_r },
-/*   45 */ { offsetof( struct AmyCLibPrivIFace, stdlib_srand ), EM_ALWAYS, __stdlib_srand },
-/*   46 */ { offsetof( struct AmyCLibPrivIFace, stdlib_atoi ), EM_ALWAYS, __stdlib_atoi },
-/*   47 */ { offsetof( struct AmyCLibPrivIFace, stdlib_strtol ), EM_ALWAYS, __stdlib_strtol },
-/*   69 */ { offsetof( struct AmyCLibPrivIFace, time_localtime ), EM_ALWAYS, __time_localtime },
-/*   70 */ { offsetof( struct AmyCLibPrivIFace, time_time ), EM_ALWAYS, __time_time },
-/*   92 */ { offsetof( struct AmyCLibPrivIFace, stdlib_strtof ), EM_ALWAYS, __stdlib_strtof },
-/*   93 */ { offsetof( struct AmyCLibPrivIFace, stdlib_strtod ), EM_ALWAYS, __stdlib_strtod },
-/*   99 */ { offsetof( struct AmyCLibPrivIFace, math_d__get_huge_val ), EM_ALWAYS, __math_d__get_huge_val },
-/*  100 */ { offsetof( struct AmyCLibPrivIFace, math_d__inf ), EM_ALWAYS, __math_d__inf },
-/*  101 */ { offsetof( struct AmyCLibPrivIFace, math_d__isinf ), EM_ALWAYS, __math_d__isinf },
-/*  102 */ { offsetof( struct AmyCLibPrivIFace, math_d__isnan ), EM_ALWAYS, __math_d__isnan },
-/*  103 */ { offsetof( struct AmyCLibPrivIFace, math_d_nan ), EM_ALWAYS, __math_d_nan },
-/*  104 */ { offsetof( struct AmyCLibPrivIFace, math_d_pow ), EM_ALWAYS, __math_d_pow },
-/*  105 */ { offsetof( struct AmyCLibPrivIFace, math_d_fabs ), EM_ALWAYS, __math_d_fabs },
-/*  106 */ { offsetof( struct AmyCLibPrivIFace, math_d_scalbn ), EM_ALWAYS, __math_d_scalbn },
-/*  107 */ { offsetof( struct AmyCLibPrivIFace, math_d_sqrt ), EM_ALWAYS, __math_d_sqrt },
-/*  108 */ { offsetof( struct AmyCLibPrivIFace, math_d_copysign ), EM_ALWAYS, __math_d_copysign },
-/*  109 */ { offsetof( struct AmyCLibPrivIFace, stdio_vsscanf ), EM_ALWAYS, __stdio_vsscanf },
-/*  110 */ { offsetof( struct AmyCLibPrivIFace, time_strftime ), EM_ALWAYS, __time_strftime },
-/*  111 */ { offsetof( struct AmyCLibPrivIFace, signal_signal ), EM_ALWAYS, __signal_signal },
-/*  112 */ { offsetof( struct AmyCLibPrivIFace, signal_raise ), EM_ALWAYS, __signal_raise },
-/*  113 */ { offsetof( struct AmyCLibPrivIFace, stdlib_abort ), EM_ALWAYS, __stdlib_abort },
-/*  114 */ { offsetof( struct AmyCLibPrivIFace, stdlib__Exit ), EM_ALWAYS, __stdlib__Exit },
+/*   37 */ { offsetof( struct AmyCLibIFace, setjmp_longjmp ), EM_ALWAYS, __setjmp_longjmp },
+/*   38 */ { offsetof( struct AmyCLibIFace, setjmp_setjmp ), EM_ALWAYS, __setjmp_setjmp },
+/*   43 */ { offsetof( struct AmyCLibIFace, stdlib_rand ), EM_ALWAYS, __stdlib_rand },
+/*   44 */ { offsetof( struct AmyCLibIFace, stdlib_rand_r ), EM_ALWAYS, __stdlib_rand_r },
+/*   45 */ { offsetof( struct AmyCLibIFace, stdlib_srand ), EM_ALWAYS, __stdlib_srand },
+/*   46 */ { offsetof( struct AmyCLibIFace, stdlib_atoi ), EM_ALWAYS, __stdlib_atoi },
+/*   47 */ { offsetof( struct AmyCLibIFace, stdlib_strtol ), EM_ALWAYS, __stdlib_strtol },
+/*   69 */ { offsetof( struct AmyCLibIFace, time_localtime ), EM_ALWAYS, __time_localtime },
+/*   70 */ { offsetof( struct AmyCLibIFace, time_time ), EM_ALWAYS, __time_time },
+/*   92 */ { offsetof( struct AmyCLibIFace, stdlib_strtof ), EM_ALWAYS, __stdlib_strtof },
+/*   93 */ { offsetof( struct AmyCLibIFace, stdlib_strtod ), EM_ALWAYS, __stdlib_strtod },
+/*   99 */ { offsetof( struct AmyCLibIFace, math_d__get_huge_val ), EM_ALWAYS, __math_d__get_huge_val },
+/*  100 */ { offsetof( struct AmyCLibIFace, math_d__inf ), EM_ALWAYS, __math_d__inf },
+/*  101 */ { offsetof( struct AmyCLibIFace, math_d__isinf ), EM_ALWAYS, __math_d__isinf },
+/*  102 */ { offsetof( struct AmyCLibIFace, math_d__isnan ), EM_ALWAYS, __math_d__isnan },
+/*  103 */ { offsetof( struct AmyCLibIFace, math_d_nan ), EM_ALWAYS, __math_d_nan },
+/*  104 */ { offsetof( struct AmyCLibIFace, math_d_pow ), EM_ALWAYS, __math_d_pow },
+/*  105 */ { offsetof( struct AmyCLibIFace, math_d_fabs ), EM_ALWAYS, __math_d_fabs },
+/*  106 */ { offsetof( struct AmyCLibIFace, math_d_scalbn ), EM_ALWAYS, __math_d_scalbn },
+/*  107 */ { offsetof( struct AmyCLibIFace, math_d_sqrt ), EM_ALWAYS, __math_d_sqrt },
+/*  108 */ { offsetof( struct AmyCLibIFace, math_d_copysign ), EM_ALWAYS, __math_d_copysign },
+/*  109 */ { offsetof( struct AmyCLibIFace, stdio_vsscanf ), EM_ALWAYS, __stdio_vsscanf },
+/*  110 */ { offsetof( struct AmyCLibIFace, time_strftime ), EM_ALWAYS, __time_strftime },
+/*  111 */ { offsetof( struct AmyCLibIFace, signal_signal ), EM_ALWAYS, __signal_signal },
+/*  112 */ { offsetof( struct AmyCLibIFace, signal_raise ), EM_ALWAYS, __signal_raise },
+/*  113 */ { offsetof( struct AmyCLibIFace, stdlib_abort ), EM_ALWAYS, __stdlib_abort },
+/*  114 */ { offsetof( struct AmyCLibIFace, stdlib__Exit ), EM_ALWAYS, __stdlib__Exit },
 /*  115 */ (PTR) _NotEnabled,	// _generic_stdio_vasprintf
 /*  116 */ (PTR) _NotEnabled,	// _generic_assert_assert
 /*  117 */ (PTR) _NotEnabled,	// _generic_stdlib_exit
@@ -407,216 +407,216 @@ struct EnableFunc  __signal_raise[] =			{{ CPUType_Any, _generic_signal_raise }}
 
 struct EnableStruct funcs[] =
 {
-/*    7 */ { offsetof( struct AmyCLibPrivIFace, Priv_Mem_Alloc ), EM_MEMORY, __Mem_Alloc },
-/*    8 */ { offsetof( struct AmyCLibPrivIFace, Priv_Mem_Free ), EM_MEMORY, __Mem_Free },
-/*    9 */ { offsetof( struct AmyCLibPrivIFace, Priv_Mem_Realloc ), EM_MEMORY, __Mem_Realloc },
-/*   10 */ { offsetof( struct AmyCLibPrivIFace, Priv_Mem_CreatePool ), EM_MEMORY, __Mem_CreatePool },
-/*   11 */ { offsetof( struct AmyCLibPrivIFace, Priv_Mem_DeletePool ), EM_MEMORY, __Mem_DeletePool },
-/*   12 */ { offsetof( struct AmyCLibPrivIFace, Priv_Mem_FlushPool ), EM_MEMORY, __Mem_FlushPool },
-/*   13 */ { offsetof( struct AmyCLibPrivIFace, Priv_Mem_AllocPooled ), EM_MEMORY, __Mem_AllocPooled },
-/*   14 */ { offsetof( struct AmyCLibPrivIFace, Priv_Mem_FreePooled ), EM_MEMORY, __Mem_FreePooled },
-/*   15 */ { offsetof( struct AmyCLibPrivIFace, Priv_Check_Abort ), EM_ALWAYS, __Check_Abort },
-/*   16 */ { offsetof( struct AmyCLibPrivIFace, Priv_Convert_Time_to_TM ), EM_ALWAYS, __Convert_Time_to_TM },
-/*   17 */ { offsetof( struct AmyCLibPrivIFace, Priv_Convert_ED_to_Stat ), EM_ALWAYS, __Convert_ED_to_Stat },
-/*   18 */ { offsetof( struct AmyCLibPrivIFace, Priv_Convert_DS_to_Time ), EM_ALWAYS, __Convert_DS_to_Time },
-/*   19 */ { offsetof( struct AmyCLibPrivIFace, Priv_Convert_IOErr_to_ErrNo ), EM_ALWAYS, __Convert_IOErr_to_ErrNo },
-/*   20 */ { offsetof( struct AmyCLibPrivIFace, Priv_FB_Read ), EM_ALWAYS, __FB_Read },
-/*   21 */ { offsetof( struct AmyCLibPrivIFace, Priv_FB_Read_Fill_Buffer ), EM_ALWAYS, __FB_Read_Fill_Buffer },
-/*   22 */ { offsetof( struct AmyCLibPrivIFace, Priv_FB_Read_Drop_Buffer ), EM_ALWAYS, __FB_Read_Drop_Buffer },
-/*   23 */ { offsetof( struct AmyCLibPrivIFace, Priv_FB_Write ), EM_ALWAYS, __FB_Write },
-/*   24 */ { offsetof( struct AmyCLibPrivIFace, Priv_FB_Write_Flush_Buffer ), EM_ALWAYS, __FB_Write_Flush_Buffer },
-/*   25 */ { offsetof( struct AmyCLibPrivIFace, Priv_FB_Write_Flush_Buffer2 ), EM_ALWAYS, __FB_Write_Flush_Buffer2 },
-/*   26 */ { offsetof( struct AmyCLibPrivIFace, Priv_FD_Alloc ), EM_ALWAYS, __FD_Alloc },
-/*   27 */ { offsetof( struct AmyCLibPrivIFace, Priv_FD_Free ), EM_ALWAYS, __FD_Free },
-/*   28 */ { offsetof( struct AmyCLibPrivIFace, Priv_FD_Init ), EM_ALWAYS, __FD_Init },
-/*   29 */ { offsetof( struct AmyCLibPrivIFace, Priv_FD_Init_Struct ), EM_ALWAYS, __FD_Init_Struct },
-/*   30 */ { offsetof( struct AmyCLibPrivIFace, Priv_FD_Array_Insert ), EM_ALWAYS, __FD_Array_Insert },
-/*   31 */ { offsetof( struct AmyCLibPrivIFace, Priv_FD_Array_Remove ), EM_ALWAYS, __FD_Array_Remove },
-/*   32 */ { offsetof( struct AmyCLibPrivIFace, Priv_FDLockNr ), EM_ALWAYS, __FDLockNr },
-/*   33 */ { offsetof( struct AmyCLibPrivIFace, Priv_FDLockStream ), EM_ALWAYS, __FDLockStream },
-/*   34 */ { offsetof( struct AmyCLibPrivIFace, Priv_FDUnlock ), EM_ALWAYS, __FDUnlock },
-/*   35 */ { offsetof( struct AmyCLibPrivIFace, Priv_Print ), EM_ALWAYS, __Print },
-/*   36 */ { offsetof( struct AmyCLibPrivIFace, Priv_Scan ), EM_ALWAYS, __Scan },
-/*   37 */ { offsetof( struct AmyCLibPrivIFace, setjmp_longjmp ), EM_ALWAYS, __setjmp_longjmp },
-/*   38 */ { offsetof( struct AmyCLibPrivIFace, setjmp_setjmp ), EM_ALWAYS, __setjmp_setjmp },
-/*   39 */ { offsetof( struct AmyCLibPrivIFace, stdlib_calloc ), EM_MEMORY, __stdlib_calloc },
-/*   40 */ { offsetof( struct AmyCLibPrivIFace, stdlib_malloc ), EM_MEMORY, __stdlib_malloc },
-/*   41 */ { offsetof( struct AmyCLibPrivIFace, stdlib_realloc ), EM_MEMORY, __stdlib_realloc },
-/*   42 */ { offsetof( struct AmyCLibPrivIFace, stdlib_free ), EM_MEMORY, __stdlib_free },
-/*   43 */ { offsetof( struct AmyCLibPrivIFace, stdlib_rand ), EM_ALWAYS, __stdlib_rand },
-/*   44 */ { offsetof( struct AmyCLibPrivIFace, stdlib_rand_r ), EM_ALWAYS, __stdlib_rand_r },
-/*   45 */ { offsetof( struct AmyCLibPrivIFace, stdlib_srand ), EM_ALWAYS, __stdlib_srand },
-/*   46 */ { offsetof( struct AmyCLibPrivIFace, stdlib_atoi ), EM_ALWAYS, __stdlib_atoi },
-/*   47 */ { offsetof( struct AmyCLibPrivIFace, stdlib_strtol ), EM_ALWAYS, __stdlib_strtol },
-/*   48 */ // { offsetof( struct AmyCLibPrivIFace, string_strlen ), EM_STRING, __strlen },
-/*   49 */ // { offsetof( struct AmyCLibPrivIFace, string_strnlen ), EM_STRING, __strnlen },
-/*   50 */ { offsetof( struct AmyCLibPrivIFace, string_strdup ), EM_MEMORY, __strdup },
-/*   51 */ { offsetof( struct AmyCLibPrivIFace, string_strndup ), EM_MEMORY, __strndup },
-/*   52 */ // { offsetof( struct AmyCLibPrivIFace, string_strcpy ), EM_STRING, __strcpy },
-/*   53 */ // { offsetof( struct AmyCLibPrivIFace, string_strncpy ), EM_STRING, __strncpy },
-/*   54 */ // { offsetof( struct AmyCLibPrivIFace, string_strcmp ), EM_STRING, __strcmp },
-/*   55 */ // { offsetof( struct AmyCLibPrivIFace, string_strncmp ), EM_STRING, __strncmp },
-/*   56 */ // { offsetof( struct AmyCLibPrivIFace, string_memcmp ), EM_STRING, __memcmp },
-/*   57 */ // { offsetof( struct AmyCLibPrivIFace, string_memmove ), EM_STRING, __memmove },
-/*   58 */ // { offsetof( struct AmyCLibPrivIFace, string_memcpy ), EM_STRING, __memcpy },
-/*   59 */ // { offsetof( struct AmyCLibPrivIFace, string_memset ), EM_STRING, __memset },
-/*   60 */ { offsetof( struct AmyCLibPrivIFace, string_strcat ), EM_STRING, __strcat },
-/*   61 */ // { offsetof( struct AmyCLibPrivIFace, strings_bzero ), EM_ALWAYS, __strings_bzero },
-/*   62 */ { offsetof( struct AmyCLibPrivIFace, ctype_isalpha ), EM_LOCALE, __ctype_isalpha },
-/*   63 */ { offsetof( struct AmyCLibPrivIFace, ctype_isdigit ), EM_LOCALE, __ctype_isdigit },
-/*   64 */ { offsetof( struct AmyCLibPrivIFace, ctype_isspace ), EM_LOCALE, __ctype_isspace },
-/*   65 */ { offsetof( struct AmyCLibPrivIFace, ctype_isupper ), EM_LOCALE, __ctype_isupper },
-/*   66 */ { offsetof( struct AmyCLibPrivIFace, ctype_isxdigit ), EM_LOCALE, __ctype_isxdigit },
-/*   67 */ { offsetof( struct AmyCLibPrivIFace, ctype_tolower ), EM_LOCALE, __ctype_tolower },
-/*   68 */ { offsetof( struct AmyCLibPrivIFace, ctype_toupper ), EM_LOCALE, __ctype_toupper },
-/*   69 */ { offsetof( struct AmyCLibPrivIFace, time_localtime ), EM_ALWAYS, __time_localtime },
-/*   70 */ { offsetof( struct AmyCLibPrivIFace, time_time ), EM_ALWAYS, __time_time },
-/*   71 */ { offsetof( struct AmyCLibPrivIFace, stdio_fopen ), EM_FILE, __stdio_fopen },
-/*   72 */ { offsetof( struct AmyCLibPrivIFace, stdio_ftell ), EM_FILE, __stdio_ftell },
-/*   73 */ { offsetof( struct AmyCLibPrivIFace, stdio_fgetpos ), EM_FILE, __stdio_fgetpos },
-/*   74 */ { offsetof( struct AmyCLibPrivIFace, stdio_flockfile ), EM_FILE, __stdio_flockfile },
-/*   75 */ { offsetof( struct AmyCLibPrivIFace, stdio_funlockfile ), EM_FILE, __stdio_funlockfile },
-/*   76 */ { offsetof( struct AmyCLibPrivIFace, stdio_fflush ), EM_FILE, __stdio_fflush },
-/*   77 */ { offsetof( struct AmyCLibPrivIFace, stdio_puts ), EM_FILE, __stdio_puts },
-/*   78 */ { offsetof( struct AmyCLibPrivIFace, stdio_putchar ), EM_FILE, __stdio_putchar },
-/*   79 */ { offsetof( struct AmyCLibPrivIFace, stdio_fputc ), EM_FILE, __stdio_fputc },
-/*   80 */ { offsetof( struct AmyCLibPrivIFace, stdio_setvbuf ), EM_FILE, __stdio_setvbuf },
-/*   81 */ { offsetof( struct AmyCLibPrivIFace, stdio_fclose ), EM_FILE, __stdio_fclose },
-/*   82 */ { offsetof( struct AmyCLibPrivIFace, stdio_fseek ), EM_FILE, __stdio_fseek },
-/*   83 */ { offsetof( struct AmyCLibPrivIFace, stdio_fseeko ), EM_FILE, __stdio_fseeko },
-/*   84 */ { offsetof( struct AmyCLibPrivIFace, stdio_vprintf ), EM_FILE, __stdio_vprintf },
-/*   85 */ { offsetof( struct AmyCLibPrivIFace, stdio_vsprintf ), EM_FILE, __stdio_vsprintf },
-/*   86 */ { offsetof( struct AmyCLibPrivIFace, stdio_fputc_unlocked ), EM_FILE, __stdio_fputc_unlocked },
-/*   87 */ { offsetof( struct AmyCLibPrivIFace, stdio_vsnprintf ), EM_FILE, __stdio_vsnprintf },
-/*   88 */ { offsetof( struct AmyCLibPrivIFace, fcntl_open ), EM_FILE, __fcntl_open },
-/*   89 */ { offsetof( struct AmyCLibPrivIFace, unistd_close ), EM_FILE, __unistd_close },
-/*   90 */ { offsetof( struct AmyCLibPrivIFace, stdio_ungetc ), EM_FILE, __stdio_ungetc },
-/*   91 */ { offsetof( struct AmyCLibPrivIFace, stdio_fread ), EM_FILE, __stdio_fread },
-/*   92 */ { offsetof( struct AmyCLibPrivIFace, stdio_clearerr ), EM_FILE, __stdio_clearerr },
-/*   92 */ { offsetof( struct AmyCLibPrivIFace, stdlib_strtof ), EM_ALWAYS, __stdlib_strtof },
-/*   93 */ { offsetof( struct AmyCLibPrivIFace, stdlib_strtod ), EM_ALWAYS, __stdlib_strtod },
-/*   94 */ { offsetof( struct AmyCLibPrivIFace, inttypes_strtoumax ), EM_STRING, __inttypes_strtoumax },
-/*   95 */ { offsetof( struct AmyCLibPrivIFace, inttypes_strtoimax ), EM_STRING, __inttypes_strtoimax },
-/*   97 */ { offsetof( struct AmyCLibPrivIFace, strings_strcasecmp ), EM_STRING, __strings_strcasecmp },
-/*   98 */ { offsetof( struct AmyCLibPrivIFace, strings_strncasecmp ), EM_STRING, __strings_strncasecmp },
-/*   99 */ { offsetof( struct AmyCLibPrivIFace, math_d__get_huge_val ), EM_ALWAYS, __math_d__get_huge_val },
-/*  100 */ { offsetof( struct AmyCLibPrivIFace, math_d__inf ), EM_ALWAYS, __math_d__inf },
-/*  101 */ { offsetof( struct AmyCLibPrivIFace, math_d__isinf ), EM_ALWAYS, __math_d__isinf },
-/*  102 */ { offsetof( struct AmyCLibPrivIFace, math_d__isnan ), EM_ALWAYS, __math_d__isnan },
-/*  103 */ { offsetof( struct AmyCLibPrivIFace, math_d_nan ), EM_ALWAYS, __math_d_nan },
-/*  104 */ { offsetof( struct AmyCLibPrivIFace, math_d_pow ), EM_ALWAYS, __math_d_pow },
-/*  105 */ { offsetof( struct AmyCLibPrivIFace, math_d_fabs ), EM_ALWAYS, __math_d_fabs },
-/*  106 */ { offsetof( struct AmyCLibPrivIFace, math_d_scalbn ), EM_ALWAYS, __math_d_scalbn },
-/*  107 */ { offsetof( struct AmyCLibPrivIFace, math_d_sqrt ), EM_ALWAYS, __math_d_sqrt },
-/*  108 */ { offsetof( struct AmyCLibPrivIFace, math_d_copysign ), EM_ALWAYS, __math_d_copysign },
-/*  109 */ { offsetof( struct AmyCLibPrivIFace, stdio_vsscanf ), EM_ALWAYS, __stdio_vsscanf },
-/*  110 */ // { offsetof( struct AmyCLibPrivIFace, time_strftime ), EM_ALWAYS, __time_strftime },
-/*  111 */ { offsetof( struct AmyCLibPrivIFace, signal_signal ), EM_ALWAYS, __signal_signal },
-/*  112 */ { offsetof( struct AmyCLibPrivIFace, signal_raise ), EM_ALWAYS, __signal_raise },
-/*  113 */ { offsetof( struct AmyCLibPrivIFace, stdlib_abort ), EM_ALWAYS, __stdlib_abort },
-/*  114 */ { offsetof( struct AmyCLibPrivIFace, stdlib__Exit ), EM_ALWAYS, __stdlib__Exit },
-/*  115 */ { offsetof( struct AmyCLibPrivIFace, stdio_vasprintf ), EM_MEMORY, __stdio_vasprintf },
-/*  116 */ { offsetof( struct AmyCLibPrivIFace, assert_assert ), EM_ALWAYS, __assert_assert },
-/*  117 */ { offsetof( struct AmyCLibPrivIFace, stdlib_exit ), EM_ALWAYS, __stdlib_exit },
-/*  118 */ // { offsetof( struct AmyCLibPrivIFace, ctype_islower ), EM_LOCALE, __ctype_islower },
-/*  119 */ { offsetof( struct AmyCLibPrivIFace, stdio_fgetc ), EM_FILE, __stdio_fgetc },
+/*    7 */ { offsetof( struct AmyCLibIFace, Priv_Mem_Alloc ), EM_MEMORY, __Mem_Alloc },
+/*    8 */ { offsetof( struct AmyCLibIFace, Priv_Mem_Free ), EM_MEMORY, __Mem_Free },
+/*    9 */ { offsetof( struct AmyCLibIFace, Priv_Mem_Realloc ), EM_MEMORY, __Mem_Realloc },
+/*   10 */ { offsetof( struct AmyCLibIFace, Priv_Mem_CreatePool ), EM_MEMORY, __Mem_CreatePool },
+/*   11 */ { offsetof( struct AmyCLibIFace, Priv_Mem_DeletePool ), EM_MEMORY, __Mem_DeletePool },
+/*   12 */ { offsetof( struct AmyCLibIFace, Priv_Mem_FlushPool ), EM_MEMORY, __Mem_FlushPool },
+/*   13 */ { offsetof( struct AmyCLibIFace, Priv_Mem_AllocPooled ), EM_MEMORY, __Mem_AllocPooled },
+/*   14 */ { offsetof( struct AmyCLibIFace, Priv_Mem_FreePooled ), EM_MEMORY, __Mem_FreePooled },
+/*   15 */ { offsetof( struct AmyCLibIFace, Priv_Check_Abort ), EM_ALWAYS, __Check_Abort },
+/*   16 */ { offsetof( struct AmyCLibIFace, Priv_Convert_Time_to_TM ), EM_ALWAYS, __Convert_Time_to_TM },
+/*   17 */ { offsetof( struct AmyCLibIFace, Priv_Convert_ED_to_Stat ), EM_ALWAYS, __Convert_ED_to_Stat },
+/*   18 */ { offsetof( struct AmyCLibIFace, Priv_Convert_DS_to_Time ), EM_ALWAYS, __Convert_DS_to_Time },
+/*   19 */ { offsetof( struct AmyCLibIFace, Priv_Convert_IOErr_to_ErrNo ), EM_ALWAYS, __Convert_IOErr_to_ErrNo },
+/*   20 */ { offsetof( struct AmyCLibIFace, Priv_FB_Read ), EM_ALWAYS, __FB_Read },
+/*   21 */ { offsetof( struct AmyCLibIFace, Priv_FB_Read_Fill_Buffer ), EM_ALWAYS, __FB_Read_Fill_Buffer },
+/*   22 */ { offsetof( struct AmyCLibIFace, Priv_FB_Read_Drop_Buffer ), EM_ALWAYS, __FB_Read_Drop_Buffer },
+/*   23 */ { offsetof( struct AmyCLibIFace, Priv_FB_Write ), EM_ALWAYS, __FB_Write },
+/*   24 */ { offsetof( struct AmyCLibIFace, Priv_FB_Write_Flush_Buffer ), EM_ALWAYS, __FB_Write_Flush_Buffer },
+/*   25 */ { offsetof( struct AmyCLibIFace, Priv_FB_Write_Flush_Buffer2 ), EM_ALWAYS, __FB_Write_Flush_Buffer2 },
+/*   26 */ { offsetof( struct AmyCLibIFace, Priv_FD_Alloc ), EM_ALWAYS, __FD_Alloc },
+/*   27 */ { offsetof( struct AmyCLibIFace, Priv_FD_Free ), EM_ALWAYS, __FD_Free },
+/*   28 */ { offsetof( struct AmyCLibIFace, Priv_FD_Init ), EM_ALWAYS, __FD_Init },
+/*   29 */ { offsetof( struct AmyCLibIFace, Priv_FD_Init_Struct ), EM_ALWAYS, __FD_Init_Struct },
+/*   30 */ { offsetof( struct AmyCLibIFace, Priv_FD_Array_Insert ), EM_ALWAYS, __FD_Array_Insert },
+/*   31 */ { offsetof( struct AmyCLibIFace, Priv_FD_Array_Remove ), EM_ALWAYS, __FD_Array_Remove },
+/*   32 */ { offsetof( struct AmyCLibIFace, Priv_FDLockNr ), EM_ALWAYS, __FDLockNr },
+/*   33 */ { offsetof( struct AmyCLibIFace, Priv_FDLockStream ), EM_ALWAYS, __FDLockStream },
+/*   34 */ { offsetof( struct AmyCLibIFace, Priv_FDUnlock ), EM_ALWAYS, __FDUnlock },
+/*   35 */ { offsetof( struct AmyCLibIFace, Priv_Print ), EM_ALWAYS, __Print },
+/*   36 */ { offsetof( struct AmyCLibIFace, Priv_Scan ), EM_ALWAYS, __Scan },
+/*   37 */ { offsetof( struct AmyCLibIFace, setjmp_longjmp ), EM_ALWAYS, __setjmp_longjmp },
+/*   38 */ { offsetof( struct AmyCLibIFace, setjmp_setjmp ), EM_ALWAYS, __setjmp_setjmp },
+/*   39 */ { offsetof( struct AmyCLibIFace, stdlib_calloc ), EM_MEMORY, __stdlib_calloc },
+/*   40 */ { offsetof( struct AmyCLibIFace, stdlib_malloc ), EM_MEMORY, __stdlib_malloc },
+/*   41 */ { offsetof( struct AmyCLibIFace, stdlib_realloc ), EM_MEMORY, __stdlib_realloc },
+/*   42 */ { offsetof( struct AmyCLibIFace, stdlib_free ), EM_MEMORY, __stdlib_free },
+/*   43 */ { offsetof( struct AmyCLibIFace, stdlib_rand ), EM_ALWAYS, __stdlib_rand },
+/*   44 */ { offsetof( struct AmyCLibIFace, stdlib_rand_r ), EM_ALWAYS, __stdlib_rand_r },
+/*   45 */ { offsetof( struct AmyCLibIFace, stdlib_srand ), EM_ALWAYS, __stdlib_srand },
+/*   46 */ { offsetof( struct AmyCLibIFace, stdlib_atoi ), EM_ALWAYS, __stdlib_atoi },
+/*   47 */ { offsetof( struct AmyCLibIFace, stdlib_strtol ), EM_ALWAYS, __stdlib_strtol },
+/*   48 */ // { offsetof( struct AmyCLibIFace, string_strlen ), EM_STRING, __strlen },
+/*   49 */ // { offsetof( struct AmyCLibIFace, string_strnlen ), EM_STRING, __strnlen },
+/*   50 */ { offsetof( struct AmyCLibIFace, string_strdup ), EM_MEMORY, __strdup },
+/*   51 */ { offsetof( struct AmyCLibIFace, string_strndup ), EM_MEMORY, __strndup },
+/*   52 */ // { offsetof( struct AmyCLibIFace, string_strcpy ), EM_STRING, __strcpy },
+/*   53 */ // { offsetof( struct AmyCLibIFace, string_strncpy ), EM_STRING, __strncpy },
+/*   54 */ // { offsetof( struct AmyCLibIFace, string_strcmp ), EM_STRING, __strcmp },
+/*   55 */ // { offsetof( struct AmyCLibIFace, string_strncmp ), EM_STRING, __strncmp },
+/*   56 */ // { offsetof( struct AmyCLibIFace, string_memcmp ), EM_STRING, __memcmp },
+/*   57 */ // { offsetof( struct AmyCLibIFace, string_memmove ), EM_STRING, __memmove },
+/*   58 */ // { offsetof( struct AmyCLibIFace, string_memcpy ), EM_STRING, __memcpy },
+/*   59 */ // { offsetof( struct AmyCLibIFace, string_memset ), EM_STRING, __memset },
+/*   60 */ { offsetof( struct AmyCLibIFace, string_strcat ), EM_STRING, __strcat },
+/*   61 */ // { offsetof( struct AmyCLibIFace, strings_bzero ), EM_ALWAYS, __strings_bzero },
+/*   62 */ { offsetof( struct AmyCLibIFace, ctype_isalpha ), EM_LOCALE, __ctype_isalpha },
+/*   63 */ { offsetof( struct AmyCLibIFace, ctype_isdigit ), EM_LOCALE, __ctype_isdigit },
+/*   64 */ { offsetof( struct AmyCLibIFace, ctype_isspace ), EM_LOCALE, __ctype_isspace },
+/*   65 */ { offsetof( struct AmyCLibIFace, ctype_isupper ), EM_LOCALE, __ctype_isupper },
+/*   66 */ { offsetof( struct AmyCLibIFace, ctype_isxdigit ), EM_LOCALE, __ctype_isxdigit },
+/*   67 */ { offsetof( struct AmyCLibIFace, ctype_tolower ), EM_LOCALE, __ctype_tolower },
+/*   68 */ { offsetof( struct AmyCLibIFace, ctype_toupper ), EM_LOCALE, __ctype_toupper },
+/*   69 */ { offsetof( struct AmyCLibIFace, time_localtime ), EM_ALWAYS, __time_localtime },
+/*   70 */ { offsetof( struct AmyCLibIFace, time_time ), EM_ALWAYS, __time_time },
+/*   71 */ { offsetof( struct AmyCLibIFace, stdio_fopen ), EM_FILE, __stdio_fopen },
+/*   72 */ { offsetof( struct AmyCLibIFace, stdio_ftell ), EM_FILE, __stdio_ftell },
+/*   73 */ { offsetof( struct AmyCLibIFace, stdio_fgetpos ), EM_FILE, __stdio_fgetpos },
+/*   74 */ { offsetof( struct AmyCLibIFace, stdio_flockfile ), EM_FILE, __stdio_flockfile },
+/*   75 */ { offsetof( struct AmyCLibIFace, stdio_funlockfile ), EM_FILE, __stdio_funlockfile },
+/*   76 */ { offsetof( struct AmyCLibIFace, stdio_fflush ), EM_FILE, __stdio_fflush },
+/*   77 */ { offsetof( struct AmyCLibIFace, stdio_puts ), EM_FILE, __stdio_puts },
+/*   78 */ { offsetof( struct AmyCLibIFace, stdio_putchar ), EM_FILE, __stdio_putchar },
+/*   79 */ { offsetof( struct AmyCLibIFace, stdio_fputc ), EM_FILE, __stdio_fputc },
+/*   80 */ { offsetof( struct AmyCLibIFace, stdio_setvbuf ), EM_FILE, __stdio_setvbuf },
+/*   81 */ { offsetof( struct AmyCLibIFace, stdio_fclose ), EM_FILE, __stdio_fclose },
+/*   82 */ { offsetof( struct AmyCLibIFace, stdio_fseek ), EM_FILE, __stdio_fseek },
+/*   83 */ { offsetof( struct AmyCLibIFace, stdio_fseeko ), EM_FILE, __stdio_fseeko },
+/*   84 */ { offsetof( struct AmyCLibIFace, stdio_vprintf ), EM_FILE, __stdio_vprintf },
+/*   85 */ { offsetof( struct AmyCLibIFace, stdio_vsprintf ), EM_FILE, __stdio_vsprintf },
+/*   86 */ { offsetof( struct AmyCLibIFace, stdio_fputc_unlocked ), EM_FILE, __stdio_fputc_unlocked },
+/*   87 */ { offsetof( struct AmyCLibIFace, stdio_vsnprintf ), EM_FILE, __stdio_vsnprintf },
+/*   88 */ { offsetof( struct AmyCLibIFace, fcntl_open ), EM_FILE, __fcntl_open },
+/*   89 */ { offsetof( struct AmyCLibIFace, unistd_close ), EM_FILE, __unistd_close },
+/*   90 */ { offsetof( struct AmyCLibIFace, stdio_ungetc ), EM_FILE, __stdio_ungetc },
+/*   91 */ { offsetof( struct AmyCLibIFace, stdio_fread ), EM_FILE, __stdio_fread },
+/*   92 */ { offsetof( struct AmyCLibIFace, stdio_clearerr ), EM_FILE, __stdio_clearerr },
+/*   92 */ { offsetof( struct AmyCLibIFace, stdlib_strtof ), EM_ALWAYS, __stdlib_strtof },
+/*   93 */ { offsetof( struct AmyCLibIFace, stdlib_strtod ), EM_ALWAYS, __stdlib_strtod },
+/*   94 */ { offsetof( struct AmyCLibIFace, inttypes_strtoumax ), EM_STRING, __inttypes_strtoumax },
+/*   95 */ { offsetof( struct AmyCLibIFace, inttypes_strtoimax ), EM_STRING, __inttypes_strtoimax },
+/*   97 */ { offsetof( struct AmyCLibIFace, strings_strcasecmp ), EM_STRING, __strings_strcasecmp },
+/*   98 */ { offsetof( struct AmyCLibIFace, strings_strncasecmp ), EM_STRING, __strings_strncasecmp },
+/*   99 */ { offsetof( struct AmyCLibIFace, math_d__get_huge_val ), EM_ALWAYS, __math_d__get_huge_val },
+/*  100 */ { offsetof( struct AmyCLibIFace, math_d__inf ), EM_ALWAYS, __math_d__inf },
+/*  101 */ { offsetof( struct AmyCLibIFace, math_d__isinf ), EM_ALWAYS, __math_d__isinf },
+/*  102 */ { offsetof( struct AmyCLibIFace, math_d__isnan ), EM_ALWAYS, __math_d__isnan },
+/*  103 */ { offsetof( struct AmyCLibIFace, math_d_nan ), EM_ALWAYS, __math_d_nan },
+/*  104 */ { offsetof( struct AmyCLibIFace, math_d_pow ), EM_ALWAYS, __math_d_pow },
+/*  105 */ { offsetof( struct AmyCLibIFace, math_d_fabs ), EM_ALWAYS, __math_d_fabs },
+/*  106 */ { offsetof( struct AmyCLibIFace, math_d_scalbn ), EM_ALWAYS, __math_d_scalbn },
+/*  107 */ { offsetof( struct AmyCLibIFace, math_d_sqrt ), EM_ALWAYS, __math_d_sqrt },
+/*  108 */ { offsetof( struct AmyCLibIFace, math_d_copysign ), EM_ALWAYS, __math_d_copysign },
+/*  109 */ { offsetof( struct AmyCLibIFace, stdio_vsscanf ), EM_ALWAYS, __stdio_vsscanf },
+/*  110 */ // { offsetof( struct AmyCLibIFace, time_strftime ), EM_ALWAYS, __time_strftime },
+/*  111 */ { offsetof( struct AmyCLibIFace, signal_signal ), EM_ALWAYS, __signal_signal },
+/*  112 */ { offsetof( struct AmyCLibIFace, signal_raise ), EM_ALWAYS, __signal_raise },
+/*  113 */ { offsetof( struct AmyCLibIFace, stdlib_abort ), EM_ALWAYS, __stdlib_abort },
+/*  114 */ { offsetof( struct AmyCLibIFace, stdlib__Exit ), EM_ALWAYS, __stdlib__Exit },
+/*  115 */ { offsetof( struct AmyCLibIFace, stdio_vasprintf ), EM_MEMORY, __stdio_vasprintf },
+/*  116 */ { offsetof( struct AmyCLibIFace, assert_assert ), EM_ALWAYS, __assert_assert },
+/*  117 */ { offsetof( struct AmyCLibIFace, stdlib_exit ), EM_ALWAYS, __stdlib_exit },
+/*  118 */ // { offsetof( struct AmyCLibIFace, ctype_islower ), EM_LOCALE, __ctype_islower },
+/*  119 */ { offsetof( struct AmyCLibIFace, stdio_fgetc ), EM_FILE, __stdio_fgetc },
 /*  120 */	// time_gmtime
 /*  121 */	// time_gmtime_r
-/*  122 */ { offsetof( struct AmyCLibPrivIFace, stdio_ferror ), EM_FILE, __stdio_ferror },
+/*  122 */ { offsetof( struct AmyCLibIFace, stdio_ferror ), EM_FILE, __stdio_ferror },
 /*  123 */	// _generic__Priv_Print_Log,
 /*  124 */	// _generic__Priv_Func_Log,
 /*  125 */	// _generic_string_strcspn,
 /*  126 */	// _generic_string_strspn,
 /*  127 */	// _generic_string_strpbrk,
 /*  128 */	// _generic_string_strchr,
-/*  129 */	{ offsetof( struct AmyCLibPrivIFace, stdio_fileno ), EM_FILE, __stdio_fileno },
-/*  130 */	// int AMYFUNC _generic_stdio_fprintf( struct AmyCLibPrivIFace *Self, struct PrivFile *stream, const char *format, ... )
-/*  131 */	// int AMYFUNC _generic_stdio_fputs( struct AmyCLibPrivIFace *Self, const void *s, struct PrivFile *stream )
-/*  132 */	// size_t AMYFUNC _generic_stdio_fwrite( struct AmyCLibPrivIFace *Self, const void *ptr, size_t size, size_t nitems, struct PrivFile *stream )
-/*  133 */	// int AMYFUNC _generic_stdio_putc( struct AmyCLibPrivIFace *Self, int c, struct PrivFile *stream )
-/*  134 */	// void AMYFUNC _generic_stdlib__exit( struct AmyCLibPrivIFace *Self, int status )
-/*  135 */	// long AMYFUNC _generic_stdlib_atol( struct AmyCLibPrivIFace *Self, const char *str )
-/*  136 */	// char * AMYFUNC _generic_stdlib_getenv( struct AmyCLibPrivIFace *Self, const char *name )
-/*  137 */	// void AMYFUNC _generic_stdlib_qsort( struct AmyCLibPrivIFace *Self, void *base, size_t nel, size_t width, int (*compar)(const void *, const void *))
-/*  138 */	// int AMYFUNC _generic_sys_stat_chmod( struct AmyCLibPrivIFace *Self, const char *path, mode_t mode )
-/*  139 */	// int AMYFUNC _generic_sys_stat_mkdir( struct AmyCLibPrivIFace *Self, const char *path, mode_t mode )
-/*  140 */	// char * AMYFUNC _generic_sys_stat_mktemp( struct AmyCLibPrivIFace *Self, char *template )
-/*  141 */	// int AMYFUNC _generic_sys_stat_stat( struct AmyCLibPrivIFace *Self, const char *path, struct stat *buf )
-/*  142 */	// char * AMYFUNC _generic_time_ctime( struct AmyCLibPrivIFace *Self, const time_t *clock )
-/*  143 */	// int AMYFUNC _generic_unistd_unlink( struct AmyCLibPrivIFace *Self, const char *path )
-/*  144 */	// char *AMYFUNC (*string_strncat)( struct AmyCLibPrivIFace *Self, char *d, const char *s, size_t n );
-/*  145 */	// int AMYFUNC (*stdio_vfprintf)( struct AmyCLibPrivIFace *Self, FILE *stream, const char *format, va_list ap );
-/*  146 */	// mode_t AMYFUNC (*sys_stat_umask)( struct AmyCLibPrivIFace *Self, mode_t cmask );
-/*  147 */	// pid_t AMYFUNC (*unistd_getpid)( struct AmyCLibPrivIFace *Self );
-/*  148 */	// char * AMYFUNC (*unistd_getcwd)( struct AmyCLibPrivIFace *Self, char *buf, size_t size );
-/*  149 */	// int AMYFUNC (*sys_stat_fstat)( struct AmyCLibPrivIFace *Self, int fildes, struct stat *buf );
-/*  150 */	// int AMYFUNC (*sys_stat_lstat)( struct AmyCLibPrivIFace *Self, const char *path, struct stat *buf );
-/*  151 */	// int AMYFUNC (*unistd_access)( struct AmyCLibPrivIFace *Self, const char *path, int amode );
-/*  152 */	// int AMYFUNC (*unistd_fcntl_ap)( struct AmyCLibPrivIFace *Self, int fildes, int cmd, va_list ap );
-/*  153 */	// ssize_t AMYFUNC (*unistd_read)( struct AmyCLibPrivIFace *Self, int fildes, void *buf, size_t nbyte );
-/*  154 */	// double AMYFUNC (*stdlib_atof)( struct AmyCLibPrivIFace *Self, const char *str );
-/*  155 */	// int AMYFUNC (*stdio_getc)( struct AmyCLibPrivIFace *Self, struct PrivFile *stream );
-/*  156 */	// int AMYFUNC (*utime_utime)( struct AmyCLibPrivIFace *Self, const char *str, const struct utimbuf *buf );
-/*  157 */	// int AMYFUNC (*unistd_link)( struct AmyCLibPrivIFace *Self, const char *path1, const char *path2 );
-/*  158 */	// int AMYFUNC (*unistd_isatty)( struct AmyCLibPrivIFace *Self, int fildes );
-/*  159 */	// void AMYFUNC (*stdio_perror)( struct AmyCLibPrivIFace *Self, const char *s );
-/*  160 */	// int AMYFUNC (*stdio_remove)( struct AmyCLibPrivIFace *Self, const char *path );
-/*  161 */	// int AMYFUNC (*stdio_rename)( struct AmyCLibPrivIFace *Self, const char *old, const char *new );
-/*  162 */	// int AMYFUNC (*unistd_rmdir)( struct AmyCLibPrivIFace *Self, const char *path );
-/*  163 */	// int AMYFUNC (*stdio_feof)( struct AmyCLibPrivIFace *Self, struct PrivFile *stream );
-/*  164 */	// char * AMYFUNC (*stdio_fgets)( struct AmyCLibPrivIFace *Self, char *s, int n, struct PrivFile *stream );
-/*  165 */	// void AMYFUNC (*stdio_rewind)( struct AmyCLibPrivIFace *Self, struct PrivFile *stream );
-/*  166 */	// int AMYFUNC (*stdio_vfscanf)( struct AmyCLibPrivIFace *Self, struct PrivFile *stream, const char *format, va_list arg );
-/*  167 */	// size_t AMYFUNC (*wchar_mbrtowc)( struct AmyCLibPrivIFace *Self, wchar_t *pwc, const char *s, size_t n, mbstate_t *ps );
-/*  168 */	// int AMYFUNC (*stdio_getchar)( struct AmyCLibPrivIFace *Self );
-/*  169 */	// char * AMYFUNC (*string_strstr)( struct AmyCLibPrivIFace *Self, const char *s1, const char *s2 );
-/*  170 */	// size_t AMYFUNC (*wchar_mbstowcs)( struct AmyCLibPrivIFace *Self, wchar_t *pwcs, const char *s, size_t n );
-/*  171 */	// uid_t AMYFUNC (*unistd_geteuid)( struct AmyCLibPrivIFace *Self );
-/*  172 */	// gid_t AMYFUNC (*unistd_getegid)( struct AmyCLibPrivIFace *Self );
+/*  129 */	{ offsetof( struct AmyCLibIFace, stdio_fileno ), EM_FILE, __stdio_fileno },
+/*  130 */	// int AMYFUNC _generic_stdio_fprintf( struct AmyCLibIFace *Self, FILE *stream, const char *format, ... )
+/*  131 */	// int AMYFUNC _generic_stdio_fputs( struct AmyCLibIFace *Self, const void *s, FILE *stream )
+/*  132 */	// size_t AMYFUNC _generic_stdio_fwrite( struct AmyCLibIFace *Self, const void *ptr, size_t size, size_t nitems, FILE *stream )
+/*  133 */	// int AMYFUNC _generic_stdio_putc( struct AmyCLibIFace *Self, int c, FILE *stream )
+/*  134 */	// void AMYFUNC _generic_stdlib__exit( struct AmyCLibIFace *Self, int status )
+/*  135 */	// long AMYFUNC _generic_stdlib_atol( struct AmyCLibIFace *Self, const char *str )
+/*  136 */	// char * AMYFUNC _generic_stdlib_getenv( struct AmyCLibIFace *Self, const char *name )
+/*  137 */	// void AMYFUNC _generic_stdlib_qsort( struct AmyCLibIFace *Self, void *base, size_t nel, size_t width, int (*compar)(const void *, const void *))
+/*  138 */	// int AMYFUNC _generic_sys_stat_chmod( struct AmyCLibIFace *Self, const char *path, mode_t mode )
+/*  139 */	// int AMYFUNC _generic_sys_stat_mkdir( struct AmyCLibIFace *Self, const char *path, mode_t mode )
+/*  140 */	// char * AMYFUNC _generic_sys_stat_mktemp( struct AmyCLibIFace *Self, char *template )
+/*  141 */	// int AMYFUNC _generic_sys_stat_stat( struct AmyCLibIFace *Self, const char *path, struct stat *buf )
+/*  142 */	// char * AMYFUNC _generic_time_ctime( struct AmyCLibIFace *Self, const time_t *clock )
+/*  143 */	// int AMYFUNC _generic_unistd_unlink( struct AmyCLibIFace *Self, const char *path )
+/*  144 */	// char *AMYFUNC (*string_strncat)( struct AmyCLibIFace *Self, char *d, const char *s, size_t n );
+/*  145 */	// int AMYFUNC (*stdio_vfprintf)( struct AmyCLibIFace *Self, FILE *stream, const char *format, va_list ap );
+/*  146 */	// mode_t AMYFUNC (*sys_stat_umask)( struct AmyCLibIFace *Self, mode_t cmask );
+/*  147 */	// pid_t AMYFUNC (*unistd_getpid)( struct AmyCLibIFace *Self );
+/*  148 */	// char * AMYFUNC (*unistd_getcwd)( struct AmyCLibIFace *Self, char *buf, size_t size );
+/*  149 */	// int AMYFUNC (*sys_stat_fstat)( struct AmyCLibIFace *Self, int fildes, struct stat *buf );
+/*  150 */	// int AMYFUNC (*sys_stat_lstat)( struct AmyCLibIFace *Self, const char *path, struct stat *buf );
+/*  151 */	// int AMYFUNC (*unistd_access)( struct AmyCLibIFace *Self, const char *path, int amode );
+/*  152 */	// int AMYFUNC (*unistd_fcntl_ap)( struct AmyCLibIFace *Self, int fildes, int cmd, va_list ap );
+/*  153 */	// ssize_t AMYFUNC (*unistd_read)( struct AmyCLibIFace *Self, int fildes, void *buf, size_t nbyte );
+/*  154 */	// double AMYFUNC (*stdlib_atof)( struct AmyCLibIFace *Self, const char *str );
+/*  155 */	// int AMYFUNC (*stdio_getc)( struct AmyCLibIFace *Self, FILE *stream );
+/*  156 */	// int AMYFUNC (*utime_utime)( struct AmyCLibIFace *Self, const char *str, const struct utimbuf *buf );
+/*  157 */	// int AMYFUNC (*unistd_link)( struct AmyCLibIFace *Self, const char *path1, const char *path2 );
+/*  158 */	// int AMYFUNC (*unistd_isatty)( struct AmyCLibIFace *Self, int fildes );
+/*  159 */	// void AMYFUNC (*stdio_perror)( struct AmyCLibIFace *Self, const char *s );
+/*  160 */	// int AMYFUNC (*stdio_remove)( struct AmyCLibIFace *Self, const char *path );
+/*  161 */	// int AMYFUNC (*stdio_rename)( struct AmyCLibIFace *Self, const char *old, const char *new );
+/*  162 */	// int AMYFUNC (*unistd_rmdir)( struct AmyCLibIFace *Self, const char *path );
+/*  163 */	// int AMYFUNC (*stdio_feof)( struct AmyCLibIFace *Self, FILE *stream );
+/*  164 */	// char * AMYFUNC (*stdio_fgets)( struct AmyCLibIFace *Self, char *s, int n, FILE *stream );
+/*  165 */	// void AMYFUNC (*stdio_rewind)( struct AmyCLibIFace *Self, FILE *stream );
+/*  166 */	// int AMYFUNC (*stdio_vfscanf)( struct AmyCLibIFace *Self, FILE *stream, const char *format, va_list arg );
+/*  167 */	// size_t AMYFUNC (*wchar_mbrtowc)( struct AmyCLibIFace *Self, wchar_t *pwc, const char *s, size_t n, mbstate_t *ps );
+/*  168 */	// int AMYFUNC (*stdio_getchar)( struct AmyCLibIFace *Self );
+/*  169 */	// char * AMYFUNC (*string_strstr)( struct AmyCLibIFace *Self, const char *s1, const char *s2 );
+/*  170 */	// size_t AMYFUNC (*wchar_mbstowcs)( struct AmyCLibIFace *Self, wchar_t *pwcs, const char *s, size_t n );
+/*  171 */	// uid_t AMYFUNC (*unistd_geteuid)( struct AmyCLibIFace *Self );
+/*  172 */	// gid_t AMYFUNC (*unistd_getegid)( struct AmyCLibIFace *Self );
 /*  173 */	// char * AMYFUNC (*locale_setlocale)( struct AmyCLibIFace *Self, int category, char *locale );
-/*  174 */	// ssize_t AMYFUNC (*stdio_getline)( struct AmyCLibPrivIFace *Self, char **lineptr, size_t *n, FILE *stream );
-/*  175 */	// ssize_t AMYFUNC (*stdio_getdelim)( struct AmyCLibPrivIFace *Self, char **lineptr, size_t *n, int delimiter, FILE *stream );
-/*  176 */	// int AMYFUNC (*stdio_putc_unlocked)( struct AmyCLibPrivIFace *Self, int c, struct PrivFile *stream );
-/*  177 */	// int AMYFUNC _generic_ctype_isprint( struct AmyCLibPrivIFace *Self, int c )
-/*  178 */	// char * AMYFUNC _generic_string_strerror( struct AmyCLibPrivIFace *Self, int errnum )
-/*  179 */	// int AMYFUNC _generic_string_strerror_r( struct AmyCLibPrivIFace *Self, int errnum, char *buf, size_t buflen )
-/*  180 */	// int AMYFUNC _generic_sys_time_gettimeofday( struct AmyCLibPrivIFace *Self, struct timeval *tp, void *tzp )
-/*  181 */	// int AMYFUNC _generic_ctype_isascii( struct AmyCLibPrivIFace *Self, int c )
-/*  182 */	// char * AMYFUNC (*string_stpcpy)( struct AmyCLibPrivIFace *Self, char *s1, const char *s2 );
-/*  183 */	// int AMYFUNC (*ctype_isalnum)( struct AmyCLibPrivIFace *Self, int c );
-/*  184 */	// double AMYFUNC (*math_ceil)( struct AmyCLibPrivIFace *Self, double x );
-/*  185 */	// double AMYFUNC (*math_cos)( struct AmyCLibPrivIFace *Self, double x );
-/*  186 */	// double AMYFUNC (*math_sin)( struct AmyCLibPrivIFace *Self, double x );
-/*  187 */	// double AMYFUNC (*math_atan2)( struct AmyCLibPrivIFace *Self, double y, double x );
-/*  188 */	// double AMYFUNC (*math_fmod)( struct AmyCLibPrivIFace *Self, double x, double y );
-/*  189 */	// char * AMYFUNC (*string_strtok)( struct AmyCLibPrivIFace *Self, char *s1, const char *s2 );
-/*  190 */	// struct lconv * AMYFUNC (*locale_localeconv)( struct AmyCLibPrivIFace *Self );
-/*  191 */	// int AMYFUNC (*stdlib_mkstemp)( struct AmyCLibPrivIFace *Self, char *template );
-/*  192 */	// int AMYFUNC (*stdlib_atexit)( struct AmyCLibPrivIFace *Self, void (*func)(void) );
-/*  193 */	// int AMYFUNC (*unistd_getgroups)( struct AmyCLibPrivIFace *Self, int gidsetsize, gid_t grouplist[] );
-/*  194 */	// int AMYFUNC (*getopt_getopt)( struct AmyCLibPrivIFace *Self, int argc, char * const argv[], const char *optstring );
-/*  195 */	// int AMYFUNC (*getopt_getopt_long)( struct AmyCLibPrivIFace *Self, int argc, char * const argv[], const char *optstring, const struct option *longopts, int *longindex );
-/*  196 */	// int AMYFUNC (*dirent_closedir)( struct AmyCLibPrivIFace *Self, DIR *dirp );
-/*  197 */	// int AMYFUNC (*dirent_dirfd)( struct AmyCLibPrivIFace *Self, DIR *dirp );
-/*  198 */	// DIR * AMYFUNC (*dirent_opendir)( struct AmyCLibPrivIFace *Self, const char *name );
-/*  199 */	// struct dirent * AMYFUNC (*dirent_readdir)( struct AmyCLibPrivIFace *Self, DIR *dirp );
-/*  200 */	// struct group * AMYFUNC (*grp_getgrgid)( struct AmyCLibPrivIFace *Self, gid_t aa );
-/*  201 */	// struct group * AMYFUNC (*grp_getgrnam)( struct AmyCLibPrivIFace *Self, const char *aa );
-/*  202 */	// struct passwd * AMYFUNC (*pwd_getpwuid)( struct AmyCLibPrivIFace *Self, uid_t aa );
-/*  203 */	// int AMYFUNC (*unistd_chown)( struct AmyCLibPrivIFace *Self, const char *aa, uid_t bb, gid_t cc );
-/*  204 */	// char * AMYFUNC (*string_strrchr)( struct AmyCLibPrivIFace *Self, const char *aa, int bb );
-/*  205 */	// struct passwd * AMYFUNC (*pwd_getpwnam)( struct AmyCLibPrivIFace *Self, const char *aa );
-/*  206 */	// int AMYFUNC (*stdio_getchar_unlocked)( struct AmyCLibPrivIFace *Self );
-/*  207 */	// int AMYFUNC (*stdio_putchar_unlocked)( struct AmyCLibPrivIFace *Self, int c );
-/*  208 */	// off_t AMYFUNC (*unistd_lseek)( struct AmyCLibPrivIFace *Self, int, off_t, int );
-/*  209 */	// ssize_t AMYFUNC (*unistd_write)( struct AmyCLibPrivIFace *Self, int, const void *, size_t );
-/*  210 */	// int AMYFUNC (*unistd_symlink)( struct AmyCLibPrivIFace *Self, const char *, const char * );
-/*  211 */	// int AMYFUNC (*time_clock_gettime)( struct AmyCLibPrivIFace *Self, clockid_t, struct timespec * );
-/*  212 */	// int AMYFUNC (*time_clock_settime)( struct AmyCLibPrivIFace *Self, clockid_t, const struct timespec * );
-/*  213 */	// int AMYFUNC (*unistd_gethostname)( struct AmyCLibPrivIFace *Self, char *, size_t );
-/*  214 */	// void * AMYFUNC (*string_memrchr)( struct AmyCLibPrivIFace *Self, const void *, int, size_t );
-/*  215 */	// time_t AMYFUNC (*time_mktime)( struct AmyCLibPrivIFace *Self, struct tm * );
-/*  216 */	// long long AMYFUNC (*stdlib_strtoll)( struct AmyCLibPrivIFace *Self, const char *, char **, int );
+/*  174 */	// ssize_t AMYFUNC (*stdio_getline)( struct AmyCLibIFace *Self, char **lineptr, size_t *n, FILE *stream );
+/*  175 */	// ssize_t AMYFUNC (*stdio_getdelim)( struct AmyCLibIFace *Self, char **lineptr, size_t *n, int delimiter, FILE *stream );
+/*  176 */	// int AMYFUNC (*stdio_putc_unlocked)( struct AmyCLibIFace *Self, int c, FILE *stream );
+/*  177 */	// int AMYFUNC _generic_ctype_isprint( struct AmyCLibIFace *Self, int c )
+/*  178 */	// char * AMYFUNC _generic_string_strerror( struct AmyCLibIFace *Self, int errnum )
+/*  179 */	// int AMYFUNC _generic_string_strerror_r( struct AmyCLibIFace *Self, int errnum, char *buf, size_t buflen )
+/*  180 */	// int AMYFUNC _generic_sys_time_gettimeofday( struct AmyCLibIFace *Self, struct timeval *tp, void *tzp )
+/*  181 */	// int AMYFUNC _generic_ctype_isascii( struct AmyCLibIFace *Self, int c )
+/*  182 */	// char * AMYFUNC (*string_stpcpy)( struct AmyCLibIFace *Self, char *s1, const char *s2 );
+/*  183 */	// int AMYFUNC (*ctype_isalnum)( struct AmyCLibIFace *Self, int c );
+/*  184 */	// double AMYFUNC (*math_ceil)( struct AmyCLibIFace *Self, double x );
+/*  185 */	// double AMYFUNC (*math_cos)( struct AmyCLibIFace *Self, double x );
+/*  186 */	// double AMYFUNC (*math_sin)( struct AmyCLibIFace *Self, double x );
+/*  187 */	// double AMYFUNC (*math_atan2)( struct AmyCLibIFace *Self, double y, double x );
+/*  188 */	// double AMYFUNC (*math_fmod)( struct AmyCLibIFace *Self, double x, double y );
+/*  189 */	// char * AMYFUNC (*string_strtok)( struct AmyCLibIFace *Self, char *s1, const char *s2 );
+/*  190 */	// struct lconv * AMYFUNC (*locale_localeconv)( struct AmyCLibIFace *Self );
+/*  191 */	// int AMYFUNC (*stdlib_mkstemp)( struct AmyCLibIFace *Self, char *template );
+/*  192 */	// int AMYFUNC (*stdlib_atexit)( struct AmyCLibIFace *Self, void (*func)(void) );
+/*  193 */	// int AMYFUNC (*unistd_getgroups)( struct AmyCLibIFace *Self, int gidsetsize, gid_t grouplist[] );
+/*  194 */	// int AMYFUNC (*getopt_getopt)( struct AmyCLibIFace *Self, int argc, char * const argv[], const char *optstring );
+/*  195 */	// int AMYFUNC (*getopt_getopt_long)( struct AmyCLibIFace *Self, int argc, char * const argv[], const char *optstring, const struct option *longopts, int *longindex );
+/*  196 */	// int AMYFUNC (*dirent_closedir)( struct AmyCLibIFace *Self, DIR *dirp );
+/*  197 */	// int AMYFUNC (*dirent_dirfd)( struct AmyCLibIFace *Self, DIR *dirp );
+/*  198 */	// DIR * AMYFUNC (*dirent_opendir)( struct AmyCLibIFace *Self, const char *name );
+/*  199 */	// struct dirent * AMYFUNC (*dirent_readdir)( struct AmyCLibIFace *Self, DIR *dirp );
+/*  200 */	// struct group * AMYFUNC (*grp_getgrgid)( struct AmyCLibIFace *Self, gid_t aa );
+/*  201 */	// struct group * AMYFUNC (*grp_getgrnam)( struct AmyCLibIFace *Self, const char *aa );
+/*  202 */	// struct passwd * AMYFUNC (*pwd_getpwuid)( struct AmyCLibIFace *Self, uid_t aa );
+/*  203 */	// int AMYFUNC (*unistd_chown)( struct AmyCLibIFace *Self, const char *aa, uid_t bb, gid_t cc );
+/*  204 */	// char * AMYFUNC (*string_strrchr)( struct AmyCLibIFace *Self, const char *aa, int bb );
+/*  205 */	// struct passwd * AMYFUNC (*pwd_getpwnam)( struct AmyCLibIFace *Self, const char *aa );
+/*  206 */	// int AMYFUNC (*stdio_getchar_unlocked)( struct AmyCLibIFace *Self );
+/*  207 */	// int AMYFUNC (*stdio_putchar_unlocked)( struct AmyCLibIFace *Self, int c );
+/*  208 */	// off_t AMYFUNC (*unistd_lseek)( struct AmyCLibIFace *Self, int, off_t, int );
+/*  209 */	// ssize_t AMYFUNC (*unistd_write)( struct AmyCLibIFace *Self, int, const void *, size_t );
+/*  210 */	// int AMYFUNC (*unistd_symlink)( struct AmyCLibIFace *Self, const char *, const char * );
+/*  211 */	// int AMYFUNC (*time_clock_gettime)( struct AmyCLibIFace *Self, clockid_t, struct timespec * );
+/*  212 */	// int AMYFUNC (*time_clock_settime)( struct AmyCLibIFace *Self, clockid_t, const struct timespec * );
+/*  213 */	// int AMYFUNC (*unistd_gethostname)( struct AmyCLibIFace *Self, char *, size_t );
+/*  214 */	// void * AMYFUNC (*string_memrchr)( struct AmyCLibIFace *Self, const void *, int, size_t );
+/*  215 */	// time_t AMYFUNC (*time_mktime)( struct AmyCLibIFace *Self, struct tm * );
+/*  216 */	// long long AMYFUNC (*stdlib_strtoll)( struct AmyCLibIFace *Self, const char *, char **, int );
 
 
 
@@ -626,7 +626,7 @@ struct EnableStruct funcs[] =
 
 // --
 
-static void myInit_Enable( struct AmyCLibPrivIFace *Self, struct libData *data UNUSED, U32 emmask )
+static void myInit_Enable( struct AmyCLibIFace *Self, struct libData *data UNUSED, U32 emmask )
 {
 struct EnableStruct *es;
 struct EnableFunc *ef;

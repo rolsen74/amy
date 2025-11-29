@@ -14,7 +14,7 @@
 
 // --
 
-int AMYFUNC _generic_unistd_chown( struct AmyCLibPrivIFace *Self, const char *aa, uid_t bb, gid_t cc )
+int AMYFUNC _generic_unistd_chown( struct AmyCLibIFace *Self, const char *aa, uid_t bb, gid_t cc )
 {
 struct libData *data;
 int retval;

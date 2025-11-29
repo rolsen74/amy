@@ -14,7 +14,7 @@
 
 // --
 
-double AMYFUNC _generic_math_sin( struct AmyCLibPrivIFace *Self, double x )
+double AMYFUNC _generic_math_sin( struct AmyCLibIFace *Self, double x )
 {
 struct libData *data;
 double retval;

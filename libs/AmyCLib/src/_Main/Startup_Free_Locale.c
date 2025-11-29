@@ -11,7 +11,7 @@
 
 // --
 
-static void myFree_Locale( struct AmyCLibPrivIFace *Self UNUSED, struct libData *data )
+static void myFree_Locale( struct AmyCLibIFace *Self UNUSED, struct libData *data )
 {
 int cnt;
 

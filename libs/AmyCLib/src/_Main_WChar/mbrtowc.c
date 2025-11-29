@@ -14,7 +14,7 @@
 
 // --
 
-size_t AMYFUNC _generic_wchar_mbrtowc( struct AmyCLibPrivIFace *Self, wchar_t *pwc, const char *s, size_t n, mbstate_t *ps )
+size_t AMYFUNC _generic_wchar_mbrtowc( struct AmyCLibIFace *Self, wchar_t *pwc, const char *s, size_t n, mbstate_t *ps )
 {
 struct libData *data;
 size_t retval;

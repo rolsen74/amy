@@ -42,9 +42,9 @@
 // --
 // File Descriptor
 
-struct PrivFile * AMYFUNC _generic__Priv_FDLockNr( struct AmyCLibPrivIFace *Self, S32 nr )
+struct FileStruct * AMYFUNC _generic__Priv_FDLockNr( struct AmyCLibIFace *Self, S32 nr )
 {
-struct PrivFile *file;
+struct FileStruct *file;
 struct libData *data;
 
 	DOFUNCTIONPRINTF( IExec->DebugPrintF( "_generic__Priv_FDLockNr : Fildes %ld\n", nr ); );

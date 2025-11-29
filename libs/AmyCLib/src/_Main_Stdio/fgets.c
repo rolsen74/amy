@@ -14,7 +14,7 @@
 
 // --
 
-char * AMYFUNC _generic_stdio_fgets( struct AmyCLibPrivIFace *Self, char *s, int n, struct PrivFile *stream )
+char * AMYFUNC _generic_stdio_fgets( struct AmyCLibIFace *Self, char *s, int n, FILE *stream )
 {
 struct libData *data;
 char *retval;

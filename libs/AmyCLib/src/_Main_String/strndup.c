@@ -11,7 +11,7 @@
 
 // --
 
-char * AMYFUNC _generic_string_strndup( struct AmyCLibPrivIFace *Self, const char *s, size_t max )
+char * AMYFUNC _generic_string_strndup( struct AmyCLibIFace *Self, const char *s, size_t max )
 {
 struct libData *data;
 size_t len;

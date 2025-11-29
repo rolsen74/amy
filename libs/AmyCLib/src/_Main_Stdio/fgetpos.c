@@ -41,9 +41,9 @@
 
 // --
 
-int AMYFUNC _generic_stdio_fgetpos( struct AmyCLibPrivIFace *Self, struct PrivFile *stream, fpos_t *pos )
+int AMYFUNC _generic_stdio_fgetpos( struct AmyCLibIFace *Self, FILE *stream, fpos_t *pos )
 {
-struct PrivFile *file;
+struct FileStruct *file;
 struct libData *data;
 S64 fpos;
 int retval;

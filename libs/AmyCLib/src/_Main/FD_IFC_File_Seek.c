@@ -42,7 +42,7 @@
 // --
 // File Descriptor
 
-static int mySeek( struct AmyCLibPrivIFace *Self, struct PrivFile *file, S64 pos, S32 mode )
+static int mySeek( struct AmyCLibIFace *Self, struct FileStruct *file, S64 pos, S32 mode )
 {
 struct libData *data;
 S32 new_mode;

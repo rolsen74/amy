@@ -41,7 +41,7 @@
 
 // --
 
-int AMYFUNC _generic_string_strcmp( struct AmyCLibPrivIFace *Self, const char *s1, const char *s2 )
+int AMYFUNC _generic_string_strcmp( struct AmyCLibIFace *Self, const char *s1, const char *s2 )
 {
 int retval;
 S32 c1;

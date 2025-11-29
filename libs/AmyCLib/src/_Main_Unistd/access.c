@@ -14,7 +14,7 @@
 
 // --
 
-int AMYFUNC _generic_unistd_access( struct AmyCLibPrivIFace *Self, const char *path, int amode )
+int AMYFUNC _generic_unistd_access( struct AmyCLibIFace *Self, const char *path, int amode )
 {
 struct libData *data;
 int retval;

@@ -14,7 +14,7 @@
 
 // --
 
-int AMYFUNC _generic_getopt_getopt_long( struct AmyCLibPrivIFace *Self, int argc, char * const argv[], const char *optstring, const struct option *longopts, int *longindex )
+int AMYFUNC _generic_getopt_getopt_long( struct AmyCLibIFace *Self, int argc, char * const argv[], const char *optstring, const struct option *longopts, int *longindex )
 {
 struct libData *data;
 int retval;
