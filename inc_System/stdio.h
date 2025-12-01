@@ -24,6 +24,9 @@
 #ifndef AMYSYS_STDIO_H
 #define AMYSYS_STDIO_H
 
+/* Compatibility macro for GMP/Autoconf */
+#define _STDIO_H
+
 /****************************************************************************/
 
 #include <locale.h>

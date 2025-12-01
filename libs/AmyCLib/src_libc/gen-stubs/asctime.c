@@ -8,8 +8,7 @@
 */
 
 #include "Stub.h"
-#include <signal.h>
 
-LIBC_STUB(int, raise, signal_raise,
-    (int sig),
-    sig);
+LIBC_STUB(char *, asctime, time_asctime,
+    (const struct tm *tm),
+    tm);

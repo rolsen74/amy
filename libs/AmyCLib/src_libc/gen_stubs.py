@@ -30,6 +30,7 @@ INCLUDE_MAP = {
     "assert_":  'assert.h',
     'fcntl_':   'fcntl.h',
     'ctype_':   'ctype.h',
+    'signal_':  'signal.h',
     'stdlib_':  'stdlib.h',
     'stdio_':   'stdio.h',
     'string_':  'string.h',
@@ -40,6 +41,8 @@ INCLUDE_MAP = {
     'math_d_':  'math.h',
     'wchar':    'wchar.h',
     'locale_':  'locale.h',
+    'sys_mount_': 'sys/mount.h',
+    'sys_statvfs_': 'sys/statvfs.h',
 }
 
 def deduce_header(iface_func: str):

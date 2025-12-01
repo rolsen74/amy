@@ -8,8 +8,8 @@
 */
 
 #include "Stub.h"
-#include <signal.h>
+#include <unistd.h>
 
-LIBC_STUB(int, raise, signal_raise,
-    (int sig),
-    sig);
+LIBC_STUB(int, setgid, unistd_setgid,
+    (gid_t aa),
+    aa);

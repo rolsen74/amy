@@ -8,8 +8,8 @@
 */
 
 #include "Stub.h"
-#include <signal.h>
+#include <sys/statvfs.h>
 
-LIBC_STUB(int, raise, signal_raise,
-    (int sig),
-    sig);
+LIBC_STUB(int, statvfs, sys_statvfs_statvfs,
+    (const char *aa, struct statvfs *bb),
+    aa, bb);

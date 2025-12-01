@@ -8,6 +8,7 @@
 */
 
 #include "Stub.h"
+#include <signal.h>
 
 LIBC_STUB(sighandler_t, signal, signal_signal,
     (int sig, sighandler_t func),

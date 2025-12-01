@@ -136,6 +136,7 @@ int			rmdir( const char * );
 int			setegid( gid_t );
 int			seteuid( uid_t );
 int			setgid( gid_t );
+int			setgroups( int ngroups, const gid_t *gidset );
 int			setpgid( pid_t, pid_t );
 pid_t		setpgrp( void );
 int			setregid( gid_t, gid_t );

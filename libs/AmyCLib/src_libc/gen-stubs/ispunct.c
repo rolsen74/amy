@@ -8,8 +8,8 @@
 */
 
 #include "Stub.h"
-#include <signal.h>
+#include <ctype.h>
 
-LIBC_STUB(int, raise, signal_raise,
-    (int sig),
-    sig);
+LIBC_STUB(int, ispunct, ctype_ispunct,
+    (int c),
+    c);

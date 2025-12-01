@@ -28,6 +28,9 @@
 #include <wchar.h>
 #include <getopt.h>
 #include <dirent.h>
+#include <sys/statvfs.h>
+#include <sys/mount.h>
+#include <sys/resource.h>
 
 // --
 struct PrintStruct;
@@ -271,6 +274,41 @@ struct AmyCLibIFace
 /*  214 */	void *						AMYFUNC (*string_memrchr)( struct AmyCLibIFace *Self, const void *, int, size_t );
 /*  215 */	time_t						AMYFUNC (*time_mktime)( struct AmyCLibIFace *Self, struct tm * );
 /*  216 */	long long					AMYFUNC (*stdlib_strtoll)( struct AmyCLibIFace *Self, const char *, char **, int );
+/*  217 */	int							AMYFUNC (*stdio_getc_unlocked)( struct AmyCLibIFace *Self, FILE *stream );
+/*  218 */	void *						AMYFUNC (*string_memchr)( struct AmyCLibIFace *Self, const void *, int, size_t );
+/*  219 */	int							AMYFUNC (*ctype_iscntrl)( struct AmyCLibIFace *Self, int c );
+/*  220 */	int							AMYFUNC (*ctype_ispunct)( struct AmyCLibIFace *Self, int c );
+/*  221 */	int							AMYFUNC (*unistd_chdir)( struct AmyCLibIFace *Self, const char *aa );
+/*  222 */	int							AMYFUNC (*stdlib_system)( struct AmyCLibIFace *Self, const char *aa );
+/*  223 */	int							AMYFUNC (*string_strcoll)( struct AmyCLibIFace *Self, const char *aa, const char *bb );
+/*  224 */	char *						AMYFUNC (*time_asctime)( struct AmyCLibIFace *Self, const struct tm *aa );
+/*  225 */	int							AMYFUNC( *wchar_mbsinit)( struct AmyCLibIFace *Self, const mbstate_t *aa );
+/*  226 */	void						AMYFUNC( *dirent_rewinddir)( struct AmyCLibIFace *Self, DIR *aa );
+/*  227 */	uid_t						AMYFUNC( *unistd_getuid)( struct AmyCLibIFace *Self );
+/*  228 */	int							AMYFUNC( *unistd_fsync)( struct AmyCLibIFace *Self, int aa );
+/*  229 */	gid_t						AMYFUNC( *unistd_getgid)( struct AmyCLibIFace *Self );
+/*  230 */	int							AMYFUNC( *sys_statvfs_statvfs)( struct AmyCLibIFace *Self, const char *aa, struct statvfs *bb );
+/*  231 */	int							AMYFUNC( *sys_mount_statfs)( struct AmyCLibIFace *Self, const char *aa, struct statfs *bb );
+/*  232 */	void						AMYFUNC( *pwd_setpwent)( struct AmyCLibIFace *Self );
+/*  233 */	void						AMYFUNC( *grp_setgrent)( struct AmyCLibIFace *Self );
+/*  234 */	int							AMYFUNC (*stropts_ioctl_ap)( struct AmyCLibIFace *Self, int aa, int bb, va_list ap );
+/*  235 */	DIR *						AMYFUNC (*dirent_fdopendir)( struct AmyCLibIFace *Self, int fildes );
+/*  236 */	FILE *						AMYFUNC (*stdio_fdopen)( struct AmyCLibIFace *Self, int aa, const char *bb );
+/*  237 */	int							AMYFUNC( *sys_resource_getrlimit)( struct AmyCLibIFace *Self, int resource, struct rlimit *rlp );
+/*  238 */	int							AMYFUNC( *signal_kill)( struct AmyCLibIFace *Self, pid_t aa, int bb );
+/*  239 */	int							AMYFUNC( *unistd_usleep)( struct AmyCLibIFace *Self, useconds_t aa );
+/*  240 */	int							AMYFUNC( *stdlib_putenv)( struct AmyCLibIFace *Self, char *aa );
+/*  241 */	int							AMYFUNC( *unistd_execvp)( struct AmyCLibIFace *Self, const char *aa, char * const bb[] );
+/*  242 */	char *						AMYFUNC( *string_strsignal)( struct AmyCLibIFace *Self, int aa );
+/*  243 */	char *						AMYFUNC( *unistd_ttyname)( struct AmyCLibIFace *Self, int aa );
+/*  244 */	int							AMYFUNC( *unistd_setgid)( struct AmyCLibIFace *Self, gid_t aa );
+/*  245 */	int							AMYFUNC( *unistd_setuid)( struct AmyCLibIFace *Self, uid_t aa );
+/*  246 */	int							AMYFUNC( *unistd_setgroups)( struct AmyCLibIFace *Self, int ngroups, const gid_t *gidset );
+/*  247 */	int							AMYFUNC( *unistd_execv)( struct AmyCLibIFace *Self, const char *aa, char * const bb[] );
+/*  248 */	char *						AMYFUNC( *unistd_crypt)( struct AmyCLibIFace *Self, const char *aa, const char *bb );
+/*  249 */	clock_t						AMYFUNC( *time_clock)( struct AmyCLibIFace *Self );
+/*  250 */	FILE *						AMYFUNC( *stdio_popen)( struct AmyCLibIFace *Self, const char *, const char * );
+/*  251 */	unsigned long				AMYFUNC( *stdlib_strtoul)( struct AmyCLibIFace *Self, const char *, char **, int );
 
 
 

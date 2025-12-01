@@ -521,7 +521,41 @@ static const PTR Main_Vectors[] =
 /*  214 */	(PTR) _NotEnabled,	// void * AMYFUNC (*string_memrchr)( struct AmyCLibIFace *Self, const void *, int, size_t );
 /*  215 */	(PTR) _NotEnabled,	// time_t AMYFUNC (*time_mktime)( struct AmyCLibIFace *Self, struct tm * );
 /*  216 */	(PTR) _NotEnabled,	// long long AMYFUNC (*stdlib_strtoll)( struct AmyCLibIFace *Self, const char *, char **, int );
-
+/*  217 */	(PTR) _NotEnabled,	// int AMYFUNC (*stdio_getc_unlocked)( struct AmyCLibIFace *Self, FILE *stream );
+/*  218 */	(PTR) _NotEnabled,	// void * AMYFUNC (*string_memchr)( struct AmyCLibIFace *Self, const void *, int, size_t );
+/*  219 */	(PTR) _NotEnabled,	// int AMYFUNC (*ctype_iscntrl)( struct AmyCLibIFace *Self, int c );
+/*  220 */	(PTR) _NotEnabled,	// int AMYFUNC (*ctype_ispunct)( struct AmyCLibIFace *Self, int c );
+/*  221 */	(PTR) _NotEnabled,	// int AMYFUNC (*unistd_chdir)( struct AmyCLibIFace *Self, const char *aa );
+/*  222 */	(PTR) _NotEnabled,	// int AMYFUNC (*stdlib_system)( struct AmyCLibIFace *Self, const char *aa );
+/*  223 */	(PTR) _NotEnabled,	// int AMYFUNC (*string_strcoll)( struct AmyCLibIFace *Self, const char *aa, const char *bb );
+/*  224 */	(PTR) _NotEnabled,	// char * AMYFUNC (*time_asctime)( struct AmyCLibIFace *Self, const struct tm *aa );
+/*  225 */	(PTR) _NotEnabled,	// int AMYFUNC( *wchar_mbsinit)( struct AmyCLibIFace *Self, const mbstate_t *aa );
+/*  226 */	(PTR) _NotEnabled,	// void AMYFUNC( *dirent_rewinddir)( struct AmyCLibIFace *Self, DIR *aa );
+/*  227 */	(PTR) _NotEnabled,	// uid_t AMYFUNC( *unistd_getuid)( struct AmyCLibIFace *Self );
+/*  228 */	(PTR) _NotEnabled,	// int AMYFUNC( *unistd_fsync)( struct AmyCLibIFace *Self, int aa );
+/*  229 */	(PTR) _NotEnabled,	// gid_t AMYFUNC( *unistd_getgid)( struct AmyCLibIFace *Self );
+/*  230 */	(PTR) _NotEnabled,	// int AMYFUNC( *sys_statvfs_statvfs)( struct AmyCLibIFace *Self, const char *aa, struct statvfs *bb );
+/*  231 */	(PTR) _NotEnabled,	// int AMYFUNC( *sys_mount_statfs)( struct AmyCLibIFace *Self, const char *aa, struct statfs *bb );
+/*  232 */	(PTR) _NotEnabled,	// void AMYFUNC( *pwd_setpwent)( struct AmyCLibIFace *Self );
+/*  233 */	(PTR) _NotEnabled,	// void AMYFUNC( *grp_setgrent)( struct AmyCLibIFace *Self );
+/*  234 */	(PTR) _NotEnabled,	// int AMYFUNC (*stropts_ioctl_ap)( struct AmyCLibIFace *Self, int aa, int bb, va_list ap );
+/*  235 */	(PTR) _NotEnabled,	// DIR * AMYFUNC (*dirent_fdopendir)( struct AmyCLibIFace *Self, int fildes );
+/*  236 */	(PTR) _NotEnabled,	// FILE * AMYFUNC (*stdio_fdopen)( struct AmyCLibIFace *Self, int aa, const char *bb );
+/*  237 */	(PTR) _NotEnabled,	// int AMYFUNC( *sys_resource_getrlimit)( struct AmyCLibIFace *Self, int resource, struct rlimit *rlp );
+/*  238 */	(PTR) _NotEnabled,	// int AMYFUNC( *signal_kill)( struct AmyCLibIFace *Self, pid_t aa, int bb );
+/*  239 */	(PTR) _NotEnabled,	// int AMYFUNC( *unistd_usleep)( struct AmyCLibIFace *Self, useconds_t aa );
+/*  240 */	(PTR) _NotEnabled,	// int AMYFUNC( *stdlib_putenv)( struct AmyCLibIFace *Self, char *aa );
+/*  241 */	(PTR) _NotEnabled,	// int AMYFUNC( *unistd_execvp)( struct AmyCLibIFace *Self, const char *aa, char * const bb[] );
+/*  242 */	(PTR) _NotEnabled,	// char * AMYFUNC( *string_strsignal)( struct AmyCLibIFace *Self, int aa );
+/*  243 */	(PTR) _NotEnabled,	// char * AMYFUNC( *unistd_ttyname)( struct AmyCLibIFace *Self, int aa );
+/*  244 */	(PTR) _NotEnabled,	// int AMYFUNC( *unistd_setgid)( struct AmyCLibIFace *Self, gid_t aa );
+/*  245 */	(PTR) _NotEnabled,	// int AMYFUNC( *unistd_setuid)( struct AmyCLibIFace *Self, uid_t aa );
+/*  246 */	(PTR) _NotEnabled,	// int AMYFUNC( *unistd_setgroups)( struct AmyCLibIFace *Self, int ngroups, const gid_t *gidset );
+/*  247 */	(PTR) _NotEnabled,	// int AMYFUNC( *unistd_execv)( struct AmyCLibIFace *Self, const char *aa, char * const bb[] );
+/*  248 */	(PTR) _NotEnabled,	// char * AMYFUNC( *unistd_crypt)( struct AmyCLibIFace *Self, const char *aa, const char *bb );
+/*  249 */	(PTR) _NotEnabled,	// clock_t AMYFUNC( *time_clock)( struct AmyCLibIFace *Self );
+/*  250 */	(PTR) _NotEnabled,	// FILE * AMYFUNC( *stdio_popen)( struct AmyCLibIFace *Self, const char *, const char * );
+/*  251 */	(PTR) _NotEnabled,	// unsigned long AMYFUNC( *stdlib_strtoul)( struct AmyCLib_IFace *Self, const char *, char **, int );
 
 
 

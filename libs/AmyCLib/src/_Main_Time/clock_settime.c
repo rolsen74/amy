@@ -16,7 +16,6 @@
 
 int AMYFUNC _generic_time_clock_settime( struct AmyCLibIFace *Self, clockid_t aa, const struct timespec *bb )
 {
-struct FileStruct *file;
 struct libData *data;
 int retval;
 

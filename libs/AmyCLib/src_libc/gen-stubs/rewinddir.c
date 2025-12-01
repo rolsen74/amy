@@ -8,8 +8,7 @@
 */
 
 #include "Stub.h"
-#include <signal.h>
 
-LIBC_STUB(int, raise, signal_raise,
-    (int sig),
-    sig);
+LIBC_STUB(void, rewinddir, dirent_rewinddir,
+    (DIR *dirp),
+    dirp);

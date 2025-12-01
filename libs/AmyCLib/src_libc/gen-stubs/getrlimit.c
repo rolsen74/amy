@@ -8,8 +8,7 @@
 */
 
 #include "Stub.h"
-#include <signal.h>
 
-LIBC_STUB(int, raise, signal_raise,
-    (int sig),
-    sig);
+LIBC_STUB(int, getrlimit, sys_resource_getrlimit,
+    (int aa, struct rlimit *bb),
+    aa, bb);

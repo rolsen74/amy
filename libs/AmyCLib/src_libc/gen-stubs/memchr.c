@@ -8,8 +8,8 @@
 */
 
 #include "Stub.h"
-#include <signal.h>
+#include <string.h>
 
-LIBC_STUB(int, raise, signal_raise,
-    (int sig),
-    sig);
+LIBC_STUB(void *, memchr, string_memchr,
+    (const void *aa, int bb, size_t cc),
+    aa, bb, cc);

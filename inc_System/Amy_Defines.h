@@ -75,16 +75,16 @@ typedef char *STR;
 #define AMY_EXTERN_C_END
 #endif
 
-#ifndef MIN
-#define MIN(a,b)	((a) < (b) ? (a) : (b))
+#ifndef AMY_MIN
+#define AMY_MIN(a,b)	((a) < (b) ? (a) : (b))
 #endif
 
-#ifndef MAX
-#define MAX(a,b)	((a) > (b) ? (a) : (b))
+#ifndef AMY_MAX
+#define AMY_MAX(a,b)	((a) > (b) ? (a) : (b))
 #endif
 
-#ifndef ABS
-#define ABS(x) 		((x) < 0 ? -(x) : (x))
+#ifndef AMY_ABS
+#define AMY_ABS(a)		((a) < 0 ? -(a) : (a))
 #endif
 
 // --

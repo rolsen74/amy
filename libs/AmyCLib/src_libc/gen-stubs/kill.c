@@ -10,6 +10,6 @@
 #include "Stub.h"
 #include <signal.h>
 
-LIBC_STUB(int, raise, signal_raise,
-    (int sig),
-    sig);
+LIBC_STUB(int, kill, signal_kill,
+    (pid_t aa, int bb),
+    aa, bb);
