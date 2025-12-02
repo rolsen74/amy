@@ -556,7 +556,14 @@ static const PTR Main_Vectors[] =
 /*  249 */	(PTR) _NotEnabled,	// clock_t AMYFUNC( *time_clock)( struct AmyCLibIFace *Self );
 /*  250 */	(PTR) _NotEnabled,	// FILE * AMYFUNC( *stdio_popen)( struct AmyCLibIFace *Self, const char *, const char * );
 /*  251 */	(PTR) _NotEnabled,	// unsigned long AMYFUNC( *stdlib_strtoul)( struct AmyCLib_IFace *Self, const char *, char **, int );
-
+/*  252 */	(PTR) _NotEnabled,	// unsigned long long AMYFUNC( *stdlib_strtoul)( struct AmyCLib_IFace *Self, const char *, char **, int );
+/*  253 */	(PTR) _NotEnabled,	// off_t AMYFUNC( *stdio_ftello)( struct AmyCLibIFace *Self, FILE *);
+/*  254 */	(PTR) _NotEnabled,	// FILE * AMYFUNC( *stdio_fopen64)( struct AmyCLibIFace *Self, const char *, const char * );
+/*  255 */	(PTR) _NotEnabled,	// off64_t AMYFUNC( *stdio_ftello64)( struct AmyCLibIFace *Self, FILE * );
+/*  256 */	(PTR) _NotEnabled,	// int AMYFUNC( *stdio_fseeko64)( struct AmyCLibIFace *Self, FILE *, off64_t, int );
+/*  257 */	(PTR) _NotEnabled,	// pid_t AMYFUNC( *sys_wait_waitpid)( struct AmyCLibIFace *Self, pid_t, int *, int );
+/*  258 */	(PTR) _NotEnabled,	// FILE * AMYFUNC( *stdio_freopen)( struct AmyCLibIFace *Self, const char *, const char *, FILE * );
+/*  259 */	(PTR) _NotEnabled,	// char * AMYFUNC( *stdio_tempnam)( struct AmyCLibIFace *Self, const char *, const char * );
 
 
 

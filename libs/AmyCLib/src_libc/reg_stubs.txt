@@ -121,16 +121,20 @@
 "int"			fileno			stdio_fileno			"stream"			"FILE *stream"
 "void"			flockfile		stdio_flockfile			"stream"			"FILE *stream"
 "FILE *"		fopen			stdio_fopen			"filename, mode"		"const char *filename, const char *mode"
+"FILE *"		fopen64			stdio_fopen64			"aa, bb"			"const char *aa, const char *bb"
 # fprintf		-- custom stub
 "int"			fputc			stdio_fputc			"c, stream"			"int c, FILE *stream"
 "int"			fputc_unlocked		stdio_fputc_unlocked		"c, stream"			"int c, FILE *stream"
 "int"			fputs			stdio_fputs			"s, stream"			"const char *s, FILE *stream"
 "size_t"		fread			stdio_fread			"ptr, size, count, stream"	"void *ptr, size_t size, size_t count, FILE *stream"
+"FILE *"		freopen			stdio_freopen			"aa, bb, cc"			"const char *aa, const char *bb, FILE *cc"
 "int"			fseek			stdio_fseek			"stream, offset, from"		"FILE *stream, long offset, int from"
 "int"			fseeko			stdio_fseeko			"stream, offset, from"		"FILE *stream, off_t offset, int from"
+"int"			fseeko64		stdio_fseeko64			"aa, bb, cc"			"FILE *aa, off64_t bb, int cc"
 "long"			ftell			stdio_ftell			"stream"			"FILE *stream"
+"off_t"			ftello			stdio_ftello			"aa"				"FILE *aa"
+"off64_t"		ftello64		stdio_ftello64			"aa"				"FILE *aa"
 "void"			funlockfile		stdio_funlockfile		"stream"			"FILE *stream"
-"int"			vfprintf		stdio_vfprintf			"stream, format, ap"		"FILE *stream, const char *format, va_list ap"
 "size_t"		fwrite			stdio_fwrite			"ptr, size, nitems, stream"	"const void *ptr, size_t size, size_t nitems, FILE *stream"
 "int"			getc			stdio_getc			"stream"			"FILE *stream"
 "int"			getc_unlocked		stdio_getc_unlocked		"stream"			"FILE *stream"
@@ -150,11 +154,13 @@
 "int"			rename			stdio_rename			"old, new"			"const char *old, const char *new"
 "void"			rewind			stdio_rewind			"stream"			"FILE *stream"
 "int"			setvbuf			stdio_setvbuf			"stream, buf, mode, size"	"FILE *stream, char *buf, int mode, size_t size"
+"char *"		tempnam			stdio_tempnam			"aa, bb"			"const char *aa, const char *bb"
 # snprintf		-- custom stub
 # sprintf		-- custom stub
 # sscanf		-- custom stub
 "int"			ungetc			stdio_ungetc			"c, stream"			"int c, FILE *stream"
 "int"			vasprintf		stdio_vasprintf			"ret, fmt, ap"			"char **ret, const char *fmt, va_list ap"
+"int"			vfprintf		stdio_vfprintf			"stream, format, ap"		"FILE *stream, const char *format, va_list ap"
 "int"			vprintf			stdio_vprintf			"fmt, ap"			"const char *fmt, va_list ap"
 "int"			vsprintf		stdio_vsprintf			"buf, fmt, ap"			"char *buf, const char *fmt, va_list ap"
 "int"			vsnprintf		stdio_vsnprintf			"buf, size, fmt, ap"		"char *buf, size_t size, const char *fmt, va_list ap"
@@ -189,6 +195,7 @@
 "long"			strtol			stdlib_strtol			"nptr, endptr, base"		"const char *nptr, char **endptr, int base"
 "long long"		strtoll			stdlib_strtoll			"nptr, endptr, base"		"const char *nptr, char **endptr, int base"
 "unsigned long"		strtoul			stdlib_strtoul			"aa, bb, cc"			"const char *aa, char **bb, int cc"
+"unsigned long long"	strtoull		stdlib_strtoull			"aa, bb, cc"			"const char *aa, char **bb, int cc"
 "int"			system			stdlib_system			"str"				"const char *str"
 
 
@@ -314,3 +321,9 @@
 
 # sys/time		func-name		iface-name			args-call			args-decl
 "int"			gettimeofday		sys_time_gettimeofday		"tp, tzp"			"struct timeval *tp, void *tzp"
+
+
+
+# sys/wait		func-name		iface-name			args-call			args-decl
+"pid_t"			waitpid			sys_wait_waitpid		"aa, bb, cc"			"pid_t aa, int *bb, int cc"
+

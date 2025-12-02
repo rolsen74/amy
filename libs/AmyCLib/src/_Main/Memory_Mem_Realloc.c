@@ -64,7 +64,7 @@ PTR newmem;
 
 			if ( newmem )
 			{
-				len = MIN( Size, realmem->Size );
+				len = AMY_MIN( Size, realmem->Size );
 
 				Self->string_memcpy( newmem, oldmem, len );
 

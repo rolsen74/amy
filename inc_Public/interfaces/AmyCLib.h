@@ -31,6 +31,7 @@
 #include <sys/statvfs.h>
 #include <sys/mount.h>
 #include <sys/resource.h>
+#include <sys/wait.h>
 
 // --
 struct PrintStruct;
@@ -309,9 +310,14 @@ struct AmyCLibIFace
 /*  249 */	clock_t						AMYFUNC( *time_clock)( struct AmyCLibIFace *Self );
 /*  250 */	FILE *						AMYFUNC( *stdio_popen)( struct AmyCLibIFace *Self, const char *, const char * );
 /*  251 */	unsigned long				AMYFUNC( *stdlib_strtoul)( struct AmyCLibIFace *Self, const char *, char **, int );
-
-
-
+/*  252 */	unsigned long long			AMYFUNC( *stdlib_strtoull)( struct AmyCLibIFace *Self, const char *, char **, int );
+/*  253 */	off_t						AMYFUNC( *stdio_ftello)( struct AmyCLibIFace *Self, FILE *);
+/*  254 */	FILE *						AMYFUNC( *stdio_fopen64)( struct AmyCLibIFace *Self, const char *, const char * );
+/*  255 */	off64_t						AMYFUNC( *stdio_ftello64)( struct AmyCLibIFace *Self, FILE * );
+/*  256 */	int							AMYFUNC( *stdio_fseeko64)( struct AmyCLibIFace *Self, FILE *, off64_t, int );
+/*  257 */	pid_t						AMYFUNC( *sys_wait_waitpid)( struct AmyCLibIFace *Self, pid_t, int *, int );
+/*  258 */	FILE *						AMYFUNC( *stdio_freopen)( struct AmyCLibIFace *Self, const char *, const char *, FILE * );
+/*  259 */	char *						AMYFUNC( *stdio_tempnam)( struct AmyCLibIFace *Self, const char *, const char * );
 
 };
 

@@ -205,7 +205,7 @@ IUP_API Ihandle *amy_IupInsert( struct libData *data, Ihandle *parent, Ihandle *
              child->iclass->name, amy_IupGetName( data, child),
              child->parent->iclass->name, amy_IupGetName( data, child->parent),
              parent->iclass->name, amy_IupGetName( data, parent)
-            );
+           );
 #endif
     return NULL;
   }
@@ -271,7 +271,7 @@ IUP_API Ihandle *amy_IupAppend( struct libData *data, Ihandle *parent, Ihandle *
              child->iclass->name, amy_IupGetName( data, child),
              child->parent->iclass->name, amy_IupGetName( data, child->parent),
              parent->iclass->name, amy_IupGetName( data, parent)
-            );
+           );
 #endif
     return NULL;
   }

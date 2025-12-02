@@ -72,7 +72,7 @@ S32 c;
 
 	if ( in->width )
 	{
-		cap = MIN( in->width, MAX_BUF );
+		cap = AMY_MIN( in->width, MAX_BUF );
 	}
 	else
 	{

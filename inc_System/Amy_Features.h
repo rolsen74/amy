@@ -15,8 +15,9 @@
 
 // --
 
-#define _TIME_BITS			64 
-#define _FILE_OFFSET_BITS	64
+#define _TIME_BITS				64 
+#define _FILE_OFFSET_BITS		64
+#define _LARGEFILE64_SOURCE		1
 
 // --
 

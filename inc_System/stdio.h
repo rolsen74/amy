@@ -104,7 +104,7 @@ size_t	fread( void *, size_t, size_t, FILE * );
 FILE *	freopen( const char *, const char *, FILE * );
 int		fscanf( FILE *, const char *, ... );
 int		fseek( FILE *, long int, int );
-int		fseeko( FILE *, off_t, int  );
+int		fseeko( FILE *, off_t, int );
 int		fsetpos( FILE *, const fpos_t * );
 long	ftell( FILE * );
 off_t	ftello( FILE * );
@@ -159,8 +159,11 @@ AMY_EXTERN_C_END
 
 AMY_EXTERN_C_BEGIN
 
-int		asprintf( char **, const char *, ... );
-int		vasprintf( char **, const char *, va_list );
+int			asprintf( char **, const char *, ... );
+int			vasprintf( char **, const char *, va_list );
+FILE *		fopen64( const char *, const char * );
+off64_t		ftello64( FILE * );
+int			fseeko64( FILE *, off64_t, int );
 
 AMY_EXTERN_C_END
 

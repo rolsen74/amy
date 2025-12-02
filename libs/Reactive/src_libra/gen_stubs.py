@@ -99,7 +99,7 @@ with open(REGISTRY) as f:
                     out.write(
                         f"LIBRA_STUB_VARARGS({ret}, {name}, {iface_func},\n"
                         f"    {decl_text},\n"
-                        f"    );\n"
+                        f"   );\n"
                     )
             else:
                 # Non-variadic: if there are no call args, do not emit the extra comma

@@ -128,6 +128,7 @@ clean:
 install:
 	$(COPY) $(BINDIR)/libc.a $(SDK)/lib/
 	$(COPY) $(BINDIR)/libm.a $(SDK)/lib/
+	$(COPY) $(BINDIR)/libnet.a $(SDK)/lib/
 	$(COPY) $(BINDIR)/libsocket.a $(SDK)/lib/
 	$(COPY) $(BINDIR)/libpthread.a $(SDK)/lib/
 
