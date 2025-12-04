@@ -14,7 +14,7 @@
 
 // --
 
-ssize_t AMYFUNC _generic_stdio_getline( struct AmyCLibIFace *Self, char **lineptr, size_t *n, FILE *stream )
+ssize_t AMY_FUNC _generic_stdio_getline( struct AmyCLibIFace *Self, char **lineptr, size_t *n, FILE *stream )
 {
 struct libData *data;
 ssize_t retval;

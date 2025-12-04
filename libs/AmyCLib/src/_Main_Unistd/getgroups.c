@@ -14,7 +14,7 @@
 
 // --
 
-int AMYFUNC _generic_unistd_getgroups( struct AmyCLibIFace *Self, int gidsetsize, gid_t grouplist[] )
+int AMY_FUNC _generic_unistd_getgroups( struct AmyCLibIFace *Self, int gidsetsize, gid_t grouplist[] )
 {
 struct libData *data;
 int retval;

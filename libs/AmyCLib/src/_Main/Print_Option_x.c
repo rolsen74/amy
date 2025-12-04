@@ -43,7 +43,7 @@
 // --
 // Option  x  Hexadecimal Lowercase
 
-static S32 AMYFUNC my_Option_x( struct PrintStruct *ps, struct Intern *in )
+static S32 AMY_FUNC my_Option_x( struct PrintStruct *ps, struct Intern *in )
 {
 unsigned long long v;
 const char *digit_encoding;

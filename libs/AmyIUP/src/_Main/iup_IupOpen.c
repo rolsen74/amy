@@ -12,7 +12,7 @@
 
 // --
 
-int AMYFUNC _Main_IupOpen( struct AmyIUPIFace *Self UNUSED, int *argc, char ***argv )
+int AMY_FUNC _Main_IupOpen( struct AmyIUPIFace *Self UNUSED, int *argc, char ***argv )
 {
 struct libData *data;
 int retval;

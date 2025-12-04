@@ -43,7 +43,7 @@
 
 #define BUFFER_SIZE		( 128 > sizeof( struct tm ) ? 128 : sizeof( struct tm ))
 
-struct tm * AMYFUNC _generic_time_localtime( struct AmyCLibIFace *Self, const time_t *time )
+struct tm * AMY_FUNC _generic_time_localtime( struct AmyCLibIFace *Self, const time_t *time )
 {
 struct libData *data;
 struct tm *retval;

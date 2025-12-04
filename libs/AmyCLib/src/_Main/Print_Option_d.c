@@ -43,7 +43,7 @@
 // --
 // Option  d  Decimal (signed)
 
-static S32 AMYFUNC my_Option_d( struct PrintStruct *ps, struct Intern *in )
+static S32 AMY_FUNC my_Option_d( struct PrintStruct *ps, struct Intern *in )
 {
 const char *digit_encoding;
 S32 retval;

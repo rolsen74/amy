@@ -14,7 +14,7 @@
 
 // --
 
-int AMYFUNC _generic_sys_time_gettimeofday( struct AmyCLibIFace *Self, struct timeval *tp, void *tzp )
+int AMY_FUNC _generic_sys_time_gettimeofday( struct AmyCLibIFace *Self, struct timeval *tp, void *tzp )
 {
 struct libData *data;
 int retval;

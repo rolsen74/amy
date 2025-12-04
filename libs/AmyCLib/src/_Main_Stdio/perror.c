@@ -14,7 +14,7 @@
 
 // --
 
-void AMYFUNC _generic_stdio_perror( struct AmyCLibIFace *Self, const char *s )
+void AMY_FUNC _generic_stdio_perror( struct AmyCLibIFace *Self, const char *s )
 {
 struct libData *data;
 

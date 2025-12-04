@@ -14,7 +14,7 @@
 
 // --
 
-uid_t AMYFUNC _generic_unistd_geteuid( struct AmyCLibIFace *Self )
+uid_t AMY_FUNC _generic_unistd_geteuid( struct AmyCLibIFace *Self )
 {
 struct libData *data;
 uid_t retval;

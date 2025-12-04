@@ -43,7 +43,7 @@
 // --
 //  Option  n  123
 
-static S32 AMYFUNC my_Option_n( struct PrintStruct *ps, struct Intern *in )
+static S32 AMY_FUNC my_Option_n( struct PrintStruct *ps, struct Intern *in )
 {
 S32 retval;
 

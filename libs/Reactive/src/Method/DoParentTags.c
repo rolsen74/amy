@@ -11,7 +11,7 @@
 
 // --
 
-U32 AMYFUNC _main_Method_DoParentTags(
+U32 AMY_FUNC _main_Method_DoParentTags(
 	struct ReactivePrivIFace *Self,
 	struct RA_PrivObject *obj,
 	... )

@@ -41,7 +41,7 @@
 
 // --
 
-int AMYFUNC _generic_stdlib_atoi( struct AmyCLibIFace *Self, const char *str )
+int AMY_FUNC _generic_stdlib_atoi( struct AmyCLibIFace *Self, const char *str )
 {
 struct libData *data;
 int retval;

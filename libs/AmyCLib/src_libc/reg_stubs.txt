@@ -9,9 +9,6 @@
 "void"			"__assert"		assert_assert			"file, line, func, expr"	"const char *file, int line, const char *func, const char *expr"
 
 
-# ctype			func-name		iface-name			args-call			args-decl					
-"char *"		ctime			time_ctime			"clock"				"const time_t *clock"
-
 
 # ctype			func-name		iface-name			args-call			args-decl					
 "int"			isalnum			ctype_isalnum			"c"				"int c"
@@ -45,6 +42,13 @@
 "int"			open			"fcntl_open"			"path, oflag"			"const char *path, int oflag, ..."
 
 
+
+# fcntl			func-name		iface-name			args-call			args-decl					
+"int"			ftw			"ftw_ftw"			"aa, bb, cc"			"const char *aa, int (*bb)(const char *, const struct stat *, int), int cc"
+"int"			nftw			"ftw_nftw"			"aa, bb, cc, dd"		"const char *aa, int (*bb)(const char *, const struct stat *, int, struct FTW *), int cc, int dd"
+
+
+
 # getopt		func-name		iface-name			args-call			args-decl					
 "int"			getopt			"getopt_getopt"			"argc, argv, ostr"		"int argc, char * const argv[], const char *ostr"
 "int"			getopt_long		"getopt_getopt_long"		"argc, argv, ostr, opts, idx"	"int argc, char * const argv[], const char *ostr, const struct option *opts, int *idx"
@@ -58,9 +62,20 @@
 
 
 
+
 # inttypes		func-name		iface-name			args-call			args-decl					
 "intmax_t"		strtoimax		"inttypes_strtoimax"		"nptr, endptr, base"		"const char *nptr, char **endptr, int base"
 "uintmax_t"		strtoumax		"inttypes_strtoumax"		"nptr, endptr, base"		"const char *nptr, char **endptr, int base"
+
+
+
+# langinfo		func-name		iface-name			args-call			args-decl					
+"char *"		nl_langinfo		"langinfo_nl_langinfo"		"aa"				"nl_item aa"
+
+
+
+# libgen		func-name		iface-name			args-call			args-decl					
+"char *"		basename		"libgen_basename"		"aa"				"char *aa"
 
 
 
@@ -85,6 +100,14 @@
 "double"		sin			math_d_sin			"x"				"double x"
 "double"		atan2			math_d_atan2			"y,x"				"double y, double x"
 "double"		fmod			math_d_fmod			"x,y"				"double x, double y"
+"double"		ldexp			math_d_ldexp			"x,y"				"double x, int y"
+
+
+
+
+# process		func-name		iface-name			args-call			args-decl					
+"int"			execvp			process_execvp			"aa, bb"			"const char *aa, char *const bb[]"
+
 
 
 
@@ -143,6 +166,7 @@
 "ssize_t"		getline			stdio_getline			"lineptr, n, stream"		"char **lineptr, size_t *n, FILE *stream"
 "ssize_t"		getdelim		stdio_getdelim			"lineptr, n, delimiter, stream"	"char **lineptr, size_t *n, int delimiter, FILE *stream"
 # printf		-- custom stub
+"int"			pclose			stdio_pclose			"aa"				"FILE *aa"
 "void"			perror			stdio_perror			"s"				"const char *s"
 "FILE *"		popen			stdio_popen			"aa, bb"			"const char *aa, const char *bb"
 "int"			putc			stdio_putc			"c, stream"			"int c, FILE *stream"
@@ -152,12 +176,14 @@
 "int"			puts			stdio_puts			"str"				"const char *str"
 "int"			remove			stdio_remove			"path"				"const char *path"
 "int"			rename			stdio_rename			"old, new"			"const char *old, const char *new"
-"void"			rewind			stdio_rewind			"stream"			"FILE *stream"
-"int"			setvbuf			stdio_setvbuf			"stream, buf, mode, size"	"FILE *stream, char *buf, int mode, size_t size"
-"char *"		tempnam			stdio_tempnam			"aa, bb"			"const char *aa, const char *bb"
+"void"			rewind			stdio_rewind			"aa"				"FILE *aa"
+"void"			setbuf			stdio_setbuf			"aa, bb"			"FILE *aa, char *bb"
+"int"			setvbuf			stdio_setvbuf			"aa, buf, mode, size"		"FILE *aa, char *buf, int mode, size_t size"
 # snprintf		-- custom stub
 # sprintf		-- custom stub
 # sscanf		-- custom stub
+"char *"		tempnam			stdio_tempnam			"aa, bb"			"const char *aa, const char *bb"
+"char *"		tmpnam			stdio_tmpnam			"aa"				"char *aa"
 "int"			ungetc			stdio_ungetc			"c, stream"			"int c, FILE *stream"
 "int"			vasprintf		stdio_vasprintf			"ret, fmt, ap"			"char **ret, const char *fmt, va_list ap"
 "int"			vfprintf		stdio_vfprintf			"stream, format, ap"		"FILE *stream, const char *format, va_list ap"
@@ -170,14 +196,19 @@
 
 
 
+
+
+
+
 # stdlib		func-name		iface-name			args-call			args-decl
 # _exit			-- custom stub
 # _Exit			-- custom stub
 # abort			-- custom stub
-"int"			atexit			stdlib_atexit			"func"				"void (*func)(void)"
-"double"		atof			stdlib_atof			"str"				"const char *str"
-"int"			atoi			stdlib_atoi			"str"				"const char *str"
-"long"			atol			stdlib_atol			"str"				"const char *str"
+"int"			atexit			stdlib_atexit			"aa"				"void (*aa)(void)"
+"double"		atof			stdlib_atof			"aa"				"const char *aa"
+"int"			atoi			stdlib_atoi			"aa"				"const char *aa"
+"long"			atol			stdlib_atol			"aa"				"const char *aa"
+"long long"		atoll			stdlib_atoll			"aa"				"const char *aa"
 "void *"		calloc			stdlib_calloc			"num, size"			"size_t num, size_t size"
 # exit			-- custom stub
 "void"			free			stdlib_free			"mem"				"void *mem"
@@ -188,7 +219,10 @@
 "void"			qsort			stdlib_qsort			"base, nel, width, compar"	"void *base, size_t nel, size_t width, int (*compar)(const void *, const void *)"
 "int"			rand			stdlib_rand			""				"void"
 "int"			rand_r			stdlib_rand_r			"seed"				"unsigned int *seed"
+"long"			random			stdlib_random			""				"void"
 "void *"		realloc			stdlib_realloc			"mem, size"			"void *mem, size_t size"
+"char *"		realpath		stdlib_realpath			"aa, bb"			"const char *aa, char *bb"
+"int"			setenv			stdlib_setenv			"aa, bb, cc"			"const char *aa, const char *bb, int cc"
 "void"			srand			stdlib_srand			"seed"				"unsigned int seed"
 "double"		strtod			stdlib_strtod			"str, ptr"			"const char *str, char **ptr"
 "float"			strtof			stdlib_strtof			"str, ptr"			"const char *str, char **ptr"
@@ -196,51 +230,63 @@
 "long long"		strtoll			stdlib_strtoll			"nptr, endptr, base"		"const char *nptr, char **endptr, int base"
 "unsigned long"		strtoul			stdlib_strtoul			"aa, bb, cc"			"const char *aa, char **bb, int cc"
 "unsigned long long"	strtoull		stdlib_strtoull			"aa, bb, cc"			"const char *aa, char **bb, int cc"
-"int"			system			stdlib_system			"str"				"const char *str"
+"int"			system			stdlib_system			"aa"				"const char *aa"
+"int"			unsetenv		stdlib_unsetenv			"aa"				"const char *aa"
+
+
 
 
 
 
 
 # string		func-name		iface-name			args-call			args-decl
-"int"			memcmp			string_memcmp			"s1, s2, len"			"const void *s1, const void *s2, size_t len"
+"int"			memcmp			string_memcmp			"aa, bb, len"			"const void *aa, const void *bb, size_t len"
 "void *"		memchr			string_memchr			"aa, bb, cc"			"const void *aa, int bb, size_t cc"
 "void *"		memcpy			string_memcpy			"dst, src, len"			"void *dst, const void *src, size_t len"
+"void *"		memmem			string_memmem			"aa, bb, cc, dd"		"const void *aa, size_t bb, const void *cc, size_t dd"
 "void *"		memmove			string_memmove			"dst, src, len"			"void *dst, const void *src, size_t len"
 "void *"		memrchr			string_memrchr			"aa, bb, cc"			"const void *aa, int bb, size_t cc"
 "void *"		memset			string_memset			"mem, val, len"			"void *mem, int val, size_t len"
-"char *"		stpcpy			string_stpcpy			"s1, s2"			"char *s1, const char *s2"
+"char *"		stpcpy			string_stpcpy			"aa, bb"			"char *aa, const char *bb"
+"char *"		stpncpy			string_stpncpy			"aa, bb, cc"			"char *aa, const char *bb, size_t cc"
 "char *"		strcat			string_strcat			"dst, src"			"char *dst, const char *src"
 "char *"		strchr			string_strchr			"str, c"			"const char *str, int c"
-"int"			strcmp			string_strcmp			"s1, s2"			"const char *s1, const char *s2"
+"int"			strcmp			string_strcmp			"aa, bb"			"const char *aa, const char *bb"
 "int"			strcoll			string_strcoll			"aa, bb"			"const char *aa, const char *bb"
 "char *"		strcpy			string_strcpy			"dst, src"			"char *dst, const char *src"
-"size_t"		strspn			string_strspn			"s1, s2"			"const char *s1, const char *s2"
-"size_t"		strcspn			string_strcspn			"s1, s2"			"const char *s1, const char *s2"
+"size_t"		strspn			string_strspn			"aa, bb"			"const char *aa, const char *bb"
+"size_t"		strcspn			string_strcspn			"aa, bb"			"const char *aa, const char *bb"
 "char *"		strdup			string_strdup			"str"				"const char *str"
 "char *"		strerror		string_strerror			"errnum"			"int errnum"
 "int"			strerror_r		string_strerror_r		"errnum, buf, buflen"		"int errnum, char *buf, size_t buflen"
 "size_t"		strlen			string_strlen			"str"				"const char *str"
-"char *"		strncat			string_strncat			"s1, s2, max"			"char *s1, const char *s2, size_t max"
-"int"			strncmp			string_strncmp			"s1, s2, max"			"const char *s1, const char *s2, size_t max"
+"char *"		strncat			string_strncat			"aa, bb, max"			"char *aa, const char *bb, size_t max"
+"int"			strncmp			string_strncmp			"aa, bb, max"			"const char *aa, const char *bb, size_t max"
 "char *"		strncpy			string_strncpy			"dst, src, max"			"char *dst, const char *src, size_t max"
 "char *"		strndup			string_strndup			"str, max"			"const char *str, size_t max"
 "size_t"		strnlen			string_strnlen			"str, max"			"const char *str, size_t max"
-"char *"		strpbrk			string_strpbrk			"s1, s2"			"const char *s1, const char *s2"
+"char *"		strpbrk			string_strpbrk			"aa, bb"			"const char *aa, const char *bb"
 "char *"		strrchr			string_strrchr			"aa, bb"			"const char *aa, int bb"
 "char *"		strsignal		string_strsignal		"aa"				"int aa"
-"size_t"		strspn			string_strspn			"s1, s2"			"const char *s1, const char *s2"
-"char *"		strstr			string_strstr			"s1, s2"			"const char *s1, const char *s2"
-"char *"		strtok			string_strtok			"s1, s2"			"char *s1, const char *s2"
+"size_t"		strspn			string_strspn			"aa, bb"			"const char *aa, const char *bb"
+"char *"		strstr			string_strstr			"aa, bb"			"const char *aa, const char *bb"
+"char *"		strtok			string_strtok			"aa, bb"			"char *aa, const char *bb"
+
+
+
 
 
 
 
 
 # strings		func-name		iface-name			args-call			args-decl
+"int"			bcmp			strings_bcmp			"aa, bb, cc"			"const void *aa, const void *bb, size_t cc"
+"void"			bcopy			strings_bcopy			"aa, bb, cc"			"const void *aa, void *bb, size_t cc"
 "void"			bzero			strings_bzero			"mem, len"			"void *mem, size_t len"
-"int"			strcasecmp		strings_strcasecmp		"s1, s2"			"const char *s1, const char *s2"
-"int"			strncasecmp		strings_strncasecmp		"s1, s2, len"			"const char *s1, const char *s2, size_t len"
+"int"			strcasecmp		strings_strcasecmp		"aa, bb"			"const char *aa, const char *bb"
+"int"			strncasecmp		strings_strncasecmp		"aa, bb, len"			"const char *aa, const char *bb, size_t len"
+
+
 
 
 # time			func-name		iface-name			args-call			args-decl
@@ -254,21 +300,28 @@
 "struct tm *"		gmtime_r		time_gmtime_r			"time, tm"			"const time_t *time, struct tm *tm"
 "time_t"		mktime			time_mktime			"tm"				"struct tm *tm"
 "clock_t"		clock			time_clock			""				"void"
+"char *"		ctime			time_ctime			"clock"				"const time_t *clock"
+
 
 
 # unistd		func-name		iface-name			args-call			args-decl
 "int"			access			unistd_access			"path, amode"			"const char *path, int amode"
+"unsigned"		alarm			unistd_alarm			"aa"				"unsigned aa"
 "int"			chdir			unistd_chdir			"aa"				"const char *aa"
 "int"			chown			unistd_chown			"aa, bb, cc"			"const char *aa, uid_t bb, gid_t cc"
 "int"			close			unistd_close			"fildes"			"int fildes"
 "char *"		crypt			unistd_crypt			"aa, bb"			"const char *aa, const char *bb"
+"int"			dup			unistd_dup			"aa"				"int aa"
+"int"			dup2			unistd_dup2			"aa, bb"			"int aa, int bb"
 "int"			execv			unistd_execv			"aa, bb"			"const char *aa, char * const bb[]"
 "int"			execvp			unistd_execvp			"aa, bb"			"const char *aa, char * const bb[]"
+"pid_t"			fork			unistd_fork			""				"void"
 "int"			fsync			unistd_fsync			"aa"				"int aa"
 "char *"		getcwd			unistd_getcwd			"buf, size"			"char *buf, size_t size"
 "uid_t"			geteuid			unistd_geteuid			""				"void"
 "gid_t"			getegid			unistd_getegid			""				"void"
 "int"			getgroups		unistd_getgroups		"gidsetsize, grouplist"		"int gidsetsize, gid_t grouplist[]"
+"int"			getpagesize		unistd_getpagesize		""				"void"
 "pid_t"			getpid			unistd_getpid			""				"void"
 "int"			gethostname		unistd_gethostname		"aa, bb"			"char *aa, size_t bb"
 "uid_t"			getuid			unistd_getuid			""				"void"
@@ -286,6 +339,12 @@
 "int"			unlink			unistd_unlink			"path"				"const char *path"
 "int"			usleep			unistd_usleep			"aa"				"useconds_t aa"
 "ssize_t"		write			unistd_write			"aa, bb, cc"			"int aa, const void *bb, size_t cc"
+
+
+
+
+
+
 
 
 

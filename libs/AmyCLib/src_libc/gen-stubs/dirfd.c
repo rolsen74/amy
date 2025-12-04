@@ -8,6 +8,7 @@
 */
 
 #include "Stub.h"
+#include <dirent.h>
 
 LIBC_STUB(int, dirfd, dirent_dirfd,
     (DIR *dirp),

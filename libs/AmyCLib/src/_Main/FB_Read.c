@@ -70,7 +70,7 @@ bailout:
 // --
 
 // Same as __fgetc
-S32 AMYFUNC _generic__Priv_FB_Read( struct AmyCLibIFace *Self, struct FileStruct *file )
+S32 AMY_FUNC _generic__Priv_FB_Read( struct AmyCLibIFace *Self, struct FileStruct *file )
 {
 S32 retval;
 

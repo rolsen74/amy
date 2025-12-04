@@ -8,6 +8,7 @@
 */
 
 #include "Stub.h"
+#include <grp.h>
 
 LIBC_STUB(void, setgrent, grp_setgrent,
     (void)

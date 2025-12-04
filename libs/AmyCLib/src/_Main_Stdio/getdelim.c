@@ -14,7 +14,7 @@
 
 // --
 
-ssize_t AMYFUNC _generic_stdio_getdelim( struct AmyCLibIFace *Self, char **lineptr, size_t *n, int delimiter, FILE *stream )
+ssize_t AMY_FUNC _generic_stdio_getdelim( struct AmyCLibIFace *Self, char **lineptr, size_t *n, int delimiter, FILE *stream )
 {
 struct libData *data;
 ssize_t retval;

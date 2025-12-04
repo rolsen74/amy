@@ -14,7 +14,7 @@
 
 // --
 
-struct lconv * AMYFUNC _generic_locale_localeconv( struct AmyCLibIFace *Self )
+struct lconv * AMY_FUNC _generic_locale_localeconv( struct AmyCLibIFace *Self )
 {
 struct libData *data;
 struct lconv *retval;

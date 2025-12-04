@@ -11,5 +11,5 @@
 #include <string.h>
 
 LIBC_STUB(int, strncmp, string_strncmp,
-    (const char *s1, const char *s2, size_t max),
-    s1, s2, max);
+    (const char *aa, const char *bb, size_t max),
+    aa, bb, max);

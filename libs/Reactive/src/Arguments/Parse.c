@@ -19,7 +19,7 @@
 
 // --
 
-PTR AMYFUNC _main_Arguments_ParseList( struct ReactivePrivIFace *Self, struct RAArguments *Args, struct TagItem *taglist )
+PTR AMY_FUNC _main_Arguments_ParseList( struct ReactivePrivIFace *Self, struct RAArguments *Args, struct TagItem *taglist )
 {
 char **argv;
 U32 *errptr;
@@ -86,7 +86,7 @@ bailout:
 
 // --
 
-PTR AMYFUNC _main_Arguments_ParseTags( struct ReactivePrivIFace *Self, struct RAArguments *Args, ... )
+PTR AMY_FUNC _main_Arguments_ParseTags( struct ReactivePrivIFace *Self, struct RAArguments *Args, ... )
 {
 struct TagItem *taglist;
 va_list ap;

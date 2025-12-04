@@ -27,7 +27,7 @@
 /****************************************************************************/
 
 // Amiga Include
-#include <devices/timer.h>
+//#include <devices/timer.h>
 
 #include <sys/types.h>
 #include <sys/select.h>

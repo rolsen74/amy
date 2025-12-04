@@ -14,7 +14,7 @@
 
 // --
 
-int AMYFUNC _generic_unistd_link( struct AmyCLibIFace *Self, const char *path1, const char *path2 )
+int AMY_FUNC _generic_unistd_link( struct AmyCLibIFace *Self, const char *path1, const char *path2 )
 {
 struct libData *data;
 int retval;

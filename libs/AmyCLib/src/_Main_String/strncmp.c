@@ -41,7 +41,7 @@
 
 // --
 
-int AMYFUNC _generic_string_strncmp( struct AmyCLibIFace *Self, const char *s1, const char *s2, size_t max )
+int AMY_FUNC _generic_string_strncmp( struct AmyCLibIFace *Self, const char *s1, const char *s2, size_t max )
 {
 int retval;
 U32 pos;

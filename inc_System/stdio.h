@@ -112,9 +112,7 @@ int		ftrylockfile( FILE * );
 void	funlockfile( FILE * );
 size_t	fwrite( const void *, size_t, size_t, FILE * );
 int		getc( FILE * );
-int		getc_unlocked( FILE * );
 int		getchar( void );
-int		getchar_unlocked( void );
 ssize_t	getdelim( char **, size_t *, int, FILE * );
 ssize_t	getline( char **, size_t *, FILE * );
 char *	gets( char * );
@@ -125,8 +123,6 @@ FILE *	popen( const char *, const char * );
 int		printf( const char *, ... );
 int		putc( int, FILE * );
 int		putchar( int );
-int		putc_unlocked( int, FILE * );
-int		putchar_unlocked( int );
 int		puts( const char * );
 int		remove( const char * );
 int		rename( const char *, const char * );
@@ -164,6 +160,29 @@ int			vasprintf( char **, const char *, va_list );
 FILE *		fopen64( const char *, const char * );
 off64_t		ftello64( FILE * );
 int			fseeko64( FILE *, off64_t, int );
+
+AMY_EXTERN_C_END
+
+/****************************************************************************/
+// glibc
+
+AMY_EXTERN_C_BEGIN
+
+void	clearerr_unlocked( FILE * );
+int		getc_unlocked( FILE * );
+int		getchar_unlocked( void );
+int		putc_unlocked( int, FILE * );
+int		putchar_unlocked( int );
+int		feof_unlocked( FILE * );
+int		ferror_unlocked( FILE * );
+int		fileno_unlocked( FILE * );
+int		fflush_unlocked( FILE * );
+int		fgetc_unlocked( FILE * );
+int		fputc_unlocked( int, FILE * );
+size_t	fread_unlocked( void *, size_t, size_t,FILE * );
+size_t	fwrite_unlocked( const void *, size_t, size_t,FILE * );
+char *	fgets_unlocked( char *, int, FILE * );
+int		fputs_unlocked( const char *, FILE * );
 
 AMY_EXTERN_C_END
 

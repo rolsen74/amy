@@ -8,6 +8,7 @@
 */
 
 #include "Stub.h"
+#include <sys/stat.h>
 
 LIBC_STUB(int, chmod, sys_stat_chmod,
     (const char *path, mode_t mode),

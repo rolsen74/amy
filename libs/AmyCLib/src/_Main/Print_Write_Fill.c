@@ -42,7 +42,7 @@
 
 // --
 
-static enum myWriteStat AMYFUNC my_writefill( struct PrintStruct *ps, struct Intern *in, char chr, S32 size )
+static enum myWriteStat AMY_FUNC my_writefill( struct PrintStruct *ps, struct Intern *in, char chr, S32 size )
 {
 enum myWriteStat stat;
 

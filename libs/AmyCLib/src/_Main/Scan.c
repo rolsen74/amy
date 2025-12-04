@@ -54,7 +54,7 @@
 
 // --
 
-void AMYFUNC _generic__Priv_Scan( struct AmyCLibIFace *Self, struct ScanStruct *ss )
+void AMY_FUNC _generic__Priv_Scan( struct AmyCLibIFace *Self, struct ScanStruct *ss )
 {
 struct Intern in;
 S32 c;
@@ -568,7 +568,7 @@ int retval;
  * Internal, unlocked version of vfscanf
  */
 // static int __svfscanf( struct AmyCLibIFace *Self, FILE *fp, const char *fmt0, va_list ap )
-void AMYFUNC _generic__Priv_Scan( struct AmyCLibIFace *Self, struct ScanStruct *ss )
+void AMY_FUNC _generic__Priv_Scan( struct AmyCLibIFace *Self, struct ScanStruct *ss )
 {
 //	FILE *file = (PTR) fp;
 FILE *file;

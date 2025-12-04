@@ -44,6 +44,8 @@ struct _AmyCLibPublic
 //	char *			ra_tzname;		// Time.h
 
 	const fenv_t	ra_fenv;		// FEnv.h
+
+	char **			ra_Environ;		// Unistd.h
 };
 
 // --

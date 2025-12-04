@@ -41,7 +41,7 @@
 
 // --
 
-time_t AMYFUNC _generic_time_time( struct AmyCLibIFace *Self, time_t *ptr )
+time_t AMY_FUNC _generic_time_time( struct AmyCLibIFace *Self, time_t *ptr )
 {
 struct DateStamp ds;
 time_t retval;

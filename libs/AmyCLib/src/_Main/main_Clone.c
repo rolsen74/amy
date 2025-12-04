@@ -11,7 +11,7 @@
 
 // --
 
-struct Interface * AMYFUNC _Main_Clone( struct AmyCLibIFace *Self )
+struct Interface * AMY_FUNC _Main_Clone( struct AmyCLibIFace *Self )
 {
 struct AmyCLibIFace *IFace;
 struct libData *data;

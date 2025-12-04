@@ -8,6 +8,7 @@
 */
 
 #include "Stub.h"
+#include <grp.h>
 
 LIBC_STUB(struct group *, getgrgid, grp_getgrgid,
     (gid_t id),

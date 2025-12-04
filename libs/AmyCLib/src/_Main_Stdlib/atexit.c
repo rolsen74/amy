@@ -14,7 +14,7 @@
 
 // --
 
-int AMYFUNC _generic_stdlib_atexit( struct AmyCLibIFace *Self, void (*func)(void) )
+int AMY_FUNC _generic_stdlib_atexit( struct AmyCLibIFace *Self, void (*func)(void) )
 {
 struct libData *data;
 int retval;

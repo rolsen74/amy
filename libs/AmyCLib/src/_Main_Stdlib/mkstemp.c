@@ -14,7 +14,7 @@
 
 // --
 
-int AMYFUNC _generic_stdlib_mkstemp( struct AmyCLibIFace *Self, char *template )
+int AMY_FUNC _generic_stdlib_mkstemp( struct AmyCLibIFace *Self, char *template )
 {
 struct libData *data;
 int retval;

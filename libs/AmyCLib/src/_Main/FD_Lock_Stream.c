@@ -42,7 +42,7 @@
 // --
 // File Descriptor
 
-struct FileStruct * AMYFUNC _generic__Priv_FDLockStream( struct AmyCLibIFace *Self, struct FileStruct *file )
+struct FileStruct * AMY_FUNC _generic__Priv_FDLockStream( struct AmyCLibIFace *Self, struct FileStruct *file )
 {
 struct FileStruct *retval;
 //FILE *file;

@@ -14,7 +14,7 @@
 
 // --
 
-struct dirent * AMYFUNC _generic_dirent_readdir( struct AmyCLibIFace *Self, DIR *dirp )
+struct dirent * AMY_FUNC _generic_dirent_readdir( struct AmyCLibIFace *Self, DIR *dirp )
 {
 struct libData *data;
 struct dirent *retval;

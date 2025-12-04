@@ -102,7 +102,7 @@ U8 *data;
 
 // --
 
-struct RA_PrivClass * AMYFUNC _main_Misc_Plugin_Open( struct ReactivePrivIFace *Self, STR name )
+struct RA_PrivClass * AMY_FUNC _main_Misc_Plugin_Open( struct ReactivePrivIFace *Self, STR name )
 {
 struct RA_PrivClass *retval;
 struct RA_PrivClass *cl;

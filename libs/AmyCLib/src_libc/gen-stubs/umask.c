@@ -8,6 +8,7 @@
 */
 
 #include "Stub.h"
+#include <sys/stat.h>
 
 LIBC_STUB(mode_t, umask, sys_stat_umask,
     (mode_t cmask),

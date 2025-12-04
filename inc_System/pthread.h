@@ -44,7 +44,7 @@
 
 /****************************************************************************/
 
-#include <proto/exec.h>
+//#include <proto/exec.h>
 #include <sys/types.h>
 #include <time.h>
 #include <sched.h>

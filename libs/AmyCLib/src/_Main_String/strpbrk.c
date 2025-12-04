@@ -41,7 +41,7 @@
 
 // --
 
-char * AMYFUNC _generic_string_strpbrk( struct AmyCLibIFace *Self, const char *s, const char *set )
+char * AMY_FUNC _generic_string_strpbrk( struct AmyCLibIFace *Self, const char *s, const char *set )
 {
 struct libData *data;
 char *retval;

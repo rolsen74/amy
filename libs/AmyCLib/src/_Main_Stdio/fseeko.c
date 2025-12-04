@@ -41,7 +41,7 @@
 
 // --
 
-int AMYFUNC _generic_stdio_fseeko( struct AmyCLibIFace *Self, FILE *stream, off_t offset, int wherefrom )
+int AMY_FUNC _generic_stdio_fseeko( struct AmyCLibIFace *Self, FILE *stream, off_t offset, int wherefrom )
 {
 struct FileStruct *file;
 struct libData *data;

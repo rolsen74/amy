@@ -14,7 +14,7 @@
 
 // --
 
-size_t AMYFUNC _generic_stdio_fwrite( struct AmyCLibIFace *Self, const void *ptr, size_t size, size_t nitems, FILE *stream )
+size_t AMY_FUNC _generic_stdio_fwrite( struct AmyCLibIFace *Self, const void *ptr, size_t size, size_t nitems, FILE *stream )
 {
 struct libData *data;
 size_t retval;

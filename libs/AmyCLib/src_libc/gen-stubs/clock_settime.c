@@ -8,6 +8,7 @@
 */
 
 #include "Stub.h"
+#include <time.h>
 
 LIBC_STUB(int, clock_settime, time_clock_settime,
     (clockid_t aa, const struct timespec *bb),

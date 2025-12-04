@@ -8,6 +8,7 @@
 */
 
 #include "Stub.h"
+#include <sys/wait.h>
 
 LIBC_STUB(pid_t, waitpid, sys_wait_waitpid,
     (pid_t aa, int *bb, int cc),

@@ -32,7 +32,7 @@ static const U8 table[256] =
 	0xd0, 0xd1, 0xd2, 0xd3, 0xd4, 0xd5, 0xd6, 0xf7, 0xd8, 0xd9, 0xda, 0xdb, 0xdc, 0xdd, 0xde, 0xff,		// F -
 };
 
-int AMYFUNC _generic_ctype_toupper( struct AmyCLibIFace *Self UNUSED, int c )
+int AMY_FUNC _generic_ctype_toupper( struct AmyCLibIFace *Self UNUSED, int c )
 {
 //	DOFUNCTIONPRINTF( IExec->DebugPrintF( "_generic_ctype_toupper : c %ld\n", c );
 

@@ -41,7 +41,7 @@
 
 // --
 
-sighandler_t AMYFUNC _generic_signal_signal( struct AmyCLibIFace *Self, int sig, sighandler_t func )
+sighandler_t AMY_FUNC _generic_signal_signal( struct AmyCLibIFace *Self, int sig, sighandler_t func )
 {
 struct libData *data;
 sighandler_t retval;

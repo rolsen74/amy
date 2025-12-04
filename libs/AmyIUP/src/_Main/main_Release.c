@@ -12,7 +12,7 @@
 
 // --
 
-U32 AMYFUNC _Main_Release( struct AmyIUPIFace *Self )
+U32 AMY_FUNC _Main_Release( struct AmyIUPIFace *Self )
 {
 	IExec->DebugPrintF( ":: AmyIUP :: _Main_Release ::\n" );
 

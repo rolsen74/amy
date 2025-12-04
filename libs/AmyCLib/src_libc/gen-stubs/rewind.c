@@ -11,5 +11,5 @@
 #include <stdio.h>
 
 LIBC_STUB(void, rewind, stdio_rewind,
-    (FILE *stream),
-    stream);
+    (FILE *aa),
+    aa);

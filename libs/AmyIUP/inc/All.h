@@ -119,21 +119,21 @@ extern const struct TagItem Main_Tags[];
 
 void ROMFree( struct libBase *libBase );
 
-U32	AMYFUNC _manager_Obtain( struct LibraryManagerInterface *Self );
-U32	AMYFUNC _manager_Release( struct LibraryManagerInterface *Self );
-PTR	AMYFUNC _manager_Open( struct LibraryManagerInterface *Self, U32 version );
-PTR AMYFUNC _manager_Close( struct LibraryManagerInterface *Self );
-PTR	AMYFUNC _manager_Expunge( struct LibraryManagerInterface *Self );
+U32	AMY_FUNC _manager_Obtain( struct LibraryManagerInterface *Self );
+U32	AMY_FUNC _manager_Release( struct LibraryManagerInterface *Self );
+PTR	AMY_FUNC _manager_Open( struct LibraryManagerInterface *Self, U32 version );
+PTR AMY_FUNC _manager_Close( struct LibraryManagerInterface *Self );
+PTR	AMY_FUNC _manager_Expunge( struct LibraryManagerInterface *Self );
 
-U32	AMYFUNC _Main_Obtain( struct AmyIUPIFace *Self );
-U32	AMYFUNC _Main_Release( struct AmyIUPIFace *Self );
-PTR AMYFUNC _Main_Clone( struct AmyIUPIFace *Self );
-U32	AMYFUNC _Main_Expunge( struct AmyIUPIFace *Self );
+U32	AMY_FUNC _Main_Obtain( struct AmyIUPIFace *Self );
+U32	AMY_FUNC _Main_Release( struct AmyIUPIFace *Self );
+PTR AMY_FUNC _Main_Clone( struct AmyIUPIFace *Self );
+U32	AMY_FUNC _Main_Expunge( struct AmyIUPIFace *Self );
 
-void AMYFUNC _Main_IupClose( struct AmyIUPIFace *Self );
-int	AMYFUNC _Main_IupMainLoop( struct AmyIUPIFace *Self );
-int	AMYFUNC _Main_IupOpen( struct AmyIUPIFace *Self, int *argc, char ***argv );
-void AMYFUNC _Main_IupSetGlobal( struct AmyIUPIFace *Self, const char *name, const char *value );
+void AMY_FUNC _Main_IupClose( struct AmyIUPIFace *Self );
+int	AMY_FUNC _Main_IupMainLoop( struct AmyIUPIFace *Self );
+int	AMY_FUNC _Main_IupOpen( struct AmyIUPIFace *Self, int *argc, char ***argv );
+void AMY_FUNC _Main_IupSetGlobal( struct AmyIUPIFace *Self, const char *name, const char *value );
 
 // iup amiga specfic
 //void				iupdrvTabsInitClass( struct libData *data, Iclass *ic );

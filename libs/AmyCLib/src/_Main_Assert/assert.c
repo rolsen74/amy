@@ -41,7 +41,7 @@
 
 // --
 
-void AMYFUNC _generic_assert_assert(
+void AMY_FUNC _generic_assert_assert(
 	struct AmyCLibIFace *Self,
 	const char *filename,
 	int linenumber,

@@ -14,7 +14,7 @@
 
 // --
 
-int AMYFUNC _generic_utime_utime( struct AmyCLibIFace *Self, const char *str, const struct utimbuf *buf )
+int AMY_FUNC _generic_utime_utime( struct AmyCLibIFace *Self, const char *str, const struct utimbuf *buf )
 {
 struct libData *data;
 int retval;

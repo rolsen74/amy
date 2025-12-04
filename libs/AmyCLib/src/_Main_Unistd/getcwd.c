@@ -14,7 +14,7 @@
 
 // --
 
-char * AMYFUNC _generic_unistd_getcwd( struct AmyCLibIFace *Self, char *buf, size_t size )
+char * AMY_FUNC _generic_unistd_getcwd( struct AmyCLibIFace *Self, char *buf, size_t size )
 {
 struct libData *data;
 char *retval;

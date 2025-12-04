@@ -37,7 +37,7 @@ static const double tiny	= 1.0e-300;
 
 // --
 
-double AMYFUNC _generic_math_d_scalbn( struct AmyCLibIFace *Self, double x, int n )
+double AMY_FUNC _generic_math_d_scalbn( struct AmyCLibIFace *Self, double x, int n )
 {
 union DoubleBits val;
 uint64 xx;

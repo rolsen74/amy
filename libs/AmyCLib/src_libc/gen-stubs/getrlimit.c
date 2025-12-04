@@ -8,6 +8,7 @@
 */
 
 #include "Stub.h"
+#include <sys/resource.h>
 
 LIBC_STUB(int, getrlimit, sys_resource_getrlimit,
     (int aa, struct rlimit *bb),

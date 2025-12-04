@@ -11,7 +11,7 @@
 
 // --
 
-U32 AMYFUNC _main_Class_Add( struct ReactivePrivIFace *Self, struct RA_PrivClass *cl, STR PubName )
+U32 AMY_FUNC _main_Class_Add( struct ReactivePrivIFace *Self, struct RA_PrivClass *cl, STR PubName )
 {
 struct libBase *libBase;
 U32 retval;

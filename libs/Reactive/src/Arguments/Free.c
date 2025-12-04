@@ -11,7 +11,7 @@
 
 // --
 
-U32 AMYFUNC _main_Arguments_Free( struct ReactivePrivIFace *Self UNUSED, PTR Args )
+U32 AMY_FUNC _main_Arguments_Free( struct ReactivePrivIFace *Self UNUSED, PTR Args )
 {
 struct ArgStruct *as = Args;
 U32 retval;

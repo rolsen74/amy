@@ -8,6 +8,7 @@
 */
 
 #include "Stub.h"
+#include <grp.h>
 
 LIBC_STUB(struct group *, getgrnam, grp_getgrnam,
     (const char *name),

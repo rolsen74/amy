@@ -11,7 +11,7 @@
 
 // --
 
-S32 AMYFUNC _main_Misc_Valid_Class_Name( struct ReactivePrivIFace *Self, STR name )
+S32 AMY_FUNC _main_Misc_Valid_Class_Name( struct ReactivePrivIFace *Self, STR name )
 {
 struct RA_PrivClass *cl;
 struct libBase *libBase;

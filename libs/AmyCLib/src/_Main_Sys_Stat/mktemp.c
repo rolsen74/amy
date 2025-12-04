@@ -14,7 +14,7 @@
 
 // --
 
-char * AMYFUNC _generic_sys_stat_mktemp( struct AmyCLibIFace *Self, char *template )
+char * AMY_FUNC _generic_sys_stat_mktemp( struct AmyCLibIFace *Self, char *template )
 {
 struct libData *data;
 char *retval;

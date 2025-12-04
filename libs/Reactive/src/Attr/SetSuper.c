@@ -11,7 +11,7 @@
 
 // --
 
-U32 AMYFUNC _main_Attr_SetSuper( struct ReactivePrivIFace *Self, struct RA_PrivObject *obj, U32 AttrID, U32 AttrValue )
+U32 AMY_FUNC _main_Attr_SetSuper( struct ReactivePrivIFace *Self, struct RA_PrivObject *obj, U32 AttrID, U32 AttrValue )
 {
 struct RAP_Set msg;
 U32 retval;

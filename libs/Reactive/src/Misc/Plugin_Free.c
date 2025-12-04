@@ -11,7 +11,7 @@
 
 // --
 
-S32 AMYFUNC _main_Misc_Plugin_Free( struct ReactivePrivIFace *Self UNUSED, struct RA_Plugin *rap )
+S32 AMY_FUNC _main_Misc_Plugin_Free( struct ReactivePrivIFace *Self UNUSED, struct RA_Plugin *rap )
 {
 U32 result;
 S32 retval;

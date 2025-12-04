@@ -11,7 +11,7 @@
 
 // --
 
-U32 AMYFUNC _main_Misc_XGet( struct ReactivePrivIFace *Self, struct RA_PrivObject *obj, U32 AttrID )
+U32 AMY_FUNC _main_Misc_XGet( struct ReactivePrivIFace *Self, struct RA_PrivObject *obj, U32 AttrID )
 {
 U32 retval;
 

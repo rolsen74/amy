@@ -14,7 +14,7 @@
 
 // --
 
-int AMYFUNC _generic_string_strerror_r( struct AmyCLibIFace *Self, int errnum, char *buf, size_t buflen )
+int AMY_FUNC _generic_string_strerror_r( struct AmyCLibIFace *Self, int errnum, char *buf, size_t buflen )
 {
 struct libData *data;
 int retval;

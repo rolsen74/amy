@@ -11,7 +11,7 @@
 
 // --
 
-PTR AMYFUNC _main_Misc_LoadFile_32( struct ReactivePrivIFace *Self UNUSED, STR FileName, U32 *FileSize )
+PTR AMY_FUNC _main_Misc_LoadFile_32( struct ReactivePrivIFace *Self UNUSED, STR FileName, U32 *FileSize )
 {
 U64 size;
 U8 *mem;

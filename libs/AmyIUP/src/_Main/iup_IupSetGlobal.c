@@ -12,7 +12,7 @@
 
 // --
 
-void AMYFUNC _Main_IupSetGlobal( struct AmyIUPIFace *Self, const char *name, const char *value )
+void AMY_FUNC _Main_IupSetGlobal( struct AmyIUPIFace *Self, const char *name, const char *value )
 {
 struct libData *data;
 

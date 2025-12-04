@@ -8,6 +8,7 @@
 */
 
 #include "Stub.h"
+#include <dirent.h>
 
 LIBC_STUB(DIR *, fdopendir, dirent_fdopendir,
     (int fildes),

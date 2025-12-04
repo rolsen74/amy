@@ -8,6 +8,7 @@
 */
 
 #include "Stub.h"
+#include <dirent.h>
 
 LIBC_STUB(void, rewinddir, dirent_rewinddir,
     (DIR *dirp),

@@ -42,7 +42,7 @@
 // --
 // File Descriptor
 
-void AMYFUNC _generic__Priv_FDUnlock( struct AmyCLibIFace *Self, struct FileStruct *file )
+void AMY_FUNC _generic__Priv_FDUnlock( struct AmyCLibIFace *Self, struct FileStruct *file )
 {
 //FILE *file;
 struct libData *data;

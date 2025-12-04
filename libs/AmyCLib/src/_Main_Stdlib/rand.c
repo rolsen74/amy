@@ -41,7 +41,7 @@
 
 // --
 
-int AMYFUNC _generic_stdlib_rand( struct AmyCLibIFace *Self )
+int AMY_FUNC _generic_stdlib_rand( struct AmyCLibIFace *Self )
 {
 struct libData *data;
 int retval;

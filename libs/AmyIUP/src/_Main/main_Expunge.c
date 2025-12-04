@@ -11,7 +11,7 @@
 
 // --
 
-U32 AMYFUNC _Main_Expunge( struct AmyIUPIFace *Self )
+U32 AMY_FUNC _Main_Expunge( struct AmyIUPIFace *Self )
 {
 struct libData *data;
 U32 retval;

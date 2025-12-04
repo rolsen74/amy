@@ -13,7 +13,7 @@ extern const struct ClassType ClassTypes[];
 
 // --
 
-struct RA_PrivObject * AMYFUNC _main_Object_CreateTags(
+struct RA_PrivObject * AMY_FUNC _main_Object_CreateTags(
 	struct ReactivePrivIFace *Self,
 	struct RA_PrivClass *Class,
 	STR ClassName,
@@ -35,7 +35,7 @@ va_list ap;
 
 // --
 
-struct RA_PrivObject * AMYFUNC _main_Object_CreateList(
+struct RA_PrivObject * AMY_FUNC _main_Object_CreateList(
 	struct ReactivePrivIFace *Self,
 	struct RA_PrivClass *Class,
 	STR ClassName,

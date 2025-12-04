@@ -14,7 +14,7 @@
 
 // --
 
-int AMYFUNC _generic_dirent_dirfd( struct AmyCLibIFace *Self, DIR *dirp )
+int AMY_FUNC _generic_dirent_dirfd( struct AmyCLibIFace *Self, DIR *dirp )
 {
 struct libData *data;
 int retval;

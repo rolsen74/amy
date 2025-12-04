@@ -14,7 +14,7 @@
 
 // --
 
-size_t AMYFUNC _generic_wchar_mbstowcs( struct AmyCLibIFace *Self, wchar_t *pwcs, const char *s, size_t n )
+size_t AMY_FUNC _generic_wchar_mbstowcs( struct AmyCLibIFace *Self, wchar_t *pwcs, const char *s, size_t n )
 {
 struct libData *data;
 size_t retval;

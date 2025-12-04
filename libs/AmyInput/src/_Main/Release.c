@@ -11,7 +11,7 @@
 
 // --
 
-U32 AMYFUNC _Main_Release( struct AmyInputIFace *Self )
+U32 AMY_FUNC _Main_Release( struct AmyInputIFace *Self )
 {
 	IExec->DebugPrintF( "AmyInput : _Main_Release\n" );
 

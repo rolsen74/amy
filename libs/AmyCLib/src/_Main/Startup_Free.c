@@ -18,7 +18,7 @@
 
 // --
 
-void AMYFUNC _generic__Priv_Startup_Free( struct AmyCLibIFace *Self )
+void AMY_FUNC _generic__Priv_Startup_Free( struct AmyCLibIFace *Self )
 {
 struct libData *data;
 struct Task *opener_task;

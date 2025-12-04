@@ -14,7 +14,7 @@
 
 // --
 
-long AMYFUNC _generic_stdlib_atol( struct AmyCLibIFace *Self, const char *str )
+long AMY_FUNC _generic_stdlib_atol( struct AmyCLibIFace *Self, const char *str )
 {
 struct libData *data;
 long retval;

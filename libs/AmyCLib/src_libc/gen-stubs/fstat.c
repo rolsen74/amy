@@ -8,6 +8,7 @@
 */
 
 #include "Stub.h"
+#include <sys/stat.h>
 
 LIBC_STUB(int, fstat, sys_stat_fstat,
     (int fildes, struct stat *buf),

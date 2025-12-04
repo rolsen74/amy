@@ -8,6 +8,7 @@
 */
 
 #include "Stub.h"
+#include <dirent.h>
 
 LIBC_STUB(DIR *, opendir, dirent_opendir,
     (const char *name),

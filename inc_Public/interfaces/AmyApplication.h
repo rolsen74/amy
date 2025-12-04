@@ -17,10 +17,10 @@
 struct AmyApplicationIFace
 {
 	struct InterfaceData Data;
-	U32							AMYFUNC (*Obtain)(struct AmyApplicationIFace *Self);
-	U32							AMYFUNC (*Release)(struct AmyApplicationIFace *Self);
-	void						AMYFUNC (*Expunge)(struct AmyApplicationIFace *Self);
-	struct Interface *			AMYFUNC (*Clone)(struct AmyApplicationIFace *Self);
+	U32							AMY_FUNC (*Obtain)(struct AmyApplicationIFace *Self);
+	U32							AMY_FUNC (*Release)(struct AmyApplicationIFace *Self);
+	void						AMY_FUNC (*Expunge)(struct AmyApplicationIFace *Self);
+	struct Interface *			AMY_FUNC (*Clone)(struct AmyApplicationIFace *Self);
 };
 
 // --

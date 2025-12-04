@@ -43,7 +43,7 @@
 // --
 // Option  u  Decimal (unsigned)
 
-static S32 AMYFUNC my_Option_u( struct PrintStruct *ps, struct Intern *in )
+static S32 AMY_FUNC my_Option_u( struct PrintStruct *ps, struct Intern *in )
 {
 S32 retval;
 

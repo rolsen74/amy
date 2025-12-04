@@ -8,6 +8,7 @@
 */
 
 #include "Stub.h"
+#include <time.h>
 
 LIBC_STUB(time_t, mktime, time_mktime,
     (struct tm *tm),

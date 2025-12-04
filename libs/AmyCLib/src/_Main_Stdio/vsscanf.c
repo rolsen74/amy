@@ -41,7 +41,7 @@
 
 // --
 
-int AMYFUNC _generic_stdio_vsscanf( struct AmyCLibIFace *Self, const char *buf, const char *fmt, va_list ap )
+int AMY_FUNC _generic_stdio_vsscanf( struct AmyCLibIFace *Self, const char *buf, const char *fmt, va_list ap )
 {
 struct ScanStruct ss;
 struct libData *data;

@@ -8,6 +8,7 @@
 */
 
 #include "Stub.h"
+#include <getopt.h>
 
 LIBC_STUB(int, getopt, getopt_getopt,
     (int argc, char * const argv[], const char *ostr),

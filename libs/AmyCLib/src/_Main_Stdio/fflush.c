@@ -41,7 +41,7 @@
 
 // --
 
-int AMYFUNC _generic_stdio_fflush( struct AmyCLibIFace *Self, FILE *stream )
+int AMY_FUNC _generic_stdio_fflush( struct AmyCLibIFace *Self, FILE *stream )
 {
 struct FileStruct *file;
 struct libData *data;

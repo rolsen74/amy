@@ -8,6 +8,7 @@
 */
 
 #include "Stub.h"
+#include <sys/stat.h>
 
 LIBC_STUB(int, mkdir, sys_stat_mkdir,
     (const char *path, mode_t mode),

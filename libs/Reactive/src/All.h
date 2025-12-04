@@ -159,13 +159,13 @@ U32 RootDispatcher(
 
 void ROMFree( struct libBase *libBase );
 
-U32 AMYFUNC _manager_Obtain( struct LibraryManagerInterface *Self );
-U32 AMYFUNC _manager_Release( struct LibraryManagerInterface *Self );
-PTR AMYFUNC _manager_Open( struct LibraryManagerInterface *Self, U32 version );
-PTR AMYFUNC _manager_Close( struct LibraryManagerInterface *Self );
-PTR AMYFUNC _manager_Expunge( struct LibraryManagerInterface *Self );
+U32 AMY_FUNC _manager_Obtain( struct LibraryManagerInterface *Self );
+U32 AMY_FUNC _manager_Release( struct LibraryManagerInterface *Self );
+PTR AMY_FUNC _manager_Open( struct LibraryManagerInterface *Self, U32 version );
+PTR AMY_FUNC _manager_Close( struct LibraryManagerInterface *Self );
+PTR AMY_FUNC _manager_Expunge( struct LibraryManagerInterface *Self );
 
-U32 AMYFUNC _Main_Expunge( struct ReactivePrivIFace *Self );
+U32 AMY_FUNC _Main_Expunge( struct ReactivePrivIFace *Self );
 
 // --
 

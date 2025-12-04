@@ -43,7 +43,7 @@
 // File Buffer
 
 // Same as __flush_iob_write_buffer
-S32 AMYFUNC _generic__Priv_FB_Write_Flush_Buffer( struct AmyCLibIFace *Self, struct FileStruct *file )
+S32 AMY_FUNC _generic__Priv_FB_Write_Flush_Buffer( struct AmyCLibIFace *Self, struct FileStruct *file )
 {
 S64 size;
 S32 retval;

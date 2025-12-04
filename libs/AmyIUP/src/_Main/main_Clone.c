@@ -11,7 +11,7 @@
 
 // --
 
-PTR AMYFUNC _Main_Clone( struct AmyIUPIFace *Self )
+PTR AMY_FUNC _Main_Clone( struct AmyIUPIFace *Self )
 {
 struct AmyIUPIFace *IFace;
 struct AmyTaskInfo *ati;

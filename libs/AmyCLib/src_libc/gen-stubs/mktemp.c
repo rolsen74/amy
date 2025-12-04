@@ -8,6 +8,7 @@
 */
 
 #include "Stub.h"
+#include <sys/stat.h>
 
 LIBC_STUB(char *, mktemp, sys_stat_mktemp,
     (char *template),

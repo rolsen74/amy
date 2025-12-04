@@ -43,7 +43,7 @@
 // --
 // Option  c  Charater
 
-static S32 AMYFUNC my_Option_c( struct PrintStruct *ps, struct Intern *in )
+static S32 AMY_FUNC my_Option_c( struct PrintStruct *ps, struct Intern *in )
 {
 S32 retval;
 S32 ch;

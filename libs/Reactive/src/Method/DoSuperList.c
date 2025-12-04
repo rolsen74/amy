@@ -11,7 +11,7 @@
 
 // --
 
-U32 AMYFUNC _main_Method_DoSuperList( struct ReactivePrivIFace *Self, struct RA_PrivClass *cl, struct RA_PrivObject *obj, struct RA_Method *method )
+U32 AMY_FUNC _main_Method_DoSuperList( struct ReactivePrivIFace *Self, struct RA_PrivClass *cl, struct RA_PrivObject *obj, struct RA_Method *method )
 {
 U32 retval;
 

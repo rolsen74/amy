@@ -11,5 +11,5 @@
 #include <strings.h>
 
 LIBC_STUB(int, strcasecmp, strings_strcasecmp,
-    (const char *s1, const char *s2),
-    s1, s2);
+    (const char *aa, const char *bb),
+    aa, bb);

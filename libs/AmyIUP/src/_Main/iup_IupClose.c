@@ -12,7 +12,7 @@
 
 // --
 
-void AMYFUNC _Main_IupClose( struct AmyIUPIFace *Self )
+void AMY_FUNC _Main_IupClose( struct AmyIUPIFace *Self )
 {
 struct libData *data;
 

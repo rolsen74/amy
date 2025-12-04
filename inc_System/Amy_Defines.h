@@ -92,32 +92,16 @@ typedef char *STR;
 
 #if defined(__GNUC__)
 
-#if 0
-// check this
-#ifndef MIN
-#define MIN(a,b)	({ __typeof__(a) _a = (a); __typeof__(b) _b = (b); _a < _b ? _a : _b; })
+#ifndef AMY_USED
+#define AMY_USED	__attribute__((used))
 #endif
 
-#ifndef MAX
-#define MAX(a,b)	({ __typeof__(a) _a = (a); __typeof__(b) _b = (b); _a > _b ? _a : _b; })
+#ifndef AMY_UNUSED
+#define AMY_UNUSED	__attribute__((unused))
 #endif
 
-#ifndef ABS
-#define ABS(x)		({ __typeof__(x) _x = (x); _x < 0 ? -_x : _x; })
-#endif
-#endif
-
-#ifndef AMYUSED
-#define AMYUSED		__attribute__((used))
-#endif
-
-#ifndef AMYUNUSED
-#define AMYUNUSED	__attribute__((unused))
-#endif
-
-#ifndef AMYFUNC		// Library Call and we want Stack only args
-#define AMYFUNC		__attribute__((libcall, linearvarargs))
-//#define AMYFUNC		__attribute__((libcall))
+#ifndef AMY_FUNC	// Library Call and we want Stack only args
+#define AMY_FUNC	__attribute__((libcall, linearvarargs))
 #endif
 
 #ifndef VARARGS68K
@@ -129,16 +113,16 @@ typedef char *STR;
 
 #else
 
-#ifndef USED
-#define USED
+#ifndef AMY_USED
+#define AMY_USED
 #endif
 
-#ifndef UNUSED
-#define UNUSED
+#ifndef AMY_UNUSED
+#define AMY_UNUSED
 #endif
 
-#ifndef AMYFUNC
-#define AMYFUNC
+#ifndef AMY_FUNC
+#define AMY_FUNC
 #endif
 
 #ifndef VARARGS68K

@@ -11,5 +11,5 @@
 #include <stdlib.h>
 
 LIBC_STUB(int, system, stdlib_system,
-    (const char *str),
-    str);
+    (const char *aa),
+    aa);

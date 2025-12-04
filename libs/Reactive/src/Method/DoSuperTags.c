@@ -11,7 +11,7 @@
 
 // --
 
-U32 AMYFUNC _main_Method_DoSuperTags(
+U32 AMY_FUNC _main_Method_DoSuperTags(
 	struct ReactivePrivIFace *Self,
 	struct RA_PrivClass *cl,
 	struct RA_PrivObject *obj,

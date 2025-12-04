@@ -11,7 +11,7 @@
 
 // --
 
-U32 AMYFUNC _main_Attr_GetParentTags( struct ReactivePrivIFace *Self, struct RA_PrivObject *obj, ... )
+U32 AMY_FUNC _main_Attr_GetParentTags( struct ReactivePrivIFace *Self, struct RA_PrivObject *obj, ... )
 {
 U32 retval;
 va_list ap;
@@ -27,7 +27,7 @@ va_list ap;
 
 // --
 
-U32 AMYFUNC _main_Attr_GetParentList( struct ReactivePrivIFace *Self, struct RA_PrivObject *obj, struct TagItem *taglist )
+U32 AMY_FUNC _main_Attr_GetParentList( struct ReactivePrivIFace *Self, struct RA_PrivObject *obj, struct TagItem *taglist )
 {
 struct TagItem *tag;
 struct RAP_Get msg;

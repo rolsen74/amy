@@ -14,7 +14,7 @@
 
 // --
 
-char * AMYFUNC _generic_string_strrchr( struct AmyCLibIFace *Self, const char *aa, int bb )
+char * AMY_FUNC _generic_string_strrchr( struct AmyCLibIFace *Self, const char *aa, int bb )
 {
 struct libData *data;
 char *retval;

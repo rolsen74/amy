@@ -11,7 +11,7 @@
 
 // --
 
-U32 AMYFUNC _Main_Release( struct ReactivePrivIFace *Self )
+U32 AMY_FUNC _Main_Release( struct ReactivePrivIFace *Self )
 {
 //	IExec->DebugPrintF( "Reactive : _Main_Release\n" );
 

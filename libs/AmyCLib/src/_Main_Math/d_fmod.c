@@ -14,7 +14,7 @@
 
 // --
 
-double AMYFUNC _generic_math_fmod( struct AmyCLibIFace *Self, double x, double y )
+double AMY_FUNC _generic_math_fmod( struct AmyCLibIFace *Self, double x, double y )
 {
 struct libData *data;
 double retval;

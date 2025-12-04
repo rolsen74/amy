@@ -42,7 +42,7 @@
 // --
 // File Descriptor
 
-FILE * AMYFUNC _generic__Priv_FD_Init( struct AmyCLibIFace *Self, struct FDInitStruct *is )
+FILE * AMY_FUNC _generic__Priv_FD_Init( struct AmyCLibIFace *Self, struct FDInitStruct *is )
 {
 //struct FDInitStruct *is;
 struct ExamineData *dat;

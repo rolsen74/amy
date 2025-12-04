@@ -11,7 +11,7 @@
 
 // --
 
-U32 AMYFUNC _main_Class_Lock( struct ReactivePrivIFace *Self, struct RA_PrivClass *cl )
+U32 AMY_FUNC _main_Class_Lock( struct ReactivePrivIFace *Self, struct RA_PrivClass *cl )
 {
 struct libBase *libBase;
 U32 retval;

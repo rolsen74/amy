@@ -11,5 +11,5 @@
 #include <stdlib.h>
 
 LIBC_STUB(int, atexit, stdlib_atexit,
-    (void (*func)(void)),
-    func);
+    (void (*aa)(void)),
+    aa);

@@ -41,7 +41,7 @@
 
 // --
 
-int AMYFUNC _generic_stdio_putchar( struct AmyCLibIFace *Self, int c )
+int AMY_FUNC _generic_stdio_putchar( struct AmyCLibIFace *Self, int c )
 {
 struct libData *data;
 FILE *stream;

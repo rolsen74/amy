@@ -46,7 +46,7 @@ extern struct PrivInterface		Priv_FD_Interface_String;
 // --
 // File Descriptor
 
-S32 AMYFUNC _generic__Priv_FD_Init_Struct( struct AmyCLibIFace *Self, struct FileStruct *file, U32 id )
+S32 AMY_FUNC _generic__Priv_FD_Init_Struct( struct AmyCLibIFace *Self, struct FileStruct *file, U32 id )
 {
 struct PrivInterface *pi;
 //FILE *file;

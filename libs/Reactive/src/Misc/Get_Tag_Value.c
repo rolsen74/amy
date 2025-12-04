@@ -11,7 +11,7 @@
 
 // --
 
-U32 AMYFUNC _main_Misc_GetTagValue( struct ReactivePrivIFace *Self UNUSED, struct TagItem *tag, U32 id, U32 defval )
+U32 AMY_FUNC _main_Misc_GetTagValue( struct ReactivePrivIFace *Self UNUSED, struct TagItem *tag, U32 id, U32 defval )
 {
 U32 retval;
 

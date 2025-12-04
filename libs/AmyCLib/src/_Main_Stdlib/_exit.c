@@ -14,7 +14,7 @@
 
 // --
 
-void AMYFUNC _generic_stdlib__exit( struct AmyCLibIFace *Self, int status )
+void AMY_FUNC _generic_stdlib__exit( struct AmyCLibIFace *Self, int status )
 {
 struct libData *data;
 

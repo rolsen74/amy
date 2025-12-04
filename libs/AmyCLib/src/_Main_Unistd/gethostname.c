@@ -14,7 +14,7 @@
 
 // --
 
-int AMYFUNC _generic_unistd_gethostname( struct AmyCLibIFace *Self, char *aa, size_t bb )
+int AMY_FUNC _generic_unistd_gethostname( struct AmyCLibIFace *Self, char *aa, size_t bb )
 {
 struct libData *data;
 int retval;

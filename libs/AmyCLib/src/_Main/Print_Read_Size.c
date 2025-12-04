@@ -42,7 +42,7 @@
 
 // --
 
-static S32 AMYFUNC my_readsize( struct PrintStruct *ps, struct Intern *in )
+static S32 AMY_FUNC my_readsize( struct PrintStruct *ps, struct Intern *in )
 {
 S32 next_sum;
 S32 retval;

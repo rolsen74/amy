@@ -41,7 +41,7 @@
 
 // --
 
-FILE * AMYFUNC _generic_stdio_fopen( struct AmyCLibIFace *Self, const char *filename, const char *mode )
+FILE * AMY_FUNC _generic_stdio_fopen( struct AmyCLibIFace *Self, const char *filename, const char *mode )
 {
 struct FDInitStruct is;
 struct FileStruct *file;

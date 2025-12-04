@@ -11,7 +11,7 @@
 
 // --
 
-U32 AMYFUNC _generic__Priv_Mem_DeletePool( struct AmyCLibIFace *Self, struct MemPoolHeader *handle )
+U32 AMY_FUNC _generic__Priv_Mem_DeletePool( struct AmyCLibIFace *Self, struct MemPoolHeader *handle )
 {
 struct libData *data;
 struct PoolNode *pn;

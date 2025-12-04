@@ -14,7 +14,7 @@
 
 // --
 
-int AMYFUNC _generic_sys_stat_chmod( struct AmyCLibIFace *Self, const char *path, mode_t mode )
+int AMY_FUNC _generic_sys_stat_chmod( struct AmyCLibIFace *Self, const char *path, mode_t mode )
 {
 struct libData *data;
 int retval;

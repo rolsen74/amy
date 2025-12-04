@@ -11,5 +11,5 @@
 #include <stdio.h>
 
 LIBC_STUB(int, setvbuf, stdio_setvbuf,
-    (FILE *stream, char *buf, int mode, size_t size),
-    stream, buf, mode, size);
+    (FILE *aa, char *buf, int mode, size_t size),
+    aa, buf, mode, size);

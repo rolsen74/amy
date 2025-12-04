@@ -16,7 +16,7 @@
 // I needed fcntl to call a va_list version.. 
 // so I renamed it to fcntl_ap
 
-int AMYFUNC _generic_unistd_fcntl_ap( struct AmyCLibIFace *Self, int fildes, int cmd, va_list ap )
+int AMY_FUNC _generic_unistd_fcntl_ap( struct AmyCLibIFace *Self, int fildes, int cmd, va_list ap )
 {
 struct libData *data;
 int retval;

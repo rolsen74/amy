@@ -45,7 +45,7 @@ static const int	NormalMonths[]	= { 31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 
 static const int	LeapMonths[]	= { 31, 29, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31 };
 #define				IS_LEAP(xx)		(((( xx % 4 ) == 0 ) && (( xx % 100 ) != 0 )) || (( xx % 400 ) == 0 ))
 
-S32 AMYFUNC _generic__Priv_Convert_Time_to_TM( struct AmyCLibIFace *Self UNUSED, const time_t *time, struct tm *tm )
+S32 AMY_FUNC _generic__Priv_Convert_Time_to_TM( struct AmyCLibIFace *Self UNUSED, const time_t *time, struct tm *tm )
 {
 const int *ptr;
 time_t t;

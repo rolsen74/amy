@@ -42,7 +42,7 @@
 // --
 // File Descriptor
 
-PTR AMYFUNC _generic__Priv_FD_Array_Remove( struct AmyCLibIFace *Self, S32 Pos )
+PTR AMY_FUNC _generic__Priv_FD_Array_Remove( struct AmyCLibIFace *Self, S32 Pos )
 {
 struct libData *data;
 PTR Node;

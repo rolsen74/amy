@@ -41,7 +41,7 @@
 
 // --
 
-int AMYFUNC _generic_stdio_puts( struct AmyCLibIFace *Self, const char *str )
+int AMY_FUNC _generic_stdio_puts( struct AmyCLibIFace *Self, const char *str )
 {
 struct FileStruct *file;
 struct libData *data;

@@ -12,7 +12,7 @@
 // --
 // Same function as LoadFile32 but it returns the size into a 64bit
 
-PTR AMYFUNC _main_Misc_LoadFile_64( struct ReactivePrivIFace *Self UNUSED, STR FileName, U64 *FileSize )
+PTR AMY_FUNC _main_Misc_LoadFile_64( struct ReactivePrivIFace *Self UNUSED, STR FileName, U64 *FileSize )
 {
 U64 size;
 U8 *mem;

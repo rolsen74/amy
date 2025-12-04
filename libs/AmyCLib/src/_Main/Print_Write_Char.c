@@ -42,7 +42,7 @@
 
 // --
 
-static enum myWriteStat AMYFUNC my_writechar( struct PrintStruct *ps, struct Intern *in, char c )
+static enum myWriteStat AMY_FUNC my_writechar( struct PrintStruct *ps, struct Intern *in, char c )
 {
 enum myWriteStat retval;
 

@@ -12,7 +12,7 @@
 
 // --
 
-int AMYFUNC _Main_IupMainLoop( struct AmyIUPIFace *Self )
+int AMY_FUNC _Main_IupMainLoop( struct AmyIUPIFace *Self )
 {
 struct libData *data;
 int retval;

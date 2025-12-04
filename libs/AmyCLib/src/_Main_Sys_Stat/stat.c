@@ -14,7 +14,7 @@
 
 // --
 
-int AMYFUNC _generic_sys_stat_stat( struct AmyCLibIFace *Self, const char *path, struct stat *buf )
+int AMY_FUNC _generic_sys_stat_stat( struct AmyCLibIFace *Self, const char *path, struct stat *buf )
 {
 struct libData *data;
 int retval;

@@ -41,7 +41,7 @@
 
 // --
 
-size_t AMYFUNC _generic_string_strcspn( struct AmyCLibIFace *Self, const char *s, const char *reject )
+size_t AMY_FUNC _generic_string_strcspn( struct AmyCLibIFace *Self, const char *s, const char *reject )
 {
 struct libData *data;
 const char *start;

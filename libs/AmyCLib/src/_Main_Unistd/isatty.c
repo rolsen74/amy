@@ -14,7 +14,7 @@
 
 // --
 
-int AMYFUNC _generic_unistd_isatty( struct AmyCLibIFace *Self, int fildes )
+int AMY_FUNC _generic_unistd_isatty( struct AmyCLibIFace *Self, int fildes )
 {
 struct libData *data;
 int retval;

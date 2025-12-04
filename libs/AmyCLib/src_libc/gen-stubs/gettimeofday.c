@@ -8,6 +8,7 @@
 */
 
 #include "Stub.h"
+#include <sys/time.h>
 
 LIBC_STUB(int, gettimeofday, sys_time_gettimeofday,
     (struct timeval *tp, void *tzp),

@@ -98,7 +98,7 @@ static const double tiny	= 1.0e-300;
 
 // --
 
-double AMYFUNC _generic_math_d_sqrt( struct AmyCLibIFace *Self UNUSED, double x )
+double AMY_FUNC _generic_math_d_sqrt( struct AmyCLibIFace *Self UNUSED, double x )
 {
 union DoubleBits val;
 double z;

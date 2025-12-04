@@ -18,6 +18,7 @@
 
 #include <Amy_Features.h>
 #include <Amy_Defines.h>
+#include <Amy_Public.h>
 
 /* -- */
 
@@ -71,6 +72,16 @@
 #define STDIN_FILENO		0
 #define STDOUT_FILENO		1
 #define STDERR_FILENO		2
+
+/****************************************************************************/
+
+AMY_EXTERN_C_BEGIN
+
+char ***__amy_environ( void );
+#define environ ( *__amy_environ() )
+extern char ***__amy_environ( void );
+
+AMY_EXTERN_C_END
 
 /****************************************************************************/
 

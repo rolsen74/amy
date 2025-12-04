@@ -14,7 +14,7 @@
 
 // --
 
-off_t AMYFUNC _generic_unistd_lseek( struct AmyCLibIFace *Self, int aa, off_t bb, int cc )
+off_t AMY_FUNC _generic_unistd_lseek( struct AmyCLibIFace *Self, int aa, off_t bb, int cc )
 {
 struct libData *data;
 int retval;

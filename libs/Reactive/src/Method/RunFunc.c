@@ -40,7 +40,7 @@ static U32 StackRunFunc( struct NSR_Args *args )
 
 // --
 
-U32 AMYFUNC _main_Method_RunFunc(
+U32 AMY_FUNC _main_Method_RunFunc(
 	struct ReactivePrivIFace *Self,
 	struct RA_PrivClass *cl,
 	struct RA_PrivObject *obj,

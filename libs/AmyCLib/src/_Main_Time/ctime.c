@@ -14,7 +14,7 @@
 
 // --
 
-char * AMYFUNC _generic_time_ctime( struct AmyCLibIFace *Self, const time_t *clock )
+char * AMY_FUNC _generic_time_ctime( struct AmyCLibIFace *Self, const time_t *clock )
 {
 struct FileStruct *file;
 struct libData *data;

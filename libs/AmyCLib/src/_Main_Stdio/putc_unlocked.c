@@ -14,7 +14,7 @@
 
 // --
 
-int AMYFUNC _generic_stdio_putc_unlocked( struct AmyCLibIFace *Self, int c, FILE *stream )
+int AMY_FUNC _generic_stdio_putc_unlocked( struct AmyCLibIFace *Self, int c, FILE *stream )
 {
 struct libData *data;
 int retval;

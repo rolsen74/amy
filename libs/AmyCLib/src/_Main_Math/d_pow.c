@@ -582,7 +582,7 @@ int32 iy;
 
 // --
 
-double AMYFUNC _generic_math_d_pow( struct AmyCLibIFace *Self, double x, double y )
+double AMY_FUNC _generic_math_d_pow( struct AmyCLibIFace *Self, double x, double y )
 {
 double retval;
 

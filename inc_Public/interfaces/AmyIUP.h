@@ -18,15 +18,15 @@
 struct AmyIUPIFace
 {
 	struct InterfaceData Data;
-	U32							AMYFUNC (*Obtain)( struct AmyIUPIFace *Self );
-	U32							AMYFUNC (*Release)( struct AmyIUPIFace *Self );
-	void						AMYFUNC (*Expunge)( struct AmyIUPIFace *Self );
-	struct Interface *			AMYFUNC (*Clone)( struct AmyIUPIFace *Self );
+	U32							AMY_FUNC (*Obtain)( struct AmyIUPIFace *Self );
+	U32							AMY_FUNC (*Release)( struct AmyIUPIFace *Self );
+	void						AMY_FUNC (*Expunge)( struct AmyIUPIFace *Self );
+	struct Interface *			AMY_FUNC (*Clone)( struct AmyIUPIFace *Self );
 	/* IUP */
-	int							AMYFUNC (*IupOpen)( struct AmyIUPIFace *Self, int *argc, char ***argv );
-	void						AMYFUNC (*IupClose)( struct AmyIUPIFace *Self );
-	int							AMYFUNC (*IupMainLoop)( struct AmyIUPIFace *Self );
-	void						AMYFUNC (*IupSetGlobal)( struct AmyIUPIFace *Self, const char *name, const char *value );
+	int							AMY_FUNC (*IupOpen)( struct AmyIUPIFace *Self, int *argc, char ***argv );
+	void						AMY_FUNC (*IupClose)( struct AmyIUPIFace *Self );
+	int							AMY_FUNC (*IupMainLoop)( struct AmyIUPIFace *Self );
+	void						AMY_FUNC (*IupSetGlobal)( struct AmyIUPIFace *Self, const char *name, const char *value );
 
 };
 

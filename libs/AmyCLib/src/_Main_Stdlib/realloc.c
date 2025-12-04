@@ -11,7 +11,7 @@
 
 // --
 
-void * AMYFUNC _generic_stdlib_realloc( struct AmyCLibIFace *Self, void *mem, size_t size )
+void * AMY_FUNC _generic_stdlib_realloc( struct AmyCLibIFace *Self, void *mem, size_t size )
 {
 struct libData *data;
 void *retval;

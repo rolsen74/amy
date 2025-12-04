@@ -42,7 +42,7 @@
 // --
 // File Descriptor
 
-struct FileStruct * AMYFUNC _generic__Priv_FD_Alloc( struct AmyCLibIFace *Self, U32 ID )
+struct FileStruct * AMY_FUNC _generic__Priv_FD_Alloc( struct AmyCLibIFace *Self, U32 ID )
 {
 struct FileStruct *file;
 struct libData *data;

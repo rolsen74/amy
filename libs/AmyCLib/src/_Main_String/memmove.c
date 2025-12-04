@@ -41,7 +41,7 @@
 
 // --
 
-void * AMYFUNC _generic_string_memmove( struct AmyCLibIFace *Self, void *dst, const void *src, size_t len )
+void * AMY_FUNC _generic_string_memmove( struct AmyCLibIFace *Self, void *dst, const void *src, size_t len )
 {
 	DOFUNCTIONPRINTF( IExec->DebugPrintF( "_generic_string_memmove : Src %p, Dst %p, Len %lu\n", src, dst, len ); );
 

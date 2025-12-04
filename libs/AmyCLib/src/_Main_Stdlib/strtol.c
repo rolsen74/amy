@@ -50,7 +50,7 @@
  * alphabets and digits are each contiguous.
  */
 
-long AMYFUNC _generic_stdlib_strtol( struct AmyCLibIFace *Self, const char *nptr, char **endptr, int base )
+long AMY_FUNC _generic_stdlib_strtol( struct AmyCLibIFace *Self, const char *nptr, char **endptr, int base )
 {
 struct libData *data;
 const char *s;

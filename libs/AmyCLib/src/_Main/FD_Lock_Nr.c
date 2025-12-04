@@ -42,7 +42,7 @@
 // --
 // File Descriptor
 
-struct FileStruct * AMYFUNC _generic__Priv_FDLockNr( struct AmyCLibIFace *Self, S32 nr )
+struct FileStruct * AMY_FUNC _generic__Priv_FDLockNr( struct AmyCLibIFace *Self, S32 nr )
 {
 struct FileStruct *file;
 struct libData *data;

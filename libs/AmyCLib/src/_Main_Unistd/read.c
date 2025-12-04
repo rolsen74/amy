@@ -14,7 +14,7 @@
 
 // --
 
-ssize_t AMYFUNC _generic_unistd_read( struct AmyCLibIFace *Self, int fildes, void *buf, size_t nbyte )
+ssize_t AMY_FUNC _generic_unistd_read( struct AmyCLibIFace *Self, int fildes, void *buf, size_t nbyte )
 {
 struct libData *data;
 int retval;

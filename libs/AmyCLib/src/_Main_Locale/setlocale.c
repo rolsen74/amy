@@ -14,7 +14,7 @@
 
 // --
 
-char * AMYFUNC _generic_locale_setlocale( struct AmyCLibIFace *Self, int category, char *locale )
+char * AMY_FUNC _generic_locale_setlocale( struct AmyCLibIFace *Self, int category, char *locale )
 {
 struct libData *data;
 char * retval;

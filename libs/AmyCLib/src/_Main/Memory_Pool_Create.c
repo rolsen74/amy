@@ -11,7 +11,7 @@
 
 // --
 
-struct MemPoolHeader * AMYFUNC _generic__Priv_Mem_CreatePool( struct AmyCLibIFace *Self, U32 size )
+struct MemPoolHeader * AMY_FUNC _generic__Priv_Mem_CreatePool( struct AmyCLibIFace *Self, U32 size )
 {
 struct MemPoolHeader *handle;
 struct libData *data;

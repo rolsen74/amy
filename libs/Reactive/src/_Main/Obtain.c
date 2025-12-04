@@ -11,7 +11,7 @@
 
 // --
 
-U32 AMYFUNC _Main_Obtain( struct ReactivePrivIFace *Self )
+U32 AMY_FUNC _Main_Obtain( struct ReactivePrivIFace *Self )
 {
 //	IExec->DebugPrintF( "Reactive : _Main_Obtain\n" );
 

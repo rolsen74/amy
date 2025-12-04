@@ -41,7 +41,7 @@
 
 // --
 
-void AMYFUNC _generic_stdlib_abort( struct AmyCLibIFace *Self )
+void AMY_FUNC _generic_stdlib_abort( struct AmyCLibIFace *Self )
 {
 struct libData *data;
 

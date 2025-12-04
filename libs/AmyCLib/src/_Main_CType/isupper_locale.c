@@ -41,7 +41,7 @@
 
 // --
 
-int AMYFUNC _locale_ctype_isupper( struct AmyCLibIFace *Self, int c )
+int AMY_FUNC _locale_ctype_isupper( struct AmyCLibIFace *Self, int c )
 {
 struct libData *data;
 int retval;

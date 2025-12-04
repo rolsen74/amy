@@ -41,7 +41,7 @@
 
 // --
 
-size_t AMYFUNC _generic_stdio_fread( struct AmyCLibIFace *Self, void *ptr, size_t size, size_t count, FILE *stream )
+size_t AMY_FUNC _generic_stdio_fread( struct AmyCLibIFace *Self, void *ptr, size_t size, size_t count, FILE *stream )
 {
 struct FileStruct *file;
 struct libData *data;

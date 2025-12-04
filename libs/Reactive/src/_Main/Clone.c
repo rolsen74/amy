@@ -13,7 +13,7 @@ extern const struct TagItem Main_Tags[];
 
 // --
 
-struct Interface * AMYFUNC _Main_Clone( struct ReactivePrivIFace *Self )
+struct Interface * AMY_FUNC _Main_Clone( struct ReactivePrivIFace *Self )
 {
 struct AmyCLibIFace *IFace;
 struct libData *data;

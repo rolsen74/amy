@@ -41,7 +41,7 @@
 
 // --
 
-int AMYFUNC _generic_stdio_setvbuf( struct AmyCLibIFace *Self, FILE *stream, char *buf, int mode, size_t size )
+int AMY_FUNC _generic_stdio_setvbuf( struct AmyCLibIFace *Self, FILE *stream, char *buf, int mode, size_t size )
 {
 struct FileStruct *file;
 struct libData *data;

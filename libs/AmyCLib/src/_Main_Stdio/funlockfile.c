@@ -41,7 +41,7 @@
 
 // --
 
-void AMYFUNC _generic_stdio_funlockfile( struct AmyCLibIFace *Self, FILE *stream )
+void AMY_FUNC _generic_stdio_funlockfile( struct AmyCLibIFace *Self, FILE *stream )
 {
 struct FileStruct *file;
 struct libData *data;

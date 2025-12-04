@@ -43,8 +43,8 @@ PTR _manager_Open( struct LibraryManagerInterface *Self, U32 version );
 PTR _manager_Close( struct LibraryManagerInterface *Self );
 PTR _manager_Expunge( struct LibraryManagerInterface *Self );
 
-U32 AMYFUNC _Main_Obtain( struct AmyApplicationIFace *Self );
-U32 AMYFUNC _Main_Release( struct AmyApplicationIFace *Self );
+U32 AMY_FUNC _Main_Obtain( struct AmyApplicationIFace *Self );
+U32 AMY_FUNC _Main_Release( struct AmyApplicationIFace *Self );
 
 // --
 

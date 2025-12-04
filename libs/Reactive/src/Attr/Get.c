@@ -11,7 +11,7 @@
 
 // --
 
-U32 AMYFUNC _main_Attr_Get( struct ReactivePrivIFace *Self, struct RA_PrivObject *obj, U32 AttrID, PTR Storage )
+U32 AMY_FUNC _main_Attr_Get( struct ReactivePrivIFace *Self, struct RA_PrivObject *obj, U32 AttrID, PTR Storage )
 {
 struct RAP_Get msg;
 U32 retval;

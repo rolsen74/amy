@@ -11,7 +11,7 @@
 
 // --
 
-void AMYFUNC _generic_stdlib_free( struct AmyCLibIFace *Self, void *mem )
+void AMY_FUNC _generic_stdlib_free( struct AmyCLibIFace *Self, void *mem )
 {
 	DOFUNCTIONPRINTF( IExec->DebugPrintF( "_generic_stdlib_free : Mem %p\n", mem ); );
 

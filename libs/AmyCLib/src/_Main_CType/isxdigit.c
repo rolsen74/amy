@@ -32,7 +32,7 @@ static const U8 table[256] =
 	0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,		// F
 };
 
-int AMYFUNC _generic_ctype_isxdigit( struct AmyCLibIFace *Self UNUSED, int c )
+int AMY_FUNC _generic_ctype_isxdigit( struct AmyCLibIFace *Self UNUSED, int c )
 {
 	DOFUNCTIONPRINTF( IExec->DebugPrintF( "_generic_ctype_isxdigit : c %ld\n", c ); );
 

@@ -11,7 +11,7 @@
 
 // --
 
-struct RA_PrivClass * AMYFUNC _main_Class_CreateTags(
+struct RA_PrivClass * AMY_FUNC _main_Class_CreateTags(
 	struct ReactivePrivIFace *Self,
 	struct RA_PrivClass *SuperClass,
 	STR SuperName,
@@ -39,7 +39,7 @@ va_list ap;
 
 // --
 
-struct RA_PrivClass * AMYFUNC _main_Class_CreateList(
+struct RA_PrivClass * AMY_FUNC _main_Class_CreateList(
 	struct ReactivePrivIFace *Self,
 	struct RA_PrivClass *SuperClass,
 	STR SuperName,

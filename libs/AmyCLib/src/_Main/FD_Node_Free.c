@@ -42,9 +42,9 @@
 // --
 // File Descriptor
 
-// was AMYFUNC _generic__Priv_FDInit
+// was AMY_FUNC _generic__Priv_FDInit
 
-S32 AMYFUNC _generic__Priv_FD_Free( struct AmyCLibIFace *Self, struct FileStruct *file )
+S32 AMY_FUNC _generic__Priv_FD_Free( struct AmyCLibIFace *Self, struct FileStruct *file )
 {
 //FILE *file;
 struct libData *data;

@@ -8,6 +8,7 @@
 */
 
 #include "Stub.h"
+#include <inttypes.h>
 
 LIBC_STUB(uintmax_t, strtoumax, inttypes_strtoumax,
     (const char *nptr, char **endptr, int base),

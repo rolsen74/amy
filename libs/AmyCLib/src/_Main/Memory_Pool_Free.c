@@ -11,7 +11,7 @@
 
 // --
 
-U32 AMYFUNC _generic__Priv_Mem_FreePooled( struct AmyCLibIFace *Self, struct MemPoolHeader *handle, PTR mem )
+U32 AMY_FUNC _generic__Priv_Mem_FreePooled( struct AmyCLibIFace *Self, struct MemPoolHeader *handle, PTR mem )
 {
 //struct libData *idata;
 struct PoolBlock *old;
@@ -28,7 +28,7 @@ U32 size;
 
 	DOFUNCTIONPRINTF( IExec->DebugPrintF( "_generic__Priv_Mem_FreePooled\n" ); );
 
-//IExec->DebugPrintF( "ReaciveMemory.c | AMYFUNC _generic__Priv_Mem_FreePooled - mem: %p\n", mem );
+//IExec->DebugPrintF( "ReaciveMemory.c | AMY_FUNC _generic__Priv_Mem_FreePooled - mem: %p\n", mem );
 
 //	idata = (PTR)( (U32) Self - Self->Data.NegativeSize );
 

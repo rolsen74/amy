@@ -50,7 +50,7 @@
  * alphabets and digits are each contiguous.
  */
 
-intmax_t AMYFUNC _generic_inttypes_strtoimax( struct AmyCLibIFace *Self, const char *nptr, char **endptr, int base )
+intmax_t AMY_FUNC _generic_inttypes_strtoimax( struct AmyCLibIFace *Self, const char *nptr, char **endptr, int base )
 {
 struct libData *data;
 const char *s;

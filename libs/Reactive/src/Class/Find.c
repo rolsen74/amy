@@ -26,7 +26,7 @@ const struct ClassType ClassTypes[] =
 
 // --
 
-struct RA_PrivClass * AMYFUNC _main_Class_FindTags( struct ReactivePrivIFace *Self, STR name, ... )
+struct RA_PrivClass * AMY_FUNC _main_Class_FindTags( struct ReactivePrivIFace *Self, STR name, ... )
 {
 struct RA_PrivClass *cl;
 va_list ap;
@@ -42,7 +42,7 @@ va_list ap;
 
 // --
 
-struct RA_PrivClass * AMYFUNC _main_Class_FindList( struct ReactivePrivIFace *Self, STR name, struct TagItem *taglist UNUSED )
+struct RA_PrivClass * AMY_FUNC _main_Class_FindList( struct ReactivePrivIFace *Self, STR name, struct TagItem *taglist UNUSED )
 {
 struct RA_PrivClass *cl;
 struct libBase *libBase;

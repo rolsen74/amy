@@ -55,7 +55,7 @@
 
 // --
 
-void AMYFUNC _generic__Priv_Print( struct AmyCLibIFace *Self, struct PrintStruct *ps )
+void AMY_FUNC _generic__Priv_Print( struct AmyCLibIFace *Self, struct PrintStruct *ps )
 {
 enum myWriteStat stat;
 struct Intern in;

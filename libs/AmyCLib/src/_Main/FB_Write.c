@@ -43,7 +43,7 @@
 // File Buffer
 
 // Same as __fputc
-S32 AMYFUNC _generic__Priv_FB_Write( struct AmyCLibIFace *Self, struct FileStruct *file, S32 mode, S32 c )
+S32 AMY_FUNC _generic__Priv_FB_Write( struct AmyCLibIFace *Self, struct FileStruct *file, S32 mode, S32 c )
 {
 S32 retval;
 

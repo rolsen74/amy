@@ -11,7 +11,7 @@
 
 // --
 
-U32 AMYFUNC _Main_Obtain( struct AmyInputIFace *Self )
+U32 AMY_FUNC _Main_Obtain( struct AmyInputIFace *Self )
 {
 	Self->Data.RefCount++;
 

@@ -11,7 +11,7 @@
 
 // --
 
-PTR AMYFUNC _generic__Priv_Mem_Realloc( struct AmyCLibIFace *Self, PTR oldmem, U32 Size )
+PTR AMY_FUNC _generic__Priv_Mem_Realloc( struct AmyCLibIFace *Self, PTR oldmem, U32 Size )
 {
 struct MemStruct *realmem;
 //struct libData *data;
