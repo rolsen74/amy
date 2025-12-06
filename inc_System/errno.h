@@ -21,10 +21,10 @@
 #include <Amy_Defines.h>
 #include <Amy_Public.h>
 
-/* -- */
-
 #ifndef AMYSYS_ERRNO_H
 #define AMYSYS_ERRNO_H 
+
+AMY_EXTERN_C_BEGIN
 
 /****************************************************************************/
 
@@ -168,4 +168,6 @@
 
 /****************************************************************************/
 
-#endif
+AMY_EXTERN_C_END
+
+#endif /* AMYSYS_ERRNO_H */

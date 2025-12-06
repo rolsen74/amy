@@ -19,10 +19,10 @@
 #include <Amy_Features.h>
 #include <Amy_Defines.h>
 
-/* -- */
-
 #ifndef AMYSYS_STDINT_H
 #define AMYSYS_STDINT_H
+
+AMY_EXTERN_C_BEGIN
 
 /****************************************************************************/
 
@@ -105,5 +105,6 @@ typedef unsigned long long	uint_fast64_t;
 
 /****************************************************************************/
 
-#endif
+AMY_EXTERN_C_END
 
+#endif /* AMYSYS_STDINT_H */

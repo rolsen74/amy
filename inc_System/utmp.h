@@ -17,10 +17,10 @@
 #include <Amy_Features.h>
 #include <Amy_Defines.h>
 
-/* -- */
-
 #ifndef AMYSYS_UTMP_H
 #define AMYSYS_UTMP_H
+
+AMY_EXTERN_C_BEGIN
 
 /****************************************************************************/
 // Trying to maych Roadshow's defines
@@ -47,5 +47,7 @@ struct utmp
 };
 
 /****************************************************************************/
+
+AMY_EXTERN_C_END
 
 #endif /* AMYSYS_UTMP_H */

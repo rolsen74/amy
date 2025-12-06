@@ -19,10 +19,10 @@
 #include <Amy_Features.h>
 #include <Amy_Defines.h>
 
-/* -- */
-
 #ifndef AMYSYS_LIMITS_H
 #define AMYSYS_LIMITS_H
+
+AMY_EXTERN_C_BEGIN
 
 /****************************************************************************/
 // Runtime Invariant Values
@@ -218,5 +218,6 @@
 
 /****************************************************************************/
 
-#endif
+AMY_EXTERN_C_END
 
+#endif /* AMYSYS_LIMITS_H */

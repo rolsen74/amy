@@ -17,10 +17,10 @@
 #include <Amy_Features.h>
 #include <Amy_Defines.h>
 
-/* -- */
-
 #ifndef AMYSYS_SYS_PARAM_H
 #define AMYSYS_SYS_PARAM_H
+
+AMY_EXTERN_C_BEGIN
 
 /****************************************************************************/
 
@@ -35,4 +35,6 @@
 
 /****************************************************************************/
 
-#endif
+AMY_EXTERN_C_END
+
+#endif /* AMYSYS_SYS_PARAM_H */

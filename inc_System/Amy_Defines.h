@@ -15,6 +15,16 @@
 
 // --
 
+#ifdef __cplusplus
+#define AMY_EXTERN_C_BEGIN	extern "C" {
+#define AMY_EXTERN_C_END	}
+#else
+#define AMY_EXTERN_C_BEGIN
+#define AMY_EXTERN_C_END
+#endif
+
+// --
+
 #include <stdint.h>
 
 // --
@@ -65,14 +75,6 @@ typedef char *STR;
 
 #ifndef LE_SWAP16
 #define LE_SWAP16(x)	( (( (x) & 0x00ff ) << 8 ) | (( (x) & 0xff00 ) >> 8 ) )
-#endif
-
-#ifdef __cplusplus
-#define AMY_EXTERN_C_BEGIN	extern "C" {
-#define AMY_EXTERN_C_END	}
-#else
-#define AMY_EXTERN_C_BEGIN
-#define AMY_EXTERN_C_END
 #endif
 
 #ifndef AMY_MIN

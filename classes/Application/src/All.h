@@ -89,4 +89,4 @@ typedef struct AppObjectData
 
 // --
 
-#endif
+#endif /* AMYCLS_ALL_H */

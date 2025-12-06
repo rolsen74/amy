@@ -19,10 +19,10 @@
 #include <Amy_Features.h>
 #include <Amy_Defines.h>
 
-/* -- */
-
 #ifndef AMYSYS_STDARG_H
 #define AMYSYS_STDARG_H
+
+AMY_EXTERN_C_BEGIN
 
 /****************************************************************************/
 
@@ -55,5 +55,7 @@ typedef char *va_list;
 
 /****************************************************************************/
 
-#endif
+AMY_EXTERN_C_END
+
+#endif /* AMYSYS_STDARG_H */
 

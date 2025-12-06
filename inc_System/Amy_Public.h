@@ -69,4 +69,4 @@ extern struct _AmyCLibPublic *__AmyCPublicData;
 
 AMY_EXTERN_C_END
 
-#endif
+#endif /* AMYSYS_PUBLIC_H */

@@ -19,10 +19,10 @@
 #include <Amy_Features.h>
 #include <Amy_Defines.h>
 
-/* -- */
-
 #ifndef AMYSYS_ISO646_H
 #define AMYSYS_ISO646_H
+
+AMY_EXTERN_C_BEGIN
 
 /****************************************************************************/
 
@@ -40,4 +40,6 @@
 
 /****************************************************************************/
 
-#endif
+AMY_EXTERN_C_END
+
+#endif /* AMYSYS_ISO646_H */

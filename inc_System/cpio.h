@@ -17,10 +17,10 @@
 #include <Amy_Features.h>
 #include <Amy_Defines.h>
 
-/* -- */
-
 #ifndef AMYSYS_CPIO_H
 #define AMYSYS_CPIO_H
+
+AMY_EXTERN_C_BEGIN
 
 /****************************************************************************/
 
@@ -50,5 +50,7 @@
 
 /****************************************************************************/
 
-#endif
+AMY_EXTERN_C_END
+
+#endif /* AMYSYS_CPIO_H */
 

@@ -19,10 +19,10 @@
 #include <Amy_Features.h>
 #include <Amy_Defines.h>
 
-/* -- */
-
 #ifndef AMYSYS_SYS_TYPES_H
 #define AMYSYS_SYS_TYPES_H
+
+AMY_EXTERN_C_BEGIN
 
 /****************************************************************************/
 
@@ -119,5 +119,6 @@ typedef unsigned long long	u_quad_t;
 
 /****************************************************************************/
 
-#endif
+AMY_EXTERN_C_END
 
+#endif /* AMYSYS_SYS_TYPES_H */

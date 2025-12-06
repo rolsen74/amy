@@ -19,10 +19,10 @@
 #include <Amy_Features.h>
 #include <Amy_Defines.h>
 
-/* -- */
-
 #ifndef AMYSYS_FLOAT_H
 #define AMYSYS_FLOAT_H
+
+AMY_EXTERN_C_BEGIN
 
 /****************************************************************************/
 
@@ -63,4 +63,6 @@
 
 /****************************************************************************/
 
-#endif
+AMY_EXTERN_C_END
+
+#endif /* AMYSYS_FLOAT_H */

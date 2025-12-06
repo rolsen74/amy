@@ -17,14 +17,19 @@
 #include <Amy_Features.h>
 #include <Amy_Defines.h>
 
-/* -- */
-
 #ifndef AMYSYS_MEMORY_H
 #define AMYSYS_MEMORY_H
 
 #include <string.h>
 
-#endif
+AMY_EXTERN_C_BEGIN
 
 /****************************************************************************/
+
+/****************************************************************************/
+
+AMY_EXTERN_C_END
+
+#endif /* AMYSYS_MEMORY_H */
+
 
