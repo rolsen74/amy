@@ -152,7 +152,7 @@ off64_t	ftello64( FILE * );
 int		fseeko64( FILE *, off64_t, int );
 
 /****************************************************************************/
-// glibc
+#if 0
 
 void	clearerr_unlocked( FILE * );
 int		getc_unlocked( FILE * );
@@ -170,6 +170,7 @@ size_t	fwrite_unlocked( const void *, size_t, size_t,FILE * );
 char *	fgets_unlocked( char *, int, FILE * );
 int		fputs_unlocked( const char *, FILE * );
 
+#endif
 /****************************************************************************/
 
 AMY_EXTERN_C_END
