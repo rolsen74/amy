@@ -19,10 +19,10 @@
 #include <Amy_Features.h>
 #include <Amy_Defines.h>
 
-/* -- */
-
 #ifndef AMYSYS_ASSERT_H
 #define AMYSYS_ASSERT_H
+
+AMY_EXTERN_C_BEGIN
 
 /****************************************************************************/
 
@@ -40,13 +40,10 @@
 
 /****************************************************************************/
 
-AMY_EXTERN_C_BEGIN
-
 void __assert( const char *, int, const char *, const char * );
-
-AMY_EXTERN_C_END
 
 /****************************************************************************/
 
-#endif
+AMY_EXTERN_C_END
 
+#endif /* AMYSYS_ASSERT_H */

@@ -19,19 +19,15 @@
 #include <Amy_Features.h>
 #include <Amy_Defines.h>
 
-/* -- */
-
 #ifndef AMYSYS_STRINGS_H
 #define AMYSYS_STRINGS_H
-
-/****************************************************************************/
 
 #include <stddef.h>
 #include <string.h>
 
-/****************************************************************************/
-
 AMY_EXTERN_C_BEGIN
+
+/****************************************************************************/
 
 int		bcmp( const void *, const void *, size_t );
 void	bcopy( const void *, void *, size_t );
@@ -43,8 +39,6 @@ char *	rindex( const char *, int );
 int		strcasecmp( const char *, const char *);
 int		strncasecmp( const char *, const char *, size_t );
 int		timingsafe_bcmp( const void *, const void *, size_t );
-
-AMY_EXTERN_C_END
 
 /****************************************************************************/
 
@@ -66,4 +60,6 @@ AMY_EXTERN_C_END
 
 /****************************************************************************/
 
-#endif
+AMY_EXTERN_C_END
+
+#endif /* AMYSYS_STRINGS_H */

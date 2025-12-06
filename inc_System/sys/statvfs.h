@@ -19,14 +19,12 @@
 #include <Amy_Features.h>
 #include <Amy_Defines.h>
 
-/* -- */
-
 #ifndef AMYSYS_SYS_STATVFS_H
 #define AMYSYS_SYS_STATVFS_H
 
-/****************************************************************************/
-
 #include <sys/types.h>
+
+AMY_EXTERN_C_BEGIN
 
 /****************************************************************************/
 
@@ -50,13 +48,11 @@ struct statvfs
 
 /****************************************************************************/
 
-AMY_EXTERN_C_BEGIN
-
 int		statvfs( const char *, struct statvfs * );
 int		fstatvfs( int, struct statvfs * );
 
-AMY_EXTERN_C_END
-
 /****************************************************************************/
 
-#endif
+AMY_EXTERN_C_END
+
+#endif /* AMYSYS_SYS_STATVFS_H */

@@ -19,14 +19,12 @@
 #include <Amy_Features.h>
 #include <Amy_Defines.h>
 
-/* -- */
-
 #ifndef AMYSYS_TERMIOS_H
 #define AMYSYS_TERMIOS_H
 
-/****************************************************************************/
-
 #include <sys/types.h>		/* For pid_t */
+
+AMY_EXTERN_C_BEGIN
 
 /****************************************************************************/
 
@@ -143,8 +141,6 @@ struct termios
 
 /****************************************************************************/
 
-AMY_EXTERN_C_BEGIN
-
 speed_t		cfgetispeed( const struct termios * );
 speed_t		cfgetospeed( const struct termios * );
 int			cfsetispeed( struct termios *, speed_t );
@@ -157,8 +153,8 @@ pid_t		tcgetsid( int );
 int			tcsendbreak( int, int );
 int			tcsetattr( int, int, const struct termios * );
 
-AMY_EXTERN_C_END
-
 /****************************************************************************/
+
+AMY_EXTERN_C_END
 
 #endif /* AMYSYS_TERMIOS_H */

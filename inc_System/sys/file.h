@@ -16,14 +16,12 @@
 #include <Amy_Features.h>
 #include <Amy_Defines.h>
 
-/* -- */
-
 #ifndef AMYSYS_SYS_FILE_H
 #define AMYSYS_SYS_FILE_H
 
-/****************************************************************************/
-
 #include <fcntl.h>
+
+AMY_EXTERN_C_BEGIN
 
 /****************************************************************************/
 /* Legacy BSD seek macros (compatibility) */
@@ -50,13 +48,11 @@
 
 /****************************************************************************/
 
-AMY_EXTERN_C_BEGIN
-
 /* Optional stub for compatibility */
 int flock( int fd, int operation );
 
-AMY_EXTERN_C_END
-
 /****************************************************************************/
+
+AMY_EXTERN_C_END
 
 #endif /* AMYSYS_SYS_FILE_H */

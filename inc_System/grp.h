@@ -19,14 +19,12 @@
 #include <Amy_Features.h>
 #include <Amy_Defines.h>
 
-/* -- */
-
 #ifndef AMYSYS_GRP_H
 #define AMYSYS_GRP_H
 
-/****************************************************************************/
-
 #include <sys/types.h>
+
+AMY_EXTERN_C_BEGIN
 
 /****************************************************************************/
 
@@ -39,8 +37,6 @@ struct group
 
 /****************************************************************************/
 
-AMY_EXTERN_C_BEGIN
-
 void			endgrent( void );
 struct group *	getgrent( void );
 struct group *	getgrgid( gid_t );
@@ -49,8 +45,8 @@ struct group *	getgrnam( const char * );
 int				getgrnam_r( const char *, struct group *, char *, size_t, struct group ** );
 void			setgrent( void );
 
-AMY_EXTERN_C_END
-
 /****************************************************************************/
 
-#endif
+AMY_EXTERN_C_END
+
+#endif /* AMYSYS_GRP_H */

@@ -13,10 +13,10 @@
 #ifndef AMYSYS_PUBLIC_H
 #define AMYSYS_PUBLIC_H
 
-/****************************************************************************/
-
 #include <stdio.h>		// FILE
 #include <fenv.h>		// fenv_t
+
+AMY_EXTERN_C_BEGIN
 
 /****************************************************************************/
 
@@ -66,5 +66,7 @@ extern struct _AmyCLibPublic *__AmyCPublicData;
 #define AmyCLibPublic __AmyCPublicData
 
 /****************************************************************************/
+
+AMY_EXTERN_C_END
 
 #endif

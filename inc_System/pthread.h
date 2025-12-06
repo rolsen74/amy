@@ -37,17 +37,14 @@
 #include <Amy_Features.h>
 #include <Amy_Defines.h>
 
-/* -- */
-
 #ifndef AMYSYS_PTHREAD_H
 #define AMYSYS_PTHREAD_H
 
-/****************************************************************************/
-
-//#include <proto/exec.h>
 #include <sys/types.h>
 #include <time.h>
 #include <sched.h>
+
+AMY_EXTERN_C_BEGIN
 
 /****************************************************************************/
 
@@ -251,8 +248,6 @@ typedef void *	pthread_spinlock_t;
 
 /****************************************************************************/
 
-AMY_EXTERN_C_BEGIN
-
 int			pthread_atfork( void (*)(void), void (*)(void), void (*)(void) );
 int			pthread_attr_destroy( pthread_attr_t * );
 int			pthread_attr_getdetachstate( const pthread_attr_t *, int * );
@@ -354,10 +349,8 @@ int			pthread_spin_trylock( pthread_spinlock_t * );
 int			pthread_spin_unlock( pthread_spinlock_t * );
 void		pthread_testcancel( void );
 
-AMY_EXTERN_C_END
-
 /****************************************************************************/
 
-#endif
+AMY_EXTERN_C_END
 
-
+#endif /* AMYSYS_PTHREAD_H */

@@ -19,15 +19,13 @@
 #include <Amy_Features.h>
 #include <Amy_Defines.h>
 
-/* -- */
-
 #ifndef AMYSYS_SIGNAL_H
 #define AMYSYS_SIGNAL_H
 
-/****************************************************************************/
-
 #include <sys/types.h>
 #include <pthread.h>
+
+AMY_EXTERN_C_BEGIN
 
 /****************************************************************************/
 
@@ -227,8 +225,6 @@ typedef void (*sighandler_t)(int);
 
 /****************************************************************************/
 
-AMY_EXTERN_C_BEGIN
-
 int		kill( pid_t, int );
 int		killpg( pid_t, int );
 void	psiginfo( const siginfo_t *, const char * );
@@ -261,9 +257,8 @@ int		sigtimedwait( const sigset_t *, siginfo_t *, const struct timespec * );
 int		sigwait( const sigset_t *, int * );
 int		sigwaitinfo( const sigset_t *, siginfo_t * );
 
-AMY_EXTERN_C_END
-
 /****************************************************************************/
 
-#endif
+AMY_EXTERN_C_END
 
+#endif /* AMYSYS_SIGNAL_H */

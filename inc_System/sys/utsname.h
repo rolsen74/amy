@@ -19,14 +19,12 @@
 #include <Amy_Features.h>
 #include <Amy_Defines.h>
 
-/* -- */
-
 #ifndef AMYSYS_SYS_UTSNAME_H
 #define AMYSYS_SYS_UTSNAME_H
 
-/****************************************************************************/
-
 #include <sys/types.h>
+
+AMY_EXTERN_C_BEGIN
 
 /****************************************************************************/
 
@@ -43,13 +41,10 @@ struct utsname
 
 /****************************************************************************/
 
-AMY_EXTERN_C_BEGIN
-
 int		uname( struct utsname * );
-
-AMY_EXTERN_C_END
 
 /****************************************************************************/
 
-#endif
+AMY_EXTERN_C_END
 
+#endif /* AMYSYS_SYS_UTSNAME_H */

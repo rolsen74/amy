@@ -19,18 +19,13 @@
 #include <Amy_Features.h>
 #include <Amy_Defines.h>
 
-/* -- */
-
 #ifndef AMYSYS_SYS_TIME_H
 #define AMYSYS_SYS_TIME_H
 
-/****************************************************************************/
-
-// Amiga Include
-//#include <devices/timer.h>
-
 #include <sys/types.h>
 #include <sys/select.h>
+
+AMY_EXTERN_C_BEGIN
 
 /****************************************************************************/
 
@@ -65,8 +60,6 @@ struct itimerval
 
 /****************************************************************************/
 
-AMY_EXTERN_C_BEGIN
-
 int getitimer( int, struct itimerval * );
 int setitimer( int, const struct itimerval *, struct itimerval * );
 int gettimeofday( struct timeval *, void * );
@@ -74,9 +67,8 @@ int settimeofday( const struct timeval *tv, const struct timezone *tz );
 int select( int, fd_set *, fd_set *, fd_set *, struct timeval * );
 int utimes( const char *, const struct timeval [2] );
 
-AMY_EXTERN_C_END
-
 /****************************************************************************/
 
-#endif
+AMY_EXTERN_C_END
 
+#endif /* AMYSYS_SYS_TIME_H */

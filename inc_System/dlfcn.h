@@ -19,10 +19,10 @@
 #include <Amy_Features.h>
 #include <Amy_Defines.h>
 
-/* -- */
-
 #ifndef AMYSYS_DLFCN_H
 #define AMYSYS_DLFCN_H
+
+AMY_EXTERN_C_BEGIN
 
 /****************************************************************************/
 
@@ -33,16 +33,13 @@
 
 /****************************************************************************/
 
-AMY_EXTERN_C_BEGIN
-
 int		dlclose( void * );
 char *	dlerror( void );
 void *	dlopen( const char *, int );
 void *	dlsym( void *, const char * );
 
-AMY_EXTERN_C_END
-
 /****************************************************************************/
 
-#endif
+AMY_EXTERN_C_END
 
+#endif /* AMYSYS_DLFCN_H */

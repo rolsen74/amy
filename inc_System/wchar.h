@@ -19,12 +19,8 @@
 #include <Amy_Features.h>
 #include <Amy_Defines.h>
 
-/* -- */
-
 #ifndef AMYSYS_WCHAR_H
 #define AMYSYS_WCHAR_H
-
-/****************************************************************************/
 
 #include <ctype.h>
 #include <string.h>
@@ -34,6 +30,8 @@
 #include <stdlib.h>
 #include <stdint.h>
 #include <time.h>
+
+AMY_EXTERN_C_BEGIN
 
 /****************************************************************************/
 
@@ -52,8 +50,6 @@ typedef unsigned int wint_t;
 #endif
 
 /****************************************************************************/
-
-AMY_EXTERN_C_BEGIN
 
 wint_t				btowc( int );
 wint_t				fgetwc( FILE * );
@@ -145,8 +141,8 @@ wchar_t *			wmemset( wchar_t *, wchar_t, size_t );
 int					wprintf( const wchar_t *, ... );
 int					wscanf( const wchar_t *, ... );
 
-AMY_EXTERN_C_END
-
 /****************************************************************************/
 
-#endif
+AMY_EXTERN_C_END
+
+#endif /* AMYSYS_WCHAR_H */

@@ -19,14 +19,12 @@
 #include <Amy_Features.h>
 #include <Amy_Defines.h>
 
-/* -- */
-
 #ifndef AMYSYS_DIRENT_H
 #define AMYSYS_DIRENT_H
 
-/****************************************************************************/
-
 #include <sys/types.h>
+
+AMY_EXTERN_C_BEGIN
 
 /****************************************************************************/
 
@@ -42,8 +40,6 @@ struct dirent
 
 /****************************************************************************/
 
-AMY_EXTERN_C_BEGIN
-
 int				alphasort( const struct dirent **, const struct dirent ** );
 int				closedir( DIR * );
 int				dirfd( DIR * );
@@ -56,8 +52,8 @@ int				scandir( const char *, struct dirent ***, int (*)( const struct dirent *)
 void			seekdir( DIR *, long );
 long			telldir( DIR * );
 
-AMY_EXTERN_C_END
-
 /****************************************************************************/
 
-#endif
+AMY_EXTERN_C_END
+
+#endif /* AMYSYS_DIRENT_H */

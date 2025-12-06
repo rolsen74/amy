@@ -19,14 +19,12 @@
 #include <Amy_Features.h>
 #include <Amy_Defines.h>
 
-/* -- */
-
 #ifndef AMYSYS_LOCALE_H
 #define AMYSYS_LOCALE_H
 
-/****************************************************************************/
-
 #include <stddef.h>
+
+AMY_EXTERN_C_BEGIN
 
 /****************************************************************************/
 
@@ -94,8 +92,6 @@ struct lconv
 
 /****************************************************************************/
 
-AMY_EXTERN_C_BEGIN
-
 locale_t		duplocale( locale_t );
 void			freelocale( locale_t );
 struct lconv *	localeconv( void );
@@ -103,9 +99,8 @@ locale_t		newlocale( int, const char *, locale_t );
 char *			setlocale( int, const char * );
 locale_t		uselocale( locale_t );
 
-AMY_EXTERN_C_END
-
 /****************************************************************************/
 
-#endif
+AMY_EXTERN_C_END
 
+#endif /* AMYSYS_LOCALE_H */

@@ -19,15 +19,13 @@
 #include <Amy_Features.h>
 #include <Amy_Defines.h>
 
-/* -- */
-
 #ifndef AMYSYS_SYSLOG_H
 #define AMYSYS_SYSLOG_H
 
-/****************************************************************************/
-
 #include <stdarg.h>
 #include <stddef.h> 
+
+AMY_EXTERN_C_BEGIN
 
 /****************************************************************************/
 
@@ -92,16 +90,14 @@
 
 /****************************************************************************/
 
-AMY_EXTERN_C_BEGIN
-
 void	syslog( int, const char *, ... );
 void	vsyslog( int, const char *, va_list );
 void	openlog( const char *, int, int );
 void	closelog( void );
 int		setlogmask( int );
 
-AMY_EXTERN_C_END
-
 /****************************************************************************/
 
-#endif
+AMY_EXTERN_C_END
+
+#endif /* AMYSYS_SYSLOG_H */

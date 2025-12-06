@@ -19,16 +19,14 @@
 #include <Amy_Features.h>
 #include <Amy_Defines.h>
 
-/* -- */
-
 #ifndef AMYSYS_INTTYPES_H
 #define AMYSYS_INTTYPES_H
-
-/****************************************************************************/
 
 #include <stdint.h>
 #include <stddef.h>
 #include <wchar.h>
+
+AMY_EXTERN_C_BEGIN
 
 /****************************************************************************/
 
@@ -241,8 +239,6 @@ typedef struct
 
 /****************************************************************************/
 
-AMY_EXTERN_C_BEGIN
-
 intmax_t	imaxabs( intmax_t );
 imaxdiv_t	imaxdiv( intmax_t, intmax_t );
 intmax_t	strtoimax( const char *, char **, int );
@@ -250,9 +246,8 @@ uintmax_t	strtoumax( const char *, char **, int );
 intmax_t	wcstoimax( const wchar_t *, wchar_t **, int );
 uintmax_t	wcstoumax( const wchar_t *, wchar_t **, int );
 
-AMY_EXTERN_C_END
-
 /****************************************************************************/
 
-#endif
+AMY_EXTERN_C_END
 
+#endif /* AMYSYS_INTTYPES_H */

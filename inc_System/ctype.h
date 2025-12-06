@@ -19,18 +19,14 @@
 #include <Amy_Features.h>
 #include <Amy_Defines.h>
 
-/* -- */
-
 #ifndef AMYSYS_CTYPE_H
 #define AMYSYS_CTYPE_H
 
-/****************************************************************************/
-
 #include <locale.h>
 
-/****************************************************************************/
-
 AMY_EXTERN_C_BEGIN
+
+/****************************************************************************/
 
 int		isalnum( int );
 int		isalnum_l( int, locale_t );
@@ -63,17 +59,13 @@ int		tolower_l( int, locale_t );
 int		toupper( int );
 int		toupper_l( int, locale_t );
 
-AMY_EXTERN_C_END
-
 /****************************************************************************/
-
-AMY_EXTERN_C_BEGIN
 
 int		_toupper( int );
 int		_tolower( int );
 
-AMY_EXTERN_C_END
-
 /****************************************************************************/
 
-#endif
+AMY_EXTERN_C_END
+
+#endif /* AMYSYS_CTYPE_H */

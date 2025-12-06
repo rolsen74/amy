@@ -19,10 +19,10 @@
 #include <Amy_Features.h>
 #include <Amy_Defines.h>
 
-/* -- */
-
 #ifndef AMYSYS_COMPLEX_H
 #define AMYSYS_COMPLEX_H
+
+AMY_EXTERN_C_BEGIN
 
 /****************************************************************************/
 
@@ -31,8 +31,6 @@
 #define I				_Complex_I
 
 /****************************************************************************/
-
-AMY_EXTERN_C_BEGIN
 
 double					cabs( double complex );
 float					cabsf( float complex );
@@ -101,9 +99,8 @@ double complex			ctanh( double complex );
 float complex			ctanhf( float complex );
 long double complex		ctanhl( long double complex );
 
-AMY_EXTERN_C_END
-
 /****************************************************************************/
 
-#endif
+AMY_EXTERN_C_END
 
+#endif /* AMYSYS_COMPLEX_H */

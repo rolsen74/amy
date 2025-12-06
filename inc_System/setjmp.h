@@ -19,14 +19,12 @@
 #include <Amy_Features.h>
 #include <Amy_Defines.h>
 
-/* -- */
-
 #ifndef AMYSYS_SETJMP_H
 #define AMYSYS_SETJMP_H
 
-/****************************************************************************/
-
 #include <stdint.h>
+
+AMY_EXTERN_C_BEGIN
 
 /****************************************************************************/
 
@@ -58,8 +56,6 @@ typedef uint8_t jmp_buf[ 512 ];
 
 /****************************************************************************/
 
-AMY_EXTERN_C_BEGIN
-
 void	_longjmp( jmp_buf, int );
 void	longjmp( jmp_buf, int );
 void	siglongjmp( jmp_buf, int );
@@ -68,9 +64,8 @@ int		_setjmp( jmp_buf );
 int		setjmp( jmp_buf );
 int		sigsetjmp( jmp_buf );
 
-AMY_EXTERN_C_END
-
 /****************************************************************************/
 
-#endif
+AMY_EXTERN_C_END
 
+#endif /* AMYSYS_SETJMP_H */

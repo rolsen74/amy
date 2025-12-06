@@ -19,10 +19,10 @@
 #include <Amy_Features.h>
 #include <Amy_Defines.h>
 
-/* -- */
-
 #ifndef AMYSYS_FNMATCH_H
 #define AMYSYS_FNMATCH_H
+
+AMY_EXTERN_C_BEGIN
 
 /****************************************************************************/
 
@@ -36,13 +36,10 @@
 
 /****************************************************************************/
 
-AMY_EXTERN_C_BEGIN
-
 int	fnmatch( const char *, const char *, int );
-
-AMY_EXTERN_C_END
 
 /****************************************************************************/
 
-#endif
+AMY_EXTERN_C_END
 
+#endif /* AMYSYS_FNMATCH_H */

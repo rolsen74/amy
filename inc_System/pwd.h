@@ -19,14 +19,12 @@
 #include <Amy_Features.h>
 #include <Amy_Defines.h>
 
-/* -- */
-
 #ifndef AMYSYS_PWD_H
 #define AMYSYS_PWD_H
 
-/****************************************************************************/
-
 #include <sys/types.h>
+
+AMY_EXTERN_C_BEGIN
 
 /****************************************************************************/
 
@@ -43,8 +41,6 @@ struct passwd
 
 /****************************************************************************/
 
-AMY_EXTERN_C_BEGIN
-
 struct passwd *	getpwnam( const char * );
 struct passwd *	getpwuid( uid_t );
 int				getpwnam_r( const char *, struct passwd *, char *, size_t, struct passwd ** );
@@ -53,8 +49,8 @@ void			endpwent( void );
 struct passwd *	getpwent( void );
 void			setpwent( void );
 
-AMY_EXTERN_C_END
-
 /****************************************************************************/
 
-#endif
+AMY_EXTERN_C_END
+
+#endif /* AMYSYS_PWD_H */

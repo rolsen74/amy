@@ -19,15 +19,13 @@
 #include <Amy_Features.h>
 #include <Amy_Defines.h>
 
-/* -- */
-
 #ifndef AMYSYS_SCHED_H
 #define AMYSYS_SCHED_H
 
-/****************************************************************************/
-
 #include <sys/types.h>
 #include <time.h>
+
+AMY_EXTERN_C_BEGIN
 
 /****************************************************************************/
 
@@ -46,8 +44,6 @@ struct sched_param
 
 /****************************************************************************/
 
-AMY_EXTERN_C_BEGIN
-
 int		sched_get_priority_max( int );
 int		sched_get_priority_min( int );
 int		sched_getparam( pid_t, struct sched_param * );
@@ -57,10 +53,8 @@ int		sched_setparam( pid_t, const struct sched_param * );
 int		sched_setscheduler( pid_t, int, const struct sched_param * );
 int		sched_yield( void );
 
-AMY_EXTERN_C_END
-
 /****************************************************************************/
 
-#endif
+AMY_EXTERN_C_END
 
-
+#endif /* AMYSYS_SCHED_H */

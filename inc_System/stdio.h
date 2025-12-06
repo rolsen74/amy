@@ -19,20 +19,18 @@
 #include <Amy_Features.h>
 #include <Amy_Defines.h>
 
-/* -- */
-
 #ifndef AMYSYS_STDIO_H
 #define AMYSYS_STDIO_H
 
 /* Compatibility macro for GMP/Autoconf */
 #define _STDIO_H
 
-/****************************************************************************/
-
 #include <locale.h>
 #include <stddef.h>
 #include <stdarg.h>
 #include <sys/types.h>
+
+AMY_EXTERN_C_BEGIN
 
 /****************************************************************************/
 
@@ -76,11 +74,7 @@ typedef struct
 
 } FILE;
 
-#include <Amy_Public.h>
-
 /****************************************************************************/
-
-AMY_EXTERN_C_BEGIN
 
 void	clearerr( FILE * );
 char *	ctermid( char * );
@@ -148,25 +142,17 @@ int		vsnprintf( char *, size_t, const char *, va_list );
 int		vsprintf( char *, const char *, va_list );
 int		vsscanf( const char *, const char *, va_list );
 
-AMY_EXTERN_C_END
-
 /****************************************************************************/
 // BSD
 
-AMY_EXTERN_C_BEGIN
-
-int			asprintf( char **, const char *, ... );
-int			vasprintf( char **, const char *, va_list );
-FILE *		fopen64( const char *, const char * );
-off64_t		ftello64( FILE * );
-int			fseeko64( FILE *, off64_t, int );
-
-AMY_EXTERN_C_END
+int		asprintf( char **, const char *, ... );
+int		vasprintf( char **, const char *, va_list );
+FILE *	fopen64( const char *, const char * );
+off64_t	ftello64( FILE * );
+int		fseeko64( FILE *, off64_t, int );
 
 /****************************************************************************/
 // glibc
-
-AMY_EXTERN_C_BEGIN
 
 void	clearerr_unlocked( FILE * );
 int		getc_unlocked( FILE * );
@@ -184,8 +170,11 @@ size_t	fwrite_unlocked( const void *, size_t, size_t,FILE * );
 char *	fgets_unlocked( char *, int, FILE * );
 int		fputs_unlocked( const char *, FILE * );
 
-AMY_EXTERN_C_END
-
 /****************************************************************************/
 
-#endif
+AMY_EXTERN_C_END
+
+#endif /* AMYSYS_STDIO_H */
+
+// Public need's FILE
+#include <Amy_Public.h>

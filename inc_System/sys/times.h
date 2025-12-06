@@ -19,14 +19,12 @@
 #include <Amy_Features.h>
 #include <Amy_Defines.h>
 
-/* -- */
-
 #ifndef AMYSYS_SYS_TIMES_H
 #define AMYSYS_SYS_TIMES_H
 
-/****************************************************************************/
-
 #include <sys/types.h>
+
+AMY_EXTERN_C_BEGIN
 
 /****************************************************************************/
 
@@ -40,13 +38,10 @@ struct tms
 
 /****************************************************************************/
 
-AMY_EXTERN_C_BEGIN
-
 clock_t	times( struct tms * );
-
-AMY_EXTERN_C_END
 
 /****************************************************************************/
 
-#endif
+AMY_EXTERN_C_END
 
+#endif /* AMYSYS_SYS_TIMES_H */

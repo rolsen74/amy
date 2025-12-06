@@ -18,14 +18,12 @@
 #include <Amy_Defines.h>
 #include <Amy_Public.h>
 
-/* -- */
-
 #ifndef AMYSYS_GETOPT_H
 #define AMYSYS_GETOPT_H
 
-/****************************************************************************/
-
 #include <unistd.h>
+
+AMY_EXTERN_C_BEGIN
 
 /****************************************************************************/
 
@@ -45,13 +43,9 @@ struct option
 
 /****************************************************************************/
 
-AMY_EXTERN_C_BEGIN
-
 int		getopt(				int argc, char * const argv[], const char *optstring );
 int		getopt_long(		int argc, char * const argv[], const char *optstring, const struct option *longopts, int *longindex );
 int		getopt_long_only(	int argc, char * const argv[], const char *optstring, const struct option *longopts, int *longindex );
-
-AMY_EXTERN_C_END
 
 /****************************************************************************/
 
@@ -61,5 +55,7 @@ AMY_EXTERN_C_END
 #define optopt	AmyCLibPublic->ra_optopt
 
 /****************************************************************************/
+
+AMY_EXTERN_C_END
 
 #endif /* AMYSYS_GETOPT_H */

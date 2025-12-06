@@ -17,10 +17,10 @@
 #include <Amy_Features.h>
 #include <Amy_Defines.h>
 
-/* -- */
-
 #ifndef AMYSYS_FENV_H
 #define AMYSYS_FENV_H
+
+AMY_EXTERN_C_BEGIN
 
 /****************************************************************************/
 
@@ -54,8 +54,6 @@ enum
 
 /****************************************************************************/
 
-AMY_EXTERN_C_BEGIN
-
 int	feclearexcept( int );
 int	fegetenv( fenv_t * );
 int	fegetexceptflag( fexcept_t *, int );
@@ -68,11 +66,11 @@ int	fesetround( int );
 int	fetestexcept( int );
 int	feupdateenv( const fenv_t * );
 
-AMY_EXTERN_C_END
-
 /****************************************************************************/
 
-#endif
+AMY_EXTERN_C_END
+
+#endif /* AMYSYS_FENV_H */
 
 // Public need's fenv_t
 #include <Amy_Public.h>

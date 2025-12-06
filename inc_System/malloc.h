@@ -17,14 +17,12 @@
 #include <Amy_Features.h>
 #include <Amy_Defines.h>
 
-/* -- */
-
 #ifndef AMYSYS_MALLOC_H
 #define AMYSYS_MALLOC_H
 
-/****************************************************************************/
-
 #include <stdlib.h>
+
+AMY_EXTERN_C_BEGIN
 
 /****************************************************************************/
 
@@ -44,13 +42,11 @@ struct mallinfo
 
 /****************************************************************************/
 
-AMY_EXTERN_C_BEGIN
-
 struct mallinfo	mallinfo( void );
 int				mallopt( int param, int value );
 
-AMY_EXTERN_C_END
-
 /****************************************************************************/
 
-#endif
+AMY_EXTERN_C_END
+
+#endif /* AMYSYS_MALLOC_H */

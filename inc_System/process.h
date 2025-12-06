@@ -17,15 +17,13 @@
 #include <Amy_Features.h>
 #include <Amy_Defines.h>
 
-/* -- */
-
 #ifndef AMYSYS_PROCESS_H
 #define AMYSYS_PROCESS_H
 
-/****************************************************************************/
-
 #include <stdlib.h>
 #include <stddef.h>
+
+AMY_EXTERN_C_BEGIN
 
 /****************************************************************************/
 /* Compatibility mode flags (from DOS/Windows) */
@@ -37,8 +35,6 @@
 #define P_DETACH	4
 
 /****************************************************************************/
-
-AMY_EXTERN_C_BEGIN
 
 /* Stubs for spawn/exec APIs — can return -1 with ENOSYS */
 int		execl(		const char *path, const char *arg0, ... );
@@ -53,8 +49,8 @@ int		spawnlpe(	int mode, const char *file, const char *arg0, ... );
 int		spawnv(		int mode, const char *path, const char *const argv[] );
 int		spawnve(	int mode, const char *path, const char *const argv[], const char *const envp[] );
 
-AMY_EXTERN_C_END
-
 /****************************************************************************/
+
+AMY_EXTERN_C_END
 
 #endif /* AMYSYS_PROCESS_H */

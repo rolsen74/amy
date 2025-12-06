@@ -20,16 +20,14 @@
 #include <Amy_Defines.h>
 #include <Amy_Public.h>
 
-/* -- */
-
 #ifndef AMYSYS_UNISTD_H
 #define AMYSYS_UNISTD_H
-
-/****************************************************************************/
 
 #include <inttypes.h>
 #include <sys/types.h>
 #include <getopt.h>
+
+AMY_EXTERN_C_BEGIN
 
 /****************************************************************************/
 
@@ -75,17 +73,11 @@
 
 /****************************************************************************/
 
-AMY_EXTERN_C_BEGIN
-
 char ***__amy_environ( void );
 #define environ ( *__amy_environ() )
 extern char ***__amy_environ( void );
 
-AMY_EXTERN_C_END
-
 /****************************************************************************/
-
-AMY_EXTERN_C_BEGIN
 
 int			access( const char *, int );
 unsigned	alarm( unsigned );
@@ -170,8 +162,6 @@ int			usleep( useconds_t );
 pid_t		vfork( void );
 ssize_t		write( int, const void *, size_t );
 
-AMY_EXTERN_C_END
-
 /****************************************************************************/
 
 // moved to getopt.h
@@ -182,4 +172,6 @@ AMY_EXTERN_C_END
 
 /****************************************************************************/
 
-#endif
+AMY_EXTERN_C_END
+
+#endif /* AMYSYS_UNISTD_H */

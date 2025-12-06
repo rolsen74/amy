@@ -10,15 +10,17 @@
 ** This file is part of Amy C Lib
 */
 
+#include <Amy_Features.h>
+#include <Amy_Defines.h>
+
 #ifndef AMYSYS_STDLIB_H
 #define AMYSYS_STDLIB_H
 
-/****************************************************************************/
-
-#include <Amy_Defines.h>	// Need AMY_EXTERN_C_BEGIN
 #include <stddef.h>
 #include <stdint.h>
 #include <sys/types.h>
+
+AMY_EXTERN_C_BEGIN
 
 /****************************************************************************/
 
@@ -53,8 +55,6 @@ typedef struct
 } lldiv_t;
 
 /****************************************************************************/
-
-AMY_EXTERN_C_BEGIN
 
 void		_Exit( int );
 long		a641( const char * );
@@ -122,24 +122,16 @@ int			unsetenv( const char * );
 size_t		wcstombs( char *, const wchar_t *, size_t );
 int			wctomb( char *, wchar_t );
 
-AMY_EXTERN_C_END
-
 /****************************************************************************/
 // Legacy
-
-AMY_EXTERN_C_BEGIN
 
 char *			ecvt( double, int, int *restrict, int * );
 char *			fcvt( double, int, int *restrict, int * );
 char *			gcvt( double, int, char * );
 char *			mktemp( char * );
 
-AMY_EXTERN_C_END
-
 /****************************************************************************/
 // BSD
-
-AMY_EXTERN_C_BEGIN
 
 uint32_t		arc4random( void );
 void			arc4random_addrandom( unsigned char *, int );
@@ -154,18 +146,13 @@ void *			reallocarray( void *, size_t, size_t );
 void *			recallocarray( void *, size_t, size_t, size_t );
 quad_t			strtoq( const char *, char **, int );
 
-AMY_EXTERN_C_END
-
 /****************************************************************************/
 // GNU
 
-AMY_EXTERN_C_BEGIN
-
 int				on_exit( void(*)(int, void *), void * );
-
-AMY_EXTERN_C_END
 
 /****************************************************************************/
 
-#endif
+AMY_EXTERN_C_END
 
+#endif /* AMYSYS_STDLIB_H */

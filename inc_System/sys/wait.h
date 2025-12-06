@@ -19,15 +19,13 @@
 #include <Amy_Features.h>
 #include <Amy_Defines.h>
 
-/* -- */
-
 #ifndef AMYSYS_SYS_WAIT_H
 #define AMYSYS_SYS_WAIT_H
 
-/****************************************************************************/
-
 #include <signal.h>
 #include <sys/types.h>
+
+AMY_EXTERN_C_BEGIN
 
 /****************************************************************************/
 
@@ -54,15 +52,12 @@ typedef int idtype_t;
 
 /****************************************************************************/
 
-AMY_EXTERN_C_BEGIN
-
 pid_t	wait( int * );
 int		waitid( idtype_t, id_t, siginfo_t *, int );
 pid_t	waitpid( pid_t, int *, int );
 
-AMY_EXTERN_C_END
-
 /****************************************************************************/
 
-#endif
+AMY_EXTERN_C_END
 
+#endif /* AMYSYS_SYS_WAIT_H */

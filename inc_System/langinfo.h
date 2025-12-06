@@ -19,15 +19,13 @@
 #include <Amy_Features.h>
 #include <Amy_Defines.h>
 
-/* -- */
-
 #ifndef AMYSYS_LANGINFO_H
 #define AMYSYS_LANGINFO_H
 
-/****************************************************************************/
-
 #include <locale.h>
 #include <nl_types.h>
+
+AMY_EXTERN_C_BEGIN
 
 /****************************************************************************/
 
@@ -113,13 +111,11 @@ typedef int nl_item;
 
 /****************************************************************************/
 
-AMY_EXTERN_C_BEGIN
-
 char *	nl_langinfo( nl_item );
 char *	nl_langinfol( nl_item, locale_t );
 
-AMY_EXTERN_C_END
-
 /****************************************************************************/
 
-#endif
+AMY_EXTERN_C_END
+
+#endif /* AMYSYS_LANGINFO_H */

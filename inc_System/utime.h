@@ -19,14 +19,12 @@
 #include <Amy_Features.h>
 #include <Amy_Defines.h>
 
-/* -- */
-
 #ifndef AMYSYS_UTIME_H
 #define AMYSYS_UTIME_H
 
-/****************************************************************************/
-
 #include <sys/types.h>
+
+AMY_EXTERN_C_BEGIN
 
 /****************************************************************************/
 
@@ -38,12 +36,10 @@ struct utimbuf
 
 /****************************************************************************/
 
-AMY_EXTERN_C_BEGIN
-
 int utime( const char *, const struct utimbuf * );
-
-AMY_EXTERN_C_END
 
 /****************************************************************************/
 
-#endif
+AMY_EXTERN_C_END
+
+#endif /* AMYSYS_UTIME_H */

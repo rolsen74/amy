@@ -19,14 +19,12 @@
 #include <Amy_Features.h>
 #include <Amy_Defines.h>
 
-/* -- */
-
 #ifndef AMYSYS_FCNTL_H
 #define AMYSYS_FCNTL_H
 
-/****************************************************************************/
-
 #include <sys/types.h>
+
+AMY_EXTERN_C_BEGIN
 
 /****************************************************************************/
 
@@ -98,8 +96,6 @@ struct flock
 
 /****************************************************************************/
 
-AMY_EXTERN_C_BEGIN
-
 int	creat( const char *, mode_t );
 int	fcntl( int, int, ... );
 int	open( const char *, int, ... );
@@ -107,9 +103,8 @@ int	openat( int, const char *, int, ... );
 int	posix_fadvice( int, off_t, off_t, int );
 int	posix_fallocate( int, off_t, off_t );
 
-AMY_EXTERN_C_END
-
 /****************************************************************************/
 
-#endif
+AMY_EXTERN_C_END
 
+#endif /* AMYSYS_FCNTL_H */

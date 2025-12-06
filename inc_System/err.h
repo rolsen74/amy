@@ -17,19 +17,15 @@
 #include <Amy_Features.h>
 #include <Amy_Defines.h>
 
-/* -- */
-
 #ifndef AMYSYS_ERR_H
 #define AMYSYS_ERR_H
 
-/****************************************************************************/
-
 #include <stdarg.h>
+
+AMY_EXTERN_C_BEGIN
 
 /****************************************************************************/
 // BSD-specific error reporting functions
-
-AMY_EXTERN_C_BEGIN
 
 void		err(	int, const char *, ... );
 void		verr(	int, const char *, va_list );
@@ -44,9 +40,8 @@ void		vwarnc(	int, const char *, va_list );
 void		warnx(	const char *, ... );
 void		vwarnx(	const char *, va_list );
 
-AMY_EXTERN_C_END
-
 /****************************************************************************/
 
-#endif
+AMY_EXTERN_C_END
 
+#endif /* AMYSYS_ERR_H */

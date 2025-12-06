@@ -17,14 +17,12 @@
 #include <Amy_Features.h>
 #include <Amy_Defines.h>
 
-/* -- */
-
 #ifndef AMYSYS_SYS_RESOURCE_H
 #define AMYSYS_SYS_RESOURCE_H
 
-/****************************************************************************/
-
 #include <sys/time.h>
+
+AMY_EXTERN_C_BEGIN
 
 /****************************************************************************/
 /* Resource limit constants (for compile-time compatibility only) */
@@ -77,14 +75,12 @@ struct rusage
 
 /****************************************************************************/
 
-AMY_EXTERN_C_BEGIN
-
 int		getrlimit(	int resource, struct rlimit *rlp );
 int		setrlimit(	int resource, const struct rlimit *rlp );
 int		getrusage(	int who, struct rusage *usage );
 
-AMY_EXTERN_C_END
-
 /****************************************************************************/
+
+AMY_EXTERN_C_END
 
 #endif /* AMYSYS_SYS_RESOURCE_H */

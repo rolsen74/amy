@@ -19,10 +19,10 @@
 #include <Amy_Features.h>
 #include <Amy_Defines.h>
 
-/* -- */
-
 #ifndef AMYSYS_NL_TYPES_H
 #define AMYSYS_NL_TYPES_H
+
+AMY_EXTERN_C_BEGIN
 
 /****************************************************************************/
 
@@ -38,14 +38,12 @@ typedef void *nl_catd;
 
 /****************************************************************************/
 
-AMY_EXTERN_C_BEGIN
-
 int		catclose( nl_catd );
 char *	catgets( nl_catd, int, int, const char * );
 nl_catd	catopen( const char *, int );
 
-AMY_EXTERN_C_END
-
 /****************************************************************************/
 
-#endif
+AMY_EXTERN_C_END
+
+#endif /* AMYSYS_NL_TYPES_H */

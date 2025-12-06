@@ -17,14 +17,12 @@
 #include <Amy_Features.h>
 #include <Amy_Defines.h>
 
-/* -- */
-
 #ifndef AMYSYS_SYS_MOUNT_H
 #define AMYSYS_SYS_MOUNT_H
 
-/****************************************************************************/
-
 #include <sys/types.h>
+
+AMY_EXTERN_C_BEGIN
 
 /****************************************************************************/
 
@@ -56,13 +54,11 @@ struct statfs
 
 /****************************************************************************/
 
-AMY_EXTERN_C_BEGIN
-
 int		statfs( const char *, struct statfs * );
 int		fstatfs( int, struct statfs * );
 
-AMY_EXTERN_C_END
-
 /****************************************************************************/
 
-#endif
+AMY_EXTERN_C_END
+
+#endif /* AMYSYS_SYS_MOUNT_H */

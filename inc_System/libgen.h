@@ -19,20 +19,18 @@
 #include <Amy_Features.h>
 #include <Amy_Defines.h>
 
-/* -- */
-
 #ifndef AMYSYS_LIBGEN_H
 #define AMYSYS_LIBGEN_H
 
-/****************************************************************************/
-
 AMY_EXTERN_C_BEGIN
+
+/****************************************************************************/
 
 char *	basename( char * );
 char *	dirname( char * );
 
-AMY_EXTERN_C_END
-
 /****************************************************************************/
 
-#endif
+AMY_EXTERN_C_END
+
+#endif /* AMYSYS_LIBGEN_H */

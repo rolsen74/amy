@@ -20,14 +20,12 @@
 #include <Amy_Defines.h>
 #include <Amy_Public.h>
 
-/* -- */
-
 #ifndef AMYSYS_MATH_H
 #define AMYSYS_MATH_H
 
-/****************************************************************************/
-
 #include <limits.h>			// For INT_MAX
+
+AMY_EXTERN_C_BEGIN
 
 /****************************************************************************/
 
@@ -260,8 +258,6 @@ typedef double				double_t;
 #endif
 
 /****************************************************************************/
-
-AMY_EXTERN_C_BEGIN
 
 double		acos(			double );
 float		acosf(			float );
@@ -499,12 +495,8 @@ double		y0(				double );
 double		y1(				double );
 double		yn(				int, double );
 
-AMY_EXTERN_C_END
-
 /****************************************************************************/
 // Internal function not part of the specs
-
-AMY_EXTERN_C_BEGIN
 
 int			__isnan(		double );
 int			__isnanf(		float );
@@ -513,9 +505,8 @@ int			__signbit(		double );
 int			__signbitf(		float );
 int			__signbitl(		long double );
 
-AMY_EXTERN_C_END
-
 /****************************************************************************/
 
-#endif
+AMY_EXTERN_C_END
 
+#endif /* AMYSYS_MATH_H */

@@ -17,25 +17,20 @@
 #include <Amy_Features.h>
 #include <Amy_Defines.h>
 
-/* -- */
-
 #ifndef AMYSYS_AMIGA_H
 #define AMYSYS_AMIGA_H
 
-/****************************************************************************/
-
 //#include <proto/exec.h>
 
-/****************************************************************************/
-
 AMY_EXTERN_C_BEGIN
+
+/****************************************************************************/
 
 void NewList( struct List * );
 void NewMinList( struct MinList * );
 
-AMY_EXTERN_C_END
-
 /****************************************************************************/
 
-#endif
+AMY_EXTERN_C_END
 
+#endif /* AMYSYS_AMIGA_H */

@@ -19,15 +19,13 @@
 #include <Amy_Features.h>
 #include <Amy_Defines.h>
 
-/* -- */
-
 #ifndef AMYSYS_UTMPX_H
 #define AMYSYS_UTMPX_H
 
-/****************************************************************************/
-
 #include <sys/types.h>
 #include <sys/time.h>
+
+AMY_EXTERN_C_BEGIN
 
 /****************************************************************************/
 // Must match utmp.h
@@ -62,8 +60,6 @@ struct utmpx
 
 /****************************************************************************/
 
-AMY_EXTERN_C_BEGIN
-
 void			endutxent( void );
 struct utmpx *	getutxent( void );
 struct utmpx *	getutxid( const struct utmpx * );
@@ -71,8 +67,8 @@ struct utmpx *	getutxline( const struct utmpx * );
 struct utmpx *	pututxline( const struct utmpx * );
 void			setutxent( void );
 
-AMY_EXTERN_C_END
-
 /****************************************************************************/
 
-#endif
+AMY_EXTERN_C_END
+
+#endif /* AMYSYS_UTMPX_H */

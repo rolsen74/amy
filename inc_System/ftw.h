@@ -19,15 +19,13 @@
 #include <Amy_Features.h>
 #include <Amy_Defines.h>
 
-/* -- */
-
 #ifndef AMYSYS_FTW_H
 #define AMYSYS_FTW_H
 
-/****************************************************************************/
-
 #include <sys/types.h>
 #include <sys/stat.h>
+
+AMY_EXTERN_C_BEGIN
 
 /****************************************************************************/
 
@@ -53,13 +51,11 @@ struct FTW
 
 /****************************************************************************/
 
-AMY_EXTERN_C_BEGIN
-
 int	ftw( const char *, int (*)(const char *, const struct stat *, int), int );
 int	nftw( const char *, int (*)(const char *, const struct stat *, int, struct FTW *), int, int );
 
-AMY_EXTERN_C_END
-
 /****************************************************************************/
 
-#endif
+AMY_EXTERN_C_END
+
+#endif /* AMYSYS_FTW_H */

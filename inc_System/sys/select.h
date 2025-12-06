@@ -19,16 +19,14 @@
 #include <Amy_Features.h>
 #include <Amy_Defines.h>
 
-/* -- */
-
 #ifndef AMYSYS_SYS_SELECT_H
 #define AMYSYS_SYS_SELECT_H
-
-/****************************************************************************/
 
 #include <signal.h>
 #include <time.h>
 #include <string.h>			// for memmove and memset
+
+AMY_EXTERN_C_BEGIN
 
 /****************************************************************************/
 
@@ -52,17 +50,14 @@ typedef	struct
 
 /****************************************************************************/
 
-AMY_EXTERN_C_BEGIN
-
 int	pselect( int, fd_set *, fd_set *, fd_set *, const struct timespec *, const sigset_t * );
 
 // Amiga
 struct timeval;
 int waitselect( int, fd_set *, fd_set *, fd_set *, struct timeval *, unsigned long * );
 
-AMY_EXTERN_C_END
-
 /****************************************************************************/
 
-#endif
+AMY_EXTERN_C_END
 
+#endif /* AMYSYS_SYS_SELECT_H */

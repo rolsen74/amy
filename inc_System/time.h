@@ -20,15 +20,13 @@
 #include <Amy_Defines.h>
 #include <Amy_Public.h>
 
-/* -- */
-
 #ifndef AMYSYS_TIME_H
 #define AMYSYS_TIME_H
 
-/****************************************************************************/
-
 #include <locale.h>
 #include <sys/types.h>
+
+AMY_EXTERN_C_BEGIN
 
 /****************************************************************************/
 
@@ -88,8 +86,6 @@ struct timezone
 
 struct sigevent;
 
-AMY_EXTERN_C_BEGIN
-
 char *		asctime( const struct tm * );
 char *		asctime_r( const struct tm *, char * );
 clock_t		clock( void );
@@ -120,9 +116,8 @@ int			timer_getoverrun( timer_t );
 int			timer_settime( timer_t, int, const struct itimerspec *, struct itimerspec * );
 void		tzset( void );
 
-AMY_EXTERN_C_END
-
 /****************************************************************************/
 
-#endif
+AMY_EXTERN_C_END
 
+#endif /* AMYSYS_TIME_H */

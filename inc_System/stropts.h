@@ -19,15 +19,13 @@
 #include <Amy_Features.h>
 #include <Amy_Defines.h>
 
-/* -- */
-
 #ifndef AMYSYS_STROPTS_H
 #define AMYSYS_STROPTS_H
 
-/****************************************************************************/
-
 #include <unistd.h>
 #include <sys/types.h>
+
+AMY_EXTERN_C_BEGIN
 
 /****************************************************************************/
 
@@ -94,8 +92,6 @@ struct str_list
 
 /****************************************************************************/
 
-AMY_EXTERN_C_BEGIN
-
 int		isastream( int );
 int		getmsg( int, struct strbuf *, struct strbuf *, int * );
 int		getpmsg( int, struct strbuf *, struct strbuf *, int *, int * );
@@ -105,8 +101,8 @@ int		putpmsg( int, const struct strbuf *, const struct strbuf *, int, int );
 int		fattach( int, const char * );
 int		fdetach( const char * );
 
-AMY_EXTERN_C_END
-
 /****************************************************************************/
 
-#endif
+AMY_EXTERN_C_END
+
+#endif /* AMYSYS_STROPTS_H */

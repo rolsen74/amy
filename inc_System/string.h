@@ -19,21 +19,17 @@
 #include <Amy_Features.h>
 #include <Amy_Defines.h>
 
-/* -- */
-
 #ifndef AMYSYS_STRING_H
 #define AMYSYS_STRING_H
-
-/****************************************************************************/
 
 #include <stddef.h>
 #include <locale.h>
 #include <sys/types.h>		/* for mode_t */
 #include <strings.h>
 
-/****************************************************************************/
-
 AMY_EXTERN_C_BEGIN
+
+/****************************************************************************/
 
 int		ffsl( long int );
 int		ffsll( long long int );
@@ -73,12 +69,8 @@ size_t	strxfrm( char *, const char *, size_t );
 size_t	strxfrm_l( char *, const char *, size_t, locale_t );
 int		timingsafe_memcmp( const void *, const void *, size_t );
 
-AMY_EXTERN_C_END
-
 /****************************************************************************/
 // BSD
-
-AMY_EXTERN_C_BEGIN
 
 void *	memmem( const void *, size_t, const void *, size_t );
 void *	memrchr( const void *, int, size_t );
@@ -87,9 +79,8 @@ size_t	strlcpy( char *, const char *, size_t );
 size_t	strlcat( char *, const char *, size_t );
 void	strmode( mode_t, char * );
 
-AMY_EXTERN_C_END
-
 /****************************************************************************/
 
-#endif
+AMY_EXTERN_C_END
 
+#endif /* AMYSYS_STRING_H */

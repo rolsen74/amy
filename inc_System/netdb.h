@@ -20,16 +20,14 @@
 #include <Amy_Defines.h>
 #include <Amy_Public.h>
 
-/* -- */
-
 #ifndef AMYSYS_NETDB_H
 #define AMYSYS_NETDB_H
-
-/****************************************************************************/
 
 #include <inttypes.h>
 #include <netinet/in.h>
 #include <sys/socket.h>
+
+AMY_EXTERN_C_BEGIN
 
 /****************************************************************************/
 
@@ -129,8 +127,6 @@ struct addrinfo
 
 /****************************************************************************/
 
-AMY_EXTERN_C_BEGIN
-
 void				endhostent( void );
 void				endnetent( void );
 void				endprotoent( void );
@@ -156,9 +152,8 @@ void				setnetent( int );
 void				setprotoent( int );
 void				setservent( int );
 
-AMY_EXTERN_C_END
-
 /****************************************************************************/
 
-#endif
+AMY_EXTERN_C_END
 
+#endif /* AMYSYS_NETDB_H */

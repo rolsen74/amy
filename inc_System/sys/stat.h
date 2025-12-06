@@ -19,14 +19,12 @@
 #include <Amy_Features.h>
 #include <Amy_Defines.h>
 
-/* -- */
-
 #ifndef AMYSYS_SYS_STAT_H
 #define AMYSYS_SYS_STAT_H
 
-/****************************************************************************/
-
 #include <time.h>
+
+AMY_EXTERN_C_BEGIN
 
 /****************************************************************************/
 
@@ -93,8 +91,6 @@ struct stat
 
 /****************************************************************************/
 
-AMY_EXTERN_C_BEGIN
-
 int		chmod( const char *, mode_t );
 int		fchmod( int, mode_t );
 int		fchmodat( int, const char *, mode_t, int );
@@ -112,8 +108,8 @@ int		stat( const char *, struct stat * );
 mode_t	umask( mode_t );
 int		utimensat( int, const char *, const struct timespec [2], int );
 
-AMY_EXTERN_C_END
-
 /****************************************************************************/
 
-#endif
+AMY_EXTERN_C_END
+
+#endif /* AMYSYS_SYS_STAT_H */

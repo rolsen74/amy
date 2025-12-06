@@ -19,12 +19,8 @@
 #include <Amy_Features.h>
 #include <Amy_Defines.h>
 
-/* -- */
-
 #ifndef AMYSYS_STDDEF_H
 #define AMYSYS_STDDEF_H
-
-/****************************************************************************/
 
 AMY_EXTERN_C_BEGIN
 
@@ -48,5 +44,4 @@ typedef unsigned int wchar_t;
 
 AMY_EXTERN_C_END
 
-#endif
-
+#endif /* AMYSYS_STDDEF_H */
