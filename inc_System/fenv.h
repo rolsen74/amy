@@ -23,17 +23,24 @@
 AMY_EXTERN_C_BEGIN
 
 /****************************************************************************/
+// Default FP environment 
 
-typedef struct
-{
-	// Represents the entire floating-point environment.
-	char dummy[16];	 // Too be implemented later
-
-} fenv_t;
-
-typedef long int fexcept_t;
+#define FE_DFL_ENV		((fenv_t *)NULL)
 
 /****************************************************************************/
+// Rounding modes
+
+#define FE_DOWNWARD		0
+#define FE_UPWARD		1
+#define FE_TONEAREST	2
+#define FE_TOWARDZERO	3
+
+int	fegetround(			void );
+int	fesetround(			int );
+int	fetestexcept(		int );
+
+/****************************************************************************/
+// Exception flags
 
 #define FE_DIVBYZERO	0x0001
 #define FE_INEXACT		0x0002
@@ -42,35 +49,25 @@ typedef long int fexcept_t;
 #define FE_UNDERFLOW	0x0010
 #define FE_ALL_EXCEPT	( FE_DIVBYZERO | FE_INEXACT | FE_INVALID | FE_OVERFLOW | FE_UNDERFLOW )
 
-enum
-{
-	FE_DOWNWARD,
-	FE_UPWARD,
-	FE_TONEAREST,
-	FE_TOWARDZERO,
-};
+typedef int fexcept_t;
 
-#define FE_DFL_ENV		AmyCLibPublic->ra_fenv
+int	feclearexcept(		int );
+int	fegetexceptflag(	fexcept_t *, int );
+int	feraiseexcept(		int );
+int	fesetexceptflag(	const fexcept_t *, int );
 
 /****************************************************************************/
+// Environment save/restore
 
-int	feclearexcept( int );
-int	fegetenv( fenv_t * );
-int	fegetexceptflag( fexcept_t *, int );
-int	fegetround( void );
-int	feholdexcept( fenv_t * );
-int	feraiseexcept( int );
-int	fesetenv( const fenv_t * );
-int	fesetexceptflag( const fexcept_t *, int );
-int	fesetround( int );
-int	fetestexcept( int );
-int	feupdateenv( const fenv_t * );
+typedef int fenv_t;
+
+int	fegetenv(			fenv_t * );
+int	fesetenv(			const fenv_t * );
+int	feholdexcept(		fenv_t * );
+int	feupdateenv(		const fenv_t * );
 
 /****************************************************************************/
 
 AMY_EXTERN_C_END
 
 #endif /* AMYSYS_FENV_H */
-
-// Public need's fenv_t
-#include <Amy_Public.h>

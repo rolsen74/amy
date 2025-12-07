@@ -62,7 +62,7 @@ typedef int64_t S64;
 #endif
 
 #ifndef PTR
-typedef void* PTR;
+typedef void *PTR;
 #endif
 
 #ifndef STR

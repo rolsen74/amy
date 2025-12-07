@@ -14,7 +14,7 @@
 #define AMYSYS_PUBLIC_H
 
 #include <stdio.h>		// FILE
-#include <fenv.h>		// fenv_t
+//#include <fenv.h>		// fenv_t
 
 AMY_EXTERN_C_BEGIN
 
@@ -39,13 +39,14 @@ struct _AmyCLibPublic
 
 	int				ra_signgam;		// Math.h
 
+	char **			ra_Environ;		// Unistd.h
+
 //	int				ra_daylight;	// Time.h
 //	long int		ra_timezone;	// Time.h
 //	char *			ra_tzname;		// Time.h
 
-	const fenv_t	ra_fenv;		// FEnv.h
+//	const fenv_t	ra_fenv;		// FEnv.h
 
-	char **			ra_Environ;		// Unistd.h
 };
 
 // --
