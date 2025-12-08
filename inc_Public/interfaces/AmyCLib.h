@@ -246,7 +246,7 @@ struct AmyCLibIFace
 /*  182 */	char *						AMY_FUNC (*string_stpcpy)( struct AmyCLibIFace *Self, char *s1, const char *s2 );
 /*  183 */	int							AMY_FUNC (*ctype_isalnum)( struct AmyCLibIFace *Self, int c );
 /*  184 */	double						AMY_FUNC (*math_d_ceil)( struct AmyCLibIFace *Self, double x );
-/*  185 */	double						AMY_FUNC	(*math_d_cos)( struct AmyCLibIFace *Self, double x );
+/*  185 */	double						AMY_FUNC (*math_d_cos)( struct AmyCLibIFace *Self, double x );
 /*  186 */	double						AMY_FUNC (*math_d_sin)( struct AmyCLibIFace *Self, double x );
 /*  187 */	double						AMY_FUNC (*math_d_atan2)( struct AmyCLibIFace *Self, double y, double x );
 /*  188 */	double						AMY_FUNC (*math_d_fmod)( struct AmyCLibIFace *Self, double x, double y );
