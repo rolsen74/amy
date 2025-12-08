@@ -69,14 +69,6 @@ typedef void *PTR;
 typedef char *STR;
 #endif
 
-#ifndef BE_SWAP16
-#define BE_SWAP16(x)	(x)
-#endif
-
-#ifndef LE_SWAP16
-#define LE_SWAP16(x)	( (( (x) & 0x00ff ) << 8 ) | (( (x) & 0xff00 ) >> 8 ) )
-#endif
-
 #ifndef AMY_MIN
 #define AMY_MIN(a,b)	((a) < (b) ? (a) : (b))
 #endif
@@ -87,6 +79,44 @@ typedef char *STR;
 
 #ifndef AMY_ABS
 #define AMY_ABS(a)		((a) < 0 ? -(a) : (a))
+#endif
+
+// --
+// Hardcoded for Big-Endian (for now)
+
+#ifndef BE_SWAP16
+#define BE_SWAP16(x)	(x)
+#endif
+
+#ifndef BE_SWAP32
+#define BE_SWAP32(x)	(x)
+#endif
+
+#ifndef BE_SWAP64
+#define BE_SWAP64(x)	(x)
+#endif
+
+#ifndef LE_SWAP16
+#define LE_SWAP16(x)	( (( (x) & 0x00ffU ) << 8 ) \
+						| (( (x) & 0xff00U ) >> 8 ) )
+#endif
+
+#ifndef LE_SWAP32
+#define LE_SWAP32(x)	( (( (x) & 0x000000ffUL ) << 24 ) \
+						| (( (x) & 0x0000ff00UL ) <<  8 ) \
+						| (( (x) & 0x00ff0000UL ) >>  8 ) \
+						| (( (x) & 0xff000000UL ) >> 24 ) )
+#endif
+
+#ifndef LE_SWAP64
+#define LE_SWAP64(x)	( (( (x) & 0x00000000000000ffULL ) << 56 ) \
+						| (( (x) & 0x000000000000ff00ULL ) << 40 ) \
+						| (( (x) & 0x0000000000ff0000ULL ) << 24 ) \
+						| (( (x) & 0x00000000ff000000ULL ) <<  8 ) \
+						| (( (x) & 0x000000ff00000000ULL ) >>  8 ) \
+						| (( (x) & 0x0000ff0000000000ULL ) >> 24 ) \
+						| (( (x) & 0x00ff000000000000ULL ) >> 40 ) \
+						| (( (x) & 0xff00000000000000ULL ) >> 56 ) )
 #endif
 
 // --
