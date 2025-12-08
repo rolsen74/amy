@@ -60,8 +60,9 @@ endif
 
 CRT_OBJS := \
 	$(BINDIR)/crtbegin.o \
-	$(BINDIR)/crtend.o \
-	$(BINDIR)/crt0.o
+	$(BINDIR)/crtend.o
+
+#	$(BINDIR)/crt0.o
 
 ###########################################################################
 # Targets
@@ -74,8 +75,8 @@ $(BINDIR)/crtbegin.o: $(SRCDIR)/crtbegin.c
 $(BINDIR)/crtend.o: $(SRCDIR)/crtend.c
 	$(CC) $(CFLAGS) -c $< -o $@
 
-$(BINDIR)/crt0.o: $(SRCDIR)/crt0.s
-	$(CC) $(ASFLAGS) -c $< -o $@
+#$(BINDIR)/crt0.o: $(SRCDIR)/crt0.s
+#	$(CC) $(ASFLAGS) -c $< -o $@
 
 clean:
 	$(RM) $(CRT_OBJS)
@@ -86,6 +87,7 @@ strip:
 install:
 	$(COPY) $(BINDIR)/crtbegin.o $(SDK)/lib/
 	$(COPY) $(BINDIR)/crtend.o $(SDK)/lib/
-	$(COPY) $(BINDIR)/crt0.o $(SDK)/lib/
+
+#	$(COPY) $(BINDIR)/crt0.o $(SDK)/lib/
 
 ###########################################################################
