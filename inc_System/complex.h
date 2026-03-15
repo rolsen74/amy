@@ -25,12 +25,13 @@
 AMY_EXTERN_C_BEGIN
 
 /****************************************************************************/
+#ifndef __cplusplus		// C version only
 
 #define complex			_Complex
-#define _Complex_I		1.0fi
-#define I				_Complex_I
+#define _Complex_I		1.0iF
 
-/****************************************************************************/
+#undef I
+#define I				_Complex_I
 
 double					cabs( double complex );
 float					cabsf( float complex );
@@ -99,6 +100,7 @@ double complex			ctanh( double complex );
 float complex			ctanhf( float complex );
 long double complex		ctanhl( long double complex );
 
+#endif
 /****************************************************************************/
 
 AMY_EXTERN_C_END
