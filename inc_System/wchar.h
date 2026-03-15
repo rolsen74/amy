@@ -30,24 +30,22 @@
 #include <stdlib.h>
 #include <stdint.h>
 #include <time.h>
+#include <wctype.h>
 
 AMY_EXTERN_C_BEGIN
 
 /****************************************************************************/
 
-#define WEOF		(-1)
-#define WCHAR_MAX	65535
-#define WCHAR_MIN	0
+typedef unsigned int	mbstate_t;
 
-typedef unsigned int mbstate_t;
-
-#ifndef wctype_t
-typedef unsigned int wctype_t;
+#ifndef WINT_T_DEFINED
+#define WINT_T_DEFINED
+typedef unsigned int	wint_t;
 #endif
 
-#ifndef wint_t
-typedef unsigned int wint_t;
-#endif
+#define WEOF			((wint_t)-1)
+#define WCHAR_MAX		65535
+#define WCHAR_MIN		0
 
 /****************************************************************************/
 
