@@ -12,6 +12,7 @@
 
 
 # complex		func-name		iface-name			args-call			args-decl					
+"float"			"cabsf"			complex_cabsf			"aa"				"_Complex float aa"
 "float"			"cargf"			complex_cargf			"aa"				"_Complex float aa"
 "_Complex float"	"ccosf"			complex_ccosf			"aa"				"_Complex float aa"
 "_Complex float"	"ccoshf"		complex_ccoshf			"aa"				"_Complex float aa"

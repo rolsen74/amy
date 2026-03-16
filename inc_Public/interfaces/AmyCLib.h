@@ -389,6 +389,11 @@ struct AmyCLibIFace
 /*   323 */	_Complex long double		AMY_FUNC( *complex_cpowl)( struct AmyCLibIFace *Self, _Complex long double, _Complex long double );
 /*   324 */	_Complex long double		AMY_FUNC( *complex_cprojl)( struct AmyCLibIFace *Self, _Complex long double );
 /*   325 */	int							AMY_FUNC( *wctype_iswblank)( struct AmyCLibIFace *Self, wint_t );
+/*   326 */	float						AMY_FUNC( *complex_cabsf)( struct AmyCLibIFace *Self, _Complex float );
+
+
+
+
 
 
 };

@@ -3,7 +3,7 @@
 ** Based on The Open Group Base Specifications Issue 7
 **
 ** SPDX-License-Identifier: BSD-3-Clause
-** Copyright ( _Complexc) 2025-2026 Rene W. Olsen
+** Copyright (c) 2025-2026 Rene W. Olsen
 ** Target OS: AmigaOS
 **
 ******************************************************************************
@@ -26,11 +26,19 @@ AMY_EXTERN_C_BEGIN
 
 /****************************************************************************/
 
-#define complex		_Complex
-#define _Complex_I	1.0fi
+#define complex			_Complex
+#define _Complex_I		((__extension__ 1.0fi))
+
+#define imaginary		_Imaginary
 
 #undef I
-#define I			_Complex_I
+#define I				_Complex_I
+
+#define CMPLX(x,y)		((_Complex double)((double)(x) + (double)(y) * I))
+#define CMPLXF(x,y)		((_Complex float)((float)(x) + (float)(y) * I))
+#define CMPLXL(x,y)		((_Complex long double)((long double)(x) + (long double)(y) * I))
+
+/****************************************************************************/
 
 double					cabs( _Complex double );
 float					cabsf( _Complex float );
