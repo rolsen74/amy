@@ -29,6 +29,7 @@ HEADER = '''\
 INCLUDE_MAP = {
     "assert_":      'assert.h',
     'ctype_':       'ctype.h',
+    'complex_':     'complex.h',
     'dirent_':      'dirent.h',
     'fcntl_':       'fcntl.h',
     'ftw_':         'ftw.h',

@@ -10,6 +10,50 @@
 
 
 
+
+# complex		func-name		iface-name			args-call			args-decl					
+"float"			"cargf"			complex_cargf			"aa"				"_Complex float aa"
+"_Complex float"	"ccosf"			complex_ccosf			"aa"				"_Complex float aa"
+"_Complex float"	"ccoshf"		complex_ccoshf			"aa"				"_Complex float aa"
+"_Complex float"	"cexpf"			complex_cexpf			"aa"				"_Complex float aa"
+"_Complex float"	"clogf"			complex_clogf			"aa"				"_Complex float aa"
+"_Complex float"	"csinf"			complex_csinf			"aa"				"_Complex float aa"
+"_Complex float"	"csinhf"		complex_csinhf			"aa"				"_Complex float aa"
+"_Complex float"	"csqrtf"		complex_csqrtf			"aa"				"_Complex float aa"
+"_Complex float"	"ctanf"			complex_ctanf			"aa"				"_Complex float aa"
+"_Complex float"	"ctanhf"		complex_ctanhf			"aa"				"_Complex float aa"
+"_Complex float"	"cpowf"			complex_cpowf			"aa, bb"			"_Complex float aa, _Complex float bb"
+"_Complex float"	"cprojf"		complex_cprojf			"aa"				"_Complex float aa"
+"double"		"cabs"			complex_cabs			"aa"				"_Complex double aa"
+"double"		"carg"			complex_carg			"aa"				"_Complex double aa"
+"_Complex double"	"ccos"			complex_ccos			"aa"				"_Complex double aa"
+"_Complex double"	"ccosh"			complex_ccosh			"aa"				"_Complex double aa"
+"_Complex double"	"cexp"			complex_cexp			"aa"				"_Complex double aa"
+"_Complex double"	"clog"			complex_clog			"aa"				"_Complex double aa"
+"_Complex double"	"csin"			complex_csin			"aa"				"_Complex double aa"
+"_Complex double"	"csinh"			complex_csinh			"aa"				"_Complex double aa"
+"_Complex double"	"csqrt"			complex_csqrt			"aa"				"_Complex double aa"
+"_Complex double"	"ctan"			complex_ctan			"aa"				"_Complex double aa"
+"_Complex double"	"ctanh"			complex_ctanh			"aa"				"_Complex double aa"
+"_Complex double"	"cpow"			complex_cpow			"aa, bb"			"_Complex double aa, _Complex double bb"
+"_Complex double"	"cproj"			complex_cproj			"aa"				"_Complex double aa"
+"long double"		"cabsl"			complex_cabsl			"aa"				"_Complex long double aa"
+"long double"		"cargl"			complex_cargl			"aa"				"_Complex long double aa"
+"_Complex long double"	"ccosl"			complex_ccosl			"aa"				"_Complex long double aa"
+"_Complex long double"	"ccoshl"		complex_ccoshl			"aa"				"_Complex long double aa"
+"_Complex long double"	"cexpl"			complex_cexpl			"aa"				"_Complex long double aa"
+"_Complex long double"	"clogl"			complex_clogl			"aa"				"_Complex long double aa"
+"_Complex long double"	"csinl"			complex_csinl			"aa"				"_Complex long double aa"
+"_Complex long double"	"csinhl"		complex_csinhl			"aa"				"_Complex long double aa"
+"_Complex long double"	"csqrtl"		complex_csqrtl			"aa"				"_Complex long double aa"
+"_Complex long double"	"ctanl"			complex_ctanl			"aa"				"_Complex long double aa"
+"_Complex long double"	"ctanhl"		complex_ctanhl			"aa"				"_Complex long double aa"
+"_Complex long double"	"cpowl"			complex_cpowl			"aa, bb"			"_Complex long double aa, _Complex long double bb"
+"_Complex long double"	"cprojl"		complex_cprojl			"aa"				"_Complex long double aa"
+
+
+
+
 # ctype			func-name		iface-name			args-call			args-decl					
 "int"			isalnum			ctype_isalnum			"c"				"int c"
 "int"			isalpha			ctype_isalpha			"c"				"int c"
@@ -187,14 +231,12 @@
 "int"			ungetc			stdio_ungetc			"c, stream"			"int c, FILE *stream"
 "int"			vasprintf		stdio_vasprintf			"ret, fmt, ap"			"char **ret, const char *fmt, va_list ap"
 "int"			vfprintf		stdio_vfprintf			"stream, format, ap"		"FILE *stream, const char *format, va_list ap"
+"int"			vfscanf			stdio_vfscanf			"stream, fmt, ap"		"FILE *stream, const char *fmt, va_list ap"
 "int"			vprintf			stdio_vprintf			"fmt, ap"			"const char *fmt, va_list ap"
+"int"			vscanf			stdio_vscanf			"fmt, ap"			"const char *fmt, va_list ap"
 "int"			vsprintf		stdio_vsprintf			"buf, fmt, ap"			"char *buf, const char *fmt, va_list ap"
 "int"			vsnprintf		stdio_vsnprintf			"buf, size, fmt, ap"		"char *buf, size_t size, const char *fmt, va_list ap"
 "int"			vsscanf			stdio_vsscanf			"buf, fmt, ap"			"const char *buf, const char *fmt, va_list ap"
-
-
-
-
 
 
 
@@ -213,6 +255,8 @@
 # exit			-- custom stub
 "void"			free			stdlib_free			"mem"				"void *mem"
 "char *"		getenv			stdlib_getenv			"name"				"const char *name"
+"long long"		llabs			stdlib_llabs			"aa"				"long long aa"
+"lldiv_t"		lldiv			stdlib_lldiv			"aa, bb"			"long long aa, long long bb"
 "void *"		malloc			stdlib_malloc			"size"				"size_t size"
 "int"			mkstemp			stdlib_mkstemp			"template"			"char *template"
 "int"			putenv			stdlib_putenv			"str"				"char *str"
@@ -227,13 +271,12 @@
 "double"		strtod			stdlib_strtod			"str, ptr"			"const char *str, char **ptr"
 "float"			strtof			stdlib_strtof			"str, ptr"			"const char *str, char **ptr"
 "long"			strtol			stdlib_strtol			"nptr, endptr, base"		"const char *nptr, char **endptr, int base"
+"long double"		strtold			stdlib_strtold			"nptr, endptr"			"const char *nptr, char **endptr"
 "long long"		strtoll			stdlib_strtoll			"nptr, endptr, base"		"const char *nptr, char **endptr, int base"
 "unsigned long"		strtoul			stdlib_strtoul			"aa, bb, cc"			"const char *aa, char **bb, int cc"
 "unsigned long long"	strtoull		stdlib_strtoull			"aa, bb, cc"			"const char *aa, char **bb, int cc"
 "int"			system			stdlib_system			"aa"				"const char *aa"
 "int"			unsetenv		stdlib_unsetenv			"aa"				"const char *aa"
-
-
 
 
 
@@ -352,10 +395,24 @@
 "int"			utime			utime_utime			"str, buf"			"const char *str, const struct utimbuf *buf"
 
 
+
+
+
+
 # wchar			func-name		iface-name			args-call			args-decl
 "size_t"		mbrtowc			wchar_mbrtowc			"pwc, s, n, ps"			"wchar_t *pwc, const char *s, size_t n, mbstate_t *ps"
 "size_t"		mbstowcs		wchar_mbstowcs			"pwcs, s, n"			"wchar_t *pwcs, const char *s, size_t n"
 "int"			mbsinit			wchar_mbsinit			"ps"				"const mbstate_t *ps"
+
+
+
+
+# wctype		func-name		iface-name			args-call			args-decl
+"int"			iswblank		wctype_iswblank			"aa"				"wint_t aa"
+
+
+
+
 
 # sys/mount		func-name		iface-name			args-call			args-decl
 "int"			statfs			sys_mount_statfs		"aa, bb"			"const char *aa, struct statfs *bb"
