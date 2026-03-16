@@ -9,6 +9,6 @@
 
 #include "Stub.h"
 
-LIBC_STUB(float, fmodf, math_f_fmod,
-    (float aa, float bb),
-    aa, bb);
+LIBC_STUB(int, __isnanl, math_l___isnan,
+    (long double aa),
+    aa);

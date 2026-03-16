@@ -148,7 +148,7 @@
 "double"		ldexp			math_d_ldexp			"x,y"				"double x, int y"
 "float"			acosf			math_f_acos			"aa"				"float aa"
 "float"			asinf			math_f_asin			"aa"				"float aa"
-"float"			atan2f			math_f_atan2			"aa"				"float aa"
+"float"			atan2f			math_f_atan2			"aa, bb"			"float aa, float bb"
 "float"			atanf			math_f_atan			"aa"				"float aa"
 "float"			ceilf			math_f_ceil			"aa"				"float aa"
 "float"			cosf			math_f_cos			"aa"				"float aa"
@@ -156,7 +156,7 @@
 "float"			expf			math_f_exp			"aa"				"float aa"
 "float"			fabsf			math_f_fabs			"aa"				"float aa"
 "float"			floorf			math_f_floor			"aa"				"float aa"
-"float"			fmodf			math_f_fmod			"aa"				"float aa"
+"float"			fmodf			math_f_fmod			"aa, bb"			"float aa, float bb"
 "float"			frexpf			math_f_frexp			"aa, bb"			"float aa, int *bb"
 "float"			sqrtf			math_f_sqrt			"aa"				"float aa"
 "float"			hypotf			math_f_hypot			"aa, bb"			"float aa, float bb"
@@ -179,9 +179,9 @@
 "long double"		coshl			math_l_cosh			"aa"				"long double aa"
 "long double"		expl			math_l_exp			"aa"				"long double aa"
 "long double"		floorl			math_l_floor			"aa"				"long double aa"
-"long double"		frexpl			math_l_frexp			"aa, bb"			"long double aa, long double bb"
+"long double"		frexpl			math_l_frexp			"aa, bb"			"long double aa, int *bb"
 "long double"		sqrtl			math_l_sqrt			"aa"				"long double aa"
-"long double"		hypotl			math_l_hypot			"aa"				"long double aa"
+"long double"		hypotl			math_l_hypot			"aa, bb"			"long double aa, long double bb"
 "long double"		ldexpl			math_l_ldexp			"aa, bb"			"long double aa, int bb"
 "long double"		logl			math_l_log			"aa"				"long double aa"
 "long double"		log10l			math_l_log10			"aa"				"long double aa"
@@ -191,9 +191,12 @@
 "long double"		sinhl			math_l_sinh			"aa"				"long double aa"
 "long double"		tanl			math_l_tan			"aa"				"long double aa"
 "long double"		tanhl			math_l_tanh			"aa"				"long double aa"
-
-
-
+"int"			__isnan			math_d___isnan			"aa"				"double aa"
+"int"			__isnanf		math_f___isnan			"aa"				"float aa"
+"int"			__isnanl		math_l___isnan			"aa"				"long double aa"
+"int"			__isinf			math_d___isinf			"aa"				"double aa"
+"int"			__isinff		math_f___isinf			"aa"				"float aa"
+"int"			__isinfl		math_l___isinf			"aa"				"long double aa"
 
 
 

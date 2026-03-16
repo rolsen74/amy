@@ -10,5 +10,5 @@
 #include "Stub.h"
 
 LIBC_STUB(float, atan2f, math_f_atan2,
-    (float aa),
-    aa);
+    (float aa, float bb),
+    aa, bb);

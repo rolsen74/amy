@@ -1,9 +1,9 @@
 
 /*
-** Based on The Open Group Base Specifications Issue 7
+** Based on The Open Group Base Specifications Issue 8
 **
 ** SPDX-License-Identifier: BSD-3-Clause
-** Copyright (c) 2025 Rene W. Olsen
+** Copyright (c) 2025-2026 Rene W. Olsen
 ** Target OS: AmigaOS
 **
 ******************************************************************************
@@ -94,29 +94,29 @@ typedef double				double_t;
 #define __isfinitel(x)		__builtin_isfinite((long double)(x))
 #endif
 
-#ifndef __isinf
-#define __isinf(x)			__builtin_isinf(x)
-#endif
+//#ifndef __isinf
+//#define __isinf(x)			__builtin_isinf(x)
+//#endif
 
-#ifndef __isinff
-#define __isinff(x)			__builtin_isinf((float)(x))
-#endif
+//#ifndef __isinff
+//#define __isinff(x)			__builtin_isinf((float)(x))
+//#endif
 
-#ifndef __isinfl
-#define __isinfl(x)			__builtin_isinf((long double)(x))
-#endif
+//#ifndef __isinfl
+//#define __isinfl(x)			__builtin_isinf((long double)(x))
+//#endif
 
-#ifndef __isnan
-#define __isnan(x)			__builtin_isnan(x)
-#endif
+//#ifndef __isnan
+//#define __isnan(x)			__builtin_isnan(x)
+//#endif
 
 //#ifndef __isnanf
 //#define __isnanf(x)			__builtin_isnan((float)(x))
 //#endif
 
-#ifndef __isnanl
-#define __isnanl(x)			__builtin_isnan((long double)(x))
-#endif
+//#ifndef __isnanl
+//#define __isnanl(x)			__builtin_isnan((long double)(x))
+//#endif
 
 #ifndef __isnormal
 #define __isnormal(x)		__builtin_isnormal(x)
@@ -498,8 +498,13 @@ double		yn(				int, double );
 /****************************************************************************/
 // Internal function not part of the specs
 
+int			__isinf(		double );
+int			__isinff(		float );
+int			__isinfl(		long double );
+
 int			__isnan(		double );
 int			__isnanf(		float );
+int			__isnanl(		long double );
 
 int			__signbit(		double );
 int			__signbitf(		float );

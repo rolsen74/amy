@@ -10,5 +10,5 @@
 #include "Stub.h"
 
 LIBC_STUB(long double, hypotl, math_l_hypot,
-    (long double aa),
-    aa);
+    (long double aa, long double bb),
+    aa, bb);

@@ -10,5 +10,5 @@
 #include "Stub.h"
 
 LIBC_STUB(long double, frexpl, math_l_frexp,
-    (long double aa, long double bb),
+    (long double aa, int *bb),
     aa, bb);

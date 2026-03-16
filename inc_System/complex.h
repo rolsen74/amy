@@ -1,6 +1,6 @@
 
 /*
-** Based on The Open Group Base Specifications Issue 7
+** Based on The Open Group Base Specifications Issue 8
 **
 ** SPDX-License-Identifier: BSD-3-Clause
 ** Copyright (c) 2025-2026 Rene W. Olsen
