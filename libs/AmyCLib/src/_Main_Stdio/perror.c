@@ -1,7 +1,7 @@
 
 /*
 ** SPDX-License-Identifier: BSD-3-Clause
-** Modifications (c) 2025 Rene W. Olsen
+** Modifications (c) 2025-2026 Rene W. Olsen
 ** Part of Amy C Lib
 **
 ** Note : temp file for now, please implement me

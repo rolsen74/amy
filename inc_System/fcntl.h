@@ -3,7 +3,7 @@
 ** Based on The Open Group Base Specifications Issue 7
 **
 ** SPDX-License-Identifier: BSD-3-Clause
-** Copyright (c) 2025 Rene W. Olsen
+** Copyright (c) 2025-2026 Rene W. Olsen
 ** Target OS: AmigaOS
 **
 ******************************************************************************
@@ -51,13 +51,13 @@ AMY_EXTERN_C_BEGIN
 
 /****************************************************************************/
 
-#define O_EXEC			1
-#define O_RDONLY		2
-#define O_RDWR			3
-#define O_SEARCH		4
-#define O_WRONLY		5
+#define O_RDONLY		0
+#define O_WRONLY		1
+#define O_RDWR			2
 
-#define O_ACCMODE		0x07
+#define O_EXEC			3
+#define O_SEARCH		3
+#define O_ACCMODE		3
 
 /****************************************************************************/
 
@@ -100,7 +100,7 @@ int	creat( const char *, mode_t );
 int	fcntl( int, int, ... );
 int	open( const char *, int, ... );
 int	openat( int, const char *, int, ... );
-int	posix_fadvice( int, off_t, off_t, int );
+int	posix_fadvise( int, off_t, off_t, int );
 int	posix_fallocate( int, off_t, off_t );
 
 /****************************************************************************/

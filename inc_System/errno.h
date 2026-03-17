@@ -4,7 +4,7 @@
 ** error number definitions from clib2 / Roadshow / BSD sources.
 **
 ** SPDX-License-Identifier: BSD-3-Clause
-** Copyright (c) 2025 Rene W. Olsen
+** Copyright (c) 2025-2026 Rene W. Olsen
 ** Target OS: AmigaOS
 **
 ******************************************************************************
@@ -28,7 +28,7 @@ AMY_EXTERN_C_BEGIN
 
 /****************************************************************************/
 
-#define errno			AmyCLibPublic->ra_ErrNo
+#define errno			(AmyCLibPublic->ra_ErrNo)
 
 /****************************************************************************/
 
@@ -135,7 +135,7 @@ AMY_EXTERN_C_BEGIN
 #define ENOANO			1053	/* No anode */
 #define EBADRQC			1054	/* Invalid request code */
 #define EBADSLT			1055	/* Invalid slot */
-#define EDEADLOCK		1056	/* File locking deadlock error */
+#define EDEADLOCK		EDEADLK	/* File locking deadlock error */
 #define EBFONT			1057	/* Bad font file fmt */
 #define ENOSTR			1060	/* Device not a stream */
 #define ENODATA			1061	/* No data (for no delay io) */

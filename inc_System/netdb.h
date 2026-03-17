@@ -3,7 +3,7 @@
 ** Based on The Open Group Base Specifications Issue 7
 **
 ** SPDX-License-Identifier: BSD-3-Clause
-** Copyright (c) 2025 Rene W. Olsen
+** Copyright (c) 2025-2026 Rene W. Olsen
 ** Target OS: AmigaOS
 **
 ******************************************************************************
@@ -31,7 +31,7 @@ AMY_EXTERN_C_BEGIN
 
 /****************************************************************************/
 
-#define h_errno		AmyCLibPublic->ra_h_ErrNo
+#define h_errno		(AmyCLibPublic->ra_h_ErrNo)
 
 /****************************************************************************/
 

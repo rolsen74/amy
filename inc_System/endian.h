@@ -1,7 +1,7 @@
 
 /*
 ** SPDX-License-Identifier: BSD-3-Clause
-** Copyright (c) 2025 Rene W. Olsen
+** Copyright (c) 2025-2026 Rene W. Olsen
 ** Target OS: AmigaOS
 **
 ******************************************************************************
@@ -37,14 +37,17 @@ AMY_EXTERN_C_BEGIN
 #if defined(__BIG_ENDIAN__) || defined(_BIG_ENDIAN)
 
 #define BYTE_ORDER		BIG_ENDIAN
-#define htobe16(x)		BE_SWAP16(x)
-#define htobe32(x)		BE_SWAP32(x)
-#define htobe64(x)		BE_SWAP64(x)
 
-#define be16toh(x)		BE_SWAP16(x)
-#define be32toh(x)		BE_SWAP32(x)
-#define be64toh(x)		BE_SWAP64(x)
+/* No swap needed */
+#define htobe16(x)		(x)
+#define htobe32(x)		(x)
+#define htobe64(x)		(x)
 
+#define be16toh(x)		(x)
+#define be32toh(x)		(x)
+#define be64toh(x)		(x)
+
+/* Swap needed */
 #define htole16(x)		LE_SWAP16(x)
 #define htole32(x)		LE_SWAP32(x)
 #define htole64(x)		LE_SWAP64(x)
@@ -56,21 +59,24 @@ AMY_EXTERN_C_BEGIN
 #elif defined(__LITTLE_ENDIAN__) || defined(_LITTLE_ENDIAN)
 
 #define BYTE_ORDER		LITTLE_ENDIAN
-#define htobe16(x)		LE_SWAP16(x)
-#define htobe32(x)		LE_SWAP32(x)
-#define htobe64(x)		LE_SWAP64(x)
 
-#define be16toh(x)		LE_SWAP16(x)
-#define be32toh(x)		LE_SWAP32(x)
-#define be64toh(x)		LE_SWAP64(x)
+/* Swap needed */
+#define htobe16(x)		BE_SWAP16(x)
+#define htobe32(x)		BE_SWAP32(x)
+#define htobe64(x)		BE_SWAP64(x)
 
-#define htole16(x)		BE_SWAP16(x)
-#define htole32(x)		BE_SWAP32(x)
-#define htole64(x)		BE_SWAP64(x)
+#define be16toh(x)		BE_SWAP16(x)
+#define be32toh(x)		BE_SWAP32(x)
+#define be64toh(x)		BE_SWAP64(x)
 
-#define le16toh(x)		BE_SWAP16(x)
-#define le32toh(x)		BE_SWAP32(x)
-#define le64toh(x)		BE_SWAP64(x)
+/* No swap needed */
+#define htole16(x)		(x)
+#define htole32(x)		(x)
+#define htole64(x)		(x)
+
+#define le16toh(x)		(x)
+#define le32toh(x)		(x)
+#define le64toh(x)		(x)
 
 #else
 

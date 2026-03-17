@@ -24,25 +24,32 @@
 #define AMYSYS_MATH_H
 
 #include <limits.h>			// For INT_MAX
+#include <float.h>
 
 AMY_EXTERN_C_BEGIN
 
 /****************************************************************************/
 
-#define FLT_EVAL_METHOD		0
-
-/****************************************************************************/
-
+#if FLT_EVAL_METHOD == 0
 typedef float				float_t;
 typedef double				double_t;
 
+#elif FLT_EVAL_METHOD == 1
+typedef double				float_t;
+typedef double				double_t;
+
+#elif FLT_EVAL_METHOD == 2
+typedef long double			float_t;
+typedef long double			double_t;
+#endif
+
 #define signgam				AmyCLibPublic->ra_signgam
 
-#define HUGE_VAL			__builtin_huge_val()
-#define HUGE_VALF			__builtin_huge_valf()
-#define HUGE_VALL			__builtin_huge_vall()
-#define INFINITY			__builtin_inff()
-#define NAN					__builtin_nanf("")
+#define HUGE_VAL			( __builtin_huge_val() )
+#define HUGE_VALF			( __builtin_huge_valf() )
+#define HUGE_VALL			( __builtin_huge_vall() )
+#define INFINITY			( __builtin_inff() )
+#define NAN					( __builtin_nanf("") )
 
 /****************************************************************************/
 
@@ -66,9 +73,100 @@ typedef double				double_t;
 #define	MAXFLOAT			((float)3.40282346638528860e+38)
 
 /****************************************************************************/
+/* Compiler built-in fallbacks for internal helpers */
+#if defined(__STDC_VERSION__) && __STDC_VERSION__ >= 201112L
+// C11+ optimized
+
+#define fpclassify(x) \
+_Generic((x)+0, \
+	float: __fpclassifyf, \
+	double: __fpclassify, \
+	long double: __fpclassifyl \
+)(x)
+
+#define isfinite(x) \
+_Generic((x)+0, \
+	float: __isfinitef, \
+	double: __isfinite, \
+	long double: __isfinitel \
+)(x)
+
+#define isnan(x) \
+_Generic((x)+0, \
+	float: __isnanf, \
+	double: __isnan, \
+	long double: __isnanl \
+)(x)
+
+#define isnormal(x) \
+_Generic((x)+0, \
+	float: __isnormalf, \
+	double: __isnormal, \
+	long double: __isnormall \
+)(x)
+
+#define signbit(x) \
+_Generic((x)+0, \
+	float: __signbitf, \
+	double: __signbit, \
+	long double: __signbitl \
+)(x)
+
+#define isinf(x) \
+_Generic((x)+0, \
+	float: __isinff, \
+	double: __isinf, \
+	long double: __isinfl \
+)(x)
 
 /****************************************************************************/
 /* Compiler built-in fallbacks for internal helpers */
+#else
+
+#define fpclassify(x) \
+	((sizeof (x) == sizeof (float)) ? \
+		__fpclassifyf(x) \
+	: (sizeof (x) == sizeof (double)) ? \
+		__fpclassify(x) \
+	:	__fpclassifyl(x))
+
+#define isfinite(x) \
+	((sizeof (x) == sizeof (float)) ? \
+		__isfinitef(x) \
+	: (sizeof (x) == sizeof (double)) ? \
+		__isfinite(x) \
+	:	__isfinitel(x))
+
+#define isnan(x) \
+	((sizeof (x) == sizeof (float)) ? \
+		__isnanf(x) \
+	: (sizeof (x) == sizeof (double)) ? \
+		__isnan(x) \
+	:	__isnanl(x))
+
+#define isnormal(x) \
+	((sizeof (x) == sizeof (float)) ? \
+		__isnormalf(x) \
+	: (sizeof (x) == sizeof (double)) ? \
+		__isnormal(x) \
+	:	__isnormall(x))
+
+#define signbit(x) \
+	((sizeof (x) == sizeof (float)) ? \
+		__signbitf(x) \
+	: (sizeof (x) == sizeof (double)) ? \
+		__signbit(x) \
+	:	__signbitl(x))
+
+#define isinf(x) \
+	((sizeof (x) == sizeof (float)) ? \
+		__isinff(x) \
+	: (sizeof (x) == sizeof (double)) ? \
+		__isinf(x) \
+	:	__isinfl(x))
+
+#endif
+/****************************************************************************/
 
 #ifndef __fpclassify
 #define __fpclassify(x)		__builtin_fpclassify(FP_INFINITE, FP_NAN, FP_NORMAL, FP_SUBNORMAL, FP_ZERO, (x))
@@ -94,30 +192,6 @@ typedef double				double_t;
 #define __isfinitel(x)		__builtin_isfinite((long double)(x))
 #endif
 
-//#ifndef __isinf
-//#define __isinf(x)			__builtin_isinf(x)
-//#endif
-
-//#ifndef __isinff
-//#define __isinff(x)			__builtin_isinf((float)(x))
-//#endif
-
-//#ifndef __isinfl
-//#define __isinfl(x)			__builtin_isinf((long double)(x))
-//#endif
-
-//#ifndef __isnan
-//#define __isnan(x)			__builtin_isnan(x)
-//#endif
-
-//#ifndef __isnanf
-//#define __isnanf(x)			__builtin_isnan((float)(x))
-//#endif
-
-//#ifndef __isnanl
-//#define __isnanl(x)			__builtin_isnan((long double)(x))
-//#endif
-
 #ifndef __isnormal
 #define __isnormal(x)		__builtin_isnormal(x)
 #endif
@@ -130,78 +204,12 @@ typedef double				double_t;
 #define __isnormall(x)		__builtin_isnormal((long double)(x))
 #endif
 
-#ifndef __signbit
-#define __signbit(x)		__builtin_signbit(x)
-#endif
-
-//#ifndef __signbitf
-//#define __signbitf(x)		__builtin_signbit((float)(x))
-//#endif
-
-//#ifndef __signbitl
-//#define __signbitl(x)		__builtin_signbit((long double)(x))
-//#endif
-
-#define fpclassify(x) \
-	((sizeof (x) == sizeof (float)) ? \
-		__fpclassifyf(x) \
-	: (sizeof (x) == sizeof (double)) ? \
-		__fpclassify(x) \
-	:	__fpclassifyl(x))
-
-#define isfinite(x) \
-	((sizeof (x) == sizeof (float)) ? \
-		__isfinitef(x) \
-	: (sizeof (x) == sizeof (double)) ? \
-		__isfinite(x) \
-	:	__isfinitel(x))
-
-#define	isgreater(x, y)	\
-	(!isunordered((x), (y)) && (x) > (y))
-
-#define	isgreaterequal(x, y) \
-	(!isunordered((x), (y)) && (x) >= (y))
-
-#define isinf(x) \
-	((sizeof (x) == sizeof (float)) ? \
-		__isinff(x) \
-	: (sizeof (x) == sizeof (double)) ? \
-		__isinf(x) \
-	:	__isinfl(x))
-
-#define	isless(x, y) \
-	(!isunordered((x), (y)) && (x) < (y))
-
-#define	islessequal(x, y) \
-	(!isunordered((x), (y)) && (x) <= (y))
-
-#define	islessgreater(x, y)	\
-	(!isunordered((x), (y)) && \
-		((x) > (y) || (y) > (x)))
-
-#define isnan(x) \
-	((sizeof (x) == sizeof (float)) ? \
-		__isnanf(x) \
-	: (sizeof (x) == sizeof (double)) ? \
-		__isnan(x) \
-	:	__isnanl(x))
-
-#define isnormal(x) \
-	((sizeof (x) == sizeof (float)) ? \
-		__isnormalf(x) \
-	: (sizeof (x) == sizeof (double)) ? \
-		__isnormal(x) \
-	:	__isnormall(x))
-
-#define	isunordered(x, y) \
-	(isnan(x) || isnan(y))
-
-#define signbit(x) \
-	((sizeof (x) == sizeof (float)) ? \
-		__signbitf(x) \
-	: (sizeof (x) == sizeof (double)) ? \
-		__signbit(x) \
-	:	__signbitl(x))
+#define	isgreater(x, y)			(!isunordered((x), (y)) && (x) > (y))
+#define	isgreaterequal(x, y)	(!isunordered((x), (y)) && (x) >= (y))
+#define	isless(x, y)			(!isunordered((x), (y)) && (x) < (y))
+#define	islessequal(x, y)		(!isunordered((x), (y)) && (x) <= (y))
+#define	islessgreater(x, y)		(!isunordered((x), (y)) && ((x) > (y) || (y) > (x)))
+#define	isunordered(x, y)		(isnan(x) || isnan(y))
 
 /****************************************************************************/
 

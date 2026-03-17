@@ -1,7 +1,7 @@
 
 /*
 ** SPDX-License-Identifier: BSD-2-Clause
-** Copyright (c) 2012-2025 Rene W. Olsen
+** Copyright (c) 2012-2026 Rene W. Olsen
 ** Target OS: AmigaOS
 */
 

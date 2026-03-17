@@ -1,7 +1,7 @@
 
 /*
 ** SPDX-License-Identifier: BSD-3-Clause
-** Copyright (c) 2025 Rene W. Olsen
+** Copyright (c) 2025-2026 Rene W. Olsen
 ** Target OS: AmigaOS
 **
 ******************************************************************************
@@ -49,10 +49,10 @@ int		getopt_long_only(	int argc, char * const argv[], const char *optstring, con
 
 /****************************************************************************/
 
-#define optarg	AmyCLibPublic->ra_optarg
-#define optind	AmyCLibPublic->ra_optind
-#define opterr	AmyCLibPublic->ra_opterr
-#define optopt	AmyCLibPublic->ra_optopt
+#define optarg	(AmyCLibPublic->ra_optarg)
+#define optind	(AmyCLibPublic->ra_optind)
+#define opterr	(AmyCLibPublic->ra_opterr)
+#define optopt	(AmyCLibPublic->ra_optopt)
 
 /****************************************************************************/
 

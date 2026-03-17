@@ -3,7 +3,7 @@
 ** Based on The Open Group Base Specifications Issue 7
 **
 ** SPDX-License-Identifier: BSD-3-Clause
-** Copyright (c) 2025 Rene W. Olsen
+** Copyright (c) 2025-2026 Rene W. Olsen
 ** Target OS: AmigaOS
 **
 ******************************************************************************
@@ -112,7 +112,7 @@ typedef int nl_item;
 /****************************************************************************/
 
 char *	nl_langinfo( nl_item );
-char *	nl_langinfol( nl_item, locale_t );
+char *	nl_langinfo_l( nl_item, locale_t );
 
 /****************************************************************************/
 

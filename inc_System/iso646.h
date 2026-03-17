@@ -3,7 +3,7 @@
 ** Based on The Open Group Base Specifications Issue 7
 **
 ** SPDX-License-Identifier: BSD-3-Clause
-** Copyright (c) 2025 Rene W. Olsen
+** Copyright (c) 2025-2026 Rene W. Olsen
 ** Target OS: AmigaOS
 **
 ******************************************************************************
@@ -25,6 +25,7 @@
 AMY_EXTERN_C_BEGIN
 
 /****************************************************************************/
+#ifndef __cplusplus
 
 #define and		&&
 #define and_eq	&=
@@ -38,6 +39,7 @@ AMY_EXTERN_C_BEGIN
 #define xor		^
 #define xor_eq	^=
 
+#endif
 /****************************************************************************/
 
 AMY_EXTERN_C_END

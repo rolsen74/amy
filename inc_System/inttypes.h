@@ -3,7 +3,7 @@
 ** Based on The Open Group Base Specifications Issue 7
 **
 ** SPDX-License-Identifier: BSD-3-Clause
-** Copyright (c) 2025 Rene W. Olsen
+** Copyright (c) 2025-2026 Rene W. Olsen
 ** Target OS: AmigaOS
 **
 ******************************************************************************
@@ -103,10 +103,10 @@ typedef struct
 #define PRIx32			"x"
 #define PRIx64			"llx"
 
-#define PRIX8			"x"
-#define PRIX16			"x"
-#define PRIX32			"x"
-#define PRIX64			"llx"
+#define PRIX8			"X"
+#define PRIX16			"X"
+#define PRIX32			"X"
+#define PRIX64			"llX"
 
 #define PRIoLEAST8		"o"
 #define PRIoLEAST16		"o"
