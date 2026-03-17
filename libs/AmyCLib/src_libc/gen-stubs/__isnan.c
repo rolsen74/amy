@@ -10,6 +10,6 @@
 #include "Stub.h"
 #include <math.h>
 
-LIBC_STUB(int, __isnan, math_d___isnan,
+LIBC_STUB(int, __isnan, math_d_isnan,
     (double aa),
     aa);

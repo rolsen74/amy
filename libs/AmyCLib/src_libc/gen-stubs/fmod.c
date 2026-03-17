@@ -11,5 +11,5 @@
 #include <math.h>
 
 LIBC_STUB(double, fmod, math_d_fmod,
-    (double x, double y),
-    x, y);
+    (double aa, double bb),
+    aa, bb);

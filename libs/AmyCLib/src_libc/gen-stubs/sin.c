@@ -11,5 +11,5 @@
 #include <math.h>
 
 LIBC_STUB(double, sin, math_d_sin,
-    (double x),
-    x);
+    (double aa),
+    aa);

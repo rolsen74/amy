@@ -498,16 +498,20 @@ double		yn(				int, double );
 /****************************************************************************/
 // Internal function not part of the specs
 
-int			__isinf(		double );
+float		__inff(			void );
+double		__inf(			void );
+long double	__infl(			void );
+
 int			__isinff(		float );
+int			__isinf(		double );
 int			__isinfl(		long double );
 
-int			__isnan(		double );
 int			__isnanf(		float );
+int			__isnan(		double );
 int			__isnanl(		long double );
 
-int			__signbit(		double );
 int			__signbitf(		float );
+int			__signbit(		double );
 int			__signbitl(		long double );
 
 /****************************************************************************/

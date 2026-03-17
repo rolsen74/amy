@@ -8,8 +8,7 @@
 */
 
 #include "Stub.h"
-#include <math.h>
 
-LIBC_STUB(int, _isnan, math_d__isnan,
-    (double x),
-    x);
+LIBC_STUB(long double, __infl, math_l_inf,
+    (void)
+ );

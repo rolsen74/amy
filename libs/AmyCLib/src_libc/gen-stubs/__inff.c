@@ -8,8 +8,7 @@
 */
 
 #include "Stub.h"
-#include <math.h>
 
-LIBC_STUB(double, sqrt, math_d_sqrt,
-    (double aa),
-    aa);
+LIBC_STUB(float, __inff, math_f_inf,
+    (void)
+ );

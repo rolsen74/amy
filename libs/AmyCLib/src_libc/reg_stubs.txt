@@ -129,23 +129,15 @@
 "struct lconv *"	localeconv		"locale_localeconv"		""				""
 
 
-# math			func-name		iface-name			args-call			args-decl					
-"double"		_get_huge_val		math_d__get_huge_val		""				""
-"double"		__inf			math_d__inf			""				""
-"int"			_isinf			math_d__isinf			"x"				"double x"
-"int"			_isnan			math_d__isnan			"x"				"double x"
-"double"		ceil			math_d_ceil			"x"				"double x"
-"double"		nan			math_d_nan			"x"				"const char *x"
-"double"		pow			math_d_pow			"x, y"				"double x, double y"
-"double"		fabs			math_d_fabs			"x"				"double x"
-"double"		scalbn			math_d_scalbn			"x, n"				"double x, int n"
-"double"		sqrt			math_d_sqrt			"x"				"double x"
-"double"		copysign		math_d_copysign			"x, y"				"double x, double y"
-"double"		cos			math_d_cos			"x"				"double x"
-"double"		sin			math_d_sin			"x"				"double x"
-"double"		atan2			math_d_atan2			"y,x"				"double y, double x"
-"double"		fmod			math_d_fmod			"x,y"				"double x, double y"
-"double"		ldexp			math_d_ldexp			"x,y"				"double x, int y"
+
+
+
+
+
+# math (float)		func-name		iface-name			args-call			args-decl					
+"int"			__isnanf		math_f_isnan			"aa"				"float aa"
+"int"			__isinff		math_f_isinf			"aa"				"float aa"
+"float"			__inff			math_f_inf			""				""
 "float"			acosf			math_f_acos			"aa"				"float aa"
 "float"			asinf			math_f_asin			"aa"				"float aa"
 "float"			atan2f			math_f_atan2			"aa, bb"			"float aa, float bb"
@@ -157,18 +149,46 @@
 "float"			fabsf			math_f_fabs			"aa"				"float aa"
 "float"			floorf			math_f_floor			"aa"				"float aa"
 "float"			fmodf			math_f_fmod			"aa, bb"			"float aa, float bb"
+"float"			modff			math_f_modf			"aa, bb"			"float aa, float *bb"
 "float"			frexpf			math_f_frexp			"aa, bb"			"float aa, int *bb"
 "float"			sqrtf			math_f_sqrt			"aa"				"float aa"
 "float"			hypotf			math_f_hypot			"aa, bb"			"float aa, float bb"
 "float"			ldexpf			math_f_ldexp			"aa, bb"			"float aa, int bb"
 "float"			log10f			math_f_log10			"aa"				"float aa"
 "float"			logf			math_f_log			"aa"				"float aa"
-"float"			modff			math_f_modf			"aa, bb"			"float aa, float *bb"
 "float"			powf			math_f_pow			"aa, bb"			"float aa, float bb"
 "float"			sinf			math_f_sin			"aa"				"float aa"
 "float"			sinhf			math_f_sinh			"aa"				"float aa"
 "float"			tanf			math_f_tan			"aa"				"float aa"
 "float"			tanhf			math_f_tanh			"aa"				"float aa"
+
+
+
+
+# math (double)		func-name		iface-name			args-call			args-decl					
+"double"		_get_huge_val		math_d__get_huge_val		""				""
+"int"			__isinf			math_d_isinf			"aa"				"double aa"
+"int"			__isnan			math_d_isnan			"aa"				"double aa"
+"double"		__inf			math_d_inf			""				""
+"double"		ceil			math_d_ceil			"aa"				"double aa"
+"double"		nan			math_d_nan			"aa"				"const char *aa"
+"double"		pow			math_d_pow			"aa, bb"			"double aa, double bb"
+"double"		fabs			math_d_fabs			"aa"				"double aa"
+"double"		scalbn			math_d_scalbn			"aa, bb"			"double aa, int bb"
+"double"		sqrt			math_d_sqrt			"aa"				"double aa"
+"double"		copysign		math_d_copysign			"aa, bb"			"double aa, double bb"
+"double"		cos			math_d_cos			"aa"				"double aa"
+"double"		sin			math_d_sin			"aa"				"double aa"
+"double"		atan2			math_d_atan2			"aa, bb"			"double aa, double bb"
+"double"		fmod			math_d_fmod			"aa, bb"			"double aa, double bb"
+"double"		ldexp			math_d_ldexp			"aa, bb"			"double aa, int bb"
+
+
+
+# math (long double)	func-name		iface-name			args-call			args-decl					
+"int"			__isnanl		math_l_isnan			"aa"				"long double aa"
+"int"			__isinfl		math_l_isinf			"aa"				"long double aa"
+"long double"		__infl			math_l_inf			""				""
 "long double"		fabsl			math_l_fabs			"aa"				"long double aa"
 "long double"		acosl			math_l_acos			"aa"				"long double aa"
 "long double"		asinl			math_l_asin			"aa"				"long double aa"
@@ -186,17 +206,13 @@
 "long double"		logl			math_l_log			"aa"				"long double aa"
 "long double"		log10l			math_l_log10			"aa"				"long double aa"
 "long double"		modfl			math_l_modf			"aa, bb"			"long double aa, long double *bb"
+"long double"		fmodl			math_l_fmod			"aa, bb"			"long double aa, long double bb"
 "long double"		powl			math_l_pow			"aa, bb"			"long double aa, long double bb"
 "long double"		sinl			math_l_sin			"aa"				"long double aa"
 "long double"		sinhl			math_l_sinh			"aa"				"long double aa"
 "long double"		tanl			math_l_tan			"aa"				"long double aa"
 "long double"		tanhl			math_l_tanh			"aa"				"long double aa"
-"int"			__isnan			math_d___isnan			"aa"				"double aa"
-"int"			__isnanf		math_f___isnan			"aa"				"float aa"
-"int"			__isnanl		math_l___isnan			"aa"				"long double aa"
-"int"			__isinf			math_d___isinf			"aa"				"double aa"
-"int"			__isinff		math_f___isinf			"aa"				"float aa"
-"int"			__isinfl		math_l___isinf			"aa"				"long double aa"
+
 
 
 

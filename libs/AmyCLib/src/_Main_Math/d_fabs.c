@@ -46,12 +46,12 @@ union DoubleBits xx;
 
 	DOFUNCTIONLOG( LOG_FUNC_D_fabs );
 
-	if ( Self->math_d__isnan( x ))
+	if ( Self->math_d_isnan( x ))
 	{
 		return( x );
 	}
 
-	if ( Self->math_d__isinf( x ))
+	if ( Self->math_d_isinf( x ))
 	{
 		return( x );
 	}

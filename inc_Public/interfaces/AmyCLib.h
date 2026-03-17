@@ -161,9 +161,9 @@ struct AmyCLibIFace
 /*    97 */	int							AMY_FUNC ( *strings_strcasecmp )( struct AmyCLibIFace *Self, const char *s1, const char *s2 );
 /*    98 */	int							AMY_FUNC ( *strings_strncasecmp )( struct AmyCLibIFace *Self, const char *s1, const char *s2, size_t maxlen );
 /*    99 */	double 						AMY_FUNC ( *math_d__get_huge_val )( struct AmyCLibIFace *Self );
-/*   100 */	double						AMY_FUNC ( *math_d__inf )( struct AmyCLibIFace *Self );
-/*   101 */	int							AMY_FUNC ( *math_d__isinf )( struct AmyCLibIFace *Self, double x );
-/*   102 */	int							AMY_FUNC ( *math_d__isnan )( struct AmyCLibIFace *Self, double x );
+/*   100 */	double						AMY_FUNC ( *math_d_inf )( struct AmyCLibIFace *Self );
+/*   101 */	int							AMY_FUNC ( *math_d_isinf )( struct AmyCLibIFace *Self, double x );
+/*   102 */	int							AMY_FUNC ( *math_d_isnan )( struct AmyCLibIFace *Self, double x );
 /*   103 */	double						AMY_FUNC ( *math_d_nan )( struct AmyCLibIFace *Self, const char *xx );
 /*   104 */	double						AMY_FUNC ( *math_d_pow )( struct AmyCLibIFace *Self, double x, double y );
 /*   105 */	double						AMY_FUNC ( *math_d_fabs )( struct AmyCLibIFace *Self, double x );
@@ -190,7 +190,7 @@ struct AmyCLibIFace
 /*   126 */	size_t						AMY_FUNC ( *string_strspn )( struct AmyCLibIFace *Self, const char *s1, const char *s2 );
 /*   127 */	char *						AMY_FUNC ( *string_strpbrk )( struct AmyCLibIFace *Self, const char *s1, const char *s2 );
 /*   128 */	char *						AMY_FUNC ( *string_strchr )( struct AmyCLibIFace *Self, const char *str, int c );
-/*   129 */	int							AMY_FUNC	( *stdio_fileno )( struct AmyCLibIFace *Self, FILE *stream );
+/*   129 */	int							AMY_FUNC ( *stdio_fileno )( struct AmyCLibIFace *Self, FILE *stream );
 
 
 /*   130 */	int							AMY_FUNC ( *stdio_fprintf )( struct AmyCLibIFace *Self, FILE *stream, const char *format, ... );
@@ -342,8 +342,8 @@ struct AmyCLibIFace
 /*   276 */	long long					AMY_FUNC ( *stdlib_atoll )( struct AmyCLibIFace *Self, const char * );
 /*   277 */	int							AMY_FUNC ( *stdio_pclose )( struct AmyCLibIFace *Self, FILE * );
 /*   278 */	double						AMY_FUNC ( *math_d_ldexp )( struct AmyCLibIFace *Self, double, int );
-/*   279 */	int							AMY_FUNC ( *ftw_ftw )( struct AmyCLibIFace *Self, const char *, int ( *)(const char *, const struct stat *, int), int );
-/*   280 */	int							AMY_FUNC ( *ftw_nftw )( struct AmyCLibIFace *Self, const char *, int ( *)(const char *, const struct stat *, int, struct FTW *), int, int );
+/*   279 */	int							AMY_FUNC ( *ftw_ftw )( struct AmyCLibIFace *Self, const char *, int (*)(const char *, const struct stat *, int), int );
+/*   280 */	int							AMY_FUNC ( *ftw_nftw )( struct AmyCLibIFace *Self, const char *, int (*)(const char *, const struct stat *, int, struct FTW *), int, int );
 /*   281 */	int							AMY_FUNC ( *process_execvp )( struct AmyCLibIFace *Self, const char *file, char *const argv[] );
 /*   282 */	pid_t						AMY_FUNC ( *unistd_fork )( struct AmyCLibIFace *Self );
 /*   283 */	long double					AMY_FUNC ( *stdlib_strtold )( struct AmyCLibIFace *Self, const char *, char ** );
@@ -435,13 +435,13 @@ struct AmyCLibIFace
 /*   369 */	long double					AMY_FUNC ( *math_l_sinh )( struct AmyCLibIFace *Self, long double );
 /*   370 */	long double					AMY_FUNC ( *math_l_tan )( struct AmyCLibIFace *Self, long double );
 /*   371 */	long double					AMY_FUNC ( *math_l_tanh )( struct AmyCLibIFace *Self, long double );
-/*   372 */	int							AMY_FUNC ( *math_f___isnan )( struct AmyCLibIFace *Self, float );
-/*   373 */	int							AMY_FUNC ( *math_d___isnan )( struct AmyCLibIFace *Self, double );
-/*   374 */	int							AMY_FUNC ( *math_l___isnan )( struct AmyCLibIFace *Self, long double );
-/*   375 */	int							AMY_FUNC ( *math_f___isinf )( struct AmyCLibIFace *Self, float );
-/*   376 */	int							AMY_FUNC ( *math_d___isinf )( struct AmyCLibIFace *Self, double );
-/*   377 */	int							AMY_FUNC ( *math_l___isinf )( struct AmyCLibIFace *Self, long double );
-
+/*   372 */	int							AMY_FUNC ( *math_f_isnan )( struct AmyCLibIFace *Self, float );
+/*   373 */	int							AMY_FUNC ( *math_f_isinf )( struct AmyCLibIFace *Self, float );
+/*   374 */	int							AMY_FUNC ( *math_l_isnan )( struct AmyCLibIFace *Self, long double );
+/*   375 */	int							AMY_FUNC ( *math_l_isinf )( struct AmyCLibIFace *Self, long double );
+/*   376 */	float						AMY_FUNC ( *math_f_inf )( struct AmyCLibIFace *Self );
+/*   377 */	long double					AMY_FUNC ( *math_l_inf )( struct AmyCLibIFace *Self );
+/*   378 */	long double					AMY_FUNC ( *math_l_fmod )( struct AmyCLibIFace *Self, long double, long double );
 
 
 };

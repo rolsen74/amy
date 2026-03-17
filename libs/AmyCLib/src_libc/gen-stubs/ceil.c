@@ -11,5 +11,5 @@
 #include <math.h>
 
 LIBC_STUB(double, ceil, math_d_ceil,
-    (double x),
-    x);
+    (double aa),
+    aa);

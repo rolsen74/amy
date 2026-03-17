@@ -11,5 +11,5 @@
 #include <math.h>
 
 LIBC_STUB(double, copysign, math_d_copysign,
-    (double x, double y),
-    x, y);
+    (double aa, double bb),
+    aa, bb);
