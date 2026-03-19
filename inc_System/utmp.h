@@ -23,7 +23,7 @@
 AMY_EXTERN_C_BEGIN
 
 /****************************************************************************/
-// Trying to maych Roadshow's defines
+// Trying to match Roadshow's defines
 
 
 #define UT_LINESIZE		32
@@ -32,16 +32,16 @@ AMY_EXTERN_C_BEGIN
 
 struct lastlog
 {
-	U32				ll_time;
-	U32				ll_sid;
+	AMY_U32			ll_time;
+	AMY_U32			ll_sid;
 	char			ll_name[UT_NAMESIZE];
 	char			ll_host[UT_HOSTSIZE];
 };
 
 struct utmp
 {
-	U32				ut_time;
-	U32				ut_sid;
+	AMY_U32			ut_time;
+	AMY_U32			ut_sid;
 	char			ut_name[UT_NAMESIZE];
 	char			ut_host[UT_HOSTSIZE];
 };

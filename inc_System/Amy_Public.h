@@ -56,8 +56,8 @@ struct _AmyCLibPublic
 
 struct AmyTaskInfo
 {
-	U32						ati_ID;
-	U32						ati_Version;
+	AMY_U32					ati_ID;
+	AMY_U32					ati_Version;
 	struct AmyCLibIFace	*	ati_IFace_C;
 };
 

@@ -31,24 +31,24 @@ AMY_EXTERN_C_BEGIN
 struct __jmp_buf
 {
 	// Offset 0
-	PTR				ReturnAddress;
+	AMY_PTR			ReturnAddress;
 
 	// Offset 4
-	U32				CondCode;
+	AMY_U32			CondCode;
 
 	// Offset 8
-	PTR		 		StackPointer;
+	AMY_PTR		 	StackPointer;
 
 	// Offset 12
-	U32				GPR[19];
+	AMY_U32			GPR[19];
 
 	// Offset 88
 	// Floating Points must be 8 byte alligned
-	U64				FPR[18];
+	AMY_U64			FPR[18];
 
 	// Adding 8 bytes for Alignment
 	// Handled internaly in setjmp/longjmp
-	U8				Padding[8];
+	AMY_U8			Padding[8];
 };
 
 // jmp_buf set to the same size as Newlib's

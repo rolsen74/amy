@@ -36,7 +36,7 @@ AMY_EXTERN_C_BEGIN
 
 typedef	struct
 {
-	U32 bits[ ( FD_SETSIZE + 31 ) / 32 ];
+	AMY_U32 bits[ ( FD_SETSIZE + 31 ) / 32 ];
 
 } fd_set;
 
