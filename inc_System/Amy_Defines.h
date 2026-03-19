@@ -29,24 +29,66 @@
 
 // --
 
-typedef uint8_t		U8;
-typedef uint16_t	U16;
-typedef uint32_t	U32;
-typedef uint64_t	U64;
+typedef uint8_t		AMY_U8;
+typedef uint16_t	AMY_U16;
+typedef uint32_t	AMY_U32;
+typedef uint64_t	AMY_U64;
 
-typedef int8_t		S8;
-typedef int16_t		S16;
-typedef int32_t		S32;
-typedef int64_t		S64;
+typedef int8_t		AMY_S8;
+typedef int16_t		AMY_S16;
+typedef int32_t		AMY_S32;
+typedef int64_t		AMY_S64;
 
 typedef void *		AMY_PTR;
 typedef char *		AMY_STR;
 typedef const char *AMY_CSTR;
 
-#ifndef AMY_NO_SHORT_NAMES
+#ifdef AMY_SHORT_NAMES
+
+#ifndef U8
+#define U8			AMY_U8
+#endif
+
+#ifndef U16
+#define U16			AMY_U16
+#endif
+
+#ifndef U32
+#define U32			AMY_U32
+#endif
+
+#ifndef U64
+#define U64			AMY_U64
+#endif
+
+#ifndef S8
+#define S8			AMY_S8
+#endif
+
+#ifndef S16
+#define S16			AMY_S16
+#endif
+
+#ifndef S32
+#define S32			AMY_S32
+#endif
+
+#ifndef S64
+#define S64			AMY_S64
+#endif
+
+#ifndef PTR
 #define PTR			AMY_PTR
+#endif
+
+#ifndef STR
 #define STR			AMY_STR
+#endif
+
+#ifndef CSTR
 #define CSTR		AMY_CSTR
+#endif
+
 #endif
 
 // --
