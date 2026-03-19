@@ -16,6 +16,7 @@ CFLAGS		+= -W
 CFLAGS		+= $(INCLUDES)
 ASFLAGS		:= $(CFLAGS)
 CFLAGS		+= -mcrt=amyclib
+CFLAGS		+= -DAMY_SHORT_NAMES
 
 # Linker Flags
 LDFLAGS		:= -mcrt=amyclib 

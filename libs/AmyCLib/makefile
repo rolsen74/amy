@@ -30,6 +30,7 @@ CFLAGS		+= -Wall
 CFLAGS		+= -MMD
 CFLAGS		+= -MP
 CFLAGS		+= -mcrt=amyclib
+CFLAGS		+= -DAMY_SHORT_NAMES
 
 # Make sure gcc do not swap functions to memset() and so on .. very important
 CFLAGS		+= -fno-builtin
@@ -189,9 +190,9 @@ SRCS		+= src/_Main_Locale/localeconv.c
 
 # Main .. Math
 SRCS		+= src/_Main_Math/d__get_huge_val.c
-SRCS		+= src/_Main_Math/d__inf.c
-SRCS		+= src/_Main_Math/d__isinf.c
-SRCS		+= src/_Main_Math/d__isnan.c
+SRCS		+= src/_Main_Math/d_inf.c
+SRCS		+= src/_Main_Math/d_isinf.c
+SRCS		+= src/_Main_Math/d_isnan.c
 SRCS		+= src/_Main_Math/d_ceil.c
 SRCS		+= src/_Main_Math/d_copysign.c
 SRCS		+= src/_Main_Math/d_cos.c

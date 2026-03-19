@@ -148,9 +148,9 @@ void _generic_inttypes_strtoumax( void );
 void _generic_inttypes_strtoimax( void );
 
 void _generic_math_d__get_huge_val( void );
-void _generic_math_d__inf( void );
-void _generic_math_d__isinf( void );
-void _generic_math_d__isnan( void );
+void _generic_math_d_inf( void );
+void _generic_math_d_isinf( void );
+void _generic_math_d_isnan( void );
 void _generic_math_d_nan( void );
 void _generic_math_d_pow( void );
 void _generic_math_d_fabs( void );
@@ -264,9 +264,9 @@ struct EnableFunc  __inttypes_strtoumax[] =		{{ CPUType_Any, _generic_inttypes_s
 struct EnableFunc  __inttypes_strtoimax[] =		{{ CPUType_Any, _generic_inttypes_strtoimax }};
 // --
 struct EnableFunc  __math_d__get_huge_val[] =	{{ CPUType_Any, _generic_math_d__get_huge_val }};
-struct EnableFunc  __math_d__inf[] =			{{ CPUType_Any, _generic_math_d__inf }};
-struct EnableFunc  __math_d__isinf[] =			{{ CPUType_Any, _generic_math_d__isinf }};
-struct EnableFunc  __math_d__isnan[] =			{{ CPUType_Any, _generic_math_d__isnan }};
+struct EnableFunc  __math_d_inf[] =				{{ CPUType_Any, _generic_math_d_inf }};
+struct EnableFunc  __math_d_isinf[] =			{{ CPUType_Any, _generic_math_d_isinf }};
+struct EnableFunc  __math_d_isnan[] =			{{ CPUType_Any, _generic_math_d_isnan }};
 struct EnableFunc  __math_d_nan[] =				{{ CPUType_Any, _generic_math_d_nan }};
 struct EnableFunc  __math_d_pow[] =				{{ CPUType_Any, _generic_math_d_pow }};
 struct EnableFunc  __math_d_fabs[] =			{{ CPUType_Any, _generic_math_d_fabs }};

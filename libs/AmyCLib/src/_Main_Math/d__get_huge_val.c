@@ -46,7 +46,7 @@ double AMY_FUNC _generic_math_d__get_huge_val( struct AmyCLibIFace *Self UNUSED 
 {
 union DoubleBits val;
 
-	DOFUNCTIONLOG( LOG_FUNC_D__get_huge_val );
+	DOFUNCTIONLOG( LOG_FUNC_D_get_huge_val );
 
 	// Max Value
 	val.raw = 0x7fefffffffffffff;

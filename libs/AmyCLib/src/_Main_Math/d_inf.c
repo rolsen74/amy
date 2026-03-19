@@ -42,11 +42,11 @@
 
 // --
 
-double AMY_FUNC _generic_math_d__inf( struct AmyCLibIFace *Self UNUSED )
+double AMY_FUNC _generic_math_d_inf( struct AmyCLibIFace *Self UNUSED )
 {
 union DoubleBits xx;
 
-	DOFUNCTIONLOG( LOG_FUNC_D__inf );
+	DOFUNCTIONLOG( LOG_FUNC_D_inf );
 
 	/* Exponent = 2047 and fraction = 0.0 -> infinity */
 	xx.raw = 0x7ff0000000000000;

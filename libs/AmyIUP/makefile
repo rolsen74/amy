@@ -31,6 +31,7 @@ CFLAGS		+= -Wno-unused-parameter
 CFLAGS		+= -MMD
 CFLAGS		+= -MP
 CFLAGS		+= -mcrt=amyclib
+CFLAGS		+= -DAMY_SHORT_NAMES
 
 # Linker Flags
 LDFLAGS		:= -mcrt=amyclib

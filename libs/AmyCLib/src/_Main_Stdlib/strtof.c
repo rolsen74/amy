@@ -103,7 +103,7 @@ int is_negative;
 	{
 		str += Self->string_strlen( str );
 
-		sum = Self->math_d__inf();
+		sum = Self->math_d_inf();
 
 		stop = str;
 	}

@@ -31,6 +31,7 @@ CFLAGS		+= -MMD
 CFLAGS		+= -MP
 CFLAGS		+= -mcrt=amyclib
 CFLAGS		+= -D__RA_CLASS__
+CFLAGS		+= -DAMY_SHORT_NAMES
 
 # Linker Flags
 LDFLAGS		:= -mcrt=amyclib 

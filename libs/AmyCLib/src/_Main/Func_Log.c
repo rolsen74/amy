@@ -138,7 +138,7 @@ static const FuncString myStrings[ LOG_FUNC_LAST ] =
 //	[LOG_FUNC_F_sqrt] = { .Group = GROUP_Math_F, .Name = "sqrtf" },
 
 	// Math.h (Double)
-//	[LOG_FUNC_D___signbit] = { .Group = GROUP_Math_D, .Name = "__signbit" },
+//	[LOG_FUNC_D__signbit] = { .Group = GROUP_Math_D, .Name = "__signbit" },
 	[LOG_FUNC_D_ceil] = { .Group = GROUP_Math_D, .Name = "ceil" },
 	[LOG_FUNC_D_copysign] = { .Group = GROUP_Math_D, .Name = "copysign" },
 	[LOG_FUNC_D_fabs] = { .Group = GROUP_Math_D, .Name = "fabs" },

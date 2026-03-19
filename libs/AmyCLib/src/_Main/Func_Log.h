@@ -106,9 +106,9 @@ enum
 //	LOG_FUNC_F_scalbn,
 //	LOG_FUNC_F_sqrt,
 
-	LOG_FUNC_D__get_huge_val,
-	LOG_FUNC_D__inf,
-//	LOG_FUNC_D___signbit,
+	LOG_FUNC_D_get_huge_val,
+	LOG_FUNC_D_inf,
+//	LOG_FUNC_D__signbit,
 	LOG_FUNC_D_ceil,
 	LOG_FUNC_D_copysign,
 	LOG_FUNC_D_fabs,
