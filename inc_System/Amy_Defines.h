@@ -39,12 +39,15 @@ typedef int16_t		S16;
 typedef int32_t		S32;
 typedef int64_t		S64;
 
-typedef void *		PTR;
-typedef char *		STR;
+typedef void *		AMY_PTR;
+typedef char *		AMY_STR;
+typedef const char *AMY_CSTR;
 
-#define AMY_MIN(a,b)	((a) < (b) ? (a) : (b))
-#define AMY_MAX(a,b)	((a) > (b) ? (a) : (b))
-#define AMY_ABS(a)		((a) < 0 ? -(a) : (a))
+#ifndef AMY_NO_SHORT_NAMES
+#define PTR			AMY_PTR
+#define STR			AMY_STR
+#define CSTR		AMY_CSTR
+#endif
 
 // --
 // Hardcoded for Big-Endian (for now)
@@ -53,43 +56,50 @@ typedef char *		STR;
 #define BE_SWAP32(x)	(x)
 #define BE_SWAP64(x)	(x)
 
-#define LE_SWAP16(x)	( (( (x) & 0x00ffU ) << 8 ) \
-						| (( (x) & 0xff00U ) >> 8 ) )
-
-#define LE_SWAP32(x)	( (( (x) & 0x000000ffUL ) << 24 ) \
-						| (( (x) & 0x0000ff00UL ) <<  8 ) \
-						| (( (x) & 0x00ff0000UL ) >>  8 ) \
-						| (( (x) & 0xff000000UL ) >> 24 ) )
-
-#define LE_SWAP64(x)	( (( (x) & 0x00000000000000ffULL ) << 56 ) \
-						| (( (x) & 0x000000000000ff00ULL ) << 40 ) \
-						| (( (x) & 0x0000000000ff0000ULL ) << 24 ) \
-						| (( (x) & 0x00000000ff000000ULL ) <<  8 ) \
-						| (( (x) & 0x000000ff00000000ULL ) >>  8 ) \
-						| (( (x) & 0x0000ff0000000000ULL ) >> 24 ) \
-						| (( (x) & 0x00ff000000000000ULL ) >> 40 ) \
-						| (( (x) & 0xff00000000000000ULL ) >> 56 ) )
-
 // --
 // GCC Compiler
 
-#if defined(__GNUC__)
+#if defined(__GNUC__) || defined(__clang__)
 
 #ifndef AMY_USED
-#define AMY_USED	__attribute__((used))
+#define AMY_USED		__attribute__((used))
 #endif
 
 #ifndef AMY_UNUSED
-#define AMY_UNUSED	__attribute__((unused))
+#define AMY_UNUSED		__attribute__((unused))
 #endif
 
-#ifndef AMY_FUNC	// Library Call and we want Stack only args
-#define AMY_FUNC	__attribute__((libcall, linearvarargs))
+#ifndef AMY_FUNC		// Library Call and we want Stack only args
+#define AMY_FUNC		__attribute__((libcall, linearvarargs))
 #endif
 
 #ifndef VARARGS68K
-#define VARARGS68K	__attribute__((linearvarargs))
+#define VARARGS68K		__attribute__((linearvarargs))
 #endif
+
+#define AMY_MIN(a,b)	({ __typeof__(a) _a = (a); __typeof__(b) _b = (b); _a < _b ? _a : _b; })
+#define AMY_MAX(a,b)	({ __typeof__(a) _a = (a); __typeof__(b) _b = (b); _a > _b ? _a : _b; })
+#define AMY_ABS(a)		({ __typeof__(a) _a = (a); _a < 0 ? -_a : _a; })
+
+#define LE_SWAP16(x)	({ U16 _x = (U16)(x); ((_x << 8) | (_x >> 8)); })
+
+#define LE_SWAP32(x)	({ U32 _x = (U32)(x); \
+	((_x << 24) | \
+	 ((_x << 8) & 0x00FF0000UL) | \
+	 ((_x >> 8) & 0x0000FF00UL) | \
+	 (_x >> 24)); \
+})
+
+#define LE_SWAP64(x)	({ U64 _x = (U64)(x); \
+	((_x << 56) | \
+	 ((_x << 40) & 0x00FF000000000000ULL) | \
+	 ((_x << 24) & 0x0000FF0000000000ULL) | \
+	 ((_x << 8)  & 0x000000FF00000000ULL) | \
+	 ((_x >> 8)  & 0x00000000FF000000ULL) | \
+	 ((_x >> 24) & 0x0000000000FF0000ULL) | \
+	 ((_x >> 40) & 0x000000000000FF00ULL) | \
+	 (_x >> 56)); \
+})
 
 // --
 // Unknown Compiler
@@ -111,6 +121,27 @@ typedef char *		STR;
 #ifndef VARARGS68K
 #define VARARGS68K
 #endif
+
+#define AMY_MIN(a,b)	((a) < (b) ? (a) : (b))
+#define AMY_MAX(a,b)	((a) > (b) ? (a) : (b))
+#define AMY_ABS(a)		((a) < 0 ? -(a) : (a))
+
+#define LE_SWAP16(x)	( (( (x) & 0x00ffU ) << 8 ) \
+						| (( (x) & 0xff00U ) >> 8 ) )
+
+#define LE_SWAP32(x)	( (( (x) & 0x000000ffUL ) << 24 ) \
+						| (( (x) & 0x0000ff00UL ) <<  8 ) \
+						| (( (x) & 0x00ff0000UL ) >>  8 ) \
+						| (( (x) & 0xff000000UL ) >> 24 ) )
+
+#define LE_SWAP64(x)	( (( (x) & 0x00000000000000ffULL ) << 56 ) \
+						| (( (x) & 0x000000000000ff00ULL ) << 40 ) \
+						| (( (x) & 0x0000000000ff0000ULL ) << 24 ) \
+						| (( (x) & 0x00000000ff000000ULL ) <<  8 ) \
+						| (( (x) & 0x000000ff00000000ULL ) >>  8 ) \
+						| (( (x) & 0x0000ff0000000000ULL ) >> 24 ) \
+						| (( (x) & 0x00ff000000000000ULL ) >> 40 ) \
+						| (( (x) & 0xff00000000000000ULL ) >> 56 ) )
 
 #endif
 
