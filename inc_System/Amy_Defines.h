@@ -15,12 +15,26 @@
 
 // --
 
+// --
+
 #ifdef __cplusplus
-#define AMY_EXTERN_C_BEGIN	extern "C" {
-#define AMY_EXTERN_C_END	}
+
+# define AMY_EXTERN_C_BEGIN extern "C" {
+# define AMY_EXTERN_C_END   }
+# define AMY_STATIC_ASSERT(x) static_assert((x), #x)
+
+#elif defined(__STDC_VERSION__) && (__STDC_VERSION__ >= 201112L)
+
+# define AMY_EXTERN_C_BEGIN
+# define AMY_EXTERN_C_END
+# define AMY_STATIC_ASSERT(x) _Static_assert((x), #x)
+
 #else
-#define AMY_EXTERN_C_BEGIN
-#define AMY_EXTERN_C_END
+
+# define AMY_EXTERN_C_BEGIN
+# define AMY_EXTERN_C_END
+# define AMY_STATIC_ASSERT(x) typedef char amy_static_assert_##__LINE__[(x) ? 1 : -1]
+
 #endif
 
 // --
